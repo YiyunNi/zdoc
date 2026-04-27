@@ -25,6 +25,7 @@
     "@easyops-cn/docusaurus-search-local": "^0.41.0",
     "@mdx-js/react": "^3.0.0",
     "@smithy/node-http-handler": "^4.5.0",
+    "@zdoc/chat-ui": "workspace:*",
     "axios": "^1.6.0",
     "bottleneck": "^2.19.5",
     "cheerio": "^1.0.0",

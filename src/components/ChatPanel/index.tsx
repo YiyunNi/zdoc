@@ -1,7 +1,5 @@
 import React, {useRef, useEffect, useState} from 'react';
 import {useLocation, useHistory} from '@docusaurus/router';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import {
   Maximize2,
   Minimize2,
@@ -15,8 +13,10 @@ import {
   Trash2,
   MessageSquare,
 } from 'lucide-react';
+import {ConfidenceDot, SourceTag, GroundedMarkdown, isExternalUrl} from '@zdoc/chat-ui';
 import {useChatContext} from './ChatContext';
-import type {ChatHistoryEntry, ConfidenceLevel, Source, GroundingCitation} from './types';
+import type {ChatHistoryEntry} from './types';
+import type {ConfidenceLevel, Source, GroundingCitation} from '@zdoc/chat-ui';
 import IconButton from '../IconButton';
 import styles from './styles.module.css';
 
@@ -74,72 +74,6 @@ function ZillizStarIcon() {
   return <img src="/icons/zilliz-star.svg" width="16" height="16" aria-hidden="true" />;
 }
 
-/* ── Confidence dot indicator ── */
-
-function ConfidenceDot({level}: {level?: ConfidenceLevel}) {
-  if (!level) return null;
-  const colorMap: Record<ConfidenceLevel, string> = {
-    high: '#22c55e',
-    medium: '#eab308',
-    low: '#ef4444',
-  };
-  const labelMap: Record<ConfidenceLevel, string> = {
-    high: 'High confidence — answer directly supported by documentation',
-    medium: 'Medium confidence — partially supported by documentation',
-    low: 'Low confidence — limited documentation available',
-  };
-
-  return (
-    <span
-      className={styles.confidenceDot}
-      style={{backgroundColor: colorMap[level]}}
-      title={labelMap[level]}
-      aria-label={labelMap[level]}
-    />
-  );
-}
-
-/* ── Source section tag ── */
-
-const SOURCE_TAG_MAP: Record<string, {label: string; className: string}> = {
-  'byoc-guides': {label: 'BYOC', className: styles.sourceTagByoc},
-  'cloud-guides': {label: 'CLOUD', className: styles.sourceTagCloud},
-  'api-reference': {label: 'API', className: styles.sourceTagApi},
-  'external-web': {label: 'EXT', className: styles.sourceTagExternal},
-  'external-github': {label: 'GITHUB', className: styles.sourceTagExternal},
-};
-
-function resolveSection(section?: string, url?: string): string {
-  // If section is explicitly set and not the default, trust it
-  if (section && section !== 'cloud-guides') return section;
-  // Infer from URL (defense in depth — backend also infers via inferSection())
-  if (url) {
-    if (/milvus\.io/i.test(url)) return 'external-web';
-    if (/github\.com/i.test(url)) return 'external-github';
-    if (/\/byoc[-/]/.test(url) || /docs-byoc/.test(url)) return 'byoc-guides';
-    if (/\/reference\//.test(url)) return 'api-reference';
-  }
-  // Default: any doc URL is cloud-guides
-  return section || 'cloud-guides';
-}
-
-function isExternalUrl(url: string): boolean {
-  if (!url || url.startsWith('/')) return false;
-  try {
-    const host = new URL(url).hostname;
-    return !host.endsWith('zilliz.com');
-  } catch {
-    return false;
-  }
-}
-
-function SourceTag({section, url}: {section?: string; url?: string}) {
-  const resolved = resolveSection(section, url);
-  const tag = SOURCE_TAG_MAP[resolved];
-  if (!tag) return null;
-  return <span className={`${styles.sourceTag} ${tag.className}`}>{tag.label}</span>;
-}
-
 function ChatHeader({onNewChat, onToggle, isExpanded}: {onNewChat: () => void; onToggle: () => void; isExpanded: boolean}) {
   return (
     <div className={styles.chatHeader}>
@@ -161,114 +95,6 @@ function ChatHeader({onNewChat, onToggle, isExpanded}: {onNewChat: () => void; o
         </IconButton>
       </div>
     </div>
-  );
-}
-
-// Custom react-markdown components to fix DOM nesting warnings
-const markdownComponents = {
-  table: ({children, ...props}: React.HTMLAttributes<HTMLTableElement>) => {
-    const wrapped = React.Children.map(children, child => {
-      if (React.isValidElement(child) && (child.type === 'tr')) {
-        return <tbody>{child}</tbody>;
-      }
-      return child;
-    });
-    return <table {...props}>{wrapped}</table>;
-  },
-};
-
-/* ── Grounded markdown: deterministic citation rendering ── */
-
-function splitParagraphs(text: string): string[] {
-  const parts: string[] = [];
-  let current = '';
-  let inCodeBlock = false;
-
-  for (const line of text.split('\n')) {
-    if (line.trim().startsWith('```')) {
-      inCodeBlock = !inCodeBlock;
-      current += line + '\n';
-      continue;
-    }
-    if (inCodeBlock) {
-      current += line + '\n';
-      continue;
-    }
-    if (line.trim() === '' && current.trim()) {
-      parts.push(current.trim());
-      current = '';
-    } else {
-      current += line + '\n';
-    }
-  }
-  if (current.trim()) parts.push(current.trim());
-  return parts;
-}
-
-/**
- * Build markdown component overrides that append citation sups inline.
- * Uses a render-phase counter so sups only appear on the LAST rendered
- * text-bearing element (last <p>, or last <li> if no <p>).
- */
-function makeCitedComponents(sourceIndices: number[], sources: Source[]) {
-  const sups = sourceIndices.map(si => (
-    <sup key={`cite-${si}`} className={styles.citationSup}>
-      <a href={sources[si]?.url} className={styles.citationLink} title={sources[si]?.title}>
-        {si + 1}
-      </a>
-    </sup>
-  ));
-
-  // During render, react-markdown calls component overrides in document order.
-  // We collect elements via refs, then the CitationAnchor at the end injects
-  // sups into the last one via a portal-like trick.
-  // Simpler: just track "has a <p> been rendered?" — if yes, only <p> gets sups
-  // on the LAST call; if no <p>, the last <li> gets sups.
-  //
-  // Since react-markdown renders synchronously within a single render pass,
-  // we can use a mutable object to count calls and a two-pass trick:
-  // Pass 1 (counting) isn't practical, so instead we append to ALL <p>'s
-  // but hide all but the last via CSS :last-of-type.
-  //
-  // Actually simplest: only override <p> (the block-level wrapper).
-  // Each paragraph chunk produces exactly one <p> for prose,
-  // and lists produce <ul>/<ol> with no <p> inside.
-  // For list chunks, we skip inline citations (they still show in Sources list).
-
-  const CiteP = ({children, ...props}: any) => (
-    <p {...props}>{children}<span className={styles.citationGroup}>{sups}</span></p>
-  );
-
-  return {...markdownComponents, p: CiteP};
-}
-
-/** Render markdown text with deterministic citation superscripts based on grounding map */
-function GroundedMarkdown({text, sources, grounding}: {
-  text: string;
-  sources?: Source[];
-  grounding?: GroundingCitation[];
-}) {
-  if (!grounding || !sources || grounding.length === 0) {
-    return <Markdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{text}</Markdown>;
-  }
-
-  const citationMap = new Map<number, number[]>();
-  for (const c of grounding) {
-    citationMap.set(c.paragraphIndex, c.sourceIndices);
-  }
-
-  const paragraphs = splitParagraphs(text);
-
-  return (
-    <>
-      {paragraphs.map((para, pi) => {
-        const cites = citationMap.get(pi);
-        const components = cites && cites.length > 0
-          ? makeCitedComponents(cites, sources)
-          : markdownComponents;
-        return <Markdown key={pi} remarkPlugins={[remarkGfm]} components={components}>{para}</Markdown>;
-      })}
-    </>
   );
 }
 

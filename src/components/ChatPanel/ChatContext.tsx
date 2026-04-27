@@ -1,7 +1,6 @@
 import React, {createContext, useContext, useState, useRef, useCallback, useEffect} from 'react';
 import {useLocation} from '@docusaurus/router';
-import type {AgentType, ConfidenceLevel, GroundingCitation} from './types';
-
+import type {Source, ChatMessage, ChatHistoryEntry, AgentType, ConfidenceLevel, GroundingCitation} from './types';
 export type {Source, FeedbackRating, ChatMessage, ChatHistoryEntry, AgentType, ConfidenceLevel, GroundingCitation} from './types';
 
 export interface ChatContextValue {
@@ -18,9 +17,6 @@ export interface ChatContextValue {
   loadChat: (id: string) => void;
   deleteChat: (id: string) => void;
 }
-
-// Import types from local types file
-import type {Source, ChatMessage, ChatHistoryEntry} from './types';
 
 const ChatContext = createContext<ChatContextValue | null>(null);
 
