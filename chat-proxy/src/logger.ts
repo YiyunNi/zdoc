@@ -15,6 +15,7 @@ export function logEvent(
   agent: string,
   data: Record<string, unknown>,
   userMeta?: Record<string, unknown>,
+  source: string = 'docs',
 ): void {
   try {
     const timestamp = new Date().toISOString();
@@ -26,6 +27,7 @@ export function logEvent(
       userId,
       eventType,
       agent,
+      source,
       ...data,
     }));
 
@@ -61,6 +63,7 @@ export function logEvent(
       outputTokens: event.outputTokens,
       totalTokens: event.totalTokens,
       cachedInputTokens: event.cachedInputTokens,
+      source,
     }).catch(() => {});
 
     // Upsert session metadata on assistant message events
@@ -73,6 +76,7 @@ export function logEvent(
         pageUrl: typeof data.pageUrl === 'string' ? data.pageUrl : undefined,
         firstQuestion: typeof data.question === 'string' ? String(data.question).slice(0, 100) : undefined,
         userMeta,
+        source,
       }).catch(() => {});
     }
   } catch {

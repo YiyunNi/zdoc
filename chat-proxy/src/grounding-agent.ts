@@ -1,17 +1,11 @@
 import {generateObject} from 'ai';
-import {createOpenAI} from '@ai-sdk/openai';
 import {z} from 'zod';
 import {computeGrounding, splitParagraphs, type GroundingResult} from './grounding.js';
 import type {SearchResult} from './rag.js';
 import type {Source} from './types.js';
 import {isApiRefSource} from './demotion.js';
 import {saveTokenUsage} from './db.js';
-
-const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
-const AI_API_KEY = process.env.AI_API_KEY || '';
-const GROUNDING_MODEL = process.env.GROUNDING_MODEL || 'google/gemini-3.1-flash-lite-preview';
-
-const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
+import {resolveModel, createModelInstance} from './runtime-config.js';
 
 const groundingSchema = z.object({
   selectedSources: z.array(z.object({
@@ -96,8 +90,9 @@ export async function groundAtomically(
 
     const numberedSources = sourceDescriptions.join('\n');
 
+    const resolvedModel = await resolveModel('grounding');
     const result = await generateObject({
-      model: provider.chat(GROUNDING_MODEL),
+      model: createModelInstance(resolvedModel),
       schema: groundingSchema,
       maxOutputTokens: 400,
       prompt: `You are a source attribution agent for Zilliz Cloud documentation. Given a response and candidate sources, select ONLY the sources that genuinely support claims in the response.
@@ -125,7 +120,7 @@ Select genuinely relevant sources and map them to paragraphs.`,
       const u = result.usage;
       if (u?.inputTokens != null && u?.outputTokens != null) {
         saveTokenUsage({
-          model: GROUNDING_MODEL,
+          model: resolvedModel.model,
           agentType: 'grounding',
           inputTokens: u.inputTokens,
           outputTokens: u.outputTokens,

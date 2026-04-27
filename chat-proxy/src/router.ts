@@ -1,20 +1,8 @@
 import {generateObject} from 'ai';
-import {createOpenAI} from '@ai-sdk/openai';
 import {z} from 'zod';
 import type {AgentType, ChatMessage} from './types.js';
 import {saveTokenUsage} from './db.js';
-
-// ---------------------------------------------------------------------------
-// Config
-// ---------------------------------------------------------------------------
-
-const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
-const AI_API_KEY = process.env.AI_API_KEY || '';
-// Router needs structured output reliability — use a dedicated small model
-// rather than falling back to the generation model which may not support it.
-const AI_MODEL = process.env.ROUTER_MODEL || 'openai/gpt-4o-mini';
-
-const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
+import {resolveModel, createModelInstance} from './runtime-config.js';
 
 // ---------------------------------------------------------------------------
 // Intent classification schema
@@ -64,8 +52,9 @@ export async function routeIntent(
     // Build context from recent messages
     const contextMessages = recentMessages.slice(-4).map(m => `${m.role}: ${m.content}`).join('\n');
 
+    const resolvedModel = await resolveModel('router');
     const result = await generateObject({
-      model: provider.chat(AI_MODEL),
+      model: createModelInstance(resolvedModel),
       schema: routeSchema,
       maxOutputTokens: 250,
       prompt: `Classify the user's intent to route to the best specialized agent and identify relevant topics.
@@ -106,7 +95,7 @@ Route to the most appropriate agent and select relevant topics.`,
       if (u?.inputTokens != null && u?.outputTokens != null) {
         saveTokenUsage({
           sessionId: sessionId,
-          model: AI_MODEL,
+          model: resolvedModel.model,
           agentType: 'router',
           inputTokens: u.inputTokens,
           outputTokens: u.outputTokens,

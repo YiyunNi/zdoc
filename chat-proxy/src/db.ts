@@ -112,7 +112,8 @@ const SCHEMA_DDL = `
     input_tokens         INTEGER,
     output_tokens        INTEGER,
     total_tokens         INTEGER,
-    cached_input_tokens  INTEGER
+    cached_input_tokens  INTEGER,
+    source               TEXT NOT NULL DEFAULT 'docs'
   );
 
   CREATE INDEX IF NOT EXISTS idx_obs_events_ts ON obs_events(timestamp DESC);
@@ -131,7 +132,8 @@ const SCHEMA_DDL = `
     first_question   TEXT,
     created_at       TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     last_active_at   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    user_meta        JSONB
+    user_meta        JSONB,
+    source           TEXT NOT NULL DEFAULT 'docs'
   );
 
   CREATE INDEX IF NOT EXISTS idx_obs_sessions_last_active ON obs_sessions(last_active_at DESC);
@@ -140,6 +142,12 @@ const SCHEMA_DDL = `
 
   -- Migration: add user_meta column to existing obs_sessions tables
   ALTER TABLE obs_sessions ADD COLUMN IF NOT EXISTS user_meta JSONB;
+
+  -- Migration: add source column for multi-product traffic attribution
+  ALTER TABLE obs_events   ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'docs';
+  ALTER TABLE obs_sessions ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'docs';
+  CREATE INDEX IF NOT EXISTS idx_obs_events_source   ON obs_events(source);
+  CREATE INDEX IF NOT EXISTS idx_obs_sessions_source ON obs_sessions(source);
 
   -- obs_feedback: thumbs up/down ratings
   CREATE TABLE IF NOT EXISTS obs_feedback (
@@ -519,15 +527,16 @@ export async function saveObsEvent(event: {
   outputTokens?: number;
   totalTokens?: number;
   cachedInputTokens?: number;
+  source: string;
 }): Promise<void> {
   const pool = getPool();
   await pool.query(
-    `INSERT INTO obs_events (id, timestamp, event_type, session_id, user_id, agent, model, data, input_tokens, output_tokens, total_tokens, cached_input_tokens)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+    `INSERT INTO obs_events (id, timestamp, event_type, session_id, user_id, agent, model, data, input_tokens, output_tokens, total_tokens, cached_input_tokens, source)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`,
     [event.id, event.timestamp, event.eventType, event.sessionId, event.userId,
      event.agent, event.model ?? null, JSON.stringify(event.data),
      event.inputTokens ?? null, event.outputTokens ?? null, event.totalTokens ?? null,
-     event.cachedInputTokens ?? null],
+     event.cachedInputTokens ?? null, event.source],
   );
 }
 
@@ -539,21 +548,23 @@ export async function upsertObsSession(session: {
   pageUrl?: string;
   firstQuestion?: string;
   userMeta?: Record<string, unknown>;
+  source: string;
 }): Promise<void> {
   const pool = getPool();
   await pool.query(
-    `INSERT INTO obs_sessions (id, user_id, agent, model, page_url, message_count, first_question, user_meta, created_at, last_active_at)
-     VALUES ($1, $2, $3, $4, $5, 1, $6, $7, NOW(), NOW())
+    `INSERT INTO obs_sessions (id, user_id, agent, model, page_url, message_count, first_question, user_meta, source, created_at, last_active_at)
+     VALUES ($1, $2, $3, $4, $5, 1, $6, $7, $8, NOW(), NOW())
      ON CONFLICT (id) DO UPDATE SET
        last_active_at = NOW(),
        message_count = obs_sessions.message_count + 1,
        agent = EXCLUDED.agent,
        model = COALESCE(EXCLUDED.model, obs_sessions.model),
        page_url = COALESCE(EXCLUDED.page_url, obs_sessions.page_url),
-       user_meta = COALESCE(EXCLUDED.user_meta, obs_sessions.user_meta)`,
+       user_meta = COALESCE(EXCLUDED.user_meta, obs_sessions.user_meta),
+       source = EXCLUDED.source`,
     [session.id, session.userId, session.agent, session.model ?? null,
      session.pageUrl ?? null, session.firstQuestion ?? null,
-     session.userMeta ? JSON.stringify(session.userMeta) : null],
+     session.userMeta ? JSON.stringify(session.userMeta) : null, session.source],
   );
 }
 
@@ -581,7 +592,7 @@ export async function saveObsFeedback(entry: {
 // Observability: read functions (replace in-memory eventStore queries)
 // ---------------------------------------------------------------------------
 
-export async function getObsOverview(): Promise<{
+export async function getObsOverview(options: { source?: string } = {}): Promise<{
   conversations: number;
   messages: number;
   distinctUsers: number;
@@ -590,63 +601,111 @@ export async function getObsOverview(): Promise<{
   thumbsDown: number;
 }> {
   const pool = getPool();
-  const { rows: [ev] } = await pool.query(
+
+  // Headline counts (conversations, distinctUsers) come from obs_sessions
+  // with the same anonymous-exclusion policy as getObsUsers, so the Dashboard
+  // and Users tabs report identical numbers.
+  const sessionConditions = [`user_id != 'anonymous'`];
+  const sessionParams: any[] = [];
+  if (options.source) {
+    sessionParams.push(options.source);
+    sessionConditions.push(`source = $${sessionParams.length}`);
+  }
+  const sessionWhere = `WHERE ${sessionConditions.join(' AND ')}`;
+
+  const { rows: [s] } = await pool.query(
     `SELECT
-       COUNT(DISTINCT session_id)::int as conversations,
-       COUNT(*) FILTER (WHERE event_type = 'message')::int as messages,
-       COUNT(DISTINCT user_id)::int as "distinctUsers",
+       COUNT(*)::int as conversations,
+       COUNT(DISTINCT user_id)::int as "distinctUsers"
+     FROM obs_sessions ${sessionWhere}`,
+    sessionParams,
+  );
+
+  // Per-message metrics (messages count, average confidence) still come from
+  // obs_events because obs_sessions doesn't carry message-level granularity.
+  const eventParams: any[] = [];
+  let eventWhere = `WHERE event_type = 'message'`;
+  if (options.source) {
+    eventParams.push(options.source);
+    eventWhere += ` AND source = $${eventParams.length}`;
+  }
+
+  const { rows: [e] } = await pool.query(
+    `SELECT
+       COUNT(*) FILTER (WHERE data->>'role' = 'assistant' OR data->>'role' IS NULL)::int as messages,
        COALESCE(ROUND(
-         COUNT(*) FILTER (WHERE event_type = 'message' AND data->>'confidence' = 'high')
+         COUNT(*) FILTER (WHERE data->>'confidence' = 'high' AND (data->>'role' = 'assistant' OR data->>'role' IS NULL))
          * 100.0 / NULLIF(COUNT(*) FILTER (
-           WHERE event_type = 'message' AND data->>'confidence' IN ('high','medium','low')
+           WHERE data->>'confidence' IN ('high','medium','low') AND (data->>'role' = 'assistant' OR data->>'role' IS NULL)
          ), 0)
        ), 0)::int as "avgConfidence"
-     FROM obs_events`,
+     FROM obs_events ${eventWhere}`,
+    eventParams,
   );
-  const { rows: [fb] } = await pool.query(
-    `SELECT
-       COUNT(*) FILTER (WHERE rating = 'up')::int as "thumbsUp",
-       COUNT(*) FILTER (WHERE rating = 'down')::int as "thumbsDown"
-     FROM obs_feedback`,
-  );
+
+  // Feedback (thumbs) — feedback events live in obs_feedback. We filter
+  // by source via the originating session in obs_sessions when set.
+  let fbQuery: string;
+  let fbParams: any[];
+  if (options.source) {
+    fbQuery = `SELECT
+         COUNT(*) FILTER (WHERE rating = 'up')::int as "thumbsUp",
+         COUNT(*) FILTER (WHERE rating = 'down')::int as "thumbsDown"
+       FROM obs_feedback f
+       JOIN obs_sessions s ON s.id = f.session_id
+       WHERE s.source = $1`;
+    fbParams = [options.source];
+  } else {
+    fbQuery = `SELECT
+         COUNT(*) FILTER (WHERE rating = 'up')::int as "thumbsUp",
+         COUNT(*) FILTER (WHERE rating = 'down')::int as "thumbsDown"
+       FROM obs_feedback`;
+    fbParams = [];
+  }
+  const { rows: [fb] } = await pool.query(fbQuery, fbParams);
+
   return {
-    conversations: Number(ev.conversations),
-    messages: Number(ev.messages),
-    distinctUsers: Number(ev.distinctUsers),
-    avgConfidence: Number(ev.avgConfidence),
+    conversations: Number(s.conversations),
+    messages: Number(e.messages),
+    distinctUsers: Number(s.distinctUsers),
+    avgConfidence: Number(e.avgConfidence),
     thumbsUp: Number(fb.thumbsUp),
     thumbsDown: Number(fb.thumbsDown),
   };
 }
 
-export async function getObsTrends(days: number): Promise<Record<string, {date: string; value: number}[]>> {
+export async function getObsTrends(days: number, options: { source?: string } = {}): Promise<Record<string, {date: string; value: number}[]>> {
   const pool = getPool();
+
+  const sessionFilter = options.source ? `AND s.source = $2` : '';
+  const eventFilter = options.source ? `AND e.source = $2` : '';
+  const params: any[] = options.source ? [days, options.source] : [days];
 
   // Conversations: distinct sessions per day from obs_sessions
   const { rows: sessionRows } = await pool.query(
     `SELECT d::date::text as date, COUNT(DISTINCT s.id)::int as conversations
      FROM generate_series(CURRENT_DATE - ($1::int - 1), CURRENT_DATE, INTERVAL '1 day') d
-     LEFT JOIN obs_sessions s ON s.created_at::date = d::date
+     LEFT JOIN obs_sessions s ON s.created_at::date = d::date ${sessionFilter}
      GROUP BY d ORDER BY d`,
-    [days],
+    params,
   );
 
   // Messages, users, confidence from obs_events
   const { rows: eventRows } = await pool.query(
     `SELECT
        d::date::text as date,
-       COUNT(e.id) FILTER (WHERE e.event_type = 'message')::int as messages,
+       COUNT(e.id) FILTER (WHERE e.event_type = 'message' AND (e.data->>'role' = 'assistant' OR e.data->>'role' IS NULL))::int as messages,
        COUNT(DISTINCT e.user_id) FILTER (WHERE e.id IS NOT NULL)::int as users,
        COALESCE(ROUND(
-         COUNT(e.id) FILTER (WHERE e.event_type = 'message' AND e.data->>'confidence' = 'high')
+         COUNT(e.id) FILTER (WHERE e.event_type = 'message' AND e.data->>'confidence' = 'high' AND (e.data->>'role' = 'assistant' OR e.data->>'role' IS NULL))
          * 100.0 / NULLIF(COUNT(e.id) FILTER (
-           WHERE e.event_type = 'message' AND e.data->>'confidence' IN ('high','medium','low')
+           WHERE e.event_type = 'message' AND e.data->>'confidence' IN ('high','medium','low') AND (e.data->>'role' = 'assistant' OR e.data->>'role' IS NULL)
          ), 0)
        ), 0)::int as confidence
      FROM generate_series(CURRENT_DATE - ($1::int - 1), CURRENT_DATE, INTERVAL '1 day') d
-     LEFT JOIN obs_events e ON e.timestamp::date = d::date
+     LEFT JOIN obs_events e ON e.timestamp::date = d::date ${eventFilter}
      GROUP BY d ORDER BY d`,
-    [days],
+    params,
   );
 
   // Merge: sessions data has conversations, events data has messages/users/confidence
@@ -719,7 +778,7 @@ export async function getObsPerformance(): Promise<any[]> {
            WHEN data->>'sourceCount' IS NOT NULL THEN (data->>'sourceCount')::numeric
            ELSE 0
          END
-       ) FILTER (WHERE event_type = 'message'), 1), 0) as "avgSources",
+       ) FILTER (WHERE event_type = 'message' AND (data->>'role' = 'assistant' OR data->>'role' IS NULL)), 1), 0) as "avgSources",
        COALESCE(ROUND(
          COUNT(*) FILTER (WHERE event_type = 'error') * 1000.0 / NULLIF(COUNT(*), 0)
        ), 0)::numeric / 1000 as "errorRate"
@@ -816,7 +875,8 @@ export async function getObsUsers(options: {
   pageSize: number;
   agent?: string;
   country?: string;
-}): Promise<{ users: any[]; total: number }> {
+  source?: string;
+}): Promise<{ users: any[]; total: number; totalSessions: number }> {
   const pool = getPool();
 
   // Build WHERE clause
@@ -833,10 +893,17 @@ export async function getObsUsers(options: {
     conditions.push(`user_meta->>'country' = $${params.length}`);
   }
 
+  if (options.source) {
+    params.push(options.source);
+    conditions.push(`source = $${params.length}`);
+  }
+
   const whereClause = conditions.join(' AND ');
 
   const { rows: [countRow] } = await pool.query(
-    `SELECT COUNT(DISTINCT CASE WHEN user_id != 'anonymous' THEN user_id END)::int as total
+    `SELECT
+       COUNT(DISTINCT user_id)::int as total,
+       COALESCE(SUM(message_count), 0)::int as "totalSessions"
      FROM obs_sessions
      WHERE ${whereClause}`,
     params,
@@ -877,11 +944,39 @@ export async function getObsUsers(options: {
     topics: (r.session_rows || []).slice(0, 5).map((s: any) => (s.first_question || '').slice(0, 80)),
   }));
 
-  return { users, total: Number(countRow.total) };
+  return {
+    users,
+    total: Number(countRow.total),
+    totalSessions: Number(countRow.totalSessions),
+  };
 }
 
-export async function getTokenTrends(days: number): Promise<{date: string; inputTokens: number; outputTokens: number; cachedTokens: number}[]> {
+export async function getTokenTrends(days: number, options: { source?: string } = {}): Promise<{date: string; inputTokens: number; outputTokens: number; cachedTokens: number}[]> {
   const pool = getPool();
+
+  // When filtering by source, join through obs_sessions (token_usage doesn't
+  // carry a source column directly; instead we attribute via the session id).
+  if (options.source) {
+    const { rows } = await pool.query(
+      `SELECT d::date::text as date,
+         COALESCE(SUM(t.input_tokens), 0)::bigint as "inputTokens",
+         COALESCE(SUM(t.output_tokens), 0)::bigint as "outputTokens",
+         COALESCE(SUM(t.cached_input_tokens), 0)::bigint as "cachedTokens"
+       FROM generate_series(CURRENT_DATE - ($1::int - 1), CURRENT_DATE, INTERVAL '1 day') d
+       LEFT JOIN token_usage t ON t.created_at::date = d::date
+       LEFT JOIN obs_sessions s ON s.id = t.session_id AND s.source = $2
+       WHERE t.id IS NULL OR s.id IS NOT NULL
+       GROUP BY d ORDER BY d`,
+      [days, options.source],
+    );
+    return rows.map((r: any) => ({
+      date: r.date,
+      inputTokens: Number(r.inputTokens),
+      outputTokens: Number(r.outputTokens),
+      cachedTokens: Number(r.cachedTokens),
+    }));
+  }
+
   const { rows } = await pool.query(
     `SELECT d::date::text as date,
        COALESCE(SUM(input_tokens), 0)::bigint as "inputTokens",
@@ -1221,8 +1316,18 @@ export async function getObsSessionDetail(sessionId: string): Promise<{
   };
 }
 
-export async function getObsTokenUsage(): Promise<any[]> {
+export async function getObsSources(): Promise<string[]> {
   const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT DISTINCT source FROM obs_sessions WHERE source IS NOT NULL ORDER BY source`,
+  );
+  return rows.map((r: any) => r.source);
+}
+
+export async function getObsTokenUsage(options: { source?: string } = {}): Promise<any[]> {
+  const pool = getPool();
+  const sourceFilter = options.source ? ` AND source = $1` : '';
+  const params: any[] = options.source ? [options.source] : [];
   const { rows } = await pool.query(
     `SELECT COALESCE(model, 'unknown') as model,
        COUNT(*)::int as "requestCount",
@@ -1231,8 +1336,9 @@ export async function getObsTokenUsage(): Promise<any[]> {
        COALESCE(SUM(total_tokens), 0)::int as "totalTokens",
        COALESCE(SUM(cached_input_tokens), 0)::int as "totalCachedInputTokens"
      FROM obs_events
-     WHERE event_type = 'message' AND total_tokens IS NOT NULL
+     WHERE event_type = 'message' AND total_tokens IS NOT NULL${sourceFilter}
      GROUP BY model ORDER BY "totalTokens" DESC`,
+    params,
   );
   return rows;
 }

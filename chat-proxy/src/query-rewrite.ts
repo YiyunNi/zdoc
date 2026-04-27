@@ -1,12 +1,6 @@
 import {generateObject} from 'ai';
-import {createOpenAI} from '@ai-sdk/openai';
 import {z} from 'zod';
-
-const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
-const AI_API_KEY = process.env.AI_API_KEY || '';
-const REWRITE_MODEL = process.env.REWRITE_MODEL || 'google/gemini-3.1-flash-lite-preview';
-
-const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
+import {resolveModel, createModelInstance} from './runtime-config.js';
 
 const rewriteSchema = z.object({
   searchQuery: z.string().describe('Rewritten query optimized for keyword search'),
@@ -50,9 +44,11 @@ export async function rewriteQuery(question: string, retries = 1): Promise<strin
   const words = question.trim().split(/\s+/);
   if (words.length <= 2) return question;
 
+  const resolvedModel = await resolveModel('rewrite');
+
   try {
     const result = await generateObject({
-      model: provider.chat(REWRITE_MODEL),
+      model: createModelInstance(resolvedModel),
       schema: rewriteSchema,
       maxOutputTokens: 100,
       prompt: `You are a search query optimizer for Zilliz Cloud / Milvus documentation.
@@ -85,7 +81,7 @@ User question: ${question}`,
       try {
         const {generateText} = await import('ai');
         const textResult = await generateText({
-          model: provider.chat(REWRITE_MODEL),
+          model: createModelInstance(resolvedModel),
           maxOutputTokens: 80,
           temperature: 0,
           prompt: `Output ONLY a JSON object with exactly this format: {"searchQuery": "query"}. No explanation, no markdown.

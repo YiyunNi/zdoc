@@ -1,8 +1,8 @@
-import {Hono} from 'hono';
+import {Hono, type Context} from 'hono';
 import {cors} from 'hono/cors';
 import {streamText, stepCountIs} from 'ai';
-import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
+import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
 import {checkGuard} from './guard.js';
 import {setActiveSectionFilter, setQueryEmbedding, searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
@@ -142,23 +142,25 @@ const ALLOWED_ORIGINS = [
   ...(process.env.ALLOWED_ORIGINS || 'http://localhost:3000').split(',').map(s => s.trim()),
   ...(process.env.DEV_SERVER ? [process.env.DEV_SERVER.trim()] : []),
 ].filter((v, i, a) => a.indexOf(v) === i); // deduplicate
-const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
-const AI_API_KEY = process.env.AI_API_KEY || '';
-const AI_MODEL = process.env.AI_MODEL || 'gpt-4o';
 const RATE_LIMIT_MAX = 20;
 const RATE_LIMIT_WINDOW_MS = 60_000;
-
-// ---------------------------------------------------------------------------
-// AI provider
-// ---------------------------------------------------------------------------
-
-const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
 
 // ---------------------------------------------------------------------------
 // Rate limiter (in-memory, per IP)
 // ---------------------------------------------------------------------------
 
 const rateLimitMap = new Map<string, {count: number; resetAt: number}>();
+
+// ---------------------------------------------------------------------------
+// Traffic source attribution (X-Traffic-Source header)
+// ---------------------------------------------------------------------------
+
+const SOURCE_RE = /^[a-z0-9-]{1,32}$/i;
+
+function parseSource(c: Context): string {
+  const raw = c.req.header('x-traffic-source')?.trim();
+  return raw && SOURCE_RE.test(raw) ? raw.toLowerCase() : 'docs';
+}
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -313,6 +315,7 @@ app.post('/chat', async c => {
   }
 
   const userId = body.userId || 'anonymous';
+  const source = parseSource(c);
 
   // Extract user metadata for observability
   const userMeta: Record<string, unknown> = {};
@@ -345,8 +348,8 @@ app.post('/chat', async c => {
       logEvent(session.id, userId, 'message', 'guard', {
         blocked: true,
         reason: guardResult.reason,
-        message: lastUserMessage.content.slice(0, 200),
-      }, userMeta);
+        message: lastUserMessage.content,
+      }, userMeta, source);
 
       return c.newResponse(
         new ReadableStream({
@@ -448,15 +451,25 @@ app.post('/chat', async c => {
           const agentConfig = getAgent(routeResult.agent as any);
           const agentTools = getToolsForAgent(agentConfig.toolNames);
 
-          // Resolve model: per-agent override → global AI_MODEL
-          const activeModel = agentConfig.model || AI_MODEL;
+          // Resolve model from runtime config (DB override → env var → default)
+          const resolvedModel = await resolveModel(`agent:${agentConfig.type}`);
+          const activeModel = resolvedModel.model;
 
           logEvent(session.id, userId, 'routing', routeResult.agent, {
             reasoning: routeResult.reasoning,
             topics: routeResult.topics,
             model: activeModel,
             message: rawQuery.slice(0, 200),
-          }, userMeta);
+          }, userMeta, source);
+
+          // Log the user message for session reconstruction
+          if (lastUserMessage) {
+            logEvent(session.id, userId, 'message', agentConfig.type, {
+              role: 'user',
+              content: lastUserMessage.content,
+              question: ragQuery,
+            }, userMeta, source);
+          }
 
           // Emit agent info (including model for observability)
           sendAndRecord('agent', JSON.stringify({
@@ -490,7 +503,7 @@ app.post('/chat', async c => {
 
           const tLlmStart = Date.now();
           const result = streamText({
-            model: provider.chat(activeModel),
+            model: createModelInstance(resolvedModel),
             maxOutputTokens: 4096,
             temperature: 0.2,
             tools: agentTools,
@@ -508,9 +521,11 @@ app.post('/chat', async c => {
           let fullText = '';
           let groundedSourceCount = 0;
 
+          // Stream connected successfully — record health success even if no text tokens arrive
+          recordLlmSuccess();
+
           for await (const part of result.fullStream) {
             if (part.type === 'text-delta') {
-              if (fullText.length === 0) recordLlmSuccess(); // first token = LLM is reachable
               fullText += part.text;
               sendAndRecord('delta', JSON.stringify({text: part.text}));
             } else if (part.type === 'tool-call') {
@@ -519,7 +534,7 @@ app.post('/chat', async c => {
               logEvent(session.id, userId, 'tool_call', agentConfig.type, {
                 tool: part.toolName,
                 args: (part as any).input ?? (part as any).args,
-              }, userMeta);
+              }, userMeta, source);
             } else if ((part as any).type === 'tool-result') {
               // Extract sources from any tool that returns doc URLs
               // AI SDK v6 fullStream uses .output for tool-result events
@@ -714,7 +729,7 @@ app.post('/chat', async c => {
           // Log the message (fire-and-forget)
           logEvent(session.id, userId, 'message', agentConfig.type, {
             role: 'assistant',
-            content: fullText.slice(0, 500),
+            content: fullText,
             question: ragQuery.slice(0, 200),
             model: activeModel,
             confidence,
@@ -726,7 +741,7 @@ app.post('/chat', async c => {
             outputTokens: tokenUsage?.outputTokens,
             totalTokens: tokenUsage?.totalTokens,
             cachedInputTokens: tokenUsage?.cachedInputTokens,
-          }, userMeta);
+          }, userMeta, source);
 
           const tGround = Date.now() - tGroundStart;
           console.log(`[timing] route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${Date.now() - tChatStart}ms tools=${toolsCalled.length} sources=${allSources.length}`);
@@ -786,7 +801,7 @@ app.post('/chat', async c => {
         } catch (err: unknown) {
           const message = err instanceof Error ? err.message : 'Internal server error';
           send('error', JSON.stringify({error: message}));
-          logEvent(session.id, userId, 'error', 'unknown', {error: message}, userMeta);
+          logEvent(session.id, userId, 'error', 'unknown', {error: message}, userMeta, source);
           recordLlmError(message);
 
           // Post-action for hard errors
@@ -838,12 +853,14 @@ app.post('/feedback', async c => {
 
   recordFeedback(body.sessionId, body.messageIndex, body.rating, body.pageUrl);
 
+  const source = parseSource(c);
+
   // Log feedback event
   logEvent(body.sessionId, body.userId || 'anonymous', 'feedback', '', {
     rating: body.rating,
     messageIndex: body.messageIndex,
     pageUrl: body.pageUrl,
-  });
+  }, undefined, source);
 
   return c.json({ok: true});
 });
