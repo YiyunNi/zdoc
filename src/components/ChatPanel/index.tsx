@@ -13,6 +13,7 @@ import {
   Trash2,
   MessageSquare,
 } from 'lucide-react';
+import '@zdoc/chat-ui/dist/style.css';
 import {ConfidenceDot, SourceTag, GroundedMarkdown, isExternalUrl} from '@zdoc/chat-ui';
 import {useChatContext} from './ChatContext';
 import type {ChatHistoryEntry} from './types';

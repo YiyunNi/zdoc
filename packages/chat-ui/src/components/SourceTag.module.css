@@ -1,11 +1,13 @@
 .tag {
   display: inline-block;
+  flex-shrink: 0;
   padding: 1px 5px;
   border-radius: 3px;
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.4;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.04em;
 }
 
 .tagByoc {
