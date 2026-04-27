@@ -814,18 +814,36 @@ export async function listObsSessions(options: {
 export async function getObsUsers(options: {
   page: number;
   pageSize: number;
+  agent?: string;
+  country?: string;
 }): Promise<{ users: any[]; total: number }> {
   const pool = getPool();
 
-  // Count distinct non-anonymous users
+  // Build WHERE clause
+  const conditions = [`user_id != 'anonymous'`];
+  const params: any[] = [];
+
+  if (options.agent) {
+    params.push(options.agent);
+    conditions.push(`agent = $${params.length}`);
+  }
+
+  if (options.country) {
+    params.push(options.country);
+    conditions.push(`user_meta->>'country' = $${params.length}`);
+  }
+
+  const whereClause = conditions.join(' AND ');
+
   const { rows: [countRow] } = await pool.query(
     `SELECT COUNT(DISTINCT CASE WHEN user_id != 'anonymous' THEN user_id END)::int as total
-     FROM obs_sessions`,
+     FROM obs_sessions
+     WHERE ${whereClause}`,
+    params,
   );
 
   const offset = (options.page - 1) * options.pageSize;
 
-  // Aggregate sessions by user_id, exclude anonymous, sort by last active
   const { rows } = await pool.query(
     `SELECT
        user_id,
@@ -836,11 +854,11 @@ export async function getObsUsers(options: {
        (ARRAY_AGG(DISTINCT user_meta) FILTER (WHERE user_meta IS NOT NULL))[1] as user_meta,
        COALESCE(JSON_AGG(JSON_BUILD_OBJECT('first_question', first_question, 'agent', agent, 'message_count', message_count, 'created_at', created_at) ORDER BY created_at DESC) FILTER (WHERE first_question IS NOT NULL), '[]'::json) as session_rows
      FROM obs_sessions
-     WHERE user_id != 'anonymous'
+     WHERE ${whereClause}
      GROUP BY user_id
      ORDER BY MAX(last_active_at) DESC
-     LIMIT $1::int OFFSET $2::int`,
-    [options.pageSize, offset],
+     LIMIT $${params.length + 1}::int OFFSET $${params.length + 2}::int`,
+    [...params, options.pageSize, offset],
   );
 
   const users = rows.map((r: any) => ({

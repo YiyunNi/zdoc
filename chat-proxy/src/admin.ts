@@ -325,7 +325,9 @@ adminApp.get('/api/analytics/recent-activity', async c => {
 adminApp.get('/api/analytics/users', async c => {
   const page = parseInt(c.req.query('page') || '1', 10);
   const pageSize = parseInt(c.req.query('pageSize') || '20', 10);
-  return c.json(await getObsUsers({page, pageSize}));
+  const country = c.req.query('country') || undefined;
+  const { users, total } = await getObsUsers({ page, pageSize, country });
+  return c.json({ users, total });
 });
 
 // GET /admin/api/analytics/token-trends — daily token aggregates
