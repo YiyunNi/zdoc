@@ -1,0 +1,18 @@
+.citationSup {
+  margin-left: 2px;
+  font-size: 10px;
+}
+
+.citationLink {
+  color: #3b6de0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.citationLink:hover {
+  text-decoration: underline;
+}
+
+.citationGroup {
+  margin-left: 4px;
+}
