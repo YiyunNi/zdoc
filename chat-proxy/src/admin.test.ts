@@ -373,4 +373,115 @@ describe('adminApp', () => {
     expect(body.profileName).toBe('my-provider');
     process.env.ADMIN_API_KEY = '';
   });
+
+  it('GET /api/health reports resolved model config, not env vars', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    process.env.AI_BASE_URL = 'https://openrouter.ai/api/v1';
+    process.env.AI_MODEL = 'anthropic/claude-sonnet-4.6';
+
+    vi.doMock('./db.js', () => createDbMock());
+    vi.doMock('./rag.js', () => ({
+      loadIndex: vi.fn(),
+      getIndexSize: () => 42,
+      getIndexStatus: vi.fn().mockResolvedValue({ready: true, chunks: 100, lastRefreshed: new Date().toISOString()}),
+      getEmbeddingProgress: vi.fn().mockReturnValue({}),
+    }));
+    vi.doMock('./runtime-config.js', () => ({
+      resolveModel: vi.fn().mockResolvedValue({
+        source: 'profile',
+        provider: 'openai-compatible',
+        model: 'deepseek-v4-pro',
+        baseURL: 'https://api.deepseek.com/v1',
+        apiKey: 'sk-test',
+      }),
+      createModelInstance: vi.fn(),
+      CONFIG_KEYS: ['chat', 'router', 'grounding', 'rewrite', 'embedding'],
+    }));
+
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/health', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.llm.model).toBe('deepseek-v4-pro');
+    expect(body.llm.provider).toBe('api.deepseek.com');
+    expect(body.llm.source).toBe('profile');
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('GET /api/health/llm tests the resolved chat model', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+
+    vi.doMock('./db.js', () => createDbMock());
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const mockGenerateText = vi.fn().mockResolvedValue(undefined);
+    vi.doMock('ai', () => ({
+      generateText: mockGenerateText,
+      streamText: vi.fn(),
+    }));
+    vi.doMock('./runtime-config.js', () => ({
+      resolveModel: vi.fn().mockResolvedValue({
+        source: 'profile',
+        provider: 'openai-compatible',
+        model: 'deepseek-v4-pro',
+        baseURL: 'https://api.deepseek.com/v1',
+        apiKey: 'sk-test',
+      }),
+      createModelInstance: vi.fn().mockReturnValue('mock-model-instance'),
+      CONFIG_KEYS: ['chat', 'router', 'grounding', 'rewrite', 'embedding'],
+    }));
+
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/health/llm', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.ok).toBe(true);
+    expect(body.model).toBe('deepseek-v4-pro');
+    expect(body.source).toBe('profile');
+    expect(mockGenerateText).toHaveBeenCalledWith(
+      expect.objectContaining({model: 'mock-model-instance', prompt: 'Say "ok"', maxOutputTokens: 5}),
+    );
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('POST /api/config/:key/test uses resolved model with profile credentials', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+
+    vi.doMock('./db.js', () => createDbMock());
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const mockGenerateText = vi.fn().mockResolvedValue(undefined);
+    vi.doMock('ai', () => ({
+      generateText: mockGenerateText,
+      streamText: vi.fn(),
+    }));
+    vi.doMock('./runtime-config.js', () => ({
+      resolveModel: vi.fn().mockResolvedValue({
+        source: 'profile',
+        provider: 'openai-compatible',
+        model: 'gpt-4o',
+        baseURL: 'https://api.openai.com/v1',
+        apiKey: 'sk-test',
+      }),
+      createModelInstance: vi.fn().mockReturnValue('mock-model-instance'),
+      CONFIG_KEYS: ['chat', 'router', 'grounding', 'rewrite', 'embedding'],
+    }));
+
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/config/chat/test', {
+      method: 'POST',
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.ok).toBe(true);
+    expect(body.model).toBe('gpt-4o');
+    expect(body.source).toBe('profile');
+    expect(mockGenerateText).toHaveBeenCalledWith(
+      expect.objectContaining({model: 'mock-model-instance'}),
+    );
+    process.env.ADMIN_API_KEY = '';
+  });
 });

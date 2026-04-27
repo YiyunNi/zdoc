@@ -11,6 +11,10 @@ vi.mock('@ai-sdk/openai', () => ({
     textEmbeddingModel: vi.fn(() => ({doEmbed: vi.fn().mockResolvedValue({embeddings: [[0.1, 0.2, 0.3]]})})),
   })),
 }));
+vi.mock('./runtime-config.js', () => ({
+  resolveModel: vi.fn().mockResolvedValue({source: 'env', provider: 'openai-compatible', model: 'test-model'}),
+  createModelInstance: vi.fn(() => 'test-model-instance'),
+}));
 vi.mock('./rag.js', () => ({
   retrieve: vi.fn().mockResolvedValue({
     context: '',

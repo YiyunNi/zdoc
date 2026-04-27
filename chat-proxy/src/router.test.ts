@@ -9,6 +9,10 @@ vi.mock('@ai-sdk/openai', () => ({
     textEmbeddingModel: vi.fn(() => ({doEmbed: vi.fn().mockResolvedValue({embeddings: [[0.1, 0.2, 0.3]]})})),
   })),
 }));
+vi.mock('./runtime-config.js', () => ({
+  resolveModel: vi.fn().mockResolvedValue({source: 'env', provider: 'openai-compatible', model: 'test-model'}),
+  createModelInstance: vi.fn(() => 'test-model-instance'),
+}));
 
 import {routeIntent, clearSessionRoute} from './router.js';
 import {generateObject} from 'ai';
