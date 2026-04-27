@@ -74,19 +74,29 @@ async function listBedrockModels(profile: ProviderProfileFull): Promise<ListedMo
     throw new Error('Profile is missing access_key_id / secret_access_key credentials');
   }
 
-  const { BedrockClient, ListFoundationModelsCommand } = await import('@aws-sdk/client-bedrock');
+  const { BedrockClient, ListFoundationModelsCommand, ListInferenceProfilesCommand } = await import('@aws-sdk/client-bedrock');
   const client = new BedrockClient({
     region,
     credentials: { accessKeyId, secretAccessKey, sessionToken },
   });
 
-  const out = await client.send(new ListFoundationModelsCommand({}));
-  const summaries = out.modelSummaries || [];
-  return summaries
+  // Fetch standard foundation models (in-region/on-demand)
+  const foundationOut = await client.send(new ListFoundationModelsCommand({}));
+  const foundationSummaries = foundationOut.modelSummaries || [];
+  const foundationModels = foundationSummaries
     .filter(m =>
       Array.isArray(m.outputModalities) && m.outputModalities.includes('TEXT') &&
       Array.isArray(m.inferenceTypesSupported) && m.inferenceTypesSupported.includes('ON_DEMAND')
     )
     .filter(m => typeof m.modelId === 'string')
     .map(m => ({ id: m.modelId as string, name: m.modelName || undefined }));
+
+  // Fetch cross-region inference profiles (e.g. us.anthropic.claude-sonnet-4-6)
+  const inferenceOut = await client.send(new ListInferenceProfilesCommand({ typeEquals: 'SYSTEM_DEFINED' }));
+  const inferenceSummaries = inferenceOut.inferenceProfileSummaries || [];
+  const inferenceModels = inferenceSummaries
+    .filter(p => p.status === 'ACTIVE' && typeof p.inferenceProfileId === 'string')
+    .map(p => ({ id: p.inferenceProfileId as string, name: p.inferenceProfileName || undefined }));
+
+  return [...foundationModels, ...inferenceModels];
 }
