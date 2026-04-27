@@ -2,7 +2,6 @@ import {Hono} from 'hono';
 import {readFileSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
-import {serveStatic} from '@hono/node-server/serve-static';
 import {loadIndex, getIndexSize, getIndexStatus, getEmbeddingProgress} from './rag.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
 import {
@@ -12,12 +11,12 @@ import {
   getObsOverview, getObsTrends, getObsRecentActivity, getObsLiveSessions,
   getObsPerformance, getObsFeedback, getObsErrors, getObsLowConfidence,
   listObsSessions, getObsSessionDetail, getObsTokenUsage,
-  getObsUsers, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue, deleteRuntimeConfigValue,
+  getObsUsers, getObsSources, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue, deleteRuntimeConfigValue,
   isDbReady,
   listProviderProfiles, getProviderProfile, upsertProviderProfile, deleteProviderProfile,
   listOAuthProfiles, getActiveOAuthProfile, upsertOAuthProfile, setOAuthProfileActive, deleteOAuthProfile,
 } from './db.js';
-import {resolveModel, createModelInstance, CONFIG_KEYS} from './runtime-config.js';
+import {resolveModel, createModelInstance, CONFIG_KEYS, type ResolvedModel} from './runtime-config.js';
 import {listModelsForProfile} from './provider-models.js';
 import {getSessionCount} from './sessions.js';
 import {getStats} from './feedback.js';
@@ -30,15 +29,27 @@ import {listAdmins, addAdmin, removeAdmin, healAdminProfile} from './auth/admin-
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-function loadDashboardHtml(): string {
-  try {
-    return readFileSync(join(__dirname, '../dashboard/dist/index.html'), 'utf-8');
-  } catch {
-    return '<html><body><h1>Dashboard not built</h1><p>Run <code>pnpm build</code> in chat-proxy/dashboard/</p></body></html>';
-  }
+// Pre-load dashboard HTML at startup
+let dashboardHtml = '';
+try {
+  dashboardHtml = readFileSync(join(__dirname, 'admin-dashboard.html'), 'utf-8');
+} catch {
+  dashboardHtml = '<html><body><h1>Dashboard not found</h1><p>admin-dashboard.html missing from src/</p></body></html>';
 }
 
-let dashboardHtml = loadDashboardHtml();
+/** Extract a display host/region from a ResolvedModel for health reporting */
+function resolvedProviderDisplay(r: ResolvedModel): string {
+  if (r.source === 'profile') {
+    if (r.provider === 'openai-compatible') {
+      return r.baseURL.replace(/\/v\d+$/, '').replace(/^https?:\/\//, '');
+    }
+    if (r.provider === 'bedrock') {
+      return r.region;
+    }
+  }
+  // env fallback
+  return (process.env.AI_BASE_URL || '').replace(/\/v\d+$/, '').replace(/^https?:\/\//, '');
+}
 
 export const adminApp = new Hono();
 
@@ -49,11 +60,6 @@ export const adminApp = new Hono();
 adminApp.get('/dashboard', c => {
   return c.html(dashboardHtml);
 });
-
-adminApp.use('/dashboard/*', serveStatic({
-  root: join(__dirname, '../dashboard/dist'),
-  rewriteRequestPath: (path) => path.replace(/^\/admin\/dashboard\//, '/'),
-}));
 
 // ---------------------------------------------------------------------------
 // Auth routes (no prior auth required)
@@ -198,6 +204,11 @@ adminApp.get('/api/health', async c => {
     } catch { /* db may be locked */ }
   }
 
+  let resolvedChat: ResolvedModel | null = null;
+  if (dbOk) {
+    try { resolvedChat = await resolveModel('chat'); } catch { /* ignore */ }
+  }
+
   const llmReady = llmHealth.lastSuccessAt !== null &&
     (llmHealth.lastErrorAt === null || new Date(llmHealth.lastSuccessAt) > new Date(llmHealth.lastErrorAt));
   const indexAgeMs = index.lastRefreshed ? now - new Date(index.lastRefreshed).getTime() : null;
@@ -209,8 +220,9 @@ adminApp.get('/api/health', async c => {
     db: {ready: dbOk},
     llm: {
       ready: llmReady,
-      provider: process.env.AI_BASE_URL?.replace(/\/v\d+$/, '').replace(/^https?:\/\//, '') || '',
-      model: process.env.AI_MODEL || '',
+      provider: resolvedProviderDisplay(resolvedChat ?? { source: 'env', provider: 'openai-compatible', model: '' }),
+      model: resolvedChat?.model || process.env.AI_MODEL || '',
+      source: resolvedChat?.source || 'env',
       lastSuccessAt: llmHealth.lastSuccessAt,
       lastErrorAt: llmHealth.lastErrorAt,
       lastError: llmHealth.lastError,
@@ -231,28 +243,26 @@ adminApp.get('/api/health', async c => {
 
 // GET /admin/api/health/llm — live LLM connectivity check (makes a real API call)
 adminApp.get('/api/health/llm', async c => {
-  const {createOpenAI} = await import('@ai-sdk/openai');
   const t0 = Date.now();
   try {
-    const embeddingProvider = createOpenAI({
-      baseURL: process.env.AI_BASE_URL || 'https://api.openai.com/v1',
-      apiKey: process.env.AI_API_KEY || '',
-    });
-    const model = embeddingProvider.textEmbeddingModel(
-      process.env.SEMANTIC_EMBEDDING_MODEL || 'text-embedding-3-small'
-    );
-    await model.doEmbed({values: ['ping']});
+    const resolved = await resolveModel('chat');
+    const model = createModelInstance(resolved);
+    const {generateText} = await import('ai');
+    await generateText({model, prompt: 'Say "ok"', maxOutputTokens: 5});
     return c.json({
       ok: true,
-      provider: process.env.AI_BASE_URL || '',
-      model: process.env.AI_MODEL || '',
+      provider: resolvedProviderDisplay(resolved),
+      model: resolved.model,
+      source: resolved.source,
       latencyMs: Date.now() - t0,
     });
   } catch (err) {
+    const resolved = await resolveModel('chat').catch(() => null);
     return c.json({
       ok: false,
-      provider: process.env.AI_BASE_URL || '',
-      model: process.env.AI_MODEL || '',
+      provider: resolved ? resolvedProviderDisplay(resolved) : (process.env.AI_BASE_URL || '').replace(/\/v\d+$/, '').replace(/^https?:\/\//, ''),
+      model: resolved?.model || process.env.AI_MODEL || '',
+      source: resolved?.source || 'env',
       latencyMs: Date.now() - t0,
       error: (err as Error).message,
     }, 502);
@@ -314,13 +324,15 @@ adminApp.get('/api/sessions', async c => {
 
 // GET /admin/api/analytics/overview — aggregated dashboard metrics
 adminApp.get('/api/analytics/overview', async c => {
-  return c.json(await getObsOverview());
+  const source = c.req.query('source') || undefined;
+  return c.json(await getObsOverview({ source }));
 });
 
 // GET /admin/api/analytics/trends — per-day time series data
 adminApp.get('/api/analytics/trends', async c => {
   const days = parseInt(c.req.query('days') || '7', 10);
-  return c.json(await getObsTrends(days));
+  const source = c.req.query('source') || undefined;
+  return c.json(await getObsTrends(days, { source }));
 });
 
 // GET /admin/api/analytics/recent-activity — recent message events
@@ -334,14 +346,22 @@ adminApp.get('/api/analytics/users', async c => {
   const page = parseInt(c.req.query('page') || '1', 10);
   const pageSize = parseInt(c.req.query('pageSize') || '20', 10);
   const country = c.req.query('country') || undefined;
-  const { users, total } = await getObsUsers({ page, pageSize, country });
-  return c.json({ users, total });
+  const agent = c.req.query('agent') || undefined;
+  const source = c.req.query('source') || undefined;
+  const { users, total, totalSessions } = await getObsUsers({ page, pageSize, country, agent, source });
+  return c.json({ users, total, totalSessions });
 });
 
 // GET /admin/api/analytics/token-trends — daily token aggregates
 adminApp.get('/api/analytics/token-trends', async c => {
   const days = parseInt(c.req.query('days') || '7', 10);
-  return c.json(await getTokenTrends(days));
+  const source = c.req.query('source') || undefined;
+  return c.json(await getTokenTrends(days, { source }));
+});
+
+// GET /admin/api/analytics/sources — distinct traffic sources for filter dropdown
+adminApp.get('/api/analytics/sources', async c => {
+  return c.json({ sources: await getObsSources() });
 });
 
 // ---------------------------------------------------------------------------
@@ -407,14 +427,14 @@ adminApp.delete('/api/config/:key', requireAuth, requireAdmin, async c => {
 // POST /admin/api/config/:key/test — validate a provider+model works
 adminApp.post('/api/config/:key/test', async c => {
   const key = c.req.param('key');
-  const {provider, model} = await resolveModel(key);
+  const resolved = await resolveModel(key);
   try {
-    const instance = createModelInstance(provider, model);
+    const instance = createModelInstance(resolved);
     const {generateText} = await import('ai');
     await generateText({model: instance, prompt: 'Say "ok"', maxOutputTokens: 5});
-    return c.json({ok: true, provider, model});
+    return c.json({ok: true, provider: resolvedProviderDisplay(resolved), model: resolved.model, source: resolved.source});
   } catch (err) {
-    return c.json({ok: false, provider, model, error: String(err)}, 400);
+    return c.json({ok: false, provider: resolvedProviderDisplay(resolved), model: resolved.model, source: resolved.source, error: String(err)}, 400);
   }
 });
 
@@ -458,7 +478,8 @@ adminApp.get('/api/token-usage/recent', async c => {
 
 // GET /admin/api/token-usage/live — token usage aggregation from DB
 adminApp.get('/api/token-usage/live', async c => {
-  return c.json({byModel: await getObsTokenUsage()});
+  const source = c.req.query('source') || undefined;
+  return c.json({byModel: await getObsTokenUsage({ source })});
 });
 
 // ---------------------------------------------------------------------------

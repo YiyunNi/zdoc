@@ -8,7 +8,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm config set registry https://registry.npmmirror.com/ && pnpm install
 
 COPY dist/ ./dist/
-COPY dashboard/dist/ ./dashboard/dist/
+COPY src/admin-dashboard.html ./dist/
 COPY prompts/ ./prompts/
 COPY package.json ./
 

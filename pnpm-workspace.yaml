@@ -1,6 +1,5 @@
 packages:
   - 'chat-proxy'
-  - 'chat-proxy/dashboard'
   - 'packages/chat-ui'
 
 allowBuilds:

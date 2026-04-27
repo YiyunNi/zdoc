@@ -8,13 +8,12 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 COPY tsconfig.json ./
 COPY src/ ./src/
-RUN pnpm exec tsc && pnpm prune --prod
+RUN pnpm exec tsc && cp src/admin-dashboard.html dist/ && pnpm prune --prod
 
 FROM node:22-alpine
 WORKDIR /app
 COPY --from=build /app/node_modules/ ./node_modules/
 COPY --from=build /app/dist/ ./dist/
-COPY dashboard/dist/ ./dashboard/dist/
 COPY prompts/ ./prompts/
 
 # Non-sensitive config — baked into image
