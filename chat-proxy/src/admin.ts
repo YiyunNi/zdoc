@@ -2,6 +2,7 @@ import {Hono} from 'hono';
 import {readFileSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
+import {serveStatic} from '@hono/node-server/serve-static';
 import {loadIndex, getIndexSize, getIndexStatus, getEmbeddingProgress} from './rag.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
 import {
@@ -29,13 +30,15 @@ import {listAdmins, addAdmin, removeAdmin, healAdminProfile} from './auth/admin-
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Pre-load dashboard HTML at startup
-let dashboardHtml = '';
-try {
-  dashboardHtml = readFileSync(join(__dirname, 'admin-dashboard.html'), 'utf-8');
-} catch {
-  dashboardHtml = '<html><body><h1>Dashboard not found</h1><p>admin-dashboard.html missing from src/</p></body></html>';
+function loadDashboardHtml(): string {
+  try {
+    return readFileSync(join(__dirname, '../dashboard/dist/index.html'), 'utf-8');
+  } catch {
+    return '<html><body><h1>Dashboard not built</h1><p>Run <code>pnpm build</code> in chat-proxy/dashboard/</p></body></html>';
+  }
 }
+
+let dashboardHtml = loadDashboardHtml();
 
 export const adminApp = new Hono();
 
@@ -46,6 +49,10 @@ export const adminApp = new Hono();
 adminApp.get('/dashboard', c => {
   return c.html(dashboardHtml);
 });
+
+adminApp.use('/dashboard/*', serveStatic({
+  root: join(__dirname, '../dashboard/dist'),
+}));
 
 // ---------------------------------------------------------------------------
 // Auth routes (no prior auth required)
