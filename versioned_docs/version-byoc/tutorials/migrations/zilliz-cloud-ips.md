@@ -105,6 +105,11 @@ Safelist the IP addresses corresponding to the cloud service provider and region
      <td><p>Sydney, Australia</p></td>
      <td><p><code>13.210.191.123</code>, <code>52.62.215.167</code></p></td>
    </tr>
+   <tr>
+     <td><p>ap-northeast-2</p></td>
+     <td><p>Seoul, Korea</p></td>
+     <td><p><code>43.200.197.223</code>, <code>54.116.65.71</code>, <code>43.200.30.237</code>, <code>13.125.81.204</code></p></td>
+   </tr>
 </table>
 
 ### GCP\{#gcp}
