@@ -5,7 +5,7 @@ const fetch = require('node-fetch')
 const Bottleneck = require('bottleneck')
 const process = require('node:process')
 const crypto = require('node:crypto')
-const { S3Client, PutObjectCommand, HeadObjectCommand } = require('@aws-sdk/client-s3');
+const { S3Client, PutObjectCommand, HeadObjectCommand, PutObjectAclCommand } = require('@aws-sdk/client-s3');
 const { NodeHttpHandler } = require('@smithy/node-http-handler');
 
 require('dotenv/config')
@@ -57,6 +57,9 @@ class larkImageDownloader {
             console.log(`[s3] ${key} found in bucket, checking hash`)
             if (response.Metadata?.hash === crypto.createHash('md5').update(buffer).digest('hex')) {
                 console.log(`[s3] ${key} unchanged, skipping upload`);
+                const aclCommand = new PutObjectAclCommand({ Bucket: process.env.AWS_BUCKET, Key: key, ACL: 'public-read' });
+                await this.s3.send(aclCommand);
+                console.log(`[s3] ${key} ACL ensured public-read`);
                 return
             }
             console.log(`[s3] ${key} hash changed, re-uploading`)
