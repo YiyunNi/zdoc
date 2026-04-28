@@ -40856,7 +40856,8 @@
 									},
 									"sessionTTL": {
 										"type": "string",
-										"description": "Auto-suspend idle window. The cluster will be automatically suspended if there is no request within the specified period. The value can be an descriptive value like `120s`, `5m`, or `1h`.",
+										"description": "Auto-suspend idle window. The cluster will be automatically suspended if there is no request within the specified period. The value can be an descriptive values like `120s`, `5m`, or `1h`.",
+										"default": "60s",
 										"x-i18n": {
 											"zh-CN": "自动挂起空闲时间。如果指定的时间段内无任何请求，集群将自动挂起。参数值为描述性时间，如 `120s`、`5m`、`1h`。"
 										}
