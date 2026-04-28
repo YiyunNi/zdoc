@@ -102,6 +102,7 @@ const config: Config = {
       },
     ],
     ['./plugins/lark-docs', larkDocsConfig],
+    ['./plugins/i18n-translator', i18nTranslatorConfig],
     './plugins/apifox-docs',
     ['./plugins/embed-markdown', {
       sources: [
