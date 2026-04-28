@@ -12,15 +12,15 @@ type: docx
 token: OVfodiKa6o3qTGxadYicI975nhh
 sidebar_position: 21
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
   - zilliz
   - zilliz cloud
   - cloud
   - index_building_progress()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

@@ -12,15 +12,15 @@ type: docx
 token: QI87dhVnioL9JLxnNKxcM8jWnkh
 sidebar_position: 3
 keywords: 
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - insert()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

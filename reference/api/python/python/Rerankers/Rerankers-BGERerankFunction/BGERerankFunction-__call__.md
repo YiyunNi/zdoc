@@ -12,15 +12,15 @@ type: docx
 token: C2AbdIReZos7HwxiZXIcyW8nnm1
 sidebar_position: 2
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud
   - \_\_call\_\_()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

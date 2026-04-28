@@ -12,15 +12,15 @@ type: docx
 token: RkQ8dnWDHo3DiDxiCVRcP1xPnob
 sidebar_position: 18
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud
   - index()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

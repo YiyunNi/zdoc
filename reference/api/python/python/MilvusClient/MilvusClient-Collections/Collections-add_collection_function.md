@@ -12,15 +12,15 @@ type: docx
 token: Qe3GdWZa9oAxjrx85tkct8ManRe
 sidebar_position: 21
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud
   - add_collection_function()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -52,7 +52,7 @@ client.add_collection_function(
 
     The name of the collection.
 
-- **function** (*Function*) -
+- **[function](./MilvusClient-Function)** (*[Function](./MilvusClient-Function)*) -
 
     **[REQUIRED]**
 

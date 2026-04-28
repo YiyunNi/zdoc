@@ -12,15 +12,15 @@ type: docx
 token: DhZRdYbfMoYIBtxrudGcwWjrngd
 sidebar_position: 3
 keywords: 
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud
   - GeminiEmbeddingFunction
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # GeminiEmbeddingFunction
 
-**Model2VecEmbeddingFunction** is a class in pymilvus that handles encoding text into embeddings using the GeminiEmbeddingFunction module to support embedding retrieval in Milvus.
+**[Model2VecEmbeddingFunction](./EmbeddingModels-Model2VecEmbeddingFunction)** is a class in pymilvus that handles encoding text into embeddings using the GeminiEmbeddingFunction module to support embedding retrieval in Milvus.
 
 ```python
 pymilvus.model.dense.GeminiEmbeddingFunction

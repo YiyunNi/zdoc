@@ -12,15 +12,15 @@ type: docx
 token: C2YSddNqZoDNmNxWqqEcuzhKn4f
 sidebar_position: 2
 keywords: 
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud
   - AzureConnectParam
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # AzureConnectParam
 
-An **AzureConnectParam** instance sets connection parameters for a **RemoteBulkWriter** instance.
+An **AzureConnectParam** instance sets connection parameters for a **[RemoteBulkWriter](./DataImport-RemoteBulkWriter)** instance.
 
 ```python
 class pymilvus.RemoteBulkWriter.AzureConnectParam
@@ -44,7 +44,7 @@ Constructs an **AzureConnectParam** object by a set of parameters, such as **con
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>An <strong>AzureConnectParam</strong> object defines the parameters necessary for Zilliz Cloud to connect to an Azure blob storage bucket.</p>
-<p>You need to create this object before initializing a <strong>RemoteBulkWriter</strong> object.</p>
+<p>You need to create this object before initializing a <strong><a href="./DataImport-RemoteBulkWriter">RemoteBulkWriter</a></strong> object.</p>
 
 </Admonition>
 

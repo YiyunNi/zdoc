@@ -12,15 +12,15 @@ type: docx
 token: XzHhd3AdCo9DCsxawYycr69CnAb
 sidebar_position: 13
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
   - zilliz
   - zilliz cloud
   - cloud
   - get_bulk_insert_state()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -77,10 +77,10 @@ res = utility.get_bulk_insert_state(task_id=task_id)
 
 RETURN TYPE:
 
-*BulkInsertState*
+*[BulkInsertState](./utility-BulkInsertState)*
 
 **RETURNS:**
-A **BulkInsertState** that contains information about the state of the specified bulk-insert task.
+A **[BulkInsertState](./utility-BulkInsertState)** that contains information about the state of the specified bulk-insert task.
 
 ```python
 ├── BulkInsertState
@@ -104,7 +104,7 @@ A **BulkInsertState** that contains information about the state of the specified
 │   └── collection_name
 ```
 
-A **BulkInsertState** object has the following fields
+A **[BulkInsertState](./utility-BulkInsertState)** object has the following fields
 
 - **task_id** (*int*)
 
@@ -162,11 +162,11 @@ A **BulkInsertState** object has the following fields
 
         The names of the files involved in the current bulk-insert task in a comma-separated string.
 
-    - **collection** (*str*)
+    - **[collection](./ORM-Collection)** (*str*)
 
         The name of the target collection.
 
-    - **partition** (*str*)
+    - **[partition](./ORM-Partition)** (*str*)
 
         The name of the target partition.
 

@@ -12,15 +12,15 @@ type: docx
 token: Pvdhdb8IrozdCgx3N4fcTWdWnPg
 sidebar_position: 4
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
   - zilliz
   - zilliz cloud
   - cloud
   - \_\_call\_\_()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -33,7 +33,7 @@ import Admonition from '@theme/Admonition';
 
 This operation in [Model2VecEmbeddingFunction](./EmbeddingModels-Model2VecEmbeddingFunction) takes a list of text strings and directly encodes them into vector embeddings.
 
-The **GeminiEmbeddingFunction()** method of Model2VecEmbeddingFunction shares the same functionality as [encode_documents()](./Model2VecEmbeddingFunction-encode_documents) and [encode_queries()](./Model2VecEmbeddingFunction-encode_queries).
+The **[GeminiEmbeddingFunction()](./EmbeddingModels-GeminiEmbeddingFunction)** method of Model2VecEmbeddingFunction shares the same functionality as [encode_documents()](./Model2VecEmbeddingFunction-encode_documents) and [encode_queries()](./Model2VecEmbeddingFunction-encode_queries).
 
 ## Request syntax\{#request-syntax}
 

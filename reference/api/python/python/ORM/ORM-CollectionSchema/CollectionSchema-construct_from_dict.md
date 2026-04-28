@@ -12,15 +12,15 @@ type: docx
 token: DYuUdc503o1TANxuGozcXhCmnRN
 sidebar_position: 3
 keywords: 
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud
   - construct_from_dict()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # construct_from_dict()
 
-This operation constructs a **CollectionSchema** object from a dictionary representation.
+This operation constructs a **[CollectionSchema](./MilvusClient-CollectionSchema)** object from a dictionary representation.
 
 ## Request Syntax\{#request-syntax}
 
@@ -49,11 +49,11 @@ construct_from_dict(
 
 **RETURN TYPE:**
 
-*CollectionSchema*
+*[CollectionSchema](./MilvusClient-CollectionSchema)*
 
 **RETURNS:**
 
-A **CollectionSchema** object.
+A **[CollectionSchema](./MilvusClient-CollectionSchema)** object.
 
 **EXCEPTIONS:**
 

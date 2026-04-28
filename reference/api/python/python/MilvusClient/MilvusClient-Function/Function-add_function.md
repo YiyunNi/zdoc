@@ -12,15 +12,15 @@ type: docx
 token: XhcVd1JXvoAgUfxSEpQcL2H6nVg
 sidebar_position: 1
 keywords: 
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud
   - add_function()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -51,7 +51,7 @@ add_function(
 
 **RETURN TYPE:**
 
-*CollectionSchema*
+*[CollectionSchema](./MilvusClient-CollectionSchema)*
 
 **RETURNS:**
 

@@ -7,20 +7,20 @@ added_since: v2.6.x
 last_modified: false
 deprecate_since: false
 notebook: false
-description: "This operation converts the current EmbeddingList instance into a two-dimensional (2D) NumPy array containing all vector embeddings. | Python | MilvusClient"
+description: "This operation converts the current EmbeddingList NumPy array containing all vector embeddings. | Python | MilvusClient"
 type: docx
 token: XQAQd2tPKon4JgxKEoAc0CCHnUg
 sidebar_position: 6
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud
   - to_numpy()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # to_numpy()
 
-This operation converts the current **EmbeddingList** instance into a two-dimensional (2D) NumPy array containing all vector embeddings.
+This operation converts the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance into a two-dimensional (2D) NumPy array containing all vector embeddings.
 
 ## Request Syntax\{#request-syntax}
 
@@ -51,7 +51,7 @@ A 2D NumPy array containing all vector embeddings in the shape **(num_embeddings
 
 - **ValueError**:
 
-    This exception will be raised if the current **EmbeddingList** instance is empty.
+    This exception will be raised if the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance is empty.
 
 ## Examples\{#examples}
 

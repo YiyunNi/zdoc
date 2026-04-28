@@ -1,120 +1,12 @@
 {
-  "overrideCategories": {
-    "Function & Model Inference": {
-      "label": "AI & Embeddings"
-    },
-    "Data": {
-      "label": "Collection",
-      "className": "data",
-      "collapsed": false,
-      "customProps": { "icon": "data" }
-    },
-    "Extract, Transform, and Load": {
-        "label": "ETL"
-    },
-    "Index Vector Fields": {
-        "label": "Vector Indexes"
-    },
-    "Index Scalar Fields": {
-        "label": "Scalar Indexes"
-    },
-    "Collection": {
-        "label": "Collections"
-    }
-  },
-  "group": [
-    {
-      "label": "Quickstarts",
-      "afterDoc": "tutorials/home",
-      "customProps": { "icon": "quickstarts" },
-      "categories": ["Get Started"]
-    },
-    {
-      "label": "Infrastructure",
-      "collapsed": false,
-      "afterCategory": "Collection",
-      "customProps": { "icon": "infrastructure" },
-      "categories": ["Cluster", "Volume", "Migrations", "Metrics & Alerts", "Backup & Restore"]
-    },
-    {
-      "label": "Administration",
-      "collapsed": false,
-      "customProps": { "icon": "administration" },
-      "categories": ["Organizations", "Projects", "Security", "Payment & Billing", "Limits & Restrictions"]
-    }
-  ],
-  "moveCategory": [
-    {
-      "label": "Search",
-      "afterCategory": "Collection",
-      "collapsed": false,
-      "customProps": { "icon": "search" }
-    },
-    {
-      "label": "Indexes",
-      "beforeCategory": "Search",
-      "collapsed": false,
-      "customProps": { "icon": "indexes" }
-    },
-    {
-      "label": "Resource Planning",
-      "into": "Infrastructure"
-    },
-    {
-      "label": "Best Practices",
-      "into": "Infrastructure"
-    },
-    {
-      "label": "AI & Embeddings",
-      "into": "Collection"
-    },
-    {
-      "label": "Analyzer",
-      "into": "Collection",
-      "afterSibling": "Schema & Data Fields"
-    },
-    {
-      "label": "Data Import",
-      "into": "Collection",
-      "afterSibling": "Insert & Delete"
-    },
-    {
-      "label": "Data Export",
-      "into": "Collection",
-      "afterSibling": "Data Import"
-    }
-  ],
-  "hideCategoriesDeep": ["Get Started"],
-  "move": [
-    {
-      "id": "tutorials/get-started/quick-start",
-      "into": "Quickstarts",
-      "position": "first"
-    },
-    {
-      "id": "tutorials/get-started/free-trials",
-      "into": "Payment & Billing",
-      "position": "first"
-    },
-    {
-      "id": "tutorials/get-started/understand-basics/autoindex-explained",
-      "into": "Indexes",
-      "position": "first"
-    },
-    {
-      "id": "tutorials/data/manage-indexes/index-vector-fields/tune-index-build-level",
-      "into": "Indexes",
-      "afterSibling": "tutorials/get-started/understand-basics/autoindex-explained"
-    },
-    {
-      "id": "tutorials/data/data-import-export/data-export/export-data-iterators",
-      "into": "ETL",
-      "position": "first"
-    }
-  ],
   "override": {
     "tutorials/home": { "customProps": { "icon": "home" } }
   },
+  "hide": [
+    "tutorials/dataframe-api",
+    "tutorials/collection-api/index-scalar-fields/trie-index-type",
+    "tutorials/release-notes"
+  ],
   "inject": [
     {
       "append": true,
@@ -122,24 +14,49 @@
         "type": "category",
         "label": "FAQs",
         "customProps": { "icon": "faqs" },
-        "link": { "type": "doc", "id": "tutorials/faqs/faqs" },
+        "link": { "type": "doc", "id": "tutorials/resources/faqs/faqs" },
         "items": [
-          { "type": "doc", "id": "tutorials/faqs/faq-get-started",        "label": "Get Started" },
-          { "type": "doc", "id": "tutorials/faqs/faq-resource-planning",  "label": "Resource Planning" },
-          { "type": "doc", "id": "tutorials/faqs/faq-cluster",            "label": "Cluster" },
-          { "type": "doc", "id": "tutorials/faqs/faq-collection",         "label": "Collection" },
-          { "type": "doc", "id": "tutorials/faqs/faq-data-import",        "label": "Data Import" },
-          { "type": "doc", "id": "tutorials/faqs/faq-migration",          "label": "Migration" },
-          { "type": "doc", "id": "tutorials/faqs/faq-monitors-and-metrics","label": "Monitors & Metrics" },
-          { "type": "doc", "id": "tutorials/faqs/faq-backup-and-restore", "label": "Backup & Restore" },
-          { "type": "doc", "id": "tutorials/faqs/faq-account",            "label": "Account" },
-          { "type": "doc", "id": "tutorials/faqs/faq-users-and-roles",    "label": "Users & Roles" },
-          { "type": "doc", "id": "tutorials/faqs/faq-authentication",     "label": "Authentication" },
-          { "type": "doc", "id": "tutorials/faqs/faq-security",           "label": "Security" },
-          { "type": "doc", "id": "tutorials/faqs/faq-payment-and-billing","label": "Payment & Billing" },
-          { "type": "doc", "id": "tutorials/faqs/faq-integrations",       "label": "Integrations" }
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-get-started",        "label": "Get Started" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-resource-planning",  "label": "Resource Planning" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-cluster",            "label": "Cluster" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-collection",         "label": "Collection" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-data-import",        "label": "Data Import" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-migration",          "label": "Migration" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-monitors-and-metrics","label": "Monitors & Metrics" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-backup-and-restore", "label": "Backup & Restore" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-account",            "label": "Account" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-users-and-roles",    "label": "Users & Roles" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-authentication",     "label": "Authentication" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-security",           "label": "Security" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-payment-and-billing","label": "Payment & Billing" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-integrations",       "label": "Integrations" }
         ]
       }
     }
+  ],
+  "overrideCategories": {
+    "Concepts":       { "customProps": { "icon": "concepts" }, "collapsed": true },
+    "Quickstarts":    { "customProps": { "icon": "quickstarts" }, "collapsed": true },
+    "Collection API": { "customProps": { "icon": "collection-api" }, "collapsed": true },
+    "Platform":       { "customProps": { "icon": "platform" }, "collapsed": true },
+    "Resources":      { "customProps": { "icon": "resources" }, "collapsed": true }
+  },
+  "moveCategory": [
+    {
+      "label": "Concepts",
+      "afterDoc": "tutorials/what-is-vector-lakebase",
+      "collapsed": true
+    },
+    {
+      "label": "Quickstarts",
+      "afterCategory": "Concepts",
+      "collapsed": true
+    }
+  ],
+  "sectionGroupers": [
+    "Collection API",
+    "Platform",
+    "Resources",
+    "FAQs"
   ]
 }

@@ -12,15 +12,15 @@ type: docx
 token: T1CGdXeVkoG2yAxkualc1jVonRb
 sidebar_position: 23
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
   - zilliz
   - zilliz cloud
   - cloud
   - list_bulk_insert_tasks()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -73,7 +73,7 @@ list_bulk_insert_tasks(
 *list*
 
 **RETURNS:**
-A list of **BulkInsertState** objects.
+A list of **[BulkInsertState](./utility-BulkInsertState)** objects.
 
 ```python
 ├── BulkInsertState
@@ -153,11 +153,11 @@ A list of **BulkInsertState** objects.
 
         The names of the files involved in the current bulk-insert task in a comma-separated string.
 
-    - **collection** (*str*)
+    - **[collection](./ORM-Collection)** (*str*)
 
         The name of the target collection.
 
-    - **partition** (*str*)
+    - **[partition](./ORM-Partition)** (*str*)
 
         The name of the target partition.
 

@@ -77,20 +77,6 @@ const config: Config = {
   plugins: [
     // Watch sidebar override files so `docusaurus start` rebuilds on changes
     () => ({ name: 'watch-sidebar-overrides', getPathsToWatch: () => ['config/sidebar-overrides'] }),
-    // Generate SDK guides from Cloud Guide templates before docs plugins scan
-    './plugins/sdk-guide-generator',
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'reference',
-        path: 'reference',
-        routeBasePath: 'reference',
-        sidebarPath: './sidebarsReference.ts',
-        breadcrumbs: false,
-        remarkPlugins: [remarkMath, remarkMathFix],
-        rehypePlugins: [rehypeKatex],
-      },
-    ],
     [
       '@docusaurus/plugin-content-docs',
       {

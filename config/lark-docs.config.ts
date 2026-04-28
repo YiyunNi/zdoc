@@ -24,8 +24,8 @@ interface Manual {
 // guides ========================
 
 const guides: Manual = {
-    root: 'OUWXw5c4gia34ZkQUcEcMFbWn6s',
-    base: 'PnsobATKVayIDFs6hhQcChlGnje',
+    root: 'Tg6mwbRGDitPQ3kLUQzc44I7nth',
+    base: 'PzpWbIBSSa2R83s63G0crUTtnHT:tblkC0Fuv7lWZT8F',
     sourceType: 'wiki',
     displayedSidebar: 'default',
     docSourceDir: './plugins/lark-docs/meta/sources/guides',
@@ -97,6 +97,25 @@ const pymilvus26: Manual = {
     displayedSidebar: 'pythonSidebar',
     docSourceDir: './plugins/lark-docs/meta/sources/python/v2.6.x',
     fallbackSourceDir: './plugins/lark-docs/meta/sources/python/v2.5.x',
+    sidebarPath: './config/generated/python.sidebar.js',
+    overridePath: './config/sidebar-overrides/python.json',
+    contentRoot: 'reference',
+    targets: {
+        zilliz: {
+            outputDir: 'reference/api/python/python',
+            imageDir: 'static/img',
+        },
+    },
+}
+
+const pymilvus30: Manual = {
+    root: 'UxyTfjS3wl0TF8dn9tZcRT39nUe',
+    base: 'Hk05b5eI6aXXSSsd6j9cqwwMn5a',
+    sourceType: 'drive',
+    version: 'v3.0.x',
+    displayedSidebar: 'pythonSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/python/v3.0.x',
+    fallbackSourceDir: './plugins/lark-docs/meta/sources/python/v2.6.x',
     sidebarPath: './config/generated/python.sidebar.js',
     overridePath: './config/sidebar-overrides/python.json',
     contentRoot: 'reference',
@@ -272,33 +291,32 @@ const gov1 : Manual = {
     }
 }
 
-const gov2 : Manual = {
-    root: 'IE6JwWJPgiHaZKkHCLccwq4vngh',
-    base: 'RWi9b79oeaDNkBsCkAGcoc90nif',
-    sourceType: 'wiki',
-    version: 'v2.5.x',
-    displayedSidebar: 'goSidebar',
-    docSourceDir: './plugins/lark-docs/meta/sources/go/v2.5.x',
-    targets: {
-        milvus: {
-            outputDir: 'milvus/reference/go/docs/v2',
-            imageDir: 'milvus/reference/go/images'
-        },
-        zilliz: {
-            outputDir: 'reference/api/go/go/v2',
-            imageDir: 'static/img',
-        }
-    }
-}
-
 const gov226: Manual = {
-    root: 'Ai49wNllSihwEzkNZN8cd02Jn8c',
-    base: 'FruQbiGEoa7iARshjY3crsjnnxh',
-    sourceType: 'wiki',
+    root: 'Pzejf3x4WlXq1HdtTndcfMjVnxh',
+    base: 'Yc7gbtmgSal2ewsdqlhcLWVanbh',
+    sourceType: 'drive',
     version: 'v2.6.x',
     displayedSidebar: 'goSidebar',
     docSourceDir: './plugins/lark-docs/meta/sources/go/v2.6.x',
-    fallbackSourceDir: './plugins/lark-docs/meta/sources/go/v2.5.x',
+    sidebarPath: './config/generated/go.sidebar.js',
+    overridePath: './config/sidebar-overrides/go.json',
+    contentRoot: 'reference',
+    targets: {
+        zilliz: {
+            outputDir: 'reference/api/go/go/v2',
+            imageDir: 'static/img',
+        },
+    },
+}
+
+const gov230: Manual = {
+    root: 'F9M3fK4Dbl69PPdSxTXcsIwgnDh',
+    base: 'KQT5bV62QaioKisKZT0crwZDnke',
+    sourceType: 'drive',
+    version: 'v3.0.x',
+    displayedSidebar: 'goSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/go/v3.0.x',
+    fallbackSourceDir: './plugins/lark-docs/meta/sources/go/v2.6.x',
     sidebarPath: './config/generated/go.sidebar.js',
     overridePath: './config/sidebar-overrides/go.json',
     contentRoot: 'reference',
@@ -333,6 +351,7 @@ export default {
     python,
     pymilvus25,
     pymilvus26,
+    pymilvus30,
     javaV1,
     javaV2,
     javaV225,
@@ -341,7 +360,7 @@ export default {
     nodejs25,
     nodejs26,
     gov1,
-    gov2,
     gov226,
+    gov230,
     cli01
 }

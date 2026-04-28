@@ -48,13 +48,13 @@ import Banner from '@site/src/components/Banner';
 
 <Hero>
 
-# Welcome to Zilliz Cloud Docs\{#welcome-to-zilliz-cloud-docs}
+# Build with confidence and supercharge your AI applications\{#build-with-confidence-and-supercharge-your-ai-applications}
 
 Zilliz Cloud provides a fully managed Milvus service, simplifying the deployment and scaling of vector search applications with security in mind.
 
-## Basic Vector Search
+## Basic Vector Search\{#basic-vector-search}
 
-Perform approximate nearest neighbor (ANN) searches to find the most similar vectors to your query vector. [Learn more](/docs/single-vector-search)
+Perform approximate nearest neighbor (ANN) searches to find the most similar vectors to your query vector. [Learn more](./single-vector-search).
 
 ```json
 // Dataset: 3 items with vectors and color metadata
@@ -165,7 +165,7 @@ limit: 3,
 console.log(res.results);
 ```
 
-```shell
+```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
 export TOKEN="YOUR_CLUSTER_TOKEN"
 
@@ -181,9 +181,9 @@ curl --request POST \
 }'
 ```
 
-## Filtered Search
+## Filtered Search\{#filtered-search}
 
-Narrow your search by applying metadata filters before vector search to improve result relevance. [Learn more](/docs/filtered-search)
+Narrow your search by applying metadata filters before vector search to improve result relevance. [Learn more](./filtered-search).
 
 ```json
 // Dataset: 3 items with vectors and color metadata
@@ -257,7 +257,7 @@ const res = await client.search({
 });
 ```
 
-```shell
+```bash
 curl --request POST \
 --url "${CLUSTER_ENDPOINT}/v2/vectordb/entities/search" \
 --header "Authorization: Bearer ${TOKEN}" \
@@ -271,9 +271,9 @@ curl --request POST \
 }'
 ```
 
-## Grouping Search
+## Grouping Search\{#grouping-search}
 
-Group search results by a field to aggregate data at a higher level and improve result diversity. [Learn more](/docs/grouping-search)
+Group search results by a field to aggregate data at a higher level and improve result diversity. [Learn more](./grouping-search).
 
 ```json
 // Dataset: 3 items from different documents (docId)
@@ -345,7 +345,7 @@ const res = await client.search({
 });
 ```
 
-```shell
+```bash
 curl --request POST \
 --url "${CLUSTER_ENDPOINT}/v2/vectordb/entities/search" \
 --header "Authorization: Bearer ${TOKEN}" \
@@ -359,9 +359,9 @@ curl --request POST \
 }'
 ```
 
-## Hybrid Search
+## Hybrid Search\{#hybrid-search}
 
-Combine multiple vector fields for multi-modal search across text, images, and more. [Learn more](/docs/hybrid-search)
+Combine multiple vector fields for multi-modal search across text, images, and more. [Learn more](./hybrid-search).
 
 ```json
 // Dataset: 3 items with text and image embeddings
@@ -476,7 +476,7 @@ const res = await client.search({
 });
 ```
 
-```shell
+```bash
 curl --request POST \
 --url "${CLUSTER_ENDPOINT}/v2/vectordb/entities/hybrid_search" \
 --header "Authorization: Bearer ${TOKEN}" \
@@ -491,9 +491,9 @@ curl --request POST \
 }'
 ```
 
-## Full Text Search
+## Full Text Search\{#full-text-search}
 
-Search text using keyword matching with BM25 relevance scoring for precise term retrieval. [Learn more](/docs/full-text-search)
+Search text using keyword matching with BM25 relevance scoring for precise term retrieval. [Learn more](./full-text-search).
 
 ```json
 // Dataset: 3 text documents with BM25 sparse embeddings
@@ -571,7 +571,7 @@ const res = await client.search({
 });
 ```
 
-```shell
+```bash
 curl --request POST \
 --url "${CLUSTER_ENDPOINT}/v2/vectordb/entities/search" \
 --header "Authorization: Bearer ${TOKEN}" \
@@ -584,9 +584,9 @@ curl --request POST \
 }'
 ```
 
-## Search Iterator
+## Search Iterator\{#search-iterator}
 
-Retrieve large-scale search results beyond the 16,384 limit using paginated iteration. [Learn more](/docs/with-iterators)
+Retrieve large-scale search results beyond the 16,384 limit using paginated iteration. [Learn more](./with-iterators).
 
 ```json
 // Dataset: First 3 items with vectors
@@ -681,7 +681,7 @@ while (result.length > 0) {
 }
 ```
 
-```shell
+```bash
 curl --request POST \
 --url "${CLUSTER_ENDPOINT}/v2/vectordb/entities/search_iterator" \
 --header "Authorization: Bearer ${TOKEN}" \
@@ -695,9 +695,9 @@ curl --request POST \
 }'
 ```
 
-## Query
+## Query\{#query}
 
-Retrieve entities by filtering on scalar fields or primary keys without vector search. [Learn more](/docs/get-and-scalar-query)
+Retrieve entities by filtering on scalar fields or primary keys without vector search. [Learn more](./get-and-scalar-query).
 
 ```json
 // Dataset: 3 items with vectors and color metadata
@@ -761,7 +761,7 @@ const res = await client.query({
 });
 ```
 
-```shell
+```bash
 curl --request POST \
 --url "${CLUSTER_ENDPOINT}/v2/vectordb/entities/query" \
 --header "Authorization: Bearer ${TOKEN}" \
@@ -793,15 +793,41 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 
 # Work with Your Data in Zilliz Cloud\{#work-with-your-data-in-zilliz-cloud}
 
+## Bring Compute Resources to Your Data\{#bring-compute-resources-to-your-data}
+
+1. Set up a storage integration.
+
+    Integrate an AWS S3 bucket, a Google Cloud Storage bucket, or a Microsoft Azure blob storage container with Zilliz Cloud.
+
+1. Create an [external volume](./external-volumes).
+
+    Use a path or the entire external storage as an external volume, which is a read-only reference to a bucket or path in the integrated storage, allowing Zilliz Cloud to access your data in-place without copying or moving it. 
+
+1. [Create a database](./create-database#create-database-in-on-demand-compute-or-public).
+
+    Create a database in on-demand compute. The database is a project-level resource shared by all on-demand clusters in the project. 
+
+1. Create an external collection in the database.
+
+    Map the collection columns to your Parquet files, a Lance table, an Iceberg table, or Vortex files as of 0.56.0.
+
+1. Create indexes and refresh the collection.
+
+    Index all vector fields and optional scalar fields, then refresh the collection so that Zilliz Cloud creates metadata and index files for the collection. A refresh usually completes in sub-seconds.
+
+1. Start explorations in your data.
+
+    Then you can start vector searches and scalar filtering with on-demand compute resources in your data stored in external storage.
+
 ## Bring Your Own Vectors\{#bring-your-own-vectors}
 
 1. Create and connect to your cluster.
 
-    [Create a cluster](./create-cluster) with your desired compute and storage resources and then [connect](./connect-to-cluster) to it.
+    [Create a cluster](./create-cluster) with your desired compute and storage resources and then [connect](./how-to-connect) to it.
 
 1. Create a collection.
 
-    A collection is a two-dimensional table with fixed columns and variable rows. [Create a collection](./manage-collections-sdks) to work with your data.
+    A collection is a two-dimensional table with fixed columns and variable rows. You can create an external collection to bring computation to your data and create a managed collection to enjoy a high-performance vector search service.
 
 1. Import data.
 
@@ -815,15 +841,15 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 
 1. Create and connect to your cluster.
 
-    [Create a cluster](./create-cluster) with your desired compute and storage resources and then [connect](./connect-to-cluster) to it.
+    [Create a cluster](./create-cluster) with your desired compute and storage resources and then [connect](./how-to-connect) to it.
 
 1. Set up a model provider integration or deploy a hosted model.
 
-    [Create an integration](./integrate-with-model-providers) to stores credentials for your third-party model provider. Or you can [deploy](./hosted-models) a hosted model.
+    Create an AWS, GCP, or Azure storage integration to store credentials for your third-party model provider. Or you can [deploy](./hosted-models) a hosted model.
 
-1. Create a collection and configure embedding function.
+1. Create a collection and configure the embedding function.
 
-    [Create a collection](./manage-collections-sdks) with at least one vector field and one VARCHAR field, and define a text embedding [function](./model-based-functions).
+    Create a managed collection with at least one vector field and one VARCHAR field, and define a text embedding function.
 
 1. Insert raw text data.
 
@@ -851,7 +877,7 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 
 1. Create a backup for your cluster or collection.
 
-    Backups are point-of-time copies of a cluster or collection. You can create backups [manually](./create-snapshot) or [set backup policy](./schedule-automatic-backups) for scheduled backups. You can also [copy backup to other regions](/docs/backup-to-other-regions) for improved disaster recovery capabilities.
+    Backups are point-in-time copies of a cluster or collection. You can create backups [manually](./create-backup) or [set backup policy](./schedule-automatic-backups) for scheduled backups. You can also [copy backup to other regions](/docs/backup-to-other-regions) for improved disaster recovery capabilities.
 
 1. (Optional) Export backups to object storage services.
 
@@ -859,7 +885,7 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 
 1. Restore data.
 
-    [Restore your data](./restore-from-snapshot) in the event of unexpected system failure or data loss.
+    [Restore your data](./restore-from-backup-files) in the event of unexpected system failure or data loss.
 
 </Stories>
 
@@ -871,7 +897,7 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 
     Monitor your clusters and get alerts on time.
 
-- [Access Control](./access-control)
+- Access Control
 
     Secure your data with fine-grained access control.
 
@@ -885,7 +911,7 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 
     Pay only for what you use, with no upfront costs.
 
-- [Integrations](./integrate-with-third-parties)
+- Integrations
 
     Integrate with your existing tools and workflows.
 

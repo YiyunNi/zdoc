@@ -12,15 +12,15 @@ type: docx
 token: WtyZdeFKMoSv5exaYRxcPLCSndg
 sidebar_position: 9
 keywords: 
+  - Machine Learning
+  - RAG
   - NLP
   - Neural Network
-  - Deep Learning
-  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud
   - drop_user()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

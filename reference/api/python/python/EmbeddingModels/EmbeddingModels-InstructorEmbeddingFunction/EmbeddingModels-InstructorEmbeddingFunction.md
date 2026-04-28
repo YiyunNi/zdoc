@@ -20,7 +20,7 @@ keywords:
   - zilliz cloud
   - cloud
   - InstructorEmbeddingFunction
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

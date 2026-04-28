@@ -12,15 +12,15 @@ type: docx
 token: C37ldNLbFog6ThxA23ScMldnnmb
 sidebar_position: 1
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud
   - add_connection()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # add_connection()
 
-This operation adds connections to multiple Zilliz Cloud clusters for different purposes in a batch. 
+This operation adds [connections](./ORM-Connections) to multiple Zilliz Cloud clusters for different purposes in a batch. 
 
 ## Request Syntax\{#request-syntax}
 

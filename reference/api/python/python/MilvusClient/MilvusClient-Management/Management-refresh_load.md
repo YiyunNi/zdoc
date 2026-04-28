@@ -12,15 +12,15 @@ type: docx
 token: X3NXdtC2koiAxyxhcUBcv38Wnsh
 sidebar_position: 12
 keywords: 
-  - Unstructured Data
   - vector database
   - IVF
   - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud
   - refresh_load()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -62,7 +62,7 @@ refresh_load(
 
 **RETURNS:**
 
- None
+None
 
 **EXCEPTIONS:**
 

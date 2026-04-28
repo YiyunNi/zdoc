@@ -12,15 +12,15 @@ type: docx
 token: JRNidzqX4o6VtkxVB5RcNvmHnnb
 sidebar_position: 2
 keywords: 
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud
   - compact()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -60,6 +60,10 @@ compact(
 - **is_l0** (*bool*) -
 
     Whether to perform an L0 compaction, which specifically handles L0 segments by merging delete operations into existing data segments. Defaults to **False**.
+
+- **target_size** *(str)* - 
+
+    Whether to perform a force merge compaction. Defaults to **0** or omitted.
 
 - **timeout** (*Optional[float]*) -
 
@@ -104,6 +108,12 @@ job_id = client.compact(
 job_id = client.compact(
     collection_name="my_collection",
     is_l0=True
+)
+
+#Force merge compaction
+job_id = client.compact(
+    collection_name="target_collection",
+    target_size="2048 MB"  
 )
 
 # Check compaction status

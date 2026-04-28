@@ -12,15 +12,15 @@ type: docx
 token: XYNMdg3Vpo3SE7xTRVqcJNvrn0d
 sidebar_position: 32
 keywords: 
-  - Pinecone vs Milvus
   - Chroma vs Milvus
   - Annoy vector search
   - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud
   - load_balance()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

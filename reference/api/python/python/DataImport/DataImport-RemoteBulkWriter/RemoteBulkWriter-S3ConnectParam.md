@@ -12,15 +12,15 @@ type: docx
 token: CSpOd0XgWoVAhzx5xbVcpCVfnPg
 sidebar_position: 5
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud
   - S3ConnectParam
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # S3ConnectParam
 
-An **S3ConnectParam** instance sets connection parameters for a **RemoteBulkWriter** instance.
+An **S3ConnectParam** instance sets connection parameters for a **[RemoteBulkWriter](./DataImport-RemoteBulkWriter)** instance.
 
 ```python
 class pymilvus.RemoteBulkWriter.S3ConnectParam
@@ -44,7 +44,7 @@ Constructs an **S3ConnectParam** object by a set of parameters, such as **bucket
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>An <strong>S3ConnectParam</strong> object defines the parameters necessary for Zilliz Cloud to connect to an AWS-S3-compatible bucket.</p>
-<p>You need to create this object before initializing a <strong>RemoteBulkWriter</strong> object.</p>
+<p>You need to create this object before initializing a <strong><a href="./DataImport-RemoteBulkWriter">RemoteBulkWriter</a></strong> object.</p>
 
 </Admonition>
 
@@ -123,11 +123,11 @@ connect_param = RemoteBulkWriter.S3ConnectParam(
 
 **RETURN TYPE:**
 
-*RemoteBulkWriter*
+*[RemoteBulkWriter](./DataImport-RemoteBulkWriter)*
 
 **RETURNS:**
 
-A **RemoteBulkWriter** object.
+A **[RemoteBulkWriter](./DataImport-RemoteBulkWriter)** object.
 
 **EXCEPTIONS:**
 

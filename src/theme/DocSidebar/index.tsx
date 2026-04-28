@@ -44,6 +44,9 @@ import {
   ChevronRight,
   Home,
   BookOpen,
+  Lightbulb,
+  Server,
+  Library,
 } from 'lucide-react';
 import ICONS from '../../utils/navIcons';
 import {useDropdownClose} from '../../utils/useDropdownClose';
@@ -82,7 +85,11 @@ function flattenNavSections(navItems: NavItem[]): NavItem[] {
  */
 const SIDEBAR_ICON_MAP: Record<string, React.ReactNode> = {
   home:           <Home size={18} />,
+  concepts:       <Lightbulb size={18} />,
   quickstarts:    <Rocket size={18} />,
+  'collection-api': <Layers size={18} />,
+  platform:       <Server size={18} />,
+  resources:      <Library size={18} />,
   'deploy-byoc':  <CloudUpload size={18} />,
   data:           <Database size={18} />,
   indexes:        <Layers size={18} />,
@@ -143,7 +150,8 @@ function CollapsedIconColumn({
   // Only items with a customProps.icon that exists in SIDEBAR_ICON_MAP are included.
   const iconEntries = React.useMemo(() => {
     const entries: {key: string; label: string; href: string | undefined; icon: React.ReactNode}[] = [];
-    for (const item of sidebar) {
+    for (let i = 0; i < sidebar.length; i++) {
+      const item = sidebar[i];
       const key = (item as {customProps?: {icon?: string}}).customProps?.icon;
       if (!key || !SIDEBAR_ICON_MAP[key]) continue;
       const label = (item as {label?: string}).label ?? key;
@@ -152,6 +160,20 @@ function CollapsedIconColumn({
         href = findFirstSidebarItemLink(item as PropSidebarItemCategory);
       } else if (item.type === 'link') {
         href = (item as {href: string}).href;
+      } else if (item.type === 'html') {
+        // Look ahead for the first navigable child of this section label
+        for (let j = i + 1; j < sidebar.length; j++) {
+          const child = sidebar[j];
+          if (child.type === 'category') {
+            href = findFirstSidebarItemLink(child as PropSidebarItemCategory);
+            break;
+          } else if (child.type === 'link') {
+            href = (child as {href: string}).href;
+            break;
+          } else if (child.type === 'html') {
+            break; // Next section label, stop looking
+          }
+        }
       }
       entries.push({key, label, href, icon: SIDEBAR_ICON_MAP[key]});
     }

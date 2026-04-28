@@ -12,15 +12,15 @@ type: docx
 token: R0E9dLzIAoYGCcxRVj6cjJmWnPe
 sidebar_position: 1
 keywords: 
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
   - zilliz
   - zilliz cloud
   - cloud
   - add()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # add()
 
-This operation adds a single vector embedding to the current **EmbeddingList** instance.
+This operation adds a single vector embedding to the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance.
 
 ## Request syntax\{#request-syntax}
 
@@ -46,15 +46,15 @@ add(
 
 - **embedding** (*np.ndarray, List[Any]*) - 
 
-    The vector embedding that is to be added to the current **EmbeddingList** instance.
+    The vector embedding that is to be added to the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance.
 
 **RETURN TYPE:**
 
-*EmbeddingList*
+*[EmbeddingList](./MilvusClient-EmbeddingList)*
 
 **RETURNS:**
 
-The current **EmbeddingList** instance itself for method chaining
+The current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance itself for method chaining
 
 **EXCEPTIONS:**
 

@@ -203,6 +203,7 @@ function promoteSameNameLinks(items) {
  *   hideCategoriesDeep — [categoryLabel, ...]   (removes categories by label at any depth)
  *   flattenCategories  — [categoryLabel, ...]   (replaces top-level category with its children)
  *   inject             — [{ item, prepend? | append? | before? | after? | into?, position? }]
+ *   sectionGroupers    — [categoryLabel, ...]  (replaces top-level categories with HTML section labels + promoted children)
  *
  * @param {any[]} items        Raw sidebar items (from generated .sidebar.js)
  * @param {string} overridePath Absolute path to the override JSON file
@@ -460,6 +461,32 @@ function applyOverrides(items, overridePath) {
         if (idx !== -1) items.splice(idx, 0, injection.item)
       }
     }
+  }
+
+  // 10. sectionGroupers — convert top-level categories into HTML section labels
+  //     with their children promoted to the root level
+  if (overrides.sectionGroupers && overrides.sectionGroupers.length > 0) {
+    const grouperLabels = new Set(overrides.sectionGroupers)
+    const next = []
+    for (const item of items) {
+      if (item.type === 'category' && grouperLabels.has(item.label)) {
+        const hasIcon = item.customProps?.icon
+        next.push({
+          type: 'html',
+          value: hasIcon
+            ? item.label
+            : `<span class='sidebar-section-label'>${item.label}</span>`,
+          defaultStyle: false,
+          customProps: item.customProps,
+        })
+        if (item.items && item.items.length > 0) {
+          next.push(...item.items)
+        }
+      } else {
+        next.push(item)
+      }
+    }
+    items = next
   }
 
   return items

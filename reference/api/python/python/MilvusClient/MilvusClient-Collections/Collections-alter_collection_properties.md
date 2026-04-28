@@ -4,23 +4,23 @@ slug: /python/python/Collections-alter_collection_properties
 sidebar_label: "alter_collection_properties()"
 beta: false
 added_since: v2.4.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
 notebook: false
 description: "This operation alters the specified collection properties. | Python | MilvusClient"
 type: docx
-token: Pl7Fd8C3zocPaZx3VrAcl54Dnkd
+token: SJ1FdUQQnohtObxhNgpcHalMnUc
 sidebar_position: 3
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud
   - alter_collection_properties()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -58,6 +58,10 @@ alter_collection_properties(
     - **collection.ttl.seconds** (*int*) -
 
         The time-to-live (TTL) of a collection in seconds.
+
+    - **ttl_field** (*str*)
+
+        Name of the `TIMESTAMPTZ` field to use as the logical timestamp for entity-level TTL expiration.
 
     - **mmap.enabled** (*bool*) -
 

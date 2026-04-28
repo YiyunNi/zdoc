@@ -4,23 +4,23 @@ slug: /python/python/Vector-search
 sidebar_label: "search()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
 notebook: false
 description: "This operation conducts a vector similarity search with an optional scalar filtering expression. | Python | MilvusClient"
 type: docx
-token: N6afdOON2o3U0YxMAt7cMiBqnXg
+token: DvaZdhYnyoo7lOxNIBwc5eKEn7d
 sidebar_position: 6
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud
   - search()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -50,6 +50,8 @@ search(
     anns_field: Optional[str] = None,
     ranker: Optional[Union[Function, FunctionScore]] = None,
     highlighter: Optional[Highlighter] = None,
+    group_by: Optional[GroupBy] = None,
+    order_by_fields: Optional[List[dict]] = None,
     **kwargs,
 ) -> List[List[dict]]
 ```
@@ -105,6 +107,12 @@ search(
     The sum of this value and **offset** in **param** should be less than 16,384. 
 
     In a grouping search, however, `limit` specifies the maximum number of groups to return, rather than individual entities. Each group is formed based on the specified `group_by_field`.
+
+    <Admonition type="info" icon="📘" title="Notes">
+
+    <p>When <code>group_by</code> is specified for search aggregation, do not explicitly set <code>limit</code>. Use the root <code>GroupBy.size</code> value to control the number of top-level buckets to return.</p>
+
+    </Admonition>
 
 - **output_fields** (l*ist[str]*) -
 
@@ -184,6 +192,8 @@ search(
 
     Groups search results by a specified field to ensure diversity and avoid returning multiple results from the same group.
 
+    This parameter is used by Grouping Search. It is mutually exclusive with `group_by`.
+
 - **group_size** (*int*)
 
     The target number of entities to return within each group in a grouping search. For example, setting `group_size=2` instructs the system to return up to 2 of the most similar entities (e.g., document passages or vector representations) within each group. Without setting `group_size`, the system defaults to returning only 1 entity per group.
@@ -191,6 +201,34 @@ search(
 - **strict_group_size** (*bool*)
 
     This Boolean parameter dictates whether `group_size` should be strictly enforced. When `strict_group_size=True`, the system will attempt to fill each group with exactly `group_size` results, as long as sufficient data exists within each group. If there is an insufficient number of entities in a group, it will return only the available entities, ensuring that groups with adequate data meet the specified `group_size`.
+
+- **group_by** (*GroupBy | None*) -
+
+    A `GroupBy` object that defines a search aggregation.  When this parameter is specified, Zilliz Cloud groups ANN search results into buckets based on the fields in the root `GroupBy` object. Each bucket can include per-bucket metrics, representative hits, and nested sub-groups.  `group_by` is mutually exclusive with `group_by_field`. Use `group_by_field` for existing single-field Grouping Search workflows. Use `group_by` when you need per-bucket metrics, multi-field grouping, bucket ordering, hit sorting, or nested grouping.
+
+    <Admonition type="info" icon="📘" title="Notes">
+
+    <p>Search aggregation metrics are computed over ANN-retrieved entities, not over the full collection. Bucket counts, metrics, and metric-based ordering are approximate.</p>
+
+    </Admonition>
+
+- **order_by_fields** (*list[dict] | None*) -
+
+    A list of order-by specifications for sorting search results by supported scalar fields.
+
+    Each dictionary in the list has the following keys:
+
+    - **field** (*str*) -
+
+        The name of the scalar field to sort by.
+
+    - **order** (*str*) -
+
+        The sort direction. Possible values are `"asc"` and `"desc"`. If you omit this key, Milvus sorts the field in ascending order.
+
+    Zilliz Cloud applies multiple order-by fields in the order that you specify. For entities with the same values in all specified order-by fields, Zilliz Cloud keeps the original similarity-score order.
+
+    In a grouping search, Zilliz Cloud orders groups by the specified scalar field value of each group's top entity. The `limit` parameter still controls the number of groups, and `group_size` controls the number of entities per group.
 
 - **timeout** (*float* | *None*) -
 
@@ -202,7 +240,7 @@ search(
 
     The value defaults to **None**. If specified, only the specified partitions are involved in queries.
 
-- **ranker** (*Function* | *FunctionScore*) -
+- **ranker** (*[Function](./MilvusClient-Function)* | *[FunctionScore](./MilvusClient-FunctionScore)*) -
 
     The ranker to use for the search.
 

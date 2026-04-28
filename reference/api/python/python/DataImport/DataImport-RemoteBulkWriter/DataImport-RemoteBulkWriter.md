@@ -12,15 +12,15 @@ type: docx
 token: BDP4dew9to9tQoxNEMPcBR5xnZb
 sidebar_position: 4
 keywords: 
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - RemoteBulkWriter
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -93,7 +93,7 @@ writer = RemoteBulkWriter(
 
     </Admonition>
 
-- **file_type** (*BulkFileType*) -
+- **file_type** (*[BulkFileType](./DataImport-BulkFileType)*) -
 
     The type of the output file.
 
@@ -112,7 +112,7 @@ writer = RemoteBulkWriter(
     }
     ```
 
-    -  **sep** (*string*)
+    - **sep** (*string*)
 
         The delimiter of CSV file. The value must be a string of length 1, which defaults to `","`. The following strings are not allowed: `"\0"`, `"\n"`, `"\r"`, `"""`.
 

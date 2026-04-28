@@ -12,15 +12,15 @@ type: docx
 token: F1MFdP8VvoMu17x4Vg9cH6ztnqb
 sidebar_position: 1
 keywords: 
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud
   - append_row()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -47,7 +47,7 @@ append_row(
 
     A dictionary representing an entity to be appended.
 
-    The keys and their values in the dictionary should match the schema referenced in the current **LocalBulkWriter**.
+    The keys and their values in the dictionary should match the schema referenced in the current **[LocalBulkWriter](./DataImport-LocalBulkWriter)**.
 
 ## Examples\{#examples}
 

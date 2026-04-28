@@ -12,15 +12,15 @@ type: docx
 token: KvNsd3aV4ocRNJxrZN2cg1zenqb
 sidebar_position: 7
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud
   - DataType
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -78,6 +78,10 @@ This is an enumeration that provides the following constants.
 - GEOMETRY
 
     Sets the datatype to **Geometry**.
+
+- TIMESTAMPTZ
+
+    Sets the datatype to **TIMESTAMPTZ**.
 
 - STRUCT
 

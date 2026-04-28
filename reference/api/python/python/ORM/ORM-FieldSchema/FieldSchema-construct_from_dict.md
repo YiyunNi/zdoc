@@ -12,15 +12,15 @@ type: docx
 token: DCLUdOpVjohl8HxPUx1cGjokngf
 sidebar_position: 1
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud
   - construct_from_dict()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -56,7 +56,7 @@ construct_from_dict(
 
 **RETURN TYPE:**
 
-*FieldSchema*
+*[FieldSchema](./ORM-FieldSchema)*
 
 **RETURNS:**
 

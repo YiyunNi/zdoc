@@ -4,23 +4,23 @@ slug: /python/python/CollectionSchema-add_field_1
 sidebar_label: "add_field()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v3.0.x
 deprecate_since: false
 notebook: false
 description: "This operation adds a field to the schema of a collection. | Python | MilvusClient"
 type: docx
-token: Ehbdd1HRLoB34nxU6hQcRk2Mnug
+token: N3Fbd0ZZVoFo8DxJ9r8cNgcCnOd
 sidebar_position: 1
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud
   - add_field()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -91,6 +91,8 @@ add_field(
 
     Whether the current field is the primary field in a collection.
 
+    This does not apply to external collections.
+
     <Admonition type="info" icon="📘" title="Notes">
 
     <ul>
@@ -127,6 +129,8 @@ add_field(
 - **is_partition_key** (*bool*) -
 
     Whether the current field serves as the partition key. Each collection can have one partition key.
+
+    This does not apply to external collections.
 
     <Admonition type="info" icon="📘" title="What is the partition key?">
 

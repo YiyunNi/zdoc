@@ -12,15 +12,15 @@ type: docx
 token: AdSXdtNDsoTMnJx1QoGcSsnZnWd
 sidebar_position: 5
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
   - zilliz
   - zilliz cloud
   - cloud
   - drop_database_properties()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -57,17 +57,17 @@ drop_database_properties(
 
     Names of the properties to drop. Possible database properties are as follows:
 
-      - **database.replica.number** (*int*) - Number of replicas for the database.
+    - **database.replica.number** (*int*) - Number of replicas for the database.
 
-      - **database.resource_groups** (*list[str]*) - Resource groups dedicated to the database.
+    - **database.resource_groups** (*list[str]*) - Resource groups dedicated to the database.
 
-      - **database.diskQuota.mb** (*int*) - Disk quota allocated to the database in megabytes (**MB**).
+    - **database.diskQuota.mb** (*int*) - Disk quota allocated to the database in megabytes (**MB**).
 
-      - **database.max.collections** (*int*) - Maximum number of collections allowed in the database.
+    - **database.max.collections** (*int*) - Maximum number of collections allowed in the database.
 
-      - **database.force.deny.writing** (*bool*) - Whether to deny all write operations in the database.
+    - **database.force.deny.writing** (*bool*) - Whether to deny all write operations in the database.
 
-      - **database.force.deny.reading** (*bool*) - Whether to deny all read operations in the database.
+    - **database.force.deny.reading** (*bool*) - Whether to deny all read operations in the database.
 
     - **database.replica.number** (*int*) - Number of replicas for the database.
 

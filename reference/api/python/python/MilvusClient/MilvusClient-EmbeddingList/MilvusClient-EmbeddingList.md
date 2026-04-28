@@ -12,15 +12,15 @@ type: docx
 token: Ve2WdUAfwoz456xwBIJcGvltn6b
 sidebar_position: 4
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud
   - EmbeddingList
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -73,7 +73,7 @@ EmbeddingList(
 
     - **string**, such as `'float32'`, `'float16'`, or `'uint8'`
 
-    - **DataType**, such as `DataType.FLOAT_VECTOR`, `DataType.FLOAT16_VECTOR`, `DataType.BFLOAT16_VECTOR`, `DataType.INT8_VECTOR`, or `DataType.BINARY_VECTOR`
+    - **[DataType](./Collections-DataType)**, such as `DataType.FLOAT_VECTOR`, `DataType.FLOAT16_VECTOR`, `DataType.BFLOAT16_VECTOR`, `DataType.INT8_VECTOR`, or `DataType.BINARY_VECTOR`
 
 **RETURN TYPE:**
 

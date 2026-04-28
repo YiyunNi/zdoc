@@ -80,6 +80,27 @@ module.exports = [
             "label": "S3ConnectParam"
           }
         ]
+      },
+      {
+        "type": "category",
+        "label": "VolumeBulkWriter",
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/python/python/DataImport/DataImport-VolumeBulkWriter/VolumeBulkWriter-append_row",
+            "label": "append_row()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/DataImport/DataImport-VolumeBulkWriter/VolumeBulkWriter-commit",
+            "label": "commit()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/DataImport/DataImport-VolumeBulkWriter/DataImport-VolumeBulkWriter",
+            "label": "VolumeBulkWriter"
+          }
+        ]
       }
     ]
   },
@@ -672,6 +693,21 @@ module.exports = [
             "type": "doc",
             "id": "api/python/python/MilvusClient/MilvusClient-Collections/Collections-drop_collection_function",
             "label": "drop_collection_function()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Collections/Collections-get_refresh_external_collection_progress",
+            "label": "get_refresh_external_collection_progress()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Collections/Collections-list_refresh_external_collection_jobs",
+            "label": "list_refresh_external_collection_jobs()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Collections/Collections-refresh_external_collection",
+            "label": "refresh_external_collection()"
           }
         ]
       },
@@ -916,6 +952,16 @@ module.exports = [
             "type": "doc",
             "id": "api/python/python/MilvusClient/MilvusClient-Vector/Vector-hybrid_search",
             "label": "hybrid_search()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Vector/Vector-GroupBy",
+            "label": "GroupBy"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Vector/Vector-TopHits",
+            "label": "TopHits"
           }
         ]
       },
@@ -1033,15 +1079,9 @@ module.exports = [
         ]
       },
       {
-        "type": "category",
-        "label": "FunctionScore",
-        "items": [
-          {
-            "type": "doc",
-            "id": "api/python/python/MilvusClient/MilvusClient-FunctionScore/MilvusClient-FunctionScore",
-            "label": "FunctionScore"
-          }
-        ]
+        "type": "doc",
+        "id": "api/python/python/MilvusClient/MilvusClient-FunctionScore",
+        "label": "FunctionScore"
       },
       {
         "type": "category",
@@ -1061,6 +1101,47 @@ module.exports = [
             "type": "doc",
             "id": "api/python/python/MilvusClient/MilvusClient-Highlighter/Highlighter-with_query",
             "label": "with_query()"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Snapshot",
+        "items": [
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Snapshot/Snapshot-create_snapshot",
+            "label": "create_snapshot()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Snapshot/Snapshot-describe_snapshot",
+            "label": "describe_snapshot()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Snapshot/Snapshot-drop_snapshot",
+            "label": "drop_snapshot()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Snapshot/Snapshot-get_restore_snapshot_state",
+            "label": "get_restore_snapshot_state()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Snapshot/Snapshot-list_restore_snapshot_jobs",
+            "label": "list_restore_snapshot_jobs()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Snapshot/Snapshot-list_snapshots",
+            "label": "list_snapshots()"
+          },
+          {
+            "type": "doc",
+            "id": "api/python/python/MilvusClient/MilvusClient-Snapshot/Snapshot-restore_snapshot",
+            "label": "restore_snapshot()"
           }
         ]
       }

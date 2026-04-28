@@ -12,15 +12,15 @@ type: docx
 token: Z76PdoAJkoGaMPxG4CFcCmShnwh
 sidebar_position: 5
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud
   - to_flat_array()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # to_flat_array()
 
-This operation converts the current **EmbeddingList** instance into a flattened NumPy array containing all vector embeddings concatenated.
+This operation converts the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance into a flattened NumPy array containing all vector embeddings concatenated.
 
 ## Request Syntax\{#request-syntax}
 
@@ -51,7 +51,7 @@ A flattened NumPy array containing all vector embeddings concatenated.
 
 - **ValueError**:
 
-    This exception will be raised if the current **EmbeddingList** instance is empty.
+    This exception will be raised if the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance is empty.
 
 ## Examples\{#examples}
 

@@ -12,15 +12,15 @@ type: docx
 token: RrW9dOM8do7d3ixXIP9clJJUnVg
 sidebar_position: 3
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud
   - Function
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -59,7 +59,7 @@ Function(
 
     The name of the function. This identifier is used to reference the function within queries and collections.
 
-- `function_type` (*FunctionType*) -
+- `function_type` (*[FunctionType](./Collections-FunctionType)*) -
 
     **[REQUIRED]**
 

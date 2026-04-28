@@ -12,15 +12,15 @@ type: docx
 token: HQiHd82orov0XvxAzLWcl5xRnzc
 sidebar_position: 31
 keywords: 
+  - what is milvus
+  - milvus database
   - milvus lite
   - milvus benchmark
-  - managed milvus
-  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud
   - loading_progress()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

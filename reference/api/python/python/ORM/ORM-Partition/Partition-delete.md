@@ -12,15 +12,15 @@ type: docx
 token: V9BidASNqoWYrmxo11ecuN99neg
 sidebar_position: 1
 keywords: 
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - delete()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -35,7 +35,7 @@ This operation deletes entities from a partition with a boolean expression.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Using the <strong>partition_name</strong> parameter in the <strong>delete()</strong> method of a <strong>Collection</strong> object is equivalent to using the <strong>delete()</strong> method of a <strong>Partition</strong> object.</p>
+<p>Using the <strong>partition_name</strong> parameter in the <strong>delete()</strong> method of a <strong><a href="./ORM-Collection">Collection</a></strong> object is equivalent to using the <strong>delete()</strong> method of a <strong><a href="./ORM-Partition">Partition</a></strong> object.</p>
 
 </Admonition>
 

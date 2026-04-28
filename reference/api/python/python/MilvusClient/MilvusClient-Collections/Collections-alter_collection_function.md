@@ -12,15 +12,15 @@ type: docx
 token: N9d9df9IIojLZDxft1HcU0mkn0b
 sidebar_position: 22
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - alter_collection_function()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -59,7 +59,7 @@ client.alter_collection_function(
 
     The name of the function to modify.
 
-- **function** (*Function*) -
+- **[function](./MilvusClient-Function)** (*[Function](./MilvusClient-Function)*) -
 
     **[REQUIRED]**
 

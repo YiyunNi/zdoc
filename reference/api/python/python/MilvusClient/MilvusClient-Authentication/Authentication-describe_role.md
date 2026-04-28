@@ -12,15 +12,15 @@ type: docx
 token: JJz3dFrE2oJP3AxySWYcJlf4nMh
 sidebar_position: 5
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
   - zilliz
   - zilliz cloud
   - cloud
   - describe_role()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -81,7 +81,7 @@ A list of dictionaries containing the permissions assigned to the role. The stru
 
     The type of the resource object granted to the role. 
 
-    Possible values are **Collection**, **Global**, and **User**.
+    Possible values are **[Collection](./ORM-Collection)**, **Global**, and **User**.
 
 - **object_name** (*str*) -
 

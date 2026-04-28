@@ -12,7 +12,9 @@ class larkDocScraper {
     constructor(root_node, base_app_id, target_type, doc_source_dir) {
         this.docs = undefined
         this.root = root_node
-        this.base = base_app_id
+        const baseParts = base_app_id.split(':')
+        this.base_app_token = baseParts[0]
+        this.base_table_id = baseParts.length > 1 ? baseParts[1] : null
         this.target_type = target_type
         this.doc_source_dir = doc_source_dir
 
@@ -214,16 +216,19 @@ class larkDocScraper {
         await fetcher.fetchToken()
         const token = await fetcher.token()
 
-        let url = `${FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base}/tables`
-        const table_id = (await (await fetch(url, {
-            method: "get",
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8',
-                'Authorization': `Bearer ${token}`
-            }
-        })).json()).data.items[0].table_id
+        let table_id = this.base_table_id
+        if (!table_id) {
+            let url = `${FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base_app_token}/tables`
+            table_id = (await (await fetch(url, {
+                method: "get",
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Authorization': `Bearer ${token}`
+                }
+            })).json()).data.items[0].table_id
+        }
 
-        url = `${FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base}/tables/${table_id}/records?page_size=500`
+        let url = `${FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base_app_token}/tables/${table_id}/records?page_size=500`
         const records = (await (await fetch(url, {
             method: "get",
             headers: {
@@ -239,10 +244,11 @@ class larkDocScraper {
         const slugs = {}
         if (records.length > 0) {
             for (let record of records) {
-                if (record.fields.Slug) {
-                    slugs[record.fields.Docs.link.split('/').pop()] = { slug: record.fields.Slug, title: record.fields.Docs.text }
-                } else {
-                    throw new Error(`Slug field not found for record ${record.fields['Seq. ID']}`)
+                const docField = record.fields.Doc || record.fields.Docs
+                if (record.fields.Slug && docField) {
+                    slugs[docField.link.split('/').pop()] = { slug: record.fields.Slug, title: docField.text }
+                } else if (!record.fields.Slug) {
+                    throw new Error(`Slug field not found for record ${record.fields['Seq. ID'] || record.record_id}`)
                 }
             }
         }
@@ -280,7 +286,7 @@ class larkDocScraper {
 
     async __slugify(token, title=null) {
         if (!this.slugs) {
-            await this.__base(this.base)
+            await this.__base()
         }
 
         var slug = this.slugs[token]
@@ -502,7 +508,7 @@ class larkDocScraper {
             }
 
             if (!this.slugs) {
-                await this.__base(this.base)
+                await this.__base()
             }
 
             if (this.docs.children.filter(c => c.name == this.docs.name && c.type == 'docx').length > 0) {

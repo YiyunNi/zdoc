@@ -4,23 +4,23 @@ slug: /python/python/MilvusClient-CollectionSchema
 sidebar_label: "CollectionSchema"
 beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v3.0.x
 deprecate_since: false
 notebook: false
 description: "A CollectionSchema instance represents the schema of a collection. A schema sketches the structure of a collection. | Python | MilvusClient"
 type: docx
-token: U4Q8deNe2offXCx3OgIc9QJPnnh
+token: SSiodq10FoH26hx2HlccfcAgnje
 sidebar_position: 2
 keywords: 
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud
   - CollectionSchema
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -68,6 +68,20 @@ CollectionSchema(
 
     If a description is not provided, it will be set to an empty string.
 
+- **external_source** (*string*) -
+
+    The external source URI, which should be the name of an accessible external volume..
+
+- **external_spec** (*string*) -
+
+    The external source specifications, which are a set of secondary parameters:
+
+    - **format** (*string*) - 
+
+        The format of the target source data files.
+
+        Possible values are `parquet`, `vortex`, `lance-table`, and `iceberg-table`.
+
 - **kwargs** -
 
     - **auto_id** (*bool*) -
@@ -76,11 +90,15 @@ CollectionSchema(
 
         Setting this to **True** makes the primary field automatically increment. In this case, the primary field should not be included in the data to insert to avoid errors.
 
+        This parameter does not apply to external collections.
+
     - **enable_dynamic_field** (*bool*) -
 
         Whether allows Zilliz Cloud saves the values of undefined fields in a dynamic field if the data being inserted into the target collection includes fields that are not defined in the collection's schema.
 
         When you set this to **True**,  and Zilliz Cloud will create a field called **&#36;meta** to store any undefined fields and their values from the data that is inserted.
+
+        This parameter does not apply to external collections.
 
         <Admonition type="info" icon="📘" title="What is a dynamic field?">
 
@@ -96,6 +114,8 @@ CollectionSchema(
 
         As an alternative, you can set **is_primary** when creating a **FieldSchema** object.
 
+        This parameter does not apply to external collections.
+
     - **partition_key_field** (*str*) -
 
         The name of the field that serves as the partition key.
@@ -105,6 +125,8 @@ CollectionSchema(
         Setting this makes Zilliz Cloud manage all partitions in the current collection.
 
         As an alternative, you can set **is_partition_key** when creating a **FieldSchema** object.
+
+        This parameter does not apply to external collections.
 
         <Admonition type="info" icon="📘" title="What is a partition key?">
 
@@ -117,6 +139,8 @@ CollectionSchema(
     - **partition_key_isolation** (*bool*) -
 
         Whether to enable partition key isolation to improve further search performance in scalar filtering on the partition key. For details, refer to [Use Partition Key Isolation](/docs/use-partition-key#use-partition-key-isolation).
+
+        This parameter does not apply to external collections.
 
 **RETURN TYPE:**
 

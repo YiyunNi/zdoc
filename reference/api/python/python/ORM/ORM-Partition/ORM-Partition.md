@@ -12,15 +12,15 @@ type: docx
 token: X9scdVMmxoBTuUxlKhecJXEunHd
 sidebar_position: 7
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - Partition
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -57,13 +57,13 @@ Partition(
 
 **PARAMETERS:**
 
-- **collection** (*Collection* | *str*) - 
+- **[collection](./ORM-Collection)** (*[Collection](./ORM-Collection)* | *str*) - 
 
     **[REQUIRED]**
 
     The collection in which to create a partition. 
 
-    You can either reference a **Collection** object or its name.
+    You can either reference a **[Collection](./ORM-Collection)** object or its name.
 
     <Admonition type="info" icon="📘" title="What is a collection?">
 

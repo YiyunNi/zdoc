@@ -12,15 +12,15 @@ type: docx
 token: OUz3drncZo1Er8xyITZcYz66nWE
 sidebar_position: 3
 keywords: 
+  - milvus open source
   - how does milvus work
   - Zilliz vector database
   - Zilliz database
-  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud
   - create_role()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

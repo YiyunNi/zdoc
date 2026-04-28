@@ -12,15 +12,15 @@ type: docx
 token: TWxddf6iboyM15xK4Kzc8ASknRb
 sidebar_position: 6
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud
   - load()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -35,7 +35,7 @@ This operation loads the data of the current partition into memory.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Using the <strong>partition_names</strong> parameter in the <strong>load()</strong> method of a <strong>Collection</strong> object is equivalent to using the <strong>load()</strong> method of corresponding <strong>Partition</strong> objects.</p>
+<p>Using the <strong>partition_names</strong> parameter in the <strong>load()</strong> method of a <strong><a href="./ORM-Collection">Collection</a></strong> object is equivalent to using the <strong>load()</strong> method of corresponding <strong><a href="./ORM-Partition">Partition</a></strong> objects.</p>
 
 </Admonition>
 

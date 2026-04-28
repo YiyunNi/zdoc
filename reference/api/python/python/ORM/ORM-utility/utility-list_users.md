@@ -12,15 +12,15 @@ type: docx
 token: MtF2dkZcso4XduxM194cUaiinqb
 sidebar_position: 30
 keywords: 
-  - Zilliz Cloud
   - what is milvus
   - milvus database
   - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud
   - list_users()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

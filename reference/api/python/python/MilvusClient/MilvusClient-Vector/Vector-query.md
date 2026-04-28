@@ -4,23 +4,23 @@ slug: /python/python/Vector-query
 sidebar_label: "query()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
 notebook: false
 description: "This operation conducts a scalar filtering with a specified boolean expression. | Python | MilvusClient"
 type: docx
-token: Edrcdw34jofMbNxK5HncdDT5n8e
+token: ShzCdNgEGozKi3xa3lUcHpxQnaf
 sidebar_position: 4
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud
   - query()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

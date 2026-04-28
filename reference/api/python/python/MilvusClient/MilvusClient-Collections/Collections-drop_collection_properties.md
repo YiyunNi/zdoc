@@ -4,23 +4,23 @@ slug: /python/python/Collections-drop_collection_properties
 sidebar_label: "drop_collection_properties()"
 beta: false
 added_since: v2.4.x
-last_modified: v2.5.x
+last_modified: v3.0.x
 deprecate_since: false
 notebook: false
 description: "This operation drops the specified collection properties. | Python | MilvusClient"
 type: docx
-token: WjNRdifU9o3xl5xG0W7ch4Fjnme
+token: HTnvdQ8SbodURtxPEv5cURL0n5b
 sidebar_position: 12
 keywords: 
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud
   - drop_collection_properties()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -56,6 +56,8 @@ drop_collection_properties(
     The names of the properties to drop in a list. Possible values are as follows:
 
     - `collection.ttl.seconds`
+
+    - `ttl_field`
 
     - `mmap.enabled`
 

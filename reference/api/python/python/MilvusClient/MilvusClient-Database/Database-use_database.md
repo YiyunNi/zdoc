@@ -12,15 +12,15 @@ type: docx
 token: AglQd68yqoEn8Ixkn9ociyqKnMx
 sidebar_position: 8
 keywords: 
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
   - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud
   - use_database()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

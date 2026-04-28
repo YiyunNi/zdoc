@@ -63,6 +63,9 @@ import {
   User,
   Bookmark,
   BookOpen,
+  Lightbulb,
+  Server,
+  Library,
   type LucideProps,
 } from 'lucide-react';
 
@@ -70,9 +73,13 @@ import styles from './styles.module.css';
 
 // ─── Icon map ────────────────────────────────────────────────────────────────
 
-const CATEGORY_ICONS: Record<string, React.ComponentType<LucideProps>> = {
+export const CATEGORY_ICONS: Record<string, React.ComponentType<LucideProps>> = {
   // Guides sidebar
+  concepts:       Lightbulb,
   quickstarts:    Rocket,
+  'collection-api': Layers,
+  platform:       Server,
+  resources:      Library,
   'deploy-byoc':  CloudUpload,
   data:           Database,
   indexes:        Layers,

@@ -12,15 +12,15 @@ type: docx
 token: TJundbM8FoU8UKxczaMcix3QnHb
 sidebar_position: 2
 keywords: 
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud
   - add_batch()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # add_batch()
 
-This operation adds multiple vector embeddings to the current **EmbeddingList** instance.
+This operation adds multiple vector embeddings to the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance.
 
 ## Request syntax\{#request-syntax}
 
@@ -46,15 +46,15 @@ add_batch(
 
 - **embeddings** (*List[np.ndarray], np.ndarray*) - 
 
-    The vector embeddings that are to be added to the current **EmbeddingList** instance.
+    The vector embeddings that are to be added to the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance.
 
 **RETURN TYPE:**
 
-*EmbeddingList*
+*[EmbeddingList](./MilvusClient-EmbeddingList)*
 
 **RETURNS:**
 
-The current **EmbeddingList** instance itself for method chaining
+The current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance itself for method chaining
 
 **EXCEPTIONS:**
 

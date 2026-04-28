@@ -12,15 +12,15 @@ type: docx
 token: CWZGd48FJoFHXYx40NMcTd2FnKc
 sidebar_position: 1
 keywords: 
+  - sentence transformers
   - Recommender systems
   - information retrieval
   - dimension reduction
-  - hnsw algorithm
   - zilliz
   - zilliz cloud
   - cloud
   - close()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

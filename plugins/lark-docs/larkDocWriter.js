@@ -25,17 +25,19 @@ const KNOWN_JSX_TAGS = new Set([
 
 class larkDocWriter {
     constructor(
-        root_token, 
-        base_token, 
-        displayedSidebar, 
-        docSourceDir='plugins/lark-docs/meta/sources', 
-        imageDir='static/img', 
-        targets='zilliz.saas', 
+        root_token,
+        base_token,
+        displayedSidebar,
+        docSourceDir='plugins/lark-docs/meta/sources',
+        imageDir='static/img',
+        targets='zilliz.saas',
         skip_image_download=false,
         upload_to_s3=false
     ) {
         this.root_token = root_token
-        this.base_token = base_token
+        const baseParts = base_token.split(':')
+        this.base_app_token = baseParts[0]
+        this.base_table_id = baseParts.length > 1 ? baseParts[1] : null
         this.displayedSidebar = displayedSidebar
         this.docSourceDir = docSourceDir
         this.page_blocks = []
@@ -451,16 +453,20 @@ class larkDocWriter {
 
     async __listed_docs() {
         const token = await this.tokenFetcher.token()
-        let url = `${process.env.FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base_token}/tables`
-        const table_id = (await (await fetch(url, {
-            method: "get",
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8',
-                'Authorization': `Bearer ${token}`
-            }
-        })).json()).data.items[0].table_id
 
-        url = `${process.env.FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base_token}/tables/${table_id}/records?page_size=500`
+        let table_id = this.base_table_id
+        if (!table_id) {
+            let url = `${process.env.FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base_app_token}/tables`
+            table_id = (await (await fetch(url, {
+                method: "get",
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Authorization': `Bearer ${token}`
+                }
+            })).json()).data.items[0].table_id
+        }
+
+        let url = `${process.env.FEISHU_HOST}/open-apis/bitable/v1/apps/${this.base_app_token}/tables/${table_id}/records?page_size=500`
         this.records = (await (await fetch(url, {
             method: "get",
             headers: {
@@ -476,12 +482,19 @@ class larkDocWriter {
         }
 
         const result = this.records.filter(record => {
+            const docField = record.fields.Doc || record.fields.Docs
+            if (!docField) return false
+
             const record_slug = record["fields"]["Slug"] instanceof Array ? record["fields"]["Slug"][0].text : record["fields"]["Slug"]
+            const targetField = record.fields['Publish Targets'] || record.fields.Targets
 
-            if (((record["fields"]["Docs"] && record["fields"]["Docs"]["text"] === title && record_slug == slug) || record["fields"]["Docs"]["link"].endsWith(token)) && record["fields"]["Targets"] && record["fields"]["Progress"] && (record["fields"]["Progress"] === "Draft" || record["fields"]["Progress"] === "Publish")) {
+            // Check publish eligibility via Status (new) or Progress (old)
+            const isPublishable = record.fields.Status
+                ? ['Draft', 'Approved', 'Published'].includes(record.fields.Status)
+                : (record.fields.Progress === 'Draft' || record.fields.Progress === 'Publish')
 
-                const targets = record["fields"]["Targets"].map(item => item.trim().toLowerCase())
-
+            if (((docField.text === title && record_slug == slug) || docField.link.endsWith(token)) && targetField && isPublishable) {
+                const targets = targetField.map(item => item.trim().toLowerCase())
                 if (targets.includes(this.targets.toLowerCase())) {
                     return record
                 }
@@ -489,26 +502,28 @@ class larkDocWriter {
         })
 
         if (result.length > 0) {
+            const fields = result[0].fields
+            const docField = fields.Doc || fields.Docs
             return {
                 publish: true,
-                title: result[0]["fields"]["Docs"].text,
-                slug: result[0]["fields"]["Slug"],
-                beta: result[0]["fields"]["Beta"],
-                notebook: result[0]["fields"]["Notebook"],
-                labels: result[0]["fields"]["Labels"],
-                keywords: result[0]["fields"]["Keywords"],
-                description: result[0]["fields"]["Description"],
-                tag: result[0]["fields"]["Tag"],
-                addSince: result[0]["fields"]["Added Since"],
-                lastModified: result[0]["fields"]["Last Modified At"],
-                deprecateSince: result[0]["fields"]["Deprecate Since"],
+                title: docField.text,
+                slug: fields.Slug,
+                beta: fields.Beta || null,
+                notebook: fields.Notebook || null,
+                labels: fields.Labels || null,
+                keywords: fields.Keywords || null,
+                description: fields.Description || null,
+                tag: fields.Tag || null,
+                addSince: fields['Added Since'] || null,
+                lastModified: fields['Last Modified At'] || null,
+                deprecateSince: fields['Deprecated Since'] || fields['Deprecate Since'] || null,
             }
         } else {
             return {
                 publish: false,
             }
         }
-        
+
     }
 
     __filter_content (markdown, targets) {
@@ -683,10 +698,12 @@ class larkDocWriter {
     __front_matters (title, suffix, slug, beta, notebook, type, token, sidebar_position=undefined, sidebar_label="", keywords="", displayed_sidebar=this.displayedSidebar, description="") {
         let hide_title = '';
         let hide_toc = '';
-        
-        if (keywords !== "") {
+
+        if (keywords) {
             // keywords = keywords + ',' + this.keyword_picker().join(',')
             keywords = "keywords: \n  - " + keywords.split(',').map(item => item.trim()).join('\n  - ') + '\n'
+        } else {
+            keywords = ''
         }
 
         if (displayed_sidebar === 'default') {
@@ -712,7 +729,7 @@ class larkDocWriter {
         let front_matter = '---\n' + 
         `title: "${title} | ${suffix}"` + '\n' +
         `slug: /${slug}` + '\n' +
-        `sidebar_label: "${sidebar_label !== "" ? sidebar_label : title}"` + '\n' +
+        `sidebar_label: "${sidebar_label ? sidebar_label : title}"` + '\n' +
         `beta: ${beta ? beta : 'FALSE'}` + '\n' +
         `notebook: ${notebook ? notebook : 'FALSE'}` + '\n' +
         `description: "${description} | ${suffix}"` + '\n' +
@@ -1717,10 +1734,34 @@ class larkDocWriter {
                         .replace(/^\n/, '')
                         .replace(/<br\/>/g, '\n\n');
 
+                    // Escape solitary tildes to prevent MDX strikethrough parsing
+                    cell_text = cell_text.replace(/(?<!~)~(?!~)/g, '&#126;');
+
+                    // Protect Admonition JSX from showdown's <p> wrapping
+                    var admonitions = [];
+                    cell_text = cell_text.replace(
+                        /<Admonition[^>]*>[\s\S]*?<\/Admonition>/g,
+                        (match) => {
+                            admonitions.push(match);
+                            return `%%ADMONITION_${admonitions.length - 1}%%`;
+                        }
+                    );
+
+                    admonitions = admonitions.map(admonition => admonition.replace(/\n/g, ''));
+
                     cell_text = converter.makeHtml(cell_text)
                         .replace(/\n/g, '')
                         .replace(/&amp;/g, '&')
                         .replace(/\*/g, '&ast;');
+
+                    // Restore Admonition components (strip <p> wrapper showdown added)
+                    cell_text = cell_text.replace(
+                        /<p>%%ADMONITION_(\d+)%%<\/p>/g,
+                        (_, idx) => admonitions[parseInt(idx)]
+                    );
+
+                    // escape { and } for MDX
+                    cell_text = cell_text.replace(/\{/g, '\\{').replace(/\}/g, '\\}');
 
                     if (i === 0) {
                         html += ` ${' '.repeat(indent)}    <th${colspan}${rowspan}>${cell_text}</th>\n`;
@@ -1896,22 +1937,24 @@ class larkDocWriter {
             if ('link' in style) {
                 const url = await this.__convert_link(decodeURIComponent(style['link']['url']))
 
-                var prefix = [...content.matchAll(/(^\*\*|^\*|^~~)/g)]
-                var suffix = [...content.matchAll(/(\*\*$|\*$|~~$)/g)]
+                if (url) {
+                    var prefix = [...content.matchAll(/(^\*\*|^\*|^~~)/g)]
+                    var suffix = [...content.matchAll(/(\*\*$|\*$|~~$)/g)]
 
-                if (prefix.length > 0) {
-                    prefix = prefix[0][0]
-                } else {
-                    prefix = ''
+                    if (prefix.length > 0) {
+                        prefix = prefix[0][0]
+                    } else {
+                        prefix = ''
+                    }
+
+                    if (suffix.length > 0) {
+                        suffix = suffix[0][0]
+                    } else {
+                        suffix = ''
+                    }
+
+                    content = `${prefix}[${content.replace(prefix, '').replace(suffix, '')}](${url})${suffix}`;
                 }
-
-                if (suffix.length > 0) {
-                    suffix = suffix[0][0]
-                } else {
-                    suffix = ''
-                }
-
-                content = `${prefix}[${content.replace(prefix, '').replace(suffix, '')}](${url})${suffix}`;
             }
         }
 
@@ -1974,13 +2017,21 @@ class larkDocWriter {
             url = new URL(url);
             const token = url.pathname.split('/').pop();
             const header = url.hash.slice(1);
-            const key = url.pathname.split('/')[1] === 'wiki' ? 'origin_node_token' : ['token', 'obj_token']; // TODO
+            const key = url.pathname.split('/')[1] === 'wiki' ? 'origin_node_token' : ['token', 'obj_token'];
             var page;
 
             try {
                 page = this.__fetch_doc_source(key, token);
             } catch (error) {
                 page = null;
+            }
+
+            if (!page && key === 'origin_node_token') {
+                try {
+                    page = this.__fetch_doc_source('node_token', token);
+                } catch (error) {
+                    page = null;
+                }
             }
 
             if (page) {

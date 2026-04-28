@@ -12,15 +12,15 @@ type: docx
 token: QXDxdv36FoVgjcxDV1gcDwWXnsd
 sidebar_position: 5
 keywords: 
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud
   - insert()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -35,7 +35,7 @@ This operation inserts data into the current partition.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Using the <strong>partition_name</strong> parameter in the <strong>insert()</strong> method of a <strong>Collection</strong> object is equivalent to using the <strong>insert()</strong> method of a <strong>Partition</strong> object.</p>
+<p>Using the <strong>partition_name</strong> parameter in the <strong>insert()</strong> method of a <strong><a href="./ORM-Collection">Collection</a></strong> object is equivalent to using the <strong>insert()</strong> method of a <strong><a href="./ORM-Partition">Partition</a></strong> object.</p>
 
 </Admonition>
 
