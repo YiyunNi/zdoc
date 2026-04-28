@@ -124,6 +124,12 @@ const config: Config = {
         { folder: 'reference', route: '/reference' },
       ],
     }],
+    [
+      './plugins/report-to-lark',
+      {
+        receiveId: 'oc_0e36909edb9247c7b6ecb437e99f1d68',
+      },
+    ],
   ],
 
   presets: [
