@@ -102,6 +102,7 @@ const config: Config = {
       },
     ],
     ['./plugins/lark-docs', larkDocsConfig],
+    ['./plugins/i18n-translator', i18nTranslatorConfig],
     './plugins/apifox-docs',
     ['./plugins/embed-markdown', {
       sources: [
@@ -124,6 +125,12 @@ const config: Config = {
         { folder: 'reference', route: '/reference' },
       ],
     }],
+    [
+      './plugins/report-to-lark',
+      {
+        receiveId: 'oc_0e36909edb9247c7b6ecb437e99f1d68',
+      },
+    ],
   ],
 
   presets: [

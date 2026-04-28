@@ -20,14 +20,20 @@ jobs:
     - name: get current date
       id: date
       run: echo "::set-output name=date::$(date +'%Y%m%d')"
-    - name: set up Environment
-      uses: actions/setup-node@v4.0.1
     - name: checkout repo
       uses: actions/checkout@v4
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 9
+    - name: set up Environment
+      uses: actions/setup-node@v4.0.1
+      with:
+        node-version: lts/*
+        cache: 'pnpm'
     - name: install deps & create progress card
       id: card
       run: |
-        yarn
+        pnpm install --frozen-lockfile
         npx docusaurus report-to-lark --card-create \
           --title "Global Docs Build" \
           --stages "Fetch EN docs,Build EN docs,Check EN links,Fetch SDK refs,Build SDK docs,Check SDK links"
@@ -64,7 +70,7 @@ jobs:
         git checkout origin/dev -- i18n/ 2>/dev/null || true
     - name: build docsite
       run: |
-        npm run build
+        pnpm run build
         npx docusaurus report-to-lark --card-advance
       env:
         APP_ID: ${{ secrets.APP_ID }}
@@ -128,7 +134,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: build docsite
       run: |
-        npm run build
+        pnpm run build
         npx docusaurus report-to-lark --card-advance
       env:
         APP_ID: ${{ secrets.APP_ID }}
@@ -160,13 +166,19 @@ jobs:
     runs-on: ubuntu-latest
     if: failure()
     steps:
-    - name: set up Environment
-      uses: actions/setup-node@v4.0.1
     - name: checkout repo
       uses: actions/checkout@v4
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 9
+    - name: set up Environment
+      uses: actions/setup-node@v4.0.1
+      with:
+        node-version: lts/*
+        cache: 'pnpm'
     - name: report failure
       run: |
-        yarn
+        pnpm install --frozen-lockfile
         npx docusaurus report-to-lark --card-finish --message-id ${{ needs.fetch.outputs.card_id }} --status fail --started-at "${{ needs.fetch.outputs.card_started_at }}" --stages "${{ needs.fetch.outputs.card_stages }}" --title "${{ needs.fetch.outputs.card_title }}"
       env:
         APP_ID: ${{ secrets.APP_ID }}
@@ -177,13 +189,19 @@ jobs:
     runs-on: ubuntu-latest
     if: success()
     steps:
-    - name: set up Environment
-      uses: actions/setup-node@v4.0.1
     - name: checkout repo
       uses: actions/checkout@v4
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 9
+    - name: set up Environment
+      uses: actions/setup-node@v4.0.1
+      with:
+        node-version: lts/*
+        cache: 'pnpm'
     - name: report success
       run: |
-        yarn
+        pnpm install --frozen-lockfile
         npx docusaurus report-to-lark --card-finish --message-id ${{ needs.fetch.outputs.card_id }} --status success --started-at "${{ needs.fetch.outputs.card_started_at }}" --stages "${{ needs.fetch.outputs.card_stages }}" --title "${{ needs.fetch.outputs.card_title }}"
       env:
         APP_ID: ${{ secrets.APP_ID }}
