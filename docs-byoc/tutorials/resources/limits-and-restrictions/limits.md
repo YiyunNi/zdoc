@@ -112,11 +112,6 @@ A CU is the basic unit of compute resources used for parallel processing of data
      <td><p>CU size x Replica Count &lt;=10,240</p></td>
      <td><p>On the console, you can create up to 1,024 CUs for a single cluster.</p><p>However, the limit is CU size x Replica Count &lt;=10,240 if replicas are added.</p></td>
    </tr>
-   <tr>
-     <td><p>On-demand cluster in an Enterprise project</p></td>
-     <td><p>8&lt;= CU size &lt;= 256</p></td>
-     <td><p>On the console, a single on-demand cluster supports 8 to 256 CUs.</p></td>
-   </tr>
 </table>
 
 You are welcome to [contact us](https://support.zilliz.com/hc/en-us) 
@@ -150,8 +145,6 @@ To add replicas, the cluster needs to have **12 CUs or more**. The following lim
 ## Databases\{#databases}
 
 - Each Serving-Dedicated cluster can have up to 1024 databases.
-
-- You can create up to 100 on-demand compute databases in each project.
 
 - Default database cannot be dropped.
 

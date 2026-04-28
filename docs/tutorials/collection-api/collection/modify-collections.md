@@ -277,7 +277,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### Example 2: Set entity-level TTL\{#example-2-set-entity-level-ttl}
+### Example 2: Set entity-level TTL | Private Preview\{#example-2-set-entity-level-ttl}
 
 The following code snippet designates an existing `TIMESTAMPTZ` field (`expire_at`) as the TTL field for entity-level TTL. The collection must already contain a `TIMESTAMPTZ` field with that name, and `collection.ttl.seconds` must not be set — the two TTL modes are mutually exclusive.
 

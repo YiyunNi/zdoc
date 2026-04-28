@@ -110,7 +110,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>To view databases in on-demand compute, please replace the cluster endpoint with the on-demand compute endpoint (eg. <code>https:*//*{project-id}.{region}.api.zillizcloud.com</code>.</p>
+<p>To view databases in on-demand compute, please replace the cluster endpoint with the on-demand compute endpoint (eg. <code>https:*//*\{project-id\}.\{region\}.api.zillizcloud.com</code>.</p>
 
 </Admonition>
 
@@ -190,7 +190,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>To drop databases in on-demand compute, please replace the cluster endpoint with the on-demand compute endpoint (eg. <code>https:*//*{project-id}.{region}.api.zillizcloud.com</code>.</p>
+<p>To drop databases in on-demand compute, please replace the cluster endpoint with the on-demand compute endpoint (eg. <code>https:*//*\{project-id\}.\{region\}.api.zillizcloud.com</code>.</p>
 
 </Admonition>
 

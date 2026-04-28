@@ -11,6 +11,7 @@ description: "We're excited to announce the general availability of a major Zill
 type: origin
 token: Q9ZcwPZieiYoU4kwEuOcFjewneP
 sidebar_position: 35
+displayed_sidebar: releasesSidebar
 
 ---
 

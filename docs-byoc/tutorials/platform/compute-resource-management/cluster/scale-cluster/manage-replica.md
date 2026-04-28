@@ -27,9 +27,7 @@ For users experiencing QPS bottlenecks, adding replicas can distribute the query
 
 Note that adding replicas will not increase the cluster capacity because the capacity is only determined by the number of query CUs of each cluster. If you want to increase the cluster capacity, please refer to [Scale Cluster](./scale-query-cu).
 
-This guide outlines the procedures of configuring replicas for a **serving cluster** in Zilliz Cloud. 
-
-The content on this page applies to serving clusters only.  On-demand clusters scale automatically — they spin up when a request arrives and scale back to zero when idle, with no manual intervention required.
+This guide outlines the procedures of configuring replicas for a **serving cluster** in Zilliz Cloud.
 
 ## Limits\{#limits}
 

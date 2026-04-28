@@ -21,13 +21,6 @@ import Admonition from '@theme/Admonition';
 
 In Zilliz Cloud, a **query CU** is a set of hardware resources used to serve indexes and process search requests. You can think of a query CU as a fully managed physical node that runs your query service. A **replica** is a cluster-level copy that contains the same resources and data. Query CUs primarily determine cluster capacity and compute resources, while replicas provide additional parallelism for serving queries.
 
-<Admonition type="info" icon="📘" title="Note">
-
-<p>The scaling options described in this article only apply to <strong>serving clusters</strong>. </p>
-<p><strong>On-demand clusters</strong> scale automatically — they spin up when a request arrives and scale back to zero when idle, with no manual intervention required.</p>
-
-</Admonition>
-
 ## Query CU vs Replica\{#query-cu-vs-replica}
 
 As your workload grows and more data is written, a serving cluster may eventually reach its capacity and performance limit. To proactively manage this, you can monitor **Query CU Capacity** and **Query CU Computation** on the metrics page and **scale** before you hit the limit.

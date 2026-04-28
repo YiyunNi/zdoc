@@ -34,7 +34,7 @@ Zilliz Cloud supports deploying free, serverless, and dedicated clusters on AWS.
      <th><p><strong>Location</strong></p></th>
      <th><p><strong>Free & Serverless Cluster</strong></p></th>
      <th><p><strong>Dedicated Cluster</strong></p></th>
-     <th><hr /></th>
+     <th><p><strong>On-demand Cluster</strong></p></th>
    </tr>
    <tr>
      <td rowspan="4"><p>North America</p></td>
@@ -42,14 +42,14 @@ Zilliz Cloud supports deploying free, serverless, and dedicated clusters on AWS.
      <td><p>Oregon, USA</p></td>
      <td><p>No</p></td>
      <td><p>Yes</p></td>
-     <td></td>
+     <td><p>Yes</p></td>
    </tr>
    <tr>
      <td><p>us-east-1</p></td>
      <td><p>N. Virginia, USA</p></td>
      <td><p>No</p></td>
      <td><p>Yes</p></td>
-     <td rowspan="9"></td>
+     <td rowspan="9"><p><a href="http://zilliz.com/contact-sales">Contact us</a></p></td>
    </tr>
    <tr>
      <td><p>us-east-2</p></td>
@@ -117,7 +117,7 @@ Free, serverless, and dedicated clusters can be deployed on GCP.
      <th><p><strong>Location</strong></p></th>
      <th><p><strong>Free & Serverless Cluster</strong></p></th>
      <th><p><strong>Dedicated Cluster</strong></p></th>
-     <th><hr /></th>
+     <th><p><strong>On-demand Cluster</strong></p></th>
    </tr>
    <tr>
      <td rowspan="3"><p>North America</p></td>
@@ -125,7 +125,7 @@ Free, serverless, and dedicated clusters can be deployed on GCP.
      <td><p>Oregon, USA</p></td>
      <td><p>Yes</p></td>
      <td><p>Yes</p></td>
-     <td rowspan="5"></td>
+     <td rowspan="5"><p><a href="http://zilliz.com/contact-sales">Contact us</a></p></td>
    </tr>
    <tr>
      <td><p>us-east4</p></td>
@@ -168,7 +168,7 @@ Zilliz Cloud supports deploying dedicated clusters on Microsoft Azure.
      <th><p><strong>Location</strong></p></th>
      <th><p><strong>Free & Severless Cluster</strong></p></th>
      <th><p><strong>Dedicated Cluster</strong></p></th>
-     <th><hr /></th>
+     <th><p><strong>On-demand Cluster</strong></p></th>
    </tr>
    <tr>
      <td rowspan="3"><p>North America</p></td>
@@ -176,7 +176,7 @@ Zilliz Cloud supports deploying dedicated clusters on Microsoft Azure.
      <td><p>Virginia, USA</p></td>
      <td><p>No</p></td>
      <td><p>Yes</p></td>
-     <td rowspan="6"></td>
+     <td rowspan="6"><p><a href="http://zilliz.com/contact-sales">Contact us</a></p></td>
    </tr>
    <tr>
      <td><p>East US 2</p></td>

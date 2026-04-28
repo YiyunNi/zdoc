@@ -45,7 +45,7 @@ Once created, an external collection can access your data directly and keep it i
 
 When your data changes, manually triggering a sub-second refresh updates the metadata, keeping Zilliz Cloud always up to date.
 
-External collections are available in both serving cluster and databases.
+External collections are available in both the serving cluster and the databases.
 
 ## Limits & restrictions\{#limits-and-restrictions}
 
@@ -65,7 +65,7 @@ When compared with managed collections, external collections have the following 
 
 - You cannot use the text match with BM25.
 
-- You must create an index, then trigger a refresh so the index can be built.
+- You must create an index, then trigger a refresh so that Zilliz Cloud creates metadata and indexes for your data
 
 ## Step 1: Create schema\{#step-1-create-schema}
 
@@ -263,17 +263,25 @@ schema = schema.
 
 ## Step 3: Create a collection\{#step-3-create-a-collection}
 
-After adding all the fields to the schema, you can create the collection.
+After adding all the fields to the schema, you can create the external collection.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>You can create external collections in a database at the project level, which is usually associated with an on-demand cluster.</p>
+
+</Admonition>
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
+# connect the database
 client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
+    uri="https://{project-id}.{region}.api.zillizcloud.com",
+    token="YOUR_API_KEY"
 )
 
+# create the collection
 client.create_collection(
     collection_name="test_collection",
     schema=schema
@@ -301,8 +309,8 @@ import (
 ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
-milvusAddr := "YOUR_CLUSTER_ENDPOINT"
-token := "YOUR_CLUSTER_TOKEN"
+milvusAddr := "https://{project-id}.{region}.api.zillizcloud.com"
+token := "YOUR_API_KEY"
 
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
@@ -563,5 +571,5 @@ The refresh operation is asynchronous, so you need to set up an iteration to mon
 
 ## Follow-ups\{#follow-ups}
 
-Once you have refreshed the external collection and the manifest files are available, you can run similarity searches and queries in the external collection as you would in any managed collection.
+Once you have refreshed the external collection and the manifest files are available, you can  conduct similarity searches and queries in the external collection as you would in any managed collection. 
 

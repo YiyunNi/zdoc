@@ -11,6 +11,7 @@ description: "Zilliz Cloud has introduced two major enhancements in its latest r
 type: origin
 token: NmolwVTkCiQ2yZkXsJhcftyTnhc
 sidebar_position: 22
+displayed_sidebar: releasesSidebar
 
 ---
 

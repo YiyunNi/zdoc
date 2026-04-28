@@ -36,7 +36,7 @@ Zilliz Cloud exposes three endpoints, each with distinct responsibilities.
    <tr>
      <td><p>URL Pattern</p></td>
      <td><p><code>https:&ast;//&ast;api.cloud.zilliz.com</code></p></td>
-     <td><p><code>https:&ast;//&ast;\{project-id\}.\{region\}.api.cloud.zilliz.com</code></p></td>
+     <td><p><code>https:&ast;//&ast;\{project-id\}.\{region\}.api.zillizcloud.com</code></p></td>
      <td><p><code>https:&ast;//&ast;\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p></td>
    </tr>
    <tr>
@@ -74,7 +74,7 @@ client = MilvusClient(
 
 # connect to a free / serverless cluster
 client = MilvusClient(
-    uri="https://{cluster-id}.serverless.{region}.cloud.zilliz.com",
+    uri="https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com",
     token="YOUR_API_KEY"
 )
 ```
@@ -89,7 +89,7 @@ Zilliz Cloud also provides standalone databases for on-demand compute requiremen
 from pymilvus import MilvusClient
 
 client = MilvusClient(
-    uri="https://{project-id}.{region}.api.cloud.zilliz.com",
+    uri="https://{project-id}.{region}.api.zillizcloud.com",
     cluster="inxx-xxxxxxxxxxxxxxx",
     token="YOUR_API_KEY"
 )

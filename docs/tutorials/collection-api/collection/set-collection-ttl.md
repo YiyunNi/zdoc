@@ -43,7 +43,7 @@ There are two TTL modes:
 
 ## Limits\{#limits}
 
-- The two TTL modes are mutually exclusive. A collection cannot have both `collection.ttl.seconds` and `ttl_field` set at the same time. To switch, see [Migrate between the two modes](./set-collection-ttl#migrate-between-the-two-modes).
+- The two TTL modes are mutually exclusive. A collection cannot have both `collection.ttl.seconds` and `ttl_field` set at the same time. To switch, see [Migrate between the two modes](./set-collection-ttl#migrate-between-the-two-modes-or-private-preview).
 
 - Collection-level TTL applies one window to the whole collection. If a single row needs a different lifetime, use entity-level TTL.
 
@@ -486,7 +486,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Set entity-level TTL | Public Preview\{#set-entity-level-ttl}
+## Set entity-level TTL | Private Preview\{#set-entity-level-ttl}
 
 Entity-level TTL lets each entity carry its own absolute expiration time. The time is stored in a dedicated `TIMESTAMPTZ` column that you declare in the schema, and you mark that column as the TTL field through the `ttl_field` collection property.
 
@@ -1177,7 +1177,7 @@ await client.dropCollectionProperties({
 
 Dropping `ttl_field` disables the automatic filter for future queries, but entities that had already expired are not automatically surfaced again. To make a previously-expired entity visible, upsert it with a `None` or future expiration timestamp — that is the only way to restore access to expired rows within the same load session.
 
-## Migrate between the two modes\{#migrate-between-the-two-modes}
+## Migrate between the two modes | Private Preview\{#migrate-between-the-two-modes}
 
 The two TTL modes are mutually exclusive, so switching between them is a multi-step operation.
 

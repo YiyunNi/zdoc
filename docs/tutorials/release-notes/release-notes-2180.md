@@ -11,6 +11,7 @@ description: "In this release, Zilliz Cloud introduces several powerful enhancem
 type: origin
 token: WBONwyqFAi02DTkCG41c93wCn6e
 sidebar_position: 9
+displayed_sidebar: releasesSidebar
 
 ---
 

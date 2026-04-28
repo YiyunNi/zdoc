@@ -10,7 +10,7 @@ notebook: FALSE
 description: "A vector database efficiently stores, indexes, and searches for high-dimensional vectors. Unlike traditional databases that query by exact matches or range scans, vector databases solve a different problem given a query vector, they find the most similar vectors in the dataset. | Cloud"
 type: origin
 token: YNq1wQVkui50CSk83DXcsxD8nfd
-sidebar_position: 2
+sidebar_position: 3
 keywords: 
   - zilliz
   - vector database

@@ -11,6 +11,7 @@ description: "Now Zilliz Cloud services are available on Azure, starting with th
 type: origin
 token: A5lpwIZcZiTLqakdt6rcCmPcnEe
 sidebar_position: 24
+displayed_sidebar: releasesSidebar
 
 ---
 

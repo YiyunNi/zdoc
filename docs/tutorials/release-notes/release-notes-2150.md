@@ -11,6 +11,7 @@ description: "We’re thrilled to share that Zilliz BYOC has introduced several 
 type: origin
 token: JPNiwF6rPiNe0pkx460cr321nTc
 sidebar_position: 11
+displayed_sidebar: releasesSidebar
 
 ---
 

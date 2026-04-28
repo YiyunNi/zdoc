@@ -117,6 +117,21 @@ module.exports = function (context, options) {
                         process.once('SIGINT', writerCleanup)
                         process.once('SIGTERM', writerCleanup)
 
+                        // Pull and write a specific subtree (node + descendants)
+                        if (opts.docToken !== undefined) {
+                            try {
+                                console.log(`Pulling subtree starting from ${opts.docToken}...`)
+                                if (!opts.skipSourceDown) {
+                                    await scraper.fetch(true, opts.docToken)
+                                }
+                                await writer.write_subtree(outputDir, opts.docToken)
+                                console.log('Subtree pull complete.')
+                            } finally {
+                                writerCleanup()
+                            }
+                            return
+                        }
+
                         // Add necessary imports to category pages
                         if (opts.postProcess) {
                             console.log('Post processing file paths')

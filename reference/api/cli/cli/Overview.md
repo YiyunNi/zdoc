@@ -7,7 +7,7 @@ sidebar_position: 0
 
 # Zilliz CLI
 
-The Zilliz Command Line Interface (CLI) provides a command-line tool for managing your Zilliz Cloud resources and performing data operations.
+The [Zilliz Command Line Interface (CLI)](https://github.com/zilliztech/zilliz-cli) provides a command-line tool for managing your Zilliz Cloud resources and performing data operations.
 
 ## Features
 

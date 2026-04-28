@@ -11,6 +11,7 @@ description: "This release includes a fresh web console user interface, support 
 type: origin
 token: HwWfwN9SViqU0Ukcv68cufBAnBe
 sidebar_position: 15
+displayed_sidebar: releasesSidebar
 
 ---
 

@@ -47,6 +47,7 @@ import {
   Lightbulb,
   Server,
   Library,
+  AlertTriangle,
 } from 'lucide-react';
 import ICONS from '../../utils/navIcons';
 import {useDropdownClose} from '../../utils/useDropdownClose';
@@ -87,6 +88,7 @@ const SIDEBAR_ICON_MAP: Record<string, React.ReactNode> = {
   home:           <Home size={18} />,
   concepts:       <Lightbulb size={18} />,
   quickstarts:    <Rocket size={18} />,
+  overview:       <BookOpen size={18} />,
   'collection-api': <Layers size={18} />,
   platform:       <Server size={18} />,
   resources:      <Library size={18} />,
@@ -128,6 +130,7 @@ const SIDEBAR_ICON_MAP: Record<string, React.ReactNode> = {
   'rest-alias':      <LinkIcon size={18} />,
   'rest-user':       <User size={18} />,
   'rest-index':      <Bookmark size={18} />,
+  'limits-restrictions': <AlertTriangle size={18} />,
 };
 
 function CollapsedIconColumn({
@@ -160,20 +163,6 @@ function CollapsedIconColumn({
         href = findFirstSidebarItemLink(item as PropSidebarItemCategory);
       } else if (item.type === 'link') {
         href = (item as {href: string}).href;
-      } else if (item.type === 'html') {
-        // Look ahead for the first navigable child of this section label
-        for (let j = i + 1; j < sidebar.length; j++) {
-          const child = sidebar[j];
-          if (child.type === 'category') {
-            href = findFirstSidebarItemLink(child as PropSidebarItemCategory);
-            break;
-          } else if (child.type === 'link') {
-            href = (child as {href: string}).href;
-            break;
-          } else if (child.type === 'html') {
-            break; // Next section label, stop looking
-          }
-        }
       }
       entries.push({key, label, href, icon: SIDEBAR_ICON_MAP[key]});
     }

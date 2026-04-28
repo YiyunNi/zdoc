@@ -11,6 +11,7 @@ description: "We're pleased to announce the launch of our AWS Frankfurt region i
 type: origin
 token: MocQwCCItiHYEbkkJtOcROPTnod
 sidebar_position: 25
+displayed_sidebar: releasesSidebar
 
 ---
 

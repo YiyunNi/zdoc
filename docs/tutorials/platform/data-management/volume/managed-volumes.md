@@ -90,7 +90,7 @@ export TOKEN="YOUR_API_KEY"
 
 You can create a volume on the web console or via SDK.
 
-- **Via SDK**
+- **Via SDKs**
 
     A volume is specific to a Zilliz Cloud project. When creating a volume, you need to provide the project ID, region ID, and the name of the volume, as follows:
 
@@ -252,11 +252,11 @@ You can create a volume on the web console or via SDK.
 
 ## View managed volumes\{#view-managed-volumes}
 
-- **Via SDK**
+You can view all existing volumes in a project.
 
-    You can check the volumes already created within a specific Zilliz Cloud project as follows:
+- **Via SDKs**
 
-    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"cURL","value":"bash"}]}>
+    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Shell","value":"shell"}]}>
     <TabItem value='python'>
 
     ```python
@@ -285,7 +285,8 @@ You can create a volume on the web console or via SDK.
     #     "pageSize": 10,
     #     "volumes": [
     #         {
-    #             "volumeName": "my_volume"
+    #             "volumeName": "ext_volume"
+    #             "type":"EXTERNAL"
     #         }        
     #     ]
     # }
@@ -329,17 +330,17 @@ You can create a volume on the web console or via SDK.
     //     "pageSize": 10,
     //     "volumes": [
     //         {
-    //             "volumeName": "my_volume"
+    //             "volumeName": "my_volume",
+    //             "type":"EXTERNAL"
     //         }        
     //     ]
     // }
     ```
 
     </TabItem>
+    </Tabs>
 
-    <TabItem value='bash'>
-
-    ```bash
+    ```shell
     export BASE_URL="https://api.cloud.zilliz.com"
     export TOKEN="YOUR_API_KEY"
     
@@ -368,10 +369,15 @@ You can create a volume on the web console or via SDK.
     #}
     ```
 
-    </TabItem>
-    </Tabs>
+- **Via web console**
 
-    You can also check the details of a specific managed volume.
+    ![Hp1Hwxoj9hkJqdbECCYcB4G6nVe](https://zdoc-images.s3.us-west-2.amazonaws.com/Hp1Hwxoj9hkJqdbECCYcB4G6nVe.png)
+
+## Check volume details\{#check-volume-details}
+
+You can also check the details of a specific managed volume.
+
+- **Via SDKs**
 
     ```bash
     export BASE_URL="https://api.cloud.zilliz.com"
@@ -573,25 +579,6 @@ Currently, you can only delete data from a managed volume via the web console.
 
 </Procedures>
 
-## Monitor volume status\{#monitor-volume-status}
-
-You can check the volume status via the web console. The following table lists the possible volume statuses.
-
-<table>
-   <tr>
-     <th><p><strong>Status</strong></p></th>
-     <th><p><strong>Description</strong></p></th>
-   </tr>
-   <tr>
-     <td><p><strong>Running</strong></p></td>
-     <td><p>The volume is active and usable.</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>Frozen</strong></p></td>
-     <td><p>The organization is frozen due to overdue <a href="./view-invoice">invoices</a>. The volume cannot be used for new operations. Please pay your bill to continue using volumes.</p></td>
-   </tr>
-</table>
-
 ## Delete a managed volume\{#delete-a-managed-volume}
 
 You can delete a managed volume at any time if it is no longer needed. Note that the free trial volume can only be created once per organization. Once deleted, you can no longer create any free trial volume.
@@ -604,7 +591,7 @@ Deleting a managed volume removes **all its files and folders** as well.
 
 </Admonition>
 
-- **Via SDK**
+- **Via SDKs**
 
     You can delete a managed volume as follows:
 
@@ -762,4 +749,23 @@ To continue using volumes, first settle all outstanding invoices.
 **Why can't I see the free trial volume option on the web console?**
 
 The free trial volume option is hidden once a free trial volume has been created for your organization. Each organization can create only one free trial volume.
+
+**What do the volume statuses mean?**
+
+The following table lists the possible volume statuses.
+
+<table>
+   <tr>
+     <th><p><strong>Status</strong></p></th>
+     <th><p><strong>Description</strong></p></th>
+   </tr>
+   <tr>
+     <td><p><strong>Running</strong></p></td>
+     <td><p>The volume is active and usable.</p></td>
+   </tr>
+   <tr>
+     <td><p><strong>Frozen</strong></p></td>
+     <td><p>The organization is frozen due to overdue <a href="./view-invoice">invoices</a>. The volume cannot be used for new operations. Please pay your bill to continue using volumes.</p></td>
+   </tr>
+</table>
 

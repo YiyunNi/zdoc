@@ -11,6 +11,7 @@ description: "Zilliz Cloud now supports Milvus 2.5 in Public Preview, introducin
 type: origin
 token: LRRVwYzxKioMiMk7cf6czQuhn7d
 sidebar_position: 13
+displayed_sidebar: releasesSidebar
 
 ---
 

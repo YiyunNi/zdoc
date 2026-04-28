@@ -11,6 +11,7 @@ description: "We're thrilled to unveil the newest Zilliz Cloud update, featuring
 type: origin
 token: ZvSOwB7zkir7PjkzrOPciC5WnTe
 sidebar_position: 30
+displayed_sidebar: releasesSidebar
 
 ---
 

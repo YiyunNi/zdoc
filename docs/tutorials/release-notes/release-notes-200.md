@@ -11,6 +11,7 @@ description: "The release of Zilliz Cloud sets a new standard in vector database
 type: origin
 token: BcXMwUYQ3iD7mEkWKFhcU5PUnB5
 sidebar_position: 29
+displayed_sidebar: releasesSidebar
 
 ---
 

@@ -11,6 +11,7 @@ description: "This release introduces two new features in PRIVATE PREVIEW a new 
 type: origin
 token: FSUqwEEIii9k2sklkcLcIFJJnbf
 sidebar_position: 12
+displayed_sidebar: releasesSidebar
 
 ---
 

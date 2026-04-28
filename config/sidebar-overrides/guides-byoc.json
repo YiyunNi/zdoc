@@ -1,48 +1,81 @@
 {
   "override": {
-    "tutorials/home": { "customProps": { "icon": "home" } }
+    "tutorials/byoc-intro": { "customProps": { "icon": "home" } }
   },
   "hide": [
     "tutorials/dataframe-api",
-    "tutorials/collection-api/index-scalar-fields/trie-index-type"
+    "tutorials/collection-api/index-scalar-fields/trie-index-type",
+    "tutorials/resources/faqs/faqs"
+  ],
+  "hideCategories": [
+    "Release Notes"
   ],
   "inject": [
     {
-      "prepend": true,
-      "item": {
-        "type": "link",
-        "label": "BYOC Overview",
-        "href": "/docs/byoc/byoc-intro",
-        "customProps": { "icon": "home" }
-      }
-    },
-    {
-      "append": true,
+      "into": "Resources",
+      "afterSibling": "Limits & Restrictions",
       "item": {
         "type": "category",
         "label": "FAQs",
-        "customProps": { "icon": "faqs" },
-        "link": { "type": "doc", "id": "tutorials/resources/faqs/faqs" },
         "items": [
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-get-started",        "label": "Get Started" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-resource-planning",  "label": "Resource Planning" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-cluster",            "label": "Cluster" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-collection",         "label": "Collection" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-data-import",        "label": "Data Import" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-migration",          "label": "Migration" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-monitors-and-metrics","label": "Monitors & Metrics" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-backup-and-restore", "label": "Backup & Restore" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-users-and-roles",    "label": "Users & Roles" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-authentication",     "label": "Authentication" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-security",           "label": "Security" },
-          { "type": "doc", "id": "tutorials/resources/faqs/faq-integrations",       "label": "Integrations" }
-        ]
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-get-started" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-collection" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-data-import" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-cluster" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-backup-and-restore" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-migration" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-monitors-and-metrics" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-resource-planning" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-security" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-authentication" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-users-and-roles" },
+          { "type": "doc", "id": "tutorials/resources/faqs/faq-integrations" }
+        ],
+        "collapsed": true,
+        "customProps": { "icon": "faqs" }
       }
     }
   ],
+  "moveCategory": [
+    {
+      "label": "Deploy BYOC",
+      "afterDoc": "tutorials/byoc-intro",
+      "collapsed": true
+    },
+    {
+      "label": "Quickstarts",
+      "afterCategory": "Deploy BYOC",
+      "collapsed": true
+    }
+  ],
+  "overrideCategories": {
+    "Deploy BYOC":    { "customProps": { "icon": "deploy-byoc" }, "collapsed": true },
+    "Quickstarts":    { "customProps": { "icon": "quickstarts" }, "collapsed": true },
+    "Collection API": { "customProps": { "icon": "collection-api" }, "collapsed": true },
+    "Platform":       { "customProps": { "icon": "platform" }, "collapsed": true },
+    "Resources":      { "customProps": { "icon": "resources" }, "collapsed": true },
+    "Search & Query": { "customProps": { "icon": "search" } },
+    "Collection":     { "customProps": { "icon": "collection-api" } },
+    "Schema":         { "customProps": { "icon": "collection-api" } },
+    "Resources/Best Practices": { "customProps": { "icon": "overview" } },
+    "Data Import & Export": { "customProps": { "icon": "import-ref" } },
+    "Vector Index":   { "customProps": { "icon": "vector-ref" } },
+    "Scalar Index":   { "customProps": { "icon": "indexes" } },
+    "Function":       { "customProps": { "icon": "client-code" } },
+    "Analyzer":       { "customProps": { "icon": "search" } },
+    "Snapshots":      { "customProps": { "icon": "rest-backup" } },
+    "Organizations & Projects": { "customProps": { "icon": "rest-user" } },
+    "Data Management": { "customProps": { "icon": "db-ref" } },
+    "Compute Resource Management": { "customProps": { "icon": "cloud-ctrl" } },
+    "RBAC":           { "customProps": { "icon": "rest-role" } },
+    "Security & Compliance": { "customProps": { "icon": "rest-role" } },
+    "Migrations":     { "customProps": { "icon": "rest-migrate" } },
+    "Backup & Restore": { "customProps": { "icon": "rest-backup" } },
+    "Metrics & Alerts": { "customProps": { "icon": "rest-metrics" } },
+    "Resource Planning": { "customProps": { "icon": "rest-job" } },
+    "Limits & Restrictions": { "customProps": { "icon": "limits-restrictions" } }
+  },
   "sectionGroupers": [
-    "Deploy BYOC",
-    "Quickstarts",
     "Collection API",
     "Platform",
     "Resources",

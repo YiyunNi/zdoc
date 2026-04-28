@@ -11,6 +11,7 @@ description: "This update to Zilliz Cloud introduces the Serverless plan in BETA
 type: origin
 token: EL8jwqHsPikz2okhYzXcuLscnhf
 sidebar_position: 20
+displayed_sidebar: releasesSidebar
 
 ---
 

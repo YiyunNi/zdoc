@@ -11,7 +11,15 @@ import Admonition from '@theme/Admonition';
 
 # Python SDK Reference
 
-MilvusClient provides a simple and easy-to-use alternative to the legacy ORM approach. It adopts a purely functional approach to simplify interactions with the server. Each MilvusClient establishes a gRPC connection to the server you specified. To set up multiple connections, you can create multiple MilvusClient instances.
+The [PyMilvus](https://github.com/milvus-io/pymilvus) Python SDK is the official Python client for Milvus and Zilliz Cloud. It provides both a high-level functional API via `MilvusClient` and a legacy ORM-style API.
+
+## Features
+
+- **MilvusClient** — Simplified functional API for common operations
+- **ORM API** — Legacy object-relational mapping style API
+- **Bulk import** — Local and remote bulk writers for large-scale data ingestion
+- **Embedding models** — Integrated support for text and image embeddings via `pymilvus[model]`
+- **Rerankers** — Built-in reranking functions for hybrid search
 
 ## Install & Update
 
@@ -53,4 +61,4 @@ import DocCardList from '@theme/DocCardList';
 
 ## Examples
 
-In addition to the documents, you can also refer to [the example sets](https://github.com/milvus-io/pymilvus/tree/2.3/examples/milvus_client) in our GitHub repo.
+In addition to the documents, you can also refer to [the example sets](https://github.com/milvus-io/pymilvus/tree/master/examples) in our [GitHub repository](https://github.com/milvus-io/pymilvus).

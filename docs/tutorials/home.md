@@ -831,7 +831,7 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 
 1. Import data.
 
-    [Import data](./data-import) from a local file or an object storage bucket.
+    [Import data](./data-import-export) from a local file or an object storage bucket.
 
 1. Conduct a vector similarity search.
 

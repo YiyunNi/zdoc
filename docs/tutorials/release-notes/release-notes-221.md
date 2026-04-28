@@ -11,6 +11,7 @@ description: "We are excited to announce the launch of Zilliz Cloud. With this r
 type: origin
 token: YtxBwrPfBiuFDdk10GVcYY1DnGg
 sidebar_position: 26
+displayed_sidebar: releasesSidebar
 
 ---
 

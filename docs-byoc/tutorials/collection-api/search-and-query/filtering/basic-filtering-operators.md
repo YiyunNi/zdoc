@@ -279,7 +279,7 @@ Zilliz Cloud allows filtering on JSON fields that contain null values. A JSON fi
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If some elements within a JSON object are null (e.g. individual keys), the field is still considered non-null. For example, <code>\{"metadata": \{"category": None, "price": 99.99}}</code> is not treated as null, even though the <code>category</code> key is null.</p>
+<p>If some elements within a JSON object are null (e.g. individual keys), the field is still considered non-null. For example, <code>\{"metadata": \{"category": None, "price": 99.99\}\}</code> is not treated as null, even though the <code>category</code> key is null.</p>
 
 </Admonition>
 

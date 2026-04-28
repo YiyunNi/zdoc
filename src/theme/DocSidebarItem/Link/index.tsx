@@ -6,16 +6,9 @@ import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/DocSidebarItem/Link';
-import {Home, Rocket} from 'lucide-react';
+import {CATEGORY_ICONS} from '../Category';
 
 import styles from '../Category/styles.module.css';
-
-// ── Inline icon map ───────────────────────────────────────────────────────────
-
-const LINK_ICONS: Record<string, ReactNode> = {
-  home: <Home size={20} />,
-  quickstarts: <Rocket size={20} />,
-};
 
 export default function DocSidebarItemLink({
   item,
@@ -27,7 +20,7 @@ export default function DocSidebarItemLink({
 }: Props): ReactNode {
   const {href, label, className, autoAddBaseUrl} = item;
   const iconKey = item.customProps?.icon as string | undefined;
-  const icon = iconKey ? LINK_ICONS[iconKey] : undefined;
+  const IconComponent = iconKey ? CATEGORY_ICONS[iconKey] : undefined;
   const isActive = isActiveSidebarItem(item, activePath);
   const isInternalLink = isInternalUrl(href);
   return (
@@ -39,7 +32,9 @@ export default function DocSidebarItemLink({
         className,
       )}>
       <Link
-        className={clsx('menu__link', {'menu__link--active': isActive})}
+        className={clsx('menu__link', {
+          'menu__link--active': isActive,
+        })}
         autoAddBaseUrl={autoAddBaseUrl}
         aria-current={isActive ? 'page' : undefined}
         to={href}
@@ -47,7 +42,7 @@ export default function DocSidebarItemLink({
           onClick: onItemClick ? () => onItemClick(item) : undefined,
         })}
         {...props}>
-        {icon && <span className={styles.categoryIcon} aria-hidden="true">{icon}</span>}
+        {IconComponent && <span className={styles.categoryIcon} aria-hidden="true"><IconComponent size={20} /></span>}
         <span className={styles.categoryLinkLabel}>{label}</span>
         {!isInternalLink && <IconExternalLink />}
       </Link>

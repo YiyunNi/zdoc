@@ -44,6 +44,7 @@ class larkImageDownloader {
             ...get_params,
             Body: buffer,
             ContentType: 'image/png',
+            ACL: 'public-read',
             Metadata: {
                 hash: crypto.createHash('md5').update(buffer).digest('hex'),
             }

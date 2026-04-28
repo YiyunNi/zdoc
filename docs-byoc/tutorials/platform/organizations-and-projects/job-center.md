@@ -60,7 +60,7 @@ The following job information is displayed:
          <td><p>Migrate data to a cluster.</p><ul><li><p>Zilliz Cloud Cross-cluster migration:</p><ul><li><p>Cross-cluster migration within the same organization</p></li><li><p>Migration between clusters across organizations</p></li></ul></li></ul></td>
        </tr>
        <tr>
-         <td><p><a href="./data-import">Import</a></p></td>
+         <td><p><a href="./data-import-export">Import</a></p></td>
          <td><p>Import data to a collection</p></td>
        </tr>
        <tr>

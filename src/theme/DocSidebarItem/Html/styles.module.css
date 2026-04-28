@@ -1,32 +1,3 @@
-.hasIcon {
-  display: flex;
-  align-items: center;
-}
-
-.iconSectionLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 0.75rem 0.25rem;
-  margin-top: 0.75rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.sectionIcon {
-  display: inline-flex;
-  align-items: center;
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
-.sectionLabelText {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ifm-color-emphasis-500);
-}
-
 .menuHtmlItem {
   padding: var(--ifm-menu-link-padding-vertical)
     var(--ifm-menu-link-padding-horizontal);

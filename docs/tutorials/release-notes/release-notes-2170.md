@@ -11,6 +11,7 @@ description: "This release delivers a more refined and intuitive user experience
 type: origin
 token: DF8HwUTD6iScNQkVzs8cZTr8n8b
 sidebar_position: 10
+displayed_sidebar: releasesSidebar
 
 ---
 

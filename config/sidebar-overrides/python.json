@@ -4,33 +4,10 @@
     {
       "prepend": true,
       "item": {
-        "type": "category",
-        "label": "Guides",
-        "collapsed": false,
-        "customProps": { "icon": "guides" },
-        "items": [
-          { "type": "doc", "id": "api/python/guides/quickstart",        "label": "Quickstart" },
-          { "type": "doc", "id": "api/python/guides/connect",           "label": "Connect & Authenticate" },
-          { "type": "doc", "id": "api/python/guides/collections",       "label": "Collections" },
-          { "type": "doc", "id": "api/python/guides/schema",            "label": "Schema & Fields" },
-          { "type": "doc", "id": "api/python/guides/insert-data",       "label": "Insert Data" },
-          { "type": "doc", "id": "api/python/guides/upsert-data",       "label": "Upsert Data" },
-          { "type": "doc", "id": "api/python/guides/delete-data",       "label": "Delete Data" },
-          { "type": "doc", "id": "api/python/guides/vector-search",     "label": "Vector Search" },
-          { "type": "doc", "id": "api/python/guides/hybrid-search",     "label": "Hybrid Search" },
-          { "type": "doc", "id": "api/python/guides/full-text-search",  "label": "Full-Text Search" },
-          { "type": "doc", "id": "api/python/guides/partitions",        "label": "Partitions" },
-          { "type": "doc", "id": "api/python/guides/bulk-import",       "label": "Bulk Import" },
-          { "type": "doc", "id": "api/python/guides/embeddings",        "label": "Embedding Models" }
-        ]
-      }
-    },
-    {
-      "afterCategory": "Guides",
-      "item": {
-        "type": "html",
-        "value": "<span class='sidebar-section-label'>API Reference</span>",
-        "defaultStyle": false
+        "type": "doc",
+        "id": "api/python/python/python",
+        "label": "Overview",
+        "customProps": { "icon": "overview" }
       }
     }
   ],

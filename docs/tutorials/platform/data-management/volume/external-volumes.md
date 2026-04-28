@@ -67,14 +67,16 @@ Before creating an external volume, you need to create a [storage integration](.
     # Create a volume
     volume_manager.create_volume(
         project_id="proj-xxxxxxxxxxxxxxxxxxxxxxx", 
-        region_id="aws-us-west-1", 
-        volume_name="my_volume",
-        type="EXTERNAL"
+        region_id="aws-us-west-2", 
+        volume_name="ext_volume",
+        volume_type="EXTERNAL",
+        storage_integration_id="integ-xxxx",
+        path="data/",
     )
     
-    print(f"\nVolume my_volume created")
+    print(f"\nVolume ext_volume created")
     
-    # Volume my_volume created
+    # Volume ext_volume created
     ```
 
     </TabItem>
@@ -98,16 +100,18 @@ Before creating an external volume, you need to create a [storage integration](.
     
     CreateVolumeRequest request = CreateVolumeRequest.builder()
         .projectId("proj-xxxxxxxxxxxxxxxxxxxxxxx")
-        .regionId("aws-us-west-1")
-        .volumeName("my_volume")
+        .regionId("aws-us-west-2")
+        .volumeName("ext_volume")
         .type("EXTERNAL")
+        .storageIntegrationId("integ-xxxx")
+        .path("data/")
         .build();
     
     volumeManager.createVolume(request);
     
-    System.out.printf("\nVolume %s created%n", "my_volume");
+    System.out.printf("\nVolume %s created%n", "ext_volume");
     
-    // Volume my_volume created
+    // Volume ext_volume created
     ```
 
     </TabItem>
@@ -125,16 +129,16 @@ Before creating an external volume, you need to create a [storage integration](.
     -d '{
         "projectId": "proj-xxxx",
         "regionId": "aws-us-west-2",
-        "volumeName": "ext-volume",
+        "volumeName": "ext_volume",
         "type": "EXTERNAL",
-        "storageIntegrationId": "si-xxxx",
-        "path": "s3://my-bucket/data/"
+        "storageIntegrationId": "integ-xxxx",
+        "path": "/data/"
     }'
     
     # {
     #     "code": 0,
     #     "data": {
-    #         "volumeName": "my_volume"
+    #         "volumeName": "ext_volume"
     #     }
     # }
     ```
@@ -222,9 +226,9 @@ Before creating an external volume, you need to create a [storage integration](.
 
 ## View external volumes\{#view-external-volumes}
 
-- **Via SDKs**
+You can view all existing volumes in a project.
 
-    You can view all existing volumes in a project.
+- **Via SDKs**
 
     <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Shell","value":"shell"}]}>
     <TabItem value='python'>
@@ -255,7 +259,8 @@ Before creating an external volume, you need to create a [storage integration](.
     #     "pageSize": 10,
     #     "volumes": [
     #         {
-    #             "volumeName": "my_volume"
+    #             "volumeName": "ext_volume"
+    #             "type":"EXTERNAL"
     #         }        
     #     ]
     # }
@@ -299,7 +304,8 @@ Before creating an external volume, you need to create a [storage integration](.
     //     "pageSize": 10,
     //     "volumes": [
     //         {
-    //             "volumeName": "my_volume"
+    //             "volumeName": "my_volume",
+    //             "type":"EXTERNAL"
     //         }        
     //     ]
     // }
@@ -337,7 +343,99 @@ Before creating an external volume, you need to create a [storage integration](.
     #}
     ```
 
-    You can also check the details of a specific volume.
+- **Via web console**
+
+    ![PeL0wrKF1hTHvwbNAZBctTQonZf](https://zdoc-images.s3.us-west-2.amazonaws.com/PeL0wrKF1hTHvwbNAZBctTQonZf.png)
+
+## Check volume details\{#check-volume-details}
+
+You can check the details of a specific volume.
+
+- **Via SDKs**
+
+    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Shell","value":"shell"}]}>
+    <TabItem value='python'>
+
+    ```python
+    # Initiate a volume manager
+    from pymilvus.bulk_writer.volume_manager import VolumeManager
+    
+    volume_manager = VolumeManager(
+        cloud_endpoint="https://api.cloud.zilliz.com",
+        api_key="YOUR_API_KEY"
+    )
+    
+    # View volumes
+    volume_list = volume_manager.describe_volume(
+        project_id="proj-xxxxxxxxxxxxxxxxxxxxxxx",
+        current_page=1, 
+        page_size=10
+    )
+    
+    print(f"\nlistVolumes results: \n", volume_list.json()['data'])
+    
+    # listVolumes results: 
+    # 
+    # {
+    #     "count": 1,
+    #     "currentPage": 1,
+    #     "pageSize": 10,
+    #     "volumes": [
+    #         {
+    #             "volumeName": "ext_volume"
+    #             "type":"EXTERNAL"
+    #         }        
+    #     ]
+    # }
+    ```
+
+    </TabItem>
+
+    <TabItem value='java'>
+
+    ```java
+    // Initiate a volume manager
+    import io.milvus.bulkwriter.VolumeManager;
+    import io.milvus.bulkwriter.VolumeManagerParam;
+    
+    VolumeManagerParam volumeManagerParam = VolumeManagerParam.newBuilder()
+        .withCloudEndpoint("https://api.cloud.zilliz.com")
+        .withApiKey("YOUR_API_KEY")
+        .build();
+            
+    VolumeManager volumeManager = new VolumeManager(volumeManagerParam);
+    
+    // View volumes
+    import com.google.gson.Gson;
+    import io.milvus.bulkwriter.request.volume.ListVolumesRequest;
+    
+    ListVolumesRequest request = ListVolumesRequest.builder()
+        .projectId("proj-xxxxxxxxxxxxxxxxxxxxxxx")
+        .currentPage(1)
+        .pageSize(10)
+        .build();
+        
+    ListVolumesResponse listVolumesResponse = volumeManager.listVolumes(request);
+    
+    System.out.println("\nlistVolumes results: " + new Gson().toJson(listVolumesResponse));
+    
+    // listVolumes results: 
+    // 
+    // {
+    //     "count": 1,
+    //     "currentPage": 1,
+    //     "pageSize": 10,
+    //     "volumes": [
+    //         {
+    //             "volumeName": "my_volume",
+    //             "type":"EXTERNAL"
+    //         }        
+    //     ]
+    // }
+    ```
+
+    </TabItem>
+    </Tabs>
 
     ```shell
     export BASE_URL="https://api.cloud.zilliz.com"
@@ -365,29 +463,6 @@ Before creating an external volume, you need to create a [storage integration](.
 - **Via web console**
 
     ![NrgXwPhxGhq78NbBfDYcWc6Ened](https://zdoc-images.s3.us-west-2.amazonaws.com/NrgXwPhxGhq78NbBfDYcWc6Ened.png)
-
-## Monitor volume status\{#monitor-volume-status}
-
-You can check the volume status via the web console. The following table lists the possible volume statuses.
-
-<table>
-   <tr>
-     <th><p><strong>Status</strong></p></th>
-     <th><p><strong>Description</strong></p></th>
-   </tr>
-   <tr>
-     <td><p><strong>Running</strong></p></td>
-     <td><p>The volume is active and usable.</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>Frozen</strong></p></td>
-     <td><p>The organization is frozen due to overdue <a href="./view-invoice">invoices</a>. The volume cannot be used for new operations. Please pay your bill to continue using volumes.</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>Error</strong></p></td>
-     <td><p>The <a href="./storage-integration">storage integration</a> validation failed. Check the configuration and retry.</p></td>
-   </tr>
-</table>
 
 ## Delete an external volume\{#delete-an-external-volume}
 
@@ -520,4 +595,28 @@ No. Deletion is blocked if downstream external collections or active jobs refere
 
 **Will I be charged for data transfer fees when I use an external volume?**
 
-No. External volumes must be in the same cloud provider and region as your cluster. Since all data access occurs within the same region, no cross-region data transfer fees are incurred on Zilliz Cloud. 
+No. External volumes must be in the same cloud provider and region as your cluster. Since all data access occurs within the same region, no cross-region data transfer fees are incurred on Zilliz Cloud.
+
+**What do the volume statuses mean?**
+
+The following table lists the possible volume statuses.
+
+<table>
+   <tr>
+     <th><p><strong>Status</strong></p></th>
+     <th><p><strong>Description</strong></p></th>
+   </tr>
+   <tr>
+     <td><p><strong>Running</strong></p></td>
+     <td><p>The volume is active and usable.</p></td>
+   </tr>
+   <tr>
+     <td><p><strong>Frozen</strong></p></td>
+     <td><p>The organization is frozen due to overdue <a href="./view-invoice">invoices</a>. The volume cannot be used for new operations. Please pay your bill to continue using volumes.</p></td>
+   </tr>
+   <tr>
+     <td><p><strong>Error</strong></p></td>
+     <td><p>The <a href="./storage-integration">storage integration</a> validation failed. Check the configuration and retry.</p></td>
+   </tr>
+</table>
+

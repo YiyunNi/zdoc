@@ -11,6 +11,7 @@ description: "This release brings several key updates to Zilliz Cloud, starting 
 type: origin
 token: PJ4hwwD1DiVnv0kWPZBceLrdnSf
 sidebar_position: 17
+displayed_sidebar: releasesSidebar
 
 ---
 

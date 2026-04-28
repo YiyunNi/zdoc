@@ -11,6 +11,7 @@ description: "With this release, Zilliz Cloud introduces significant enhancement
 type: origin
 token: OJVrwOiE4i3fFjk2J3NcneLznfh
 sidebar_position: 14
+displayed_sidebar: releasesSidebar
 
 ---
 

@@ -1,5 +1,10 @@
 module.exports = [
   {
+    "type": "doc",
+    "id": "tutorials/byoc-intro",
+    "label": "BYOC Overview"
+  },
+  {
     "type": "category",
     "label": "Deploy BYOC",
     "items": [
@@ -468,9 +473,73 @@ module.exports = [
         ]
       },
       {
-        "type": "doc",
-        "id": "tutorials/collection-api/export-data-iterators",
-        "label": "Export Data Using Iterators"
+        "type": "category",
+        "label": "Data Import & Export",
+        "items": [
+          {
+            "type": "doc",
+            "id": "tutorials/collection-api/data-import-export/data-import-storage-options",
+            "label": "Storage Options"
+          },
+          {
+            "type": "category",
+            "label": "Format Options",
+            "items": [
+              {
+                "type": "doc",
+                "id": "tutorials/collection-api/data-import-export/data-import-format-options/data-import-parquet",
+                "label": "Import from a Parquet File"
+              },
+              {
+                "type": "doc",
+                "id": "tutorials/collection-api/data-import-export/data-import-format-options/data-import-json",
+                "label": "Import from a JSON/JSON Lines File"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Convert Your Data",
+            "items": [
+              {
+                "type": "doc",
+                "id": "tutorials/collection-api/data-import-export/prepare-data-import/use-bulkwriter",
+                "label": "Use BulkWriter"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Import Data",
+            "items": [
+              {
+                "type": "doc",
+                "id": "tutorials/collection-api/data-import-export/import-data/import-data-on-web-ui",
+                "label": "Import Data (Console)"
+              },
+              {
+                "type": "doc",
+                "id": "tutorials/collection-api/data-import-export/import-data/import-data-via-restful-api",
+                "label": "Import Data (RESTful API)"
+              },
+              {
+                "type": "doc",
+                "id": "tutorials/collection-api/data-import-export/import-data/import-data-via-sdks",
+                "label": "Import Data (SDK)"
+              }
+            ]
+          },
+          {
+            "type": "doc",
+            "id": "tutorials/collection-api/data-import-export/data-import-zero-to-hero",
+            "label": "Data Import Hands-On"
+          },
+          {
+            "type": "doc",
+            "id": "tutorials/collection-api/data-import-export/export-data-iterators",
+            "label": "Export Data Using Iterators"
+          }
+        ]
       },
       {
         "type": "category",
@@ -800,6 +869,11 @@ module.exports = [
             "type": "doc",
             "id": "tutorials/platform/organizations-and-projects/job-center",
             "label": "Manage Project Jobs"
+          },
+          {
+            "type": "doc",
+            "id": "tutorials/platform/organizations-and-projects/use-recycle-bin",
+            "label": "Use Recycle Bin"
           }
         ]
       },
@@ -1219,11 +1293,6 @@ module.exports = [
             ]
           }
         ]
-      },
-      {
-        "type": "doc",
-        "id": "tutorials/platform/use-recycle-bin",
-        "label": "Use Recycle Bin"
       }
     ]
   },

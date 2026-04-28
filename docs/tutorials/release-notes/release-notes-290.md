@@ -11,6 +11,7 @@ description: "In this release, Zilliz Cloud has unveiled an array of new feature
 type: origin
 token: GanXwLnJkiymKVkNPhecdi9MnGf
 sidebar_position: 19
+displayed_sidebar: releasesSidebar
 
 ---
 

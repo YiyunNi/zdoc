@@ -277,6 +277,80 @@ function escapeNonHtmlTags(content) {
 }
 
 /**
+ * Pre-processing: escape unescaped { and } inside safe HTML elements
+ * (e.g. <code>, <p>, <span>, <td>, <li>) so MDX does not evaluate them
+ * as JSX expressions at SSG render time.
+ *
+ * Placeholder text like {project-id} or {API_KEY} inside <code> is common
+ * in docs sourced from Lark. MDX compile() accepts it silently because it
+ * is syntactically valid JSX, but React crashes at render with
+ * "ReferenceError: project is not defined".
+ *
+ * Skips:
+ *   - fenced code blocks
+ *   - inline backtick spans
+ *   - content that contains nested JSX components (to avoid breaking
+ *     legitimate expressions like className={foo} inside wrapper tags)
+ */
+function escapeHtmlElementBraces(content) {
+    const SAFE_HTML_TAGS = [
+        // Leaf / inline tags most likely to contain literal braces
+        'code', 'span', 'strong', 'em', 'i', 'b', 'u', 'kbd', 'mark',
+        'samp', 'var', 'abbr', 'cite', 'dfn',
+        // Other common HTML tags that may wrap text with placeholders
+        'a', 'label', 'figcaption', 'caption', 'dt', 'dd', 'li', 'td', 'th',
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'p', 'div', 'pre', 'blockquote', 'details', 'summary',
+    ];
+
+    // If inner content contains a PascalCase JSX component, skip escaping
+    // to avoid breaking legitimate JSX expressions in attributes/children.
+    const JSX_COMPONENT_PATTERN = /<[A-Z][A-Za-z0-9]*\b/;
+
+    const lines = content.split('\n');
+    let inCodeBlock = false;
+    const result = [];
+
+    for (let line of lines) {
+        const stripped = line.trim();
+        if (stripped.startsWith('```') || stripped.startsWith('~~~')) {
+            inCodeBlock = !inCodeBlock;
+        }
+
+        if (!inCodeBlock) {
+            // Split by inline code spans; odd-indexed segments are inside backticks
+            const codeParts = line.split(/(`+[^`]+`+)/);
+            line = codeParts.map((part, i) => {
+                if (i % 2 !== 0) return part; // Inside inline code — leave unchanged
+
+                let processed = part;
+                for (const tag of SAFE_HTML_TAGS) {
+                    const regex = new RegExp(`<${tag}\\b[^>]*>([^]*?)</${tag}>`, 'g');
+                    processed = processed.replace(regex, (match, inner) => {
+                        // Don't process if inner contains a nested opening of the same tag
+                        if (new RegExp(`<${tag}\\b[^>]*>`).test(inner)) {
+                            return match;
+                        }
+                        // Don't process if inner contains JSX components
+                        if (JSX_COMPONENT_PATTERN.test(inner)) {
+                            return match;
+                        }
+                        // Escape unescaped braces
+                        const escaped = inner.replace(/(?<!\\)([{}])/g, '\\$1');
+                        return `<${tag}${match.slice(tag.length + 1, match.indexOf('>'))}>${escaped}</${tag}>`;
+                    });
+                }
+                return processed;
+            }).join('');
+        }
+
+        result.push(line);
+    }
+
+    return result.join('\n');
+}
+
+/**
  * Structural validator for translated MDX files.
  * Catches React render-time errors that @mdx-js/mdx compile() misses:
  *   1. Prose inserted between </TabItem> and <TabItem>/<\/Tabs> (LLM hallucination)
@@ -344,6 +418,7 @@ async function applyMdxPatches(content) {
         patchedContent = escapeCurrencyDollars(patchedContent);
         patchedContent = escapeNonHtmlTags(patchedContent);
         patchedContent = escapeMathBraces(patchedContent);
+        patchedContent = escapeHtmlElementBraces(patchedContent);
         let maxIterations = 50; // Prevent infinite loops
         let iteration = 0;
         const seenHashes = new Set();
@@ -501,4 +576,5 @@ module.exports = {
     removeTabsHallucinations,
     unescapeKnownJsxTags,
     escapeMathBraces,
+    escapeHtmlElementBraces,
 };

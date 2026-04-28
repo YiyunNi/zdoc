@@ -19,6 +19,10 @@ import Admonition from '@theme/Admonition';
 
 Milvus Java SDK is an open-source project and its source code is hosted on [GitHub](https://github.com/milvus-io/milvus-sdk-java).
 
+<Admonition type="caution" title="Deprecated">
+  The Java SDK v1 API (legacy `io.milvus` package) is deprecated. Please use [Java SDK v2](./v2) for new development.
+</Admonition>
+
 ## **Compatibility**{#compatibility}
 
 <table>
@@ -50,6 +54,14 @@ Milvus Java SDK is an open-source project and its source code is hosted on [GitH
         <td><p>2.4.x</p></td>
         <td><p>2.4.3</p></td>
     </tr>
+    <tr>
+        <td><p>2.5.x</p></td>
+        <td><p>2.5.15</p></td>
+    </tr>
+    <tr>
+        <td><p>2.6.x</p></td>
+        <td><p>2.6.18</p></td>
+    </tr>
 </table>
 
 ## **Installation**{#installation}
@@ -62,20 +74,20 @@ You can use **[Apache Maven](https://maven.apache.org/install.html)** or **[Grad
  <dependency>
      <groupId>io.milvus</groupId>
      <artifactId>milvus-sdk-java</artifactId>
-     <version>2.4.3</version>
+     <version>2.6.18</version>
  </dependency>
 ```
 
 - Gradle/Groovy
 
 ```plaintext
-implementation 'io.milvus:milvus-sdk-java:2.4.3'
+implementation 'io.milvus:milvus-sdk-java:2.6.18'
 ```
 
 - Gradle/Kotlin
 
 ```sql
-implementation("io.milvus:milvus-sdk-java:2.4.3")
+implementation("io.milvus:milvus-sdk-java:2.6.18")
 ```
 
 ## **Contributing**{#contributing}

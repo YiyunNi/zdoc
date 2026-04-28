@@ -9,22 +9,6 @@ module.exports = [
         "items": [
           {
             "type": "category",
-            "label": "Cloud Meta (V2)",
-            "items": [
-              {
-                "type": "doc",
-                "id": "api/restful/restful/v2/control-plane/cloud-meta-v2/list-cloud-providers-v2",
-                "label": "List Cloud Providers (V2)"
-              },
-              {
-                "type": "doc",
-                "id": "api/restful/restful/v2/control-plane/cloud-meta-v2/list-cloud-regions-v2",
-                "label": "List Cloud Regions (V2)"
-              }
-            ]
-          },
-          {
-            "type": "category",
             "label": "Import Operations (V2)",
             "items": [
               {
@@ -41,6 +25,22 @@ module.exports = [
                 "type": "doc",
                 "id": "api/restful/restful/v2/control-plane/import-operations-v2/get-import-job-progress-v2",
                 "label": "Get Import Job Progress (V2)"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Cloud Meta (V2)",
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/control-plane/cloud-meta-v2/list-cloud-providers-v2",
+                "label": "List Cloud Providers (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/control-plane/cloud-meta-v2/list-cloud-regions-v2",
+                "label": "List Cloud Regions (V2)"
               }
             ]
           },
@@ -99,6 +99,11 @@ module.exports = [
                 "type": "doc",
                 "id": "api/restful/restful/v2/control-plane/project-operations-v2/upgrade-project-v2",
                 "label": "Upgrade Project (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/control-plane/project-operations-v2/add-project-region-v2",
+                "label": "Add Project Region (V2)"
               }
             ]
           },
@@ -155,6 +160,21 @@ module.exports = [
                 "type": "doc",
                 "id": "api/restful/restful/v2/control-plane/cluster-operations-v2/modify-cluster-replica-v2",
                 "label": "Modify Cluster Replica (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/control-plane/cluster-operations-v2/list-on-demand-clusters-v2",
+                "label": "List On-Demand Clusters (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/control-plane/cluster-operations-v2/delete-on-demand-cluster-v2",
+                "label": "Delete On-Demand Cluster (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/control-plane/cluster-operations-v2/create-on-demand-cluster-v2",
+                "label": "Create On-Demand Cluster (V2)"
               }
             ]
           },
@@ -434,6 +454,26 @@ module.exports = [
                 "type": "doc",
                 "id": "api/restful/restful/v2/data-plane/collection-operations-v2/get-collection-load-state-v2",
                 "label": "Get Collection Load State (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/collection-operations-v2/add-function-to-collection-v2",
+                "label": "Add Function to Collection (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/collection-operations-v2/alter-function-in-collection-v2",
+                "label": "Alter Function in Collection (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/collection-operations-v2/drop-function-from-collection-v2",
+                "label": "Drop Function from Collection (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/collection-operations-v2/run-analyzer-v2",
+                "label": "Run Analyzer (V2)"
               }
             ]
           },
@@ -470,6 +510,11 @@ module.exports = [
                 "type": "doc",
                 "id": "api/restful/restful/v2/data-plane/database-operations-v2/drop-database-v2",
                 "label": "Drop Database (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/database-operations-v2/alter-database-properties-v2",
+                "label": "Alter Database Properties (V2)"
               }
             ]
           },
@@ -583,6 +628,16 @@ module.exports = [
                 "type": "doc",
                 "id": "api/restful/restful/v2/data-plane/role-operations-v2/drop-role-v2",
                 "label": "Drop Role (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/role-operations-v2/grant-privilege-to-role-v2-v2",
+                "label": "Grant Privilege To Role (V2) (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/role-operations-v2/revoke-privilege-from-role-v2-v2",
+                "label": "Revoke Privilege From Role (V2) (V2)"
               }
             ]
           },
@@ -657,6 +712,37 @@ module.exports = [
                 "label": "Revoke Role From User (V2)"
               }
             ]
+          },
+          {
+            "type": "category",
+            "label": "Privilege Group Operations (V2)",
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/privilege-group-operations-v2/create-privilege-group-v2",
+                "label": "Create Privilege Group (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/privilege-group-operations-v2/drop-privilege-group-v2",
+                "label": "Drop Privilege Group (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/privilege-group-operations-v2/list-privilege-groups-v2",
+                "label": "List Privilege Groups (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/privilege-group-operations-v2/add-privileges-to-group-v2",
+                "label": "Add Privileges to Group (V2)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v2/data-plane/privilege-group-operations-v2/remove-privileges-from-group-v2",
+                "label": "Remove Privileges from Group (V2)"
+              }
+            ]
           }
         ]
       }
@@ -670,6 +756,27 @@ module.exports = [
         "type": "category",
         "label": "Control Plane (V1)",
         "items": [
+          {
+            "type": "category",
+            "label": "Import Operations (V1)",
+            "items": [
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v1/control-plane/import-operations/import",
+                "label": "Import (V1)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v1/control-plane/import-operations/get-import-progress",
+                "label": "Get Import Progress (V1)"
+              },
+              {
+                "type": "doc",
+                "id": "api/restful/restful/v1/control-plane/import-operations/list-import-jobs",
+                "label": "List Import Jobs (V1)"
+              }
+            ]
+          },
           {
             "type": "category",
             "label": "Cloud Meta (V1)",
@@ -739,27 +846,6 @@ module.exports = [
                 "type": "doc",
                 "id": "api/restful/restful/v1/control-plane/cluster-operations/list-projects",
                 "label": "List Projects (V1)"
-              }
-            ]
-          },
-          {
-            "type": "category",
-            "label": "Import Operations (V1)",
-            "items": [
-              {
-                "type": "doc",
-                "id": "api/restful/restful/v1/control-plane/import-operations/import",
-                "label": "Import (V1)"
-              },
-              {
-                "type": "doc",
-                "id": "api/restful/restful/v1/control-plane/import-operations/get-import-progress",
-                "label": "Get Import Progress (V1)"
-              },
-              {
-                "type": "doc",
-                "id": "api/restful/restful/v1/control-plane/import-operations/list-import-jobs",
-                "label": "List Import Jobs (V1)"
               }
             ]
           },

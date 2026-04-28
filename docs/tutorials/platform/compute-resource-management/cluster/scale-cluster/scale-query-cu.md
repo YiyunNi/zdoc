@@ -27,7 +27,7 @@ To proactively manage this, you can monitor **Query** **CU Capacity** on the [me
 
 Please note that for serving clusters with 1 - 12 CUs, you can directly scale query CU. For serving clusters with more than 12 CUs, please increase [replicas](./manage-replica).
 
-This guide explains how to resize a serving cluster to suit your changing workload. 
+This guide explains how to resize a serving cluster to suit your changing workload.
 
 The content on this page applies to serving clusters only.  On-demand clusters scale automatically — they spin up when a request arrives and scale back to zero when idle, with no manual intervention required.
 

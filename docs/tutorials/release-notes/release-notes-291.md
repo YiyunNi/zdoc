@@ -11,6 +11,7 @@ description: "In this update, Zilliz Cloud now supports Milvus' new RESTful API 
 type: origin
 token: RlhDw3Fr9iCpWSkylfAcyes1nLh
 sidebar_position: 18
+displayed_sidebar: releasesSidebar
 
 ---
 

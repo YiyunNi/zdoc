@@ -66,6 +66,7 @@ import {
   Lightbulb,
   Server,
   Library,
+  AlertTriangle,
   type LucideProps,
 } from 'lucide-react';
 
@@ -77,6 +78,7 @@ export const CATEGORY_ICONS: Record<string, React.ComponentType<LucideProps>> = 
   // Guides sidebar
   concepts:       Lightbulb,
   quickstarts:    Rocket,
+  overview:       BookOpen,
   'collection-api': Layers,
   platform:       Server,
   resources:      Library,
@@ -118,6 +120,7 @@ export const CATEGORY_ICONS: Record<string, React.ComponentType<LucideProps>> = 
   'rest-alias':      LinkIcon,
   'rest-user':       User,
   'rest-index':      Bookmark,
+  'limits-restrictions': AlertTriangle,
 };
 
 // ─── Internals (unchanged from Docusaurus source) ────────────────────────────

@@ -11,6 +11,7 @@ description: "We are pleased to announce the release of Zilliz Cloud, which boas
 type: origin
 token: GqyhwKVspiYRwDk8OaucNfgJnhd
 sidebar_position: 27
+displayed_sidebar: releasesSidebar
 
 ---
 

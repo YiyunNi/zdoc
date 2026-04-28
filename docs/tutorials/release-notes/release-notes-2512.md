@@ -11,6 +11,7 @@ description: "December 2025 Release Notes | Cloud"
 type: origin
 token: LX0RwtoEEihhNukmt1DcSQGfnjb
 sidebar_position: 5
+displayed_sidebar: releasesSidebar
 
 ---
 

@@ -1,5 +1,5 @@
 const larkTokenFetcher = require('./larkTokenFetcher.js')
-const { removeTabsHallucinations, unescapeKnownJsxTags, escapeMathBraces } = require('../mdx-parse/mdxPatcher')
+const { removeTabsHallucinations, unescapeKnownJsxTags, escapeMathBraces, escapeHtmlElementBraces } = require('../mdx-parse/mdxPatcher')
 const Downloader = require('./larkImageDownloader.js')
 const slugify = require('slugify')
 const fs = require('node:fs')
@@ -277,6 +277,35 @@ class larkDocWriter {
                 }
             })
         }
+    }
+
+    /**
+     * Write a subtree starting from a specific node token.
+     * Computes the correct nested output path by walking up parent_node_token
+     * chains, then delegates to write_docs().
+     */
+    async write_subtree(outputDir, token) {
+        const node = this.__fetch_doc_source('node_token', token)
+        let relPath = ''
+        let current = node
+
+        while (current && current.parent_node_token && current.parent_node_token !== this.root_token) {
+            try {
+                const parent = this.__fetch_doc_source('node_token', current.parent_node_token)
+                relPath = parent.slug + '/' + relPath
+                current = parent
+            } catch {
+                // Parent not in cache — stop walking and write to the nearest known path
+                break
+            }
+        }
+
+        const targetPath = `${outputDir}/${relPath}`.replace(/\/+/g, '/')
+        if (!fs.existsSync(targetPath)) {
+            fs.mkdirSync(targetPath, { recursive: true })
+        }
+
+        await this.write_docs(targetPath, token)
     }
 
     async write_doc ({
@@ -616,11 +645,15 @@ class larkDocWriter {
         markdown = markdown.replace(/^[\||\s][\s|\||<br\/>]*\|\n/gm, '')
         markdown = markdown.replace(/\s*<tr>\n(\s*<td>(<br\/>)*<\/td>\n)*\s*<\/tr>/g, '')
         markdown = this.__example_http_urls(markdown)
-        markdown = await this.__mdx_patches(markdown)  
+        markdown = await this.__mdx_patches(markdown)
 
         const description = this.__extract_description(markdown)
 
-        let front_matter = this.__front_matters(title, suffix, slug, beta, notebook, type, token, sidebar_position, sidebar_label, keywords, this.displayedSidebar, description)
+        // Auto-detect release notes and assign them to the releases sidebar
+        const isReleaseNote = path.includes('release-notes') || slug.includes('release-notes')
+        const displayedSidebar = isReleaseNote ? 'releasesSidebar' : this.displayedSidebar
+
+        let front_matter = this.__front_matters(title, suffix, slug, beta, notebook, type, token, sidebar_position, sidebar_label, keywords, displayedSidebar, description)
 
         let tabs = markdown.split('\n').filter(line => {
             return line.trim().startsWith("<Tab")
@@ -708,6 +741,9 @@ class larkDocWriter {
 
         if (displayed_sidebar === 'default') {
             displayed_sidebar = ''
+        } else if (displayed_sidebar === 'releasesSidebar') {
+            // Release notes use a dedicated sidebar but keep their original slug
+            displayed_sidebar = `displayed_sidebar: ${displayed_sidebar}\n`
         } else {
             slug = `${displayed_sidebar.replace('Sidebar', '').trim()}/${slug}`
             displayed_sidebar = `displayed_sidebar: ${displayed_sidebar}\n`
@@ -1029,6 +1065,7 @@ class larkDocWriter {
             patchedContent = this.__escape_currency_dollars(patchedContent);
             patchedContent = this.__escape_non_html_tags(patchedContent);
             patchedContent = escapeMathBraces(patchedContent);
+            patchedContent = escapeHtmlElementBraces(patchedContent);
             let maxIterations = 50; // Prevent infinite loops
             let iteration = 0;
             const seenHashes = new Set();

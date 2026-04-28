@@ -11,6 +11,7 @@ description: "Last updated April 11, 2026 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 1
+displayed_sidebar: releasesSidebar
 
 ---
 
@@ -633,7 +634,7 @@ import Grid from '@site/src/components/Grid';
 
         - [📊  Metric monitoring through RESTful API](/reference/restful/query-metrics) is available
 
-        - 🌐  Cross-cloud [data import](./data-import) and [migration](./migrations)
+        - 🌐  Cross-cloud [data import](./data-import-export) and [migration](./migrations)
 
     </div>
 
@@ -667,7 +668,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [📥  Data import](./data-import) from Parquet files
+        - [📥  Data import](./data-import-export) from Parquet files
 
         - [🔐  API keys](./manage-api-keys) enhanced with RBAC principles
 
@@ -921,7 +922,7 @@ import Grid from '@site/src/components/Grid';
 
         - [🔐  Private Link](./setup-a-private-link) becomes available
 
-        - [📥  Data import](./data-import) becomes available
+        - [📥  Data import](./data-import-export) becomes available
 
     </div>
 

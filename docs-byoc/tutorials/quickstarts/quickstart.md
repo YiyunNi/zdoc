@@ -29,7 +29,7 @@ This guide demonstrates how to use Zilliz Cloud clusters to perform operations r
 
 ## Before you start\{#before-you-start}
 
-Zilliz Cloud provides a Bring-Your-Own-Cloud (BYOC) solution, allowing organizations to host applications and data in their own cloud accounts instead of using Zilliz Cloud's infrastructure. For details about our BYOC solution, read BYOC Overview.
+Zilliz Cloud provides a Bring-Your-Own-Cloud (BYOC) solution, allowing organizations to host applications and data in their own cloud accounts instead of using Zilliz Cloud's infrastructure. For details about our BYOC solution, read [BYOC Overview](./byoc-intro).
 
 The following figure illustrates the procedures to start using our BYOC solution.
 

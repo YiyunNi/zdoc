@@ -351,7 +351,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### Sort Query Results | Public Preview\{#sort-query-results}
+### Sort Query Results | Private Preview\{#sort-query-results}
 
 By default, Query returns results in an unspecified order. Use the `order_by` parameter to sort results by one or more scalar fields. When using `order_by`, note that:
 

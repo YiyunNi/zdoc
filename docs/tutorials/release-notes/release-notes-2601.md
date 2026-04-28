@@ -11,6 +11,7 @@ description: "January 2026 Release Notes | Cloud"
 type: origin
 token: ZBEiwpvlbijhYDkmnNScc7zyn5d
 sidebar_position: 4
+displayed_sidebar: releasesSidebar
 
 ---
 

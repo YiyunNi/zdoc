@@ -11,6 +11,7 @@ description: "We are pleased to announce the general availability of a significa
 type: origin
 token: QZXVwFVH3i1p08kal8vcAmmxnie
 sidebar_position: 34
+displayed_sidebar: releasesSidebar
 
 ---
 
@@ -43,4 +44,4 @@ We are pleased to announce the general availability of a significant update to Z
 
     We are pleased to announce that Zilliz Cloud now supports data import from large files. You can bulk-insert data into your collection from a file up to 512 MB. The files can be located either in an S3 bucket or on your local disk.
 
-    For details, refer to [Data Import](./data-import).
+    For details, refer to [Data Import](./data-import-export).

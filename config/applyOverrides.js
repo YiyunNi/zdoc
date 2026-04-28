@@ -230,13 +230,19 @@ function applyOverrides(items, overridePath) {
   }
 
   // 2. overrideCategories — restyle / reconfigure categories by label
+  // Supports plain labels (matches anywhere) and scoped paths like "Parent/Label"
   if (overrides.overrideCategories) {
-    const apply = (list) => list.map(item => {
-      if (item.type === 'category' && overrides.overrideCategories[item.label]) {
-        const overridden = { ...item, ...overrides.overrideCategories[item.label] }
-        return item.items ? { ...overridden, items: apply(item.items) } : overridden
+    const apply = (list, parentLabel = null) => list.map(item => {
+      if (item.type === 'category') {
+        const scopedKey = parentLabel ? `${parentLabel}/${item.label}` : null
+        const scoped = scopedKey && overrides.overrideCategories[scopedKey]
+        const plain = overrides.overrideCategories[item.label]
+        if (scoped || plain) {
+          const overridden = { ...item, ...(scoped || plain) }
+          return item.items ? { ...overridden, items: apply(item.items, item.label) } : overridden
+        }
       }
-      if (item.items) return { ...item, items: apply(item.items) }
+      if (item.items) return { ...item, items: apply(item.items, item.label) }
       return item
     })
     items = apply(items)
@@ -441,7 +447,7 @@ function applyOverrides(items, overridePath) {
           console.warn(`[applyOverrides] inject: category "${injection.into}" not found — skipping`)
           continue
         }
-        items = insertInto(items, injection.into, injection.item, injection.position ?? 'last')
+        items = insertInto(items, injection.into, injection.item, injection.position ?? 'last', injection.afterSibling ?? null)
         continue
       }
       if (injection.afterCategory) {
@@ -470,12 +476,9 @@ function applyOverrides(items, overridePath) {
     const next = []
     for (const item of items) {
       if (item.type === 'category' && grouperLabels.has(item.label)) {
-        const hasIcon = item.customProps?.icon
         next.push({
           type: 'html',
-          value: hasIcon
-            ? item.label
-            : `<span class='sidebar-section-label'>${item.label}</span>`,
+          value: `<span class='sidebar-section-label'>${item.label}</span>`,
           defaultStyle: false,
           customProps: item.customProps,
         })

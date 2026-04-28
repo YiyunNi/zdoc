@@ -11,6 +11,7 @@ description: " February 2026 Release Notes | Cloud"
 type: origin
 token: KtAgwMSa6iEoFkkEqzAcEJgRnjc
 sidebar_position: 3
+displayed_sidebar: releasesSidebar
 
 ---
 
