@@ -1,9 +1,0 @@
-packages:
-  - 'chat-proxy'
-  - 'packages/chat-ui'
-
-allowBuilds:
-  core-js: true
-  core-js-pure: true
-  esbuild: true
-  sharp: true
