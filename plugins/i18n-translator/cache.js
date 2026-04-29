@@ -1,9 +1,8 @@
 'use strict'
 
-const sqlite3 = require('sqlite3').verbose()
-
 class TranslationCache {
   constructor(dbPath) {
+    const sqlite3 = require('sqlite3').verbose()
     this.db = new sqlite3.Database(dbPath)
     this._ready = this._init()
   }
