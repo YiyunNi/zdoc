@@ -514,7 +514,17 @@ class larkDocWriter {
         let imports = this.__imports(tabs > 0)
 
         if (doc_card_list) {
+            // add key attribute to category frontmatter
+            front_matter = front_matter.split('\n')
+            front_matter.splice(3, 0, `key: ${slug}`)
+            front_matter = front_matter.join('\n')
+
             markdown += "\n\nimport DocCardList from '@theme/DocCardList';\n\n<DocCardList />"
+        } else {
+            // add sidebar_key attribute to doc frontmatter
+            front_matter = front_matter.split('\n')
+            front_matter.splice(3, 0, `sidebar_key: ${slug}`)
+            front_matter = front_matter.join('\n')
         }
 
         var file_path = `${path}/${slug}.md`
