@@ -8,6 +8,11 @@ export async function tutorialsItemsGenerator({
             item.collapsed = false;
         }
 
+        if (item.label === 'What is Vector Lakebase?') {
+            item.collapsible = true;
+            item.collapsed = true;
+        }
+
         if (item.label === 'Get Started') {
             item.items = item.items.map(subItem => {
                 if (subItem.label === 'API & SDKs') {
