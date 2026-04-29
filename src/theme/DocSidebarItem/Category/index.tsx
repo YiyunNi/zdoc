@@ -67,6 +67,11 @@ import {
   Server,
   Library,
   AlertTriangle,
+  Table,
+  ScanSearch,
+  Camera,
+  Lock,
+  ListTree,
   type LucideProps,
 } from 'lucide-react';
 
@@ -80,15 +85,20 @@ export const CATEGORY_ICONS: Record<string, React.ComponentType<LucideProps>> = 
   quickstarts:    Rocket,
   overview:       BookOpen,
   'collection-api': Layers,
+  collection:     Folder,
+  schema:         Table,
   platform:       Server,
   resources:      Library,
   'deploy-byoc':  CloudUpload,
   data:           Database,
-  indexes:        Layers,
+  indexes:        ListTree,
   search:         Search,
+  analyzer:       ScanSearch,
   infrastructure: Cloud,
   administration: Settings,
   faqs:           CircleHelp,
+  snapshots:      Camera,
+  security:       Lock,
   // SDK guide sections
   guides:         BookOpen,
   // Reference sidebar
@@ -209,7 +219,7 @@ function CategoryLinkLabel({
   return (
     <>
       {IconComponent && (
-        <span className={styles.categoryIcon} aria-hidden="true">
+        <span className={styles.categoryIcon} aria-hidden="true" title={label}>
           <IconComponent size={20} />
         </span>
       )}

@@ -81,7 +81,7 @@ export default function DocItemLayout({children}: Props): ReactNode {
       <ContentVisibility metadata={metadata} />
       <DocVersionBanner />
       <div className={styles.docItemRow}>
-        <div className={`${styles.docItemCol} ${!showDesktopTOC || !tocVisible ? styles.docItemColWide : ''}`}>
+        <div className={`${styles.docItemCol} ${!showDesktopTOC || !tocVisible ? styles.docItemColCentered : ''}`}>
           <article>
             <DocBreadcrumbs />
             {hasTOC && windowSize === 'mobile' && <DocItemTOCMobile />}

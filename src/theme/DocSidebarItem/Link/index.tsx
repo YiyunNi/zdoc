@@ -42,7 +42,7 @@ export default function DocSidebarItemLink({
           onClick: onItemClick ? () => onItemClick(item) : undefined,
         })}
         {...props}>
-        {IconComponent && <span className={styles.categoryIcon} aria-hidden="true"><IconComponent size={20} /></span>}
+        {IconComponent && <span className={styles.categoryIcon} aria-hidden="true" title={label}><IconComponent size={20} /></span>}
         <span className={styles.categoryLinkLabel}>{label}</span>
         {!isInternalLink && <IconExternalLink />}
       </Link>
