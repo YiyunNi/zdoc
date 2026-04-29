@@ -1604,10 +1604,41 @@ class larkDocWriter {
                         .replace(/^\n/, '')
                         .replace(/<br\/>/g, '\n\n');
 
+                    // Escape solitary tildes to prevent MDX strikethrough parsing
+                    cell_text = cell_text.replace(/(?<!~)~(?!~)/g, '&#126;');
+
+                    // Protect Admonition JSX from showdown's <p> wrapping
+                    var admonitions = [];
+                    cell_text = cell_text.replace(
+                        /<Admonition[^>]*>[\s\S]*?<\/Admonition>/g,
+                        (match) => {
+                            admonitions.push(match);
+                            return `%%ADMONITION_${admonitions.length - 1}%%`;
+                        }
+                    );
+
+                    admonitions = admonitions.map(admonition => admonition.replace(/\n/g, ''));
+
                     cell_text = converter.makeHtml(cell_text)
                         .replace(/\n/g, '')
                         .replace(/&amp;/g, '&')
                         .replace(/\*/g, '&ast;');
+
+                    admonitions = admonitions.map(admonition => admonition.replace(/\n/g, ''));
+
+                    cell_text = converter.makeHtml(cell_text)
+                        .replace(/\n/g, '')
+                        .replace(/&amp;/g, '&')
+                        .replace(/\*/g, '&ast;');
+
+                    // Restore Admonition components (strip <p> wrapper showdown added)
+                    cell_text = cell_text.replace(
+                        /<p>%%ADMONITION_(\d+)%%<\/p>/g,
+                        (_, idx) => admonitions[parseInt(idx)]
+                    );
+
+                    // escape { and } for MDX
+                    cell_text = cell_text.replace(/\{/g, '\\{').replace(/\}/g, '\\}');
 
                     if (i === 0) {
                         html += ` ${' '.repeat(indent)}    <th${colspan}${rowspan}>${cell_text}</th>\n`;
