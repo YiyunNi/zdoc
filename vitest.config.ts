@@ -9,7 +9,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       include: ['src/components/ChatPanel/**/*.tsx', 'src/theme/Search/**/*.tsx'],
-      exclude: ['src/**/*.test.tsx'],
+      exclude: ['src/**/*.test.{ts,tsx}'],
     },
   },
   resolve: {
