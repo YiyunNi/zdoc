@@ -50,4 +50,17 @@ describe('logger', () => {
   it('does not throw on errors', () => {
     expect(() => logEvent('', '', '', '', {})).not.toThrow();
   });
+
+  it('strips newline and control characters from user data', () => {
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    logEvent('conv-1', 'user-1', 'message', 'general', {
+      content: 'Hello\nworld\r\ninject',
+      pageUrl: 'https://example.com\nmalicious',
+    });
+
+    const logged = spy.mock.calls[0][0];
+    expect(logged).not.toContain('\n');
+    expect(logged).not.toContain('\r');
+    spy.mockRestore();
+  });
 });

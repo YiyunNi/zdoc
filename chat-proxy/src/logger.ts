@@ -8,6 +8,23 @@ import type {StoreEvent} from './event-store.js';
 import type {TokenUsage} from './types.js';
 import {saveObsEvent, upsertObsSession} from './db.js';
 
+function sanitizeLogValue(value: unknown): unknown {
+  if (typeof value === 'string') {
+    return value.replace(/[\x00-\x1f\x7f]/g, '');
+  }
+  if (Array.isArray(value)) {
+    return value.map(sanitizeLogValue);
+  }
+  if (value && typeof value === 'object') {
+    const sanitized: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value)) {
+      sanitized[k] = sanitizeLogValue(v);
+    }
+    return sanitized;
+  }
+  return value;
+}
+
 export function logEvent(
   sessionId: string,
   userId: string,
@@ -20,7 +37,7 @@ export function logEvent(
   try {
     const timestamp = new Date().toISOString();
     const id = randomUUID();
-    console.log(JSON.stringify({
+    console.log(JSON.stringify(sanitizeLogValue({
       type: 'event',
       timestamp,
       sessionId,
@@ -29,7 +46,7 @@ export function logEvent(
       agent,
       source,
       ...data,
-    }));
+    })));
 
     const event = {
       id,
@@ -118,7 +135,7 @@ export function saveConversation(conv: ConversationData): void {
     if (conv.tokenUsage) {
       logData.tokenUsage = conv.tokenUsage;
     }
-    console.log(JSON.stringify(logData));
+    console.log(JSON.stringify(sanitizeLogValue(logData)));
 
     const storeData: Record<string, unknown> = {
       messageCount: conv.messages.length,
@@ -157,12 +174,12 @@ export function updateUserProfile(
   },
 ): void {
   try {
-    console.log(JSON.stringify({
+    console.log(JSON.stringify(sanitizeLogValue({
       type: 'user_profile',
       timestamp: new Date().toISOString(),
       userId,
       ...data,
-    }));
+    })));
   } catch {
     // Fire and forget
   }
