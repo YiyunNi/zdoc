@@ -169,9 +169,51 @@ function splitBodyIntoChunks(body) {
     }
   }
 
+  // Find markdown links and JSX tags so we never split them across chunks.
+  // A split link or tag can confuse the LLM and cause corruption.
+  const atomicSpans = []
+  const LINK_RE = /\[([^\]]*)\]\(([^)]+)\)/g
+  while ((m = LINK_RE.exec(body)) !== null) {
+    atomicSpans.push({ start: m.index, end: m.index + m[0].length })
+  }
+  const JSX_RE = /<\/?(?:[A-Z][A-Za-z0-9]*)\b[^>]*\/?>/g
+  while ((m = JSX_RE.exec(body)) !== null) {
+    atomicSpans.push({ start: m.index, end: m.index + m[0].length })
+  }
+
+  // Adjust non-translatable spans so their boundaries never fall inside
+  // an atomic span. If a boundary would split a link/tag, extend the span
+  // to swallow the whole link/tag.
+  for (const span of filtered) {
+    for (const atom of atomicSpans) {
+      if (span.start > atom.start && span.start < atom.end) {
+        // Boundary starts inside atom — move start to before atom
+        span.start = atom.start
+      }
+      if (span.end > atom.start && span.end < atom.end) {
+        // Boundary ends inside atom — move end to after atom
+        span.end = atom.end
+      }
+    }
+  }
+
+  // Re-merge in case extensions caused overlaps
+  filtered.sort((a, b) => a.start - b.start)
+  const merged = []
+  lastEnd = 0
+  for (const span of filtered) {
+    if (span.start >= lastEnd) {
+      merged.push(span)
+      lastEnd = span.end
+    } else if (span.end > lastEnd) {
+      merged[merged.length - 1].end = span.end
+      lastEnd = span.end
+    }
+  }
+
   // Build alternating chunks
   let pos = 0
-  for (const span of filtered) {
+  for (const span of merged) {
     if (span.start > pos) {
       chunks.push({ translate: true, content: body.slice(pos, span.start) })
     }
