@@ -22,9 +22,11 @@ const PORT = Number(process.env.PORT) || 8787;
 const INDEX_REFRESH_INTERVAL = Number(process.env.INDEX_REFRESH_INTERVAL) || 30 * 60 * 1000; // 30 min
 
 async function startup() {
-  // Validate Feishu OAuth configuration
-  if (isOAuthEnabled() && !getSessionSecret()) {
-    console.error('[Startup] FEISHU_APP_ID/FEISHU_APP_SECRET are set but ADMIN_SESSION_SECRET is missing. Aborting.');
+  // Validate session secret unconditionally (used for both API key and OAuth paths)
+  try {
+    getSessionSecret();
+  } catch {
+    console.error('[Startup] ADMIN_SESSION_SECRET is missing. Aborting.');
     process.exit(1);
   }
 

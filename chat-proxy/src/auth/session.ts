@@ -13,7 +13,11 @@ export const SESSION_COOKIE = '__admin_session';
 export const STATE_COOKIE = '__oauth_state';
 
 export function getSessionSecret(): string {
-  return process.env.ADMIN_SESSION_SECRET || '';
+  const secret = process.env.ADMIN_SESSION_SECRET;
+  if (!secret || secret.length === 0) {
+    throw new Error('ADMIN_SESSION_SECRET is not configured');
+  }
+  return secret;
 }
 
 export function isOAuthEnabled(): boolean {

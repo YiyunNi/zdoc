@@ -14,9 +14,9 @@ describe('session', () => {
     expect(getSessionSecret()).toBe('my-secret');
   });
 
-  it('getSessionSecret returns empty string when unset', async () => {
+  it('getSessionSecret throws when env var is empty', async () => {
     const {getSessionSecret} = await import('./session.js');
-    expect(getSessionSecret()).toBe('');
+    expect(() => getSessionSecret()).toThrow('ADMIN_SESSION_SECRET is not configured');
   });
 
   it('isOAuthEnabled returns true when both env vars are set', async () => {
