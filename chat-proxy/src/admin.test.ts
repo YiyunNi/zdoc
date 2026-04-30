@@ -34,6 +34,7 @@ function createDbMock(overrides: Record<string, unknown> = {}) {
 describe('adminApp', () => {
   beforeEach(() => {
     vi.resetModules();
+    vi.doUnmock('hono/cookie');
   });
 
   it('returns 401 when Authorization header is missing', async () => {
@@ -483,5 +484,25 @@ describe('adminApp', () => {
       expect.objectContaining({model: 'mock-model-instance'}),
     );
     process.env.ADMIN_API_KEY = '';
+  });
+
+  it('GET /admin/stats requires authentication', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    process.env.ADMIN_SESSION_SECRET = 'session-secret';
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/stats');
+    expect(res.status).toBe(401);
+    process.env.ADMIN_API_KEY = '';
+    delete process.env.ADMIN_SESSION_SECRET;
+  });
+
+  it('GET /admin/dashboard requires authentication', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    process.env.ADMIN_SESSION_SECRET = 'session-secret';
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/dashboard');
+    expect(res.status).toBe(401);
+    process.env.ADMIN_API_KEY = '';
+    delete process.env.ADMIN_SESSION_SECRET;
   });
 });

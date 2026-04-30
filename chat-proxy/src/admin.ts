@@ -57,7 +57,7 @@ export const adminApp = new Hono();
 // Dashboard — served without auth (API calls from JS use auth)
 // ---------------------------------------------------------------------------
 
-adminApp.get('/dashboard', c => {
+adminApp.get('/dashboard', requireAuth, c => {
   return c.html(dashboardHtml);
 });
 
@@ -171,7 +171,7 @@ adminApp.post('/refresh-index', requireAuth, requireAdmin, async c => {
 });
 
 // GET /admin/stats — index size, cache stats, and token usage summary
-adminApp.get('/stats', async c => {
+adminApp.get('/stats', requireAuth, async c => {
   const cacheStats = await getCacheStats();
   const cacheConfig = getSemanticCacheConfig();
   const tokenSummary = await getTokenUsageSummary();
