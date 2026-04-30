@@ -2,15 +2,15 @@
 // Domain keyword allowlist removed — agents handle relevance now
 
 const INJECTION_PATTERNS = [
-  /ignore\s+(all\s+)?previous\s+instructions/i,
-  /you\s+are\s+now\s+a/i,
-  /system\s+prompt/i,
-  /forget\s+(all\s+)?your\s+(instructions|rules)/i,
-  /disregard\s+(all\s+)?prior/i,
-  /new\s+instructions?\s*:/i,
-  /pretend\s+(you\s+are|to\s+be)/i,
-  /act\s+as\s+if/i,
-  /override\s+(your|the)\s+(system|rules)/i,
+  /ignore\s{1,20}(all\s{1,20})?previous\s{1,20}instructions/i,
+  /you\s{1,20}are\s{1,20}now\s{1,20}a/i,
+  /system\s{1,20}prompt/i,
+  /forget\s{1,20}(all\s{1,20})?your\s{1,20}(instructions|rules)/i,
+  /disregard\s{1,20}(all\s{1,20})?prior/i,
+  /new\s{1,20}instructions?\s{0,20}:/i,
+  /pretend\s{1,20}(you\s{1,20}are|to\s{1,20}be)/i,
+  /act\s{1,20}as\s{1,20}if/i,
+  /override\s{1,20}(your|the)\s{1,20}(system|rules)/i,
 ];
 
 const GREETING_PATTERNS = [
