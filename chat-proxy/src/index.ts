@@ -174,6 +174,32 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+function isPrivateIp(ip: string): boolean {
+  const parts = ip.split('.').map(Number);
+  if (parts.length === 4) {
+    const [a, b] = parts;
+    if (a === 10) return true;
+    if (a === 172 && b >= 16 && b <= 31) return true;
+    if (a === 192 && b === 168) return true;
+    if (a === 127) return true;
+  }
+  return ip === '::1' || ip.startsWith('fc00:') || ip.startsWith('fe80:');
+}
+
+export function getClientIp(c: Context): string {
+  const forwarded = c.req.header('x-forwarded-for');
+  if (forwarded) {
+    const ips = forwarded.split(',').map(s => s.trim()).filter(Boolean);
+    for (const ip of ips) {
+      if (!isPrivateIp(ip)) {
+        return ip;
+      }
+    }
+    return ips[0] || 'unknown';
+  }
+  return c.req.header('x-real-ip') || 'unknown';
+}
+
 setInterval(() => {
   const now = Date.now();
   for (const [ip, entry] of rateLimitMap) {
@@ -294,10 +320,7 @@ app.get('/search', async c => {
 
 app.post('/chat', async c => {
   // Rate limit
-  const ip =
-    c.req.header('x-forwarded-for')?.split(',')[0]?.trim() ||
-    c.req.header('x-real-ip') ||
-    'unknown';
+  const ip = getClientIp(c);
   if (!checkRateLimit(ip)) {
     return c.json({error: 'Rate limit exceeded. Please try again in a minute.'}, 429);
   }

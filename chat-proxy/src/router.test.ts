@@ -1,8 +1,13 @@
 import {describe, it, expect, vi, beforeEach} from 'vitest';
+import {Hono} from 'hono';
 
-vi.mock('ai', () => ({
-  generateObject: vi.fn(),
-}));
+vi.mock('ai', async () => {
+  const actual = await vi.importActual('ai');
+  return {
+    ...(actual as any),
+    generateObject: vi.fn(),
+  };
+});
 vi.mock('@ai-sdk/openai', () => ({
   createOpenAI: vi.fn(() => ({
     chat: vi.fn(),
@@ -102,5 +107,55 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('message-7');
     expect(callArgs.prompt).not.toContain('message-0');
     expect(callArgs.prompt).not.toContain('message-3');
+  });
+});
+
+describe('getClientIp', () => {
+  it('uses first non-private IP from X-Forwarded-For', async () => {
+    const {getClientIp} = await import('./index.js');
+    const app = new Hono();
+    let capturedIp = '';
+    app.use('*', async (c) => {
+      capturedIp = getClientIp(c);
+      return c.text('ok');
+    });
+
+    const res = await app.request('/', {
+      headers: {'x-forwarded-for': '10.0.0.1, 192.168.1.1, 203.0.113.5'},
+    });
+    expect(res.status).toBe(200);
+    expect(capturedIp).toBe('203.0.113.5');
+  });
+
+  it('falls back to first IP when all are private', async () => {
+    const {getClientIp} = await import('./index.js');
+    const app = new Hono();
+    let capturedIp = '';
+    app.use('*', async (c) => {
+      capturedIp = getClientIp(c);
+      return c.text('ok');
+    });
+
+    const res = await app.request('/', {
+      headers: {'x-forwarded-for': '192.168.1.100'},
+    });
+    expect(res.status).toBe(200);
+    expect(capturedIp).toBe('192.168.1.100');
+  });
+
+  it('falls back to x-real-ip when x-forwarded-for is absent', async () => {
+    const {getClientIp} = await import('./index.js');
+    const app = new Hono();
+    let capturedIp = '';
+    app.use('*', async (c) => {
+      capturedIp = getClientIp(c);
+      return c.text('ok');
+    });
+
+    const res = await app.request('/', {
+      headers: {'x-real-ip': '198.51.100.10'},
+    });
+    expect(res.status).toBe(200);
+    expect(capturedIp).toBe('198.51.100.10');
   });
 });
