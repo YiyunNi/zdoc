@@ -251,4 +251,17 @@ describe('HTTP Endpoints', () => {
     });
     expect(res.status).toBe(429);
   });
+
+  it('rejects request body larger than 1MB', async () => {
+    const largeBody = JSON.stringify({messages: [{role: 'user', content: 'x'.repeat(1024 * 1024)}]});
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-forwarded-for': '192.168.1.100',
+      },
+      body: largeBody,
+    });
+    expect(res.status).toBe(413);
+  });
 });

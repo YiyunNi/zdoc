@@ -1,4 +1,4 @@
-import {Hono, type Context} from 'hono';
+import {Hono, type Context, type MiddlewareHandler} from 'hono';
 import {cors} from 'hono/cors';
 import {streamText, stepCountIs} from 'ai';
 import type {ChatRequest} from './types.js';
@@ -288,6 +288,29 @@ app.get('/health', async c => {
     },
   });
 });
+
+// ---------------------------------------------------------------------------
+// Body size limit for /chat
+// ---------------------------------------------------------------------------
+
+const MAX_BODY_SIZE_BYTES = 1024 * 1024; // 1 MB
+
+function bodySizeLimit(): MiddlewareHandler {
+  return async (c, next) => {
+    const contentLength = c.req.header('content-length');
+    if (contentLength && parseInt(contentLength, 10) > MAX_BODY_SIZE_BYTES) {
+      return c.json({error: 'Request body too large'}, 413);
+    }
+    const cloned = c.req.raw.clone();
+    const blob = await cloned.blob();
+    if (blob.size > MAX_BODY_SIZE_BYTES) {
+      return c.json({error: 'Request body too large'}, 413);
+    }
+    return next();
+  };
+}
+
+app.use('/chat', bodySizeLimit());
 
 // ---------------------------------------------------------------------------
 // GET /search — lightweight BM25 search for the search bar (no LLM)
