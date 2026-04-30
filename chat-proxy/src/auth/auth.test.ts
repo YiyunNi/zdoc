@@ -109,6 +109,20 @@ describe('session', () => {
     const state = generateOAuthState();
     expect(state).toMatch(/^[a-f0-9]{32}$/);
   });
+
+  it('constantTimeCompare handles length mismatch without short-circuit', async () => {
+    const {constantTimeCompare} = await import('./middleware.js');
+
+    // Different lengths should still return false without throwing
+    expect(constantTimeCompare('short', 'muchlongersecret')).toBe(false);
+    expect(constantTimeCompare('muchlongersecret', 'short')).toBe(false);
+
+    // Same length mismatch should also return false
+    expect(constantTimeCompare('wrong', 'muchlongersecret')).toBe(false);
+
+    // Exact match should return true
+    expect(constantTimeCompare('exact', 'exact')).toBe(true);
+  });
 });
 
 describe('feishu', () => {
