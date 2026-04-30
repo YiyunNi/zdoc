@@ -1,6 +1,57 @@
 const RefGen = require('./refGen');
 const fs = require('node:fs')
+const path = require('node:path')
 
+function loadSpecifications(inputPath) {
+    const stat = fs.statSync(inputPath)
+    if (stat.isFile()) {
+        return JSON.parse(fs.readFileSync(inputPath, 'utf-8'))
+    }
+
+    if (!stat.isDirectory()) {
+        throw new Error(`Path "${inputPath}" is neither a file nor a directory`)
+    }
+
+    const files = fs.readdirSync(inputPath)
+        .filter(f => f.endsWith('.json'))
+        .sort()
+
+    if (files.length === 0) {
+        throw new Error(`No .json files found in directory "${inputPath}"`)
+    }
+
+    let spec = null
+
+    for (const file of files) {
+        const content = JSON.parse(fs.readFileSync(path.join(inputPath, file), 'utf-8'))
+
+        if (!spec) {
+            spec = { ...content }
+            continue
+        }
+
+        if (content.tags) {
+            spec.tags = [...(spec.tags || []), ...content.tags]
+        }
+        if (content.paths) {
+            spec.paths = { ...(spec.paths || {}), ...content.paths }
+        }
+        if (content.components) {
+            spec.components = spec.components || {}
+            for (const key of Object.keys(content.components)) {
+                spec.components[key] = {
+                    ...(spec.components[key] || {}),
+                    ...content.components[key]
+                }
+            }
+        }
+        if (content.servers) {
+            spec.servers = content.servers
+        }
+    }
+
+    return spec
+}
 
 module.exports = function (context, options) {
     return {
@@ -27,7 +78,7 @@ module.exports = function (context, options) {
                         return
                     } else {
                         try {
-                            specifications = JSON.parse(fs.readFileSync(opts.specifications, 'utf-8'))
+                            specifications = loadSpecifications(opts.specifications)
                         } catch (err) {
                             console.error(`Failed to read OpenAPI spec from "${opts.specifications}": ${err.message}`)
                             return
@@ -37,7 +88,7 @@ module.exports = function (context, options) {
                     if (opts.lang === 'zh-CN' && opts.strings === undefined) {
                         console.log('Please provide the localization strings for Chinese docs')
                         return
-                    } 
+                    }
 
                     if (opts.lang === 'zh-CN') {
                         try {

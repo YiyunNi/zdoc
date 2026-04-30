@@ -49,6 +49,7 @@ class larkDocWriter {
         this.tokenFetcher = new larkTokenFetcher()
         this.downloader = new Downloader({}, imageDir)
         this.upload_to_s3 = upload_to_s3
+        this.api_compose_block_type_id = process.env.API_COMPOSE_BLOCK_TYPE_ID || 'blk_682093ba9580c002300d1ea7'
     }
 
     __fetch_doc_source (type, value, slug="") {
@@ -124,6 +125,7 @@ class larkDocWriter {
                             sidebar_label: labels,
                             keywords: keywords,
                             doc_card_list: true,
+                            page_tag: meta['tag'],
                         })
 
                         await this.write_docs(`${current_path}/${slug}`, token)
@@ -168,6 +170,7 @@ class larkDocWriter {
                                     sidebar_label: labels,
                                     keywords: keywords,
                                     doc_card_list: false,
+                                    page_tag: meta['tag'],
                                 })
                             }
                             break;
@@ -178,8 +181,8 @@ class larkDocWriter {
     }
 
     async write_doc ({
-        path,  
-        page_title, 
+        path,
+        page_title,
         page_slug,
         page_beta,
         notebook,
@@ -191,7 +194,8 @@ class larkDocWriter {
         sidebar_position,
         sidebar_label,
         keywords,
-        doc_card_list
+        doc_card_list,
+        page_tag
     }) {
         let obj;
         let blocks;
@@ -217,23 +221,41 @@ class larkDocWriter {
             this.blocks = page.children.map(child => {
                 return this.__retrieve_block_by_id(child)
             })
-            await this.__write_page({
-                title: page_title,
-                suffix: this.__title_suffix(path),
-                slug: page_slug,
-                beta: page_beta,
-                notebook: notebook,
-                addedSince: addedSince,
-                lastModified: lastModified,
-                deprecateSince: deprecateSince,
-                path: path, 
-                type: page_type,
-                token: page_token,
-                sidebar_position: sidebar_position,
-                sidebar_label: sidebar_label,
-                keywords: keywords,
-                doc_card_list: doc_card_list,
-            })
+
+            // Detect ApiCompose add-on block
+            const apiComposeBlock = this.__find_api_compose_block(this.blocks)
+            if (apiComposeBlock) {
+                await this.__write_api_page({
+                    title: page_title,
+                    slug: page_slug,
+                    beta: page_beta,
+                    path: path,
+                    type: page_type,
+                    token: page_token,
+                    sidebar_position: sidebar_position,
+                    sidebar_label: sidebar_label,
+                    keywords: keywords,
+                    apiComposeBlock: apiComposeBlock,
+                })
+            } else {
+                await this.__write_page({
+                    title: page_title,
+                    suffix: this.__title_suffix(path),
+                    slug: page_slug,
+                    beta: page_beta,
+                    notebook: notebook,
+                    addedSince: addedSince,
+                    lastModified: lastModified,
+                    deprecateSince: deprecateSince,
+                    path: path,
+                    type: page_type,
+                    token: page_token,
+                    sidebar_position: sidebar_position,
+                    sidebar_label: sidebar_label,
+                    keywords: keywords,
+                    doc_card_list: doc_card_list,
+                })
+            }
         }
     }
 
@@ -583,6 +605,65 @@ class larkDocWriter {
                 markdown
             }
         }
+    }
+
+    __find_api_compose_block(blocks) {
+        for (const block of blocks) {
+            if (this.block_types[block['block_type']-1] === 'add_ons') {
+                if (block['add_ons'] && block['add_ons']['component_type_id'] === this.api_compose_block_type_id) {
+                    return block['add_ons']
+                }
+            }
+            // Recursively check children if any
+            if (block['children'] && block['children'].length > 0) {
+                const children = block['children'].map(child => this.__retrieve_block_by_id(child))
+                const found = this.__find_api_compose_block(children)
+                if (found) return found
+            }
+        }
+        return null
+    }
+
+    async __write_api_page({title, slug, beta, path, type, token, sidebar_position, sidebar_label, keywords, apiComposeBlock}) {
+        let recordData
+        try {
+            recordData = JSON.parse(apiComposeBlock['record'] || '{}')
+        } catch (e) {
+            console.error(`Failed to parse ApiCompose record for ${slug}: ${e.message}`)
+            return
+        }
+
+        const specs = recordData
+        const method = (specs.method || 'get').toLowerCase()
+        const endpoint = specs.endpoint || ''
+        const description = (specs.summary || title || '').replace(/"/g, '\\"')
+
+        const frontMatter = `---
+displayed_sidebar: restfulSidebar
+sidebar_position: ${sidebar_position || 1}
+slug: /restful/${slug}
+beta: ${beta ? 'TRUE' : 'FALSE'}
+title: "${title || specs.summary || 'API'} | RESTful"
+description: "${description} | RESTful"
+hide_table_of_contents: true
+sidebar_label: "${sidebar_label || title || specs.summary || 'API'}"
+sidebar_custom_props: { badges: ['${method}'] }
+${keywords ? 'keywords: \n  - ' + keywords.split(',').map(k => k.trim()).join('\n  - ') + '\n' : ''}---`
+
+        const specsJson = JSON.stringify(specs, null, 2)
+        const mdxBody = `# ${title || specs.summary || 'API'}
+
+import RestSpecs from '@site/src/components/RestSpecs';
+
+<RestSpecs specs={specs} endpoint={endpoint} method={method} target="${this.targets}" lang="en-US" />
+
+export const specs = ${specsJson}
+export const endpoint = "${endpoint}"
+export const method = "${method}"`
+
+        const file_path = `${path}/${slug}.mdx`
+        fs.writeFileSync(file_path, frontMatter + '\n\n' + mdxBody)
+        console.log(`Generated API doc: ${file_path}`)
     }
 
     __front_matters (title, suffix, slug, beta, notebook, type, token, sidebar_position=undefined, sidebar_label="", keywords="", displayed_sidebar=this.displayedSidebar, description="") {

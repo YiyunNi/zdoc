@@ -104,7 +104,7 @@ jobs:
         npx docusaurus fetch-lark-docs -man gov226 -tar zilliz -s3
         npx docusaurus fetch-lark-docs -man gov226 -tar zilliz -post
         npx docusaurus fetch-lark-docs -man cliv01 -tar zilliz -s3
-        npx docusaurus fetch-apifox-docs -s plugins/apifox-docs/meta/openapi.json
+        npx docusaurus fetch-apifox-docs -s plugins/apifox-docs/meta/openapi/
         npx docusaurus report-to-lark --card-advance
       env:
         APP_ID: ${{ secrets.APP_ID }}

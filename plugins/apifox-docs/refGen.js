@@ -91,7 +91,7 @@ class refGen {
     )
 
     const template = env.getTemplate("reference.mdx")
-    var idx = 0
+    const positions = {}
     for (const page_url of Object.keys(specifications.paths)) {
       for (const method of Object.keys(specifications.paths[page_url])) {
         const specification = this.resolveRefs(specifications.paths[page_url][method], specifications)
@@ -100,8 +100,6 @@ class refGen {
           continue
         }
 
-        const sidebar_position = idx; idx++;
-
         const page_title = lang === "zh-CN" ? specification["x-i18n"][lang].summary : specification.summary
         const page_excerpt = this.__filter_content(lang === "zh-CN" ? specification["x-i18n"][lang].description : specification.description, target).split('<')[0]
         var page_parent = parents.filter(x => x === specification.tags[0])[0]
@@ -109,6 +107,12 @@ class refGen {
           console.warn(`Warning: No matching parent tag for "${specification.tags?.[0]}" in ${method.toUpperCase()} ${page_url}, skipping`)
           continue
         }
+        const tag = page_parent
+        if (!positions[tag]) {
+          positions[tag] = 0
+        }
+        const sidebar_position = positions[tag]; positions[tag]++;
+
         page_parent = this.toSlug(page_parent)
         if (target === 'milvus') {
           const name = this.lookupMilvusName(page_parent)
