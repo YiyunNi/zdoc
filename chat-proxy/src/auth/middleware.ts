@@ -75,6 +75,12 @@ export const requireAuth: MiddlewareHandler = async (c, next) => {
     return c.json({error: 'Admin API not configured (set ADMIN_API_KEY or Feishu OAuth vars)'}, 503);
   }
 
+  // Browser navigations expect a redirect, not a JSON blob. Detect them by the
+  // Accept header — fetch() calls from the dashboard send application/json and
+  // still get the 401 they know how to handle.
+  if (c.req.header('Accept')?.includes('text/html')) {
+    return c.redirect('/admin/auth/feishu');
+  }
   return c.json({error: 'Unauthorized', login_url: '/admin/auth/feishu'}, 401);
 };
 

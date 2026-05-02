@@ -505,4 +505,32 @@ describe('adminApp', () => {
     process.env.ADMIN_API_KEY = '';
     delete process.env.ADMIN_SESSION_SECRET;
   });
+
+  it('GET /admin/dashboard redirects browser to login when unauthenticated', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    process.env.ADMIN_SESSION_SECRET = 'session-secret';
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/dashboard', {
+      headers: {Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'},
+    });
+    expect(res.status).toBe(302);
+    expect(res.headers.get('Location')).toBe('/admin/auth/feishu');
+    process.env.ADMIN_API_KEY = '';
+    delete process.env.ADMIN_SESSION_SECRET;
+  });
+
+  it('GET /admin/api/* still returns 401 JSON for browser-style Accept header', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    process.env.ADMIN_SESSION_SECRET = 'session-secret';
+    const {adminApp} = await import('./admin.js');
+    // Even if a browser hits an API path, JSON 401 is fine — but verify a fetch()
+    // with explicit application/json Accept never gets a redirect.
+    const res = await adminApp.request('/api/live', {
+      headers: {Accept: 'application/json'},
+    });
+    expect(res.status).toBe(401);
+    expect(res.headers.get('Location')).toBeNull();
+    process.env.ADMIN_API_KEY = '';
+    delete process.env.ADMIN_SESSION_SECRET;
+  });
 });
