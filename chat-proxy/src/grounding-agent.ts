@@ -6,6 +6,7 @@ import type {Source} from './types.js';
 import {isApiRefSource} from './demotion.js';
 import {saveTokenUsage} from './db.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
+import {makeTelemetry} from './telemetry.js';
 
 const groundingSchema = z.object({
   selectedSources: z.array(z.object({
@@ -95,6 +96,7 @@ export async function groundAtomically(
       model: createModelInstance(resolvedModel),
       schema: groundingSchema,
       maxOutputTokens: 400,
+      experimental_telemetry: makeTelemetry('grounding'),
       prompt: `You are a source attribution agent for Zilliz Cloud documentation. Given a response and candidate sources, select ONLY the sources that genuinely support claims in the response.
 
 Rules:

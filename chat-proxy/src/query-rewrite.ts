@@ -1,6 +1,7 @@
 import {generateObject} from 'ai';
 import {z} from 'zod';
 import {resolveModel, createModelInstance} from './runtime-config.js';
+import {makeTelemetry} from './telemetry.js';
 
 const rewriteSchema = z.object({
   searchQuery: z.string().describe('Rewritten query optimized for keyword search'),
@@ -51,6 +52,7 @@ export async function rewriteQuery(question: string, retries = 1): Promise<strin
       model: createModelInstance(resolvedModel),
       schema: rewriteSchema,
       maxOutputTokens: 100,
+      experimental_telemetry: makeTelemetry('query-rewrite'),
       prompt: `You are a search query optimizer for Zilliz Cloud / Milvus documentation.
 
 Rewrite the user's question into a keyword search query that will find the most relevant documentation pages. Add technical synonyms, expand abbreviations, and include terms that documentation would use. Keep the rewritten query under 20 words. Output ONLY valid JSON with the format: {"searchQuery": "your query here"}
@@ -84,6 +86,7 @@ User question: ${question}`,
           model: createModelInstance(resolvedModel),
           maxOutputTokens: 80,
           temperature: 0,
+          experimental_telemetry: makeTelemetry('query-rewrite-retry'),
           prompt: `Output ONLY a JSON object with exactly this format: {"searchQuery": "query"}. No explanation, no markdown.
 
 Rewrite this query for documentation search: "${question}"`,

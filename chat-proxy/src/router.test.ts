@@ -6,6 +6,7 @@ vi.mock('ai', async () => {
   return {
     ...(actual as any),
     generateObject: vi.fn(),
+    generateText: vi.fn(),
   };
 });
 vi.mock('@ai-sdk/openai', () => ({
@@ -20,13 +21,15 @@ vi.mock('./runtime-config.js', () => ({
 }));
 
 import {routeIntent, clearSessionRoute} from './router.js';
-import {generateObject} from 'ai';
+import {generateObject, generateText} from 'ai';
 
 const mockGenerateObject = vi.mocked(generateObject);
+const mockGenerateText = vi.mocked(generateText);
 
 describe('routeIntent', () => {
   beforeEach(() => {
     mockGenerateObject.mockReset();
+    mockGenerateText.mockReset();
   });
 
   it('routes to correct agent based on LLM response', async () => {
@@ -107,6 +110,104 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('message-7');
     expect(callArgs.prompt).not.toContain('message-0');
     expect(callArgs.prompt).not.toContain('message-3');
+  });
+
+  it('falls back to tool-based routing when generateObject fails', async () => {
+    mockGenerateObject.mockRejectedValueOnce(new Error('JSON parse error'));
+
+    mockGenerateText.mockResolvedValueOnce({
+      toolCalls: [{
+        toolName: 'route',
+        input: {agent: 'schema', topics: ['schema-design'], reasoning: 'tool fallback'},
+      }],
+    } as any);
+
+    const result = await routeIntent('design my collection fields', [], 'sess-tool-fb');
+    expect(result.agent).toBe('schema');
+    expect(result.reasoning).toBe('tool fallback');
+    expect(mockGenerateText).toHaveBeenCalledTimes(1);
+  });
+
+  it('falls back to tool-based routing when generateObject returns invalid agent', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {agent: 'invalid-agent', reasoning: 'bad'},
+    } as any);
+
+    mockGenerateText.mockResolvedValueOnce({
+      toolCalls: [{
+        toolName: 'route',
+        input: {agent: 'code', topics: [], reasoning: 'corrected via tool'},
+      }],
+    } as any);
+
+    const result = await routeIntent('how do i search', [], 'sess-invalid');
+    expect(result.agent).toBe('code');
+    expect(result.reasoning).toBe('corrected via tool');
+  });
+
+  it('falls back to sticky agent when both routing attempts fail', async () => {
+    // First call sets sticky route
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {agent: 'product', reasoning: 'ok'},
+    } as any);
+    await routeIntent('compare tiers', [], 'sess-both-fail');
+
+    // Both attempts fail
+    mockGenerateObject.mockRejectedValueOnce(new Error('fail 1'));
+    mockGenerateText.mockRejectedValueOnce(new Error('fail 2'));
+
+    const result = await routeIntent('what about pricing', [], 'sess-both-fail');
+    expect(result.agent).toBe('product');
+    expect(result.reasoning).toContain('Fallback');
+  });
+
+  it('falls back to general when both attempts fail and no sticky route', async () => {
+    mockGenerateObject.mockRejectedValueOnce(new Error('fail 1'));
+    mockGenerateText.mockRejectedValueOnce(new Error('fail 2'));
+
+    const result = await routeIntent('hello', [], 'sess-no-sticky');
+    expect(result.agent).toBe('general');
+  });
+
+  it('falls back to plain text JSON extraction when object and tool both fail', async () => {
+    mockGenerateObject.mockRejectedValueOnce(new Error('JSON mode unavailable'));
+    mockGenerateText.mockRejectedValueOnce(new Error('tool_choice unsupported'));
+
+    // Third attempt: plain text succeeds
+    mockGenerateText.mockResolvedValueOnce({
+      text: 'Some extra text\n```json\n{"agent": "schema", "topics": ["schema-design"], "reasoning": "plain text fallback"}\n```',
+    } as any);
+
+    const result = await routeIntent('design my collection schema', [], 'sess-plain');
+    expect(result.agent).toBe('schema');
+    expect(result.reasoning).toBe('plain text fallback');
+    // generateText should be called twice (tool attempt + plain text attempt)
+    expect(mockGenerateText).toHaveBeenCalledTimes(2);
+  });
+
+  it('parses inline JSON when plain text fallback returns no markdown fences', async () => {
+    mockGenerateObject.mockRejectedValueOnce(new Error('JSON mode unavailable'));
+    mockGenerateText.mockRejectedValueOnce(new Error('tool_choice unsupported'));
+
+    mockGenerateText.mockResolvedValueOnce({
+      text: 'Here is the route: {"agent": "code", "topics": ["search"], "reasoning": "inline json"}',
+    } as any);
+
+    const result = await routeIntent('python search example', [], 'sess-inline');
+    expect(result.agent).toBe('code');
+  });
+
+  it('strips DeepSeek <think> tags before extracting JSON in plain text fallback', async () => {
+    mockGenerateObject.mockRejectedValueOnce(new Error('JSON mode unavailable'));
+    mockGenerateText.mockRejectedValueOnce(new Error('tool_choice unsupported'));
+
+    mockGenerateText.mockResolvedValueOnce({
+      text: '<think>Let me analyze the query...</think>\n\n{"agent": "schema", "topics": ["schema-design"], "reasoning": "User is asking about collection schema design."}',
+    } as any);
+
+    const result = await routeIntent('design my collection schema', [], 'sess-think');
+    expect(result.agent).toBe('schema');
+    expect(result.reasoning).toBe('User is asking about collection schema design.');
   });
 });
 
