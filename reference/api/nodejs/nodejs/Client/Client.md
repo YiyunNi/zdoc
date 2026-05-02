@@ -12,15 +12,15 @@ token: WlKqf2dXKljRPDdiiUIcdsh5nxd
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud
   - Client
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 ---
 

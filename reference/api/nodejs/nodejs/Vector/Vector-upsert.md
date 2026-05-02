@@ -1,29 +1,29 @@
 ---
 title: "upsert() | Node.js"
 slug: /node/node/Vector-upsert
+sidebar_key: node/Vector-upsert
 sidebar_label: "upsert()"
-beta: false
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation inserts or updates data in a specific collection. | Node.js"
 type: docx
-token: MpW0dmPAao1SWkx7HGkcT16dnvb
-sidebar_position: 9
+token: LEptdqqfcoqdtCx0LO1c3yxvnBo
+sidebar_position: 8
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud
   - upsert()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -33,29 +33,25 @@ import Admonition from '@theme/Admonition';
 
 This operation inserts or updates data in a specific collection.
 
-```javascript
-upsert(data): Promise<MutationResult>
+```typescript
+await milvusClient.upsert(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
-```javascript
-milvusClient.upsert({
-   db_name: string,
-   collection_name: string,
-   data: RowData[],
-   hash_keys: Number[],
-   partial_update: boolean,
-   partition_name: string,
-   timeout: number
- })
+```typescript
+await milvusClient.upsert({
+    db_name?: string,
+    collection_name: string,
+    data: RowData[],
+    hash_keys?: number[],
+    partial_update?: boolean,
+    partition_name?: string,
+    timeout?: number,
+})
 ```
 
 **PARAMETERS:**
-
-- **db_name** (*string*) -
-
-    The name of the database that holds the target collection.
 
 - **collection_name** (*string*) -
 
@@ -65,124 +61,80 @@ milvusClient.upsert({
 
 - **data** (*RowData[]*) -
 
-    The data to insert into the current collection.
+    **[REQUIRED]**
 
-    The data to insert should be a dictionary that matches the schema of the current collection or a list of such dictionaries. 
+    The data to upsert. Each element is a plain JavaScript object whose keys match the field names of the collection schema. Entities whose primary key matches an existing record are updated; otherwise a new entity is inserted.
 
-    To perform an update, you are advised first to retrieve the target entity from the collection, modify the values of any relevant fields, and then save it back to the collection. 
+- **db_name** (*string*) -
 
-    The following code assumes that the schema of the current collection has three fields named **id**, **vector** ,and **color**. The `id` field is the primary field, the `vector` field is a field to hold 5-dimensional vector embeddings, and the `color` field is a scalar field holding strings.
+    The name of the database that holds the target collection.
 
-    ```javascript
-    # A dictionary, or
-    data={
-        'id': 0,
-        'vector': [
-            0.6186516144460161,
-            0.5927442462488592,
-            0.848608119657156,
-            0.9287046808231654,
-            -0.42215796530168403
-        ],
-        'color': 'green'
-    }
-    
-    # A list of dictionaries
-    data = [
-        {
-            'id': 1,
-            'vector': [
-                0.37417449965222693,
-                -0.9401784221711342,
-                0.9197526367693833,
-                0.49519396415367245,
-                -0.558567588166478
-            ],
-            'color': 'brown'
-        },
-        {
-            'id': 2,
-            'vector': [
-                0.46949086179692356,
-                -0.533609076732849,
-                -0.8344432775467099,
-                0.9797361846081416,
-                0.6294256393761057
-            ],
-            'color': 'purple'
-        }
-    ]
-    ```
+- **hash_keys** (*number[]*) -
 
-- **timeout** (*number*)  
+    Reserved for internal use. Do not set this parameter unless explicitly required.
 
-    The timeout duration for this operation. 
+- **partial_update** (*boolean*) -
 
-    Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
-
-- **partial_update**(*boolean* | *None*) -
-
-    Whether to enable partial update. Once set to `True`, you can include only the fields that need updating in `data`. 
+    Whether to enable partial update. When set to `true`, you can include only the fields that need updating in `data`; fields not included retain their existing values.
 
 - **partition_name** (*string*) -
 
-    The name of a partition in the current collection. 
+    The name of a partition in the current collection. If specified, the data is upserted into that partition.
 
-    If specified, the data is to be inserted into the specified partition.
+- **timeout** (*number*) -
 
-**RETURNS** *Promise\<MutationResult>*
+    The timeout duration for this operation. Setting this to `None` indicates that this operation times out when any response arrives or any error occurs.
+
+- **field_ops** (*FieldPartialUpdateOp[]*) -
+
+    Partial update operations for array fields. Optional.
+
+**RETURNS** *Promise&lt;MutationResult&gt;*
 
 This method returns a promise that resolves to a **MutationResult** object.
 
-```javascript
+```typescript
 {
-    IDs: NumberArrayId | StringArrayId,
+    succ_index: number[],
+    err_index: number[],
     acknowledged: boolean,
-    delete_cnt: string,
-    err_index: list[number],
     insert_cnt: string,
-    status: object,
-    succ_index: list[number],
+    delete_cnt: string,
+    upsert_cnt: string,
     timestamp: string,
-    upsert_cnt: string
+    IDs: { int_id?: { data: number[] }, str_id?: { data: string[] }, id_field: 'int_id' | 'str_id' },
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **IDs** (*NumberArrayId* | *StringArrayId*) -
+- **succ_index** (*number[]*) -
+The zero-based positions in the input data of rows that were successfully upserted.
 
-    A list of the IDs of the upserted entities.
+- **err_index** (*number[]*) -
+The zero-based positions of rows that were rejected. When all rows succeed, this list is empty.
 
 - **acknowledged** (*boolean*) -
-
-    A boolean value indicating whether the upsert operation is successful.
-
-- **delete_cnt** (*string*) -
-
-    The deleted entities. The value stays `0` in this operation.
-
-- **err_index** (Number[]) -
-
-    The number of entities involved in the insert operation that fails.
+Whether the write was acknowledged by Milvus.
 
 - **insert_cnt** (*string*) -
+The number of rows newly inserted by this operation, formatted as a string.
 
-    The new entities that are inserted. The value stays `0` in this operation.
-
-- **succ_index** (*list[number]*) -
-
-    The number of entities involved in the upsert operation that have been successfully indexed.
-
-- **timestamp** (*string*) -
-
-    The timestamp at which the upsert operation occurs.
+- **delete_cnt** (*string*) -
+The number of rows logically deleted to make room for replacements.
 
 - **upsert_cnt** (*string*) -
+The total number of rows upserted by this operation.
 
-    The entities that have been upserted.
+- **timestamp** (*string*) -
+The hybrid timestamp at which the write became visible.
 
-- **status** (*object*) -
+- **IDs** (*StringArrayId* | *NumberArrayId*) -
+The primary keys carried in the upserted rows. For the full field reference, refer to the `insert()` doc.
+
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -190,112 +142,40 @@ This method returns a promise that resolves to a **MutationResult** object.
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```javascript
-const { MilvusClient, DataType } = require("@zilliz/milvus2-sdk-node")
+import { MilvusClient } from '@zilliz/milvus2-sdk-node';
 
-// 1. Set up a Milvus client
-const address = "YOUR_CLUSTER_ENDPOINT";
-const token = "YOUR_CLUSTER_TOKEN";
-const client = new MilvusClient({address, token});
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 
-// 2. Create a collection
-client.create_collection({
-    collection_name: "test_collection",
-    dim: 5
-})
-
-// 3. Insert record
-res = await client.insert({
-    collection_name: "test_collection",
-    data: [
-        {
-            'id': 0,
-            'vector': [
-                0.37417449965222693,
-                -0.9401784221711342,
-                -0.8344432775467099,
-                0.9797361846081416,
-                0.6294256393761057
-            ],
-            'color': 'green'
-        },
-        {
-            'id': 1,
-            'vector': [
-                0.37417449965222693,
-                -0.9401784221711342,
-                0.9197526367693833,
-                0.49519396415367245,
-                -0.558567588166478
-            ],
-            'color': 'brown'
-        },
-        {
-            'id': 2,
-            'vector': [
-                0.46949086179692356,
-                -0.533609076732849,
-                -0.8344432775467099,
-                0.9797361846081416,
-                0.6294256393761057
-            ],
-            'color': 'purple'
-        }
-    ]
-})
-
-// 4. Upsert a record
-res = client.upsert({
-    collection_name: "test_collection",
+// Upsert a single entity
+const result = await milvusClient.upsert({
+    collection_name: 'my_collection',
     data: {
-        'id': 0,
-        'vector': [
-            0.6186516144460161,
-            0.5927442462488592,
-            0.848608119657156,
-            0.9287046808231654,
-            -0.42215796530168403
-        ],
-        'color': 'grass-green'
-    }
-})
+        id: 0,
+        vector: [0.62, 0.59, 0.85, 0.93, -0.42],
+        color: 'grass-green',
+    },
+});
 
-// 4. Upsert multiple records
-res = client.upsert({
-    collection_name: "test_collection",
+// Upsert multiple entities
+const result2 = await milvusClient.upsert({
+    collection_name: 'my_collection',
     data: [
-        {
-            'id': 1,
-             'vector': [
-                 0.3457690490452393,
-                 -0.9401784221711342,
-                 0.9123948134344333,
-                 0.49519396415367245,
-                 -0.558567588166478
-             ],
-             'color': 'mud-brown'
-       },
-       {
-           'id': 2,
-           'vector': [
-               0.42349086179692356,
-               -0.533609076732849,
-               -0.8344432775467099,
-               0.675761846081416,
-               0.57094256393761057
-           ],
-           'color': 'violet-purple'
-       }
-   ]
-})
+        { id: 1, vector: [0.37, -0.94, 0.92, 0.50, -0.56], color: 'mud-brown' },
+        { id: 2, vector: [0.47, -0.53, -0.83, 0.98, 0.63], color: 'violet-purple' },
+    ],
+});
 
+console.log(result2.upsert_cnt);
 ```
-

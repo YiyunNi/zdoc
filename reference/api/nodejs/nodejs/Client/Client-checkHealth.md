@@ -1,29 +1,29 @@
 ---
 title: "checkHealth() | Node.js"
 slug: /node/node/Client-checkHealth
+sidebar_key: node/Client-checkHealth
 sidebar_label: "checkHealth()"
-beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation checks the health status of the Milvus server. | Node.js"
 type: docx
 token: DDvudeY20o6tV5xwwo4cKovjnHf
 sidebar_position: 2
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
   - zilliz
   - zilliz cloud
   - cloud
   - checkHealth()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation checks the health status of the Milvus server.
 
 ```javascript
-checkHealth(): Promise<CheckHealthResponse>
+await milvusClient.checkHealth()
 ```
 
 ## Request Syntax\{#request-syntax}
@@ -47,14 +47,14 @@ milvusClient.checkHealth()
 
 *Promise*\<*CheckHealthResponse*>
 
-**RETURNS:**
+**RETURNS** *Promise&lt;CheckHealthResponse&gt;*
 
-A promise that resolves to a **CheckHealthResponse** object.
+This method returns a promise that resolves to a **CheckHealthResponse** object.
 
-```javascript
+```typescript
 {
     isHealthy: boolean,
-    reasons: []
+    reasons: string[]
 }
 ```
 
@@ -62,11 +62,11 @@ A promise that resolves to a **CheckHealthResponse** object.
 
 - **isHealthy** (*boolean*) -
 
-    Whether the currently connected Milvus server is healthy.
+    A boolean that indicates whether all critical components of the Milvus deployment are healthy.
 
-- **reasons** (*[]*) - 
+- **reasons** (*string[]*) -
 
-    The reasons for the currently connected Milvus server is unhealthy.
+    When **isHealthy** is **false**, a list of human-readable reasons explaining which components are unhealthy. The list is empty when **isHealthy** is **true**.
 
 ## Examples\{#examples}
 

@@ -1,29 +1,29 @@
 ---
 title: "createDatabase() | Node.js"
 slug: /node/node/Database-createDatabase
+sidebar_key: node/Database-createDatabase
 sidebar_label: "createDatabase()"
-beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a database. | Node.js"
 type: docx
-token: JmlKdBz7Io91Ffx9rpKce3vUnMc
+token: UouKd4h01oL9Rqx73jjcHM3enSh
 sidebar_position: 2
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
   - createDatabase()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation creates a database.
 
 ```javascript
-createDatabase(data): Promise<ResStatus>
+await milvusClient.createDatabase(data)
 ```
 
 <Admonition type="info" icon="📘" title="Notes">
@@ -46,7 +46,7 @@ createDatabase(data): Promise<ResStatus>
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.createDatabase({
+await milvusClient.createDatabase({
     db_name: string,
     properties?: Object
     timeout?: number
@@ -124,6 +124,12 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```javascript
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
-const resStatus = await milvusClient.createDatabase({ db_name: 'new_db' });
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
+const resStatus = await milvusClient.createDatabase({
+    db_name: 'new_db',
+    properties: { 'database.resource_groups': 'rg1' },
+});
 ```

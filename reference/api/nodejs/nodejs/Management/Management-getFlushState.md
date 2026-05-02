@@ -1,29 +1,29 @@
 ---
 title: "getFlushState() | Node.js"
 slug: /node/node/Management-getFlushState
+sidebar_key: node/Management-getFlushState
 sidebar_label: "getFlushState()"
-beta: false
 added_since: v2.4.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation returns the flush status of a specific segment. | Node.js"
 type: docx
 token: X8qWdMHg5oQQK6xZdBYcGNOnn3c
 sidebar_position: 10
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
   - zilliz
   - zilliz cloud
   - cloud
   - getFlushState()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation returns the flush status of a specific segment.
 
 ```javascript
-getFlushState(data): Promise<GetFlushStateResponse>
+await milvusClient.getFlushState(data)
 ```
 
 <Admonition type="info" icon="📘" title="Notes">
@@ -46,7 +46,7 @@ getFlushState(data): Promise<GetFlushStateResponse>
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getFlushState({
+await milvusClient.getFlushState({
     segment_ids: number[],
     timeout?: number
 })
@@ -66,28 +66,24 @@ milvusClient.getFlushState({
 
     Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
-**RETURNS** *Promise\<GetFlushStateResponse>*
+**RETURNS** *Promise&lt;GetFlushStateResponse&gt;*
 
 This method returns a promise that resolves to a **GetFlushStateResponse** object.
 
-```javascript
+```typescript
 {
     flushed: boolean,
-    status: {
-        code: number,
-        error_code: string | number,
-        reason: string
-    }
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
 - **flushed** (*boolean*) -
+Whether all targeted segments are flushed to persistent storage. It is **true** when every requested segment ID is sealed and persisted, otherwise **false**.
 
-    Whether data in the specified segment is persisted into storage.
-
-- **status** (*ResStatus*) - 
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -95,16 +91,19 @@ This method returns a promise that resolves to a **GetFlushStateResponse** objec
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const flushState = await milvusClient.getFlushState({
     segmentIDs: [1,2,3,4],
 });

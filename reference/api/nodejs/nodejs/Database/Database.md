@@ -12,15 +12,15 @@ token: F0ZXfs6XSlspHxdg7DwcYb84nMf
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud
   - Database
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 ---
 

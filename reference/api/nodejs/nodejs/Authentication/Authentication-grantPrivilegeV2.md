@@ -1,29 +1,29 @@
 ---
 title: "grantPrivilegeV2() | Node.js"
 slug: /node/node/Authentication-grantPrivilegeV2
+sidebar_key: node/Authentication-grantPrivilegeV2
 sidebar_label: "grantPrivilegeV2()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation assigns a privilege or a privilege group to a role. | Node.js"
 type: docx
 token: R618dfeMYo9GdmxMwe9cQLclncs
 sidebar_position: 15
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud
   - grantPrivilegeV2()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation assigns a privilege or a privilege group to a role.
 
 ```javascript
-grantPrivilegeV2(data): Promise<ResStatus>
+await milvusClient.grantPrivilegeV2(data)
 ```
 
 ## Request Syntax\{#request-syntax}

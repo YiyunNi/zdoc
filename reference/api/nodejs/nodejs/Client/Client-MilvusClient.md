@@ -1,29 +1,29 @@
 ---
 title: "MilvusClient | Node.js"
 slug: /node/node/Client-MilvusClient
+sidebar_key: node/Client-MilvusClient
 sidebar_label: "MilvusClient"
-beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "A MilvusClient instance represents a Node.js client that connects to a specific Zilliz Cloud cluster. | Node.js"
 type: docx
-token: ZxPXdeBXGopnvMxl7v6c9DSanFL
+token: DsyLdmJr0o7FAfxwPcNct1Bqnth
 sidebar_position: 5
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud
   - MilvusClient
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -114,6 +114,10 @@ new MilvusClient(config: ClientConfig)
     - **maxRetries** (*number*) -
 
         The number of attempts to retry the connection if the connection is not successful.
+
+    - **option** (*Record\<string, string>*) -
+
+        Reserved connection options sent in the `ConnectRequest` client info. Use this to pass arbitrary key-value pairs to the server during the initial handshake.
 
     - **password** (*string*) -
 

@@ -1,29 +1,29 @@
 ---
 title: "checkCompatibility() | Node.js"
 slug: /node/node/Client-checkCompatibility
+sidebar_key: node/Client-checkCompatibility
 sidebar_label: "checkCompatibility()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation checks the compatibility of the SDK with the Milvus server. | Node.js"
 type: docx
 token: Tq1Md4GuIoNbfuxK03ncIa7onMc
 sidebar_position: 1
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
   - zilliz
   - zilliz cloud
   - cloud
   - checkCompatibility()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation checks the compatibility of the SDK with the Milvus server.
 
 ```javascript
-checkCompatibility(data?): Promise<any>
+await milvusClient.checkCompatibility(data?)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.checkCompatibility({
+await milvusClient.checkCompatibility({
     checker?: Function,
     message?: string
 })
@@ -67,7 +67,7 @@ A promise that resolves to the result of the specified checker function.
 ## Examples\{#examples}
 
 ```javascript
-milvusClient.checkCompatibility({
+await milvusClient.checkCompatibility({
    checker: () => { console.log("compatible") },
    message: "incompatible"
 });

@@ -1,29 +1,29 @@
 ---
 title: "removePrivilegesFromGroup() | Node.js"
 slug: /node/node/Authentication-removePrivilegesFromGroup
+sidebar_key: node/Authentication-removePrivilegesFromGroup
 sidebar_label: "removePrivilegesFromGroup()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation removes privileges from a specific privilege group in Milvus. | Node.js"
 type: docx
 token: EeAfdukBNoIIgCxX248c6VULnOb
 sidebar_position: 22
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud
   - removePrivilegesFromGroup()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation removes privileges from a specific privilege group in Milvus.
 
 ```javascript
-removePrivilegesFromGroup(data): Promise<ResStatus>
+await milvusClient.removePrivilegesFromGroup(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.removePrivilegesFromGroup({
+await milvusClient.removePrivilegesFromGroup({
    group_name: string,
    privileges: string[],
    timeout?: number

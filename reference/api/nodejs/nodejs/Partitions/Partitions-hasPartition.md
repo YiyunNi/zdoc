@@ -1,29 +1,29 @@
 ---
 title: "hasPartition() | Node.js"
 slug: /node/node/Partitions-hasPartition
+sidebar_key: node/Partitions-hasPartition
 sidebar_label: "hasPartition()"
-beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation checks whether the specified partition exists in the specified collection. | Node.js"
 type: docx
 token: TVWPdTw2WoPAJYxsbGMc7MX6nEf
 sidebar_position: 4
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - hasPartition()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation checks whether the specified partition exists in the specified collection.
 
 ```javascript
-hasPartition(data): Promise<BoolResponse>
+await milvusClient.hasPartition(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.hasPartition({
+await milvusClient.hasPartition({
     db_name: string,
     collection_name: string,
     partition_name: string,
@@ -72,24 +72,24 @@ milvusClient.hasPartition({
 
     Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
-**RETURNS** *Promise\<BoolResponse>*
+**RETURNS** *Promise&lt;BoolResponse&gt;*
 
-This method returns a promise that resolves to a BoolResponse object.
+This method returns a promise that resolves to a **BoolResponse** object.
 
-```javascript
+```typescript
 {
     value: boolean,
-    status: object
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **value** (*bool*) -
+- **value** (*boolean*) -
+A boolean that indicates whether the requested partition exists in the collection. It is **true** when the partition exists and **false** when it does not.
 
-    A boolean value indicating whether the partition exists.
-
-- **status** (*object*) -
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -97,16 +97,19 @@ This method returns a promise that resolves to a BoolResponse object.
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```java
-new milvusClient(MILUVS_ADDRESS).hasPartition({
+new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+}).hasPartition({
     collection_name: 'my_collection',
     partition_name: 'my_partition',
  });

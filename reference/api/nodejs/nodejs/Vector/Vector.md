@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "Methods related to CRUD operations within a collection. | Node.js"
 type: folder
-token: DFjqfW5yclNaqWdpjpqckLM2nud
+token: HgpMfqiBwlO0sudMbiVcYpHHn5f
 sidebar_position: 7
 sidebar_label: "Vector"
 keywords: 
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
   - zilliz
   - zilliz cloud
   - cloud
   - Vector
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 ---
 

@@ -303,8 +303,8 @@ const nodejs26 : Manual = {
 }
 
 const nodejs30 : Manual = {
-    root: 'NFmOfwILlln3JgdePZUclweZnIe',
-    base: 'R9i8bww4faNsR6smwQwcAtHGnkb',
+    root: 'LW67fVlTvlNCZRdxOVYcQZyJnFQ',
+    base: 'LlrPbysPZau2dGsSVuicHmvCn0e',
     sourceType: 'drive',
     version: 'v3.0.x',
     displayedSidebar: 'nodeSidebar',

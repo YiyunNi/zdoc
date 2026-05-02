@@ -1,29 +1,29 @@
 ---
 title: "getCollectionStatistics() | Node.js"
 slug: /node/node/Collections-getCollectionStatistics
+sidebar_key: node/Collections-getCollectionStatistics
 sidebar_label: "getCollectionStatistics()"
-beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists the statistics collected on a specific collection. | Node.js"
 type: docx
 token: LQMGdRHjKogdeMxekCtcdBLqnNf
 sidebar_position: 12
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud
   - getCollectionStatistics()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation lists the statistics collected on a specific collection.
 
 ```javascript
-getCollectionStatistics(data): Promise<StatisticsResponse>
+await milvusClient.getCollectionStatistics(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getCollectionStatistics({ 
+await milvusClient.getCollectionStatistics({ 
     db_name: string,
     collection_name: string,
     timeout?: number 
@@ -65,25 +65,28 @@ milvusClient.getCollectionStatistics({
 
     Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
 
-**RETURNS** *Promise\<StatisticsResponse>*
+**RETURNS** *Promise&lt;StatisticsResponse&gt;*
 
 This method returns a promise that resolves to a **StatisticsResponse** object.
 
-```javascript
+```typescript
 {
-    data: number,
-    stats: object,
-    status: object
+    stats: KeyValuePair[],
+    data: { [x: string]: any },
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **data** (*number*) -
+- **stats** (*KeyValuePair[]*) -
+The raw statistics list returned by Milvus. Each entry has a **key** (for example, **row_count**) and a **value** as a string.
 
-    Collected statistics on the specified collection including the row count of the collection.
+- **data** (*Record\<string, any>*) -
+A flattened, key-indexed view of **stats** for convenience. For example, `data.row_count` returns the row count as a string.
 
-- **status** (*object*) -
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -91,16 +94,19 @@ This method returns a promise that resolves to a **StatisticsResponse** object.
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const res = await milvusClient.getCollectionStatistics({ collection_name: 'my_collection' });
 ```
 

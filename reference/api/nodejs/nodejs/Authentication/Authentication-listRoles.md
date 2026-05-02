@@ -1,29 +1,29 @@
 ---
 title: "listRoles() | Node.js"
 slug: /node/node/Authentication-listRoles
+sidebar_key: node/Authentication-listRoles
 sidebar_label: "listRoles()"
-beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all custom roles. | Node.js"
 type: docx
 token: GIeMdvjlMoLwGrxUOu3cFw7bnWc
 sidebar_position: 20
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud
   - listRoles()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation lists all custom roles.
 
 ```javascript
-listRoles(data): Promise<SelectRoleResponse>
+await milvusClient.listRoles(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.listRoles(
+await milvusClient.listRoles(
     includeUserInfo?: boolean,
     timeout?: number
 )
@@ -58,70 +58,24 @@ milvusClient.listRoles(
 
     Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
-**Returns** *Promise\<SelectRoleResponse>*
+**RETURNS** *Promise&lt;SelectRoleResponse&gt;*
 
 This method returns a promise that resolves to a **SelectRoleResponse** object.
 
-```javascript
+```typescript
 {
     results: RoleResult[],
-    status: ResStatus
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **results** 
+- **results** (*RoleResult[]*) -
+A list of **RoleResult** objects, one per role defined in the current Milvus instance. For the full **RoleResult** field reference, refer to the `describeRole()` doc.
 
-    - **RoleResult** *(RoleResult[]) -*
-
-        - **entities** (*GrantEntity[]*) -
-
-            - **db_name** (*string*) -
-
-                The name of the database(s) that the current role can access.
-
-            - **grantor** (*Grantor*) -
-
-                - **privilege** (*string*) -
-
-                    The privileges of the grantor
-
-                - **user** (*string*) -
-
-                    The name of grantor.
-
-            - **object** (*ObjectEntity*) -
-
-                - **name** (*RbacObjects*) -
-
-                    The object of the role. Possible values include *Collection, Global, and User.*
-
-            - **object_name** (*string*) -
-
-                The name of the object.
-
-            - **role** (*RoleEntity*) -
-
-                - **name** (*string*) -
-
-                    The name of the current role.
-
-        - **role** (*RoleEntity*) -
-
-            - **name** (*string*) -
-
-                The name of the current role.
-
-        - **users** (*User[]*) -
-
-            - **name** (*string*) -
-
-                The name(s) of the user(s) with the specified role.
-
-- **status**
-
-    A **ResStatus object.
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -129,9 +83,9 @@ This method returns a promise that resolves to a **SelectRoleResponse** object.
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 

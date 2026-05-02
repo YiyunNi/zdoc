@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "Methods for you to manage collections. | Node.js"
 type: folder
-token: LOD4fz3qilpPyOdlfencoVEJnwd
+token: CsRZfOAHhly4fSd5kxvcAfkFnpf
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud
   - Collections
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 ---
 

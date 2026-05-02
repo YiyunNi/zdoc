@@ -1,29 +1,29 @@
 ---
 title: "getLoadingProgress() | Node.js"
 slug: /node/node/Management-getLoadingProgress
+sidebar_key: node/Management-getLoadingProgress
 sidebar_label: "getLoadingProgress()"
-beta: false
 added_since: v2.4.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets the loading progress of a specific collection. | Node.js"
 type: docx
 token: DkImdRkJwoUmdqxzqn1cpQr9nhy
 sidebar_position: 13
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - getLoadingProgress()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation gets the loading progress of a specific collection.
 
 ```javascript
-getLoadingProgress(data): Promise<GetLoadingProgressResponse>
+await milvusClient.getLoadingProgress(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getLoadingProgress({
+await milvusClient.getLoadingProgress({
       db_name?: string,
       collection_name: string,
       partition_names?: string[]
@@ -68,34 +68,24 @@ milvusClient.getLoadingProgress({
 
     The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
-**RETURNS** *Promise\<GetLoadingProgressResponse>*
+**RETURNS** *Promise&lt;GetLoadingProgressResponse&gt;*
 
 This method returns a promise that resolves to a **GetLoadingProgressResponse** object.
 
-```javascript
+```typescript
 {
     progress: string,
-    status: {
-        code: number,
-        error_code: string | number,
-        reason: string
-    }
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
 - **progress** (*string*) -
+The completion percentage of the load operation as an integer between **"0"** and **"100"**. The collection is fully loaded once this value reaches **"100"**.
 
-    The loading progress in percentage.
-
-- **total_rows** (*number*) -
-
-    The number of entities that already persisted in the specified collection.
-
-- **status** (*ResStatus*) -  
-
-    The status of the response.
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -103,16 +93,19 @@ This method returns a promise that resolves to a **GetLoadingProgressResponse** 
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const resStatus = await milvusClient.getLoadingProgress({
     collection_name: 'my_collection',
 });

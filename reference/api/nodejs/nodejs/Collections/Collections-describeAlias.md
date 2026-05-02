@@ -1,29 +1,29 @@
 ---
 title: "describeAlias() | Node.js"
 slug: /node/node/Collections-describeAlias
+sidebar_key: node/Collections-describeAlias
 sidebar_label: "describeAlias()"
-beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation describes a specific alias. | Node.js"
 type: docx
 token: YCzNdg5yWoeZVrxj7jGcb1UXnBd
 sidebar_position: 7
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
   - describeAlias()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation describes a specific alias.
 
 ```javascript
-describeAlias(data): Promise<DescribeAliasResponse>
+await milvusClient.describeAlias(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.describeAlias({
+await milvusClient.describeAlias({
     db_name: string,
     alias: string,
     collection_name: string
@@ -83,34 +83,32 @@ milvusClient.describeAlias({
 
     The name of the collection that has the specified alias.
 
-**RETURNS** *Promise\<DescribeAliasResponse>*
+**RETURNS** *Promise&lt;DescribeAliasResponse&gt;*
 
-This method returns a promise that resolves to a **ResStatus** object.
+This method returns a promise that resolves to a **DescribeAliasResponse** object.
 
-```javascript
+```typescript
 {
-    alias: string;
-    collection: string;
-    db_name: string;
-    status: ResStatus;
+    db_name: string,
+    alias: string,
+    collection: string,
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **alias** (*string*) -
+- **db_name** (*string*) -
+The database that owns the alias.
 
-    The name of the specified alias.
+- **alias** (*string*) -
+The alias name.
 
 - **collection** (*string*) -
+The collection name to which the alias currently points.
 
-    The name of the specified collection.
-
-- **db_name** (*string*) -
-
-    The database that holds the above alias and collection.
-
-- **status** (*ResStatus*) -  
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -118,16 +116,19 @@ This method returns a promise that resolves to a **ResStatus** object.
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```javascript
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const res = await milvusClient.describeAlias({
    alias: 'my_collection_alias',
    collection_name: 'my_collection',

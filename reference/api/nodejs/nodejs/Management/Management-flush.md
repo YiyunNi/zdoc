@@ -1,29 +1,29 @@
 ---
 title: "flush() | Node.js"
 slug: /node/node/Management-flush
+sidebar_key: node/Management-flush
 sidebar_label: "flush()"
-beta: false
 added_since: v2.4.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation manually seals a segment and persists the data on disk. It is recommended that this operation be called after all the data has been inserted into a collection. | Node.js"
 type: docx
 token: E2XJd4ZHvoc7QlxyrEJcrOJOn9f
 sidebar_position: 7
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud
   - flush()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation manually seals a segment and persists the data on disk. It is recommended that this operation be called after all the data has been inserted into a collection.
 
 ```javascript
-flush(data): Promise<FlushResult>
+await milvusClient.flush(data)
 ```
 
 <Admonition type="info" icon="📘" title="Notes">
@@ -46,7 +46,7 @@ flush(data): Promise<FlushResult>
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.flush({
+await milvusClient.flush({
     db_name?: string,
     collection_names: string[],
     timeout?: number
@@ -71,28 +71,24 @@ milvusClient.flush({
 
     Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
-**RETURNS** *Promise\<FlushResult>*
+**RETURNS** *Promise&lt;FlushResult&gt;*
 
 This method returns a promise that resolves to a **FlushResult** object.
 
-```javascript
+```typescript
 {
-    coll_segIDs: any,
-    status: {
-        code: number,
-        error_code: string | number,
-        reason: string
-    }
+    coll_segIDs: Record<string, { data: number[] }>,
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **coll_segIDs** (*number*) -
+- **coll_segIDs** (*Record\<string, \{ data: number[] }>*) -
+A mapping from collection name to the segment IDs that were sealed by this flush. Use the returned IDs with `getFlushState()` to confirm persistence.
 
-    The IDs of the segments that this operation affects.
-
-- **status** (*ResStatus*) - 
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -100,16 +96,19 @@ This method returns a promise that resolves to a **FlushResult** object.
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const flushStatus = await milvusClient.flush({
     collection_names: ['my_collection'],
 });

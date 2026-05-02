@@ -1,29 +1,29 @@
 ---
 title: "getCompactionState() | Node.js"
 slug: /node/node/Management-getCompactionState
+sidebar_key: node/Management-getCompactionState
 sidebar_label: "getCompactionState()"
-beta: false
 added_since: v2.4.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists the statistics collected on a specific collection. | Node.js"
 type: docx
 token: CRFLdvgkhoeRikxMcMAcJk3qnIc
 sidebar_position: 9
 keywords: 
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
   - zilliz
   - zilliz cloud
   - cloud
   - getCompactionState()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation lists the statistics collected on a specific collection.
 
 ```javascript
-getCompactionState(data): Promise<GetCompactionStateResponse>
+await milvusClient.getCompactionState(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getCompactionState({ 
+await milvusClient.getCompactionState({ 
     compactionID: string | number,
     timeout?: number 
 })
@@ -60,41 +60,40 @@ milvusClient.getCompactionState({
 
     Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
 
-**RETURNS** *Promise\<GetCompactionStateResponse>*
+**RETURNS** *Promise&lt;GetCompactionStateResponse&gt;*
 
 This method returns a promise that resolves to a **GetCompactionStateResponse** object.
 
-```javascript
+```typescript
 {
-    completedPlanNo: string,
-    executingPlanNo: string,
     state: CompactionState,
-    status: ResStatus,
+    executingPlanNo: string,
     timeoutPlanNo: string,
+    completedPlanNo: string,
+    failedPlanNo: string,
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **completedPlanNo** (*string*) -
-
-    The serial number of the completed plan for the specified compaction job.
+- **state** (*CompactionState*) -
+The aggregate state of the compaction. Possible values are **UndefiedState**, **Executing**, and **Completed**.
 
 - **executingPlanNo** (*string*) -
+The number of plans still executing.
 
-    The serial number of the executing plan for the specified compaction job.
+- **timeoutPlanNo** (*string*) -
+The number of plans that timed out.
 
-- **state** (*CompactionState*) -
+- **completedPlanNo** (*string*) -
+The number of plans that completed successfully.
 
-    The state of the specified compaction job. Possible values are as follows:
+- **failedPlanNo** (*string*) -
+The number of plans that failed.
 
-    - **Completed** (2)
-
-    - **Executing** (1)
-
-    - **UndefiedState** (0)
-
-- **status** (*ResStatus*) -
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -102,20 +101,19 @@ This method returns a promise that resolves to a **GetCompactionStateResponse** 
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
-
-- **timeoutPlanNo** (*string*) -
-
-    The serial number of the timeout plan for the specified compaction job.
 
 ## Example\{#example}
 
 ```javascript
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const resStatus = await milvusClient.getCompactionState({
     compactionID: 'your_compaction_id',
 });

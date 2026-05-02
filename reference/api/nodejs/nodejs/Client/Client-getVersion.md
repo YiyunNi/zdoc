@@ -1,29 +1,29 @@
 ---
 title: "getVersion() | Node.js"
 slug: /node/node/Client-getVersion
+sidebar_key: node/Client-getVersion
 sidebar_label: "getVersion()"
-beta: false
 added_since: v2.6.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation returns version information for the Milvus server. | Node.js"
 type: docx
 token: WA81dokeYotwt9xAiKKcaaIpnxc
 sidebar_position: 6
 keywords: 
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud
   - getVersion()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -33,28 +33,35 @@ import Admonition from '@theme/Admonition';
 
 This operation returns version information for the Milvus server.
 
-```typescript
+```javascript
 await milvusClient.getVersion()
 ```
 
-**RETURNS:**
+**RETURNS** *Promise&lt;GetVersionResponse&gt;*
 
-*Promise\<GetVersionResponse\>*
+This method returns a promise that resolves to a **GetVersionResponse** object.
 
-The response contains the version string of the connected server.
+```typescript
+{
+    version: string
+}
+```
 
-**EXCEPTIONS:**
+**PARAMETERS:**
 
-- **MilvusError**
+- **version** (*string*) -
 
-    This exception will be raised when any error occurs during this operation.
+    The semantic version of the Milvus server (for example, **"v3.0.0"**).
 
 ## Example\{#example}
 
-```typescript
+```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
 
-const client = new MilvusClient({ address: 'YOUR_CLUSTER_ENDPOINT' });
+const client = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const res = await client.getVersion();
 console.log(res.version); // "2.6.9"
 ```

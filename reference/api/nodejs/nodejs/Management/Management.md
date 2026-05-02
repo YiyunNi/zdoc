@@ -8,19 +8,19 @@ last_modified: v2.6.x
 deprecate_since: false
 description: "Methods for you to index, load, and release a collection. | Node.js"
 type: folder
-token: UmOafcFDglyFe3dayhAcRA0RnEd
+token: E5cpfv4EPlpWJ5dV0iJcPwo4nyf
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud
   - Management
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 ---
 

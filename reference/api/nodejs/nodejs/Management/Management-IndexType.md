@@ -1,29 +1,29 @@
 ---
 title: "IndexType | Node.js"
 slug: /node/node/Management-IndexType
+sidebar_key: node/Management-IndexType
 sidebar_label: "IndexType"
-beta: false
 added_since: v2.3.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This is an enumeration that provides the following constants. | Node.js"
 type: docx
 token: SI3Td00AroRtx8xXQcUce8i2nrb
 sidebar_position: 15
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - IndexType
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -99,3 +99,15 @@ Sets the index type to Trie.
 - **BITMAP** = 'BITMAP'
 
     Sets the index type to BITMAP.
+
+- **IVF_RABITQ** = 'IVF_RABITQ',
+
+    Sets the index type to IVF_RABITQ.
+
+- **MINHASH_LSH** = 'MINHASH_LSH'
+
+    Sets the index type to MINHASH_LSH.
+
+- **RTREE** = 'RTREE'
+
+    Sets the index type to RTREE.

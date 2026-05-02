@@ -1,29 +1,29 @@
 ---
 title: "alterCollectionProperties() | Node.js"
 slug: /node/node/Collections-alterCollectionProperties
+sidebar_key: node/Collections-alterCollectionProperties
 sidebar_label: "alterCollectionProperties()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation modifies the properties of a specified collection. | Node.js"
 type: docx
 token: EHPGdbCP5o7UzCxlDnRc6y5Pn1c
 sidebar_position: 3
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - alterCollectionProperties()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation modifies the properties of a specified collection.
 
 ```javascript
-alterCollectionProperties(data): Promise<ResStatus>
+await milvusClient.alterCollectionProperties(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.alterCollectionProperties({
+await milvusClient.alterCollectionProperties({
    db_name?: string
    collection_name: string,
    delete_keys?: string[],
@@ -114,7 +114,10 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const resStatus = await milvusClient.alterCollection({
     collection_name: 'my-collection',
     properties: {"collection.ttl.seconds": 18000}

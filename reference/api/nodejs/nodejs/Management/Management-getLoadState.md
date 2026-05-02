@@ -1,29 +1,29 @@
 ---
 title: "getLoadState() | Node.js"
 slug: /node/node/Management-getLoadState
+sidebar_key: node/Management-getLoadState
 sidebar_label: "getLoadState()"
-beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation displays whether a specified collection or partition is loaded or not. | Node.js"
 type: docx
 token: J17ZdPNwqo4nt3x5b8pc0H5Nnph
 sidebar_position: 14
 keywords: 
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
   - zilliz
   - zilliz cloud
   - cloud
   - getLoadState()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation displays whether a specified collection or partition is loaded or not.
 
 ```javascript
-getLoadState(data): Promise<GetLoadStateResponse>
+await milvusClient.getLoadState(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getLoadState({
+await milvusClient.getLoadState({
    db_name: string,
    collection_name: string,
    partition_names?: string[],
@@ -68,32 +68,24 @@ milvusClient.getLoadState({
 
     The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
 
-**RETURNS** *Promise\<GetLoadStateResponse>*
+**RETURNS** *Promise&lt;GetLoadStateResponse&gt;*
 
 This method returns a promise that resolves to a **GetLoadStateResponse** object.
 
-```javascript
+```typescript
 {
     state: LoadState,
-    status: ResStatus
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- state (*LoadState*) -
+- **state** (*LoadState*) -
+The current load state. Possible values are **LoadStateNotExist**, **LoadStateNotLoad**, **LoadStateLoading**, and **LoadStateLoaded**.
 
-    The load status. The are four states:
-
-    - **LoadStateLoaded** indicates the status is loaded.
-
-    - **LoadStateLoading** indicates the status is loading.
-
-    - **LoadStateNotExist** indicates the status is not available.
-
-    - **LoadStateNotLoad** indicates the status is unloaded.
-
-- **status** (*ResStatus*) -
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -101,16 +93,19 @@ This method returns a promise that resolves to a **GetLoadStateResponse** object
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const resStatus = await milvusClient.getLoadState({
    collection_name: 'my_collection',
  });

@@ -1,29 +1,29 @@
 ---
 title: "get() | Node.js"
 slug: /node/node/Vector-get
+sidebar_key: node/Vector-get
 sidebar_label: "get()"
-beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets specific entities by their IDs. | Node.js"
 type: docx
 token: IbxXdvdZlonJk9xnlk2cZlIinCh
 sidebar_position: 3
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud
   - get()
-  - nodejs26
+  - nodejs30
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation gets specific entities by their IDs.
 
 ```javascript
-get(data): Promise<QueryResults>
+await milvusClient.get(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.get({
+await milvusClient.get({
    db_name: string,
    collection_name: string,
    consistency_level?: ConsistencyLevelEnum,
@@ -107,24 +107,24 @@ milvusClient.get({
 
     Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
-**RETURNS** *Promise\<ResStatus>*
+**RETURNS** *Promise&lt;QueryResults&gt;*
 
-This method returns a promise that resolves to a **ResStatus** object.
+This method returns a promise that resolves to a **QueryResults** object.
 
-```javascript
+```typescript
 {
-    data: list[string],
-    status: object
+    data: Record<string, any>[],
+    status:  ResStatus
 }
 ```
 
 **PARAMETERS:**
 
-- **data** (*list[string]*) -
+- **data** (*Record\<string, any>[]*) -
+The rows whose primary keys match the supplied **ids**. Each entry is keyed by field name and carries the value for every requested **output_fields** entry plus the primary key.
 
-    A list of entities returned.
-
-- **status** (*object*) -
+- **ResStatus**
+A **ResStatus** object.
 
     - **code** (*number*) -
 
@@ -132,16 +132,19 @@ This method returns a promise that resolves to a **ResStatus** object.
 
     - **error_code** (*string* | *number*) -
 
-        An error code that indicates an occurred error. It remains **Success** if this operation succeeds. 
+        An error code that indicates an occurred error. It remains **Success** if this operation succeeds.
 
-    - **reason** (*string*) - 
+    - **reason** (*string*) -
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const getResults = await milvusClient.get({
    collection_name: 'my_collection',
    ids: ['1','2','3','4','5','6','7','8'],
