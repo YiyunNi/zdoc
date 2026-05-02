@@ -1,6 +1,6 @@
 import {Hono, type Context, type MiddlewareHandler} from 'hono';
 import {cors} from 'hono/cors';
-import {streamText, stepCountIs} from 'ai';
+import {streamText, stepCountIs, smoothStream} from 'ai';
 import type {ChatRequest} from './types.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
@@ -13,8 +13,10 @@ import {getAgent} from './agents/index.js';
 import {getToolsForAgent, type ToolName} from './tools/index.js';
 import {logEvent, saveConversation, updateUserProfile} from './logger.js';
 import {adminApp} from './admin.js';
+import {makeTelemetry} from './telemetry.js';
+import {incCounter, renderMetrics} from './metrics.js';
 import type {FeedbackRequest} from './types.js';
-import {recordFeedback} from './feedback.js';
+import {recordFeedback, getStats} from './feedback.js';
 import {inferSection} from './sources.js';
 import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.js';
 import type {AgentType} from './types.js';
@@ -26,10 +28,12 @@ import {
   computeEmbedding,
   getSemanticCacheConfig,
 } from './semantic-cache.js';
+import type {SemanticCacheHit} from './semantic-cache.js';
 import type {TokenUsage} from './types.js';
 import {saveTokenUsage, isDbReady} from './db.js';
 import {startedAt, llmHealth, recordLlmSuccess, recordLlmError} from './health.js';
 import {handlePostAction} from './post-action-handler.js';
+import type {ResolvedModel} from './runtime-config.js';
 
 const promptRules = loadRules(import.meta.url);
 
@@ -41,6 +45,30 @@ loadPrompts();
 // ---------------------------------------------------------------------------
 
 const MAX_FALLBACK_SOURCES = 5;  // Max sources to show when grounding returns empty
+
+// ---------------------------------------------------------------------------
+// Reasoning-model workaround: DeepSeek reasoning models require
+// reasoning_content to be passed back on follow-up calls, which AI SDK v6
+// doesn't handle automatically during tool loops. Map them to the chat
+// variant for the streaming chat endpoint only.
+// ---------------------------------------------------------------------------
+
+function getChatModelForStream(resolved: ResolvedModel): ResolvedModel {
+  const m = resolved.model.toLowerCase();
+  if (!m.includes('deepseek')) return resolved;
+  // Known safe chat models that support tool loops
+  const safeChatModels = new Set([
+    'deepseek-chat',
+    'deepseek-v3',
+    'deepseek/deepseek-chat',
+    'deepseek/deepseek-v3',
+  ]);
+  if (safeChatModels.has(m)) return resolved;
+  // Everything else (reasoner, r1, v4-pro, etc.) is treated as a reasoning
+  // model that AI SDK v6 can't loop with. Map to the chat variant.
+  const chatModel = m.includes('/') ? 'deepseek/deepseek-chat' : 'deepseek-chat';
+  return {...resolved, model: chatModel};
+}
 
 // ---------------------------------------------------------------------------
 // Deflection detection: suppress sources when the agent deflects off-topic
@@ -391,6 +419,7 @@ app.post('/chat', async c => {
     const guardResult = checkGuard(lastUserMessage.content);
     if (!guardResult.allowed) {
       console.log(`[Guard] Blocked (${guardResult.reason}): ${lastUserMessage.content.slice(0, 80)}`);
+      incCounter('chat_proxy_requests_total', {agent: 'guard', model: 'none', status: guardResult.reason === 'injection' ? 'blocked_injection' : 'blocked_greeting'});
       logEvent(session.id, userId, 'message', 'guard', {
         blocked: true,
         reason: guardResult.reason,
@@ -448,6 +477,7 @@ app.post('/chat', async c => {
         const cachedEvents = responseCacheGet(responseCacheKey);
         if (cachedEvents) {
           console.log(`[Cache] Response cache hit for: ${ragQuery.slice(0, 60)}`);
+          incCounter('chat_proxy_cache_hits_total', {type: 'response'});
           send('cache', JSON.stringify({type: 'session'}));
           for (const evt of cachedEvents) {
             send(evt.event, evt.data);
@@ -455,6 +485,7 @@ app.post('/chat', async c => {
           controller.close();
           return;
         }
+        incCounter('chat_proxy_cache_misses_total', {type: 'response'});
 
         // Compute query embedding ONCE — reused for semantic cache, hybrid search, and cache write
         let queryEmbedding: number[] | null = null;
@@ -465,9 +496,17 @@ app.post('/chat', async c => {
         }
 
         // Check semantic cache for similar queries across sessions
-        const semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding ?? undefined);
+        let semanticHit: SemanticCacheHit | null = null;
+        if (queryEmbedding) {
+          try {
+            semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding);
+          } catch (err) {
+            console.warn('[SemanticCache] Lookup failed:', (err as Error).message);
+          }
+        }
         if (semanticHit) {
           console.log(`[SemanticCache] Replay cached response: ${ragQuery.slice(0, 60)}`);
+          incCounter('chat_proxy_cache_hits_total', {type: 'semantic'});
           send('cache', JSON.stringify({type: 'semantic', similarity: semanticHit.similarity}));
           const events = JSON.parse(semanticHit.entry.sse_events) as Array<{event: string; data: string}>;
           for (const evt of events) {
@@ -476,6 +515,7 @@ app.post('/chat', async c => {
           controller.close();
           return;
         }
+        incCounter('chat_proxy_cache_misses_total', {type: 'semantic'});
 
         // Track events for caching on successful response
         const recordedEvents: Array<{event: string; data: string}> = [];
@@ -483,6 +523,9 @@ app.post('/chat', async c => {
           send(event, data);
           recordedEvents.push({event, data});
         };
+
+        let currentAgent = 'unknown';
+        let currentModel = 'unknown';
 
         try {
           // Route intent (agentic mode — no upfront RAG, LLM searches via tools)
@@ -495,11 +538,17 @@ app.post('/chat', async c => {
           const tRoute = Date.now() - tRouteStart;
 
           const agentConfig = getAgent(routeResult.agent as any);
+          currentAgent = agentConfig.type;
           const agentTools = getToolsForAgent(agentConfig.toolNames);
 
           // Resolve model from runtime config (DB override → env var → default)
           const resolvedModel = await resolveModel(`agent:${agentConfig.type}`);
-          const activeModel = resolvedModel.model;
+          const chatModelResolved = getChatModelForStream(resolvedModel);
+          const activeModel = chatModelResolved.model;
+          currentModel = activeModel;
+          if (chatModelResolved.model !== resolvedModel.model) {
+            console.log(`[Model] Mapped reasoning model ${resolvedModel.model} → ${chatModelResolved.model} for streaming`);
+          }
 
           logEvent(session.id, userId, 'routing', routeResult.agent, {
             reasoning: routeResult.reasoning,
@@ -549,16 +598,23 @@ app.post('/chat', async c => {
 
           const tLlmStart = Date.now();
           const result = streamText({
-            model: createModelInstance(resolvedModel),
+            model: createModelInstance(chatModelResolved),
             maxOutputTokens: 4096,
             temperature: 0.2,
             tools: agentTools,
             stopWhen: stepCountIs(8),
+            abortSignal: AbortSignal.timeout(120000),
             system: systemPrompt,
             messages: windowedMessages.map(m => ({
               role: m.role as 'user' | 'assistant',
               content: m.content,
             })),
+            experimental_transform: smoothStream({delayInMs: 15}),
+            experimental_telemetry: makeTelemetry('chat-stream', {
+              agentType: agentConfig.type,
+              sessionId: session.id,
+              model: activeModel,
+            }),
           });
 
           const toolsCalled: string[] = [];
@@ -567,15 +623,16 @@ app.post('/chat', async c => {
           let fullText = '';
           let groundedSourceCount = 0;
 
-          // Stream connected successfully — record health success even if no text tokens arrive
-          recordLlmSuccess();
-
           for await (const part of result.fullStream) {
+            if (part.type === 'error') {
+              throw new Error((part as any).error || 'LLM stream error');
+            }
             if (part.type === 'text-delta') {
               fullText += part.text;
               sendAndRecord('delta', JSON.stringify({text: part.text}));
             } else if (part.type === 'tool-call') {
               toolsCalled.push(part.toolName);
+              incCounter('chat_proxy_tool_calls_total', {tool: part.toolName});
               sendAndRecord('tool-call', JSON.stringify({tool: part.toolName, count: toolsCalled.length}));
               logEvent(session.id, userId, 'tool_call', agentConfig.type, {
                 tool: part.toolName,
@@ -620,6 +677,9 @@ app.post('/chat', async c => {
             }
           }
 
+          // Stream completed successfully — mark LLM health as good
+          recordLlmSuccess();
+
           // Capture total token usage across all LLM steps (important with tool calls)
           let tokenUsage: TokenUsage | null = null;
           try {
@@ -633,6 +693,9 @@ app.post('/chat', async c => {
                 model: activeModel,
                 agentType: agentConfig.type,
               };
+              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'input'}, usage.inputTokens);
+              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'output'}, usage.outputTokens);
+              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'total'}, tokenUsage.totalTokens);
             }
           } catch (err) {
             console.warn('[Usage] Failed to read totalUsage:', (err as Error).message);
@@ -844,11 +907,16 @@ app.post('/chat', async c => {
             isDeflected: deflected,
             isSelfDescribed: selfDescribed,
           });
+          incCounter('chat_proxy_requests_total', {agent: currentAgent, model: currentModel, status: 'success'});
         } catch (err: unknown) {
           const message = err instanceof Error ? err.message : 'Internal server error';
+          console.error('[Chat] Stream error:', message);
           send('error', JSON.stringify({error: message}));
+          // Allow the error event to flush before the finally block closes the controller
+          await new Promise(r => setTimeout(r, 100));
           logEvent(session.id, userId, 'error', 'unknown', {error: message}, userMeta, source);
           recordLlmError(message);
+          incCounter('chat_proxy_requests_total', {agent: currentAgent, model: currentModel, status: 'error'});
 
           // Post-action for hard errors
           handlePostAction({
@@ -909,6 +977,19 @@ app.post('/feedback', async c => {
   }, undefined, source);
 
   return c.json({ok: true});
+});
+
+// GET /feedback/stats — public feedback statistics
+app.get('/feedback/stats', c => {
+  return c.json(getStats());
+});
+
+// ---------------------------------------------------------------------------
+// Metrics endpoint (Prometheus-style)
+// ---------------------------------------------------------------------------
+
+app.get('/metrics', c => {
+  return c.text(renderMetrics(), 200, {'Content-Type': 'text/plain; charset=utf-8'});
 });
 
 // ---------------------------------------------------------------------------
