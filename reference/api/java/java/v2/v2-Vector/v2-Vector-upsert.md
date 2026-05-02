@@ -1,29 +1,29 @@
 ---
 title: "upsert() | Java | v2"
 slug: /java/java/v2-Vector-upsert
+sidebar_key: java/v2-Vector-upsert
 sidebar_label: "upsert()"
-beta: false
 added_since: v2.3.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation inserts or updates data in a specific collection. | Java | v2"
 type: docx
 token: Dlw6dmlcIocK94xkMK3cv0ppnJd
 sidebar_position: 9
 keywords: 
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud
   - upsert()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

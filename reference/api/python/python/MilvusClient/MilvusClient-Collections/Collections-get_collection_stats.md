@@ -13,10 +13,10 @@ type: docx
 token: VfaldXzLUocBrJxffw6cJHPinlh
 sidebar_position: 13
 keywords: 
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
   - zilliz
   - zilliz cloud
   - cloud

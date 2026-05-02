@@ -1,29 +1,29 @@
 ---
 title: "listRoles() | Java | v2"
 slug: /java/java/v2-Authentication-listRoles
+sidebar_key: java/v2-Authentication-listRoles
 sidebar_label: "listRoles()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all custom roles. | Java | v2"
 type: docx
 token: XIIyd3bMzoAVx3xVsoLcnQ2pnKh
 sidebar_position: 14
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud
   - listRoles()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

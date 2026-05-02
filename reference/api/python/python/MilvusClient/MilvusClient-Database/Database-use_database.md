@@ -13,10 +13,10 @@ type: docx
 token: AglQd68yqoEn8Ixkn9ociyqKnMx
 sidebar_position: 8
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: LJqud2x3AojxV4xKONocTe4YnFb
 sidebar_position: 4
 keywords: 
+  - approximate nearest neighbor search
+  - DiskANN
   - Sparse vector
   - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

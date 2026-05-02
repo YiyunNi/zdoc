@@ -1,29 +1,29 @@
 ---
 title: "queryIterator() | Java | v2"
 slug: /java/java/v2-Vector-queryIterator
+sidebar_key: java/v2-Vector-queryIterator
 sidebar_label: "queryIterator()"
-beta: false
 added_since: v2.4.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This method returns a query iterator to iterate data. | Java | v2"
 type: docx
 token: A0I6dpXMsofjaVxE0RLcOW3nnWe
 sidebar_position: 6
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
   - zilliz
   - zilliz cloud
   - cloud
   - queryIterator()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

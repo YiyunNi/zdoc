@@ -1,29 +1,29 @@
 ---
 title: "ConsistencyLevel | Java | v2"
 slug: /java/java/v2-Collections-ConsistencyLevel
+sidebar_key: java/v2-Collections-ConsistencyLevel
 sidebar_label: "ConsistencyLevel"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This is an enumeration that provides the following constants. | Java | v2"
 type: docx
 token: Q8IidbqKMopplgxSxaicS2o9nwc
 sidebar_position: 5
 keywords: 
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud
   - ConsistencyLevel
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

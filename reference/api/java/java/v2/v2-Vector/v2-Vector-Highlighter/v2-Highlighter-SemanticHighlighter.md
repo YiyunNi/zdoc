@@ -1,29 +1,29 @@
 ---
 title: "SemanticHighlighter | Java | v2"
 slug: /java/java/v2-Highlighter-SemanticHighlighter
+sidebar_key: java/v2-Highlighter-SemanticHighlighter
 sidebar_label: "SemanticHighlighter"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "A `SemanticHighlighter` instance configures post-processing semantic highlighting for text fields in search results. Unlike lexical highlighting which matches exact terms, semantic highlighting identifies and marks relevant text segments based on semantic similarity to the query. Highlighting annotates matched spans using customizable tags. It does not impact retrieval, filtering, ranking, or scoring. | Java | v2"
 type: docx
 token: LNRldueDGotZ1kx5wwlc63SDnLe
 sidebar_position: 3
 keywords: 
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
   - zilliz
   - zilliz cloud
   - cloud
   - SemanticHighlighter
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

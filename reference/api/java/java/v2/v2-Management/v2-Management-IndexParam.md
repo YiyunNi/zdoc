@@ -1,29 +1,29 @@
 ---
 title: "IndexParam | Java | v2"
 slug: /java/java/v2-Management-IndexParam
+sidebar_key: java/v2-Management-IndexParam
 sidebar_label: "IndexParam"
-beta: false
 added_since: v2.3.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
-description: "IndexParam defines the parameters for configuring an index on a collection field. It includes MetricType and IndexType enums. | Java | v2"
+description: "IndexParam defines the parameters for configuring an index on a collection field. | Java | v2"
 type: docx
-token: K8hddB9vRotonhx7yVIcdCIEnhh
+token: SXgodgq99ozZoHxfnakc0fpCnJh
 sidebar_position: 10
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud
   - IndexParam
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # IndexParam
 
-IndexParam defines the parameters for configuring an index on a collection field. It includes MetricType and IndexType enums.
+IndexParam defines the parameters for configuring an index on a collection field.
 
 ```java
 IndexParam.builder()
@@ -42,89 +42,33 @@ IndexParam.builder()
     .build()
 ```
 
-## MetricType\{#metrictype}
+**BUILDER METHODS:**
 
-- `INVALID` - Invalid metric type (default).
+- `fieldName(String fieldName)` -
 
-- `L2` - Euclidean distance.
+    The name of the field to index.
 
-- `IP` - Inner product.
+- `indexType(IndexType indexType)` -
 
-- `COSINE` - Cosine similarity.
+    The type of index to build on the field. For available index types, refer to IndexType.
 
-- `HAMMING` - Hamming distance (for binary vectors).
+- `metricType(MetricType metricType)` -
 
-- `JACCARD` - Jaccard distance (for binary vectors).
+    The metric type for vector similarity measurement. For available metric types, refer to MetricType.
 
-- `BM25` - BM25 scoring for full-text search.
+- `extraParams(Map<String, Object> extraParams)` -
 
-- `MAX_SIM` - Maximum similarity for multi-vector search.
+    Additional index-specific parameters as key-value pairs. For example, `{"M": 16, "efConstruction": 256}` for HNSW indexes.
 
-- `MAX_SIM_COSINE` - Maximum similarity using cosine distance.
+**RETURNS:**
 
-- `MAX_SIM_IP` - Maximum similarity using inner product.
+*IndexParam*
 
-- `MAX_SIM_L2` - Maximum similarity using Euclidean distance.
+**EXCEPTIONS:**
 
-- `MAX_SIM_JACCARD` - Maximum similarity using Jaccard distance.
+*MilvusClientException*
 
-- `MAX_SIM_HAMMING` - Maximum similarity using Hamming distance.
-
-## IndexType\{#indextype}
-
-- `FLAT` - Brute-force search (no index).
-
-- `IVF_FLAT` - Inverted file index with flat storage.
-
-- `IVF_SQ8` - Inverted file index with scalar quantization.
-
-- `IVF_PQ` - Inverted file index with product quantization.
-
-- `HNSW` - Hierarchical Navigable Small World graph.
-
-- `HNSW_SQ` - HNSW with scalar quantization.
-
-- `HNSW_PQ` - HNSW with product quantization.
-
-- `HNSW_PRQ` - HNSW with product residual quantization.
-
-- `DISKANN` - Disk-based approximate nearest neighbor.
-
-- `AUTOINDEX` - Automatic index type selection.
-
-- `SCANN` - ScaNN index.
-
-- `IVF_RABITQ` - IVF with RaBitQ quantization.
-
-- `GPU_IVF_FLAT` - GPU-accelerated IVF flat.
-
-- `GPU_IVF_PQ` - GPU-accelerated IVF with product quantization.
-
-- `GPU_BRUTE_FORCE` - GPU-accelerated brute-force search.
-
-- `GPU_CAGRA` - GPU-accelerated CAGRA index.
-
-- `BIN_FLAT` - Binary flat index.
-
-- `BIN_IVF_FLAT` - Binary IVF flat index.
-
-- `MINHASH_LSH` - MinHash LSH index for set similarity.
-
-- `TRIE` - Trie index for string fields.
-
-- `NGRAM` - N-gram index for text fields.
-
-- `RTREE` - R-tree index for spatial data.
-
-- `STL_SORT` - STL sort index for scalar fields.
-
-- `INVERTED` - Inverted index for scalar fields.
-
-- `BITMAP` - Bitmap index for low-cardinality fields.
-
-- `SPARSE_INVERTED_INDEX` - Inverted index for sparse vectors.
-
-- `SPARSE_WAND` - WAND index for sparse vectors.
+This exception will be raised when any error occurs during this operation.
 
 ## Example\{#example}
 

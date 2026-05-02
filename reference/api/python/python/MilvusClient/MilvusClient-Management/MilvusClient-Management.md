@@ -12,10 +12,10 @@ token: KrK5fBnFDlG6CedvqyHcfZLynre
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
+  - Embedding model
+  - image similarity search
+  - Context Window
   - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud

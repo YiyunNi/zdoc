@@ -1,29 +1,29 @@
 ---
 title: "createUser() | Java | v2"
 slug: /java/java/v2-Authentication-createUser
+sidebar_key: java/v2-Authentication-createUser
 sidebar_label: "createUser()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a user. | Java | v2"
 type: docx
 token: OTMXd9uNWoMwe4xvg70cg49Pnmh
 sidebar_position: 4
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud
   - createUser()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

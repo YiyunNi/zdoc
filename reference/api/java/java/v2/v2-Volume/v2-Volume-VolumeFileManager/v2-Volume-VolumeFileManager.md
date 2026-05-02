@@ -1,29 +1,29 @@
 ---
 title: "VolumeFileManager | Java | v2"
 slug: /java/java/v2-Volume-VolumeFileManager
+sidebar_key: java/v2-Volume-VolumeFileManager
 sidebar_label: "VolumeFileManager"
-beta: false
 added_since: false
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "A `VolumeFileManager` instance maintains a connection to a specific volume on Zilliz Cloud's Volume service. Before uploading data files to a volume, you need to initiate a `VolumeFileManager` instance. | Java | v2"
 type: docx
 token: DK7ZdxRCyoepyxx0odzcH66xnu3
 sidebar_position: 2
 keywords: 
-  - vector search algorithms
   - Question answering system
   - llm-as-a-judge
   - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud
   - VolumeFileManager
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

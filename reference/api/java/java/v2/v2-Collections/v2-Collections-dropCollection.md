@@ -1,29 +1,29 @@
 ---
 title: "dropCollection() | Java | v2"
 slug: /java/java/v2-Collections-dropCollection
+sidebar_key: java/v2-Collections-dropCollection
 sidebar_label: "dropCollection()"
-beta: false
 added_since: v2.3.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops a collection. | Java | v2"
 type: docx
 token: SW6Cdt9QeoY1J1x9SYQcZrc6nbg
 sidebar_position: 14
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud
   - dropCollection()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -1,29 +1,29 @@
 ---
 title: "addCollectionFunction() | Java | v2"
 slug: /java/java/v2-Collections-addCollectionFunction
+sidebar_key: java/v2-Collections-addCollectionFunction
 sidebar_label: "addCollectionFunction()"
-beta: false
 added_since: v2.6.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation adds a function to a collection. Functions allow you to define custom processing logic, such as BM25 scoring or embedding generation. | Java | v2"
 type: docx
 token: AIRDdrhZloIQCrxCfc8cvxe4nmh
 sidebar_position: 30
 keywords: 
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
   - zilliz
   - zilliz cloud
   - cloud
   - addCollectionFunction()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

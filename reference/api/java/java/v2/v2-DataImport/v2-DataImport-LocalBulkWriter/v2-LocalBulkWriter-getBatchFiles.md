@@ -1,29 +1,29 @@
 ---
 title: "getBatchFiles() | Java | v2"
 slug: /java/java/v2-LocalBulkWriter-getBatchFiles
+sidebar_key: java/v2-LocalBulkWriter-getBatchFiles
 sidebar_label: "getBatchFiles()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation returns a list of files passed to the current LocalBulkWriter instance. | Java | v2"
 type: docx
 token: BLFEde4BuoCjTSxjYSUcZerEnOb
 sidebar_position: 4
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud
   - getBatchFiles()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

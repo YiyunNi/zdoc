@@ -4,23 +4,23 @@ slug: /java/v2-Client
 beta: false
 notebook: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
 description: "Classes and methods for you to manage the MilvusClient instances. | Java | v2"
 type: folder
-token: LxHMfE9RNlOtvOdHs9wcrGnWnGg
+token: YyNNfpZsKlOCstdX7xRcXT4an6e
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud
   - Client
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 ---
 

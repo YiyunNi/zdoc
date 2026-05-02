@@ -1,29 +1,29 @@
 ---
 title: "updatePassword() | Java | v2"
 slug: /java/java/v2-Authentication-updatePassword
+sidebar_key: java/v2-Authentication-updatePassword
 sidebar_label: "updatePassword()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation updates the password of a specific user. | Java | v2"
 type: docx
 token: GQH8dgqlPoRY1sxFhCRcLlgInNc
 sidebar_position: 20
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
   - Retrieval Augmented Generation
   - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud
   - updatePassword()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

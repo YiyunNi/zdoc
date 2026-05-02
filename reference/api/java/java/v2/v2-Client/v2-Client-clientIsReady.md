@@ -1,29 +1,29 @@
 ---
 title: "clientIsReady() | Java | v2"
 slug: /java/java/v2-Client-clientIsReady
+sidebar_key: java/v2-Client-clientIsReady
 sidebar_label: "clientIsReady()"
-beta: false
 added_since: v2.6.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation checks whether the client connection to the server is ready. | Java | v2"
 type: docx
 token: I1sMd0t6qoNuIWx3mjecEfjwnyc
 sidebar_position: 3
 keywords: 
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud
   - clientIsReady()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

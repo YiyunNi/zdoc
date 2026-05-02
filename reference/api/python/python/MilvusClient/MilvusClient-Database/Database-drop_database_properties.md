@@ -13,10 +13,10 @@ type: docx
 token: AdSXdtNDsoTMnJx1QoGcSsnZnWd
 sidebar_position: 5
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - AI Hallucination
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
   - zilliz
   - zilliz cloud
   - cloud

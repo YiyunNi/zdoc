@@ -1,29 +1,29 @@
 ---
 title: "dropCollectionProperties() | Java | v2"
 slug: /java/java/v2-Collections-dropCollectionProperties
+sidebar_key: java/v2-Collections-dropCollectionProperties
 sidebar_label: "dropCollectionProperties()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation resets the properties of a specified collection to their default values. | Java | v2"
 type: docx
 token: OPPHd2AabonMIzxzfupcyNS9n1a
 sidebar_position: 15
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud
   - dropCollectionProperties()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -95,7 +95,7 @@ ConnectConfig connectConfig = ConnectConfig.builder()
         
 MilvusClientV2 client = new MilvusClientV2(connectConfig);
 
-// 2. Drop the `collection.ttl.seconds` property
+// 2. Drop the \`collection.ttl.seconds\` property
 List<String> propertyKeys = new ArrayList<>()
 propertyKeys.add("collection.ttl.seconds")
 

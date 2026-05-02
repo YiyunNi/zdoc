@@ -1,29 +1,29 @@
 ---
 title: "insert() | Java | v2"
 slug: /java/java/v2-Vector-insert
+sidebar_key: java/v2-Vector-insert
 sidebar_label: "insert()"
-beta: false
 added_since: v2.3.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation inserts data into a specific collection. | Java | v2"
 type: docx
 token: Y0N1dL4bVoyUnXxfSu7cjrgRnlc
 sidebar_position: 4
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud
   - insert()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

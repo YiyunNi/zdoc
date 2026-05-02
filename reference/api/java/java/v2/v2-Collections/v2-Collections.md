@@ -4,23 +4,23 @@ slug: /java/v2-Collections
 beta: false
 notebook: false
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
 description: "Methods for you to manage collections. | Java | v2"
 type: folder
-token: LkxXfcSA7lKXqEdu8mpcHI8Fnqd
+token: K6akf7IbXl5Jj1dFV8Fca62Inkd
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud
   - Collections
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 ---
 

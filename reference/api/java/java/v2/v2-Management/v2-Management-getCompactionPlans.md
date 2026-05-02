@@ -1,29 +1,29 @@
 ---
 title: "getCompactionPlans() | Java | v2"
 slug: /java/java/v2-Management-getCompactionPlans
+sidebar_key: java/v2-Management-getCompactionPlans
 sidebar_label: "getCompactionPlans()"
-beta: false
 added_since: v2.6.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation returns the compaction plans for a specific compaction job, including the merge plans showing which segments will be combined. | Java | v2"
 type: docx
 token: BDNBdbEOioqnlKxRd3DcY7wRncg
 sidebar_position: 22
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud
   - getCompactionPlans()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

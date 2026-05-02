@@ -13,10 +13,10 @@ type: docx
 token: CFS4dOq2LowXPSxB124cBwQsn0c
 sidebar_position: 10
 keywords: 
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud

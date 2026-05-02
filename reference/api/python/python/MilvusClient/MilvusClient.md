@@ -12,10 +12,10 @@ token: BBPZfcRbOlWEnjdbIJgc3wgynsg
 sidebar_position: 3
 sidebar_label: "MilvusClient"
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud

@@ -1,29 +1,29 @@
 ---
 title: "delete() | Java | v2"
 slug: /java/java/v2-Vector-delete
+sidebar_key: java/v2-Vector-delete
 sidebar_label: "delete()"
-beta: false
 added_since: v2.3.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation deletes entities by their IDs or with a boolean expression. | Java | v2"
 type: docx
 token: NTCHdGKwNo9kl2xFzgKcjo8wndg
 sidebar_position: 1
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud
   - delete()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -12,15 +12,15 @@ token: JukBfPwp8luly7dRHdWc1MEBnge
 sidebar_position: 6
 sidebar_label: "Partitions"
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
   - Partitions
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 ---
 

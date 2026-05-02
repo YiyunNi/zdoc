@@ -1,29 +1,29 @@
 ---
 title: "dropIndexProperties() | Java | v2"
 slug: /java/java/v2-Management-dropIndexProperties
+sidebar_key: java/v2-Management-dropIndexProperties
 sidebar_label: "dropIndexProperties()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation resets the specified index properties to their default values. | Java | v2"
 type: docx
 token: IdNAdlMhjoM40pxjpKecpc7inbd
 sidebar_position: 6
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - dropIndexProperties()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -96,7 +96,7 @@ ConnectConfig connectConfig = ConnectConfig.builder()
         
 MilvusClientV2 client = new MilvusClientV2(connectConfig);
 
-// 2. Drop the `mmap.enabled` property
+// 2. Drop the \`mmap.enabled\` property
 List<String> propertyKeys = new ArrayList<>()
 propertyKeys.add("mmap.enabled")
 

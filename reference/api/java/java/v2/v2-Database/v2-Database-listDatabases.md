@@ -1,29 +1,29 @@
 ---
 title: "listDatabases() | Java | v2"
 slug: /java/java/v2-Database-listDatabases
+sidebar_key: java/v2-Database-listDatabases
 sidebar_label: "listDatabases()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all the database names. | Java | v2"
 type: docx
 token: IHoodknUJohFAbxMFg3c0q8un6f
 sidebar_position: 6
 keywords: 
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - open source vector db
+  - vector database example
+  - rag vector database
+  - what is vector db
   - zilliz
   - zilliz cloud
   - cloud
   - listDatabases()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

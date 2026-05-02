@@ -13,10 +13,10 @@ type: docx
 token: VkBFdLHwao9hVMxzRurcBYIynFh
 sidebar_position: 27
 keywords: 
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

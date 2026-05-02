@@ -1,29 +1,29 @@
 ---
 title: "dropUser() | Java | v2"
 slug: /java/java/v2-Authentication-dropUser
+sidebar_key: java/v2-Authentication-dropUser
 sidebar_label: "dropUser()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops a user. | Java | v2"
 type: docx
 token: RFv2dtZ1qoP9XQxJEGqcgLGUnhc
 sidebar_position: 9
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud
   - dropUser()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

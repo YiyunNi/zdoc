@@ -1,29 +1,29 @@
 ---
 title: "addFunction() | Java | v2"
 slug: /java/java/v2-CollectionSchema-addFunction
+sidebar_key: java/v2-CollectionSchema-addFunction
 sidebar_label: "addFunction()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation adds a function to convert raw data into vector representations. | Java | v2"
 type: docx
 token: WI76dwejQosQWcxuhkccHOl7nXf
 sidebar_position: 4
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud
   - addFunction()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

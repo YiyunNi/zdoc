@@ -1,29 +1,29 @@
 ---
 title: "getTotalRowCount() | Java | v2"
 slug: /java/java/v2-LocalBulkWriter-getTotalRowCount
+sidebar_key: java/v2-LocalBulkWriter-getTotalRowCount
 sidebar_label: "getTotalRowCount()"
-beta: false
 added_since: v2.6.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation returns the total number of rows written by this LocalBulkWriter instance. | Java | v2"
 type: docx
 token: AUQvd5EdFomWEWx3DrwcffYHnmb
 sidebar_position: 7
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - getTotalRowCount()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

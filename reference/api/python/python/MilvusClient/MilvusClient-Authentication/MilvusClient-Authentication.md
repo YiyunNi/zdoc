@@ -12,10 +12,10 @@ token: Tjnufe7LvlX9wtddOfEctVJ6nKB
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud

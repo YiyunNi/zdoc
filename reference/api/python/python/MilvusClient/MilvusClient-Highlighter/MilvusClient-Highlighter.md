@@ -12,10 +12,10 @@ token: O7mqfZp5fleHncduy7HcWkdTnPb
 sidebar_position: 13
 sidebar_label: "Highlighter"
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud

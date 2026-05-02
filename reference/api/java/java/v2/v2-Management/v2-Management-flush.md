@@ -1,29 +1,29 @@
 ---
 title: "flush() | Java | v2"
 slug: /java/java/v2-Management-flush
+sidebar_key: java/v2-Management-flush
 sidebar_label: "flush()"
-beta: false
 added_since: v2.4.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation flushes the streaming data onto the disk and seals the current segment. | Java | v2"
 type: docx
 token: N4R0dHR6MoiW2Rx9ClGc9MSlnOe
 sidebar_position: 7
 keywords: 
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud
   - flush()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

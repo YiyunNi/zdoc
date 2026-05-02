@@ -1,29 +1,29 @@
 ---
 title: "getDataType() | Java | v2"
 slug: /java/java/v2-StructFieldSchema-getDataType
+sidebar_key: java/v2-StructFieldSchema-getDataType
 sidebar_label: "getDataType()"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation returns the data type of an Array of Structs field. | Java | v2"
 type: docx
 token: MPJ0dxzDIoNKYPxGA5PcD2F8nRb
 sidebar_position: 2
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
   - zilliz
   - zilliz cloud
   - cloud
   - getDataType()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -45,7 +45,7 @@ getDataType()
 
 **RETURN TYPE:**
 
-*DataType*
+*[DataType](./v2-Collections-DataType)*
 
 **RETURNS:**
 

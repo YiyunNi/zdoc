@@ -12,10 +12,10 @@ token: LJfHfKQ8QlHpC1dCjxvcurBunGQ
 sidebar_position: 1
 sidebar_label: "DataImport"
 keywords: 
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud

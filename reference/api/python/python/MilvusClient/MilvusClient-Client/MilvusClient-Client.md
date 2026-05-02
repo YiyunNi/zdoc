@@ -12,10 +12,10 @@ token: M9bMfXz3llm0ebdks4Hc3KdMnCd
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

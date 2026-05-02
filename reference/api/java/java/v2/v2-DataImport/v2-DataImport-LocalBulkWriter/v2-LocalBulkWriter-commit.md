@@ -1,29 +1,29 @@
 ---
 title: "commit() | Java | v2"
 slug: /java/java/v2-LocalBulkWriter-commit
+sidebar_key: java/v2-LocalBulkWriter-commit
 sidebar_label: "commit()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation commits the appended data. | Java | v2"
 type: docx
 token: OUhTdWnXBoHqKdxTA0HcdMY5n4b
 sidebar_position: 3
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
   - commit()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -13,10 +13,10 @@ type: docx
 token: N9d9df9IIojLZDxft1HcU0mkn0b
 sidebar_position: 22
 keywords: 
-  - vectordb
   - multimodal vector database retrieval
   - Retrieval Augmented Generation
   - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud

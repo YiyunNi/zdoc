@@ -4,23 +4,23 @@ slug: /java/v2-Management
 beta: false
 notebook: false
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
 description: "Methods for you to index, load, and release a collection. | Java | v2"
 type: folder
-token: ALDZfPYy3lNm8ZdotPecBX7rnNd
+token: EVpQfxDmQloZX4dVW63c5h9mnHd
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud
   - Management
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 ---
 

@@ -12,15 +12,15 @@ token: GKUCfGIFEluyMgdvioDc9sH7nzh
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - Database
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 ---
 

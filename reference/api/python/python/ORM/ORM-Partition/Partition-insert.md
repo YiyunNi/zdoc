@@ -13,10 +13,10 @@ type: docx
 token: QXDxdv36FoVgjcxDV1gcDwWXnsd
 sidebar_position: 5
 keywords: 
+  - Deep Learning
   - Knowledge base
   - natural language processing
   - AI chatbots
-  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

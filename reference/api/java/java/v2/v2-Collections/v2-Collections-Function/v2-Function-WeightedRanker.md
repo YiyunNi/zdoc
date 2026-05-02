@@ -1,29 +1,29 @@
 ---
 title: "WeightedRanker | Java | v2"
 slug: /java/java/v2-Function-WeightedRanker
+sidebar_key: java/v2-Function-WeightedRanker
 sidebar_label: "WeightedRanker"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "The WeightedRanker class extends from the Function class and provides extra parameters. | Java | v2"
 type: docx
 token: V9YUdnfxDoc5Gmx80Wec9P6Sn2d
 sidebar_position: 7
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud
   - WeightedRanker
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -73,7 +73,7 @@ WeightedRanker.builder()
 
 **RETURNS:**
 
- A weighted ranker instance.
+A weighted ranker instance.
 
 ## Examples:\{#examples}
 

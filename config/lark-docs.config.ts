@@ -222,8 +222,8 @@ const javaV226 : Manual = {
 }
 
 const javaV230 : Manual = {
-    root: 'B1agfRbPglv4tpdTkjlcUMgVnRV',
-    base: 'Sbtcbm660abngWsXryKct5nOn2e',
+    root: 'C4Ckfsx5qlKHbnd5PVrcpxvTn2d',
+    base: 'AOFDbSmwma9XrNsLa8KcQgt9ngc',
     sourceType: 'drive',
     displayedSidebar: 'javaSidebar',
     version: 'v3.0.x',

@@ -1,29 +1,29 @@
 ---
 title: "revokePrivilegeV2() | Java | v2"
 slug: /java/java/v2-Authentication-revokePrivilegeV2
+sidebar_key: java/v2-Authentication-revokePrivilegeV2
 sidebar_label: "revokePrivilegeV2()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation revokes privileges or privilege groups from a specific role. | Java | v2"
 type: docx
 token: FZN8dtlIRoMSGBxF7b1cWX48n0b
 sidebar_position: 18
 keywords: 
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud
   - revokePrivilegeV2()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

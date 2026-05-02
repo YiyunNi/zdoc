@@ -13,10 +13,10 @@ type: docx
 token: SVoVdTdZRotav9xFjdFcZ8V2n3d
 sidebar_position: 2
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
   - zilliz
   - zilliz cloud
   - cloud

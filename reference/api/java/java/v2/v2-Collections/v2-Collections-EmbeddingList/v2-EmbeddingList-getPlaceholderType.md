@@ -1,29 +1,29 @@
 ---
 title: "getPlaceholderType() | Java | v2"
 slug: /java/java/v2-EmbeddingList-getPlaceholderType
+sidebar_key: java/v2-EmbeddingList-getPlaceholderType
 sidebar_label: "getPlaceholderType()"
-beta: false
 added_since: v2.6.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This getter returns the placeholder type of the embedding list, which indicates the vector data format. | Java | v2"
 type: docx
 token: D0UGdkudVo5vtLxlZw3c6cdqnmc
 sidebar_position: 4
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud
   - getPlaceholderType()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

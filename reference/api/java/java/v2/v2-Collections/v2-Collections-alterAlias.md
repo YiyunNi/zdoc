@@ -1,29 +1,29 @@
 ---
 title: "alterAlias() | Java | v2"
 slug: /java/java/v2-Collections-alterAlias
+sidebar_key: java/v2-Collections-alterAlias
 sidebar_label: "alterAlias()"
-beta: false
 added_since: v2.3.x
 last_modified: v2.5.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation reassigns the alias of one collection to another. | Java | v2"
 type: docx
 token: Fv8EdYIt4oThstxgpzqcm7C0nug
 sidebar_position: 1
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud
   - alterAlias()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

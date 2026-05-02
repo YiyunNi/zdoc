@@ -1,29 +1,29 @@
 ---
 title: "describeReplicas() | Java | v2"
 slug: /java/java/v2-Collections-describeReplicas
+sidebar_key: java/v2-Collections-describeReplicas
 sidebar_label: "describeReplicas()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation returns information about the replicas of a specific collection. | Java | v2"
 type: docx
 token: WRSYdEZwroNY1Txpk2DcI1sSnVg
 sidebar_position: 25
 keywords: 
+  - milvus vector database
   - milvus db
   - milvus vector db
   - Zilliz Cloud
-  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud
   - describeReplicas()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -138,7 +138,7 @@ ConnectConfig connectConfig = ConnectConfig.builder()
         
 MilvusClientV2 client = new MilvusClientV2(connectConfig);
 
-// describe the replicas of a collection named `test`
+// describe the replicas of a collection named \`test\`
 DescribeReplicasReq describeReplicasReq = DescribeReplicasReq.builder()
         .collectionName("test")
         .build();

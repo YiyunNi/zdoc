@@ -1,29 +1,29 @@
 ---
 title: "alterDatabaseProperties() | Java | v2"
 slug: /java/java/v2-Database-alterDatabaseProperties
+sidebar_key: java/v2-Database-alterDatabaseProperties
 sidebar_label: "alterDatabaseProperties()"
-beta: false
 added_since: v2.4.x
 last_modified: v2.4.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation alters a database's properties. | Java | v2"
 type: docx
 token: PBYIdLALvoHd0pxwI8Ec4JsTnBX
 sidebar_position: 1
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud
   - alterDatabaseProperties()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

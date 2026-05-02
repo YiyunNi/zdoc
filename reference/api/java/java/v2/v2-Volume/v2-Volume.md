@@ -12,15 +12,15 @@ token: OOcKfRAVdlXgf4dqW0sc9Zl2nyg
 sidebar_position: 10
 sidebar_label: "Volume"
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud
   - Volume
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 ---
 

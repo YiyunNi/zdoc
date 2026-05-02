@@ -13,10 +13,10 @@ type: docx
 token: JRNidzqX4o6VtkxVB5RcNvmHnnb
 sidebar_position: 2
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

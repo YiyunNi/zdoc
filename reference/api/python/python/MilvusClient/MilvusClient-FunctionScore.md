@@ -13,10 +13,10 @@ type: docx
 token: PfJNdkuMDoCqqcxm6S2cDD6TnFh
 sidebar_position: 12
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud

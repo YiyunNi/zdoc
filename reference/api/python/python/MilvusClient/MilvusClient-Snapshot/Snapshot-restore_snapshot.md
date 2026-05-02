@@ -13,10 +13,10 @@ type: docx
 token: I2OZdk40IomugOx9MTqcooVcnEf
 sidebar_position: 7
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

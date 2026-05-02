@@ -12,15 +12,15 @@ token: HR9xfgwXylmfqOdKmJ7c9xCqnQb
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
   - Authentication
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 ---
 

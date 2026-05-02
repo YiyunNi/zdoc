@@ -13,10 +13,10 @@ type: docx
 token: UASmdlcqvojCe4xNY94cz9Wznyh
 sidebar_position: 4
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

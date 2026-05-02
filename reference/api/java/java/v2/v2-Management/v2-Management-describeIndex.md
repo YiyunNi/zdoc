@@ -1,29 +1,29 @@
 ---
 title: "describeIndex() | Java | v2"
 slug: /java/java/v2-Management-describeIndex
+sidebar_key: java/v2-Management-describeIndex
 sidebar_label: "describeIndex()"
-beta: false
 added_since: v2.3.x
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation describes a specific index. | Java | v2"
 type: docx
 token: SgJ7dKfisomLkqx1E3BccMO7nqf
 sidebar_position: 4
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud
   - describeIndex()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

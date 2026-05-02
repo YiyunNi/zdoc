@@ -1,29 +1,29 @@
 ---
 title: "CreateSchema() | Java | v2"
 slug: /java/java/v2-Collections-CreateSchema
+sidebar_key: java/v2-Collections-CreateSchema
 sidebar_label: "CreateSchema()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a collection schema. | Java | v2"
 type: docx
 token: DAIfdXKk5oCHeNxOUvCc1KcpnNh
 sidebar_position: 24
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud
   - CreateSchema()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

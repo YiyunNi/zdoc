@@ -1,29 +1,29 @@
 ---
 title: "addFunction() | Java | v2"
 slug: /java/java/v2-FunctionScore-addFunction
+sidebar_key: java/v2-FunctionScore-addFunction
 sidebar_label: "addFunction()"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation adds a function to the `FunctionScore` instance. | Java | v2"
 type: docx
 token: HPs6dFV29ovzyBxpgUacXnnjngd
 sidebar_position: 1
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud
   - addFunction()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -57,7 +57,7 @@ addFunction(
 
 **RETURNS**
 
-A **FunctionScore** builder for chaining up multiple `addFunction()` methods.
+A **[FunctionScore](./v2-Vector-FunctionScore)** builder for chaining up multiple `addFunction()` methods.
 
 ## Example\{#example}
 

@@ -12,10 +12,10 @@ token: WidffJPNIlfIlZdHlU8cMiGOnpg
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

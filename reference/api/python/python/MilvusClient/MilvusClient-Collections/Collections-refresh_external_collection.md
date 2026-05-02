@@ -13,10 +13,10 @@ type: docx
 token: ZVs4dDpvmoXI0OxOnKhc9numnJd
 sidebar_position: 28
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

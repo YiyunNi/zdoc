@@ -13,10 +13,10 @@ type: docx
 token: WR4qdjFUXog2JHxuJpMcWcVlnEf
 sidebar_position: 18
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

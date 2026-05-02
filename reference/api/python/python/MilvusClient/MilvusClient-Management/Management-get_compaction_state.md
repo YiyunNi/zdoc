@@ -13,10 +13,10 @@ type: docx
 token: MSDVdu103obklexX8GvcW5cWnCf
 sidebar_position: 18
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

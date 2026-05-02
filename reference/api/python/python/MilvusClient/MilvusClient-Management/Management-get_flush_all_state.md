@@ -13,10 +13,10 @@ type: docx
 token: G31wdmzVFo687JxZTAGctQlKnir
 sidebar_position: 19
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud

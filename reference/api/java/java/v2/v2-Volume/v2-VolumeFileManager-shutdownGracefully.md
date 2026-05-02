@@ -1,29 +1,29 @@
 ---
 title: "shutdownGracefully() | Java | v2"
 slug: /java/java/v2-VolumeFileManager-shutdownGracefully
+sidebar_key: java/v2-VolumeFileManager-shutdownGracefully
 sidebar_label: "shutdownGracefully()"
-beta: false
 added_since: false
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gracefully shuts down the internal executor service of the VolumeFileManager, allowing pending upload tasks to complete before termination. | Java | v2"
 type: docx
 token: TuyKdaa1SoOstTx9DglcWfzknTh
 sidebar_position: 3
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud
   - shutdownGracefully()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -1,29 +1,29 @@
 ---
 title: "alterCollectionProperties() | Java | v2"
 slug: /java/java/v2-Collections-alterCollectionProperties
+sidebar_key: java/v2-Collections-alterCollectionProperties
 sidebar_label: "alterCollectionProperties()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation modifies the properties of a specified collection. | Java | v2"
 type: docx
 token: JQ4QdTaadoIDSPxDJRZcSDu3n5g
 sidebar_position: 3
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
   - zilliz
   - zilliz cloud
   - cloud
   - alterCollectionProperties()
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -95,7 +95,7 @@ ConnectConfig connectConfig = ConnectConfig.builder()
         
 MilvusClientV2 client = new MilvusClientV2(connectConfig);
 
-// 2. Alter the `collection.ttl.seconds` property
+// 2. Alter the \`collection.ttl.seconds\` property
 Map<String, String> properties = new HashMap<>()
 properties.put("collection.ttl.seconds", "86400")
 

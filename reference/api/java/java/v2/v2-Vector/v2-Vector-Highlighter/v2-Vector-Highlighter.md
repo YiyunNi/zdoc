@@ -1,29 +1,29 @@
 ---
 title: "Highlighter | Java | v2"
 slug: /java/java/v2-Vector-Highlighter
+sidebar_key: java/v2-Vector-Highlighter
 sidebar_label: "Highlighter"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "A `Highlighter` instance configures post-processing term highlighting for text fields in search results. There are two types of highlighters, namely lexical highlighters and semantic highlighters. | Java | v2"
 type: docx
 token: XzmYdQU59oMUagxiKVicyG8zn6f
 sidebar_position: 1
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud
   - Highlighter
-  - javaV226
+  - javaV230
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
