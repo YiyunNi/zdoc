@@ -4,9 +4,9 @@ const fs = require('node:fs')
 const CONFIG = {
   controlPlaneKeywords: {
     zilliz: ['cloud', 'cluster', 'import', 'pipeline', 'backup', 'restore', 'invoices', 'usage', 'metrics', 'extract', 'volume', 'project'],
-    milvus: ['cloud', 'cluster', 'pipeline', 'backup', 'restore', 'invoices', 'usage', 'metrics', 'extract', 'volume', 'project'],
+    milvus: [],
   },
-  betaDefaults: { v1: 'NEAR DEPRECATE', v2: 'FALSE' },
+  betaDefaults: { v1: 'DEPRECATED', v2: 'FALSE' },
   betaOverrides: { extract: 'PRIVATE', merge: 'PRIVATE' },
   maxRefDepth: 20,
 }
@@ -23,6 +23,20 @@ class refGen {
     }
 
     this.descriptions = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/descriptions.json', 'utf-8'))
+
+    this.positions = { tags: {}, endpoints: {} }
+    try {
+      this.positions = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/positions.json', 'utf-8'))
+    } catch (err) {
+      // Optional file — leave defaults empty
+    }
+
+    this.admonitions = {}
+    try {
+      this.admonitions = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/admonitions.json', 'utf-8'))
+    } catch (err) {
+      // Optional file — leave defaults empty
+    }
   }
 
   validateSpec(spec) {
@@ -91,12 +105,17 @@ class refGen {
     )
 
     const template = env.getTemplate("reference.mdx")
-    const positions = {}
+    const autoPositions = {}
     for (const page_url of Object.keys(specifications.paths)) {
       for (const method of Object.keys(specifications.paths[page_url])) {
         const specification = this.resolveRefs(specifications.paths[page_url][method], specifications)
 
         if (specification?.["x-include-target"] && !specification["x-include-target"].includes(target)) {
+          continue
+        }
+
+        const tagObj = specifications.tags.find(t => t.name === specification.tags?.[0])
+        if (tagObj?.["x-include-target"] && !tagObj["x-include-target"].includes(target)) {
           continue
         }
 
@@ -108,10 +127,6 @@ class refGen {
           continue
         }
         const tag = page_parent
-        if (!positions[tag]) {
-          positions[tag] = 0
-        }
-        const sidebar_position = positions[tag]; positions[tag]++;
 
         page_parent = this.toSlug(page_parent)
         if (target === 'milvus') {
@@ -128,9 +143,96 @@ class refGen {
         var upper_folder = this.getPlane(page_parent, target)
 
         var page_slug = (this.get_slug(page_title, target)) + slug_suffix
-        var beta_tag = this.getBetaTag(page_slug, version)
+
+        // Check x-beta on operation, then tag, then fall back to defaults
+        let beta_tag = specification['x-beta']
+        if (!beta_tag && tagObj?.['x-beta']) {
+          beta_tag = tagObj['x-beta']
+        }
+        if (!beta_tag) {
+          beta_tag = this.getBetaTag(page_slug, version)
+        }
+
+        // Auto-deprecate all v1 endpoints
+        if (version === 'v1') {
+          specification.deprecated = true
+        }
+
+        let sidebar_position
+        const metaPos = this.positions.endpoints?.[page_slug]
+        if (metaPos !== undefined) {
+          sidebar_position = metaPos
+        } else {
+          if (!autoPositions[tag]) {
+            autoPositions[tag] = 0
+          }
+          sidebar_position = autoPositions[tag]
+          autoPositions[tag]++
+        }
 
         const page_method = method.toLowerCase()
+
+        const meta = this.admonitions[page_slug] || {}
+
+        // 1. Page-level admonitions
+        const specAdmonitions = specification['x-admonition'] || []
+        const pageMetaAdmonitions = meta.admonitions || []
+        const mergedPage = [...specAdmonitions, ...pageMetaAdmonitions]
+        if (mergedPage.length > 0) {
+          specification['x-admonition'] = mergedPage
+        }
+
+        // 2. Parameter-level admonitions
+        if (specification.parameters && meta.parameters) {
+          for (const param of specification.parameters) {
+            const paramMeta = meta.parameters[param.name]
+            if (paramMeta && paramMeta.length > 0) {
+              param['x-admonition'] = [...(param['x-admonition'] || []), ...paramMeta]
+            }
+          }
+        }
+
+        // 3. Property-level admonitions
+        const injectPropertyAdmonitions = (schema, propertyMap) => {
+          if (!schema || !propertyMap) return
+          for (const [path, admonitions] of Object.entries(propertyMap)) {
+            const parts = path.split('.')
+            let current = schema
+            for (let i = 0; i < parts.length; i++) {
+              if (!current) break
+              if (i === parts.length - 1) {
+                if (current.properties && current.properties[parts[i]]) {
+                  const prop = current.properties[parts[i]]
+                  prop['x-admonition'] = [...(prop['x-admonition'] || []), ...admonitions]
+                }
+              } else {
+                if (current.properties && current.properties[parts[i]]) {
+                  current = current.properties[parts[i]]
+                } else if (current.items) {
+                  current = current.items
+                } else {
+                  break
+                }
+              }
+            }
+          }
+        }
+
+        if (meta.properties) {
+          if (specification.requestBody?.content?.['application/json']?.schema) {
+            injectPropertyAdmonitions(
+              specification.requestBody.content['application/json'].schema,
+              meta.properties.requestBody
+            )
+          }
+          if (specification.responses?.['200']?.content?.['application/json']?.schema) {
+            injectPropertyAdmonitions(
+              specification.responses['200'].content['application/json'].schema,
+              meta.properties.responses
+            )
+          }
+        }
+
         const specs = JSON.stringify(specification)
 
         const t = template.render({
@@ -170,8 +272,21 @@ class refGen {
       console.log(slug)
       const group_name = version === 'v2' ? specifications.tags[group].name.slice(0, -5) : specifications.tags[group].name
       const description = this.lookupDescription(slug, specifications.tags[group].description)
-      const position = specifications.tags.map(x => x.name).indexOf(specifications.tags[group].name)
-      var beta_tag = this.getBetaTag(slug, version)
+
+      const tagName = specifications.tags[group].name
+      let position
+      const metaPos = this.positions.tags?.[slug]
+      if (metaPos !== undefined) {
+        position = metaPos
+      } else {
+        position = specifications.tags.map(x => x.name).indexOf(tagName)
+      }
+
+      // Check x-beta on tag, then fall back to defaults
+      let beta_tag = specifications.tags[group]?.['x-beta']
+      if (!beta_tag) {
+        beta_tag = this.getBetaTag(slug, version)
+      }
 
       const t = template.render({
         group_name: group_name + (version === 'v2' ? ' (V2)' : ' (V1)'),

@@ -9,32 +9,104 @@ import { cond, set } from 'lodash';
 
 const primitiveConstants = ["boolean", "integer", "number", "string"]
 
-const BaseURL = ({ endpoint, lang, target }) => {
-    const { server, children, prompt } = getBaseUrl(endpoint, lang, target)
+const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
+    const [selectedBaseUrl, setSelectedBaseUrl] = useState(0)
+
+    // If no custom base URLs, fall back to auto-detection
+    if (!baseUrls || baseUrls.length === 0) {
+        const { server, children, prompt } = getBaseUrl(endpoint, lang, target)
+        return (<>
+            <section>
+                <section className={styles.sectionHeader}>
+                    <span>{ isControlPlane(endpoint) ? "Base URL" : i18n[lang]['title.cluster.endpoint'] }</span>
+                </section>
+                <div style={{margin: '1rem 0'}}>
+                    <p>{i18n[lang]['base.url.format.prompt']}</p>
+                    <p className={styles.paramName} style={{ fontSize: '0.9rem' }}>{server}</p>
+                </div>
+                { prompt && <Admonition type="info" icon="📘" title={i18n[lang]["admonition.title"]}>
+                    <div dangerouslySetInnerHTML={{__html: prompt}} />
+                </Admonition>}
+            </section>
+            <section className={styles.exampleContainer}>
+                <CodeBlock className="language-shell" children={children} />
+            </section>
+        </>)
+    }
+
+    const current = baseUrls[selectedBaseUrl]
+
     return (<>
         <section>
             <section className={styles.sectionHeader}>
                 <span>{ isControlPlane(endpoint) ? "Base URL" : i18n[lang]['title.cluster.endpoint'] }</span>
             </section>
+
+            {/* Tab toggle */}
+            {baseUrls.length > 1 && (
+                <div className={styles.tabs} style={{ marginBottom: '1rem' }}>
+                    {baseUrls.map((item, index) => (
+                        <React.Fragment key={index}>
+                            <input
+                                name="baseurl-toggle"
+                                type="radio"
+                                id={`baseurl-tab-${index}`}
+                                checked={selectedBaseUrl === index}
+                                value={index}
+                                onChange={() => {
+                                    setSelectedBaseUrl(index)
+                                    if (onBaseUrlChange) {
+                                        onBaseUrlChange(baseUrls[index].url)
+                                    }
+                                }}
+                            />
+                            <label className={styles.tabLabel} htmlFor={`baseurl-tab-${index}`}>
+                                {item.label}
+                            </label>
+                        </React.Fragment>
+                    ))}
+                </div>
+            )}
+
             <div style={{margin: '1rem 0'}}>
                 <p>{i18n[lang]['base.url.format.prompt']}</p>
-                <p className={styles.paramName} style={{ fontSize: '0.9rem' }}>{server}</p>
+                <p className={styles.paramName} style={{ fontSize: '0.9rem' }}>{current.url}</p>
             </div>
-            { prompt && <Admonition type="info" icon="📘" title={i18n[lang]["admonition.title"]}>
-                <div dangerouslySetInnerHTML={{__html: prompt}} />
+            { current.prompt && <Admonition type="info" icon="📘" title={i18n[lang]["admonition.title"]}>
+                <div dangerouslySetInnerHTML={{__html: current.prompt}} />
             </Admonition>}
         </section>
         <section className={styles.exampleContainer}>
-            <CodeBlock className="language-shell" children={children} />
-        </section>    
+            <CodeBlock className="language-shell" children={current.shell} />
+        </section>
     </>)
 }
 
-const Param = ({ name, description, type, format, required, example, inProp, enums, lang, target, x_i18n }) => {
+const Admonitions = ({ admonitions }) => {
+    if (!admonitions || admonitions.length === 0) {
+        return null
+    }
+
+    return (
+        <>
+            {admonitions.map((item, index) => (
+                <Admonition
+                    key={index}
+                    type={item.type || 'info'}
+                    title={item.title || item.type || 'Note'}
+                >
+                    <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                </Admonition>
+            ))}
+        </>
+    )
+}
+
+const Param = ({ name, description, type, format, required, example, inProp, enums, lang, target, x_i18n, admonitions }) => {
 
     enums = enums? enums : []
     const translatedDescription = x_i18n?.[lang]?.description ? x_i18n[lang].description : description
-    
+
     return (
         <div className={styles.paramContainer}>
             <div className={styles.paramLabels}>
@@ -45,6 +117,7 @@ const Param = ({ name, description, type, format, required, example, inProp, enu
             </div>
             <div className={styles.description} dangerouslySetInnerHTML={{__html: translatedDescription ? textFilter(translatedDescription, target) : `<i>${i18n[lang]["to.be.added.soon"]}</i>`}}></div>
             <div>
+                { admonitions && admonitions.length > 0 && <Admonitions admonitions={admonitions} /> }
                 { enums.length > 0 && <Enums enums={enums} lang={lang} target={target} /> }
                 { (example === 0 || example) && <div>
                     <span className={styles.paramExample}>{i18n[lang]['label.example.value']}</span>
@@ -183,6 +256,7 @@ const Primitive = ({ name, obj, required, lang, target }) => {
     const description = obj["x-i18n"]?.[lang]?.description ? obj["x-i18n"][lang].description : obj.description
     const example = obj["x-i18n"]?.[lang]?.example ? obj["x-i18n"][lang].example : obj.example
     const enums = obj.enum ? obj.enum : []
+    const admonitions = obj['x-admonition']
 
     return (
         <div className={styles.paramContainer}>
@@ -193,6 +267,7 @@ const Primitive = ({ name, obj, required, lang, target }) => {
             </div>
             <div className={styles.description} dangerouslySetInnerHTML={{__html: description ? textFilter(description, target) : `<i>${i18n[lang]["to.be.added.soon"]}</i>`}}></div>
             <div>
+                { admonitions && admonitions.length > 0 && <Admonitions admonitions={admonitions} /> }
                 { (minimum || maximum) && <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                     <span className={styles.paramExample}>{i18n[lang]['label.value.range']}</span>
                     { minimum &&<span className={styles.label}>{obj.exclusiveMinimum ? `\> ${minimum}` : `\≥ ${minimum}`}</span>}
@@ -425,11 +500,11 @@ const ExampleResponses = ({ examples, lang, target, selectedResponse }) => {
     )
 }
 
-const ExampleRequests = ({ endpoint, method, headersExample, pathExample, queryExample, requestBody, lang, target, selectedRequest }) => {
+const ExampleRequests = ({ endpoint, method, headersExample, pathExample, queryExample, requestBody, lang, target, selectedRequest, baseUrl }) => {
     const condition = isControlPlane(endpoint)
-    const baseUrl = condition ? "\${BASE_URL}" : "\${CLUSTER_ENDPOINT}"
+    const effectiveBaseUrl = baseUrl ? baseUrl : (condition ? "\${BASE_URL}" : "\${CLUSTER_ENDPOINT}")
     const token = condition ? 'YOUR_API_KEY' : "db_admin:xxxxxxxxxxxxx"
-    var req = `export TOKEN="${token}"${pathExample ? "\n"+pathExample : ''}\n\ncurl --request ${method.toUpperCase()} \\\n--url "${baseUrl}${endpoint}`
+    var req = `export TOKEN="${token}"${pathExample ? "\n"+pathExample : ''}\n\ncurl --request ${method.toUpperCase()} \\\n--url "${effectiveBaseUrl}${endpoint}`
     req = (queryExample ? `${req}?${queryExample}` : req) + `"`
     req = headersExample ? `${req} \\\n${headersExample + ` \\\n--header "Content-Type: application/json"`}` : req
 
@@ -510,6 +585,8 @@ export default function RestSpecs(props) {
 
     const target = props.target
     const lang = props.lang ? props.lang : 'en-US'
+    const admonitions = props.specs['x-admonition']
+    const baseUrls = props.specs['x-base-urls']
     const endpoint = props.endpoint.replaceAll('{', '${')
     const validParams = parameters ? parameters.filter(param => !param?.['x-include-target'] || param?.['x-include-target']?.includes(target)) : []
 
@@ -530,6 +607,7 @@ export default function RestSpecs(props) {
 
     const [ selectedRequest, setSelectedRequest ] = useState("OPTION 1")
     const [ selectedResponse, setSelectedResponse ] = useState("OPTION 1")
+    const [ selectedBaseUrl, setSelectedBaseUrl ] = useState(null)
 
     const handleMultipleRequests = (value) => {
         setSelectedRequest(value.toUpperCase())
@@ -544,6 +622,10 @@ export default function RestSpecs(props) {
             <div>
                 <div className={styles.specLayout}>
                     <div>
+                        <Admonitions admonitions={admonitions} />
+                        { deprecated && <Admonition type="danger" title={i18n[lang]["admonition.title"]}>
+                            <div dangerouslySetInnerHTML={{ __html: i18n[lang]["admonition.deprecated"] }} />
+                        </Admonition> }
                         <div style={{ marginBottom: '1rem' }} dangerouslySetInnerHTML={{__html: short}} />
                         <RestHeader
                             method={props.method}
@@ -552,7 +634,7 @@ export default function RestSpecs(props) {
                     </div>
                 </div>
                 <div className={styles.specLayout}>
-                    <BaseURL endpoint={props.endpoint} lang={lang} target={target} />
+                    <BaseURL endpoint={props.endpoint} lang={lang} target={target} baseUrls={target === 'zilliz' ? baseUrls : null} onBaseUrlChange={setSelectedBaseUrl} />
                     { (parameters.length > 0 || requestBody) && <>
                         <section>
                             { parameters.length > 0 && <section>
@@ -562,50 +644,53 @@ export default function RestSpecs(props) {
                                 { headerParams.length > 0 && headerParams.map((param, index) => {
                                     param = chooseParamExample(param, lang, target)
                                     return (
-                                        <Param 
-                                            key={index} 
+                                        <Param
+                                            key={index}
                                             lang={lang}
-                                            target={target} 
-                                            name={param.name} 
+                                            target={target}
+                                            name={param.name}
                                             description={param.description}
-                                            type={param.schema.type} 
-                                            required={param.required} 
+                                            type={param.schema.type}
+                                            required={param.required}
                                             example={param.example}
                                             inProp={param.in}
                                             enums={param.schema.enum}
-                                            x_i18n={param["x-i18n"]} />
+                                            x_i18n={param["x-i18n"]}
+                                            admonitions={param['x-admonition']} />
                                     )
                                 })}
                                 { pathParams.length > 0 && pathParams.map((param, index) => {
                                     param = chooseParamExample(param, lang, target)
                                     return (
-                                        <Param 
-                                            key={index} 
+                                        <Param
+                                            key={index}
                                             lang={lang}
-                                            target={target} 
-                                            name={param.name} 
-                                            description={ param["x-i18n"]?.[lang]?.description ? param["x-i18n"]?.[lang]?.description : param.description } 
+                                            target={target}
+                                            name={param.name}
+                                            description={ param["x-i18n"]?.[lang]?.description ? param["x-i18n"]?.[lang]?.description : param.description }
                                             type={param.schema.type}
-                                            required={param.required} 
+                                            required={param.required}
                                             example={param.example}
                                             inProp={param.in}
-                                            enums={param.schema.enum} />
+                                            enums={param.schema.enum}
+                                            admonitions={param['x-admonition']} />
                                     )
                                 })}
                                 { queryParams.length > 0 && queryParams.map((param, index) => {
                                     param = chooseParamExample(param, lang, target)
                                     return (
-                                        <Param 
-                                            key={index} 
+                                        <Param
+                                            key={index}
                                             lang={lang}
-                                            target={target} 
-                                            name={param.name} 
-                                            description={ param["x-i18n"]?.[lang]?.description ? param["x-i18n"]?.[lang]?.description : param.description } 
+                                            target={target}
+                                            name={param.name}
+                                            description={ param["x-i18n"]?.[lang]?.description ? param["x-i18n"]?.[lang]?.description : param.description }
                                             type={param.schema.type}
-                                            required={param.required} 
+                                            required={param.required}
                                             example={param.example}
                                             inProp={param.in}
-                                            enums={param.schema.enum} />
+                                            enums={param.schema.enum}
+                                            admonitions={param['x-admonition']} />
                                     )
                                 })}
                             </section>}
@@ -650,14 +735,15 @@ export default function RestSpecs(props) {
                         <section className={styles.exampleContainer}>
                             {/* <CodeBlock className="language-bash" children={req} /> */}
                             <ExampleRequests endpoint={endpoint}
-                                method={props.method} 
-                                headersExample={headersExample} 
+                                method={props.method}
+                                headersExample={headersExample}
                                 pathExample={pathExample}
-                                queryExample={queryExample} 
-                                requestBody={requestBody} 
-                                lang={lang} 
+                                queryExample={queryExample}
+                                requestBody={requestBody}
+                                lang={lang}
                                 target={target}
-                                selectedRequest={selectedRequest} />
+                                selectedRequest={selectedRequest}
+                                baseUrl={selectedBaseUrl} />
                         </section>
                     </>}
                 </div>

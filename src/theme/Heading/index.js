@@ -33,6 +33,10 @@ const BetaTag = (tag) => {
       tag_caption = "About to Deprecate";
       tag_color = "#FF7F47";
       break;
+    case tag === 'DEPRECATED':
+      tag_caption = "Deprecated";
+      tag_color = "#dc3545";
+      break;
     case tag === 'All Plans':
       tag_caption = "All Plans";
       tag_color = "#FF7F47";

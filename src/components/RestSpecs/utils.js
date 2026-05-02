@@ -106,12 +106,23 @@ export const getRandomString = () => {
 }
 
 export const chooseParamExample = (param, lang, target) => {
+    // Check x-i18n first (consistent with Primitive component)
+    if (param["x-i18n"]?.[lang]?.example !== undefined) {
+        param.example = param["x-i18n"][lang].example
+        return param
+    }
+
     if (param.examples) {
         const validkey = Object.keys(param.examples).filter(key => {
-            return param.examples[key]?.["x-target-lang"] === lang || param.examples[key]?.["x-include-target"]?.includes(target)
+            const ex = param.examples[key]
+            const langMatch = !ex?.["x-target-lang"] || ex["x-target-lang"] === lang
+            const targetMatch = !ex?.["x-include-target"] || ex["x-include-target"].includes(target)
+            return langMatch && targetMatch
         })[0]
 
-        param.example = param.examples[validkey].value
+        if (validkey) {
+            param.example = param.examples[validkey].value
+        }
     }
 
     return param
