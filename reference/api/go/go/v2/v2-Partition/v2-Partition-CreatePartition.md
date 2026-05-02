@@ -1,16 +1,27 @@
 ---
 title: "CreatePartition() | Go | v2"
 slug: /go/v2-Partition-CreatePartition
+sidebar_key: v2-Partition-CreatePartition
 sidebar_label: "CreatePartition()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method creates a partition in a collection. | Go | v2"
-type: origin
-token: OFEAw1PlfikMhaklM1WcPSggnPd
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation creates a new partition in a collection for organizing data. | Go | v2"
+type: docx
+token: Pp0KdUrYGoX4PbxXNFvczjePn4f
 sidebar_position: 1
+keywords: 
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - CreatePartition()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,84 +31,59 @@ import Admonition from '@theme/Admonition';
 
 # CreatePartition()
 
-This method creates a partition in a collection.
+This operation creates a new partition in a collection for organizing data.
 
 ```go
 func (c *Client) CreatePartition(ctx context.Context, opt CreatePartitionOption, callOptions ...grpc.CallOption) error
 ```
 
-## Request Parameters\{#request-parameters}
+**RETURN TYPE:**
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>opt</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Partition-CreatePartition#createpartitionoption"><code>CreateAliasOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
+*error*
 
-## CreatePartitionOption\{#createpartitionoption}
+**RETURNS:**
 
-This is an interface type. The `createPartitionOption` struct type implements this interface type. 
+Returns nil on success, or an error describing what went wrong.
 
-You can use the `NewCreatePartitionOption()` function to get the concrete implementation.
+**EXCEPTIONS:**
 
-### NewCreatePartitionOption\{#newcreatepartitionoption}
+- **error**
 
-The signature of this method is as follows:
-
-```go
-func NewCreatePartitionOption(collectionName string, partitionName string) *createPartitionOpt
-```
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>partitionName</code></p></td>
-     <td><p>Name of the partition to create</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
-
-## Return\{#return}
-
-Null
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle error
+}
+
+defer cli.Close(ctx)
 
 err = cli.CreatePartition(ctx, milvusclient.NewCreatePartitionOption("quick_setup", "partitionA"))
 if err != nil {
-        // handle error
+	// handle error
 }
-```
 
+partitionNames, err := cli.ListPartitions(ctx, milvusclient.NewListPartitionOption("quick_setup"))
+if err != nil {
+	// handle error
+}
+
+fmt.Println(partitionNames)
+```

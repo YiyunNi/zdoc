@@ -1,16 +1,27 @@
 ---
 title: "ReleasePartitions() | Go | v2"
 slug: /go/v2-Management-ReleasePartitions
+sidebar_key: v2-Management-ReleasePartitions
 sidebar_label: "ReleasePartitions()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method releases the specified collection. | Go | v2"
-type: origin
-token: Y9o0wlGyBiOVNaknQCcchBCpnie
-sidebar_position: 10
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation releases specific partitions from memory. | Go | v2"
+type: docx
+token: BcAVdlDIioMUXTxqyZkcXfqznKd
+sidebar_position: 25
+keywords: 
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - ReleasePartitions()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,83 +31,69 @@ import Admonition from '@theme/Admonition';
 
 # ReleasePartitions()
 
-This method releases the specified collection.
+This operation releases specific partitions from memory.
 
 ```go
 func (c *Client) ReleasePartitions(ctx context.Context, option ReleasePartitionsOption, callOptions ...grpc.CallOption) error
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-ReleasePartitions#releasecollectionoption"><code>ReleaseCollectionOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## ReleaseCollectionOption\{#releasecollectionoption}
-
-This is an interface type. The `releasePartitionsOption` struct type implements this interface type. 
-
-You can use the `NewReleasePartitionsOption()` function to get the concrete implementation.
-
-### NewReleaseCollectionOption()\{#newreleasecollectionoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewReleasePartitionsOptions(collectionName string, partitionNames ...string) *releasePartitionsOption
+option := milvusclient.NewReleasePartitionsOption(collectionName, partitionNames)
+
+err := client.ReleasePartitions(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>partitionNames</code></p></td>
-     <td><p>Names of the target partitions.</p></td>
-     <td><p><code>...string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## Return\{#return}
+- **collectionName** (*string*)
 
-Null
+    The name of the target collection.
+
+- **partitionNames** (*...string*)
+
+    The name(s) of the partition(s).
+
+**RETURN TYPE:**
+
+*error*
+
+**RETURNS:**
+
+Returns nil on success, or an error describing what went wrong.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
 
-err = cli.ReleasePartitions(ctx, milvusclient.NewReleasePartitionsOption("custom_quick_setup", "default", "partitionA"))
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
 if err != nil {
-        // handle error
+	// handle error
+}
+
+defer cli.Close(ctx)
+
+err = cli.ReleasePartitions(ctx, milvusclient.NewReleasePartitionsOptions("quick_setup", "partitionA"))
+if err != nil {
+	// handle error
 }
 ```

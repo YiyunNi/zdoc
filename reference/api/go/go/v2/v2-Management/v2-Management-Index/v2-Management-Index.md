@@ -1,0 +1,56 @@
+---
+title: "Index | Go | v2"
+slug: /go/v2-Management-Index
+sidebar_key: v2-Management-Index
+sidebar_label: "Index"
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "Interface for index configuration. Use constructor functions like NewAutoIndex() or NewHNSWIndex() to create instances. | Go | v2"
+type: docx
+token: ERQodkjAzotUQ3xKvA8c6jmLn3e
+sidebar_position: 1
+keywords: 
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - Index
+  - gov230
+displayed_sidebar: goSidebar
+
+---
+
+import Admonition from '@theme/Admonition';
+
+
+# Index
+
+Interface for index configuration. Use constructor functions like NewAutoIndex() or NewHNSWIndex() to create instances.
+
+```go
+type Index interface {
+    Name() string
+    IndexType() IndexType
+    Params() map[string]string
+}
+```
+
+**METHODS:**
+
+- `Name() string`
+
+    Returns the name of the index.
+
+- `IndexType() IndexType`
+
+    Returns the index algorithm type.
+
+- `Params() map[string]string`
+
+    Returns the index parameters as a key-value map.

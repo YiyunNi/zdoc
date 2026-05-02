@@ -1,16 +1,27 @@
 ---
 title: "GetCompactionState() | Go | v2"
 slug: /go/v2-Management-GetCompactionState
+sidebar_key: v2-Management-GetCompactionState
 sidebar_label: "GetCompactionState()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method compacts segments to improve search efficiency. | Go | v2"
-type: origin
-token: LsC0whs7xiVDnckI4l1c13IKnHd
-sidebar_position: 14
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation returns the current state of a compaction operation. | Go | v2"
+type: docx
+token: LLYvdMBa6osxRQx90sHcm02Kn2b
+sidebar_position: 11
+keywords: 
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - GetCompactionState()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,90 +31,65 @@ import Admonition from '@theme/Admonition';
 
 # GetCompactionState()
 
-This method compacts segments to improve search efficiency. 
+This operation returns the current state of a compaction operation.
 
 ```go
 func (c *Client) GetCompactionState(ctx context.Context, option GetCompactionStateOption, callOptions ...grpc.CallOption) (entity.CompactionState, error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-GetCompactionState#getcompactstateoption"><code>GetCompactStateOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## GetCompactStateOption\{#getcompactstateoption}
-
-This is an interface type. The `getCompactStateOption` struct type implements this interface type. 
-
-You can use the `NewGetCompactStateOption()` function to get the concrete implementation.
-
-### NewGetCompactStateOption()\{#newgetcompactstateoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewGetCompactionStateOption(compactionID int64) *getCompactionStateOption
+option := milvusclient.NewGetCompactionStateOption(compactionID)
+
+result, err := client.GetCompactionState(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>compactionID</code></p></td>
-     <td><p>ID of a compaction task, which is the value that the <a href="./v2-Management-Compact"><code>compact()</code></a> method returns.</p></td>
-     <td><p><code>int64</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## entity.CompactionState\{#entitycompactionstate}
+- **compactionID** (*int64*)
 
-The `entity.CompactionState` is a private enum type and has the following possible values.
+    The compaction i d value.
 
-```go
-const (
-    CompactionStateRunning   CompactionState = CompactionState(commonpb.CompactionState_Executing)
-    CompactionStateCompleted CompactionState = CompactionState(commonpb.CompactionState_Completed)
-)
-```
+**RETURN TYPE:**
 
-## Return\{#return}
+*entity.CompactionState, error*
 
-`entity.CompactionState`
+**RETURNS:**
+
+The current state of the compaction operation. Returns an error if the operation fails.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+compactID := int64(123)
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle err
+}
 
 state, err := cli.GetCompactionState(ctx, milvusclient.NewGetCompactionStateOption(compactID))
 if err != nil {
-    // handle err
+	// handle err
 }
 fmt.Println(state)
 ```

@@ -1,16 +1,27 @@
 ---
 title: "HasPartition() | Go | v2"
 slug: /go/v2-Partition-HasPartition
+sidebar_key: v2-Partition-HasPartition
 sidebar_label: "HasPartition()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method checks whether the specified partition exists. | Go | v2"
-type: origin
-token: YDDBwm1kfiAdPvkKXprcwbAxnzc
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation checks whether a partition exists in a collection. | Go | v2"
+type: docx
+token: Cased8tfhoZ25Sx4VALcy4gZnbh
 sidebar_position: 4
+keywords: 
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - HasPartition()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,81 +31,71 @@ import Admonition from '@theme/Admonition';
 
 # HasPartition()
 
-This method checks whether the specified partition exists.
+This operation checks whether a partition exists in a collection.
 
 ```go
 func (c *Client) HasPartition(ctx context.Context, opt HasPartitionOption, callOptions ...grpc.CallOption) (has bool, err error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Partition-HasPartition#haspartitionoption"><code>HasPartitionOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOpts</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## HasPartitionOption\{#haspartitionoption}
-
-This is an interface type. The `hasPartitionOption` struct type implements this interface type. 
-
-You can use the `NewHasPartitionOption()` function to get the concrete implementation.
-
-### NewHasCollectionOption\{#newhascollectionoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewHasCollectionOption(name string) HasCollectionOption
+option := milvusclient.NewHasPartitionOption(collectionName, partitionName)
+
+result, err := client.HasPartition(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>name</code></p></td>
-     <td><p>Name of the collection to check.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## Return\{#return}
+- **collectionName** (*string*)
 
-`bool`
+The name of the target collection.
+
+- **partitionName** (*string*)
+
+The name of the partition to check.
+
+**RETURN TYPE:**
+
+*has bool, err error*
+
+**RETURNS:**
+
+A boolean indicating whether the resource exists. Returns an error if the operation fails.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
 
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle error
+}
+
+defer cli.Close(ctx)
 result, err := cli.HasPartition(ctx, milvusclient.NewHasPartitionOption("quick_setup", "partitionA"))
 if err != nil {
-    // handle error
+	// handle error
 }
 
 fmt.Println(result)
 ```
-

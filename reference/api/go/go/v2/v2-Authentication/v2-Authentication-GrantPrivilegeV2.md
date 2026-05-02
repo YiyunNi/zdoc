@@ -1,16 +1,27 @@
 ---
 title: "GrantPrivilegeV2() | Go | v2"
 slug: /go/v2-Authentication-GrantPrivilegeV2
+sidebar_key: v2-Authentication-GrantPrivilegeV2
 sidebar_label: "GrantPrivilegeV2()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method grants a privilege or a privilege group to a role. In Milvus, you can allocate multiple privileges or privilege groups to a role and grant the role to a user so that the user gains the privileges allocated to the role. | Go | v2"
-type: origin
-token: En9vwAOryiuwHfkSJJXc9qBSnNh
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation grants a privilege to a role using the v2 API with simplified parameters. | Go | v2"
+type: docx
+token: ZO8adFZzAotVzfxEko2cKjHvnfb
 sidebar_position: 12
+keywords: 
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - GrantPrivilegeV2()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,100 +31,78 @@ import Admonition from '@theme/Admonition';
 
 # GrantPrivilegeV2()
 
-This method grants a privilege or a privilege group to a role. In Milvus, you can allocate multiple privileges or privilege groups to a role and grant the role to a user so that the user gains the privileges allocated to the role.
+This operation grants a privilege to a role using the v2 API with simplified parameters.
 
-```plaintext
+```go
 func (c *Client) GrantPrivilegeV2(ctx context.Context, option GrantPrivilegeV2Option, callOptions ...grpc.CallOption) error
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Authentication-GrantPrivilegeV2#grantprivilegev2option"><code>GrantPrivilegeV2Option</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## GrantPrivilegeV2Option\{#grantprivilegev2option}
-
-This is an interface type. The `grantPrivilegeV2Option` struct type implements this interface type. 
-
-You can use the `NewGrantPrivilegeV2Option()` function to get the concrete implementation.
-
-### NewGrantPrivilegeV2Option\{#newgrantprivilegev2option}
-
-The signature of the `NewGrantPrivilegeV2Option()` is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewGrantPrivilegeV2Option(roleName, privilegeName, collectionName string) *grantV2Option
+option := milvusclient.NewGrantPrivilegeV2Option(roleName, privilegeName, collectionName).
+    WithDbName(dbName)
+
+err := client.GrantPrivilegeV2(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>roleName</code></p></td>
-     <td><p>Name of the target role of this operation.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>privilegeName</code></p></td>
-     <td><p>Name of the privilege or privilege group to assign.</p><p>For details, refer to the <strong>Privilege name</strong> column in the table on page Users and Roles.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## grpc.CallOption\{#grpccalloption}
+- **roleName** (*string*)
 
-This interface provided by the gRPC Go library allows you to specify additional options or configurations when making requests. For possible implementations of this interface, refer to [this file](https://github.com/grpc/grpc-go/blob/v1.69.4/rpc_util.go#L174).
+    The name of the role.
 
-## Return\{#return}
+- **privilegeName** (*string*)
 
-Null
+    The name of the privilege.
+
+- **collectionName** (*string*)
+
+    The name of the target collection.
+
+**OPTION METHODS:**
+
+- `WithDbName(dbName string)`
+
+    Specifies the database to use for the operation.
+
+**RETURN TYPE:**
+
+*error*
+
+**RETURNS:**
+
+Returns nil on success, or an error describing what went wrong.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
+import (
+	"context"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
 ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
-    Address: milvusAddr,
+	Address: milvusAddr,
 })
 if err != nil {
-    // handle error
+	// handle error
 }
 
 defer cli.Close(ctx)
 
 err = cli.GrantPrivilegeV2(ctx, milvusclient.NewGrantPrivilegeV2Option("my_role", "Search", "quick_setup"))
 if err != nil {
-    // handle error
+	// handle error
 }
 ```
-

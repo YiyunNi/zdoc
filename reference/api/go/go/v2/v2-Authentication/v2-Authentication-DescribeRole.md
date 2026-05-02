@@ -1,16 +1,27 @@
 ---
 title: "DescribeRole() | Go | v2"
 slug: /go/v2-Authentication-DescribeRole
+sidebar_key: v2-Authentication-DescribeRole
 sidebar_label: "DescribeRole()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method returns the detailed information about the specified role. | Go | v2"
-type: origin
-token: GihqwvwlGiiVhUkwftTcvzRuncc
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation returns detailed information about a role, including its granted privileges. | Go | v2"
+type: docx
+token: EAs8dmRIuoMvW5xXLHdcDw2Gn0d
 sidebar_position: 6
+keywords: 
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - DescribeRole()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,94 +31,71 @@ import Admonition from '@theme/Admonition';
 
 # DescribeRole()
 
-This method returns the detailed information about the specified role.
+This operation returns detailed information about a role, including its granted privileges.
 
 ```go
 func (c *Client) DescribeRole(ctx context.Context, option DescribeRoleOption, callOptions ...grpc.CallOption) (*entity.Role, error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Authentication-DescribeRole#describeroleoption"><code>DescribeRoleOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## DescribeRoleOption\{#describeroleoption}
-
-This is an interface type. The `describeRoleOption` struct type implements this interface type. 
-
-You can use the `NewDescribeRoleOption()` function to get the concrete implementation.
-
-### NewDescribeRoleOption\{#newdescriberoleoption}
-
-The signature of `NewDescribeRoleOption()` is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewDescribeRoleOption(roleName string) *describeRoleOption
+option := milvusclient.NewDescribeRoleOption(roleName).
+    WithDbName(dbName)
+
+result, err := client.DescribeRole(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>roleName</code></p></td>
-     <td><p>Name of the role to describe.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## grpc.CallOption\{#grpccalloption}
+- **roleName** (*string*)
 
-This interface provided by the gRPC Go library allows you to specify additional options or configurations when making requests. For possible implementations of this interface, refer to [this file](https://github.com/grpc/grpc-go/blob/v1.69.4/rpc_util.go#L174).
+    The name of the role.
 
-## entity.Role\{#entityrole}
+**OPTION METHODS:**
 
-The `entity.Role` struct type is as follows:
+- `WithDbName(dbName string)`
 
-```go
-type Role struct {
-    RoleName   string
-    Privileges []entity.GrantItem
-}
-```
+    Specifies the database to use for the operation.
 
-## Return\{#return}
+**RETURN TYPE:**
 
-`*[entity.Role`](./v2-Authentication-DescribeRole#entityrole)
+**[entity.Role](./v2-Authentication-Role), error*
+
+**RETURNS:**
+
+The role details including granted privileges. Returns an error if the operation fails.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-   "context"
-   "google.golang.org/grpc"
-   "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
 
-roleName := "my_role"
-opts := client.NewDescribeRoleOption(roleName)
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
 
-err := mclient.DescribeRole(context.Background(), opts)
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: "YOUR_CLUSTER_ENDPOINT",
+})
+if err != nil {
+	// handle error
+}
+defer cli.Close(ctx)
+
+role, err := cli.DescribeRole(ctx, milvusclient.NewDescribeRoleOption("my_role"))
+if err != nil {
+	// handle error
+}
+fmt.Println(role)
 ```

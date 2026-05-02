@@ -192,7 +192,9 @@ class larkDriveWriter extends larkDocWriter {
                 })
 
                 current_path = node_path.join(current_path, page_slug + '.md')
-                const slug = `${this.displayedSidebar.replace('Sidebar', '')}/${page_slug}`
+                const slug = this.displayedSidebar === 'goSidebar'
+                    ? page_slug
+                    : `${this.displayedSidebar.replace('Sidebar', '')}/${page_slug}`
 
                 console.log(addedSince, lastModified, deprecateSince)
                 var {front_matter, imports, markdown} = await this.__write_page({

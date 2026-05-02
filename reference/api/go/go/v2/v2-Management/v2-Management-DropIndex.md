@@ -1,16 +1,27 @@
 ---
 title: "DropIndex() | Go | v2"
 slug: /go/v2-Management-DropIndex
+sidebar_key: v2-Management-DropIndex
 sidebar_label: "DropIndex()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method drops the specified index. | Go | v2"
-type: origin
-token: Bp2iw4UZNi5dk5kwXMwcqvVLnrf
-sidebar_position: 4
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation drops an index from a collection field. | Go | v2"
+type: docx
+token: DzchdYLEYomSrzxOys8c1mbanhg
+sidebar_position: 7
+keywords: 
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - DropIndex()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,78 +31,65 @@ import Admonition from '@theme/Admonition';
 
 # DropIndex()
 
-This method drops the specified index.
+This operation drops an index from a collection field.
 
 ```go
 func (c *Client) DropIndex(ctx context.Context, opt DropIndexOption, callOptions ...grpc.CallOption) error
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>opt</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-DropIndex#dropindexoption"><code>DropIndexOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOpts</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## DropIndexOption\{#dropindexoption}
-
-This is an interface type. The `dropIndexOption` struct type implements this interface type. 
-
-You can use the `NewDropIndexOption()` function to get the concrete implementation.
-
-### NewDropIndexOption()\{#newdropindexoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewDropIndexOption(collectionName string, indexName string) *dropIndexOption
+option := milvusclient.NewDropIndexOption(collectionName, indexName)
+
+err := client.DropIndex(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>indexName</code></p></td>
-     <td><p>Name of the target index.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## Return\{#return}
+- **collectionName** (*string*)
 
-Null
+    The name of the target collection.
+
+- **indexName** (*string*)
+
+    The name of the index.
+
+**RETURN TYPE:**
+
+*error*
+
+**RETURNS:**
+
+Returns nil on success, or an error describing what went wrong.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
-```plaintext
+```go
+import (
+	"context"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle err
+}
+
 err = cli.DropIndex(ctx, milvusclient.NewDropIndexOption("my_collection", "my_index"))
 if err != nil {
-    // handle err
+	// handle err
 }
 ```

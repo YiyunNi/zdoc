@@ -1,16 +1,27 @@
 ---
 title: "DropPartition() | Go | v2"
 slug: /go/v2-Partition-DropPartition
+sidebar_key: v2-Partition-DropPartition
 sidebar_label: "DropPartition()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method creates a partition in a collection. | Go | v2"
-type: origin
-token: IhEmw0AbvioUciktDE8cqzJqnQc
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation drops a partition and all its data permanently. | Go | v2"
+type: docx
+token: XnbJdLilXobGn1x1Uq6cvhKTnhf
 sidebar_position: 2
+keywords: 
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - DropPartition()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,84 +31,69 @@ import Admonition from '@theme/Admonition';
 
 # DropPartition()
 
-This method creates a partition in a collection.
+This operation drops a partition and all its data permanently.
 
 ```go
 func (c *Client) DropPartition(ctx context.Context, opt DropPartitionOption, callOptions ...grpc.CallOption) error
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>opt</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Partition-DropPartition#droppartitionoption"><code>DropAliasOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## DropPartitionOption\{#droppartitionoption}
-
-This is an interface type. The `dropPartitionOption` struct type implements this interface type. 
-
-You can use the `NewDropPartitionOption()` function to get the concrete implementation.
-
-### NewDropPartitionOption\{#newdroppartitionoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewDropPartitionOption(collectionName string, partitionName string) *dropPartitionOpt
+option := milvusclient.NewDropPartitionOption(collectionName, partitionName)
+
+err := client.DropPartition(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>partitionName</code></p></td>
-     <td><p>Name of the partition to drop.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## Return\{#return}
+- **collectionName** (*string*)
 
-Null
+The name of the target collection.
+
+- **partitionName** (*string*)
+
+The name of the partition to drop.
+
+**RETURN TYPE:**
+
+*error*
+
+**RETURNS:**
+
+Returns nil on success, or an error describing what went wrong.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-    "context"
-    "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle error
+}
+
+defer cli.Close(ctx)
 
 err = cli.DropPartition(ctx, milvusclient.NewDropPartitionOption("quick_setup", "partitionA"))
 if err != nil {
-    // handle error
+	// handle error
 }
 ```
-

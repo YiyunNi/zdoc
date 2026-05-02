@@ -1,16 +1,27 @@
 ---
 title: "ReleaseCollection() | Go | v2"
 slug: /go/v2-Management-ReleaseCollection
+sidebar_key: v2-Management-ReleaseCollection
 sidebar_label: "ReleaseCollection()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method releases the specified collection. | Go | v2"
-type: origin
-token: ICyuweLbjiEjMkktBIzcLQTHnDc
-sidebar_position: 9
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation releases a collection from memory to free up resources. | Go | v2"
+type: docx
+token: YMxDdZUXfoCEPtxBhN8clGxDnUd
+sidebar_position: 24
+keywords: 
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - ReleaseCollection()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,78 +31,66 @@ import Admonition from '@theme/Admonition';
 
 # ReleaseCollection()
 
-This method releases the specified collection.
+This operation releases a collection from memory to free up resources.
 
 ```go
-func (c *Client) LoadCollection(ctx context.Context, option LoadCollectionOption, callOptions ...grpc.CallOption) (LoadTask, error)
+func (c *Client) ReleaseCollection(ctx context.Context, option ReleaseCollectionOption, callOptions ...grpc.CallOption) error
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-ReleaseCollection#releasecollectionoption"><code>ReleaseCollectionOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## ReleaseCollectionOption\{#releasecollectionoption}
-
-This is an interface type. The `releaseCollectionOption` struct type implements this interface type. 
-
-You can use the `NewReleaseCollectionOption()` function to get the concrete implementation.
-
-### NewReleaseCollectionOption()\{#newreleasecollectionoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewReleaseCollectionOption(collectionName string) *releaseCollectionOption
+option := milvusclient.NewReleaseCollectionOption(collectionName)
+
+err := client.ReleaseCollection(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## Return\{#return}
+- **collectionName** (*string*)
 
-[`LoadTask`](./v2-Management-LoadCollection#loadtask)
+    The name of the target collection.
+
+**RETURN TYPE:**
+
+*error*
+
+**RETURNS:**
+
+Returns nil on success, or an error describing what went wrong.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"log"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	log.Fatal("failed to connect to milvus server: ", err.Error())
+}
+
+defer cli.Close(ctx)
 
 err = cli.ReleaseCollection(ctx, milvusclient.NewReleaseCollectionOption("custom_quick_setup"))
 if err != nil {
-        // handle error
+	// handle error
 }
 ```

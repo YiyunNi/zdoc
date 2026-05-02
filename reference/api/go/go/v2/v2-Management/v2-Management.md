@@ -1,26 +1,32 @@
 ---
 title: "Management | Go | v2"
 slug: /go/v2-Management
+beta: false
+notebook: false
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+description: "Methods related to cluster management. | Go | v2"
+type: folder
+token: Gc1lf2ABblRExId5rTucKTp6n2q
+sidebar_position: 5
 sidebar_label: "Management"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This chapter provides references for the methods to perform operations over indexes, collections, and partitions. | Go | v2"
-type: origin
-token: NGbxwwnjGiR2Tsk6MtjchYN0nof
-sidebar_position: 6
+keywords: 
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - Management
+  - gov230
 displayed_sidebar: goSidebar
-
 ---
-
-import Admonition from '@theme/Admonition';
-
 
 # Management
 
-This chapter provides references for the methods to perform operations over indexes, collections, and partitions.
+Methods related to cluster management.
 
 import DocCardList from '@theme/DocCardList';
 

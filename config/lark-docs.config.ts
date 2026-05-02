@@ -372,7 +372,7 @@ const gov230 : Manual = {
     fallbackSourceDir: './plugins/lark-docs/meta/sources/go/v2/v2.6.x',
     targets: {
         milvus: {
-            outputDir: 'milvus/reference/go/docs/v2/v3.0.x',
+            outputDir: 'milvus/reference/go/docs/v2',
             imageDir: 'milvus/reference/go/images'
         },
         zilliz: {

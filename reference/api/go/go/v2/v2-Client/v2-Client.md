@@ -1,26 +1,32 @@
 ---
 title: "Client | Go | v2"
 slug: /go/v2-Client
+beta: false
+notebook: false
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+description: "Methods related to client connections. | Go | v2"
+type: folder
+token: P8hMfnsOjlir3rdvsKDcEQG8nCc
+sidebar_position: 2
 sidebar_label: "Client"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This chapter provides references for the methods to set up and close a MilvusClient object. | Go | v2"
-type: origin
-token: Rf7nwAtp2iqVM9kTKy1cNVMsnef
-sidebar_position: 3
+keywords: 
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - Client
+  - gov230
 displayed_sidebar: goSidebar
-
 ---
-
-import Admonition from '@theme/Admonition';
-
 
 # Client
 
-This chapter provides references for the methods to set up and close a MilvusClient object.
+Methods related to client connections.
 
 import DocCardList from '@theme/DocCardList';
 

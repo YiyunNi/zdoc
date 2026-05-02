@@ -1,0 +1,48 @@
+---
+title: "CompactionState | Go | v2"
+slug: /go/v2-Management-CompactionState
+sidebar_key: v2-Management-CompactionState
+sidebar_label: "CompactionState"
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "Enumerates the possible states of a compaction operation. | Go | v2"
+type: docx
+token: StsddnE0ho6w73xxaGucPja3nMc
+sidebar_position: 3
+keywords: 
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - CompactionState
+  - gov230
+displayed_sidebar: goSidebar
+
+---
+
+import Admonition from '@theme/Admonition';
+
+
+# CompactionState
+
+Enumerates the possible states of a compaction operation.
+
+```go
+type CompactionState commonpb
+```
+
+**VALUES:**
+
+- **CompactionStateRunning** = CompactionState(commonpb.CompactionState_Executing)
+
+    The compaction operation is currently executing.
+
+- **CompactionStateCompleted** = CompactionState(commonpb.CompactionState_Completed)
+
+    The compaction operation has completed.

@@ -1,16 +1,27 @@
 ---
 title: "GetLoadState() | Go | v2"
 slug: /go/v2-Management-GetLoadState
+sidebar_key: v2-Management-GetLoadState
 sidebar_label: "GetLoadState()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method retrieves the load status of a specified collection or partitions. | Go | v2"
-type: origin
-token: CPSXwgQoHiz5fvk8bevcen22nEh
-sidebar_position: 11
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation returns the current load state and progress of a collection or partitions. | Go | v2"
+type: docx
+token: AvOXd92pPoAXPcxvArwcvKnSnph
+sidebar_position: 12
+keywords: 
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - GetLoadState()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,109 +31,69 @@ import Admonition from '@theme/Admonition';
 
 # GetLoadState()
 
-This method retrieves the load status of a specified collection or partitions.
+This operation returns the current load state and progress of a collection or partitions.
 
 ```go
 func (c *Client) GetLoadState(ctx context.Context, option GetLoadStateOption, callOptions ...grpc.CallOption) (entity.LoadState, error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-GetLoadState#getloadstateoption"><code>GetLoadStateOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## GetLoadStateOption\{#getloadstateoption}
-
-This is an interface type. The `getLoadStateOption` struct type implements this interface type. 
-
-You can use the `NewGetLoadStateOption()` function to get the concrete implementation.
-
-### NewGetLoadStateOption()\{#newgetloadstateoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewGetLoadStateOption(collectionName string, partitionNames ...string) *getLoadStateOption
+option := milvusclient.NewGetLoadStateOption(collectionName, partitionNames)
+
+result, err := client.GetLoadState(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>partitionNames</code></p></td>
-     <td><p>Names of the target partitions.</p></td>
-     <td><p><code>...string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## entity.LoadState\{#entityloadstate}
+- **collectionName** (*string*)
 
-The `entity.LoadState` struct type is as follows:
+    The name of the target collection.
 
-```go
-type LoadState struct {
-    State    LoadStateCode
-    Progress int64
-}
-```
+- **partitionNames** (*...string*)
 
-## entity.LoadStateCode\{#entityloadstatecode}
+    The name(s) of the partition(s).
 
-The `entity.LoadStateCode` is a private enum type and has the following possible values.
+**RETURN TYPE:**
 
-```go
-const (
-    // LoadStateNone      LoadStateCode = LoadStateCode(commonpb.LoadState)
-    LoadStateLoading   LoadStateCode = LoadStateCode(commonpb.LoadState_LoadStateLoading)
-    LoadStateLoaded    LoadStateCode = LoadStateCode(commonpb.LoadState_LoadStateLoaded)
-    LoadStateUnloading LoadStateCode = LoadStateCode(commonpb.LoadState_LoadStateNotExist)
-    LoadStateNotLoad   LoadStateCode = LoadStateCode(commonpb.LoadState_LoadStateNotLoad)
-)
-```
+*[entity.LoadState](./v2-Management-LoadState), error*
 
-## Return\{#return}
+**RETURNS:**
 
-`entity.LoadState`
+The current load state of the collection or partitions. Returns an error if the operation fails.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
 
-loadState, err := cli.GetLoadState(ctx, milvusclient.NewGetLoadStateOption("customized_setup_1"))
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+collectionName := \`customized_setup_1\`
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
 if err != nil {
-    // handle err
+	// handle err
+}
+
+loadState, err := cli.GetLoadState(ctx, milvusclient.NewGetLoadStateOption(collectionName))
+if err != nil {
+	// handle err
 }
 fmt.Println(loadState)
 ```

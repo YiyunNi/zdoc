@@ -1,16 +1,27 @@
 ---
 title: "DescribeUser() | Go | v2"
 slug: /go/v2-Authentication-DescribeUser
+sidebar_key: v2-Authentication-DescribeUser
 sidebar_label: "DescribeUser()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method returns the detailed information about the specified user. | Go | v2"
-type: origin
-token: YEaPwIU9TiN44iktkLrcboGzndc
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation returns detailed information about a user, including their assigned roles. | Go | v2"
+type: docx
+token: EbOodxkWBoRvwAxzJOkcsM6lnic
 sidebar_position: 7
+keywords: 
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - DescribeUser()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,104 +31,64 @@ import Admonition from '@theme/Admonition';
 
 # DescribeUser()
 
-This method returns the detailed information about the specified user.
+This operation returns detailed information about a user, including their assigned roles.
 
 ```go
 func (c *Client) DescribeUser(ctx context.Context, opt DescribeUserOption, callOpts ...grpc.CallOption) (*entity.User, error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>opt</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Authentication-DescribeUser#describeuseroption"><code>DescribeUserOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOpts</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## DescribeUserOption\{#describeuseroption}
-
-This is an interface type. The `describeUserOption` struct type implements this interface type. 
-
-You can use the `NewDescribeUserOption()` function to get the concrete implementation.
-
-### NewDescribeUserOption\{#newdescribeuseroption}
-
-The signature of `NewDescribeUserOption()` is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewDescribeUserOption(userName string) *describeUserOption
+option := milvusclient.NewDescribeUserOption(userName)
+
+result, err := client.DescribeUser(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>userName</code></p></td>
-     <td><p>Name of the user to describe.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## grpc.CallOption\{#grpccalloption}
+- **userName** (*string*)
 
-This interface provided by the gRPC Go library allows you to specify additional options or configurations when making requests. For possible implementations of this interface, refer to [this file](https://github.com/grpc/grpc-go/blob/v1.69.4/rpc_util.go#L174).
+    The name of the user.
 
-## entity.User\{#entityuser}
+**RETURN TYPE:**
 
-The `entity.User` struct type is as follows:
+**[entity.User](./v2-Authentication-User), error*
 
-```go
-type User struct {
-    UserName   string
-    Roles      []string
-}
-```
+**RETURNS:**
 
-## Return\{#return}
+The user description including assigned roles. Returns an error if the operation fails.
 
-`*[entity.User`](./v2-Authentication-DescribeUser#entityuser)
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-   "context"
-   "google.golang.org/grpc"
-   "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
 
-userName := "my_user"
-opts := client.NewDescribeUserOption(userName)
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
 
-onFinish := func(ctx context.Context, err error) {
-    if err != nil {
-        fmt.Printf("gRPC call finished with error: %v\n", err)
-    } else {
-        fmt.Printf("gRPC call finished successfully")
-    }
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: "YOUR_CLUSTER_ENDPOINT",
+})
+if err != nil {
+	// handle error
 }
+defer cli.Close(ctx)
 
-callOption := grpc.OnFinish(onFinish)
-
-err := mclient.DescribeUser(context.Background(), opts, callOption)
+user, err := cli.DescribeUser(ctx, milvusclient.NewDescribeUserOption("my_user"))
+if err != nil {
+	// handle error
+}
+fmt.Println(user)
 ```

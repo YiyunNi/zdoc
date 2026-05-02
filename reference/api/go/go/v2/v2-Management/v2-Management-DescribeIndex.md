@@ -1,16 +1,27 @@
 ---
 title: "DescribeIndex() | Go | v2"
 slug: /go/v2-Management-DescribeIndex
+sidebar_key: v2-Management-DescribeIndex
 sidebar_label: "DescribeIndex()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method describes the specified index by providing its detailed information. | Go | v2"
-type: origin
-token: RciIwOPIJiPV8EkKPglcIg7Fn3e
-sidebar_position: 3
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation returns detailed information about an index, including its type and parameters. | Go | v2"
+type: docx
+token: PjAddPiH8oyRNpxqafBc1ZGknSd
+sidebar_position: 6
+keywords: 
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - DescribeIndex()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,101 +31,67 @@ import Admonition from '@theme/Admonition';
 
 # DescribeIndex()
 
-This method describes the specified index by providing its detailed information.
+This operation returns detailed information about an index, including its type and parameters.
 
 ```go
 func (c *Client) DescribeIndex(ctx context.Context, opt DescribeIndexOption, callOptions ...grpc.CallOption) (IndexDescription, error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>opt</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-DescribeIndex#describeindexoption"><code>DescribeIndexOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOpts</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## DescribeIndexOption\{#describeindexoption}
-
-This is an interface type. The `describeIndexOption` struct type implements this interface type. 
-
-You can use the `NewDescribeIndexOption()` function to get the concrete implementation.
-
-### NewDescribeIndexOption()\{#newdescribeindexoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewDescribeIndexOption(collectionName string, indexName string) *describeIndexOption
+option := milvusclient.NewDescribeIndexOption(collectionName, indexName)
+
+result, err := client.DescribeIndex(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>indexName</code></p></td>
-     <td><p>Name of the target index.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## IndexDescription\{#indexdescription}
+- **collectionName** (*string*)
 
-The `IndexDescription` struct type is as follows:
+    The name of the target collection.
 
-```go
-type IndexDescription struct {
-    index.Index
-    State            index.IndexState
-    PendingIndexRows int64
-    TotalRows        int64
-    IndexedRows      int64
-}
-```
+- **indexName** (*string*)
 
-## index.Index\{#indexindex}
+    The name of the index.
 
-This is an interface type. For details, refer to [index.Index](./v2-Management-CreateIndex#indexindex).
+**RETURN TYPE:**
 
-## index.IndexState\{#indexindexstate}
+*[IndexDescription](./v2-Management-IndexDescription), error*
 
-Possible values are as follows:
+**RETURNS:**
 
-## Return\{#return}
+The index details including type, metric, and parameters. Returns an error if the operation fails.
 
-`IndexDescription`
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
-```plaintext
+```go
+import (
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle err
+}
+
 indexInfo, err := cli.DescribeIndex(ctx, milvusclient.NewDescribeIndexOption("my_collection", "my_index"))
 if err != nil {
-    // handle err
+	// handle err
 }
 fmt.Println(indexInfo)
 ```

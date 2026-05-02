@@ -1,26 +1,32 @@
 ---
 title: "Authentication | Go | v2"
 slug: /go/v2-Authentication
+beta: false
+notebook: false
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+description: "Methods and classes related to authentication. | Go | v2"
+type: folder
+token: MINQfdgeRlnbDzd1ofucUJDsnuW
+sidebar_position: 1
 sidebar_label: "Authentication"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "In this chapter, you will find functions related to role-based access control (RBAC). | Go | v2"
-type: origin
-token: UMgkwcXZdiLdi1kw0dQckGkHn5f
-sidebar_position: 2
+keywords: 
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - Authentication
+  - gov230
 displayed_sidebar: goSidebar
-
 ---
-
-import Admonition from '@theme/Admonition';
-
 
 # Authentication
 
-In this chapter, you will find functions related to role-based access control (RBAC).
+Methods and classes related to authentication.
 
 import DocCardList from '@theme/DocCardList';
 

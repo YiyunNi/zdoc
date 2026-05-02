@@ -1,16 +1,27 @@
 ---
 title: "GetPartitionStats() | Go | v2"
 slug: /go/v2-Partition-GetPartitionStats
+sidebar_key: v2-Partition-GetPartitionStats
 sidebar_label: "GetPartitionStats()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method collects the statistics on the specified partition. | Go | v2"
-type: origin
-token: Jid8wGZUZiXPSYks7c5c0wh3nEg
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation returns statistics about a partition, such as row count. | Go | v2"
+type: docx
+token: Z835dscn3oM3sGxnDlacgndBn9o
 sidebar_position: 3
+keywords: 
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - GetPartitionStats()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,85 +31,52 @@ import Admonition from '@theme/Admonition';
 
 # GetPartitionStats()
 
-This method collects the statistics on the specified partition.
+This operation returns statistics about a partition, such as row count.
 
 ```go
 func (c *Client) GetPartitionStats(ctx context.Context, opt GetPartitionStatsOption, callOptions ...grpc.CallOption) (map[string]string, error)
 ```
 
-## Request Parameters\{#request-parameters}
+**RETURN TYPE:**
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>opt</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Partition-GetPartitionStats#getpartitionstatsoption"><code>GetPartitionStatsOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
+*map[string]string, error*
 
-## GetPartitionStatsOption\{#getpartitionstatsoption}
+**RETURNS:**
 
-This is an interface type. The `getPartitionStatsOption` struct type implements this interface type. 
+A map of statistics key-value pairs. Returns an error if the operation fails.
 
-You can use the `NewGetPartitionStatsOption()` function to get the concrete implementation.
+**EXCEPTIONS:**
 
-### NewGetCollectionStatsOption\{#newgetcollectionstatsoption}
+- **error**
 
-The signature of this method is as follows:
-
-```go
-func NewGetPartitionStatsOption(collectionName string, partitionName string) *getPartitionStatsOpt
-```
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>partitionName</code></p></td>
-     <td><p>Name of the target partition.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
-
-## Return\{#return}
-
-`map[string]string`
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle error
+}
+defer cli.Close(ctx)
 
 stats, err := cli.GetPartitionStats(ctx, milvusclient.NewGetPartitionStatsOption("quick_setup", "partitionA"))
 if err != nil {
-    // handle err
+	// handle error
 }
 fmt.Println(stats)
 ```
-

@@ -1,16 +1,27 @@
 ---
 title: "Collection | Go | v2"
 slug: /go/v2-Collection
+sidebar_key: v2-Collection
 sidebar_label: "Collection"
-beta: FALSE
-added_since: v2.5.x
-last_modified: v2.6.x
-deprecate_since: FALSE
-notebook: FALSE
-description: "This chapter provides methods to manage collections and aliases of a collected Milvus instance. | Go | v2"
-type: origin
-token: AmxkwE5X0ilxz8kfQJXcLOZjnPf
-sidebar_position: 5
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "Represents a collection description returned by DescribeCollection, including schema, shards, and properties. | Go | v2"
+type: docx
+token: PNwFdxMMdo6rtIxERDHcVFgdnxc
+sidebar_position: 6
+keywords: 
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - Collection
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,8 +31,61 @@ import Admonition from '@theme/Admonition';
 
 # Collection
 
-This chapter provides methods to manage collections and aliases of a collected Milvus instance.
+Represents a collection description returned by DescribeCollection, including schema, shards, and properties.
 
-import DocCardList from '@theme/DocCardList';
+```go
+type Collection struct {
+    ID int64
+    Name string
+    Schema *Schema
+    PhysicalChannels []string
+    VirtualChannels []string
+    Loaded bool
+    ConsistencyLevel ConsistencyLevel
+    ShardNum int32
+    Properties map[string]string
+    UpdateTimestamp uint64
+}
+```
 
-<DocCardList />
+**FIELDS:**
+
+- **ID** (*int64*)
+
+    collection id
+
+- **Name** (*string*)
+
+    collection name
+
+- **[Schema](./v2-Collection-Schema)** (**[Schema](./v2-Collection-Schema)*)
+
+    collection schema, with fields schema and primary key definition
+
+- **PhysicalChannels** (*[]string*)
+
+    The physical channels.
+
+- **VirtualChannels** (*[]string*)
+
+    The virtual channels.
+
+- **Loaded** (*bool*)
+
+    Whether the resource is loaded into memory.
+
+- **[ConsistencyLevel](./v2-Collection-ConsistencyLevel)** (*[ConsistencyLevel](./v2-Collection-ConsistencyLevel)*)
+
+    The consistency level for read operations.
+
+- **ShardNum** (*int32*)
+
+    The number of shards for data distribution.
+
+- **Properties** (*map[string]string*)
+
+    Custom key-value properties.
+
+- **UpdateTimestamp** (*uint64*)
+
+    The last update timestamp for change detection.

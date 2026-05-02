@@ -1,16 +1,27 @@
 ---
 title: "ListIndexes() | Go | v2"
 slug: /go/v2-Management-ListIndexes
+sidebar_key: v2-Management-ListIndexes
 sidebar_label: "ListIndexes()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method lists all indexes created within the specified collection. | Go | v2"
-type: origin
-token: HCI1wkDbMiGPfwkKUk3cX0vVnAe
-sidebar_position: 6
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation lists all indexes built on a specified collection. | Go | v2"
+type: docx
+token: S8NxdJc1gom2SVxxNYkc5lHxnMg
+sidebar_position: 17
+keywords: 
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - ListIndexes()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,74 +31,70 @@ import Admonition from '@theme/Admonition';
 
 # ListIndexes()
 
-This method lists all indexes created within the specified collection.
+This operation lists all indexes built on a specified collection.
 
 ```go
 func (c *Client) ListIndexes(ctx context.Context, opt ListIndexOption, callOptions ...grpc.CallOption) ([]string, error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>opt</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-ListIndexes#listindexoption"><code>ListIndexOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOpts</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## ListIndexOption\{#listindexoption}
-
-This is an interface type. The `listIndexOption` struct type implements this interface type. 
-
-You can use the `NewListIndexOption()` function to get the concrete implementation.
-
-### NewListIndexOption()\{#newlistindexoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewListIndexOption(collectionName string) *listIndexOption
+option := milvusclient.NewListIndexOption(collectionName).
+    WithFieldName(fieldName)
+
+result, err := client.ListIndexes(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## Return\{#return}
+- **collectionName** (*string*)
 
-`[]string`
+    The name of the target collection.
+
+**OPTION METHODS:**
+
+- `WithFieldName(fieldName string)`
+
+    Sets the field name for the operation.
+
+**RETURN TYPE:**
+
+*[]string, error*
+
+**RETURNS:**
+
+A list of names. Returns an error if the operation fails.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
-```plaintext
+```go
+import (
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle err
+}
+
 indexes, err := cli.ListIndexes(ctx, milvusclient.NewListIndexOption("my_collection").WithFieldName("my_vector"))
 if err != nil {
-    // handle err
+	// handle err
 }
 fmt.Println(indexes)
 ```

@@ -1,16 +1,27 @@
 ---
 title: "ListPartitions() | Go | v2"
 slug: /go/v2-Partition-ListPartitions
+sidebar_key: v2-Partition-ListPartitions
 sidebar_label: "ListPartitions()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method lists all existing partitions in a specific collection. | Go | v2"
-type: origin
-token: Ax3Kwk1xLimiK7k4YErctMZXnlc
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation lists all partitions in a collection. | Go | v2"
+type: docx
+token: ZNvXd7eldozvRHxpHOcc5CPAnug
 sidebar_position: 5
+keywords: 
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - ListPartitions()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,68 +31,68 @@ import Admonition from '@theme/Admonition';
 
 # ListPartitions()
 
-This method lists all existing partitions in a specific collection.
+This operation lists all partitions in a collection.
 
 ```go
 func (c *Client) ListPartitions(ctx context.Context, opt ListPartitionsOption, callOptions ...grpc.CallOption) (partitionNames []string, err error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Partition-ListPartitions#listpartitionsoption"><code>ListPartitionsOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOpts</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## ListPartitionsOption\{#listpartitionsoption}
-
-This is an interface type. The `listPartitionsOpt` struct type implements this interface type. 
-
-You can use the `NewListPartitionOption()` function to get the concrete implementation.
-
-### NewListPartitionOption\{#newlistpartitionoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewListPartitionOption(collectionName string) *listPartitionsOpt
+option := milvusclient.NewListPartitionOption(collectionName)
+
+result, err := client.ListPartitions(ctx, option)
 ```
 
-## Return\{#return}
+**PARAMETERS:**
 
-`[]string`
+- **collectionName** (*string*)
+
+The name of the target collection.
+
+**RETURN TYPE:**
+
+*partitionNames []string, err error*
+
+**RETURNS:**
+
+A list of names. Returns an error if the operation fails.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
 import (
-        "context"
-        "github.com/milvus-io/milvus/client/v2/milvusclient"
+	"context"
+	"fmt"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
 )
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	// handle error
+}
+
+defer cli.Close(ctx)
 
 partitionNames, err := cli.ListPartitions(ctx, milvusclient.NewListPartitionOption("quick_setup"))
 if err != nil {
-    // handle error
+	// handle error
 }
 
 fmt.Println(partitionNames)
 ```
-

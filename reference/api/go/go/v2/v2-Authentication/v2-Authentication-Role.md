@@ -1,0 +1,51 @@
+---
+title: "Role | Go | v2"
+slug: /go/v2-Authentication-Role
+sidebar_key: v2-Authentication-Role
+sidebar_label: "Role"
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "Represents a role with its granted privileges, returned by DescribeRole. | Go | v2"
+type: docx
+token: MUdZdTFeDoEtcwxBCOycaHyanr7
+sidebar_position: 24
+keywords: 
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - Role
+  - gov230
+displayed_sidebar: goSidebar
+
+---
+
+import Admonition from '@theme/Admonition';
+
+
+# Role
+
+Represents a role with its granted privileges, returned by DescribeRole.
+
+```go
+type Role struct {
+    RoleName string
+    Privileges []GrantItem
+}
+```
+
+**FIELDS:**
+
+- **RoleName** (*string*)
+
+    The name of the role.
+
+- **Privileges** (*[]GrantItem*)
+
+    The list of granted privileges.

@@ -1,16 +1,27 @@
 ---
 title: "LoadCollection() | Go | v2"
 slug: /go/v2-Management-LoadCollection
+sidebar_key: v2-Management-LoadCollection
 sidebar_label: "LoadCollection()"
-beta: FALSE
-added_since: v2.5.x
-last_modified: FALSE
-deprecate_since: FALSE
-notebook: FALSE
-description: "This method loads the specified collection. | Go | v2"
-type: origin
-token: OmqGwFub5i55uzk0jbTc0fn1nEf
-sidebar_position: 7
+added_since: v2.6.x
+last_modified: false
+deprecate_since: false
+beta: false
+notebook: false
+description: "This operation loads a collection into memory for search and query operations. | Go | v2"
+type: docx
+token: B5w2dyWunogsmAxlJfQcQp8qnRg
+sidebar_position: 18
+keywords: 
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - LoadCollection()
+  - gov230
 displayed_sidebar: goSidebar
 
 ---
@@ -20,92 +31,99 @@ import Admonition from '@theme/Admonition';
 
 # LoadCollection()
 
-This method loads the specified collection.
+This operation loads a collection into memory for search and query operations.
 
 ```go
 func (c *Client) LoadCollection(ctx context.Context, option LoadCollectionOption, callOptions ...grpc.CallOption) (LoadTask, error)
 ```
 
-## Request Parameters\{#request-parameters}
-
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>ctx</code></p></td>
-     <td><p>Context for the current call to work.</p></td>
-     <td><p><code>context.Context</code></p></td>
-   </tr>
-   <tr>
-     <td><p><code>option</code></p></td>
-     <td><p>Optional parameters of the methods.</p></td>
-     <td><p><a href="./v2-Management-LoadCollection#loadcollectionoption"><code>LoadCollectionOption</code></a></p></td>
-   </tr>
-   <tr>
-     <td><p><code>callOptions</code></p></td>
-     <td><p>Optional parameters for calling the methods.</p></td>
-     <td><p><code>grpc.CallOption</code></p></td>
-   </tr>
-</table>
-
-## LoadCollectionOption\{#loadcollectionoption}
-
-This is an interface type. The `loadCollectionOption` struct type implements this interface type. 
-
-You can use the `NewLoadCollectionOption()` function to get the concrete implementation.
-
-### NewLoadCollectionOption()\{#newloadcollectionoption}
-
-The signature of this method is as follows:
+## Request Syntax\{#request-syntax}
 
 ```go
-func NewLoadCollectionOption(collectionName string) *loadCollectionOption
+option := milvusclient.NewLoadCollectionOption(collectionName).
+    WithReplica(num).
+    WithResourceGroup(resourceGroups).
+    WithLoadFields(loadFields).
+    WithSkipLoadDynamicField(skipFlag).
+    WithRefresh(isRefresh)
+
+result, err := client.LoadCollection(ctx, option)
 ```
 
-<table>
-   <tr>
-     <th><p>Parameter</p></th>
-     <th><p>Description</p></th>
-     <th><p>Type</p></th>
-   </tr>
-   <tr>
-     <td><p><code>collectionName</code></p></td>
-     <td><p>Name of the target collection.</p></td>
-     <td><p><code>string</code></p></td>
-   </tr>
-</table>
+**PARAMETERS:**
 
-## LoadTask\{#loadtask}
+- **collectionName** (*string*)
 
-This is a struct type that contains information about the current load operation. You can use the following methods to operate this struct type.
+    The name of the target collection.
 
-### Await()\{#await}
+**OPTION METHODS:**
 
-A load operation is always asynchronous. You can use this method to wait until the load operation finishes.
+- `WithReplica(num int)`
 
-```go
-func (t *LoadTask) Await(ctx context.Context) error
-```
+    Sets the replica for the operation.
 
-## Return\{#return}
+- `WithResourceGroup(resourceGroups ...string)`
 
-[`LoadTask`](./v2-Management-LoadCollection#loadtask)
+    Sets the resource group for the operation.
+
+- `WithLoadFields(loadFields ...string)`
+
+    Specifies which fields to load into memory.
+
+- `WithSkipLoadDynamicField(skipFlag bool)`
+
+    Sets the skip load dynamic field for the operation.
+
+- `WithRefresh(isRefresh bool)`
+
+    Enables refresh mode to reload newly inserted data.
+
+**RETURN TYPE:**
+
+*[LoadTask](./v2-Management-LoadTask), error*
+
+**RETURNS:**
+
+A LoadTask that can be used to wait for the load operation to complete. Returns an error if the operation fails.
+
+**EXCEPTIONS:**
+
+- **error**
+
+    Check `err != nil` for failure details.
 
 ## Example\{#example}
 
 ```go
+import (
+	"context"
+	"log"
+
+	"github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+	Address: milvusAddr,
+})
+if err != nil {
+	log.Fatal("failed to connect to milvus server: ", err.Error())
+}
+
+defer cli.Close(ctx)
+
 loadTask, err := cli.LoadCollection(ctx, milvusclient.NewLoadCollectionOption("customized_setup_1"))
 if err != nil {
-    // handle error
+	// handle error
 }
 
 // sync wait collection to be loaded
 err = loadTask.Await(ctx)
 if err != nil {
-    // handle error
+	// handle error
 }
-
 ```
