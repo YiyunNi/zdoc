@@ -5,18 +5,18 @@ sidebar_key: node/Collections-createCollection
 sidebar_label: "createCollection()"
 added_since: v2.3.x
 last_modified: v3.0.x
-deprecate_since: false
-beta: false
-notebook: false
+deprecate_since: FALSE
+beta: FALSE
+notebook: FALSE
 description: "This operation creates a collection either with default or customized settings. | Node.js"
 type: docx
 token: Z55qdPU2foS8h0xLs6QcWg6enrC
 sidebar_position: 5
 keywords: 
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
@@ -147,11 +147,11 @@ await milvusClient.createCollection({
 
     Whether to physically backfill external data. Optional.
 
-- **file_resource_ids** (*Array<number | string>*) -
+- **file_resource_ids** (*Array&lt;number | string>*) -
 
     The external file resource IDs. Optional.
 
-### With CreateCollectionReq{#with-createcollectionreq}
+### With CreateCollectionReq\{#with-createcollectionreq}
 
 Using this request body, you can customize the schema settings of the collection.
 
@@ -435,7 +435,7 @@ await milvusClient.createCollection({
 
     </Admonition>
 
-- **properties** (Record<string, string | number | boolean>) 
+- **properties** (Record\<string, string | number | boolean>) 
 
     The extra properties of the collection in key-value pairs. Possible values are:
 
@@ -463,7 +463,7 @@ await milvusClient.createCollection({
 
     The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
 
-### With CreateCollectionWithSchemaAndIndexParamsReq{#with-createcollectionwithschemaandindexparamsreq}
+### With CreateCollectionWithSchemaAndIndexParamsReq\{#with-createcollectionwithschemaandindexparamsreq}
 
 Using this request body, you can customize the schema and index settings of the collection. Upon creation, the collection is automatically loaded.
 
@@ -753,7 +753,7 @@ await milvusClient.createCollection({
 
     </Admonition>
 
-- **properties** (Record<string, string | number | boolean>) 
+- **properties** (Record\<string, string | number | boolean>) 
 
     The extra properties of the collection in key-value pairs. Possible values are:
 
@@ -831,7 +831,7 @@ This method returns a promise that resolves to a **ResStatus** object.
 
     The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
-## Example{#example}
+## Example\{#example}
 
 ```java
 const milvusClient = new MilvusClient({

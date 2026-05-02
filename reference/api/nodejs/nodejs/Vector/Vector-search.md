@@ -5,18 +5,18 @@ sidebar_key: node/Vector-search
 sidebar_label: "search()"
 added_since: v2.3.x
 last_modified: v3.0.x
-deprecate_since: false
-beta: false
-notebook: false
+deprecate_since: FALSE
+beta: FALSE
+notebook: FALSE
 description: "This operation conducts a vector similarity search with an optional scalar filtering expression. | Node.js"
 type: docx
 token: HYv3d0NiRoc09Bx4rz0cIhqknb5
 sidebar_position: 7
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
   - zilliz
   - zilliz cloud
   - cloud
@@ -324,7 +324,7 @@ await milvusClient.search({
 
     The fields to order the search results by. Optional.
 
-**RETURNS** *Promise<SearchResults&lt;T&gt;>*
+**RETURNS** *Promise&lt;SearchResults&lt;T&gt;>*
 
 This method returns a promise that resolves to a **SearchResults&lt;T&gt;** object.
 
@@ -356,7 +356,7 @@ The hits returned for each query vector. When a single query vector is supplied,
 
         The zero-based offset of this hit within its query group.
 
-    - **group_by_field_values** (*Record<string, FieldData>*) -
+    - **group_by_field_values** (*Record\<string, FieldData>*) -
 
         Set when **group_by_field** was supplied; carries the values of the grouping field for the hit.
 
@@ -395,7 +395,7 @@ A **ResStatus** object.
 
         The reason that indicates the reason for the reported error. It remains an empty string if this operation succeeds.
 
-## Example{#example}
+## Example\{#example}
 
 ```plaintext
 const milvusClient = new MilvusClient({

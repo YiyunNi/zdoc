@@ -394,6 +394,20 @@ async function applyMdxPatches(content) {
                                 }
                             }
                         } else if (
+                            (error.message.includes('U+007C') || error.message.includes('U+0026')) &&
+                            offset !== undefined && offset > 0
+                        ) {
+                            // `|` (union types like `<number | string>`) or `&` (HTML entities like `&lt;`
+                            // inside angle brackets like `<SearchResults&lt;T&gt;>`) unexpected in JSX tag.
+                            // Walk backward to find `<` and replace with `&lt;`.
+                            for (let i = offset - 1; i >= Math.max(0, offset - 30); i--) {
+                                if (patchedContent[i] === '<') {
+                                    patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
+                                    madeChanges = true;
+                                    break;
+                                }
+                            }
+                        } else if (
                             (error.message.includes('U+002C') || error.message.includes('U+002A') || error.message.includes('U+3001')) &&
                             offset !== undefined && offset > 0 && offset < patchedContent.length
                         ) {
