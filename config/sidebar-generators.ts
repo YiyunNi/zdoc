@@ -137,6 +137,20 @@ export async function tutorialsItemsGenerator({
     return sidebarItems;
 }
 
+function flattenControlDataPlane(items) {
+  return items.flatMap((item) => {
+    if (item.type === 'category') {
+      const flattenedChildren = flattenControlDataPlane(item.items);
+      const label = (item.label || '').toLowerCase();
+      if (label.includes('control plane') || label.includes('data plane')) {
+        return flattenedChildren;
+      }
+      return [{ ...item, items: flattenedChildren }];
+    }
+    return [item];
+  });
+}
+
 export async function ReferenceItemsGenerator ({
     defaultSidebarItemsGenerator, ...args
 }) {
@@ -162,6 +176,14 @@ export async function ReferenceItemsGenerator ({
                 subItem.collapsed = false;
 
                 subItem.items = iterate(subItem.items)
+                subItem.items = flattenControlDataPlane(subItem.items)
+            }
+
+            if (subItem.label === 'V1') {
+                subItem.collapsed = true;
+
+                subItem.items = iterate(subItem.items)
+                subItem.items = flattenControlDataPlane(subItem.items)
             }
 
             return subItem

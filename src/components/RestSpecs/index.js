@@ -18,7 +18,7 @@ const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
         return (<>
             <section>
                 <section className={styles.sectionHeader}>
-                    <span>{ isControlPlane(endpoint) ? "Base URL" : i18n[lang]['title.cluster.endpoint'] }</span>
+                    <span>{i18n[lang]['title.connection.endpoint']}</span>
                 </section>
                 <div style={{margin: '1rem 0'}}>
                     <p>{i18n[lang]['base.url.format.prompt']}</p>
@@ -35,16 +35,20 @@ const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
     }
 
     const current = baseUrls[selectedBaseUrl]
+    const resolvedPrompt = current["x-i18n"]?.[lang]?.prompt ?? current.prompt
+    const resolvedLabel = current["x-i18n"]?.[lang]?.label ?? current.label
+    const resolvedUrl = current["x-i18n"]?.[lang]?.url ?? current.url
+    const { prompt: defaultPrompt } = getBaseUrl(endpoint, lang, target)
 
     return (<>
         <section>
             <section className={styles.sectionHeader}>
-                <span>{ isControlPlane(endpoint) ? "Base URL" : i18n[lang]['title.cluster.endpoint'] }</span>
+                <span>{i18n[lang]['title.connection.endpoint']}</span>
             </section>
 
             {/* Tab toggle */}
             {baseUrls.length > 1 && (
-                <div className={styles.tabs} style={{ marginBottom: '1rem' }}>
+                <div className={styles.tabs} style={{ marginTop: '1rem', marginBottom: '1rem' }}>
                     {baseUrls.map((item, index) => (
                         <React.Fragment key={index}>
                             <input
@@ -56,12 +60,12 @@ const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
                                 onChange={() => {
                                     setSelectedBaseUrl(index)
                                     if (onBaseUrlChange) {
-                                        onBaseUrlChange(baseUrls[index].url)
+                                        onBaseUrlChange(baseUrls[index])
                                     }
                                 }}
                             />
                             <label className={styles.tabLabel} htmlFor={`baseurl-tab-${index}`}>
-                                {item.label}
+                                {item["x-i18n"]?.[lang]?.label ?? item.label}
                             </label>
                         </React.Fragment>
                     ))}
@@ -70,10 +74,15 @@ const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
 
             <div style={{margin: '1rem 0'}}>
                 <p>{i18n[lang]['base.url.format.prompt']}</p>
-                <p className={styles.paramName} style={{ fontSize: '0.9rem' }}>{current.url}</p>
+                <p className={styles.paramName} style={{ fontSize: '0.9rem' }}>{resolvedUrl}</p>
             </div>
-            { current.prompt && <Admonition type="info" icon="📘" title={i18n[lang]["admonition.title"]}>
-                <div dangerouslySetInnerHTML={{__html: current.prompt}} />
+            { (defaultPrompt || resolvedPrompt) && <Admonition type="info" icon="📘" title={i18n[lang]["admonition.title"]}>
+                { resolvedPrompt && (
+                    <ul>
+                        <li dangerouslySetInnerHTML={{__html: resolvedPrompt}} />
+                    </ul>
+                )}
+                { defaultPrompt && <div dangerouslySetInnerHTML={{__html: defaultPrompt}} /> }
             </Admonition>}
         </section>
         <section className={styles.exampleContainer}>
@@ -588,7 +597,17 @@ export default function RestSpecs(props) {
     const admonitions = props.specs['x-admonition']
     const baseUrls = props.specs['x-base-urls']
     const endpoint = props.endpoint.replaceAll('{', '${')
-    const validParams = parameters ? parameters.filter(param => !param?.['x-include-target'] || param?.['x-include-target']?.includes(target)) : []
+    const [ selectedBaseUrl, setSelectedBaseUrl ] = useState(() =>
+        target === 'zilliz' && Array.isArray(baseUrls) && baseUrls.length > 0 ? baseUrls[0] : null
+    )
+    const validParams = parameters ? parameters.filter(param => {
+        if (param?.['x-include-target'] && !param['x-include-target'].includes(target)) return false
+        if (param?.['x-base-url-target']) {
+            const currentKey = selectedBaseUrl?.key
+            if (!currentKey || !param['x-base-url-target'].includes(currentKey)) return false
+        }
+        return true
+    }) : []
 
     const short = textFilter(description, target)
     const headerParams = validParams ? validParams.filter(param => param.in === 'header') : []
@@ -607,7 +626,6 @@ export default function RestSpecs(props) {
 
     const [ selectedRequest, setSelectedRequest ] = useState("OPTION 1")
     const [ selectedResponse, setSelectedResponse ] = useState("OPTION 1")
-    const [ selectedBaseUrl, setSelectedBaseUrl ] = useState(null)
 
     const handleMultipleRequests = (value) => {
         setSelectedRequest(value.toUpperCase())
@@ -743,7 +761,7 @@ export default function RestSpecs(props) {
                                 lang={lang}
                                 target={target}
                                 selectedRequest={selectedRequest}
-                                baseUrl={selectedBaseUrl} />
+                                baseUrl={selectedBaseUrl?.url} />
                         </section>
                     </>}
                 </div>

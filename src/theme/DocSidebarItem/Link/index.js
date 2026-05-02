@@ -7,35 +7,22 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import styles from './styles.module.css';
 
+const methodBadgeClass = {
+  GET: styles.badgeGet,
+  POST: styles.badgePost,
+  PUT: styles.badgePut,
+  DELETE: styles.badgeDelete,
+  PATCH: styles.badgePatch,
+};
+
 const Badge = ({ label }) => {
-  let color = "#000000";
-
-  switch (label.toUpperCase()) {
-      case "GET":
-          color = "#0d8d67";
-          break;
-      case "POST":
-          color = "#026aca";
-          break;
-      case "PUT":
-          color = "#604aa2";
-          break;
-      case "DELETE":
-          color = "#b91926";
-          break;
-      case "PATCH":
-          color = "#ff9900";
-          break;
-      default:
-          color = "#000000";
-  }  
-
+  const method = label.toUpperCase();
   return (
-    <div style={{display: "inline-block", background: color, fontSize: "0.6em", borderRadius: "10px", color: "#ffffff", padding: "0.3em 1em", height: "100%", verticalAlign: "middle", marginRight: "0.5em"}}>
-      <span>{label.toUpperCase()}</span>
-    </div>
-  )
-}
+    <span className={clsx(styles.badge, methodBadgeClass[method])}>
+      {method}
+    </span>
+  );
+};
 
 const Badges = ({ labels }) => {
   return (

@@ -117,6 +117,26 @@ const pymilvus26 : Manual = {
     }
 }
 
+const pymilvus30 : Manual = {
+    root: 'UxyTfjS3wl0TF8dn9tZcRT39nUe',
+    base: 'Hk05b5eI6aXXSSsd6j9cqwwMn5a',
+    sourceType: 'drive',
+    version: 'v3.0.x',
+    displayedSidebar: 'pythonSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/python/v3.0.x',
+    fallbackSourceDir: './plugins/lark-docs/meta/sources/python/v2.6.x',
+    targets: {
+        milvus: {
+            outputDir: 'milvus/reference/python/docs/v3.0.x',
+            imageDir: 'milvus/reference/python/images'
+        },
+        zilliz: {
+            outputDir: 'reference/api/python/python',
+            imageDir: 'static/img',
+        }
+    }
+}
+
 // sdk: java ================================
 
 const javaV1 : Manual = {
@@ -201,6 +221,26 @@ const javaV226 : Manual = {
     }
 }
 
+const javaV230 : Manual = {
+    root: 'B1agfRbPglv4tpdTkjlcUMgVnRV',
+    base: 'Sbtcbm660abngWsXryKct5nOn2e',
+    sourceType: 'drive',
+    displayedSidebar: 'javaSidebar',
+    version: 'v3.0.x',
+    docSourceDir: './plugins/lark-docs/meta/sources/java/v3.0.x/v2',
+    fallbackSourceDir: './plugins/lark-docs/meta/sources/java/v2.6.x/v2',
+    targets: {
+        milvus: {
+            outputDir: 'milvus/reference/java/docs/v2/v3.0.x',
+            imageDir: 'milvus/reference/java/images'
+        },
+        zilliz: {
+            outputDir: 'reference/api/java/java/v2',
+            imageDir: 'static/img',
+        }
+    }
+}
+
 // sdk: node ===============================
 
 const node : Manual = {
@@ -262,6 +302,26 @@ const nodejs26 : Manual = {
     }    
 }
 
+const nodejs30 : Manual = {
+    root: 'NFmOfwILlln3JgdePZUclweZnIe',
+    base: 'R9i8bww4faNsR6smwQwcAtHGnkb',
+    sourceType: 'drive',
+    version: 'v3.0.x',
+    displayedSidebar: 'nodeSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/node/v3.0.x',
+    fallbackSourceDir: './plugins/lark-docs/meta/sources/node/v2.6.x',
+    targets: {
+        milvus: {
+            outputDir: 'milvus/reference/node/docs/v3.0.x',
+            imageDir: 'milvus/reference/node/images'
+        },
+        zilliz: {
+            outputDir: 'reference/api/nodejs/nodejs',
+            imageDir: 'static/img',
+        }
+    }    
+}
+
 // sdk: go =================================
 
 const gov1 : Manual = {
@@ -270,7 +330,7 @@ const gov1 : Manual = {
     sourceType: 'wiki',
     version: 'v2.4.x',
     displayedSidebar: 'goSidebar',
-    docSourceDir: './plugins/lark-docs/meta/sources/go/v2.4.x',
+    docSourceDir: './plugins/lark-docs/meta/sources/go/v1/v2.4.x',
     targets: {
         milvus: {
             outputDir: 'milvus/reference/go/docs/v1',
@@ -283,13 +343,13 @@ const gov1 : Manual = {
     }
 }
 
-const gov2 : Manual = {
-    root: 'IE6JwWJPgiHaZKkHCLccwq4vngh',
-    base: 'RWi9b79oeaDNkBsCkAGcoc90nif',
-    sourceType: 'wiki',
-    version: 'v2.5.x',
+const gov226 : Manual = {
+    root: 'Pzejf3x4WlXq1HdtTndcfMjVnxh',
+    base: 'Yc7gbtmgSal2ewsdqlhcLWVanbh',
+    sourceType: 'drive',
+    version: 'v2.6.x',
     displayedSidebar: 'goSidebar',
-    docSourceDir: './plugins/lark-docs/meta/sources/go/v2.5.x',
+    docSourceDir: './plugins/lark-docs/meta/sources/go/v2/v2.6.x',
     targets: {
         milvus: {
             outputDir: 'milvus/reference/go/docs/v2',
@@ -302,17 +362,17 @@ const gov2 : Manual = {
     }
 }
 
-const gov226 : Manual = {
-    root: 'Ai49wNllSihwEzkNZN8cd02Jn8c',
-    base: 'FruQbiGEoa7iARshjY3crsjnnxh',
-    sourceType: 'wiki',
-    version: 'v2.6.x',
+const gov230 : Manual = {
+    root: 'F9M3fK4Dbl69PPdSxTXcsIwgnDh',
+    base: 'KQT5bV62QaioKisKZT0crwZDnke',
+    sourceType: 'drive',
+    version: 'v3.0.x',
     displayedSidebar: 'goSidebar',
-    docSourceDir: './plugins/lark-docs/meta/sources/go/v2.6.x',
-    fallbackSourceDir: './plugins/lark-docs/meta/sources/go/v2.5.x',
+    docSourceDir: './plugins/lark-docs/meta/sources/go/v2/v3.0.x',
+    fallbackSourceDir: './plugins/lark-docs/meta/sources/go/v2/v2.6.x',
     targets: {
         milvus: {
-            outputDir: 'milvus/reference/go/docs/v2',
+            outputDir: 'milvus/reference/go/docs/v2/v3.0.x',
             imageDir: 'milvus/reference/go/images'
         },
         zilliz: {
@@ -339,21 +399,39 @@ const cliv01 : Manual = {
     }
 }
 
+const cliv13 : Manual = {
+    root: 'QBLKf6CCPloK0cddw6gcXUZqnob',
+    base: 'Rr4lbWr8baQj5psICV9cEFa2nYe',
+    sourceType: 'drive',
+    version: '1.3.x',
+    displayedSidebar: 'cliSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/cli/v1.3.x',
+    targets: {
+        zilliz: {
+            outputDir: 'reference/cli/cli',
+            imageDir: 'static/img',
+        }
+    }
+}
+
 export default {
     guides,
     agents,
     python,
     pymilvus25,
     pymilvus26,
+    pymilvus30,
     javaV1,
     javaV2,
     javaV225,
     javaV226,
+    javaV230,
     node,
     nodejs25,
     nodejs26,
+    nodejs30,
     gov1,
-    gov2,
     gov226,
+    gov230,
     cliv01
 }

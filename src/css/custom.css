@@ -627,3 +627,44 @@ pre {
     right: 16px;
   }
 }
+
+/* ============================================
+   SIDEBAR VISUAL FLATTENING
+   ============================================ */
+
+/* Reduce nested list indentation globally */
+.menu__list .menu__list {
+  padding-left: 0.5rem;
+}
+
+/* Flatten deep-nested link items so they read like top-level entries */
+li.theme-doc-sidebar-item-link-level-3 a.menu__link,
+li.theme-doc-sidebar-item-link-level-4 a.menu__link,
+li.theme-doc-sidebar-item-link-level-5 a.menu__link {
+  padding-left: 0.5rem;
+}
+
+/* Reduce visual weight of intermediate category headers */
+li.theme-doc-sidebar-item-category-level-2 .menu__link--sublist,
+li.theme-doc-sidebar-item-category-level-3 .menu__link--sublist,
+li.theme-doc-sidebar-item-category-level-4 .menu__link--sublist {
+  font-weight: 500 !important;
+}
+
+/* Slightly shrink carets on deeper levels to feel less heavy */
+li.theme-doc-sidebar-item-category-level-2 .menu__caret,
+li.theme-doc-sidebar-item-category-level-3 .menu__caret,
+li.theme-doc-sidebar-item-category-level-4 .menu__caret {
+  transform: scale(0.85);
+}
+
+/* Keep version-level categories (level-1) bold and distinct */
+li.theme-doc-sidebar-item-category-level-1 .menu__link--sublist {
+  font-weight: 700 !important;
+}
+
+/* Collapsible category headers: lighter background when expanded */
+li.theme-doc-sidebar-item-category-level-2 .menu__list-item-collapsible--active,
+li.theme-doc-sidebar-item-category-level-3 .menu__list-item-collapsible--active {
+  background: transparent !important;
+}

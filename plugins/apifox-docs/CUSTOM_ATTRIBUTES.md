@@ -18,7 +18,8 @@ These attributes live inside the OpenAPI JSON files (`meta/openapi/*.json`) and 
 | `x-target-response` | response examples | — | Yes | Links a response example to a specific selected response option. |
 | `x-target-request` | request examples | — | Yes | Links a request example to a specific selected request option. |
 | `x-target-lang` | request/response examples, parameter examples | Yes* | Yes | Filters examples by language (`en-US` or `zh-CN`). |
-| `x-base-urls` | operation | — | Yes | Provides custom base URL configurations for an endpoint. |
+| `x-base-urls` | operation | — | Yes | Provides custom base URL configurations for an endpoint. **Honored only when `target === 'zilliz'`.** |
+| `x-base-url-target` | parameters, schema properties, examples | — | Yes | Filters content by selected base URL `key`. Companion to `x-base-urls`. |
 | `x-i18n-langs` | examples | No | No | Lists available i18n languages for an example block (data-only, not processed). |
 
 *Build-time stripping in `s3Uploader.js` preserves `x-i18n` only when generating the `zh-CN` S3 artifact.
@@ -142,16 +143,117 @@ Filters examples by language. Used in `ExampleResponses`, `ExampleRequests`, and
 
 ### 1.8 `x-base-urls`
 
-Provides custom base URLs for an endpoint. If present, `RestSpecs` renders a tabbed base URL selector.
+Provides one or more custom base URLs for an endpoint. When present and the publication target is `zilliz`, the `RestSpecs` component renders a tabbed base URL selector in place of the auto-detected default. Implemented in `src/components/RestSpecs/index.js` (`BaseURL` component).
+
+**Schema** — either an inline array of objects or a `$ref` to a reusable definition stored under `components/x-base-urls/`:
+
+**Inline (per operation):**
 
 ```json
 {
   "x-base-urls": [
-    "https://api.zillizcloud.com",
-    "https://api.eu.zillizcloud.com"
+    {
+      "key": "cluster",
+      "label": "Cluster Endpoint",
+      "url": "https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530",
+      "prompt": "Use the cluster endpoint if you are using serving clusters.",
+      "x-i18n": {
+        "zh-CN": {
+          "label": "集群端点",
+          "prompt": "如果您使用的是服务集群，请使用集群端点。"
+        }
+      },
+      "shell": "export CLUSTER_ENDPOINT=\"https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530\""
+    },
+    {
+      "key": "on-demand-compute",
+      "label": "On-Demand Compute Endpoint",
+      "url": "https://{project-id}.{region}.api.zillizcloud.com",
+      "prompt": "Use the on-demand compute endpoint if you are using on-demand clusters.",
+      "x-i18n": {
+        "zh-CN": {
+          "label": "按需计算端点",
+          "prompt": "如果您使用的是按需集群，请使用按需计算端点。"
+        }
+      },
+      "shell": "export ON_DEMAND_COMPUTE_ENDPOINT=\"https://{project-id}.{region}.api.zillizcloud.com\""
+    }
   ]
 }
 ```
+
+**Reusable `$ref` (recommended for shared endpoints):**
+
+Define once in any spec file:
+
+```json
+{
+  "components": {
+    "x-base-urls": {
+      "ZillizVectorV2": [
+        {
+          "key": "cluster",
+          "label": "Cluster Endpoint",
+          ...
+        }
+      ]
+    }
+  }
+}
+```
+
+Reference in any operation:
+
+```json
+{
+  "x-base-urls": {
+    "$ref": "#/components/x-base-urls/ZillizVectorV2"
+  }
+}
+```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `key` | No | Stable identifier referenced by `x-base-url-target` filters on parameters and properties. Required if you plan to gate any content by base URL. |
+| `label` | Yes | Text shown on the radio tab. The tabs row is rendered only when there are 2+ entries. |
+| `url` | Yes | Displayed as the base URL value and substituted into the curl example when the user selects this tab. |
+| `prompt` | No | HTML rendered as a bullet (`<li>`) at the top of the info admonition, above the default base URL content. Supports i18n via `x-i18n`. |
+| `shell` | Yes | Shell snippet rendered in the code block beneath the panel (e.g. `export FOO=""`). |
+
+**Behavior:**
+
+- **Target gate:** Only applied when `target === 'zilliz'`. For `target === 'milvus'`, the array is ignored (`index.js:637` forces `baseUrls` to `null`) and the build falls back to `getBaseUrl()` in `utils.js`, which returns the global `http://localhost:19530`. There is no per-endpoint Milvus override mechanism today.
+- **Default selection:** The first entry (index 0) is the default selection on first paint, in both the header panel and the curl example. `RestSpecs` initializes its `selectedBaseUrl` state to `baseUrls[0]` when `target === 'zilliz'`, so the curl URL and the header panel agree from the very first render.
+- **Prompt composition:** The default base URL admonition (e.g. `admonition.cluster.endpoint.v2`, resolved by `getBaseUrl()`) is **not replaced** by the per-entry `prompt`. Both are rendered inside a single info admonition — the per-tab `prompt` rendered at the top as a bullet (`<ul><li>…</li></ul>`), the default content below it — so the spec author can highlight tab-specific context without losing the generic guidance. If the entry omits `prompt`, only the default appears.
+- **I18n per entry:** Each `x-base-urls` entry supports `x-i18n` translations for `label`, `prompt`, and `url`. The `BaseURL` component resolves these at runtime using the active language (`lang`), e.g. `current["x-i18n"]["zh-CN"]["label"]` takes precedence over the default `label`.
+- **No fallback:** If `x-base-urls` is missing or empty, the component falls through to `getBaseUrl()` exactly as if the attribute were absent.
+
+**S3 stripping:** Like all `x-*` keys, `x-base-urls` is removed by `s3Uploader.js` before upload, so it never appears in the public S3 specs.
+
+### 1.9 `x-base-url-target`
+
+Filters parameters and schema properties by the currently selected base URL. Companion to `x-base-urls` — only meaningful on operations that also define `x-base-urls` with `key` fields.
+
+```json
+{
+  "name": "clusterId",
+  "in": "query",
+  "x-base-url-target": ["on-demand-compute"]
+}
+```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| value | Yes | Array of `key` strings drawn from the operation's `x-base-urls` entries. |
+
+**Behavior:**
+
+- **Match check:** A parameter or property with `x-base-url-target: ["on-demand-compute"]` is shown only when the user has the `on-demand-compute` tab selected. Switching tabs re-renders the parameter list.
+- **Default selection:** The parent `RestSpecs` initializes to `baseUrls[0]` when `target === 'zilliz'`, so the first base URL's gated content is the default.
+- **Hidden when no base URL is selected:** If the operation has no `x-base-urls` (or `target === 'milvus'`), the selected base URL is `null` and any parameter with this attribute is hidden. Use `x-include-target` instead when you need a parameter that is unconditional within a target.
+- **Combines with `x-include-target`:** Both filters are applied — a parameter with `x-include-target: ["zilliz"]` and `x-base-url-target: ["on-demand-compute"]` is shown only when the target is zilliz **and** the selected base URL key is `on-demand-compute`.
+- **Curl example reflection:** The gated parameter follows normal `required` semantics. A query parameter with `required: true` and a `x-base-url-target` match is appended to the curl URL (e.g., `?clusterId=<example>`) only when its base-url tab is selected; switching tabs removes it again. Since the `required` flag is interpreted as "required *when shown*", you can reasonably mark a parameter `required: true` even though it is logically optional from the API's perspective — the gate ensures it is shown only in the context where it is actually needed.
+- **Scope:** Implemented for top-level `parameters` (`header`, `path`, `query`) in `validParams`. Request-body schema property gating is not yet implemented.
 
 ---
 

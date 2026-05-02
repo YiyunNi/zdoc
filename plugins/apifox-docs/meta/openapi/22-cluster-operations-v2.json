@@ -962,6 +962,7 @@
             "description": "在当前项目中创建一个按需集群。"
           }
         },
+        "x-beta": "PUBLIC",
         "tags": [
           "Cluster Operations (V2)"
         ],
@@ -1423,6 +1424,7 @@
         "tags": [
           "Cluster Operations (V2)"
         ],
+        "x-beta": "PUBLIC",
         "parameters": [
           {
             "name": "Authorization",
@@ -1686,6 +1688,7 @@
         "tags": [
           "Cluster Operations (V2)"
         ],
+        "x-beta": "PUBLIC",
         "parameters": [
           {
             "name": "Authorization",
@@ -1859,6 +1862,7 @@
         "tags": [
           "Cluster Operations (V2)"
         ],
+        "x-beta": "PUBLIC",
         "parameters": [
           {
             "name": "Authorization",
