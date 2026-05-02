@@ -1,29 +1,29 @@
 ---
 title: "load_balance() | Python | ORM"
 slug: /python/python/utility-load_balance
+sidebar_key: python/utility-load_balance
 sidebar_label: "load_balance()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation sets up a load-balancing group between two query nodes for a specific collection. | Python | ORM"
 type: docx
 token: XYNMdg3Vpo3SE7xTRVqcJNvrn0d
 sidebar_position: 32
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud
   - load_balance()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

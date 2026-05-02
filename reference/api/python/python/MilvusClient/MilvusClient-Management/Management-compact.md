@@ -1,29 +1,29 @@
 ---
 title: "compact() | Python | MilvusClient"
 slug: /python/python/Management-compact
+sidebar_key: python/Management-compact
 sidebar_label: "compact()"
-beta: false
 added_since: v2.4.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation compacts the collection by merging small segments into larger ones. It is recommended to call this operation after inserting a large amount of data into a collection. | Python | MilvusClient"
 type: docx
 token: JRNidzqX4o6VtkxVB5RcNvmHnnb
 sidebar_position: 2
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud
   - compact()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -40,8 +40,10 @@ compact(
     collection_name: str,
     is_clustering: Optional[bool] = False,
     is_l0: Optional[bool] = False,
+    target_size: Optional[int] = None,
+    target_size_unit: str = "mb",
     timeout: Optional[float] = None,
-    **kwargs,
+    **kwargs
 ) -> int
 ```
 
@@ -60,6 +62,14 @@ compact(
 - **is_l0** (*bool*) -
 
     Whether to perform an L0 compaction, which specifically handles L0 segments by merging delete operations into existing data segments. Defaults to **False**.
+
+- **target_size** *(Optional[int])* - 
+
+    Target segment size after compaction. Must be a positive integer. The unit is specified by **target_size_unit** (default MB). If not provided, the server uses its default target size.
+
+- **target_size_unit** *(str)* -
+
+Unit for target_size. Supported values: "b", "kb", "mb" (default), "gb", "tb", "pb". The value is converted to MB before being sent to the server.
 
 - **timeout** (*Optional[float]*) -
 
@@ -104,6 +114,12 @@ job_id = client.compact(
 job_id = client.compact(
     collection_name="my_collection",
     is_l0=True
+)
+
+#Force merge compaction
+job_id = client.compact(
+    collection_name="target_collection",
+    target_size="2048 MB"  
 )
 
 # Check compaction status

@@ -1,29 +1,29 @@
 ---
 title: "flush() | Python | ORM"
 slug: /python/python/Collection-flush
+sidebar_key: python/Collection-flush
 sidebar_label: "flush()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation seals all segments in the collection. Any insertions after this operation will generate a new segment. | Python | ORM"
 type: docx
 token: VdiwdqQ9iofbkoxcc8Kcqk5gnhZ
 sidebar_position: 11
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - flush()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -1,29 +1,29 @@
 ---
 title: "reset_password() | Python | ORM"
 slug: /python/python/utility-reset_password
+sidebar_key: python/utility-reset_password
 sidebar_label: "reset_password()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation resets the password for a specific user. | Python | ORM"
 type: docx
 token: K1Npdj5Ddod6UWxRN2ecf6K4nxf
 sidebar_position: 38
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud
   - reset_password()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

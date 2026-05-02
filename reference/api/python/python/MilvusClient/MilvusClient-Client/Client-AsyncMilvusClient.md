@@ -1,29 +1,29 @@
 ---
 title: "AsyncMilvusClient | Python | MilvusClient"
 slug: /python/python/Client-AsyncMilvusClient
+sidebar_key: python/Client-AsyncMilvusClient
 sidebar_label: "AsyncMilvusClient"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "An AsyncMilvusClient instance represents an asynchronous Python client that connects to a specific Zilliz Cloud cluster. It provides the same parameter sets and behaviors as MilvusClient, and the only difference lies in the way you call them. | Python | MilvusClient"
 type: docx
 token: MIKkdpGuuoEaGWx1m7Fcw52inKg
 sidebar_position: 3
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
   - zilliz
   - zilliz cloud
   - cloud
   - AsyncMilvusClient
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # AsyncMilvusClient
 
-An **AsyncMilvusClient** instance represents an asynchronous Python client that connects to a specific Zilliz Cloud cluster. It provides the same parameter sets and behaviors as **MilvusClient**, and the only difference lies in the way you call them.
+An **AsyncMilvusClient** instance represents an asynchronous Python client that connects to a specific Zilliz Cloud cluster. It provides the same parameter sets and behaviors as **[MilvusClient](./Client-MilvusClient)**, and the only difference lies in the way you call them.
 
 ```python
 pymilvus.AsyncMilvusClient

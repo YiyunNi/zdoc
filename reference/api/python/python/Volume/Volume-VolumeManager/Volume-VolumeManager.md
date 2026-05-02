@@ -1,29 +1,29 @@
 ---
 title: "VolumeManager | Python"
 slug: /python/python/Volume-VolumeManager
+sidebar_key: python/Volume-VolumeManager
 sidebar_label: "VolumeManager"
-beta: false
 added_since: false
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "A `VolumeManager` instance maintains a connection to Zilliz Cloud's Volume service. Before creating, listing, or deleting volumes, you need to initiate a `VolumeManager` instance. | Python"
 type: docx
 token: XdZ6dFzA3oUu4dxWh7Kcz4dhnQg
 sidebar_position: 4
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud
   - VolumeManager
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -1,29 +1,29 @@
 ---
 title: "using_database() | Python | ORM"
 slug: /python/python/db-using_database
+sidebar_key: python/db-using_database
 sidebar_label: "using_database()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation sets a database as the default for the current connection. | Python | ORM"
 type: docx
 token: GXXTd7JIgoUKhzxiI6ncWtwjnVc
 sidebar_position: 4
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud
   - using_database()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

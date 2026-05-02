@@ -1,29 +1,29 @@
 ---
 title: "search() | Python | ORM"
 slug: /python/python/Collection-search
+sidebar_key: python/Collection-search
 sidebar_label: "search()"
-beta: NEAR DEPRECATE
 added_since: Inherit
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation conducts a vector similarity search with an optional scalar filtering expression. | Python | ORM"
 type: docx
 token: OaM5dkbPjohKhNxHvKNcfnYMnVb
 sidebar_position: 25
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud
   - search()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -37,15 +37,16 @@ This operation conducts a vector similarity search with an optional scalar filte
 
 ```python
 search(
-    data: list[list[float]], 
-    anns_field: str, 
-    param: dict, 
-    limit: int 
-    expr: str | None, 
-    partition_names: list[str] | None, 
-    output_fields: list[str] | None, 
-    timeout: float | None, 
-    round_decimal: int
+    data: list[list[float]],
+    anns_field: str,
+    param: dict,
+    limit: int
+    expr: str | None,
+    partition_names: list[str] | None,
+    output_fields: list[str] | None,
+    timeout: float | None,
+    round_decimal: int,
+    search_aggregation: Optional[SearchAggregation] = None
 )
 ```
 
@@ -134,6 +135,10 @@ search(
     The number of decimal places that Zilliz Cloud rounds the calculated distances to.
 
     The value defaults to **-1**, indicating that Zilliz Cloud skips rounding the calculated distances and returns the raw value.
+
+- **search_aggregation** (*Optional[SearchAggregation]*) -
+
+    Hierarchical bucket aggregation spec. Mutually exclusive with **group_by_field**. When set, **limit** is ignored and the root `SearchAggregation.size` controls the top-level bucket count.
 
 - **consistency_level** (*str*) -
 

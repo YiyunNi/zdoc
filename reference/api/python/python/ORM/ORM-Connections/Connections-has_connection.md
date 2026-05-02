@@ -1,11 +1,12 @@
 ---
 title: "has_connection() | Python | ORM"
 slug: /python/python/Connections-has_connection
+sidebar_key: python/Connections-has_connection
 sidebar_label: "has_connection()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation checks if a connection with the given alias has already been established. | Python | ORM"
 type: docx
@@ -20,10 +21,9 @@ keywords:
   - zilliz cloud
   - cloud
   - has_connection()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

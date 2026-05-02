@@ -1,29 +1,29 @@
 ---
 title: "hybridts_to_unixtime() | Python | ORM"
 slug: /python/python/utility-hybridts_to_unixtime
+sidebar_key: python/utility-hybridts_to_unixtime
 sidebar_label: "hybridts_to_unixtime()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation converts a hybrid timestamp to a UNIX epoch timestamp | Python | ORM"
 type: docx
 token: HbMMdqtQGoQqwixsyrjcTTh0nu5
 sidebar_position: 20
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud
   - hybridts_to_unixtime()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

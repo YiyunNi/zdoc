@@ -1,29 +1,29 @@
 ---
 title: "construct_from_dataframe() | Python | ORM"
 slug: /python/python/Collection-construct_from_dataframe
+sidebar_key: python/Collection-construct_from_dataframe
 sidebar_label: "construct_from_dataframe()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation creates a collection with the specified dataframe. | Python | ORM"
 type: docx
 token: ISZadjHwyopWr5xRdJ2cqxVanEg
 sidebar_position: 3
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - construct_from_dataframe()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

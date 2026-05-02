@@ -8,19 +8,19 @@ last_modified: v2.6.x
 deprecate_since: false
 description: "Methods related to CRUD operations within a collection. | Python | MilvusClient"
 type: folder
-token: N5ynfBUN2l7doCdZw7ecFSl5nqb
+token: KSDYfo9pCl89wKdRNGccbzT2nid
 sidebar_position: 7
 sidebar_label: "Vector"
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud
   - Vector
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 ---
 

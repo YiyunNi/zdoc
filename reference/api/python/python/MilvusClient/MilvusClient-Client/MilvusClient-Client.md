@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "Classes and methods for you to manage the MilvusClient instances. | Python | MilvusClient"
 type: folder
-token: ZEQZf4BtildBijdf1T6cdDnmnZb
+token: M9bMfXz3llm0ebdks4Hc3KdMnCd
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud
   - Client
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 ---
 

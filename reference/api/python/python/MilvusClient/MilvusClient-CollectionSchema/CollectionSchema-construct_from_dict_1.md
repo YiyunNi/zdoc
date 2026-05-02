@@ -1,29 +1,29 @@
 ---
 title: "construct_from_dict() | Python | MilvusClient"
 slug: /python/python/CollectionSchema-construct_from_dict_1
+sidebar_key: python/CollectionSchema-construct_from_dict_1
 sidebar_label: "construct_from_dict()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation constructs a CollectionSchema object from a dictionary representation. | Python | MilvusClient"
 type: docx
 token: Ld10d5YWJofvgGxtwYscGlWunDg
 sidebar_position: 3
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud
   - construct_from_dict()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # construct_from_dict()
 
-This operation constructs a **CollectionSchema** object from a dictionary representation.
+This operation constructs a **[CollectionSchema](./MilvusClient-CollectionSchema)** object from a dictionary representation.
 
 ## Request Syntax\{#request-syntax}
 
@@ -49,11 +49,11 @@ construct_from_dict(
 
 **RETURN TYPE:**
 
-*CollectionSchema*
+*[CollectionSchema](./MilvusClient-CollectionSchema)*
 
 **RETURNS:**
 
-A **CollectionSchema** object.
+A **[CollectionSchema](./MilvusClient-CollectionSchema)** object.
 
 **EXCEPTIONS:**
 

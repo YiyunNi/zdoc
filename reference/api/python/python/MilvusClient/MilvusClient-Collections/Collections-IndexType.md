@@ -1,29 +1,29 @@
 ---
 title: "IndexType | Python | MilvusClient"
 slug: /python/python/Collections-IndexType
+sidebar_key: python/Collections-IndexType
 sidebar_label: "IndexType"
-beta: false
 added_since: Inherit
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This is an enumeration that provides the following constants. | Python | MilvusClient"
 type: docx
 token: SlrCd1GEbooMh2xLylZc6Oirnrc
 sidebar_position: 15
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - IndexType
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

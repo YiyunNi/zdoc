@@ -1,29 +1,29 @@
 ---
 title: "create_volume() | Python"
 slug: /python/python/VolumeManager-create_volume
+sidebar_key: python/VolumeManager-create_volume
 sidebar_label: "create_volume()"
-beta: false
 added_since: false
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a volume. | Python"
 type: docx
 token: HWYXdlaGIoTNVUx34GycfwjAnrb
 sidebar_position: 1
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud
   - create_volume()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

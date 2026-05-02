@@ -1,29 +1,29 @@
 ---
 title: "MistralAIEmbeddingFunction | Python"
 slug: /python/python/EmbeddingModels-MistralAIEmbeddingFunction
+sidebar_key: python/EmbeddingModels-MistralAIEmbeddingFunction
 sidebar_label: "MistralAIEmbeddingFunction"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "MistralAIEmbeddingFunction is a class in pymilvus that handles encoding text into embeddings using Mistral AI embedding models to support embedding retrieval in Milvus. | Python"
 type: docx
 token: CvxodXz8OoWXrlxD7OVcqqJLn8e
 sidebar_position: 3
 keywords: 
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - MistralAIEmbeddingFunction
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -69,7 +69,7 @@ MistralAIEmbeddingFunction(
 from pymilvus.model.dense import MistralAIEmbeddingFunction
 
 ef = MistralAIEmbeddingFunction(
-    model_name="mistral-embed", # Defaults to `mistral-embed`
+    model_name="mistral-embed", # Defaults to \`mistral-embed\`
     api_key="MISTRAL_API_KEY" # Provide your Mistral AI API key
 )
 ```

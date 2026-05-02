@@ -1,29 +1,29 @@
 ---
 title: "upload_file_to_volume() | Python"
 slug: /python/python/VolumeFileManager-upload_file_to_volume
+sidebar_key: python/VolumeFileManager-upload_file_to_volume
 sidebar_label: "upload_file_to_volume()"
-beta: false
 added_since: false
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation uploads the local file at the specified source path to the target file path within the specified volume. | Python"
 type: docx
 token: Fr3rdPTuXoC0Lzx7urIcwBqWnDb
 sidebar_position: 1
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud
   - upload_file_to_volume()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

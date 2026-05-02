@@ -1,0 +1,33 @@
+---
+title: "Snapshot | Python | MilvusClient"
+slug: /python/MilvusClient-Snapshot
+beta: PRIVATE
+notebook: false
+added_since: v3.0.x
+last_modified: false
+deprecate_since: false
+description: "Methods related to snapshot management. | Python | MilvusClient"
+type: folder
+token: RoBzflamplZFzYd1ZSWccuVfnnc
+sidebar_position: 15
+sidebar_label: "Snapshot"
+keywords: 
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - Snapshot
+  - pymilvus30
+displayed_sidebar: pythonSidebar
+---
+
+# Snapshot
+
+Methods related to snapshot management.
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

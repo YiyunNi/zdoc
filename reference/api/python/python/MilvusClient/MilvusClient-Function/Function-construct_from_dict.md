@@ -1,29 +1,29 @@
 ---
 title: "construct_from_dict() | Python | MilvusClient"
 slug: /python/python/Function-construct_from_dict
+sidebar_key: python/Function-construct_from_dict
 sidebar_label: "construct_from_dict()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation constructs a `Function` object from a dictionary representation. | Python | MilvusClient"
 type: docx
 token: Ulypd24byoDBOpxGnnJcbF3Nnkb
 sidebar_position: 2
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
   - zilliz
   - zilliz cloud
   - cloud
   - construct_from_dict()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -49,7 +49,7 @@ construct_from_dict(
 
 **RETURN TYPE:**
 
-*Function*
+*[Function](./MilvusClient-Function)*
 
 **RETURNS:**
 

@@ -8,19 +8,19 @@ last_modified: v2.5.x
 deprecate_since: false
 description: "Modules and classes related to the import of large-volume data into a collection. | Python"
 type: folder
-token: I37hfvVOClbThMdGuH4cV4R6nkc
+token: LJfHfKQ8QlHpC1dCjxvcurBunGQ
 sidebar_position: 1
 sidebar_label: "DataImport"
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud
   - DataImport
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 ---
 

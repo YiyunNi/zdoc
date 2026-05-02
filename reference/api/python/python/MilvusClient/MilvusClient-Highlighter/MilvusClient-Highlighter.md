@@ -12,15 +12,15 @@ token: O7mqfZp5fleHncduy7HcWkdTnPb
 sidebar_position: 13
 sidebar_label: "Highlighter"
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud
   - Highlighter
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 ---
 

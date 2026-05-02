@@ -1,29 +1,29 @@
 ---
 title: "DataType | Python | MilvusClient"
 slug: /python/python/Collections-DataType
+sidebar_key: python/Collections-DataType
 sidebar_label: "DataType"
-beta: false
 added_since: Inherit
 last_modified: v2.6.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This is an enumeration that provides the following constants. | Python | MilvusClient"
 type: docx
 token: KvNsd3aV4ocRNJxrZN2cg1zenqb
 sidebar_position: 7
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud
   - DataType
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -78,6 +78,10 @@ This is an enumeration that provides the following constants.
 - GEOMETRY
 
     Sets the datatype to **Geometry**.
+
+- TIMESTAMPTZ
+
+    Sets the datatype to **TIMESTAMPTZ**.
 
 - STRUCT
 

@@ -1,29 +1,29 @@
 ---
 title: "has_index() | Python | ORM"
 slug: /python/python/Collection-has_index
+sidebar_key: python/Collection-has_index
 sidebar_label: "has_index()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation checks whether the current collection has a built index. | Python | ORM"
 type: docx
 token: WDk4dXY8IoV3SJxp9e7c3aq1nBh
 sidebar_position: 15
 keywords: 
+  - hybrid vector search
+  - Video deduplication
   - Video similarity search
   - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud
   - has_index()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -8,19 +8,19 @@ last_modified: v2.6.x
 deprecate_since: false
 description: "Methods for you to manage collections. | Python | MilvusClient"
 type: folder
-token: CqXrfDyXZlkNSrdh5eJcI0Fznjh
+token: WidffJPNIlfIlZdHlU8cMiGOnpg
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud
   - Collections
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 ---
 

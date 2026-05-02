@@ -1,29 +1,29 @@
 ---
 title: "to_flat_array() | Python | MilvusClient"
 slug: /python/python/EmbeddingList-to_flat_array
+sidebar_key: python/EmbeddingList-to_flat_array
 sidebar_label: "to_flat_array()"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation converts the current EmbeddingList instance into a flattened NumPy array containing all vector embeddings concatenated. | Python | MilvusClient"
 type: docx
 token: Z76PdoAJkoGaMPxG4CFcCmShnwh
 sidebar_position: 5
 keywords: 
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - to_flat_array()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # to_flat_array()
 
-This operation converts the current **EmbeddingList** instance into a flattened NumPy array containing all vector embeddings concatenated.
+This operation converts the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance into a flattened NumPy array containing all vector embeddings concatenated.
 
 ## Request Syntax\{#request-syntax}
 
@@ -51,7 +51,7 @@ A flattened NumPy array containing all vector embeddings concatenated.
 
 - **ValueError**:
 
-    This exception will be raised if the current **EmbeddingList** instance is empty.
+    This exception will be raised if the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance is empty.
 
 ## Examples\{#examples}
 

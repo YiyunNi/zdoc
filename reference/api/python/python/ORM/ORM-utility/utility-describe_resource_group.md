@@ -1,29 +1,29 @@
 ---
 title: "describe_resource_group() | Python | ORM"
 slug: /python/python/utility-describe_resource_group
+sidebar_key: python/utility-describe_resource_group
 sidebar_label: "describe_resource_group()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation describes the details of a specific resource group. | Python | ORM"
 type: docx
 token: HScCdxLNJotPCcxb4AZcxsNJn9c
 sidebar_position: 7
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud
   - describe_resource_group()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -179,7 +179,7 @@ except Exception:
     
 # Succeeded in creating resource group rg.
 
-# Describe the details of the created resource group `rg`
+# Describe the details of the created resource group \`rg\`
 
 info = utility.describe_resource_group(name='rg')
 

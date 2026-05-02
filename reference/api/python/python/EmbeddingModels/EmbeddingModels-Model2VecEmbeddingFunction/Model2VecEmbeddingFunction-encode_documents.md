@@ -1,29 +1,29 @@
 ---
 title: "encode_documents() | Python"
 slug: /python/python/Model2VecEmbeddingFunction-encode_documents
+sidebar_key: python/Model2VecEmbeddingFunction-encode_documents
 sidebar_label: "encode_documents()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation takes in documents and encodes them into vector embeddings. | Python"
 type: docx
 token: WJY1dMUO5owB1gxkOlLcaB2Rn7g
 sidebar_position: 1
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - encode_documents()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

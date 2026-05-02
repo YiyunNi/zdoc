@@ -1,29 +1,29 @@
 ---
 title: "append_row() | Python"
 slug: /python/python/RemoteBulkWriter-append_row
+sidebar_key: python/RemoteBulkWriter-append_row
 sidebar_label: "append_row()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation appends records to the writer. | Python"
 type: docx
 token: F1MFdP8VvoMu17x4Vg9cH6ztnqb
 sidebar_position: 1
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud
   - append_row()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -47,7 +47,7 @@ append_row(
 
     A dictionary representing an entity to be appended.
 
-    The keys and their values in the dictionary should match the schema referenced in the current **LocalBulkWriter**.
+    The keys and their values in the dictionary should match the schema referenced in the current **[LocalBulkWriter](./DataImport-LocalBulkWriter)**.
 
 ## Examples\{#examples}
 

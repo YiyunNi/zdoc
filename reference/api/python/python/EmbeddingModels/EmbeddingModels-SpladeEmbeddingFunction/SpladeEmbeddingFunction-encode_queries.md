@@ -1,29 +1,29 @@
 ---
 title: "encode_queries() | Python"
 slug: /python/python/SpladeEmbeddingFunction-encode_queries
+sidebar_key: python/SpladeEmbeddingFunction-encode_queries
 sidebar_label: "encode_queries()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation takes in a list of query strings and encodes each query into a vector embedding. | Python"
 type: docx
 token: S9zPdiLkpokjfkxfZ68cWIFynnd
 sidebar_position: 2
 keywords: 
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud
   - encode_queries()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

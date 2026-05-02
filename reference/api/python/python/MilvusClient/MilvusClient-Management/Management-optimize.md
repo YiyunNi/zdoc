@@ -1,29 +1,29 @@
 ---
 title: "optimize() | Python | MilvusClient"
 slug: /python/python/Management-optimize
+sidebar_key: python/Management-optimize
 sidebar_label: "optimize()"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation optimizes a collection by adjusting segment sizes to improve query performance. This method performs a sequence of operations waiting for index building, triggering force-merge compaction, waiting for completion, rebuilding indexes, and refreshing the collection load. | Python | MilvusClient"
 type: docx
 token: MhRidjHwYorxaexS8WXcaxWQnjd
 sidebar_position: 23
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud
   - optimize()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

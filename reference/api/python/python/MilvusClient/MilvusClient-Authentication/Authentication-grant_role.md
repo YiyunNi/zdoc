@@ -1,29 +1,29 @@
 ---
 title: "grant_role() | Python | MilvusClient"
 slug: /python/python/Authentication-grant_role
+sidebar_key: python/Authentication-grant_role
 sidebar_label: "grant_role()"
-beta: false
 added_since: v2.3.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation grants a role to a user. | Python | MilvusClient"
 type: docx
 token: DsnpdZuDGo77TYxFuYvcDpOgnIf
 sidebar_position: 12
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud
   - grant_role()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -101,12 +101,4 @@ client.grant_role(user_name="user_1", role_name="db_ro")
 <p>Each Zilliz Cloud cluster has three built-in roles, namely, <strong>db_ro</strong>, <strong>db_rw</strong>, and <strong>db_admin</strong>. For details, refer to <a href="/docs/user-roles#cluster-built-in-roles">Cluster Built-in Roles</a>.</p>
 
 </Admonition>
-
-## Related methods\{#related-methods}
-
-- [describe_role()](./Authentication-describe_role)
-
-- [list_roles()](./Authentication-list_roles)
-
-- [revoke_role()](./Authentication-revoke_role)
 

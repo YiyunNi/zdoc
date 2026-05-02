@@ -1,29 +1,29 @@
 ---
 title: "alter_collection_field() | Python | MilvusClient"
 slug: /python/python/Collections-alter_collection_field
+sidebar_key: python/Collections-alter_collection_field
 sidebar_label: "alter_collection_field()"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation changes the specified collection field parameters. | Python | MilvusClient"
 type: docx
 token: JdR3dVpCaoq6s2xSFmsc0e13nnh
 sidebar_position: 2
 keywords: 
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - alter_collection_field()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

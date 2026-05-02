@@ -8,19 +8,19 @@ last_modified: v2.6.x
 deprecate_since: false
 description: "An easy-to-use alternative to the legacy PyMilvus SDK. | Python | MilvusClient"
 type: folder
-token: B2fdfjb1nl9Pjidkaa9cM6lAngd
+token: BBPZfcRbOlWEnjdbIJgc3wgynsg
 sidebar_position: 3
 sidebar_label: "MilvusClient"
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
   - zilliz
   - zilliz cloud
   - cloud
   - MilvusClient
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 ---
 

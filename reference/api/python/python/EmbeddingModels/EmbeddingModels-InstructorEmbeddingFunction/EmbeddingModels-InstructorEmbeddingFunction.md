@@ -1,29 +1,29 @@
 ---
 title: "InstructorEmbeddingFunction | Python"
 slug: /python/python/EmbeddingModels-InstructorEmbeddingFunction
+sidebar_key: python/EmbeddingModels-InstructorEmbeddingFunction
 sidebar_label: "InstructorEmbeddingFunction"
-beta: false
 added_since: v2.4.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "InstructorEmbeddingFunction is a class in pymilvus that handles encoding text into embeddings using the Instructor embedding model to support embedding retrieval in Milvus. | Python"
 type: docx
 token: YmnmdEeHFoctZexccqNcr8xXn8c
 sidebar_position: 3
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud
   - InstructorEmbeddingFunction
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -89,7 +89,7 @@ InstructorEmbeddingFunction(
 from pymilvus.model.dense import InstructorEmbeddingFunction
 
 ef = InstructorEmbeddingFunction(
-    model_name="hkunlp/instructor-xl", # Defaults to `hkunlp/instructor-xl`
+    model_name="hkunlp/instructor-xl", # Defaults to \`hkunlp/instructor-xl\`
     query_instruction="Represent the question for retrieval:",
     doc_instruction="Represent the document for retrieval:"
 )

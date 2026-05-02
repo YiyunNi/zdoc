@@ -1,29 +1,29 @@
 ---
 title: "drop_collection_function() | Python | MilvusClient"
 slug: /python/python/Collections-drop_collection_function
+sidebar_key: python/Collections-drop_collection_function
 sidebar_label: "drop_collection_function()"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops an existing function from the collection. | Python | MilvusClient"
 type: docx
 token: F1mJdDLyzoMTrxxarPMcqPkqnqg
 sidebar_position: 24
 keywords: 
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud
   - drop_collection_function()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

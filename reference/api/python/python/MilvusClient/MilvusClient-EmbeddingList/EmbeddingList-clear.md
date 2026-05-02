@@ -1,29 +1,29 @@
 ---
 title: "clear() | Python | MilvusClient"
 slug: /python/python/EmbeddingList-clear
+sidebar_key: python/EmbeddingList-clear
 sidebar_label: "clear()"
-beta: false
 added_since: v2.6.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation clears the vector embeddings from the current EmbeddingList instance. | Python | MilvusClient"
 type: docx
 token: M6mrdinAjo8CwrxirOQcR6E1nUc
 sidebar_position: 3
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud
   - clear()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # clear()
 
-This operation clears the vector embeddings from the current **EmbeddingList** instance.
+This operation clears the vector embeddings from the current **[EmbeddingList](./MilvusClient-EmbeddingList)** instance.
 
 ## Request Syntax\{#request-syntax}
 
@@ -41,11 +41,11 @@ clear()
 
 **RETURN TYPE:**
 
-*EmbeddingList*
+*[EmbeddingList](./MilvusClient-EmbeddingList)*
 
 **RETURNS:**
 
-An empty **EmbeddingList** instance.
+An empty **[EmbeddingList](./MilvusClient-EmbeddingList)** instance.
 
 ## Examples\{#examples}
 

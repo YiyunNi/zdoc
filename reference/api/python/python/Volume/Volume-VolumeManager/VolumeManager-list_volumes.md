@@ -1,29 +1,29 @@
 ---
 title: "list_volumes() | Python"
 slug: /python/python/VolumeManager-list_volumes
+sidebar_key: python/VolumeManager-list_volumes
 sidebar_label: "list_volumes()"
-beta: false
 added_since: false
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all volumes within a specific project in a paginated manner. | Python"
 type: docx
 token: E5uudOLJ3o1BIhx4LLoctf8TnLf
 sidebar_position: 3
 keywords: 
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud
   - list_volumes()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

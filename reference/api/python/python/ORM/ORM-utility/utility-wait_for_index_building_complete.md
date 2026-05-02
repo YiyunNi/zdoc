@@ -1,29 +1,29 @@
 ---
 title: "wait_for_index_building_complete() | Python | ORM"
 slug: /python/python/utility-wait_for_index_building_complete
+sidebar_key: python/utility-wait_for_index_building_complete
 sidebar_label: "wait_for_index_building_complete()"
-beta: NEAR DEPRECATE
 added_since: Inherit
 last_modified: false
 deprecate_since: false
+beta: NEAR DEPRECATE
 notebook: false
 description: "This operation blocks the current process until the specified index has been built. | Python | ORM"
 type: docx
 token: MfR8dw5TioPvw3xvrstcgYixnUb
 sidebar_position: 43
 keywords: 
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud
   - wait_for_index_building_complete()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

@@ -1,29 +1,29 @@
 ---
 title: "add_function() | Python | MilvusClient"
 slug: /python/python/Function-add_function
+sidebar_key: python/Function-add_function
 sidebar_label: "add_function()"
-beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation adds a function to convert raw data into vector representations. | Python | MilvusClient"
 type: docx
 token: XhcVd1JXvoAgUfxSEpQcL2H6nVg
 sidebar_position: 1
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud
   - add_function()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -51,7 +51,7 @@ add_function(
 
 **RETURN TYPE:**
 
-*CollectionSchema*
+*[CollectionSchema](./MilvusClient-CollectionSchema)*
 
 **RETURNS:**
 

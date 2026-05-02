@@ -1,29 +1,29 @@
 ---
 title: "add_field() | Python | MilvusClient"
 slug: /python/python/CollectionSchema-add_field_1
+sidebar_key: python/CollectionSchema-add_field_1
 sidebar_label: "add_field()"
-beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation adds a field to the schema of a collection. | Python | MilvusClient"
 type: docx
-token: Ehbdd1HRLoB34nxU6hQcRk2Mnug
+token: N3Fbd0ZZVoFo8DxJ9r8cNgcCnOd
 sidebar_position: 1
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - add_field()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -51,7 +51,7 @@ add_field(
 
     The name of the field.
 
-- **datatype** (*[DataType](./Collections-DataType)*) - 
+- **[datatype](./Collections-DataType)** (*[DataType](./Collections-DataType)*) - 
 
     **[REQUIRED]**
 
@@ -91,6 +91,8 @@ add_field(
 
     Whether the current field is the primary field in a collection.
 
+    This does not apply to external collections.
+
     <Admonition type="info" icon="📘" title="Notes">
 
     <ul>
@@ -128,6 +130,8 @@ add_field(
 
     Whether the current field serves as the partition key. Each collection can have one partition key.
 
+    This does not apply to external collections.
+
     <Admonition type="info" icon="📘" title="What is the partition key?">
 
     <p>To facilitate partition-oriented multi-tenancy, you can set a field as the partition key field so that Zilliz Cloud hashes the field values and distributes entities among the specified number of partitions accordingly.</p>
@@ -142,7 +146,7 @@ add_field(
 
 **RETURNS:**
 
-A **CollectionSchema** object contains the fields that have been added to the schema.
+A **[CollectionSchema](./MilvusClient-CollectionSchema)** object contains the fields that have been added to the schema.
 
 **EXCEPTIONS:**
 

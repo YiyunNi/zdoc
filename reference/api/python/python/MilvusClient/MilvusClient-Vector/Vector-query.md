@@ -1,29 +1,29 @@
 ---
 title: "query() | Python | MilvusClient"
 slug: /python/python/Vector-query
+sidebar_key: python/Vector-query
 sidebar_label: "query()"
-beta: false
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation conducts a scalar filtering with a specified boolean expression. | Python | MilvusClient"
 type: docx
-token: Edrcdw34jofMbNxK5HncdDT5n8e
+token: ShzCdNgEGozKi3xa3lUcHpxQnaf
 sidebar_position: 4
 keywords: 
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - query()
-  - pymilvus26
+  - pymilvus30
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
