@@ -2,6 +2,7 @@ import {z} from 'zod';
 import {tool} from 'ai';
 import {searchDocs, computeRetrievalConfidence, getActiveSectionFilter} from '../rag.js';
 import {rewriteQuery} from '../query-rewrite.js';
+import {truncateForModel} from './index.js';
 
 export const searchDocsTool = tool({
   description:
@@ -24,7 +25,7 @@ export const searchDocsTool = tool({
         title: r.doc_title,
         url: r.doc_url,
         section: r.section,
-        content: r.content,
+        content: truncateForModel(r.content, 800),
         score: r.score,
       })),
       confidence: confidence.level,

@@ -4,6 +4,9 @@ import {describe, it, expect, vi, beforeEach} from 'vitest';
 vi.mock('ai', () => ({
   streamText: vi.fn(),
   stepCountIs: vi.fn((n: number) => n),
+  smoothStream: vi.fn(() => ({
+    transform: vi.fn(),
+  })),
 }));
 vi.mock('@ai-sdk/openai', () => ({
   createOpenAI: vi.fn(() => ({

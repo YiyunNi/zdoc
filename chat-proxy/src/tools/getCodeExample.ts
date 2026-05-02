@@ -1,6 +1,7 @@
 import {z} from 'zod';
 import {tool} from 'ai';
 import {searchDocsFTS5, getActiveSectionFilter} from '../rag.js';
+import {truncateForModel} from './index.js';
 
 export const getCodeExampleTool = tool({
   description: 'Search for code examples in the documentation for a specific topic and programming language.',
@@ -27,7 +28,7 @@ export const getCodeExampleTool = tool({
     }
 
     return {
-      examples: codeBlocks.slice(0, 3),
+      examples: codeBlocks.slice(0, 3).map(e => ({...e, code: truncateForModel(e.code, 800)})),
       relatedDocs: results.map(r => ({title: r.doc_title, url: r.doc_url})),
       language,
       topic,

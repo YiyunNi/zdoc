@@ -37,6 +37,12 @@ export function getToolsForAgent(toolNames: ToolName[]): Record<string, Tool> {
   return tools;
 }
 
+/** Truncate text to maxChars, adding an ellipsis if truncated. */
+export function truncateForModel(text: string, maxChars = 800): string {
+  if (!text || text.length <= maxChars) return text;
+  return text.slice(0, maxChars).trimEnd() + '\n... [truncated]';
+}
+
 // Re-export individual tools
 export {searchDocsTool} from './searchDocs.js';
 export {getPageContentTool} from './getPageContent.js';
