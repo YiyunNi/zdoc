@@ -2,6 +2,7 @@ import {z} from 'zod';
 import {tool} from 'ai';
 import {searchDocs, computeRetrievalConfidence, getActiveSectionFilter} from '../rag.js';
 import {rewriteQuery} from '../query-rewrite.js';
+import {extractEntities} from '../entity-extract.js';
 import {truncateForModel} from './index.js';
 
 export const searchDocsTool = tool({
@@ -17,7 +18,9 @@ export const searchDocsTool = tool({
   execute: async ({query, topK}) => {
     // Rewrite query for better retrieval
     const optimizedQuery = await rewriteQuery(query);
-    const results = await searchDocs(optimizedQuery, topK, getActiveSectionFilter());
+    // Extract entities to boost results mentioning key technical terms
+    const entities = await extractEntities(query);
+    const results = await searchDocs(optimizedQuery, topK, getActiveSectionFilter(), entities);
     const confidence = computeRetrievalConfidence(results);
 
     return {

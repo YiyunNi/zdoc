@@ -315,6 +315,32 @@ export async function searchDocsVector(
 }
 
 // ---------------------------------------------------------------------------
+// Entity-aware boost
+// ---------------------------------------------------------------------------
+
+const ENTITY_BOOST_PER_MATCH = 0.01;
+const MAX_ENTITY_BOOST = 0.03;
+
+function applyEntityBoost(results: SearchResult[], entities: string[]): SearchResult[] {
+  if (!entities.length) return results;
+  let boostedCount = 0;
+  const boosted = results.map(r => {
+    const text = (r.doc_title + ' ' + r.content).toLowerCase();
+    let matchCount = 0;
+    for (const entity of entities) {
+      if (text.includes(entity.toLowerCase())) {
+        matchCount++;
+      }
+    }
+    const boost = Math.min(matchCount * ENTITY_BOOST_PER_MATCH, MAX_ENTITY_BOOST);
+    if (boost > 0) boostedCount++;
+    return {...r, score: r.score + boost, contextScore: r.contextScore + boost};
+  });
+  console.log(`[RAG] Entity boost applied: ${boostedCount}/${results.length} results boosted for entities [${entities.join(', ')}]`);
+  return boosted.sort((a, b) => b.score - a.score);
+}
+
+// ---------------------------------------------------------------------------
 // Hybrid search: parallel FTS + vector, fused with RRF
 // ---------------------------------------------------------------------------
 
@@ -322,11 +348,16 @@ export async function searchDocsHybrid(
   query: string,
   topK = TOP_K,
   sectionFilter?: string,
+  entities?: string[],
 ): Promise<SearchResult[]> {
   const queryEmbedding = getQueryEmbedding();
 
   if (!queryEmbedding) {
-    return searchDocsFTS5(query, topK, sectionFilter);
+    const results = await searchDocsFTS5(query, topK, sectionFilter);
+    if (entities && entities.length > 0) {
+      return applyEntityBoost(results, entities);
+    }
+    return results;
   }
 
   const [ftsResults, vectorResults] = await Promise.all([
@@ -336,16 +367,24 @@ export async function searchDocsHybrid(
 
   if (vectorResults.length === 0) {
     console.log('[RAG] Hybrid: vector search empty, using FTS-only results');
-    return ftsResults.slice(0, topK);
+    const results = ftsResults.slice(0, topK);
+    if (entities && entities.length > 0) {
+      return applyEntityBoost(results, entities);
+    }
+    return results;
   }
 
   const fused = fuseWithRRF(ftsResults, vectorResults, topK);
   console.log(`[RAG] Hybrid search: FTS=${ftsResults.length}, Vec=${vectorResults.length}, Fused=${fused.length}`);
+
+  if (entities && entities.length > 0) {
+    return applyEntityBoost(fused, entities);
+  }
   return fused;
 }
 
-export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string): Promise<SearchResult[]> {
-  return searchDocsHybrid(query, topK, sectionFilter);
+export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, entities?: string[]): Promise<SearchResult[]> {
+  return searchDocsHybrid(query, topK, sectionFilter, entities);
 }
 
 // ---------------------------------------------------------------------------
