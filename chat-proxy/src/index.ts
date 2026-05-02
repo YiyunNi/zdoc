@@ -6,7 +6,6 @@ import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
 import {checkGuard} from './guard.js';
 import {setActiveSectionFilter, setQueryEmbedding, searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
-import {splitParagraphs, scoreChunksPerParagraph} from './grounding.js';
 import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';
 import {getAgent} from './agents/index.js';
@@ -759,11 +758,8 @@ app.post('/chat', async c => {
               }
             }
 
-            // IDF pre-filter pass: score chunks per paragraph
-            const paragraphs = splitParagraphs(fullText);
-            const idfScores = scoreChunksPerParagraph(paragraphs, allChunks);
-
-            const grounding = await groundAtomically(fullText, filteredCandidates, allChunks, idfScores);
+            // Single-pass LLM source attribution
+            const grounding = await groundAtomically(fullText, filteredCandidates, allChunks);
 
             console.log(
               `[Sources] method=${grounding.method} Tools: ${toolSources.length}, Deduped: ${allSources.length}, Filtered: ${filteredCandidates.length}, Grounded: ${grounding.sources.length}`,
@@ -773,7 +769,6 @@ app.post('/chat', async c => {
               sendAndRecord('attribution_debug', JSON.stringify({
                 method: grounding.method,
                 candidateCount: filteredCandidates.length,
-                idfCandidateParagraphs: idfScores.size,
                 selectedCount: grounding.sources.length,
               }));
             }
