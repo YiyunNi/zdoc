@@ -1,5 +1,6 @@
-import {createOpenAI} from '@ai-sdk/openai';
+import {embed} from 'ai';
 import {getPool, invalidateCacheByChunkHashes, getCacheStats, getCacheEntriesCount, isDbReady, type CacheEntry} from './db.js';
+import {getEmbeddingModel, resolveModel} from './runtime-config.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -9,21 +10,20 @@ const SEMANTIC_CACHE_ENABLED = process.env.SEMANTIC_CACHE_ENABLED !== 'false'; /
 const SEMANTIC_CACHE_TTL_MS = parseInt(process.env.SEMANTIC_CACHE_TTL_MS || '', 10) || 2 * 60 * 60 * 1000; // 2 hours
 const SEMANTIC_CACHE_THRESHOLD = parseFloat(process.env.SEMANTIC_CACHE_THRESHOLD || '0.92');
 const SEMANTIC_CACHE_MAX_ENTRIES = parseInt(process.env.SEMANTIC_CACHE_MAX_ENTRIES || '5000', 10);
-const EMBEDDING_MODEL = process.env.SEMANTIC_EMBEDDING_MODEL || 'text-embedding-3-small';
-const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
-const AI_API_KEY = process.env.AI_API_KEY || '';
 
 // ---------------------------------------------------------------------------
-// Embedding provider
+// Embedding
 // ---------------------------------------------------------------------------
-
-const embeddingProvider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
 
 export async function computeEmbedding(text: string): Promise<number[]> {
-  const response = await embeddingProvider.textEmbeddingModel(EMBEDDING_MODEL).doEmbed({
-    values: [text],
+  const resolved = await resolveModel('embedding');
+  console.log(`[Embedding] Using provider=${resolved.provider} model=${resolved.model} source=${resolved.source}`);
+  const model = await getEmbeddingModel('embedding');
+  const response = await embed({
+    model,
+    value: text,
   });
-  return response.embeddings[0];
+  return response.embedding;
 }
 
 // ---------------------------------------------------------------------------
@@ -63,7 +63,13 @@ export async function semanticCacheLookup(
   const pool = getPool();
 
   // Use pre-computed embedding if provided, otherwise compute it
-  const embedding = queryEmbedding ?? await computeEmbedding(query);
+  let embedding: number[] | undefined;
+  try {
+    embedding = queryEmbedding ?? await computeEmbedding(query);
+  } catch {
+    return null;
+  }
+  if (!embedding) return null;
   const queryEmbeddingStr = JSON.stringify(embedding);
 
   // Use pgvector to find nearest neighbours within the TTL window
@@ -252,18 +258,19 @@ export {invalidateCacheByChunkHashes};
 
 export {getCacheStats, getCacheEntriesCount};
 
-export function getSemanticCacheConfig(): {
+export async function getSemanticCacheConfig(): Promise<{
   enabled: boolean;
   ttlMs: number;
   threshold: number;
   maxEntries: number;
   embeddingModel: string;
-} {
+}> {
+  const resolved = await resolveModel('embedding').catch(() => ({model: 'text-embedding-3-small'}));
   return {
     enabled: SEMANTIC_CACHE_ENABLED,
     ttlMs: SEMANTIC_CACHE_TTL_MS,
     threshold: SEMANTIC_CACHE_THRESHOLD,
     maxEntries: SEMANTIC_CACHE_MAX_ENTRIES,
-    embeddingModel: EMBEDDING_MODEL,
+    embeddingModel: resolved.model,
   };
 }

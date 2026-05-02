@@ -16,7 +16,7 @@ const SCHEMA_DDL = `
     section     TEXT NOT NULL,
     content     TEXT NOT NULL,
     weight      DOUBLE PRECISION NOT NULL DEFAULT 1.0,
-    embedding   vector(1536),
+    embedding   vector(1024),
     created_at  TIMESTAMPTZ DEFAULT NOW(),
     search_vector tsvector GENERATED ALWAYS AS (
       setweight(to_tsvector('english', coalesce(doc_title, '')), 'A') ||
@@ -39,7 +39,7 @@ const SCHEMA_DDL = `
   CREATE TABLE IF NOT EXISTS answer_cache (
     id              SERIAL PRIMARY KEY,
     query_text      TEXT NOT NULL,
-    query_embedding vector(1536),
+    query_embedding vector(1024),
     agent           TEXT NOT NULL,
     section_filter  TEXT,
     sse_events      JSONB NOT NULL,
@@ -169,8 +169,12 @@ const SCHEMA_DDL = `
     key        TEXT PRIMARY KEY,
     provider   TEXT NOT NULL DEFAULT 'openai-compatible',
     model      TEXT NOT NULL,
+    dimensions INTEGER,
     updated_at TIMESTAMPTZ DEFAULT NOW()
   );
+
+  -- Migration: add dimensions column to existing runtime_config tables
+  ALTER TABLE runtime_config ADD COLUMN IF NOT EXISTS dimensions INTEGER;
 
   -- admin_users: Feishu OAuth users with admin privileges
   CREATE TABLE IF NOT EXISTS admin_users (
@@ -281,6 +285,32 @@ export async function resetDb(): Promise<void> {
   const pool = getPool();
   await pool.query('DELETE FROM doc_chunks');
   await pool.query('DELETE FROM metadata');
+}
+
+/** Recreate embedding-related tables with a specific vector dimension */
+export async function recreateEmbeddingTables(dimensions: number): Promise<void> {
+  const pool = getPool();
+  await pool.query('DROP TABLE IF EXISTS doc_chunks');
+  await pool.query('DROP TABLE IF EXISTS answer_cache');
+  await pool.query('DELETE FROM metadata');
+
+  const ddl = SCHEMA_DDL
+    .replace(/vector\(1024\)/g, `vector(${dimensions})`)
+    .replace(/vector\(1536\)/g, `vector(${dimensions})`);
+  await pool.query(ddl);
+}
+
+export async function getEmbeddingSchemaDimension(): Promise<number | null> {
+  const pool = getPool();
+  try {
+    const { rows: [row] } = await pool.query(
+      `SELECT atttypmod FROM pg_attribute
+       WHERE attrelid = 'doc_chunks'::regclass AND attname = 'embedding'`,
+    );
+    return row?.atttypmod ?? null;
+  } catch {
+    return null;
+  }
 }
 
 export async function getIndexStats(): Promise<{ chunks: number; lastBuild: string | null }> {
@@ -903,7 +933,7 @@ export async function getObsUsers(options: {
   const { rows: [countRow] } = await pool.query(
     `SELECT
        COUNT(DISTINCT user_id)::int as total,
-       COALESCE(SUM(message_count), 0)::int as "totalSessions"
+       COUNT(*)::int as "totalSessions"
      FROM obs_sessions
      WHERE ${whereClause}`,
     params,
@@ -995,40 +1025,36 @@ export async function getTokenTrends(days: number, options: { source?: string } 
   }));
 }
 
-export async function getRuntimeConfigAll(): Promise<{key: string; provider: string; model: string; profileName: string | null; updatedAt: string}[]> {
+export async function getRuntimeConfigAll(): Promise<{key: string; provider: string; model: string; dimensions: number | null; profileName: string | null; updatedAt: string}[]> {
   const pool = getPool();
   const { rows } = await pool.query(
-    'SELECT key, provider, model, profile_name as "profileName", updated_at as "updatedAt" FROM runtime_config ORDER BY key',
+    'SELECT key, provider, model, dimensions, profile_name as "profileName", updated_at as "updatedAt" FROM runtime_config ORDER BY key',
   );
   return rows;
 }
 
-export async function getRuntimeConfigValue(key: string): Promise<{provider: string; model: string; profileName: string | null} | null> {
+export async function getRuntimeConfigValue(key: string): Promise<{provider: string; model: string; dimensions: number | null; profileName: string | null} | null> {
   const pool = getPool();
   const { rows: [row] } = await pool.query(
-    'SELECT provider, model, profile_name as "profileName" FROM runtime_config WHERE key = $1',
+    'SELECT provider, model, dimensions, profile_name as "profileName" FROM runtime_config WHERE key = $1',
     [key],
   );
-  return row ? { provider: row.provider, model: row.model, profileName: row.profileName } : null;
+  return row ? { provider: row.provider, model: row.model, dimensions: row.dimensions, profileName: row.profileName } : null;
 }
 
-export async function setRuntimeConfigValue(key: string, provider: string, model: string, profileName?: string | null): Promise<void> {
+export async function setRuntimeConfigValue(key: string, provider: string, model: string, profileName?: string | null, dimensions?: number | null): Promise<void> {
   const pool = getPool();
-  if (profileName !== undefined) {
-    await pool.query(
-      `INSERT INTO runtime_config (key, provider, model, profile_name, updated_at)
-       VALUES ($1, $2, $3, $4, NOW())
-       ON CONFLICT (key) DO UPDATE SET provider = EXCLUDED.provider, model = EXCLUDED.model, profile_name = EXCLUDED.profile_name, updated_at = NOW()`,
-      [key, provider, model, profileName],
-    );
-  } else {
-    await pool.query(
-      `INSERT INTO runtime_config (key, provider, model, updated_at)
-       VALUES ($1, $2, $3, NOW())
-       ON CONFLICT (key) DO UPDATE SET provider = EXCLUDED.provider, model = EXCLUDED.model, updated_at = NOW()`,
-      [key, provider, model],
-    );
-  }
+  await pool.query(
+    `INSERT INTO runtime_config (key, provider, model, dimensions, profile_name, updated_at)
+     VALUES ($1, $2, $3, $4, $5, NOW())
+     ON CONFLICT (key) DO UPDATE SET
+       provider = EXCLUDED.provider,
+       model = EXCLUDED.model,
+       dimensions = COALESCE(EXCLUDED.dimensions, runtime_config.dimensions),
+       profile_name = EXCLUDED.profile_name,
+       updated_at = NOW()`,
+    [key, provider, model, dimensions ?? null, profileName ?? null],
+  );
 }
 
 export async function deleteRuntimeConfigValue(key: string): Promise<void> {

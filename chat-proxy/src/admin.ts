@@ -12,6 +12,7 @@ import {
   getObsPerformance, getObsFeedback, getObsErrors, getObsLowConfidence,
   listObsSessions, getObsSessionDetail, getObsTokenUsage,
   getObsUsers, getObsSources, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue, deleteRuntimeConfigValue,
+  getEmbeddingSchemaDimension,
   isDbReady,
   listProviderProfiles, getProviderProfile, upsertProviderProfile, deleteProviderProfile,
   listOAuthProfiles, getActiveOAuthProfile, upsertOAuthProfile, setOAuthProfileActive, deleteOAuthProfile,
@@ -25,6 +26,7 @@ import {getFeishuConfig, buildAuthorizeUrl, exchangeCodeForToken, fetchFeishuUse
 import {isOAuthEnabled} from './auth/session.js';
 import {requireAuth, requireAdmin, getAuth, setSessionCookie, setStateCookie, clearStateCookie, clearSessionCookie, verifyStateCookie} from './auth/middleware.js';
 import {listAdmins, addAdmin, removeAdmin, healAdminProfile} from './auth/admin-users.js';
+import {makeTelemetry} from './telemetry.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -58,6 +60,9 @@ export const adminApp = new Hono();
 // ---------------------------------------------------------------------------
 
 adminApp.get('/dashboard', requireAuth, c => {
+  c.header('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  c.header('Pragma', 'no-cache');
+  c.header('Expires', '0');
   return c.html(dashboardHtml);
 });
 
@@ -173,8 +178,9 @@ adminApp.post('/refresh-index', requireAuth, requireAdmin, async c => {
 // GET /admin/stats — index size, cache stats, and token usage summary
 adminApp.get('/stats', requireAuth, async c => {
   const cacheStats = await getCacheStats();
-  const cacheConfig = getSemanticCacheConfig();
+  const cacheConfig = await getSemanticCacheConfig();
   const tokenSummary = await getTokenUsageSummary();
+  const schemaDim = await getEmbeddingSchemaDimension();
   return c.json({
     doc_chunks: await getIndexSize(),
     semantic_cache: {
@@ -184,6 +190,7 @@ adminApp.get('/stats', requireAuth, async c => {
     },
     token_usage: tokenSummary,
     embedding: getEmbeddingProgress(),
+    dimensions: schemaDim,
   });
 });
 
@@ -248,7 +255,7 @@ adminApp.get('/api/health/llm', async c => {
     const resolved = await resolveModel('chat');
     const model = createModelInstance(resolved);
     const {generateText} = await import('ai');
-    await generateText({model, prompt: 'Say "ok"', maxOutputTokens: 5});
+    await generateText({model, prompt: 'Say "ok"', maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-chat')});
     return c.json({
       ok: true,
       provider: resolvedProviderDisplay(resolved),
@@ -384,6 +391,7 @@ adminApp.get('/api/config', async c => {
   ]);
   const {rows: [chunkCount]} = await getPool().query('SELECT COUNT(*)::int as count FROM doc_chunks');
   const {rows: [lastBuild]} = await getPool().query("SELECT value FROM metadata WHERE key = 'last_build'");
+  const schemaDim = await getEmbeddingSchemaDimension();
 
   return c.json({
     models: dbConfig,
@@ -394,6 +402,7 @@ adminApp.get('/api/config', async c => {
       lastBuild: lastBuild?.value || null,
       refreshInterval: process.env.INDEX_REFRESH_INTERVAL || '1800000',
       sourceUrl: process.env.DOCS_SITE_URL || 'https://docs.zilliz.com',
+      dimensions: schemaDim,
     },
   });
 });
@@ -413,9 +422,13 @@ adminApp.put('/api/config/:key', requireAuth, requireAdmin, async c => {
   const rawProfile = body.profileName ? String(body.profileName) : null;
   // 'env default' is a synthetic profile — store as null in DB so resolution falls back to env.
   const profileName = rawProfile === 'env default' ? null : rawProfile;
+  const rawDimensions = body.dimensions;
+  const dimensions = rawDimensions !== undefined && rawDimensions !== null && rawDimensions !== ''
+    ? Number(rawDimensions)
+    : undefined;
 
-  await setRuntimeConfigValue(key, provider, model, profileName);
-  return c.json({ok: true, key, provider, model, profileName});
+  await setRuntimeConfigValue(key, provider, model, profileName, dimensions);
+  return c.json({ok: true, key, provider, model, profileName, dimensions});
 });
 
 adminApp.delete('/api/config/:key', requireAuth, requireAdmin, async c => {
@@ -431,7 +444,7 @@ adminApp.post('/api/config/:key/test', async c => {
   try {
     const instance = createModelInstance(resolved);
     const {generateText} = await import('ai');
-    await generateText({model: instance, prompt: 'Say "ok"', maxOutputTokens: 5});
+    await generateText({model: instance, prompt: 'Say "ok"', maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-model')});
     return c.json({ok: true, provider: resolvedProviderDisplay(resolved), model: resolved.model, source: resolved.source});
   } catch (err) {
     return c.json({ok: false, provider: resolvedProviderDisplay(resolved), model: resolved.model, source: resolved.source, error: String(err)}, 400);
@@ -447,7 +460,7 @@ adminApp.get('/api/cache/entries', async c => {
   const limit = parseInt(c.req.query('limit') || '100', 10);
   const pool = getPool();
   const { rows } = await pool.query(
-    `SELECT id, query_text, agent, section_filter, confidence, created_at, hits, length(sse_events) as event_size
+    `SELECT id, query_text, agent, section_filter, confidence, created_at, hits, jsonb_array_length(sse_events) as event_size
      FROM answer_cache ORDER BY created_at DESC LIMIT $1`,
     [limit]
   );

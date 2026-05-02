@@ -1976,6 +1976,32 @@ input, select { font-family: var(--body); }
                        'agent:general', 'agent:schema', 'agent:resources', 'agent:product', 'agent:code'];
   let providerProfileList = [];
 
+  // Client-side embedding dimension inference (mirrors server-side mapping)
+  const MODEL_DIMENSIONS = {
+    'text-embedding-3-small': 1536,
+    'text-embedding-3-large': 3072,
+    'text-embedding-ada-002': 1536,
+    'BAAI/bge-large-en-v1.5': 1024,
+    'BAAI/bge-base-en-v1.5': 768,
+    'BAAI/bge-small-en-v1.5': 384,
+    'BAAI/bge-m3': 1024,
+    'nomic-embed-text': 768,
+    'jina-embeddings-v2-base-en': 768,
+    'jina-embeddings-v3': 1024,
+    'gte-large': 1024,
+    'gte-base': 768,
+    'snowflake-arctic-embed-l': 1024,
+    'snowflake-arctic-embed-m': 768,
+  };
+  function inferDimFromModel(model) {
+    if (!model) return null;
+    const lower = model.toLowerCase();
+    for (const [k, v] of Object.entries(MODEL_DIMENSIONS)) {
+      if (lower.includes(k.toLowerCase())) return v;
+    }
+    return null;
+  }
+
   // Per-profile model list cache (5 min TTL). Cleared when a profile is mutated.
   const MODEL_CACHE_TTL_MS = 5 * 60 * 1000;
   const modelListCache = new Map();
@@ -2007,11 +2033,15 @@ input, select { font-family: var(--body); }
       let display;
       if (row) {
         const profileLabel = row.profileName
-          ? ' @' + esc(row.profileName)
+          ? ' <span class="env-tag" title="Provider profile">' + esc(row.profileName) + '</span>'
           : ' <span class="env-tag" title="Resolved from environment defaults">env default</span>';
-        display = '<span class="provider">' + esc(row.provider) + '</span>' + esc(row.model) + profileLabel;
+        const dim = row.dimensions != null ? row.dimensions : inferDimFromModel(row.model);
+        const dimLabel = dim ? ' <span class="env-tag" title="Embedding dimension">' + esc(String(dim)) + 'd</span>' : '';
+        display = '<span class="provider">' + esc(row.provider) + '</span>' + esc(row.model) + dimLabel + profileLabel;
       } else if (eff && eff.model) {
-        display = '<span class="provider">' + esc(eff.provider) + '</span>' + esc(eff.model) +
+        const effDim = inferDimFromModel(eff.model);
+        const effDimLabel = effDim ? ' <span class="env-tag" title="Embedding dimension">' + esc(String(effDim)) + 'd</span>' : '';
+        display = '<span class="provider">' + esc(eff.provider) + '</span>' + esc(eff.model) + effDimLabel +
                   '<span class="env-tag" title="Resolved from environment defaults">env default</span>';
       } else {
         display = '<span style="color:var(--text-muted);font-style:italic">inherits</span>';
@@ -2097,6 +2127,14 @@ input, select { font-family: var(--body); }
       modelOptionsHtml = opts.join('');
     }
 
+    const isEmbedding = key === 'embedding';
+    const dimValue = (current && current.dimensions != null)
+      ? String(current.dimensions)
+      : (inferDimFromModel(savedModel) || '');
+    const dimInput = isEmbedding
+      ? '<input type="number" id="dim_' + esc(key) + '" placeholder="dim" value="' + esc(dimValue) + '" style="width:70px" title="Embedding dimension (optional — auto-detected if blank)" />'
+      : '';
+
     row.innerHTML =
       '<div class="config-key">' + esc(key) + '</div>' +
       '<div class="config-edit-row">' +
@@ -2104,6 +2142,7 @@ input, select { font-family: var(--body); }
         '<span id="prov_label_' + esc(key) + '" style="font-size:10px;color:var(--text-muted);padding:5px 8px;border:1px solid #d8dae0;border-radius:5px;background:#f8f9fb;white-space:nowrap;">' + esc(provider) + '</span>' +
         '<select id="mod_' + esc(key) + '">' + modelOptionsHtml + '</select>' +
         '<select id="prof_' + esc(key) + '">' + profileOptions + '</select>' +
+        dimInput +
         '<span class="test-result" id="testres_' + esc(key) + '" style="display:none"></span>' +
       '</div>' +
       '<div style="display:flex;gap:6px">' +
@@ -2172,6 +2211,11 @@ input, select { font-family: var(--body); }
     try {
       const body = { provider, model };
       if (profileName) body.profileName = profileName;
+      const dimEl = $('dim_' + key);
+      if (dimEl) {
+        const dimVal = dimEl.value.trim();
+        if (dimVal) body.dimensions = Number(dimVal);
+      }
       await apiFetch('/admin/api/config/' + encodeURIComponent(key), {
         method: 'PUT', body: JSON.stringify(body),
       });
@@ -2233,6 +2277,7 @@ input, select { font-family: var(--body); }
         kvRow('Threshold', cache.threshold != null ? String(cache.threshold) : '—') +
         kvRow('Max entries', cache.maxEntries != null ? Number(cache.maxEntries).toLocaleString() : '—') +
         kvRow('Embedding model', cache.embeddingModel || '—') +
+        kvRow('Dimension', index.dimensions != null ? String(index.dimensions) : '—') +
         kvRow('Index chunks', (Number(index.totalChunks) || 0).toLocaleString()) +
         kvRow('Last build', index.lastBuild ? new Date(index.lastBuild).toLocaleString() : '—') +
         kvRow('Refresh interval', index.refreshInterval ? Math.round(Number(index.refreshInterval) / 60000) + ' min' : '—') +

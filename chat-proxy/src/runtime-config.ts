@@ -3,14 +3,58 @@ import { createOpenAI } from '@ai-sdk/openai';
 import type { LanguageModel, EmbeddingModel } from 'ai';
 
 // ---------------------------------------------------------------------------
+// Known embedding model dimensions
+// ---------------------------------------------------------------------------
+
+const MODEL_DIMENSIONS: Record<string, number> = {
+  'text-embedding-3-small': 1536,
+  'text-embedding-3-large': 3072,
+  'text-embedding-ada-002': 1536,
+  'BAAI/bge-large-en-v1.5': 1024,
+  'BAAI/bge-base-en-v1.5': 768,
+  'BAAI/bge-small-en-v1.5': 384,
+  'BAAI/bge-m3': 1024,
+  'nomic-embed-text': 768,
+  'jina-embeddings-v2-base-en': 768,
+  'jina-embeddings-v3': 1024,
+  'gte-large': 1024,
+  'gte-base': 768,
+  'snowflake-arctic-embed-l': 1024,
+  'snowflake-arctic-embed-m': 768,
+};
+
+/** Infer embedding dimension from model name; returns null if unknown */
+export function inferEmbeddingDimension(model: string): number | null {
+  const lower = model.toLowerCase();
+  // Exact match first
+  if (MODEL_DIMENSIONS[model] !== undefined) return MODEL_DIMENSIONS[model];
+  // Case-insensitive match
+  for (const [k, v] of Object.entries(MODEL_DIMENSIONS)) {
+    if (lower === k.toLowerCase()) return v;
+  }
+  // Substring match (handles prefixed models like openai/text-embedding-3-small)
+  for (const [k, v] of Object.entries(MODEL_DIMENSIONS)) {
+    if (lower.includes(k.toLowerCase())) return v;
+  }
+  return null;
+}
+
+/** Auto-detect dimension by calling the embedding model once */
+export async function detectEmbeddingDimension(model: EmbeddingModel): Promise<number> {
+  const { embed } = await import('ai');
+  const result = await embed({ model, value: 'dimension detection' });
+  return result.embedding.length;
+}
+
+// ---------------------------------------------------------------------------
 // ResolvedModel discriminated union
 // ---------------------------------------------------------------------------
 
 export type ResolvedModel =
-  | { source: 'profile'; provider: 'openai-compatible'; model: string; baseURL: string; apiKey: string }
-  | { source: 'profile'; provider: 'bedrock'; model: string; region: string; accessKeyId: string; secretAccessKey: string; sessionToken?: string }
-  | { source: 'env'; provider: 'openai-compatible'; model: string }
-  | { source: 'env'; provider: 'bedrock'; model: string };
+  | { source: 'profile'; provider: 'openai-compatible'; model: string; baseURL: string; apiKey: string; dimensions?: number }
+  | { source: 'profile'; provider: 'bedrock'; model: string; region: string; accessKeyId: string; secretAccessKey: string; sessionToken?: string; dimensions?: number }
+  | { source: 'env'; provider: 'openai-compatible'; model: string; dimensions?: number }
+  | { source: 'env'; provider: 'bedrock'; model: string; dimensions?: number };
 
 // ---------------------------------------------------------------------------
 // Env var fallbacks per config key
@@ -40,7 +84,8 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
   if (isDbReady()) {
     const dbConfig = await getRuntimeConfigValue(key);
     if (dbConfig) {
-      const { provider, model, profileName } = dbConfig;
+      const { provider, model, profileName, dimensions } = dbConfig;
+      const dims = dimensions ?? inferEmbeddingDimension(model) ?? undefined;
 
       // If a provider profile is attached, resolve credentials from it
       if (profileName) {
@@ -54,6 +99,7 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
               model,
               baseURL: profile.base_url || process.env.AI_BASE_URL || 'https://api.openai.com/v1',
               apiKey: creds.api_key,
+              dimensions: dims,
             };
           }
           if (provider === 'bedrock') {
@@ -66,6 +112,7 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
               accessKeyId: creds.access_key_id,
               secretAccessKey: creds.secret_access_key,
               sessionToken: creds.session_token,
+              dimensions: dims,
             };
           }
         }
@@ -73,7 +120,7 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
 
       // DB had a value but no profile (or profile not found) — use env vars
       const typedProvider = provider as 'openai-compatible' | 'bedrock';
-      return { source: 'env', provider: typedProvider, model };
+      return { source: 'env', provider: typedProvider, model, dimensions: dims };
     }
   }
 
@@ -87,7 +134,8 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
     return resolveModel('chat');
   }
 
-  return { source: 'env', provider: defaults.provider as 'openai-compatible' | 'bedrock', model };
+  const dims = inferEmbeddingDimension(model) ?? undefined;
+  return { source: 'env', provider: defaults.provider as 'openai-compatible' | 'bedrock', model, dimensions: dims };
 }
 
 // ---------------------------------------------------------------------------
@@ -130,7 +178,7 @@ export function createModelInstance(providerOrResolved: string | ResolvedModel, 
           baseURL: resolved.baseURL,
           apiKey: resolved.apiKey,
         });
-        return openai(resolved.model);
+        return openai.chat(resolved.model);
       }
       // env source
       return createFromEnv('openai-compatible', resolved.model);
@@ -154,7 +202,7 @@ function createFromEnv(provider: string, modelId: string): LanguageModel {
         baseURL: process.env.AI_BASE_URL || 'https://api.openai.com/v1',
         apiKey: process.env.AI_API_KEY,
       });
-      return openai(modelId);
+      return openai.chat(modelId);
     }
   }
 }

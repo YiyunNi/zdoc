@@ -1,7 +1,8 @@
 import type {ConfidenceLevel} from './types.js';
 import {isDemotedSource} from './demotion.js';
-import {getPool, resetDb} from './db.js';
+import {getPool, resetDb, recreateEmbeddingTables, getEmbeddingSchemaDimension} from './db.js';
 import {computeEmbedding} from './semantic-cache.js';
+import {resolveModel, inferEmbeddingDimension, detectEmbeddingDimension} from './runtime-config.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -625,6 +626,41 @@ export async function loadIndex(force = false): Promise<void> {
   if (indexReady && !force) return;
   indexLoading = true;
 
+  // Resolve expected embedding dimension from runtime config
+  let expectedDim: number | undefined;
+  try {
+    const resolved = await resolveModel('embedding');
+    expectedDim = resolved.dimensions;
+    if (!expectedDim) {
+      // Try to infer from model name, then auto-detect if still unknown
+      expectedDim = inferEmbeddingDimension(resolved.model) ?? undefined;
+      if (!expectedDim) {
+        const { getEmbeddingModel } = await import('./runtime-config.js');
+        const model = await getEmbeddingModel('embedding');
+        expectedDim = await detectEmbeddingDimension(model);
+        console.log(`[RAG] Auto-detected embedding dimension: ${expectedDim}`);
+      }
+    }
+  } catch (err) {
+    console.warn('[RAG] Could not resolve embedding dimension:', (err as Error).message);
+  }
+
+  // Check DB schema dimension and recreate tables if mismatch
+  if (expectedDim) {
+    try {
+      const schemaDim = await getEmbeddingSchemaDimension();
+      if (schemaDim !== null && schemaDim !== expectedDim) {
+        console.log(`[RAG] Embedding dimension mismatch: schema=${schemaDim}, expected=${expectedDim}. Recreating tables...`);
+        await recreateEmbeddingTables(expectedDim);
+      } else if (schemaDim === null) {
+        // Table doesn't exist yet or has no embedding column; ensure schema is created with correct dim
+        await recreateEmbeddingTables(expectedDim);
+      }
+    } catch (err) {
+      console.warn('[RAG] Schema dimension check failed:', (err as Error).message);
+    }
+  }
+
   console.log('[RAG] Loading doc index from', INDEX_BASE_URL);
   const allChunks: ParsedChunk[] = [];
 
@@ -665,11 +701,18 @@ export async function loadIndex(force = false): Promise<void> {
           const lastBuild = new Date(metaMap.last_build).getTime();
           const ageMin = (Date.now() - lastBuild) / 60000;
           if (ageMin < 30 && metaMap.source === INDEX_BASE_URL) {
-            console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source) — using existing`);
-            indexReady = true;
-            lastRefreshedAt = metaMap.last_build;
-            indexLoading = false;
-            return;
+            // Verify embedding dimension hasn't changed since last build
+            const schemaDim = await getEmbeddingSchemaDimension();
+            if (schemaDim !== null && expectedDim !== undefined && schemaDim !== expectedDim) {
+              console.log(`[RAG] Index is fresh but dimension mismatch: schema=${schemaDim}, expected=${expectedDim}. Rebuilding...`);
+              // fall through to rebuild
+            } else {
+              console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source) — using existing`);
+              indexReady = true;
+              lastRefreshedAt = metaMap.last_build;
+              indexLoading = false;
+              return;
+            }
           }
         }
       } catch { /* DB not ready or empty — proceed with build */ }
