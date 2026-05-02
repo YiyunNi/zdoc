@@ -1,0 +1,29 @@
+---
+displayed_sidebar: restfulSidebar
+sidebar_position: 4
+slug: /restful/describe-volume-v2
+beta: FALSE
+title: "Describe Volume (V2) | RESTful"
+description: "Describes a volume in detail. | RESTful"
+hide_table_of_contents: true
+sidebar_label: "Describe Volume (V2)"
+sidebar_custom_props: { badges: ['get']}
+keywords: 
+  - zilliz cloud
+  - zilliz
+  - cloud
+  - "Describe Volume (V2)"
+  - "get"
+  - RESTful
+  - API
+---
+
+# Describe Volume (V2)
+
+import RestSpecs from '@site/src/components/RestSpecs';
+
+<RestSpecs specs={specs} endpoint={endpoint} method={method} target="zilliz" lang="en-US" />
+
+export const specs = {"summary":"Describe Volume","description":"Describes a volume in detail.","x-i18n":{"zh-CN":{"summary":"查看存储卷详情","description":"本接口用于查看指定存储卷的详细信息。"}},"tags":["Volume Operations (V2)"],"parameters":[{"name":"VOLUME_NAME","in":"path","description":"Name of the volume to describe.","required":true,"example":"my-volume","schema":{"type":"string"},"x-i18n":{"zh-CN":{"description":"Name of the volume 待 describe."}}},{"name":"Authorization","in":"header","description":"The authentication token should be an API key with appropriate privileges.","required":true,"example":"Bearer {{TOKEN}}","schema":{"type":"string"},"x-i18n":{"zh-CN":{"description":"认证令牌，应为具备适当权限的 API 密钥。"}}},{"name":"Accept","in":"header","description":"Use `application/json`.","required":false,"example":"application/json","schema":{"type":"string"},"x-i18n":{"zh-CN":{"description":"使用 `application/json`。"}}}],"responses":{"200":{"description":"Returns details of the specified volume.","x-i18n":{"zh-CN":{"description":"返回指定存储卷的详细信息。"}},"content":{"application/json":{"schema":{"anyOf":[{"x-tab-label":"success","type":"object","properties":{"code":{"type":"integer","description":"Response code.","x-i18n":{"zh-CN":{"description":"响应码。"}}},"data":{"type":"object","properties":{"volumeName":{"type":"string","description":"Name of the volume.","x-i18n":{"zh-CN":{"description":"存储卷名称。"}}},"endpoint":{"type":"string","description":"Endpoint of the volume.","x-i18n":{"zh-CN":{"description":"存储卷端点。"}}},"cloud":{"type":"string","description":"Cloud provider.","x-i18n":{"zh-CN":{"description":"云提供商。"}}},"region":{"type":"string","description":"Cloud region.","x-i18n":{"zh-CN":{"description":"云地域。"}}},"bucketName":{"type":"string","description":"Name of the bucket.","x-i18n":{"zh-CN":{"description":"存储桶名称。"}}},"remotePath":{"type":"string","description":"Remote path of the volume.","x-i18n":{"zh-CN":{"description":"存储卷的远程路径。"}}},"volumePrefix":{"type":"string","description":"Prefix of the volume.","x-i18n":{"zh-CN":{"description":"存储卷前缀。"}}}},"description":"Response payload which contains volume details.","x-i18n":{"zh-CN":{"description":"响应载荷，包含存储卷详情。"}}}}},{"x-tab-label":"failure","type":"object","properties":{"code":{"type":"integer","description":"Response code.","x-i18n":{"zh-CN":{"description":"响应码。"}}},"message":{"type":"string","description":"Error message.","x-i18n":{"zh-CN":{"description":"错误描述。"}}}},"description":"A failure response.","x-i18n":{"zh-CN":{"description":"失败响应。"}},"x-i18n-langs":["zh-CN"]}]}}}}}}
+export const endpoint = "/v2/volumes/{VOLUME_NAME}"
+export const method = "get"

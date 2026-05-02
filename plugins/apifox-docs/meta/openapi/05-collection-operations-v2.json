@@ -266,6 +266,82 @@
                       }
                     ]
                   }
+                },
+                "6": {
+                  "summary": "External setup",
+                  "x-target-request": "OPTION 3",
+                  "x-include-target": [
+                    "zilliz"
+                  ],
+                  "value": {
+                    "collectionName": "test_collection",
+                    "schema": {
+                      "externalSource": "volume://my_volume/path/to/a/folder",
+                      "externalSpec": "{\"format\": \"parquet\"}",
+                      "fields": [
+                        {
+                          "fieldName": "product_id",
+                          "dataType": "Int64",
+                          "isPrimary": true,
+                          "externalField": "id"
+                        },
+                        {
+                          "fieldName": "product_name",
+                          "dataType": "VarChar",
+                          "elementTypeParams": {
+                            "max_length": "256"
+                          },
+                          "externalField": "name"
+                        },
+                        {
+                          "fieldName": "embedding",
+                          "dataType": "FloatVector",
+                          "elementTypeParams": {
+                            "dim": "768"
+                          },
+                          "externalField": "vector"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "7": {
+                  "summary": "External setup",
+                  "x-target-request": "OPTION 3",
+                  "x-include-target": [
+                    "milvus"
+                  ],
+                  "value": {
+                    "collectionName": "test_collection",
+                    "schema": {
+                      "externalSource": "s3://s3.<region-id>.amazonaws.com/<bucket>/",
+                      "externalSpec": "{\"format\": \"parquet\", \"extfs\": {\"access_key_id\": \"AKIA...\", \"access_key_value\": \"u4Lh...\", \"region\": \"us-west-2\", \"cloud_provider\": \"aws\", \"use_ssl\": \"true\", \"use_virtual_host\": \"true\"}}",
+                      "fields": [
+                        {
+                          "fieldName": "product_id",
+                          "dataType": "Int64",
+                          "isPrimary": true,
+                          "externalField": "id"
+                        },
+                        {
+                          "fieldName": "product_name",
+                          "dataType": "VarChar",
+                          "elementTypeParams": {
+                            "max_length": "256"
+                          },
+                          "externalField": "name"
+                        },
+                        {
+                          "fieldName": "embedding",
+                          "dataType": "FloatVector",
+                          "elementTypeParams": {
+                            "dim": "768"
+                          },
+                          "externalField": "vector"
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -306,6 +382,14 @@
                     "value": {
                       "code": 1800,
                       "message": "User hasn't authenticated"
+                    }
+                  },
+                  "3": {
+                    "summary": "success",
+                    "x-target-response": "OPTION 3",
+                    "value": {
+                      "code": 0,
+                      "data": {}
                     }
                   }
                 }
@@ -2211,6 +2295,191 @@
           }
         }
       }
+    },
+    "/v2/vectordb/jobs/external_collection/refresh": {
+      "post": {
+        "summary": "Refreshes an external collection",
+        "deprecated": false,
+        "description": "This operation triggers a refresh job for an external collection.",
+        "x-i18n": {
+          "zh-CN": {
+            "summary": "刷新外部集合",
+            "description": "本接口可为外部集合触发刷新任务。"
+          }
+        },
+        "tags": [
+          "Collection Operations (V2)"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AuthorizationHeader"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshExternalCollectionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the job ID.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "返回任务 ID。"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/EmptyResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ErrorResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/vectordb/jobs/external_collection/describe": {
+      "post": {
+        "summary": "Describes an external collection refresh job",
+        "deprecated": false,
+        "description": "This operation returns the details of a specific external collection refresh job.",
+        "x-i18n": {
+          "zh-CN": {
+            "summary": "查看外部集合刷新任务详情",
+            "description": "本接口可返回指定外部集合刷新任务的详细信息。"
+          }
+        },
+        "tags": [
+          "Collection Operations (V2)"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AuthorizationHeader"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshExternalCollectionProgressRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the job details.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "返回任务详情。"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/EmptyResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ErrorResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/vectordb/jobs/external_collection/list": {
+      "post": {
+        "summary": "Lists external collection refresh jobs",
+        "deprecated": false,
+        "description": "This operation lists all external collection refresh jobs.",
+        "x-i18n": {
+          "zh-CN": {
+            "summary": "查看外部集合刷新任务列表",
+            "description": "本接口可列出所有外部集合刷新任务。"
+          }
+        },
+        "tags": [
+          "Collection Operations (V2)"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AuthorizationHeader"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dbName": {
+                    "type": "string",
+                    "description": "The name of the database.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "数据库名称。"
+                      }
+                    }
+                  },
+                  "collectionName": {
+                    "type": "string",
+                    "description": "The name of the collection.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "Collection 名称。"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns a list of job records.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "返回任务记录列表。"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/EmptyResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ErrorResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
     }
   },
   "components": {
@@ -2714,6 +2983,77 @@
           }
         }
       },
+      "CollectionSchema": {
+        "type": "object",
+        "description": "The schema is responsible for organizing data in the target collection. A valid schema should have multiple fields, which must include a primary key, a vector field, and several scalar fields.",
+        "x-i18n": {
+          "zh-CN": {
+            "description": "Schema 决定了 Collection 中数据的组织方式。一个有效的 Schema 应包含多个字段，其中必须包含主键字段、向量字段以及多个标量字段。"
+          }
+        },
+        "properties": {
+          "autoID": {
+            "type": "boolean",
+            "description": "Whether allows the primary field to automatically increment. Setting this to True makes the primary field automatically increment. In this case, the primary field should not be included in the data to insert to avoid errors. Set this parameter in the field with is_primary set to True.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否允许主键字段自动增长。将该参数设置为 `True` 则主键字段将自动增长。在这种情况下，请不要在插入数据时包含主键字段，以避免错误。如果当前字段的 `is_primary` 参数设置为 `True`，则本参数为必填项。"
+              }
+            }
+          },
+          "enableDynamicField": {
+            "type": "boolean",
+            "description": "Whether allows to use the reserved __$meta__ field to hold non-schema-defined fields in key-value pairs.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否允许使用保留字段 __$meta__ 来保存 Schema 中未定义的字段。"
+              }
+            }
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldSchema"
+            },
+            "description": "A list of field objects.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "字段列表。"
+              }
+            }
+          },
+          "functions": {
+            "type": "array",
+            "description": "A list of functions.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "一个函数列表。"
+              }
+            },
+            "items": {
+              "$ref": "#/components/schemas/FunctionSchema"
+            }
+          },
+          "externalSource": {
+            "type": "string",
+            "description": "The external data source identifier (e.g., \"mysql\"). Required when creating an external collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "外部数据源标识符（例如 \"mysql\"）。创建外部集合时必填。"
+              }
+            }
+          },
+          "externalSpec": {
+            "type": "string",
+            "description": "A JSON-encoded string describing the connection parameters for the external source. Required when creating an external collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "描述外部数据源连接参数的 JSON 字符串。创建外部集合时必填。"
+              }
+            }
+          }
+        }
+      },
       "CustomSetupCollection": {
         "x-tab-label": "custom setup",
         "type": "object",
@@ -2743,51 +3083,76 @@
                 "description": "Schema 决定了 Collection 中数据的组织方式。一个有效的 Schema 应包含多个字段，其中必须包含主键字段、向量字段以及多个标量字段。设置本参数时，`dimension`、 `idType`、`autoID`、`primaryFieldName`、`vectorFieldName` 等参数将被忽略。"
               }
             },
-            "type": "object",
-            "properties": {
-              "autoID": {
-                "type": "boolean",
-                "description": "Whether allows the primary field to automatically increment. Setting this to True makes the primary field automatically increment. In this case, the primary field should not be included in the data to insert to avoid errors. Set this parameter in the field with is_primary set to True.",
-                "x-i18n": {
-                  "zh-CN": {
-                    "description": "是否允许主键字段自动增长。将该参数设置为 `True` 则主键字段将自动增长。在这种情况下，请不要在插入数据时包含主键字段，以避免错误。如果当前字段的 `is_primary` 参数设置为 `True`，则本参数为必填项。"
-                  }
-                }
-              },
-              "enableDynamicField": {
-                "type": "boolean",
-                "description": "Whether allows to use the reserved __$meta__ field to hold non-schema-defined fields in key-value pairs.",
-                "x-i18n": {
-                  "zh-CN": {
-                    "description": "是否允许使用保留字段 __$meta__ 来保存 Schema 中未定义的字段。"
-                  }
-                }
-              },
-              "fields": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FieldSchema"
-                },
-                "description": "A list of field objects.",
-                "x-i18n": {
-                  "zh-CN": {
-                    "description": "字段列表。"
-                  }
-                }
-              },
-              "functions": {
-                "type": "array",
-                "description": "A list of functions.",
-                "x-i18n": {
-                  "zh-CN": {
-                    "description": "一个函数列表。"
-                  }
-                },
-                "items": {
-                  "$ref": "#/components/schemas/FunctionSchema"
-                }
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CollectionSchema"
+              }
+            ]
+          },
+          "indexParams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IndexParams"
+            },
+            "description": "The parameters that apply to the index-building process.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "索引构建所需相关参数。"
               }
             }
+          },
+          "params": {
+            "$ref": "#/components/schemas/CustomCollectionParams"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the current collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "当前 Collection 的描述信息。"
+              }
+            }
+          }
+        }
+      },
+      "ExternalSetupCollection": {
+        "x-tab-label": "external setup",
+        "type": "object",
+        "properties": {
+          "dbName": {
+            "type": "string",
+            "description": "The name of the database.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "数据库名称。"
+              }
+            }
+          },
+          "collectionName": {
+            "type": "string",
+            "description": "The name of the collection to create.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "待创建 Collection 的名称。"
+              }
+            }
+          },
+          "schema": {
+            "description": "The schema for an external collection. Must include fields with externalField mappings, plus externalSource and externalSpec.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "外部集合的 Schema。必须包含带有 externalField 映射的字段，以及 externalSource 和 externalSpec。"
+              }
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CollectionSchema"
+              }
+            ],
+            "required": [
+              "externalSource",
+              "externalSpec"
+            ]
           },
           "indexParams": {
             "type": "array",
@@ -2898,6 +3263,9 @@
           },
           {
             "$ref": "#/components/schemas/CustomSetupCollection"
+          },
+          {
+            "$ref": "#/components/schemas/ExternalSetupCollection"
           }
         ]
       },
@@ -3453,6 +3821,15 @@
                 }
               }
             }
+          },
+          "externalField": {
+            "type": "string",
+            "description": "The name of the corresponding column in the external source. Required when creating an external collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "外部数据源中对应列的名称。创建外部集合时必填。"
+              }
+            }
           }
         },
         "required": [
@@ -3930,6 +4307,67 @@
             }
           }
         }
+      },
+      "RefreshExternalCollectionRequest": {
+        "type": "object",
+        "properties": {
+          "dbName": {
+            "type": "string",
+            "description": "The name of the database.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "数据库名称。"
+              }
+            }
+          },
+          "collectionName": {
+            "type": "string",
+            "description": "The name of the collection to refresh.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "待刷新 Collection 的名称。"
+              }
+            }
+          },
+          "externalSource": {
+            "type": "string",
+            "description": "The external data source identifier.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "外部数据源标识符。"
+              }
+            }
+          },
+          "externalSpec": {
+            "type": "string",
+            "description": "A JSON-encoded string describing the connection parameters for the external source.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "描述外部数据源连接参数的 JSON 字符串。"
+              }
+            }
+          }
+        },
+        "required": [
+          "collectionName"
+        ]
+      },
+      "RefreshExternalCollectionProgressRequest": {
+        "type": "object",
+        "properties": {
+          "jobId": {
+            "type": "integer",
+            "description": "The ID of the external collection refresh job.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "外部集合刷新任务 ID。"
+              }
+            }
+          }
+        },
+        "required": [
+          "jobId"
+        ]
       }
     },
     "parameters": {

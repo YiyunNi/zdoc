@@ -1,0 +1,29 @@
+---
+displayed_sidebar: restfulSidebar
+sidebar_position: 10
+slug: /restful/export-cluster-metrics-v2
+beta: FALSE
+title: "Export Cluster Metrics (V2) | RESTful"
+description: "Exports raw metrics for the specified cluster. The response is streamed directly from the metrics service preserving the original content type and encoding. | RESTful"
+hide_table_of_contents: true
+sidebar_label: "Export Cluster Metrics (V2)"
+sidebar_custom_props: { badges: ['get']}
+keywords: 
+  - zilliz cloud
+  - zilliz
+  - cloud
+  - "Export Cluster Metrics (V2)"
+  - "get"
+  - RESTful
+  - API
+---
+
+# Export Cluster Metrics (V2)
+
+import RestSpecs from '@site/src/components/RestSpecs';
+
+<RestSpecs specs={specs} endpoint={endpoint} method={method} target="zilliz" lang="en-US" />
+
+export const specs = {"summary":"Export Cluster Metrics","description":"Exports raw metrics for the specified cluster. The response is streamed directly from the metrics service preserving the original content type and encoding.","x-i18n":{"zh-CN":{"summary":"导出集群指标","description":"本接口用于导出指定集群的原始指标数据。响应直接从指标服务流式传输，保留原始内容类型和编码。"}},"tags":["Cluster Operations (V2)"],"parameters":[{"name":"CLUSTER_ID","in":"path","description":"ID of the cluster whose metrics are to export.","required":true,"example":"inxx-xxxxxxxxxxxxxxx","schema":{"type":"string"},"x-i18n":{"zh-CN":{"description":" cluster 的 metrics are 待 export."}}},{"name":"Authorization","in":"header","description":"The authentication token should be an API key with appropriate privileges.","required":true,"example":"Bearer {{TOKEN}}","schema":{"type":"string"},"x-i18n":{"zh-CN":{"description":"认证令牌，应为具备适当权限的 API 密钥。"}}},{"name":"Accept","in":"header","description":"Use `application/json`.","required":false,"example":"application/json","schema":{"type":"string"},"x-i18n":{"zh-CN":{"description":"使用 `application/json`。"}}}],"responses":{"200":{"description":"Returns raw metrics data.","x-i18n":{"zh-CN":{"description":"返回原始指标数据。"}},"content":{"application/json":{"schema":{"type":"string","description":"Raw metrics data."}},"text/plain":{"schema":{"type":"string","description":"Raw metrics data."}}}}}}
+export const endpoint = "/v2/clusters/{CLUSTER_ID}/metrics/export"
+export const method = "get"
