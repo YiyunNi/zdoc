@@ -54,3 +54,5 @@ Zilliz Cloud uses the control plane to centralize the management of clusters and
         --header "content-type: application/json" \
         -d '{}'
     ```
+
+<!-- openapi-downloads -->

@@ -1,4 +1,5 @@
 const RefGen = require('./refGen');
+const S3Uploader = require('./s3Uploader');
 const fs = require('node:fs')
 const path = require('node:path')
 
@@ -64,7 +65,8 @@ module.exports = function (context, options) {
                 .option('-o, --output_path <target_path>', 'Target path of the API Reference', 'reference/api/restful/restful')
                 .option('-i, --strings <strings>', 'Localization strings for Chinese docs')
                 .option('-t, --target <string>', 'Publication target of the API Reference', 'zilliz')
-                .action((opts) => {
+                .option('--upload-s3', 'Upload merged OpenAPI specs to S3 and update about page', false)
+                .action(async (opts) => {
                     let lang = opts.lang
                     let target = opts.target
                     let target_path = opts.output_path
@@ -114,6 +116,16 @@ module.exports = function (context, options) {
 
                     refGen.make_groups()
                     refGen.write_refs()
+
+                    if (opts.upload_s3) {
+                        try {
+                            const uploader = new S3Uploader({ target, lang })
+                            await uploader.upload(specifications, lang)
+                        } catch (err) {
+                            console.error(`S3 upload failed: ${err.message}`)
+                            process.exitCode = 1
+                        }
+                    }
                 })
             }
         }
