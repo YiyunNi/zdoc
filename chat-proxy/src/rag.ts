@@ -3,6 +3,7 @@ import {isDemotedSource} from './demotion.js';
 import {getPool, resetDb, recreateEmbeddingTables, getEmbeddingSchemaDimension} from './db.js';
 import {computeEmbedding} from './semantic-cache.js';
 import {resolveModel, inferEmbeddingDimension, detectEmbeddingDimension} from './runtime-config.js';
+import {extractTripletsBatch, flattenEntities} from './triplet-extract.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -160,6 +161,7 @@ interface ParsedChunk {
   section: string;
   content: string;
   weight: number;
+  entities?: string[];
 }
 
 let indexReady = false;
@@ -189,7 +191,7 @@ export async function getIndexStatus(): Promise<{ready: boolean; chunks: number;
 // Full-text search (PostgreSQL tsvector)
 // ---------------------------------------------------------------------------
 
-export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?: string): Promise<SearchResult[]> {
+export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?: string, entityFilter?: string[]): Promise<SearchResult[]> {
   if (!indexReady) return [];
 
   const pool = getPool();
@@ -202,7 +204,7 @@ export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?
     WHERE c.search_vector @@ query
       AND c.doc_url != '/docs/home'`;
 
-  const params: (string | number)[] = [query];
+  const params: (string | number | string[])[] = [query];
   let paramIdx = 2;
 
   if (sectionFilter) {
@@ -212,6 +214,12 @@ export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?
       params.push(m[2]);
       paramIdx++;
     }
+  }
+
+  if (entityFilter && entityFilter.length > 0) {
+    sql += ` AND c.entities ?| $${paramIdx}::text[]`;
+    params.push(entityFilter);
+    paramIdx++;
   }
 
   sql += ` ORDER BY rank DESC LIMIT $${paramIdx}`;
@@ -239,7 +247,11 @@ export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?
         contextScore: r.rank,
       });
     }
-    console.log(`[RAG] FTS search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}`);
+    const filterInfo = [
+      sectionFilter ? `filter: ${sectionFilter}` : '',
+      entityFilter ? `entities: [${entityFilter.join(', ')}]` : '',
+    ].filter(Boolean).join(', ');
+    console.log(`[RAG] FTS search: ${results.length} results${filterInfo ? ` (${filterInfo})` : ''}`);
     return results;
   } catch (err) {
     console.warn('[RAG] FTS search error:', (err as Error).message);
@@ -255,6 +267,7 @@ export async function searchDocsVector(
   queryEmbedding: number[],
   topK = TOP_K,
   sectionFilter?: string,
+  entityFilter?: string[],
 ): Promise<SearchResult[]> {
   if (!indexReady) return [];
 
@@ -269,7 +282,7 @@ export async function searchDocsVector(
     WHERE c.embedding IS NOT NULL
       AND c.doc_url != '/docs/home'`;
 
-  const params: (string | number)[] = [embeddingStr];
+  const params: (string | number | string[])[] = [embeddingStr];
   let paramIdx = 2;
 
   if (sectionFilter) {
@@ -279,6 +292,12 @@ export async function searchDocsVector(
       params.push(m[2]);
       paramIdx++;
     }
+  }
+
+  if (entityFilter && entityFilter.length > 0) {
+    sql += ` AND c.entities ?| $${paramIdx}::text[]`;
+    params.push(entityFilter);
+    paramIdx++;
   }
 
   sql += ` ORDER BY c.embedding <=> $1::vector LIMIT $${paramIdx}`;
@@ -306,7 +325,11 @@ export async function searchDocsVector(
         contextScore: r.similarity,
       });
     }
-    console.log(`[RAG] Vector search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}`);
+    const filterInfo = [
+      sectionFilter ? `filter: ${sectionFilter}` : '',
+      entityFilter ? `entities: [${entityFilter.join(', ')}]` : '',
+    ].filter(Boolean).join(', ');
+    console.log(`[RAG] Vector search: ${results.length} results${filterInfo ? ` (${filterInfo})` : ''}`);
     return results;
   } catch (err) {
     console.warn('[RAG] Vector search error:', (err as Error).message);
@@ -349,11 +372,12 @@ export async function searchDocsHybrid(
   topK = TOP_K,
   sectionFilter?: string,
   entities?: string[],
+  entityFilter?: string[],
 ): Promise<SearchResult[]> {
   const queryEmbedding = getQueryEmbedding();
 
   if (!queryEmbedding) {
-    const results = await searchDocsFTS5(query, topK, sectionFilter);
+    const results = await searchDocsFTS5(query, topK, sectionFilter, entityFilter);
     if (entities && entities.length > 0) {
       return applyEntityBoost(results, entities);
     }
@@ -361,8 +385,8 @@ export async function searchDocsHybrid(
   }
 
   const [ftsResults, vectorResults] = await Promise.all([
-    searchDocsFTS5(query, topK * 2, sectionFilter),
-    searchDocsVector(queryEmbedding, topK * 2, sectionFilter),
+    searchDocsFTS5(query, topK * 2, sectionFilter, entityFilter),
+    searchDocsVector(queryEmbedding, topK * 2, sectionFilter, entityFilter),
   ]);
 
   if (vectorResults.length === 0) {
@@ -383,8 +407,8 @@ export async function searchDocsHybrid(
   return fused;
 }
 
-export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, entities?: string[]): Promise<SearchResult[]> {
-  return searchDocsHybrid(query, topK, sectionFilter, entities);
+export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, entities?: string[], entityFilter?: string[]): Promise<SearchResult[]> {
+  return searchDocsHybrid(query, topK, sectionFilter, entities, entityFilter);
 }
 
 // ---------------------------------------------------------------------------
@@ -660,7 +684,7 @@ async function fetchWithRetry(url: string, retries = 3): Promise<Response> {
   throw new Error(`Failed to fetch ${url} after ${retries} attempts`);
 }
 
-export async function loadIndex(force = false): Promise<void> {
+export async function loadIndex(force = false, options?: { extractTriplets?: boolean }): Promise<void> {
   if (indexLoading) return;
   if (indexReady && !force) return;
   indexLoading = true;
@@ -759,18 +783,45 @@ export async function loadIndex(force = false): Promise<void> {
 
     await resetDb();
 
+    // Optional triplet extraction for entity enrichment
+    if (options?.extractTriplets) {
+      const TRIPLET_BATCH_SIZE = 5;
+      console.log(`[RAG] Extracting triplets for ${allChunks.length} chunks (batch size: ${TRIPLET_BATCH_SIZE})`);
+      for (let i = 0; i < allChunks.length; i += TRIPLET_BATCH_SIZE) {
+        const batch = allChunks.slice(i, i + TRIPLET_BATCH_SIZE);
+        const batchTexts = batch.map(c => c.content);
+        try {
+          const batchResults = await extractTripletsBatch(batchTexts);
+          for (let j = 0; j < batch.length; j++) {
+            const triplets = batchResults.get(j) ?? [];
+            batch[j].entities = flattenEntities(triplets);
+          }
+          if ((i + batch.length) % 20 === 0 || i + batch.length >= allChunks.length) {
+            console.log(`[RAG] Extracted triplets for ${Math.min(i + batch.length, allChunks.length)}/${allChunks.length} chunks`);
+          }
+        } catch (err) {
+          console.warn(`[RAG] Triplet extraction failed for batch ${i}:`, (err as Error).message);
+          // Graceful degradation: continue with empty entities
+          for (const chunk of batch) {
+            chunk.entities = [];
+          }
+        }
+      }
+    }
+
     const client = await pool.connect();
     try {
       await client.query('BEGIN');
       for (const c of allChunks) {
         await client.query(
-          `INSERT INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight)
-           VALUES ($1, $2, $3, $4, $5, $6, $7)
+          `INSERT INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight, entities)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
            ON CONFLICT (id) DO UPDATE SET
              doc_url = EXCLUDED.doc_url, doc_url_md = EXCLUDED.doc_url_md,
              doc_title = EXCLUDED.doc_title, section = EXCLUDED.section,
-             content = EXCLUDED.content, weight = EXCLUDED.weight`,
-          [c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight]
+             content = EXCLUDED.content, weight = EXCLUDED.weight,
+             entities = EXCLUDED.entities`,
+          [c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight, JSON.stringify(c.entities ?? [])]
         );
       }
       await client.query('COMMIT');

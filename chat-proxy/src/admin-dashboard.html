@@ -985,6 +985,7 @@ input, select { font-family: var(--body); }
         <div class="subtitle">Maintenance operations</div>
         <div class="actions-row">
           <button class="btn primary" id="btnRefreshIndex" data-require-admin>Refresh Index</button>
+          <button class="btn secondary" id="btnRebuildEntities" data-require-admin>Rebuild with Entities</button>
           <button class="btn secondary" id="btnClearCache" data-require-admin>Clear Cache</button>
           <span class="action-status" id="actionStatus"></span>
         </div>
@@ -1910,15 +1911,16 @@ input, select { font-family: var(--body); }
       }
     } else {
       try {
-        const [config, gaps, quality, providerProfiles, oauthProfiles] = await Promise.all([
+        const [config, gaps, quality, providerProfiles, oauthProfiles, entityStats] = await Promise.all([
           apiFetch('/admin/api/config'),
           apiFetch('/admin/api/doc-gaps?limit=20'),
           apiFetch('/admin/api/content-quality?limit=20'),
           apiFetch('/admin/api/provider-profiles'),
           apiFetch('/admin/api/oauth-profiles'),
+          apiFetch('/admin/index/entities').catch(() => null),
         ]);
         renderModelConfig(config.models || [], providerProfiles || [], config.resolved || []);
-        renderCacheConfig(config.cache, config.index);
+        renderCacheConfig(config.cache, config.index, entityStats);
         renderGaps(gaps.gaps || []);
         renderQuality(quality.issues || []);
         renderProviderProfiles(providerProfiles || []);
@@ -2267,9 +2269,11 @@ input, select { font-family: var(--body); }
     }
   }
 
-  function renderCacheConfig(cache, index) {
+  function renderCacheConfig(cache, index, entityStats) {
     cache = cache || {};
     index = index || {};
+    entityStats = entityStats || {};
+    const enrichedPct = index.totalChunks ? Math.round((entityStats.enrichedChunks || 0) / index.totalChunks * 100) : 0;
     $('cacheConfigBody').innerHTML =
       '<div class="kv-list">' +
         kvRow('Cache enabled', cache.enabled === false ? 'Disabled' : 'Enabled') +
@@ -2279,6 +2283,8 @@ input, select { font-family: var(--body); }
         kvRow('Embedding model', cache.embeddingModel || '—') +
         kvRow('Dimension', index.dimensions != null ? String(index.dimensions) : '—') +
         kvRow('Index chunks', (Number(index.totalChunks) || 0).toLocaleString()) +
+        kvRow('Enriched chunks', (entityStats.enrichedChunks || 0).toLocaleString() + ' (' + enrichedPct + '%)') +
+        kvRow('Unique entities', (entityStats.uniqueEntities || 0).toLocaleString()) +
         kvRow('Last build', index.lastBuild ? new Date(index.lastBuild).toLocaleString() : '—') +
         kvRow('Refresh interval', index.refreshInterval ? Math.round(Number(index.refreshInterval) / 60000) + ' min' : '—') +
         kvRow('Source URL', index.sourceUrl || '—') +
@@ -2611,6 +2617,26 @@ input, select { font-family: var(--body); }
       status.className = 'action-status err';
       status.textContent = 'Failed: ' + (e.message || 'unknown');
       stopPolling();
+    }
+  });
+
+  $('btnRebuildEntities').addEventListener('click', async () => {
+    if (!confirm('Rebuild index with triplet extraction? This may take significantly longer.')) return;
+    const status = $('actionStatus');
+    status.className = 'action-status';
+    status.textContent = 'Rebuilding with entity extraction…';
+    try {
+      const r = await fetch('/admin/rebuild-index?entities=true', {
+        method: 'POST', headers: { Authorization: 'Bearer ' + apiKey },
+      });
+      if (r.status === 401) { showLogin('Session expired'); return; }
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const j = await r.json();
+      status.className = 'action-status ok';
+      status.textContent = 'Rebuilt · ' + (j.chunks || 0) + ' chunks · ' + (j.took || '');
+    } catch (e) {
+      status.className = 'action-status err';
+      status.textContent = 'Failed: ' + (e.message || 'unknown');
     }
   });
 

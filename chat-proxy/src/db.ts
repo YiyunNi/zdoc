@@ -17,6 +17,7 @@ const SCHEMA_DDL = `
     content     TEXT NOT NULL,
     weight      DOUBLE PRECISION NOT NULL DEFAULT 1.0,
     embedding   vector(1024),
+    entities    JSONB DEFAULT '[]',
     created_at  TIMESTAMPTZ DEFAULT NOW(),
     search_vector tsvector GENERATED ALWAYS AS (
       setweight(to_tsvector('english', coalesce(doc_title, '')), 'A') ||
@@ -28,6 +29,11 @@ const SCHEMA_DDL = `
   CREATE INDEX IF NOT EXISTS idx_chunks_section ON doc_chunks(section);
   CREATE INDEX IF NOT EXISTS idx_chunks_search ON doc_chunks USING GIN(search_vector);
   CREATE INDEX IF NOT EXISTS idx_chunks_embedding ON doc_chunks USING hnsw (embedding vector_cosine_ops);
+  CREATE INDEX IF NOT EXISTS idx_chunks_entities ON doc_chunks USING GIN(entities);
+
+  -- Migration: add entities column to existing doc_chunks tables
+  ALTER TABLE doc_chunks ADD COLUMN IF NOT EXISTS entities JSONB DEFAULT '[]';
+  CREATE INDEX IF NOT EXISTS idx_chunks_entities ON doc_chunks USING GIN(entities);
 
   -- metadata: key-value store for index build info
   CREATE TABLE IF NOT EXISTS metadata (

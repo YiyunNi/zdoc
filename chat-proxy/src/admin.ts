@@ -175,6 +175,53 @@ adminApp.post('/refresh-index', requireAuth, requireAdmin, async c => {
   }
 });
 
+// POST /admin/rebuild-index — rebuild with optional triplet extraction
+adminApp.post('/rebuild-index', requireAuth, requireAdmin, async c => {
+  try {
+    const extractTriplets = c.req.query('entities') === 'true';
+    const start = Date.now();
+    await loadIndex(true, {extractTriplets});
+    invalidateSemanticCache().catch(() => {});
+    const took = ((Date.now() - start) / 1000).toFixed(1);
+    const chunks = await getIndexSize();
+    console.log(`[Admin] Index rebuilt${extractTriplets ? ' with entities' : ''}: ${chunks} chunks in ${took}s`);
+    return c.json({ok: true, chunks, took: `${took}s`, extractTriplets, updated: new Date().toISOString()});
+  } catch (err) {
+    return c.json({error: String(err)}, 500);
+  }
+});
+
+// GET /admin/index/entities — entity enrichment stats
+adminApp.get('/index/entities', requireAuth, requireAdmin, async c => {
+  try {
+    const pool = getPool();
+    const { rows: [chunkRow] } = await pool.query(
+      `SELECT COUNT(*)::int as total,
+              COUNT(*) FILTER (WHERE jsonb_array_length(entities) > 0)::int as enriched
+       FROM doc_chunks`
+    );
+    const { rows: [entityRow] } = await pool.query(
+      `SELECT COUNT(DISTINCT e) as unique_entities
+       FROM doc_chunks, jsonb_array_elements_text(entities) e`
+    );
+    const { rows: topEntities } = await pool.query(
+      `SELECT e as entity, COUNT(*) as occurrences
+       FROM doc_chunks, jsonb_array_elements_text(entities) e
+       GROUP BY e
+       ORDER BY occurrences DESC
+       LIMIT 20`
+    );
+    return c.json({
+      totalChunks: chunkRow.total,
+      enrichedChunks: chunkRow.enriched,
+      uniqueEntities: entityRow.unique_entities,
+      topEntities,
+    });
+  } catch (err) {
+    return c.json({error: String(err)}, 500);
+  }
+});
+
 // GET /admin/stats — index size, cache stats, and token usage summary
 adminApp.get('/stats', requireAuth, async c => {
   const cacheStats = await getCacheStats();
