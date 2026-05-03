@@ -1,14 +1,11 @@
 FROM node:22-alpine AS build
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install
+COPY package.json package-lock.json ./
+RUN npm ci
 COPY tsconfig.json ./
 COPY src/ ./src/
-RUN pnpm exec tsc && cp src/admin-dashboard.html dist/ && pnpm prune --prod
+RUN npx tsc && cp src/admin-dashboard.html dist/ && npm prune --production
 
 FROM node:22-alpine
 WORKDIR /app
