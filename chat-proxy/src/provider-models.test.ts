@@ -33,7 +33,7 @@ describe('listModelsForProfile — bedrock', () => {
     mockSend.mockReset();
   });
 
-  it('returns foundation models with TEXT + ON_DEMAND', async () => {
+  it('returns foundation models with TEXT/EMBEDDING + ON_DEMAND/INFERENCE_PROFILE', async () => {
     mockSend.mockImplementation(async (cmd: any) => {
       if (cmd.__type === 'ListFoundationModels') {
         return {
@@ -41,6 +41,8 @@ describe('listModelsForProfile — bedrock', () => {
             { modelId: 'anthropic.claude-3-sonnet', modelName: 'Claude 3 Sonnet', outputModalities: ['TEXT'], inferenceTypesSupported: ['ON_DEMAND'] },
             { modelId: 'anthropic.claude-3-haiku', modelName: 'Claude 3 Haiku', outputModalities: ['TEXT'], inferenceTypesSupported: ['ON_DEMAND'] },
             { modelId: 'amazon.titan-embeddings', modelName: 'Titan Embeddings', outputModalities: ['EMBEDDING'], inferenceTypesSupported: ['ON_DEMAND'] },
+            { modelId: 'anthropic.claude-sonnet-4-5', modelName: 'Claude Sonnet 4.5', outputModalities: ['TEXT'], inferenceTypesSupported: ['INFERENCE_PROFILE'] },
+            { modelId: 'cohere.embed-v4', modelName: 'Cohere Embed v4', outputModalities: ['EMBEDDING'], inferenceTypesSupported: ['INFERENCE_PROFILE'] },
           ],
         };
       }
@@ -54,6 +56,9 @@ describe('listModelsForProfile — bedrock', () => {
     expect(models.map(m => m.id)).toEqual([
       'anthropic.claude-3-sonnet',
       'anthropic.claude-3-haiku',
+      'amazon.titan-embeddings',
+      'anthropic.claude-sonnet-4-5',
+      'cohere.embed-v4',
     ]);
   });
 

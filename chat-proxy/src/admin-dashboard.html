@@ -2244,7 +2244,8 @@ input, select { font-family: var(--body); }
     el.className = 'test-result pending';
     el.textContent = 'Testing…';
     try {
-      const r = await apiFetch('/admin/api/provider-profiles/' + encodeURIComponent(profileName) + '/list-models', { method: 'POST' });
+      const typeParam = key === 'embedding' ? '?type=embedding' : (key === 'chat' ? '?type=chat' : '');
+      const r = await apiFetch('/admin/api/provider-profiles/' + encodeURIComponent(profileName) + '/list-models' + typeParam, { method: 'POST' });
       if (r && r.ok && Array.isArray(r.models)) {
         setCachedModels(profileName, r.models);
         const modSelect = $('mod_' + key);

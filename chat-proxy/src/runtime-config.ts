@@ -21,6 +21,7 @@ const MODEL_DIMENSIONS: Record<string, number> = {
   'gte-base': 768,
   'snowflake-arctic-embed-l': 1024,
   'snowflake-arctic-embed-m': 768,
+  'cohere.embed-v4:0': 1536,
 };
 
 /** Infer embedding dimension from model name; returns null if unknown */

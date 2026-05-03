@@ -23,12 +23,12 @@ export interface ListedModel {
 
 const FETCH_TIMEOUT_MS = 10_000;
 
-export async function listModelsForProfile(profile: ProviderProfileFull): Promise<ListedModel[]> {
+export async function listModelsForProfile(profile: ProviderProfileFull, type?: 'chat' | 'embedding'): Promise<ListedModel[]> {
   switch (profile.provider_type) {
     case 'openai-compatible':
       return listOpenAIModels(profile);
     case 'bedrock':
-      return listBedrockModels(profile);
+      return listBedrockModels(profile, type);
     default:
       throw new Error(`Unsupported provider_type: ${profile.provider_type}`);
   }
@@ -63,7 +63,7 @@ async function listOpenAIModels(profile: ProviderProfileFull): Promise<ListedMod
   }
 }
 
-async function listBedrockModels(profile: ProviderProfileFull): Promise<ListedModel[]> {
+async function listBedrockModels(profile: ProviderProfileFull, type?: 'chat' | 'embedding'): Promise<ListedModel[]> {
   const region = profile.region || 'us-east-1';
   const { accessKeyId, secretAccessKey, sessionToken } = {
     accessKeyId: profile.credentials.access_key_id,
@@ -84,10 +84,15 @@ async function listBedrockModels(profile: ProviderProfileFull): Promise<ListedMo
   const foundationOut = await client.send(new ListFoundationModelsCommand({}));
   const foundationSummaries = foundationOut.modelSummaries || [];
   const foundationModels = foundationSummaries
-    .filter(m =>
-      Array.isArray(m.outputModalities) && m.outputModalities.includes('TEXT') &&
-      Array.isArray(m.inferenceTypesSupported) && m.inferenceTypesSupported.includes('ON_DEMAND')
-    )
+    .filter(m => {
+      if (!Array.isArray(m.outputModalities) || !Array.isArray(m.inferenceTypesSupported)) return false;
+      // Accept both text-generation and embedding models
+      const hasTextModality = m.outputModalities.includes('TEXT') || m.outputModalities.includes('EMBEDDING');
+      // Accept both on-demand and inference-profile models
+      const inferenceTypes = m.inferenceTypesSupported as string[];
+      const hasInferenceType = inferenceTypes.includes('ON_DEMAND') || inferenceTypes.includes('INFERENCE_PROFILE');
+      return hasTextModality && hasInferenceType;
+    })
     .filter(m => typeof m.modelId === 'string')
     .map(m => ({ id: m.modelId as string, name: m.modelName || undefined }));
 

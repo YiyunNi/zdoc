@@ -726,6 +726,7 @@ adminApp.delete('/api/provider-profiles/:name', requireAuth, requireAdmin, async
 // Special case: name === ENV_DEFAULT_NAME builds a synthetic profile from env vars.
 adminApp.post('/api/provider-profiles/:name/list-models', requireAuth, requireAdmin, async c => {
   const name = c.req.param('name');
+  const type = c.req.query('type') as 'chat' | 'embedding' | undefined;
   const profile = name === ENV_DEFAULT_NAME
     ? buildEnvDefaultProfileFull()
     : await getProviderProfile(name);
@@ -734,7 +735,7 @@ adminApp.post('/api/provider-profiles/:name/list-models', requireAuth, requireAd
     return c.json({ok: false, provider: profile.provider_type, error: 'AI_API_KEY env var is not set'}, 400);
   }
   try {
-    const models = await listModelsForProfile(profile);
+    const models = await listModelsForProfile(profile, type);
     return c.json({ok: true, provider: profile.provider_type, models});
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
