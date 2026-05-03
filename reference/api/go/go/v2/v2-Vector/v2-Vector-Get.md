@@ -13,10 +13,10 @@ type: docx
 token: FLBRdxZqWojjpXxuwJZc5APKncC
 sidebar_position: 4
 keywords: 
+  - openai vector db
+  - natural language processing database
   - cheap vector database
   - Managed vector database
-  - Pinecone vector database
-  - Audio search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: BcAVdlDIioMUXTxqyZkcXfqznKd
 sidebar_position: 25
 keywords: 
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud

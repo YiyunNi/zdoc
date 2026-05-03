@@ -9,13 +9,13 @@ deprecate_since: false
 description: "Methods related to partition manipulation. | Go | v2"
 type: folder
 token: EsbCfRCYllSGzXdrs2zcrQWcnHg
-sidebar_position: 6
+sidebar_position: 7
 sidebar_label: "Partition"
 keywords: 
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

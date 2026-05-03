@@ -13,10 +13,10 @@ type: docx
 token: L4CvdyBIVoFsMNx546qcBqrOnJd
 sidebar_position: 18
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud

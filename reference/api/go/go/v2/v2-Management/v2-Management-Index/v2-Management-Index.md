@@ -13,10 +13,10 @@ type: docx
 token: ERQodkjAzotUQ3xKvA8c6jmLn3e
 sidebar_position: 1
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
   - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

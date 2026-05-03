@@ -13,10 +13,10 @@ type: docx
 token: QKItdAf6HoDzMVxzWEbcDVL9n5r
 sidebar_position: 9
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: PLPKdFJ0aoNUyTxMj7Mc3tPVn5d
 sidebar_position: 12
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud

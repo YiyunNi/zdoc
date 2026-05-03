@@ -13,10 +13,10 @@ type: docx
 token: TxIQdcx34oB2CUxHIRMcRGPNnic
 sidebar_position: 28
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

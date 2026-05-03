@@ -13,10 +13,10 @@ type: docx
 token: GKDQd15KkoiLPSxs8UYcFUamnIg
 sidebar_position: 25
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud

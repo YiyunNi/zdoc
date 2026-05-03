@@ -13,10 +13,10 @@ type: docx
 token: SV1KdmQUCoLh3nxArLzc9v6In1e
 sidebar_position: 7
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud

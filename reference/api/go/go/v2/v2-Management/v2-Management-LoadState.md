@@ -13,10 +13,10 @@ type: docx
 token: XWSAdFkdDoaDPnxOtkEcuFETngL
 sidebar_position: 20
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

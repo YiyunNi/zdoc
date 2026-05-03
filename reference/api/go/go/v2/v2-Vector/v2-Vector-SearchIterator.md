@@ -13,10 +13,10 @@ type: docx
 token: K6obdWvXyoNLbMxNkggc9JyMnPd
 sidebar_position: 13
 keywords: 
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
   - zilliz
   - zilliz cloud
   - cloud

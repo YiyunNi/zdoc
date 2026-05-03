@@ -13,10 +13,10 @@ type: docx
 token: Liv8dqreJo6t26xf3UWcC8ePnpe
 sidebar_position: 5
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud

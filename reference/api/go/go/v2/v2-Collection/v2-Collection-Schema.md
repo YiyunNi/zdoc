@@ -13,10 +13,10 @@ type: docx
 token: Du2ZdjCWIorDg4xdwercNnYgnJb
 sidebar_position: 23
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud

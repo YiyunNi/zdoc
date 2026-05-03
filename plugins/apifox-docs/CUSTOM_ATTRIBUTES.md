@@ -92,6 +92,28 @@ Injects callout blocks (admonitions) into the documentation. Can be defined in t
 
 The `RestSpecs` component renders these as `<Admonition>` components.
 
+**Per-item i18n.** Each admonition entry supports a nested `x-i18n` for `title` and `content`. The `<Admonitions>` component resolves translations at runtime against the active `lang`, falling back to the default values when no translation is present. `type` is a semantic category (`info`, `warning`, `caution`, `danger`, `tip`) and is **not** translated.
+
+```json
+{
+  "x-admonition": [
+    {
+      "type": "info",
+      "title": "Note",
+      "content": "This applies only to serving clusters on Zilliz Cloud.",
+      "x-i18n": {
+        "zh-CN": {
+          "title": "注意",
+          "content": "此项仅适用于 Zilliz Cloud 上的服务集群。"
+        }
+      }
+    }
+  ]
+}
+```
+
+The same shape is honored for admonitions defined in `meta/admonitions.json`, since both sources are concatenated into a single array before runtime resolution.
+
 ### 1.5 `x-tab-label`
 
 Used inside `anyOf` or `oneOf` schemas to give human-readable names to tabs that represent alternative request/response shapes.

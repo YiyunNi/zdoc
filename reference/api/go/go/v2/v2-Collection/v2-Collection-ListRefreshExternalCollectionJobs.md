@@ -13,10 +13,10 @@ type: docx
 token: KTeqdqUI2o3YO1xg3EXcJqGcnbe
 sidebar_position: 26
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
   - zilliz
   - zilliz cloud
   - cloud

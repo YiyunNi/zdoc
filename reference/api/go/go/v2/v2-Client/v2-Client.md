@@ -12,10 +12,10 @@ token: P8hMfnsOjlir3rdvsKDcEQG8nCc
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud

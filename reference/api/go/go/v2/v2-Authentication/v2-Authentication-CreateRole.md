@@ -13,10 +13,10 @@ type: docx
 token: NMsddLaMUoGUxexlFIScnY0Knpg
 sidebar_position: 4
 keywords: 
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud

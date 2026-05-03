@@ -13,10 +13,10 @@ type: docx
 token: QM8QdP63jofHxkxwxSEcXVXZnKX
 sidebar_position: 10
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud

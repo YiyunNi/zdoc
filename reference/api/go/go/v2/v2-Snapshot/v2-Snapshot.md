@@ -9,13 +9,13 @@ deprecate_since: false
 description: "Methods related to snapshot management. | Go | v2"
 type: folder
 token: G4vvf4YHtlwg02d1ZyXcsRCCnud
-sidebar_position: 9
+sidebar_position: 10
 sidebar_label: "Snapshot"
 keywords: 
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud

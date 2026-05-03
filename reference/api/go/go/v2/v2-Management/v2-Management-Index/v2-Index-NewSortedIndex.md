@@ -13,10 +13,10 @@ type: docx
 token: JTQrddtCJoJBjwxrKZrcn1lPnEe
 sidebar_position: 23
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud

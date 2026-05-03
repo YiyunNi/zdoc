@@ -13,10 +13,10 @@ type: docx
 token: EqKvdT96PoSVzzxyEF7civIgnDh
 sidebar_position: 7
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: G4dTdejt8otbQWxUqvucwKnBnYg
 sidebar_position: 17
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

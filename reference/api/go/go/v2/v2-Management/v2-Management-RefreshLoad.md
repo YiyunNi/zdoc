@@ -13,10 +13,10 @@ type: docx
 token: VtZWdaMz6o9iYrxcEaMcsnJin0e
 sidebar_position: 23
 keywords: 
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud

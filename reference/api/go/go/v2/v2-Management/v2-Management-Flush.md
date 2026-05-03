@@ -13,10 +13,10 @@ type: docx
 token: VUaadf505oQMTDx14XgcwJyNnDf
 sidebar_position: 9
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
   - zilliz
   - zilliz cloud
   - cloud

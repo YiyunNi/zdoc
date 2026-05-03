@@ -12,10 +12,10 @@ token: MINQfdgeRlnbDzd1ofucUJDsnuW
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud

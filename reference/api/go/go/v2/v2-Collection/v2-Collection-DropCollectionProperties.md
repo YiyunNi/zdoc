@@ -13,10 +13,10 @@ type: docx
 token: Zyf1dXoBIo83V2xWHiKcXUEAnMc
 sidebar_position: 14
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud

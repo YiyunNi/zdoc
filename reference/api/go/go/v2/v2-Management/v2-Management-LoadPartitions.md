@@ -13,10 +13,10 @@ type: docx
 token: LMXGdDnueontIFxuqAIcS8D6nJc
 sidebar_position: 19
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
   - zilliz
   - zilliz cloud
   - cloud

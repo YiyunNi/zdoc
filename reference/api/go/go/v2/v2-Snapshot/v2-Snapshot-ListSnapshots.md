@@ -13,10 +13,10 @@ type: docx
 token: Bs3OdQ56zohZEbx9KaHcInM4nHh
 sidebar_position: 6
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
   - zilliz
   - zilliz cloud
   - cloud

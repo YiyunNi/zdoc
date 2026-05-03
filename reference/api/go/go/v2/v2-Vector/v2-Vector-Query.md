@@ -13,10 +13,10 @@ type: docx
 token: P84bd17ncosvh4xuahpcFGzoneb
 sidebar_position: 8
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud

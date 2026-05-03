@@ -13,10 +13,10 @@ type: docx
 token: TUYsd2ko4oAlB4xa9nxc6rhRnpc
 sidebar_position: 3
 keywords: 
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud

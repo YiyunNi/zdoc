@@ -13,10 +13,10 @@ type: docx
 token: U9w7dQeEBom2UBxJZM1cJAIYniL
 sidebar_position: 21
 keywords: 
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud

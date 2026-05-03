@@ -13,10 +13,10 @@ type: docx
 token: Iz1ZdJDWVo0uoUxQjlPcIbS2nMo
 sidebar_position: 2
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud

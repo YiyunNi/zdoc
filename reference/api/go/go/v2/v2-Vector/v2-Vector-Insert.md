@@ -13,10 +13,10 @@ type: docx
 token: T6S4dcpZ7oeKD6xeTofc2mn9nrb
 sidebar_position: 6
 keywords: 
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud

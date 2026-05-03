@@ -13,10 +13,10 @@ type: docx
 token: V7bwdcBPGosCFWxjYQfctDDInmb
 sidebar_position: 24
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: PjAddPiH8oyRNpxqafBc1ZGknSd
 sidebar_position: 6
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: Le2bdLZXCoKVXXxF2kgcuDt2neh
 sidebar_position: 6
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud

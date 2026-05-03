@@ -13,10 +13,10 @@ type: docx
 token: DzchdYLEYomSrzxOys8c1mbanhg
 sidebar_position: 7
 keywords: 
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: XJN5dD1ifo5A9xxEfFKcf7Fxn1g
 sidebar_position: 22
 keywords: 
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud

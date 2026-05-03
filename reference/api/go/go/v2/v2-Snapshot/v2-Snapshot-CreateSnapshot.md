@@ -13,10 +13,10 @@ type: docx
 token: QFxmdtUNVoy071xXO8Acvkdpnse
 sidebar_position: 1
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
   - zilliz
   - zilliz cloud
   - cloud

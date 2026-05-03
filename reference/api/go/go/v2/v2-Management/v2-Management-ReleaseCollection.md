@@ -13,10 +13,10 @@ type: docx
 token: YMxDdZUXfoCEPtxBhN8clGxDnUd
 sidebar_position: 24
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud

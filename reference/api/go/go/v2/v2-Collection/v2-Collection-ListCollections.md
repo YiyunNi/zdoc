@@ -13,10 +13,10 @@ type: docx
 token: AVEcd3SCwoRyiTxcNodcQAepnGf
 sidebar_position: 21
 keywords: 
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
   - zilliz
   - zilliz cloud
   - cloud

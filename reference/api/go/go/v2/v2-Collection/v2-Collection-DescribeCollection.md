@@ -13,10 +13,10 @@ type: docx
 token: SCP5dY88horVwExBCD2cuSChnZM
 sidebar_position: 11
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud

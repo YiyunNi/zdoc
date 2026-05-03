@@ -13,10 +13,10 @@ type: docx
 token: SxMgdp3ThoMYHaxkKtKc9EWvnZd
 sidebar_position: 4
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud

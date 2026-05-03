@@ -13,10 +13,10 @@ type: docx
 token: GppedViHro8TJMxQCZ3cJRKRnHg
 sidebar_position: 16
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud

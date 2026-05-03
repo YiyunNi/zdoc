@@ -13,10 +13,10 @@ type: docx
 token: QrOmdt65AooKEkxVmNuc7qunnmf
 sidebar_position: 5
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud

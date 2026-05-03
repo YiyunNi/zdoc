@@ -13,10 +13,10 @@ type: docx
 token: StsddnE0ho6w73xxaGucPja3nMc
 sidebar_position: 3
 keywords: 
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: VuYydaf7loMiRAxkB3scXzA1nPb
 sidebar_position: 8
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud

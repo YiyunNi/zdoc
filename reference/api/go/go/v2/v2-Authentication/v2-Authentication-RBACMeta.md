@@ -13,10 +13,10 @@ type: docx
 token: GyCrdXyvzobrrAxzFRbcRTlSnUb
 sidebar_position: 18
 keywords: 
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: GNQcdBgh2oMyS9xxJk0cvESGnfe
 sidebar_position: 3
 keywords: 
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

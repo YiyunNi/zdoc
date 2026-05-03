@@ -91,22 +91,26 @@ const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
     </>)
 }
 
-const Admonitions = ({ admonitions }) => {
+const Admonitions = ({ admonitions, lang }) => {
     if (!admonitions || admonitions.length === 0) {
         return null
     }
 
     return (
         <>
-            {admonitions.map((item, index) => (
-                <Admonition
-                    key={index}
-                    type={item.type || 'info'}
-                    title={item.title || item.type || 'Note'}
-                >
-                    <div dangerouslySetInnerHTML={{ __html: item.content }} />
-                </Admonition>
-            ))}
+            {admonitions.map((item, index) => {
+                const title = item["x-i18n"]?.[lang]?.title ?? item.title
+                const content = item["x-i18n"]?.[lang]?.content ?? item.content
+                return (
+                    <Admonition
+                        key={index}
+                        type={item.type || 'info'}
+                        title={title || item.type || 'Note'}
+                    >
+                        <div dangerouslySetInnerHTML={{ __html: content }} />
+                    </Admonition>
+                )
+            })}
         </>
     )
 }
@@ -126,7 +130,7 @@ const Param = ({ name, description, type, format, required, example, inProp, enu
             </div>
             <div className={styles.description} dangerouslySetInnerHTML={{__html: translatedDescription ? textFilter(translatedDescription, target) : `<i>${i18n[lang]["to.be.added.soon"]}</i>`}}></div>
             <div>
-                { admonitions && admonitions.length > 0 && <Admonitions admonitions={admonitions} /> }
+                { admonitions && admonitions.length > 0 && <Admonitions admonitions={admonitions} lang={lang} /> }
                 { enums.length > 0 && <Enums enums={enums} lang={lang} target={target} /> }
                 { (example === 0 || example) && <div>
                     <span className={styles.paramExample}>{i18n[lang]['label.example.value']}</span>
@@ -276,7 +280,7 @@ const Primitive = ({ name, obj, required, lang, target }) => {
             </div>
             <div className={styles.description} dangerouslySetInnerHTML={{__html: description ? textFilter(description, target) : `<i>${i18n[lang]["to.be.added.soon"]}</i>`}}></div>
             <div>
-                { admonitions && admonitions.length > 0 && <Admonitions admonitions={admonitions} /> }
+                { admonitions && admonitions.length > 0 && <Admonitions admonitions={admonitions} lang={lang} /> }
                 { (minimum || maximum) && <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                     <span className={styles.paramExample}>{i18n[lang]['label.value.range']}</span>
                     { minimum &&<span className={styles.label}>{obj.exclusiveMinimum ? `\> ${minimum}` : `\≥ ${minimum}`}</span>}
@@ -640,7 +644,7 @@ export default function RestSpecs(props) {
             <div>
                 <div className={styles.specLayout}>
                     <div>
-                        <Admonitions admonitions={admonitions} />
+                        <Admonitions admonitions={admonitions} lang={lang} />
                         { deprecated && <Admonition type="danger" title={i18n[lang]["admonition.title"]}>
                             <div dangerouslySetInnerHTML={{ __html: i18n[lang]["admonition.deprecated"] }} />
                         </Admonition> }

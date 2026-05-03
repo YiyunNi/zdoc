@@ -13,10 +13,10 @@ type: docx
 token: PP2kdYCHnoZQ96xJqWUcAW8enG9
 sidebar_position: 9
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud

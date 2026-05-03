@@ -13,10 +13,10 @@ type: docx
 token: TxGQdsN2noPbRixebWycWSe0nYt
 sidebar_position: 1
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud

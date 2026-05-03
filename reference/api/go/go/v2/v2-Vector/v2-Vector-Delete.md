@@ -13,10 +13,10 @@ type: docx
 token: ZIm2dVn5noFLpAxRkjbc6jiSnee
 sidebar_position: 2
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: MUdZdTFeDoEtcwxBCOycaHyanr7
 sidebar_position: 24
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud

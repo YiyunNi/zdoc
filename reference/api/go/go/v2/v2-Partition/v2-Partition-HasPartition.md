@@ -13,10 +13,10 @@ type: docx
 token: Cased8tfhoZ25Sx4VALcy4gZnbh
 sidebar_position: 4
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud

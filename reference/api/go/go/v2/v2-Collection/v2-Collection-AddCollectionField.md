@@ -13,10 +13,10 @@ type: docx
 token: QupedlVukov8hsxbSyOcrcI9nAb
 sidebar_position: 1
 keywords: 
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

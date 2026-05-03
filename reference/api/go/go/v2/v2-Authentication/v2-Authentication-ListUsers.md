@@ -13,10 +13,10 @@ type: docx
 token: S3Vndkuxco3965xyea6cN406nWc
 sidebar_position: 16
 keywords: 
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud

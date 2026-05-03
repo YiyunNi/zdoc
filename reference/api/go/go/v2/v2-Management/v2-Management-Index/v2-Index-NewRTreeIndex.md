@@ -13,10 +13,10 @@ type: docx
 token: I053djRjsob1JJxKXvUcGelbn2d
 sidebar_position: 21
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

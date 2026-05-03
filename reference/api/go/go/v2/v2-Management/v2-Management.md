@@ -9,13 +9,13 @@ deprecate_since: false
 description: "Methods related to cluster management. | Go | v2"
 type: folder
 token: Gc1lf2ABblRExId5rTucKTp6n2q
-sidebar_position: 5
+sidebar_position: 6
 sidebar_label: "Management"
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud
