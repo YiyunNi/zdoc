@@ -20,7 +20,7 @@ vi.mock('./runtime-config.js', () => ({
   createModelInstance: vi.fn(() => 'test-model-instance'),
 }));
 
-import {routeIntent, clearSessionRoute} from './router.js';
+import {routeIntent, clearSessionRoute, clearRouteCache} from './router.js';
 import {generateObject, generateText} from 'ai';
 
 const mockGenerateObject = vi.mocked(generateObject);
@@ -30,6 +30,7 @@ describe('routeIntent', () => {
   beforeEach(() => {
     mockGenerateObject.mockReset();
     mockGenerateText.mockReset();
+    clearRouteCache();
   });
 
   it('routes to correct agent based on LLM response', async () => {
@@ -86,10 +87,34 @@ describe('routeIntent', () => {
     await routeIntent('compare tiers', [], 'sess-clear');
 
     clearSessionRoute('sess-clear');
+    clearRouteCache(); // avoid cache hit so the error fallback path is exercised
 
     mockGenerateObject.mockRejectedValueOnce(new Error('API down'));
     const result = await routeIntent('compare tiers', [], 'sess-clear');
     expect(result.agent).toBe('general');
+  });
+
+  it('follow-up fast-path uses raw last message, not enriched query', async () => {
+    // First call sets sticky route to 'code'
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {agent: 'code', reasoning: 'ok'},
+    } as any);
+    await routeIntent('generate code', [], 'sess-followup');
+
+    // Second call passes an enriched ragQuery but raw last message is "ok"
+    const enriched = 'Show me Python code for vector search ok';
+    const recentMessages = [
+      {role: 'user' as const, content: 'Show me Python code for vector search'},
+      {role: 'assistant' as const, content: 'Here is some code.'},
+      {role: 'user' as const, content: 'ok'},
+    ];
+    const result = await routeIntent(enriched, recentMessages, 'sess-followup');
+
+    expect(result.agent).toBe('code');
+    expect(result.reasoning).toBe('Follow-up fast-path');
+    // LLM should NOT have been called for the follow-up
+    expect(mockGenerateObject).toHaveBeenCalledTimes(1);
+    expect(mockGenerateText).not.toHaveBeenCalled();
   });
 
   it('only sends last 4 messages as context', async () => {

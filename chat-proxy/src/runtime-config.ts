@@ -76,10 +76,25 @@ const ENV_DEFAULTS: Record<string, { provider: string; modelEnv: string; default
 export const CONFIG_KEYS = Object.keys(ENV_DEFAULTS);
 
 // ---------------------------------------------------------------------------
+// In-memory cache for runtime config (avoids repeated DB queries per request)
+// ---------------------------------------------------------------------------
+
+const modelCache = new Map<string, {resolved: ResolvedModel; expiresAt: number}>();
+const MODEL_CACHE_TTL_MS = 30_000; // 30 seconds
+
+// ---------------------------------------------------------------------------
 // resolveModel — returns ResolvedModel with profile credentials or env fallback
 // ---------------------------------------------------------------------------
 
 export async function resolveModel(key: string): Promise<ResolvedModel> {
+  const now = Date.now();
+  const cached = modelCache.get(key);
+  if (cached && cached.expiresAt > now) {
+    return cached.resolved;
+  }
+
+  let result: ResolvedModel | undefined;
+
   // Check DB first
   if (isDbReady()) {
     const dbConfig = await getRuntimeConfigValue(key);
@@ -93,7 +108,7 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
         if (profile) {
           if (provider === 'openai-compatible') {
             const creds = profile.credentials;
-            return {
+            result = {
               source: 'profile',
               provider: 'openai-compatible',
               model,
@@ -104,7 +119,7 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
           }
           if (provider === 'bedrock') {
             const creds = profile.credentials;
-            return {
+            result = {
               source: 'profile',
               provider: 'bedrock',
               model,
@@ -118,24 +133,32 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
         }
       }
 
-      // DB had a value but no profile (or profile not found) — use env vars
-      const typedProvider = provider as 'openai-compatible' | 'bedrock';
-      return { source: 'env', provider: typedProvider, model, dimensions: dims };
+      if (!result) {
+        // DB had a value but no profile (or profile not found) — use env vars
+        const typedProvider = provider as 'openai-compatible' | 'bedrock';
+        result = { source: 'env', provider: typedProvider, model, dimensions: dims };
+      }
     }
   }
 
-  // No DB value — fall through to env defaults
-  const defaults = ENV_DEFAULTS[key];
-  if (!defaults) return { source: 'env', provider: 'openai-compatible', model: 'unknown' };
-
-  const model = process.env[defaults.modelEnv] || defaults.defaultModel;
-  if (!model) {
-    // Agent-specific key with no override — inherit from chat
-    return resolveModel('chat');
+  if (!result) {
+    // No DB value — fall through to env defaults
+    const defaults = ENV_DEFAULTS[key];
+    if (!defaults) {
+      result = { source: 'env', provider: 'openai-compatible', model: 'unknown' };
+    } else {
+      const model = process.env[defaults.modelEnv] || defaults.defaultModel;
+      if (!model) {
+        // Agent-specific key with no override — inherit from chat (bypass cache for recursion)
+        return resolveModel('chat');
+      }
+      const dims = inferEmbeddingDimension(model) ?? undefined;
+      result = { source: 'env', provider: defaults.provider as 'openai-compatible' | 'bedrock', model, dimensions: dims };
+    }
   }
 
-  const dims = inferEmbeddingDimension(model) ?? undefined;
-  return { source: 'env', provider: defaults.provider as 'openai-compatible' | 'bedrock', model, dimensions: dims };
+  modelCache.set(key, {resolved: result!, expiresAt: Date.now() + MODEL_CACHE_TTL_MS});
+  return result!;
 }
 
 // ---------------------------------------------------------------------------

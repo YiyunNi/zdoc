@@ -29,9 +29,8 @@ const SCHEMA_DDL = `
   CREATE INDEX IF NOT EXISTS idx_chunks_section ON doc_chunks(section);
   CREATE INDEX IF NOT EXISTS idx_chunks_search ON doc_chunks USING GIN(search_vector);
   CREATE INDEX IF NOT EXISTS idx_chunks_embedding ON doc_chunks USING hnsw (embedding vector_cosine_ops);
-  CREATE INDEX IF NOT EXISTS idx_chunks_entities ON doc_chunks USING GIN(entities);
 
-  -- Migration: add entities column to existing doc_chunks tables
+  -- Migration: add entities column to existing doc_chunks tables before indexing it
   ALTER TABLE doc_chunks ADD COLUMN IF NOT EXISTS entities JSONB DEFAULT '[]';
   CREATE INDEX IF NOT EXISTS idx_chunks_entities ON doc_chunks USING GIN(entities);
 

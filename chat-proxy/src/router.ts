@@ -72,7 +72,7 @@ Agents:
 - schema: Collection schema design, field types, index selection, data modeling, partition keys
 - resources: Cluster sizing, CU estimation, storage planning, pricing, deployment tier selection
 - product: Product comparison (Serverless vs Dedicated vs BYOC), feature availability, migration
-- code: ANY "how to" or "how do I" question, SDK code, API usage, search/insert/query operations, integration patterns, troubleshooting code errors. When in doubt between general and code, choose code.
+- code: ANY "how to" or "how do I" question about SDK usage, API calls, search/insert/query operations, integration patterns, or troubleshooting code errors. For schema design questions (collections, fields, indexes, partition keys, BM25), route to schema even if phrased as "how do I". When in doubt between general and code, choose code.
 `;
 
 const TOPIC_DESCRIPTIONS = `
@@ -101,6 +101,12 @@ Output: {"agent": "product", "topics": ["resources", "pricing"], "reasoning": "T
 
 Input: "Show me Python code for vector search"
 Output: {"agent": "code", "topics": ["search"], "reasoning": "The user explicitly asks for code example in Python."}
+
+Input: "How do I set up a partition key?"
+Output: {"agent": "schema", "topics": ["schema-design"], "reasoning": "Partition keys are a schema design concern, not a code/SDK question."}
+
+Input: "How do I enable BM25 full-text search?"
+Output: {"agent": "schema", "topics": ["schema-design"], "reasoning": "BM25 setup is part of collection schema and index configuration."}
 
 Input: "What is Zilliz Cloud?"
 Output: {"agent": "general", "topics": [], "reasoning": "General product overview question."}
@@ -149,6 +155,48 @@ setInterval(() => {
 }, 5 * 60 * 1000);
 
 // ---------------------------------------------------------------------------
+// Cross-session route cache (short TTL)
+// ---------------------------------------------------------------------------
+
+const routeCache = new Map<string, {agent: AgentType; topics: TopicName[]; reasoning: string; timestamp: number}>();
+const ROUTE_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+const ROUTE_CACHE_MAX = 1000;
+
+function getRouteCacheKey(query: string, stickyAgent?: AgentType): string {
+  const normalized = query.trim().toLowerCase().replace(/\s+/g, ' ');
+  return stickyAgent ? `${stickyAgent}:${normalized}` : normalized;
+}
+
+function getCachedRoute(query: string, stickyAgent?: AgentType): {agent: AgentType; topics: TopicName[]; reasoning: string} | null {
+  const key = getRouteCacheKey(query, stickyAgent);
+  const entry = routeCache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.timestamp > ROUTE_CACHE_TTL_MS) {
+    routeCache.delete(key);
+    return null;
+  }
+  return {agent: entry.agent, topics: entry.topics, reasoning: entry.reasoning};
+}
+
+function setCachedRoute(query: string, agent: AgentType, topics: TopicName[], reasoning: string, stickyAgent?: AgentType): void {
+  if (routeCache.size >= ROUTE_CACHE_MAX) {
+    const oldest = routeCache.keys().next().value!;
+    routeCache.delete(oldest);
+  }
+  routeCache.set(getRouteCacheKey(query, stickyAgent), {agent, topics, reasoning, timestamp: Date.now()});
+}
+
+// ---------------------------------------------------------------------------
+// Follow-up fast-path: skip LLM router for obvious continuations
+// ---------------------------------------------------------------------------
+
+const FOLLOW_UP_RE = /^(ok|yes|no|thanks?|thx|got it|sure|please|why|how)\b|^(what about|how about)\s+(it|that|this|them)\s*[\?\.]?$|^(can you|could you)\s+(elaborate|explain|clarify|expand)\s*[\?\.]?$/i;
+
+function isObviousFollowUp(query: string): boolean {
+  return FOLLOW_UP_RE.test(query.trim());
+}
+
+// ---------------------------------------------------------------------------
 // Legacy router (v1) — kept for rollback
 // ---------------------------------------------------------------------------
 
@@ -176,7 +224,7 @@ Agents:
 - schema: Collection schema design, field types, index selection, data modeling, partition keys
 - resources: Cluster sizing, CU estimation, storage planning, pricing, deployment tier selection
 - product: Product comparison (Serverless vs Dedicated vs BYOC), feature availability, migration
-- code: ANY "how to" or "how do I" question, SDK code, API usage, search/insert/query operations, integration patterns, troubleshooting code errors. When in doubt between general and code, choose code.
+- code: ANY "how to" or "how do I" question about SDK usage, API calls, search/insert/query operations, integration patterns, or troubleshooting code errors. For schema design questions (collections, fields, indexes, partition keys, BM25), route to schema even if phrased as "how do I". When in doubt between general and code, choose code.
 
 Topics (select 1-2 most relevant):
 - schema-design: Collection schema, field types, indexes, BM25 setup, limits
@@ -238,6 +286,23 @@ async function routeIntentV2(
   sessionId?: string,
 ): Promise<{agent: AgentType; topics: TopicName[]; reasoning: string}> {
   const stickyAgent = sessionId ? sessionRoutes.get(sessionId) : undefined;
+
+  // Fast-path 1: obvious follow-ups stay with the sticky agent
+  // Use the raw last message (not the enriched ragQuery) so short replies like "ok" match.
+  const rawLatestMessage = recentMessages[recentMessages.length - 1]?.content || '';
+  if (stickyAgent && isObviousFollowUp(rawLatestMessage)) {
+    console.log(`[Router] Follow-up fast-path → ${stickyAgent}`);
+    return {agent: stickyAgent, topics: [], reasoning: 'Follow-up fast-path'};
+  }
+
+  // Fast-path 2: cross-session route cache
+  const cached = getCachedRoute(latestMessage, stickyAgent);
+  if (cached) {
+    console.log(`[Router] Cache hit for: ${latestMessage.slice(0, 60)}`);
+    if (sessionId) sessionRoutes.set(sessionId, cached.agent);
+    return cached;
+  }
+
   const resolvedModel = await resolveModel('router');
   const modelInstance = createModelInstance(resolvedModel);
 
@@ -265,9 +330,11 @@ async function routeIntentV2(
     if (isValidAgent(agentType)) {
       await persistRouterUsage(result.usage, resolvedModel.model, sessionId);
       if (sessionId) sessionRoutes.set(sessionId, agentType);
+      const topics = (result.object.topics || []).filter(isValidTopic);
+      setCachedRoute(latestMessage, agentType, topics, result.object.reasoning, stickyAgent);
       return {
         agent: agentType,
-        topics: (result.object.topics || []).filter(isValidTopic),
+        topics,
         reasoning: result.object.reasoning,
       };
     }
@@ -297,9 +364,11 @@ async function routeIntentV2(
       if (isValidAgent(agentType)) {
         await persistRouterUsage(result.usage, resolvedModel.model, sessionId);
         if (sessionId) sessionRoutes.set(sessionId, agentType);
+        const topics = ((input.topics || []) as string[]).filter(isValidTopic);
+        setCachedRoute(latestMessage, agentType, topics, String(input.reasoning || ''), stickyAgent);
         return {
           agent: agentType,
-          topics: ((input.topics || []) as string[]).filter(isValidTopic),
+          topics,
           reasoning: String(input.reasoning || ''),
         };
       }
@@ -326,9 +395,11 @@ async function routeIntentV2(
     if (parsed && isValidAgent(parsed.agent)) {
       await persistRouterUsage(result.usage, resolvedModel.model, sessionId);
       if (sessionId) sessionRoutes.set(sessionId, parsed.agent);
+      const topics = (parsed.topics || []).filter(isValidTopic);
+      setCachedRoute(latestMessage, parsed.agent, topics, parsed.reasoning || '', stickyAgent);
       return {
         agent: parsed.agent,
-        topics: (parsed.topics || []).filter(isValidTopic),
+        topics,
         reasoning: parsed.reasoning || '',
       };
     }
@@ -434,4 +505,8 @@ export async function routeIntent(
 
 export function clearSessionRoute(sessionId: string): void {
   sessionRoutes.delete(sessionId);
+}
+
+export function clearRouteCache(): void {
+  routeCache.clear();
 }

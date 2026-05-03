@@ -486,16 +486,23 @@ app.post('/chat', async c => {
         }
         incCounter('chat_proxy_cache_misses_total', {type: 'response'});
 
-        // Compute query embedding ONCE — reused for semantic cache, hybrid search, and cache write
-        let queryEmbedding: number[] | null = null;
-        try {
-          queryEmbedding = await computeEmbedding(ragQuery);
-        } catch (err) {
-          console.warn('[Embedding] Failed to compute query embedding:', (err as Error).message);
-        }
+        // Kick off embedding and routing concurrently. They are independent until
+        // after the semantic cache check; parallelizing removes the serial wait
+        // that was the dominant first-token bottleneck.
+        const tEmbedStart = Date.now();
+        const embeddingPromise = computeEmbedding(ragQuery).catch((err: Error) => {
+          console.warn('[Embedding] Failed to compute query embedding:', err.message);
+          return null;
+        });
+
+        const routePromise = routeIntent(ragQuery, body.messages, session.id).catch(() =>
+          ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}),
+        );
 
         // Check semantic cache for similar queries across sessions
         let semanticHit: SemanticCacheHit | null = null;
+        const queryEmbedding = await embeddingPromise;
+        const tEmbed = Date.now() - tEmbedStart;
         if (queryEmbedding) {
           try {
             semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding);
@@ -527,13 +534,11 @@ app.post('/chat', async c => {
         let currentModel = 'unknown';
 
         try {
-          // Route intent (agentic mode — no upfront RAG, LLM searches via tools)
           setActiveSectionFilter(sectionFilter);
           setQueryEmbedding(queryEmbedding);
           console.log(`[Section] pageUrl=${body.pageUrl} filter=${sectionFilter || 'none'}`);
           const tRouteStart = Date.now();
-          const routeResult = await routeIntent(ragQuery, body.messages, session.id)
-            .catch(() => ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}));
+          const routeResult = await routePromise;
           const tRoute = Date.now() - tRouteStart;
 
           const agentConfig = getAgent(routeResult.agent as any);
@@ -848,7 +853,7 @@ app.post('/chat', async c => {
           }, userMeta, source);
 
           const tGround = Date.now() - tGroundStart;
-          console.log(`[timing] route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${Date.now() - tChatStart}ms tools=${toolsCalled.length} sources=${allSources.length}`);
+          console.log(`[timing] embed=${tEmbed}ms route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${Date.now() - tChatStart}ms tools=${toolsCalled.length} sources=${allSources.length}`);
 
           // Save conversation (fire-and-forget)
           saveConversation({
