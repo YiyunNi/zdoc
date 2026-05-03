@@ -259,8 +259,10 @@ adminApp.get('/api/health', async c => {
   }
 
   let resolvedChat: ResolvedModel | null = null;
+  let resolvedEmbed: ResolvedModel | null = null;
   if (dbOk) {
     try { resolvedChat = await resolveModel('chat'); } catch { /* ignore */ }
+    try { resolvedEmbed = await resolveModel('embedding'); } catch { /* ignore */ }
   }
 
   const llmReady = llmHealth.lastSuccessAt !== null &&
@@ -282,6 +284,12 @@ adminApp.get('/api/health', async c => {
       lastError: llmHealth.lastError,
       totalCalls: llmHealth.totalCalls,
       totalErrors: llmHealth.totalErrors,
+    },
+    embedding: {
+      provider: resolvedProviderDisplay(resolvedEmbed ?? { source: 'env', provider: 'openai-compatible', model: '' }),
+      model: resolvedEmbed?.model || process.env.SEMANTIC_EMBEDDING_MODEL || '',
+      source: resolvedEmbed?.source || 'env',
+      dimensions: resolvedEmbed?.dimensions || null,
     },
     index: {
       ...index,
