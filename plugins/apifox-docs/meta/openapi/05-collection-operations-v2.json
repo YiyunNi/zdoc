@@ -2298,18 +2298,21 @@
     },
     "/v2/vectordb/jobs/external_collection/refresh": {
       "post": {
-        "summary": "Refreshes an external collection",
+        "summary": "Refresh External Collection",
         "deprecated": false,
-        "description": "This operation triggers a refresh job for an external collection.",
+        "description": "This operation triggers an asynchronous data refresh job for an existing external collection, re-syncing the collection's data from its underlying external source. `externalSource` and `externalSpec` must be both provided or both omitted; when both are omitted, the collection's previously persisted source and spec are reused.",
         "x-i18n": {
           "zh-CN": {
-            "summary": "刷新外部集合",
-            "description": "本接口可为外部集合触发刷新任务。"
+            "summary": "刷新外部 Collection",
+            "description": "本接口为已存在的外部 Collection 触发一次异步刷新任务，从底层外部数据源重新同步数据。`externalSource` 与 `externalSpec` 必须同时提供或同时省略；同时省略时，将复用此前已持久化的 source 与 spec 配置。"
           }
         },
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -2320,16 +2323,42 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RefreshExternalCollectionRequest"
+              },
+              "examples": {
+                "1": {
+                  "summary": "Refresh from an S3 source",
+                  "x-include-target": [
+                    "milvus"
+                  ],
+                  "value": {
+                    "dbName": "default",
+                    "collectionName": "ext_books",
+                    "externalSource": "{\"type\":\"s3\",\"path\":\"s3://my-bucket/books/\"}",
+                    "externalSpec": "{\"format\":\"parquet\",\"vector_field\":\"embedding\"}"
+                  }
+                },
+                "2": {
+                  "summary": "Refresh from a Zilliz Cloud volume",
+                  "x-include-target": [
+                    "zilliz"
+                  ],
+                  "value": {
+                    "dbName": "default",
+                    "collectionName": "ext_books",
+                    "externalSource": "{\"type\":\"volume\",\"path\":\"volume://my-volume/books\"}",
+                    "externalSpec": "{\"format\":\"parquet\",\"vector_field\":\"embedding\"}"
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Returns the job ID.",
+            "description": "Returns the ID of the newly created refresh job.",
             "x-i18n": {
               "zh-CN": {
-                "description": "返回任务 ID。"
+                "description": "返回新创建的刷新任务的 ID。"
               }
             },
             "content": {
@@ -2337,12 +2366,110 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "x-tab-label": "success",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "Response code.",
+                          "example": 0,
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应码。"
+                            }
+                          }
+                        },
+                        "data": {
+                          "type": "object",
+                          "description": "Response payload carrying the new refresh job's identifier.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应负载，包含新建刷新任务的 ID。"
+                            }
+                          },
+                          "properties": {
+                            "jobId": {
+                              "type": "integer",
+                              "format": "int64",
+                              "description": "ID of the newly created refresh job. Use this value to query progress via the describe endpoint.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "新建刷新任务的 ID。请使用该值通过 describe 接口查询任务进度。"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "x-tab-label": "failure",
+                      "description": "Returns an error message.",
+                      "x-i18n": {
+                        "zh-CN": {
+                          "description": "返回错误消息。"
+                        }
+                      },
+                      "x-i18n-langs": [
+                        "zh-CN"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "Response code.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应码。"
+                            }
+                          }
+                        },
+                        "message": {
+                          "type": "string",
+                          "description": "Error message.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "错误描述。"
+                            }
+                          }
+                        }
+                      }
                     }
                   ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "success",
+                    "x-target-response": "OPTION 1",
+                    "value": {
+                      "code": 0,
+                      "data": {
+                        "jobId": 449503829274509312
+                      }
+                    }
+                  },
+                  "2": {
+                    "summary": "failure",
+                    "x-target-response": "OPTION 2",
+                    "x-include-target": [
+                      "milvus"
+                    ],
+                    "value": {
+                      "code": 1800,
+                      "message": "User hasn't authenticated"
+                    }
+                  },
+                  "3": {
+                    "summary": "failure",
+                    "x-target-response": "OPTION 2",
+                    "x-include-target": [
+                      "zilliz"
+                    ],
+                    "value": {
+                      "code": 21119,
+                      "message": "The apikey is illegal."
+                    }
+                  }
                 }
               }
             }
@@ -2353,18 +2480,21 @@
     },
     "/v2/vectordb/jobs/external_collection/describe": {
       "post": {
-        "summary": "Describes an external collection refresh job",
+        "summary": "Describe External Collection Refresh Job",
         "deprecated": false,
-        "description": "This operation returns the details of a specific external collection refresh job.",
+        "description": "This operation returns the current state and progress of a single external-collection refresh job, identified by `jobId`.",
         "x-i18n": {
           "zh-CN": {
-            "summary": "查看外部集合刷新任务详情",
-            "description": "本接口可返回指定外部集合刷新任务的详细信息。"
+            "summary": "查看外部 Collection 刷新任务",
+            "description": "本接口根据 `jobId` 返回单个外部 Collection 刷新任务的当前状态和进度信息。"
           }
         },
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -2375,16 +2505,19 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RefreshExternalCollectionProgressRequest"
+              },
+              "example": {
+                "jobId": 449503829274509312
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Returns the job details.",
+            "description": "Returns the state and progress of the specified refresh job.",
             "x-i18n": {
               "zh-CN": {
-                "description": "返回任务详情。"
+                "description": "返回指定刷新任务的状态和进度信息。"
               }
             },
             "content": {
@@ -2392,12 +2525,209 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "x-tab-label": "success",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "Response code.",
+                          "example": 0,
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应码。"
+                            }
+                          }
+                        },
+                        "data": {
+                          "type": "object",
+                          "description": "Response payload describing the refresh job.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应负载，描述该刷新任务的详情。"
+                            }
+                          },
+                          "properties": {
+                            "jobId": {
+                              "type": "integer",
+                              "format": "int64",
+                              "description": "ID of the refresh job.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "刷新任务的 ID。"
+                                }
+                              }
+                            },
+                            "collectionName": {
+                              "type": "string",
+                              "description": "Name of the external collection associated with this refresh job.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "该刷新任务关联的外部 Collection 名称。"
+                                }
+                              }
+                            },
+                            "state": {
+                              "type": "string",
+                              "description": "Current state of the refresh job.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "刷新任务的当前状态。"
+                                }
+                              },
+                              "enum": [
+                                "RefreshPending",
+                                "RefreshInProgress",
+                                "RefreshCompleted",
+                                "RefreshFailed"
+                              ]
+                            },
+                            "progress": {
+                              "type": "integer",
+                              "description": "Refresh progress in percentage (0-100).",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "刷新进度百分比(0-100)。"
+                                }
+                              }
+                            },
+                            "externalSource": {
+                              "type": "string",
+                              "description": "JSON-encoded source configuration this job is refreshing from. <include target=\"milvus\">An object url in an S3 bucket applies.</include><include target=\"zilliz\">An object url in a Zilliz Cloud volume applies.</include>",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "本任务所使用的外部数据源 JSON 配置。<include target=\"milvus\">S3 存储桶中的对象 URL 适用。</include><include target=\"zilliz\">Zilliz Cloud Volume 中的对象 URL 适用。</include>"
+                                }
+                              }
+                            },
+                            "startTime": {
+                              "type": "integer",
+                              "format": "int64",
+                              "description": "Unix timestamp at which the refresh job started.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "刷新任务的开始时间(Unix 时间戳)。"
+                                }
+                              }
+                            },
+                            "endTime": {
+                              "type": "integer",
+                              "format": "int64",
+                              "description": "Unix timestamp at which the refresh job ended; `0` when the job is still running.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "刷新任务的结束时间(Unix 时间戳)；任务仍在进行中时为 `0`。"
+                                }
+                              }
+                            },
+                            "reason": {
+                              "type": "string",
+                              "description": "Failure reason. Present only when `state` is `RefreshFailed`.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "失败原因。仅当 `state` 为 `RefreshFailed` 时返回。"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "x-tab-label": "failure",
+                      "description": "Returns an error message.",
+                      "x-i18n": {
+                        "zh-CN": {
+                          "description": "返回错误消息。"
+                        }
+                      },
+                      "x-i18n-langs": [
+                        "zh-CN"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "Response code.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应码。"
+                            }
+                          }
+                        },
+                        "message": {
+                          "type": "string",
+                          "description": "Error message.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "错误描述。"
+                            }
+                          }
+                        }
+                      }
                     }
                   ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "success",
+                    "x-target-response": "OPTION 1",
+                    "x-include-target": [
+                      "milvus"
+                    ],
+                    "value": {
+                      "code": 0,
+                      "data": {
+                        "jobId": 449503829274509312,
+                        "collectionName": "ext_books",
+                        "state": "RefreshInProgress",
+                        "progress": 42,
+                        "externalSource": "{\"type\":\"s3\",\"path\":\"s3://my-bucket/books/\"}",
+                        "startTime": 1712832000000,
+                        "endTime": 0
+                      }
+                    }
+                  },
+                  "2": {
+                    "summary": "success",
+                    "x-target-response": "OPTION 1",
+                    "x-include-target": [
+                      "zilliz"
+                    ],
+                    "value": {
+                      "code": 0,
+                      "data": {
+                        "jobId": 449503829274509312,
+                        "collectionName": "ext_books",
+                        "state": "RefreshInProgress",
+                        "progress": 42,
+                        "externalSource": "{\"type\":\"volume\",\"path\":\"volume://my-volume/books\"}",
+                        "startTime": 1712832000000,
+                        "endTime": 0
+                      }
+                    }
+                  },
+                  "3": {
+                    "summary": "failure",
+                    "x-target-response": "OPTION 2",
+                    "x-include-target": [
+                      "milvus"
+                    ],
+                    "value": {
+                      "code": 1800,
+                      "message": "User hasn't authenticated"
+                    }
+                  },
+                  "4": {
+                    "summary": "failure",
+                    "x-target-response": "OPTION 2",
+                    "x-include-target": [
+                      "zilliz"
+                    ],
+                    "value": {
+                      "code": 21119,
+                      "message": "The apikey is illegal."
+                    }
+                  }
                 }
               }
             }
@@ -2408,18 +2738,21 @@
     },
     "/v2/vectordb/jobs/external_collection/list": {
       "post": {
-        "summary": "Lists external collection refresh jobs",
+        "summary": "List External Collection Refresh Jobs",
         "deprecated": false,
-        "description": "This operation lists all external collection refresh jobs.",
+        "description": "This operation lists external-collection refresh jobs. When `collectionName` is omitted or empty, returns refresh jobs across all external collections in the target database.",
         "x-i18n": {
           "zh-CN": {
-            "summary": "查看外部集合刷新任务列表",
-            "description": "本接口可列出所有外部集合刷新任务。"
+            "summary": "列出外部 Collection 刷新任务",
+            "description": "本接口列出外部 Collection 的刷新任务。当 `collectionName` 为空或省略时，返回目标数据库下所有外部 Collection 的刷新任务。"
           }
         },
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -2433,33 +2766,37 @@
                 "properties": {
                   "dbName": {
                     "type": "string",
-                    "description": "The name of the database.",
+                    "description": "Name of the database to list refresh jobs from.",
                     "x-i18n": {
                       "zh-CN": {
-                        "description": "数据库名称。"
+                        "description": "用于列出刷新任务的数据库名称。"
                       }
                     }
                   },
                   "collectionName": {
                     "type": "string",
-                    "description": "The name of the collection.",
+                    "description": "Name of the external collection. Leave empty or omit to list refresh jobs for all external collections in the database.",
                     "x-i18n": {
                       "zh-CN": {
-                        "description": "Collection 名称。"
+                        "description": "外部 Collection 名称。留空或省略时，将返回数据库下所有外部 Collection 的刷新任务。"
                       }
                     }
                   }
                 }
+              },
+              "example": {
+                "dbName": "default",
+                "collectionName": "ext_books"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Returns a list of job records.",
+            "description": "Returns the list of refresh jobs.",
             "x-i18n": {
               "zh-CN": {
-                "description": "返回任务记录列表。"
+                "description": "返回刷新任务列表。"
               }
             },
             "content": {
@@ -2467,12 +2804,255 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "x-tab-label": "success",
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "Response code.",
+                          "example": 0,
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应码。"
+                            }
+                          }
+                        },
+                        "data": {
+                          "type": "object",
+                          "description": "Response payload that wraps the list of refresh jobs.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应负载，包含刷新任务列表。"
+                            }
+                          },
+                          "properties": {
+                            "records": {
+                              "type": "array",
+                              "description": "List of refresh jobs in detail.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "刷新任务详情列表。"
+                                }
+                              },
+                              "items": {
+                                "type": "object",
+                                "description": "A refresh job in detail.",
+                                "x-i18n": {
+                                  "zh-CN": {
+                                    "description": "单个刷新任务的详细信息。"
+                                  }
+                                },
+                                "properties": {
+                                  "jobId": {
+                                    "type": "integer",
+                                    "format": "int64",
+                                    "description": "ID of the refresh job.",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "刷新任务的 ID。"
+                                      }
+                                    }
+                                  },
+                                  "collectionName": {
+                                    "type": "string",
+                                    "description": "Name of the external collection associated with this refresh job.",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "该刷新任务关联的外部 Collection 名称。"
+                                      }
+                                    }
+                                  },
+                                  "state": {
+                                    "type": "string",
+                                    "description": "Current state of the refresh job.",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "刷新任务的当前状态。"
+                                      }
+                                    },
+                                    "enum": [
+                                      "RefreshPending",
+                                      "RefreshInProgress",
+                                      "RefreshCompleted",
+                                      "RefreshFailed"
+                                    ]
+                                  },
+                                  "progress": {
+                                    "type": "integer",
+                                    "description": "Refresh progress in percentage (0-100).",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "刷新进度百分比(0-100)。"
+                                      }
+                                    }
+                                  },
+                                  "externalSource": {
+                                    "type": "string",
+                                    "description": "JSON-encoded source configuration this job is refreshing from. <include target=\"milvus\">An object url in an S3 bucket applies.</include><include target=\"zilliz\">An object url in a Zilliz Cloud volume applies.</include>",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "本任务所使用的外部数据源 JSON 配置。<include target=\"milvus\">S3 存储桶中的对象 URL 适用。</include><include target=\"zilliz\">Zilliz Cloud Volume 中的对象 URL 适用。</include>"
+                                      }
+                                    }
+                                  },
+                                  "startTime": {
+                                    "type": "integer",
+                                    "format": "int64",
+                                    "description": "Unix timestamp at which the refresh job started.",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "刷新任务的开始时间(Unix 时间戳)。"
+                                      }
+                                    }
+                                  },
+                                  "endTime": {
+                                    "type": "integer",
+                                    "format": "int64",
+                                    "description": "Unix timestamp at which the refresh job ended; `0` when the job is still running.",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "刷新任务的结束时间(Unix 时间戳)；任务仍在进行中时为 `0`。"
+                                      }
+                                    }
+                                  },
+                                  "reason": {
+                                    "type": "string",
+                                    "description": "Failure reason. Present only when `state` is `RefreshFailed`.",
+                                    "x-i18n": {
+                                      "zh-CN": {
+                                        "description": "失败原因。仅当 `state` 为 `RefreshFailed` 时返回。"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "x-tab-label": "failure",
+                      "description": "Returns an error message.",
+                      "x-i18n": {
+                        "zh-CN": {
+                          "description": "返回错误消息。"
+                        }
+                      },
+                      "x-i18n-langs": [
+                        "zh-CN"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "description": "Response code.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "响应码。"
+                            }
+                          }
+                        },
+                        "message": {
+                          "type": "string",
+                          "description": "Error message.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "错误描述。"
+                            }
+                          }
+                        }
+                      }
                     }
                   ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "success",
+                    "x-target-response": "OPTION 1",
+                    "x-include-target": [
+                      "milvus"
+                    ],
+                    "value": {
+                      "code": 0,
+                      "data": {
+                        "records": [
+                          {
+                            "jobId": 449503829274509312,
+                            "collectionName": "ext_books",
+                            "state": "RefreshCompleted",
+                            "progress": 100,
+                            "externalSource": "{\"type\":\"s3\",\"path\":\"s3://my-bucket/books/\"}",
+                            "startTime": 1712832000000,
+                            "endTime": 1712832600000
+                          },
+                          {
+                            "jobId": 449503829274509313,
+                            "collectionName": "ext_movies",
+                            "state": "RefreshInProgress",
+                            "progress": 42,
+                            "externalSource": "{\"type\":\"s3\",\"path\":\"s3://my-bucket/movies/\"}",
+                            "startTime": 1712833000000,
+                            "endTime": 0
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "2": {
+                    "summary": "success",
+                    "x-target-response": "OPTION 1",
+                    "x-include-target": [
+                      "zilliz"
+                    ],
+                    "value": {
+                      "code": 0,
+                      "data": {
+                        "records": [
+                          {
+                            "jobId": 449503829274509312,
+                            "collectionName": "ext_books",
+                            "state": "RefreshCompleted",
+                            "progress": 100,
+                            "externalSource": "{\"type\":\"volume\",\"path\":\"volume://my-volume/books\"}",
+                            "startTime": 1712832000000,
+                            "endTime": 1712832600000
+                          },
+                          {
+                            "jobId": 449503829274509313,
+                            "collectionName": "ext_movies",
+                            "state": "RefreshInProgress",
+                            "progress": 42,
+                            "externalSource": "{\"type\":\"volume\",\"path\":\"volume://my-volume/movies\"}",
+                            "startTime": 1712833000000,
+                            "endTime": 0
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "3": {
+                    "summary": "failure",
+                    "x-target-response": "OPTION 2",
+                    "x-include-target": [
+                      "milvus"
+                    ],
+                    "value": {
+                      "code": 1800,
+                      "message": "User hasn't authenticated"
+                    }
+                  },
+                  "4": {
+                    "summary": "failure",
+                    "x-target-response": "OPTION 2",
+                    "x-include-target": [
+                      "zilliz"
+                    ],
+                    "value": {
+                      "code": 21119,
+                      "message": "The apikey is illegal."
+                    }
+                  }
                 }
               }
             }
@@ -2483,6 +3063,36 @@
     }
   },
   "components": {
+    "x-base-urls": {
+      "ZillizVectorV2": [
+        {
+          "key": "cluster",
+          "label": "Cluster Endpoint",
+          "url": "https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530",
+          "prompt": "Use the cluster endpoint if you are using serving clusters.\n<ul><li><p><b>Free & Serverless</b></p><p><code>https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com</code></p></li><li><p><b>Dedicated</b></p><p><code>https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530</code></p></li></ul>",
+          "x-i18n": {
+            "zh-CN": {
+              "label": "集群端点",
+              "prompt": "如果您使用的是服务集群，请使用集群端点。\n<ul><li><p><b>Free 与 Serverless 版</b></p><p><code>https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com</code></p></li><li><p><b>Dedicated 版</b></p><p><code>https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530</code></p></li></ul>"
+            }
+          },
+          "shell": "export CLUSTER_ENDPOINT=\"https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530\""
+        },
+        {
+          "key": "on-demand-compute",
+          "label": "On-Demand Compute Endpoint",
+          "url": "https://{project-id}.{region}.api.zillizcloud.com",
+          "prompt": "<p>Use the on-demand compute endpoint if you are using on-demand clusters.</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>",
+          "x-i18n": {
+            "zh-CN": {
+              "label": "按需计算端点",
+              "prompt": "<p>如果您使用的是按需集群，请使用按需计算端点。</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>"
+            }
+          },
+          "shell": "export ON_DEMAND_COMPUTE_ENDPOINT=\"https://{project-id}.{region}.api.zillizcloud.com\""
+        }
+      ]
+    },    
     "securitySchemes": {
       "bearer": {
         "type": "http",
@@ -4331,19 +4941,19 @@
           },
           "externalSource": {
             "type": "string",
-            "description": "The external data source identifier.",
+            "description": "JSON-encoded specification of the external data source. When provided, `externalSpec` must also be provided. When omitted, the collection's persisted source is reused. <include target=\"milvus\">An object url in an S3 bucket applies.</include><include target=\"zilliz\">An object url in a Zilliz Cloud volume applies.</include>",
             "x-i18n": {
               "zh-CN": {
-                "description": "外部数据源标识符。"
+                "description": "外部数据源的 JSON 配置。提供该字段时必须同时提供 `externalSpec`；省略时将复用 Collection 此前已持久化的 source 配置。<include target=\"milvus\">S3 存储桶中的对象 URL 适用。</include><include target=\"zilliz\">Zilliz Cloud Volume 中的对象 URL 适用。</include>"
               }
             }
           },
           "externalSpec": {
             "type": "string",
-            "description": "A JSON-encoded string describing the connection parameters for the external source.",
+            "description": "JSON-encoded specification describing how the external data maps to the collection. When provided, `externalSource` must also be provided. When omitted, the collection's persisted spec is reused.",
             "x-i18n": {
               "zh-CN": {
-                "description": "描述外部数据源连接参数的 JSON 字符串。"
+                "description": "描述外部数据与 Collection 字段映射关系的 JSON 配置。提供该字段时必须同时提供 `externalSource`；省略时将复用 Collection 此前已持久化的 spec 配置。"
               }
             }
           }
@@ -4357,10 +4967,11 @@
         "properties": {
           "jobId": {
             "type": "integer",
-            "description": "The ID of the external collection refresh job.",
+            "format": "int64",
+            "description": "ID of the refresh job to describe. Obtain this value from the response of the refresh endpoint.",
             "x-i18n": {
               "zh-CN": {
-                "description": "外部集合刷新任务 ID。"
+                "description": "要查询的刷新任务 ID。该值可通过 refresh 接口的返回结果获取。"
               }
             }
           }
