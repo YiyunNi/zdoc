@@ -1,26 +1,27 @@
 ---
 title: "describe | Cloud"
 slug: /cli/cli/Index-describe
+sidebar_key: cli/Index-describe
 sidebar_label: "describe"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets details of an index. | Cloud"
 type: docx
-token: AUsKdhNcZoJ116xqQo9cVQAanCb
+token: T0VYdnnlIo0VwAxLaBjcryM1n7b
 sidebar_position: 2
 keywords: 
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud
   - describe
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

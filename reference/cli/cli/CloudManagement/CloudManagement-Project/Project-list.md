@@ -1,26 +1,27 @@
 ---
 title: "list | Cloud"
 slug: /cli/cli/Project-list
+sidebar_key: cli/Project-list
 sidebar_label: "list"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all projects. | Cloud"
 type: docx
-token: AMQEd3tO4o7CSSxZ51NcLA2AnVc
+token: KZ5gdkIy0ojiWixSU0dc6C5KnEd
 sidebar_position: 3
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud
   - list
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

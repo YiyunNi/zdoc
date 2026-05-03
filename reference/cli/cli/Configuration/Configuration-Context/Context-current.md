@@ -1,26 +1,27 @@
 ---
 title: "current | Cloud"
 slug: /cli/cli/Context-current
+sidebar_key: cli/Context-current
 sidebar_label: "current"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation shows the current context. | Cloud"
 type: docx
-token: TwNSdFMsaoQPVYxBYx8cnGpinng
-sidebar_position: 1
+token: E1lydJB5BorHaExspUKcwQ2ande
+sidebar_position: 2
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
   - zilliz
   - zilliz cloud
   - cloud
   - current
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

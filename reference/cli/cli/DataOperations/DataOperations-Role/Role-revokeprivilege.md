@@ -1,26 +1,27 @@
 ---
 title: "revoke-privilege | Cloud"
 slug: /cli/cli/Role-revokeprivilege
+sidebar_key: cli/Role-revokeprivilege
 sidebar_label: "revoke-privilege"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation revokes a privilege from a role. | Cloud"
 type: docx
-token: PT02de9SeooyPYxZW2ucueP1nAd
+token: YXtHdG865oGg7IxwoZRcIJkQn8e
 sidebar_position: 6
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - AI Hallucination
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
   - zilliz
   - zilliz cloud
   - cloud
   - revoke-privilege
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

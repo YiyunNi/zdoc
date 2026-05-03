@@ -1,26 +1,27 @@
 ---
 title: "describe | Cloud"
 slug: /cli/cli/Alias-describe
+sidebar_key: cli/Alias-describe
 sidebar_label: "describe"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets details of an alias. | Cloud"
 type: docx
-token: Qnx9d72SIo9CzrxvmcFcMRconNu
+token: QsPodYWJfoSCmAxbWatc6dw0nCp
 sidebar_position: 3
 keywords: 
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud
   - describe
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

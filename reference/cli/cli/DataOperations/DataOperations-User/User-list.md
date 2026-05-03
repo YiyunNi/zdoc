@@ -1,26 +1,27 @@
 ---
 title: "list | Cloud"
 slug: /cli/cli/User-list
+sidebar_key: cli/User-list
 sidebar_label: "list"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all database users. | Cloud"
 type: docx
-token: HfpOdcNw3ovpRgxrIQAcFW0Jnlp
+token: RhYcd912ioVJNOxjy9kc3rnbnzK
 sidebar_position: 5
 keywords: 
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud
   - list
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

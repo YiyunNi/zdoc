@@ -1,26 +1,27 @@
 ---
 title: "switch | Cloud"
 slug: /cli/cli/Auth-switch
+sidebar_key: cli/Auth-switch
 sidebar_label: "switch"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation switches to a different organization. | Cloud"
 type: docx
-token: EQcvdvxQWoicwnxrGGpcThwYnKd
+token: WVn4dXc9FocqhRxmuwlcFcTynBg
 sidebar_position: 4
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - switch
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---
@@ -31,6 +32,8 @@ import Admonition from '@theme/Admonition';
 # switch
 
 This operation switches to a different organization.
+
+**Note:** `zilliz auth switch` is a deprecated alias kept for backwards compatibility. Use the top-level `zilliz switch` command in new scripts.
 
 ## Synopsis\{#synopsis}
 

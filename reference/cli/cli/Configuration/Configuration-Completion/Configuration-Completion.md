@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to command completion shell plugin. | Cloud"
 type: folder
-token: ZisQffFbFlu2nsdTGU0cCJ7TnCd
+token: YMWHfEBNDlJSrddYr90cDBwenTc
 sidebar_position: 3
 sidebar_label: "Completion"
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud
   - Completion
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

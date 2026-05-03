@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to collection management. | Cloud"
 type: folder
-token: OGWXfrqcVlYSC9da251c3WT9nXe
+token: VXxdfhu8ZlORxZdXc1gcFwgtnb7
 sidebar_position: 2
 sidebar_label: "Collection"
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
   - zilliz
   - zilliz cloud
   - cloud
   - Collection
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

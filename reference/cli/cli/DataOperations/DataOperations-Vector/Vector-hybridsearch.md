@@ -1,26 +1,27 @@
 ---
 title: "hybrid-search | Cloud"
 slug: /cli/cli/Vector-hybridsearch
+sidebar_key: cli/Vector-hybridsearch
 sidebar_label: "hybrid-search"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation performs hybrid search with multiple vectors and reranking. | Cloud"
 type: docx
-token: YVendfgHUotdoxxNTkcc8XUMnxf
+token: EiCXdUuf2oTB3HxiL20clnSPn8g
 sidebar_position: 3
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud
   - hybrid-search
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -1,26 +1,27 @@
 ---
 title: "create | Cloud"
 slug: /cli/cli/Partition-create
+sidebar_key: cli/Partition-create
 sidebar_label: "create"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a partition in a collection. | Cloud"
 type: docx
-token: UxAvdPDetoIl4mx5QB8cpeLynbh
+token: JBRhd3cb5owndqxODOxcd08InRe
 sidebar_position: 1
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud
   - create
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

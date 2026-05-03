@@ -1,26 +1,27 @@
 ---
 title: "enable | Cloud"
 slug: /cli/cli/Alert-enable
+sidebar_key: cli/Alert-enable
 sidebar_label: "enable"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation enables an alert rule. | Cloud"
 type: docx
-token: G8Xtd9rypofGjax3HUbcWUNPn3g
+token: MLrJdT9TdojvcJxhauic8s9anBf
 sidebar_position: 4
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud
   - enable
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

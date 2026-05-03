@@ -1,26 +1,27 @@
 ---
 title: "insert | Cloud"
 slug: /cli/cli/Vector-insert
+sidebar_key: cli/Vector-insert
 sidebar_label: "insert"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation inserts entities into a collection. | Cloud"
 type: docx
-token: O4dddYwASo2Rx9xXi3Ccn9dcnSc
+token: IyKzdBU2zoXcNUxvmhvcJCISnJe
 sidebar_position: 4
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud
   - insert
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

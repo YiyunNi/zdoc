@@ -1,26 +1,27 @@
 ---
 title: "bind-card | Cloud"
 slug: /cli/cli/Billing-bindcard
+sidebar_key: cli/Billing-bindcard
 sidebar_label: "bind-card"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation binds a credit card to your account. | Cloud"
 type: docx
-token: SFuedsjqToFJMxxxGfmc3JeXnOh
+token: G453dm4ZWo1e0Ux55b3czXwnnId
 sidebar_position: 1
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud
   - bind-card
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

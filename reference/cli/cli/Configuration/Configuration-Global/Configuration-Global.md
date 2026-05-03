@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to system management. | Cloud"
 type: folder
-token: HQ85fH0pflAopvdTHUWc1hhHnzc
+token: OFtRfQzb0luqK8d7zV1cskGKnYd
 sidebar_position: 6
 sidebar_label: "Global"
 keywords: 
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - Global
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

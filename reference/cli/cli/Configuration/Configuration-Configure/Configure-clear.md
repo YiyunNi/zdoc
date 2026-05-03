@@ -1,26 +1,27 @@
 ---
 title: "clear | Cloud"
 slug: /cli/cli/Configure-clear
+sidebar_key: cli/Configure-clear
 sidebar_label: "clear"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation clears all stored credentials. | Cloud"
 type: docx
-token: Tw8udtdLXoGFYpxXGcZcIGXennh
+token: KYQYdyaoToUGCjxVUVTc16fqn1e
 sidebar_position: 1
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud
   - clear
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -1,26 +1,27 @@
 ---
 title: "release | Cloud"
 slug: /cli/cli/Partition-release
+sidebar_key: cli/Partition-release
 sidebar_label: "release"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation releases partitions from memory. | Cloud"
 type: docx
-token: Oy2NdZ5FroKJOPxzFyNcL3SDnyf
+token: XpaudNsR2o3MRoxTbAMcj4tEn1w
 sidebar_position: 7
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - release
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

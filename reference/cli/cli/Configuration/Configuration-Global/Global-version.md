@@ -1,26 +1,27 @@
 ---
 title: "version | Cloud"
 slug: /cli/cli/Global-version
+sidebar_key: cli/Global-version
 sidebar_label: "version"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation shows the version of the installed Zilliz CLI. | Cloud"
 type: docx
-token: XpUSdubUjobmtaxISJUcVVlpnug
+token: MzJHdc3iSoGlKsx4D6TcoY5anOf
 sidebar_position: 1
 keywords: 
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud
   - version
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

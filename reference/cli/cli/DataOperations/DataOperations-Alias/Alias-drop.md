@@ -1,26 +1,27 @@
 ---
 title: "drop | Cloud"
 slug: /cli/cli/Alias-drop
+sidebar_key: cli/Alias-drop
 sidebar_label: "drop"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops an alias. | Cloud"
 type: docx
-token: KjCMddr4IoRPU6xGhe6c4v7qnTd
+token: CucPdYRmsofWt8xkVj3cK7Vynjg
 sidebar_position: 4
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
   - drop
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

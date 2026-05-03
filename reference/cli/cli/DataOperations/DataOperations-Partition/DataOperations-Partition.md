@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to partition management. | Cloud"
 type: folder
-token: Vh1yfsLKOliEvPdk4hzc9EdSncj
+token: Bzxxffu0ClU5hkdrkmlchrXenrb
 sidebar_position: 5
 sidebar_label: "Partition"
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud
   - Partition
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

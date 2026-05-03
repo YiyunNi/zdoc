@@ -1,26 +1,27 @@
 ---
 title: "list | Cloud"
 slug: /cli/cli/Backup-list
+sidebar_key: cli/Backup-list
 sidebar_label: "list"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all backups. | Cloud"
 type: docx
-token: IO8UdHyHmotVsLx6D18cRBpYn8y
+token: VHhWdygYaoyAmQxRpP6cvmIYndc
 sidebar_position: 6
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud
   - list
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

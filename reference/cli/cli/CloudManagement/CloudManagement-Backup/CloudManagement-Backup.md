@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to backup and restore. | Cloud"
 type: folder
-token: Q8jzfSMtAlSUEYd8Ilfc2NP2nQd
+token: QTM7fqREelEFXhdTaMqc18IxnVb
 sidebar_position: 1
 sidebar_label: "Backup"
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
   - Backup
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

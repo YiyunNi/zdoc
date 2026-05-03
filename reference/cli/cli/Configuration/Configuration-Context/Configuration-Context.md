@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to the management of Zilliz CLI context. | Cloud"
 type: folder
-token: XwnjfvziYljpWjdb1IacbEnVnhb
+token: FewAfDseeli62CdqFcBc7Lh2ncD
 sidebar_position: 5
 sidebar_label: "Context"
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud
   - Context
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

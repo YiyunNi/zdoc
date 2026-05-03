@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to authentication. | Cloud"
 type: folder
-token: PXh2fHhrulidp6dvqn2cORWSnwe
+token: CcG3fA4kslvDAzdAfK6cYC3unvb
 sidebar_position: 2
 sidebar_label: "Auth"
 keywords: 
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - Auth
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

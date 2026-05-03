@@ -1,26 +1,27 @@
 ---
 title: "update-policy | Cloud"
 slug: /cli/cli/Backup-updatepolicy
+sidebar_key: cli/Backup-updatepolicy
 sidebar_label: "update-policy"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation updates the backup policy of a cluster. | Cloud"
 type: docx
-token: TVB4dJXYfoSiFexcIFwcez5dnug
+token: PJsSdI8JBoUchVx1IkrcmakLnCc
 sidebar_position: 9
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
   - zilliz
   - zilliz cloud
   - cloud
   - update-policy
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

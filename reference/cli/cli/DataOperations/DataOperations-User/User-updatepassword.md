@@ -1,26 +1,27 @@
 ---
 title: "update-password | Cloud"
 slug: /cli/cli/User-updatepassword
+sidebar_key: cli/User-updatepassword
 sidebar_label: "update-password"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation updates the user password. | Cloud"
 type: docx
-token: CLzGdXUNzo2XaHxRvBYcaYSZnud
+token: AB6Hd6NHUoNLXIxgXywc3hmtnjc
 sidebar_position: 7
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud
   - update-password
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

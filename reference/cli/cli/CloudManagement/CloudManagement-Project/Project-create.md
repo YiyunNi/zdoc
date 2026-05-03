@@ -1,26 +1,27 @@
 ---
 title: "create | Cloud"
 slug: /cli/cli/Project-create
+sidebar_key: cli/Project-create
 sidebar_label: "create"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a new project. | Cloud"
 type: docx
-token: H6MXdWNhlo3b9lx70Z3ca3VXn2e
+token: L9ZddLvZLojYiTxECVgcBEXqnUd
 sidebar_position: 1
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud
   - create
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

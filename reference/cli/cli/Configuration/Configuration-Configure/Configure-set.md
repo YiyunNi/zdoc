@@ -1,26 +1,27 @@
 ---
 title: "set | Cloud"
 slug: /cli/cli/Configure-set
+sidebar_key: cli/Configure-set
 sidebar_label: "set"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation sets a configuration value. | Cloud"
 type: docx
-token: Rg7gdgezgopJlVxClKOcI4UtnXR
+token: Jp9VdKpVoooz9ix1vYMcAun4nwe
 sidebar_position: 4
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud
   - set
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

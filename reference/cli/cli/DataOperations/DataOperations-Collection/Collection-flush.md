@@ -1,26 +1,27 @@
 ---
 title: "flush | Cloud"
 slug: /cli/cli/Collection-flush
+sidebar_key: cli/Collection-flush
 sidebar_label: "flush"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation flushes collection data to disk. | Cloud"
 type: docx
-token: R0FRdiaHuo4IElxDELmcyR90nLd
+token: DIVvdqJlOoneFwxqs0xcG313nmg
 sidebar_position: 5
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - flush
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

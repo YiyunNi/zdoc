@@ -1,26 +1,27 @@
 ---
 title: "list | Cloud"
 slug: /cli/cli/Database-list
+sidebar_key: cli/Database-list
 sidebar_label: "list"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all databases. | Cloud"
 type: docx
-token: HIdHdT6RMo4ETLxjQaecjwNWnhg
+token: KiwWdLJ8houEeRxGECEcc3glnoh
 sidebar_position: 4
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
   - list
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

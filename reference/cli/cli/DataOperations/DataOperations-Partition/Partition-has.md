@@ -1,26 +1,27 @@
 ---
 title: "has | Cloud"
 slug: /cli/cli/Partition-has
+sidebar_key: cli/Partition-has
 sidebar_label: "has"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation checks if a partition exists. | Cloud"
 type: docx
-token: KtkldxyCGoCmF8xsxYHcfRQZnCf
+token: IQy0d491iojaTEx3teycfP3snCe
 sidebar_position: 4
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - has
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

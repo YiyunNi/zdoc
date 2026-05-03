@@ -1,26 +1,27 @@
 ---
 title: "drop | Cloud"
 slug: /cli/cli/Collection-drop
+sidebar_key: cli/Collection-drop
 sidebar_label: "drop"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops a collection. This action is irreversible. | Cloud"
 type: docx
-token: LnnEdA9w7opaYXx2vHOcxcxonMb
+token: IM2CdOqn5oKCTUxFVImcbDCRnFc
 sidebar_position: 4
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud
   - drop
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

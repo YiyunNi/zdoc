@@ -1,26 +1,27 @@
 ---
 title: "describe | Cloud"
 slug: /cli/cli/User-describe
+sidebar_key: cli/User-describe
 sidebar_label: "describe"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets details of a user. | Cloud"
 type: docx
-token: IgAUdLDvcoWDR6xOu2XcmRoznIh
+token: ES6CdyFsgoXMEtxpLRAcrnZ3n9f
 sidebar_position: 2
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud
   - describe
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to data import. | Cloud"
 type: folder
-token: DTaCf9lEKlW82HdbjMMcMTR0nYF
+token: SDTtfq1P5lBVV7d45b0cYrljnup
 sidebar_position: 4
 sidebar_label: "Import"
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
   - zilliz
   - zilliz cloud
   - cloud
   - Import
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

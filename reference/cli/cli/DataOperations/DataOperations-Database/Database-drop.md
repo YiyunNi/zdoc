@@ -1,26 +1,27 @@
 ---
 title: "drop | Cloud"
 slug: /cli/cli/Database-drop
+sidebar_key: cli/Database-drop
 sidebar_label: "drop"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops a database. (Dedicated only) | Cloud"
 type: docx
-token: TB3Odp61soJUTnxuGb7cjA00nXf
+token: WjbrdMFuXoR2etxfpMdcmIebnCh
 sidebar_position: 3
 keywords: 
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud
   - drop
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

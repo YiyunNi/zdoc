@@ -1,26 +1,27 @@
 ---
 title: "get | Cloud"
 slug: /cli/cli/Configure-get
+sidebar_key: cli/Configure-get
 sidebar_label: "get"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets a configuration value. | Cloud"
 type: docx
-token: OHLjdwKGYoYj7HxmsfDcu10Mn0c
+token: G7Gqdc2JzosNPDx3r4ictkbgnyh
 sidebar_position: 2
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud
   - get
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -1,26 +1,27 @@
 ---
 title: "describe | Cloud"
 slug: /cli/cli/Database-describe
+sidebar_key: cli/Database-describe
 sidebar_label: "describe"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets details of a database. (Dedicated only) | Cloud"
 type: docx
-token: Pp2GdJt2YoEKjdxZYgqcXMu8nYg
+token: A8XSdcz0UoXHnyxHPcOcaLExn3o
 sidebar_position: 2
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud
   - describe
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to Zilliz CLI configurations | Cloud"
 type: folder
-token: FsZhfuntQlHRRQdBeXEcosCEnzf
+token: EGSzfJvZplcqb5dWwzkcksiQn5d
 sidebar_position: 2
 sidebar_label: "Configuration"
 keywords: 
-  - Audio search
-  - what is semantic search
-  - Embedding model
   - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
   - zilliz
   - zilliz cloud
   - cloud
   - Configuration
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

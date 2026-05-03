@@ -1,26 +1,27 @@
 ---
 title: "create | Cloud"
 slug: /cli/cli/Alias-create
+sidebar_key: cli/Alias-create
 sidebar_label: "create"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates an alias pointing to a collection. | Cloud"
 type: docx
-token: SclAd0NPBoMQ9Pxtg0vcQxK0n2f
+token: WxTjdBaBqoNhRex5kR0cfekqnOc
 sidebar_position: 2
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud
   - create
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

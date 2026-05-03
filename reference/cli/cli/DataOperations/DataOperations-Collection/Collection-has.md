@@ -1,26 +1,27 @@
 ---
 title: "has | Cloud"
 slug: /cli/cli/Collection-has
+sidebar_key: cli/Collection-has
 sidebar_label: "has"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation checks if a collection exists. | Cloud"
 type: docx
-token: B0Wld8SqbonTPHxqGTac4Sngnob
+token: CidCduwW8oIywtxiHMQc8v2XnBe
 sidebar_position: 8
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud
   - has
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

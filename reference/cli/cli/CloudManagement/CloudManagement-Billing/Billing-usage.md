@@ -1,26 +1,27 @@
 ---
 title: "usage | Cloud"
 slug: /cli/cli/Billing-usage
+sidebar_key: cli/Billing-usage
 sidebar_label: "usage"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation queries usage costs within a time range. | Cloud"
 type: docx
-token: CRvbdGmR0oylPKxTLsncACd6ntC
-sidebar_position: 3
+token: FpDzdA1nSo6sOHxYxAhcTPCLn5d
+sidebar_position: 4
 keywords: 
+  - Zilliz vector database
+  - Zilliz database
   - Unstructured Data
   - vector database
-  - IVF
-  - knn
   - zilliz
   - zilliz cloud
   - cloud
   - usage
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

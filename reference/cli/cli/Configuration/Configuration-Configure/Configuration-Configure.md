@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to configuration items management. | Cloud"
 type: folder
-token: Wqpcf6ygDlCZofdoUszcZNfxn5g
+token: LPAcfkgMhlSeEqdFJ7CcxeL3nCh
 sidebar_position: 4
 sidebar_label: "Configure"
 keywords: 
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud
   - Configure
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

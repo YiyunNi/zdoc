@@ -1,26 +1,27 @@
 ---
 title: "alter | Cloud"
 slug: /cli/cli/Alias-alter
+sidebar_key: cli/Alias-alter
 sidebar_label: "alter"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation reassigns an alias to another collection. | Cloud"
 type: docx
-token: UTutdcqPLo4B2vxlHk1cAKunnOK
+token: PLvbdUqI6onWmWxFPYKcgcFpnwb
 sidebar_position: 1
 keywords: 
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
   - alter
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

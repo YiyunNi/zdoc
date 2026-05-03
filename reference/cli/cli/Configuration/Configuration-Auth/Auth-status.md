@@ -1,26 +1,27 @@
 ---
 title: "status | Cloud"
 slug: /cli/cli/Auth-status
+sidebar_key: cli/Auth-status
 sidebar_label: "status"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation shows the current authentication status. | Cloud"
 type: docx
-token: YbzDdBwlSoO24Px9v2mcgkYCn3b
+token: CGY6dYpcfoZr3cxbXT5cis6UnZf
 sidebar_position: 3
 keywords: 
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud
   - status
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---
@@ -31,6 +32,8 @@ import Admonition from '@theme/Admonition';
 # status
 
 This operation shows the current authentication status.
+
+**Note:** `zilliz auth status` is a deprecated alias kept for backwards compatibility. Use `zilliz whoami` (alias `zilliz info`) in new scripts.
 
 ## Synopsis\{#synopsis}
 

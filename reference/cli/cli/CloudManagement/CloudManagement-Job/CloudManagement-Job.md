@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to job management. | Cloud"
 type: folder
-token: BYCBfRYr4lcSD2dra3NcFxronVd
+token: VqTofXsTzlF4nbdugKMcbg0onWd
 sidebar_position: 5
 sidebar_label: "Job"
 keywords: 
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud
   - Job
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

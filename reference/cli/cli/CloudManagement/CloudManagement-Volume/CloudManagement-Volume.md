@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to volume management. | Cloud"
 type: folder
-token: WTZ1fyvHZlctXqdIbubcF8jCndf
-sidebar_position: 7
+token: YJ0WfaSiClY9p5d6Jykcba2anbc
+sidebar_position: 8
 sidebar_label: "Volume"
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
   - zilliz
   - zilliz cloud
   - cloud
   - Volume
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

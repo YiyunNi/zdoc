@@ -1,26 +1,27 @@
 ---
 title: "load | Cloud"
 slug: /cli/cli/Partition-load
+sidebar_key: cli/Partition-load
 sidebar_label: "load"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation loads partitions into memory. | Cloud"
 type: docx
-token: VzoRdU4TloXwScxB2a5cOzFAnwc
+token: GYyKdrbkvozJxVx6uGhcpMfonoe
 sidebar_position: 6
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
   - zilliz
   - zilliz cloud
   - cloud
   - load
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

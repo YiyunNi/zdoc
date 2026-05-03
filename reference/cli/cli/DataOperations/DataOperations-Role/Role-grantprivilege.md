@@ -1,26 +1,27 @@
 ---
 title: "grant-privilege | Cloud"
 slug: /cli/cli/Role-grantprivilege
+sidebar_key: cli/Role-grantprivilege
 sidebar_label: "grant-privilege"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation grants a privilege to a role. | Cloud"
 type: docx
-token: ZtdUdawpZoLgrYx31XkcQxeOnNb
+token: U83ddOym4o7WgAx1ekac4nFHnzf
 sidebar_position: 4
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
   - zilliz
   - zilliz cloud
   - cloud
   - grant-privilege
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -1,26 +1,27 @@
 ---
 title: "grant-role | Cloud"
 slug: /cli/cli/User-grantrole
+sidebar_key: cli/User-grantrole
 sidebar_label: "grant-role"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation grants a role to a user. | Cloud"
 type: docx
-token: Fz3JdZ0rSoNxuDxvR0TcIXl5nhh
+token: SvpmdXjkYo3LYTxt2ipcKhLFnZg
 sidebar_position: 4
 keywords: 
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud
   - grant-role
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

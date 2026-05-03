@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to user management. | Cloud"
 type: folder
-token: KVy0fojDTl01lHdWSFWcVflBnSf
+token: MLhsf6VLElWmWudpYZXcamShn0e
 sidebar_position: 7
 sidebar_label: "User"
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
   - User
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

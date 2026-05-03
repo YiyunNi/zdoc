@@ -1,26 +1,27 @@
 ---
 title: "logout | Go"
 slug: /cli/cli/Auth-logout
+sidebar_key: cli/Auth-logout
 sidebar_label: "logout"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation logs you out of Zilliz Cloud and clears stored credentials. | Go"
 type: docx
-token: JVIKdV11AoXBlCxHuTVcKrQmnud
+token: QeHdd8MunoG5Krxwpr1cx0Ninwd
 sidebar_position: 2
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - logout
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

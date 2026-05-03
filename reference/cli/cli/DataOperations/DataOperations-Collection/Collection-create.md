@@ -1,26 +1,27 @@
 ---
 title: "create | Cloud"
 slug: /cli/cli/Collection-create
+sidebar_key: cli/Collection-create
 sidebar_label: "create"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a new collection. | Cloud"
 type: docx
-token: P5jpdMWcMoW2MMxMBtcczRjInYc
+token: YBKydPY0ao8gkkx8kj4c6c7TnBh
 sidebar_position: 2
 keywords: 
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - create
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

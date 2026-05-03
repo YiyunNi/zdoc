@@ -1,26 +1,27 @@
 ---
 title: "create | Cloud"
 slug: /cli/cli/Database-create
+sidebar_key: cli/Database-create
 sidebar_label: "create"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a new database. (Dedicated only) | Cloud"
 type: docx
-token: IKTjdZU2ioqYvbxGD08cp58In7c
+token: DaK3dvUJpoKOLTxy1iRc4YZAnjf
 sidebar_position: 1
 keywords: 
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud
   - create
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

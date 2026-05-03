@@ -1,26 +1,27 @@
 ---
 title: "query | Cloud"
 slug: /cli/cli/Vector-query
+sidebar_key: cli/Vector-query
 sidebar_label: "query"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation queries entities by scalar filter expression. | Cloud"
 type: docx
-token: BFfGdYH1aocKSjx2CLQce7C9nWo
+token: VSRhdmsCvodJ7pxwGgqcuvZ3n7g
 sidebar_position: 5
 keywords: 
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud
   - query
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

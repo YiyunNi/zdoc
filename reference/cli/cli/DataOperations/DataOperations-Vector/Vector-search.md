@@ -1,26 +1,27 @@
 ---
 title: "search | Cloud"
 slug: /cli/cli/Vector-search
+sidebar_key: cli/Vector-search
 sidebar_label: "search"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation searches for similar vectors. | Cloud"
 type: docx
-token: X82qdozLzoGYUaxyRE2cBIBRnff
+token: QcWcdXbgxooJO4xuwADc9YqAn8c
 sidebar_position: 6
 keywords: 
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud
   - search
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

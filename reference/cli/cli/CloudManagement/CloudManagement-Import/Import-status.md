@@ -1,26 +1,27 @@
 ---
 title: "status | Cloud"
 slug: /cli/cli/Import-status
+sidebar_key: cli/Import-status
 sidebar_label: "status"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets the status of an import job. | Cloud"
 type: docx
-token: WgScdvYdRoGsQyxTnfDcLim2nBh
+token: Lu5EdzR9So5gUCxL71YcX30Enkh
 sidebar_position: 3
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud
   - status
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

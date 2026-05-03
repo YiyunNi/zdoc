@@ -1,26 +1,27 @@
 ---
 title: "list | Cloud"
 slug: /cli/cli/Volume-list
+sidebar_key: cli/Volume-list
 sidebar_label: "list"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all volumes in a project. | Cloud"
 type: docx
-token: FDjjdFVzxozhvhxU5tgc42utnZg
+token: OShTd6lMhoaxK2xDlExcmzXTnLd
 sidebar_position: 3
 keywords: 
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud
   - list
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -1,26 +1,27 @@
 ---
 title: "set | Cloud"
 slug: /cli/cli/Context-set
+sidebar_key: cli/Context-set
 sidebar_label: "set"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation sets the current cluster context. | Cloud"
 type: docx
-token: F17Edjn73ooEBwxN1hWc7iCFngg
-sidebar_position: 2
+token: Mbj7dQ8OmojO2fxa3PPcr8V8n4c
+sidebar_position: 3
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - set
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

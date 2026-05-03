@@ -1,26 +1,27 @@
 ---
 title: "release | Cloud"
 slug: /cli/cli/Collection-release
+sidebar_key: cli/Collection-release
 sidebar_label: "release"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation releases a collection from memory. | Cloud"
 type: docx
-token: Tl8cdrCCvoT8Six3cy0co3SDnjd
-sidebar_position: 11
+token: G0s2d1DVconhc5xeX02cJWbUnLf
+sidebar_position: 12
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud
   - release
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

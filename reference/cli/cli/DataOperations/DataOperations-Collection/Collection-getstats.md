@@ -1,26 +1,27 @@
 ---
 title: "get-stats | Cloud"
 slug: /cli/cli/Collection-getstats
+sidebar_key: cli/Collection-getstats
 sidebar_label: "get-stats"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets collection statistics (row count, etc.). | Cloud"
 type: docx
-token: TS6mdq8Clo4yLNxzZvpcJOkanid
+token: XTHTd7x3soBmeTx9ftwc369PnCe
 sidebar_position: 7
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud
   - get-stats
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -1,26 +1,27 @@
 ---
 title: "list | Cloud"
 slug: /cli/cli/Role-list
+sidebar_key: cli/Role-list
 sidebar_label: "list"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all roles. | Cloud"
 type: docx
-token: RnVSdpa8Uog0ufxOa5Bc2LN2n9d
+token: BNH0dujcioUq4Px0EmncEqlOnVe
 sidebar_position: 5
 keywords: 
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud
   - list
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

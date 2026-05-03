@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to role management. | Cloud"
 type: folder
-token: BVzmfEnBBlvSvXd5k5ScIQQPnOw
+token: CQeKfK0rYlSpjTd0uFlcAZrYnZb
 sidebar_position: 6
 sidebar_label: "Role"
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
   - zilliz
   - zilliz cloud
   - cloud
   - Role
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

@@ -1,26 +1,27 @@
 ---
 title: "describe | Cloud"
 slug: /cli/cli/Cluster-describe
+sidebar_key: cli/Cluster-describe
 sidebar_label: "describe"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets details of a cluster. | Cloud"
 type: docx
-token: WsJBdDbB2ouQC0xk8c1cwDFanGf
+token: OgJTdgaTIoMPGGx0EmachVPKnHc
 sidebar_position: 3
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud
   - describe
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

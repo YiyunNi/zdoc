@@ -1,26 +1,27 @@
 ---
 title: "resume | Cloud"
 slug: /cli/cli/Cluster-resume
+sidebar_key: cli/Cluster-resume
 sidebar_label: "resume"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation resumes a suspended cluster. | Cloud"
 type: docx
-token: EbredHGusoLbZbxRLiWcjeManIf
+token: EfaUd8o9LoguWnx6jndcyTJfnzd
 sidebar_position: 9
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud
   - resume
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

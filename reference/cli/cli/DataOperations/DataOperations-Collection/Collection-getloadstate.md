@@ -1,26 +1,27 @@
 ---
 title: "get-load-state | Cloud"
 slug: /cli/cli/Collection-getloadstate
+sidebar_key: cli/Collection-getloadstate
 sidebar_label: "get-load-state"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets collection load state. | Cloud"
 type: docx
-token: RnRTdshwloBzIFx5rLHcFTm2nVh
+token: ROPbdTU6doxFGRxxcfYcgyBPnqg
 sidebar_position: 6
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud
   - get-load-state
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

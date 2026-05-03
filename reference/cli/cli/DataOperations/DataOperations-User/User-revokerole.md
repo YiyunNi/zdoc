@@ -1,26 +1,27 @@
 ---
 title: "revoke-role | Cloud"
 slug: /cli/cli/User-revokerole
+sidebar_key: cli/User-revokerole
 sidebar_label: "revoke-role"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation revokes a role from a user. | Cloud"
 type: docx
-token: Bp4sdXEoYoKuYtxs7WwcZBQFncb
+token: W7NedO3aXoF3UdxWp51cPe0kn2b
 sidebar_position: 6
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud
   - revoke-role
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

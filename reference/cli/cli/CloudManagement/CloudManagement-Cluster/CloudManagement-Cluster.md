@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to cluster management. | Cloud"
 type: folder
-token: ZgAkf2bMOligiLdACQrcEBgpn7b
+token: PXOyfwEUtlY8xWdzQ62cXQeenOd
 sidebar_position: 3
 sidebar_label: "Cluster"
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud
   - Cluster
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

@@ -1,26 +1,27 @@
 ---
 title: "uninstall | Cloud"
 slug: /cli/cli/Completion-uninstall
+sidebar_key: cli/Completion-uninstall
 sidebar_label: "uninstall"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation removes shell completion from RC file. | Cloud"
 type: docx
-token: ZgnKdDBGboisN2xZXSqcVTNSnFg
+token: M7iad7XTioIjaUxy3k7cqQWAn6f
 sidebar_position: 4
 keywords: 
+  - Video search
+  - AI Hallucination
   - AI Agent
   - semantic search
-  - Anomaly Detection
-  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud
   - uninstall
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

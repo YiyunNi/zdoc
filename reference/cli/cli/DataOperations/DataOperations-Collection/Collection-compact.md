@@ -1,26 +1,27 @@
 ---
 title: "compact | Cloud"
 slug: /cli/cli/Collection-compact
+sidebar_key: cli/Collection-compact
 sidebar_label: "compact"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation compacts collection segments to optimize storage. | Cloud"
 type: docx
-token: KYOydyGRaoMchUxkS0ucd8VUnve
+token: PgZ0dL39ho6wLbxJKANcm0jyn9b
 sidebar_position: 1
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud
   - compact
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

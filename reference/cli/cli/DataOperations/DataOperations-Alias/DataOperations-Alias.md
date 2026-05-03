@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to alias management. | Cloud"
 type: folder
-token: PNMKfl6RdlfEzzdg6zycDTQHnGw
+token: MwIofv5z3ljhiBdoZA4cEPdZnGg
 sidebar_position: 1
 sidebar_label: "Alias"
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
   - zilliz
   - zilliz cloud
   - cloud
   - Alias
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

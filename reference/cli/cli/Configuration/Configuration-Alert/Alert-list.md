@@ -1,26 +1,27 @@
 ---
 title: "list | Cloud"
 slug: /cli/cli/Alert-list
+sidebar_key: cli/Alert-list
 sidebar_label: "list"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists alert rules for a project. | Cloud"
 type: docx
-token: SflPdLKXsoY2iFxIiljcBiIfnKc
+token: DTiIdd5NBocV9JxsNHZcoUownwh
 sidebar_position: 5
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
   - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
   - zilliz
   - zilliz cloud
   - cloud
   - list
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

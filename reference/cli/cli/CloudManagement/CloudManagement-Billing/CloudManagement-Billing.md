@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to billing and payment management. | Cloud"
 type: folder
-token: ItZcfBNHclfCEgdfAYacPWDEnzO
+token: VQMkfU9xUl3ywPdBTJRcoP5Vnkb
 sidebar_position: 2
 sidebar_label: "Billing"
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud
   - Billing
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

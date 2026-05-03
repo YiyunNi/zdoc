@@ -1,26 +1,27 @@
 ---
 title: "drop | Cloud"
 slug: /cli/cli/Index-drop
+sidebar_key: cli/Index-drop
 sidebar_label: "drop"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops an index. | Cloud"
 type: docx
-token: OUnsdvdjxoz76OxI9hLcFWQrnug
+token: EJO8dhKSYoWk3AxksTrcGCzdnxf
 sidebar_position: 3
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud
   - drop
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

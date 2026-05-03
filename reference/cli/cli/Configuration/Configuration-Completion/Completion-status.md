@@ -1,26 +1,27 @@
 ---
 title: "status | Cloud"
 slug: /cli/cli/Completion-status
+sidebar_key: cli/Completion-status
 sidebar_label: "status"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation checks if shell completion is installed. | Cloud"
 type: docx
-token: MJsndwyMdo5CGLxqAXwc9MuKn7e
+token: LbIpdBlKsotqHFxgRxmcGsk0n5g
 sidebar_position: 3
 keywords: 
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud
   - status
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

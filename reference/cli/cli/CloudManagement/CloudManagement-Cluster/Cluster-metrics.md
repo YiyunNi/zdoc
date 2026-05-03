@@ -1,26 +1,27 @@
 ---
 title: "metrics | Cloud"
 slug: /cli/cli/Cluster-metrics
+sidebar_key: cli/Cluster-metrics
 sidebar_label: "metrics"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation queries cluster performance metrics (QPS, latency, storage, etc.). | Cloud"
 type: docx
-token: SoWFdvNGKoOEMpxODQScdKEmnze
+token: BVHRdq4miotjdVxI72fcI7XznKc
 sidebar_position: 5
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
   - metrics
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---
@@ -185,7 +186,7 @@ zilliz cluster metrics
 
 - **--output, -o** (*string*) -
 
-    Indicates the output format. Possible values:
+    Indicates the output format. When this option is omitted, results are rendered as an in-terminal Braille chart visualization (since v1.3.1). Explicit values:
 
     - `json`,
 

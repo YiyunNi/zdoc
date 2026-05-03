@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to data operations. | Cloud"
 type: folder
-token: NCdLfrAg5lUS2DdG0QOcGGMFnHh
+token: Ji3xfyZmUlvCShdh8rbc845Znnh
 sidebar_position: 3
 sidebar_label: "Data Operations"
 keywords: 
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
   - zilliz
   - zilliz cloud
   - cloud
   - Data Operations
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

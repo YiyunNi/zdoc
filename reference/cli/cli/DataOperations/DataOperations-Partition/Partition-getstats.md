@@ -1,26 +1,27 @@
 ---
 title: "get-stats | Cloud"
 slug: /cli/cli/Partition-getstats
+sidebar_key: cli/Partition-getstats
 sidebar_label: "get-stats"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets partition statistics. | Cloud"
 type: docx
-token: R2iYdl0Hnous6rxl5KMccADVn1c
+token: VEEzdJ5tyoaFVbxG6JvcDpULnMg
 sidebar_position: 3
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud
   - get-stats
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

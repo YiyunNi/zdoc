@@ -1,26 +1,27 @@
 ---
 title: "restore-cluster | Cloud"
 slug: /cli/cli/Backup-restorecluster
+sidebar_key: cli/Backup-restorecluster
 sidebar_label: "restore-cluster"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation restores a backup to a new cluster. | Cloud"
 type: docx
-token: TUQ6df38Do0bKbxu9ODcbZMtnAb
+token: XAhudiqXqoHS1zxSDqgcNY9anxb
 sidebar_position: 7
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
   - zilliz
   - zilliz cloud
   - cloud
   - restore-cluster
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

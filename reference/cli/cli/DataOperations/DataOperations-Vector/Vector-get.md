@@ -1,26 +1,27 @@
 ---
 title: "get | Cloud"
 slug: /cli/cli/Vector-get
+sidebar_key: cli/Vector-get
 sidebar_label: "get"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation gets entities by primary key IDs. | Cloud"
 type: docx
-token: KwQLdb4UZo41g6xySjfcFtiCnl9
+token: Nez2dlNZloLWEPxBHOWcad2anLf
 sidebar_position: 2
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud
   - get
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

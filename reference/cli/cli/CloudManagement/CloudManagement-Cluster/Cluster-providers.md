@@ -1,26 +1,27 @@
 ---
 title: "providers | Cloud"
 slug: /cli/cli/Cluster-providers
+sidebar_key: cli/Cluster-providers
 sidebar_label: "providers"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation lists all applicable cloud providers. | Cloud"
 type: docx
-token: Dd7HdLhKaoNhFSxVzGZcfit9nzf
+token: Rhked7rPvopHixxQZe6czSUwnvf
 sidebar_position: 7
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud
   - providers
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

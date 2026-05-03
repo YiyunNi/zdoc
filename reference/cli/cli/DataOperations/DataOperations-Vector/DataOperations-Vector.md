@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to data manipulations. | Cloud"
 type: folder
-token: EE5tfLfAnlOByHdia0zc1hyEnyl
+token: QJJjfOjoGlLqVmdEtiJcriX2nWh
 sidebar_position: 8
 sidebar_label: "Vector"
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
   - zilliz
   - zilliz cloud
   - cloud
   - Vector
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

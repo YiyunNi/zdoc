@@ -1,26 +1,27 @@
 ---
 title: "drop | Cloud"
 slug: /cli/cli/User-drop
+sidebar_key: cli/User-drop
 sidebar_label: "drop"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation drops a database user. | Cloud"
 type: docx
-token: EXwwdyHGZopIv9xJ48dckYjanVc
+token: Isx7dzFS9obGxyxEwgncxs67nXe
 sidebar_position: 3
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud
   - drop
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

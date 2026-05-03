@@ -1,26 +1,27 @@
 ---
 title: "delete | Cloud"
 slug: /cli/cli/Volume-delete
+sidebar_key: cli/Volume-delete
 sidebar_label: "delete"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation deletes a volume. | Cloud"
 type: docx
-token: CNlid8lmAoX4Qtxqd6mc119gnjb
+token: CgVKdrm2YoAiM8xBvFacmxpWnrb
 sidebar_position: 2
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
   - zilliz
   - zilliz cloud
   - cloud
   - delete
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

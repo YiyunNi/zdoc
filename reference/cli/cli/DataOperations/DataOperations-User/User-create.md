@@ -1,26 +1,27 @@
 ---
 title: "create | Cloud"
 slug: /cli/cli/User-create
+sidebar_key: cli/User-create
 sidebar_label: "create"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation creates a new database user. | Cloud"
 type: docx
-token: USPedjTNOo7vNTxeNiwctLAcnMb
+token: UJuOdGGu3okE0Sx1jARc45lMnGb
 sidebar_position: 1
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
   - zilliz
   - zilliz cloud
   - cloud
   - create
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

@@ -1,26 +1,27 @@
 ---
 title: "suspend | Cloud"
 slug: /cli/cli/Cluster-suspend
+sidebar_key: cli/Cluster-suspend
 sidebar_label: "suspend"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation suspends a running cluster. Suspending stops compute charges. | Cloud"
 type: docx
-token: RaGJdFRlQo2nlVxxyc5cbUtCnsh
+token: RjlQdGJyzolWm0xZVyUc6yAdnyc
 sidebar_position: 10
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud
   - suspend
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

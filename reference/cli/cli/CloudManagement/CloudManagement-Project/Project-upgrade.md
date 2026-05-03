@@ -1,26 +1,27 @@
 ---
 title: "upgrade | Cloud"
 slug: /cli/cli/Project-upgrade
+sidebar_key: cli/Project-upgrade
 sidebar_label: "upgrade"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation upgrades a project's subscription plan. | Cloud"
 type: docx
-token: LZksdPD7Ao7HdwxYr4Lc3IHlngg
+token: QIhWdtFpNotKksx7KmxcTdwXnEh
 sidebar_position: 4
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud
   - upgrade
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---

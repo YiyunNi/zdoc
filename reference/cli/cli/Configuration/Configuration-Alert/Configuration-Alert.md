@@ -8,19 +8,19 @@ last_modified: false
 deprecate_since: false
 description: "This chapter contains the commands related to metrics and alerts. | Cloud"
 type: folder
-token: KckdfroNnlfPlZd6GLuc2Zsrnqh
+token: DC00fqL8UlOSaJdNqeJcCEHYnFW
 sidebar_position: 1
 sidebar_label: "Alert"
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud
   - Alert
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 ---
 

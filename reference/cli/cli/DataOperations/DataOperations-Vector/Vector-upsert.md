@@ -1,26 +1,27 @@
 ---
 title: "upsert | Cloud"
 slug: /cli/cli/Vector-upsert
+sidebar_key: cli/Vector-upsert
 sidebar_label: "upsert"
-beta: false
 added_since: v0.1.x
 last_modified: false
 deprecate_since: false
+beta: false
 notebook: false
 description: "This operation upserts entities. | Cloud"
 type: docx
-token: PLojdlFoioPDSEx6vKpcsmevnTf
+token: PdMmdJQS6o1rVbxtD49cO62Onad
 sidebar_position: 7
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud
   - upsert
-  - cliv01
+  - cliv13
 displayed_sidebar: cliSidebar
 
 ---
