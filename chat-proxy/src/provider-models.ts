@@ -26,7 +26,7 @@ const FETCH_TIMEOUT_MS = 10_000;
 export async function listModelsForProfile(profile: ProviderProfileFull, type?: 'chat' | 'embedding'): Promise<ListedModel[]> {
   switch (profile.provider_type) {
     case 'openai-compatible':
-      return listOpenAIModels(profile);
+      return listOpenAIModels(profile, type);
     case 'bedrock':
       return listBedrockModels(profile, type);
     default:
@@ -34,7 +34,7 @@ export async function listModelsForProfile(profile: ProviderProfileFull, type?: 
   }
 }
 
-async function listOpenAIModels(profile: ProviderProfileFull): Promise<ListedModel[]> {
+async function listOpenAIModels(profile: ProviderProfileFull, type?: 'chat' | 'embedding'): Promise<ListedModel[]> {
   const baseUrl = (profile.base_url || 'https://api.openai.com/v1').replace(/\/+$/, '');
   const apiKey = profile.credentials.api_key;
   if (!apiKey) throw new Error('Profile is missing api_key credential');
@@ -56,7 +56,17 @@ async function listOpenAIModels(profile: ProviderProfileFull): Promise<ListedMod
       throw new Error('Unexpected response shape: missing data[]');
     }
     return json.data
-      .filter(m => m && typeof m.id === 'string')
+      .filter(m => {
+        if (!m || typeof m.id !== 'string') return false;
+        const id = m.id.toLowerCase();
+        if (type === 'embedding') {
+          return id.includes('embed');
+        }
+        if (type === 'chat') {
+          return !id.includes('embed');
+        }
+        return true;
+      })
       .map(m => ({ id: m.id }));
   } finally {
     clearTimeout(timer);
@@ -86,12 +96,16 @@ async function listBedrockModels(profile: ProviderProfileFull, type?: 'chat' | '
   const foundationModels = foundationSummaries
     .filter(m => {
       if (!Array.isArray(m.outputModalities) || !Array.isArray(m.inferenceTypesSupported)) return false;
-      // Accept both text-generation and embedding models
-      const hasTextModality = m.outputModalities.includes('TEXT') || m.outputModalities.includes('EMBEDDING');
+      // Filter by modality based on requested type
+      const hasRelevantModality = type === 'embedding'
+        ? m.outputModalities.includes('EMBEDDING')
+        : type === 'chat'
+          ? m.outputModalities.includes('TEXT')
+          : (m.outputModalities.includes('TEXT') || m.outputModalities.includes('EMBEDDING'));
       // Accept both on-demand and inference-profile models
       const inferenceTypes = m.inferenceTypesSupported as string[];
       const hasInferenceType = inferenceTypes.includes('ON_DEMAND') || inferenceTypes.includes('INFERENCE_PROFILE');
-      return hasTextModality && hasInferenceType;
+      return hasRelevantModality && hasInferenceType;
     })
     .filter(m => typeof m.modelId === 'string')
     .map(m => ({ id: m.modelId as string, name: m.modelName || undefined }));
@@ -100,7 +114,18 @@ async function listBedrockModels(profile: ProviderProfileFull, type?: 'chat' | '
   const inferenceOut = await client.send(new ListInferenceProfilesCommand({ typeEquals: 'SYSTEM_DEFINED' }));
   const inferenceSummaries = inferenceOut.inferenceProfileSummaries || [];
   const inferenceModels = inferenceSummaries
-    .filter(p => p.status === 'ACTIVE' && typeof p.inferenceProfileId === 'string')
+    .filter(p => {
+      if (p.status !== 'ACTIVE' || typeof p.inferenceProfileId !== 'string') return false;
+      const id = p.inferenceProfileId.toLowerCase();
+      const name = (p.inferenceProfileName || '').toLowerCase();
+      if (type === 'embedding') {
+        return id.includes('embed') || name.includes('embed');
+      }
+      if (type === 'chat') {
+        return !id.includes('embed') && !name.includes('embed');
+      }
+      return true;
+    })
     .map(p => ({ id: p.inferenceProfileId as string, name: p.inferenceProfileName || undefined }));
 
   return [...foundationModels, ...inferenceModels];
