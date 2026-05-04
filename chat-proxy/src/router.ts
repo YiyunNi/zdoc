@@ -212,7 +212,7 @@ async function routeIntentLegacy(
 
     const resolvedModel = await resolveModel('router');
     const result = await generateObject({
-      model: createModelInstance(resolvedModel),
+      model: await createModelInstance(resolvedModel),
       schema: routeSchema,
       maxOutputTokens: 250,
       abortSignal: AbortSignal.timeout(30000),
@@ -304,7 +304,7 @@ async function routeIntentV2(
   }
 
   const resolvedModel = await resolveModel('router');
-  const modelInstance = createModelInstance(resolvedModel);
+  const modelInstance = await createModelInstance(resolvedModel);
 
   const providerFamily = detectProviderFamily(
     resolvedModel.model,

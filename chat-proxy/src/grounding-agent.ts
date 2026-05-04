@@ -70,7 +70,7 @@ export async function groundAtomically(
 
     const resolvedModel = await resolveModel('grounding');
     const result = await generateObject({
-      model: createModelInstance(resolvedModel),
+      model: await createModelInstance(resolvedModel),
       schema: groundingSchema,
       maxOutputTokens: 400,
       experimental_telemetry: makeTelemetry('grounding'),

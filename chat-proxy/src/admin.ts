@@ -318,7 +318,7 @@ adminApp.get('/api/health/llm', async c => {
   const t0 = Date.now();
   try {
     const resolved = await resolveModel('chat');
-    const model = createModelInstance(resolved);
+    const model = await createModelInstance(resolved);
     const {generateText} = await import('ai');
     await generateText({model, prompt: 'Say "ok"', maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-chat')});
     return c.json({
@@ -507,7 +507,7 @@ adminApp.post('/api/config/:key/test', async c => {
   const key = c.req.param('key');
   const resolved = await resolveModel(key);
   try {
-    const instance = createModelInstance(resolved);
+    const instance = await createModelInstance(resolved);
     const {generateText} = await import('ai');
     await generateText({model: instance, prompt: 'Say "ok"', maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-model')});
     return c.json({ok: true, provider: resolvedProviderDisplay(resolved), model: resolved.model, source: resolved.source});

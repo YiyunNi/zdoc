@@ -70,8 +70,8 @@ vi.mock('./feedback.js', () => ({
   recordFeedback: vi.fn(),
   getStats: vi.fn(() => ({totalUp: 0, totalDown: 0, total: 0, positiveRate: 0, recentFeedback: []})),
 }));
-vi.mock('./admin.js', () => {
-  const {Hono} = require('hono');
+vi.mock('./admin.js', async () => {
+  const {Hono} = await import('hono');
   return {adminApp: new Hono()};
 });
 

@@ -49,7 +49,7 @@ export async function rewriteQuery(question: string, retries = 1): Promise<strin
 
   try {
     const result = await generateObject({
-      model: createModelInstance(resolvedModel),
+      model: await createModelInstance(resolvedModel),
       schema: rewriteSchema,
       maxOutputTokens: 100,
       experimental_telemetry: makeTelemetry('query-rewrite'),
@@ -83,7 +83,7 @@ User question: ${question}`,
       try {
         const {generateText} = await import('ai');
         const textResult = await generateText({
-          model: createModelInstance(resolvedModel),
+          model: await createModelInstance(resolvedModel),
           maxOutputTokens: 80,
           temperature: 0,
           experimental_telemetry: makeTelemetry('query-rewrite-retry'),

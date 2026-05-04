@@ -39,7 +39,7 @@ export async function extractEntities(query: string, retries = 3): Promise<strin
     try {
       const resolvedModel = await resolveModel('rewrite');
       const result = await generateObject({
-        model: createModelInstance(resolvedModel),
+        model: await createModelInstance(resolvedModel),
         schema: entitySchema,
         maxOutputTokens: 500,
         experimental_telemetry: makeTelemetry('entity-extract'),

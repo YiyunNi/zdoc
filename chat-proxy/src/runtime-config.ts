@@ -22,6 +22,7 @@ const MODEL_DIMENSIONS: Record<string, number> = {
   'snowflake-arctic-embed-l': 1024,
   'snowflake-arctic-embed-m': 768,
   'cohere.embed-v4:0': 1536,
+  'qwen3-embedding-0.6b': 1024,
 };
 
 /** Infer embedding dimension from model name; returns null if unknown */
@@ -166,12 +167,12 @@ export async function resolveModel(key: string): Promise<ResolvedModel> {
 // createModelInstance — overloads for backward compat
 // ---------------------------------------------------------------------------
 
-export function createModelInstance(provider: string, modelId: string): LanguageModel;
-export function createModelInstance(resolved: ResolvedModel): LanguageModel;
-export function createModelInstance(providerOrResolved: string | ResolvedModel, modelId?: string): LanguageModel {
+export async function createModelInstance(provider: string, modelId: string): Promise<LanguageModel>;
+export async function createModelInstance(resolved: ResolvedModel): Promise<LanguageModel>;
+export async function createModelInstance(providerOrResolved: string | ResolvedModel, modelId?: string): Promise<LanguageModel> {
   // Backward-compatible (string, string) overload
   if (typeof providerOrResolved === 'string') {
-    return createFromEnv(providerOrResolved, modelId!);
+    return await createFromEnv(providerOrResolved, modelId!);
   }
 
   // New ResolvedModel overload
@@ -179,7 +180,7 @@ export function createModelInstance(providerOrResolved: string | ResolvedModel, 
   switch (resolved.provider) {
     case 'bedrock': {
       // Lazy import to avoid requiring bedrock SDK when not used
-      const { createAmazonBedrock } = require('@ai-sdk/amazon-bedrock');
+      const { createAmazonBedrock } = await import('@ai-sdk/amazon-bedrock');
       if (resolved.source === 'profile') {
         const bedrock = createAmazonBedrock({
           region: resolved.region,
@@ -205,16 +206,16 @@ export function createModelInstance(providerOrResolved: string | ResolvedModel, 
         return openai.chat(resolved.model);
       }
       // env source
-      return createFromEnv('openai-compatible', resolved.model);
+      return await createFromEnv('openai-compatible', resolved.model);
     }
   }
 }
 
 /** Internal helper: create model from env vars (old behavior) */
-function createFromEnv(provider: string, modelId: string): LanguageModel {
+async function createFromEnv(provider: string, modelId: string): Promise<LanguageModel> {
   switch (provider) {
     case 'bedrock': {
-      const { createAmazonBedrock } = require('@ai-sdk/amazon-bedrock');
+      const { createAmazonBedrock } = await import('@ai-sdk/amazon-bedrock');
       const bedrock = createAmazonBedrock({
         region: process.env.AWS_REGION || 'us-east-1',
       });
@@ -237,7 +238,7 @@ function createFromEnv(provider: string, modelId: string): LanguageModel {
 
 export async function getModel(key: string): Promise<LanguageModel> {
   const resolved = await resolveModel(key);
-  return createModelInstance(resolved);
+  return await createModelInstance(resolved);
 }
 
 // ---------------------------------------------------------------------------
@@ -248,7 +249,7 @@ export async function getEmbeddingModel(key: string = 'embedding'): Promise<Embe
   const resolved = await resolveModel(key);
   switch (resolved.provider) {
     case 'bedrock': {
-      const { createAmazonBedrock } = require('@ai-sdk/amazon-bedrock');
+      const { createAmazonBedrock } = await import('@ai-sdk/amazon-bedrock');
       if (resolved.source === 'profile') {
         const bedrock = createAmazonBedrock({
           region: resolved.region,

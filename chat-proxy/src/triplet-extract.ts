@@ -42,7 +42,7 @@ export async function extractTripletsBatch(
       const resolvedModel = await resolveModel('grounding');
 
       const llmResult = await generateObject({
-        model: createModelInstance(resolvedModel),
+        model: await createModelInstance(resolvedModel),
         schema: batchTripletSchema,
         maxOutputTokens: 4096,
         experimental_telemetry: makeTelemetry('triplet-extract'),

@@ -602,7 +602,7 @@ app.post('/chat', async c => {
 
           const tLlmStart = Date.now();
           const result = streamText({
-            model: createModelInstance(chatModelResolved),
+            model: await createModelInstance(chatModelResolved),
             maxOutputTokens: 4096,
             temperature: 0.2,
             tools: agentTools,
