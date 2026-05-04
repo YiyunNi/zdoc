@@ -14,45 +14,63 @@ const batchTripletSchema = z.object({
   })).describe('Triplet extraction results for each chunk'),
 });
 
+function sleep(ms: number): Promise<void> {
+  return new Promise(r => setTimeout(r, ms));
+}
+
 /**
  * Extract subject-relation-object triplets from a batch of text chunks.
  *
  * Processes multiple chunks in a single LLM call to amortize latency.
  * Returns a map of chunkIndex → triplet array.
+ * Retries on transient failures and throws after exhausting retries so
+ * callers can decide whether to degrade gracefully.
  */
 export async function extractTripletsBatch(
   chunks: string[],
+  retries = 3,
 ): Promise<Map<number, Array<{subject: string; relation: string; object: string}>>> {
   const result = new Map<number, Array<{subject: string; relation: string; object: string}>>();
   if (!chunks.length) return result;
 
-  try {
-    const resolvedModel = await resolveModel('grounding');
+  const numberedChunks = chunks
+    .map((text, i) => `--- Chunk ${i} ---\n${text.slice(0, 1200)}`)
+    .join('\n\n');
 
-    const numberedChunks = chunks
-      .map((text, i) => `--- Chunk ${i} ---\n${text.slice(0, 1200)}`)
-      .join('\n\n');
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const resolvedModel = await resolveModel('grounding');
 
-    const llmResult = await generateObject({
-      model: createModelInstance(resolvedModel),
-      schema: batchTripletSchema,
-      maxOutputTokens: 800,
-      experimental_telemetry: makeTelemetry('triplet-extract'),
-      prompt: `Extract up to 5 key subject-relation-object triplets from each chunk below. Focus on technical concepts, product features, and relationships relevant to Zilliz Cloud / Milvus documentation.
+      const llmResult = await generateObject({
+        model: createModelInstance(resolvedModel),
+        schema: batchTripletSchema,
+        maxOutputTokens: 4096,
+        experimental_telemetry: makeTelemetry('triplet-extract'),
+        prompt: `Extract up to 5 key subject-relation-object triplets from each chunk below. Focus on technical concepts, product features, and relationships relevant to Zilliz Cloud / Milvus documentation.
 
 ${numberedChunks}
 
 For each chunk, return its chunkIndex and a list of triplets. If a chunk has no meaningful triplets, return an empty array.`,
-    });
+      });
 
-    for (const chunkResult of llmResult.object.chunks) {
-      const idx = chunkResult.chunkIndex;
-      if (idx >= 0 && idx < chunks.length) {
-        result.set(idx, chunkResult.triplets);
+      for (const chunkResult of llmResult.object.chunks) {
+        const idx = chunkResult.chunkIndex;
+        if (idx >= 0 && idx < chunks.length) {
+          result.set(idx, chunkResult.triplets);
+        }
+      }
+
+      return result;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`[TripletExtract] Attempt ${attempt + 1}/${retries + 1} failed:`, msg);
+      if (attempt < retries) {
+        const delay = 1000 * Math.pow(2, attempt);
+        await sleep(delay);
+      } else {
+        throw new Error(`Triplet extraction failed after ${retries + 1} attempts: ${msg}`);
       }
     }
-  } catch (err) {
-    console.warn('[TripletExtract] Batch extraction failed:', err instanceof Error ? err.message : err);
   }
 
   return result;

@@ -527,63 +527,121 @@ export function chunkContent(content: string): string[] {
   return chunks;
 }
 
-/** Parse an llms.txt file into chunks for indexing.
- *  Handles both summary format (title + URL + description) and full-content format.
- *  Each ## heading becomes a doc; long docs are further chunked. */
+/** Parse an llms.txt section file into chunks for indexing.
+ *  Supports both full-content format (# Title, URL:, --- separators)
+ *  and legacy summary format (## Title, - URL:) for transition safety. */
 function parseLlmsFullText(text: string, section: string): ParsedChunk[] {
   const chunks: ParsedChunk[] = [];
-  const blocks = text.split(/^## /m).filter(Boolean);
 
-  for (const block of blocks) {
-    const lines = block.trim().split('\n');
-    if (lines.length === 0) continue;
+  // Detect format: full-content uses page separators and # Title headings
+  const trimmed = text.trimStart();
+  const isFullContent = trimmed.startsWith('# ') || text.includes('\n\n---\n\n');
 
-    const titleLine = lines[0].trim();
-    const linkMatch = titleLine.match(/\[([^\]]+)\]\(([^)]+)\)/);
-    let title = linkMatch ? linkMatch[1] : titleLine;
-    let url = linkMatch ? linkMatch[2] : '';
+  if (isFullContent) {
+    // Full-content format: pages separated by \n\n---\n\n
+    const pages = text.split(/\n\s*---\s*\n/).filter(p => p.trim().length > 0);
+    for (const page of pages) {
+      const lines = page.trim().split('\n');
+      if (lines.length === 0) continue;
 
-    // Extract URL from "- URL: ..." metadata line if not in title
-    if (!url) {
-      const urlLine = lines.find(l => l.trim().startsWith('- URL:'));
-      if (urlLine) url = urlLine.replace('- URL:', '').trim();
+      let title = '';
+      let url = '';
+      let contentStartIdx = 0;
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!title && line.startsWith('# ')) {
+          title = cleanTitle(line.slice(2).trim());
+          contentStartIdx = i + 1;
+        } else if (line.startsWith('URL:')) {
+          url = line.slice(4).trim();
+          contentStartIdx = i + 1;
+        } else if (line === '' && contentStartIdx === i) {
+          contentStartIdx = i + 1;
+        } else if (line !== '') {
+          // First non-empty, non-metadata line marks content start
+          if (contentStartIdx <= i) {
+            contentStartIdx = i;
+          }
+          break;
+        }
+      }
+
+      if (!title) continue;
+      if (!url) {
+        console.warn(`[RAG] Missing URL for page "${title}" in section ${section}`);
+        continue;
+      }
+
+      // Normalize URL
+      if (!url.startsWith('http')) {
+        url = `${DOCS_SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+      }
+      try {
+        const parsed = new URL(url);
+        url = parsed.pathname + (parsed.search || '');
+      } catch { /* keep as-is if not a valid URL */ }
+
+      const content = lines.slice(contentStartIdx).join('\n').trim();
+      const searchContent = content || title;
+      const contentChunks = chunkContent(searchContent);
+      for (let i = 0; i < contentChunks.length; i++) {
+        chunks.push({
+          id: `${section}:${url}#${i}`,
+          doc_url: url.replace(/\.md$/, ''),
+          doc_url_md: url,
+          doc_title: title,
+          section,
+          content: contentChunks[i],
+          weight: 1.0,
+        });
+      }
     }
+  } else {
+    // Legacy summary format: blocks separated by ^##
+    const blocks = text.split(/^## /m).filter(Boolean);
+    for (const block of blocks) {
+      const lines = block.trim().split('\n');
+      if (lines.length === 0) continue;
 
-    if (url && !url.startsWith('http')) {
-      url = `${DOCS_SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
-    }
+      const titleLine = lines[0].trim();
+      const linkMatch = titleLine.match(/\[([^\]]+)\]\(([^)]+)\)/);
+      let title = linkMatch ? linkMatch[1] : titleLine;
+      let url = linkMatch ? linkMatch[2] : '';
 
-    // Normalize to path-only so URLs are consistent regardless of which host served the index
-    try {
-      const parsed = new URL(url);
-      url = parsed.pathname + (parsed.search || '');
-    } catch { /* keep as-is if not a valid URL */ }
+      if (!url) {
+        const urlLine = lines.find(l => l.trim().startsWith('- URL:'));
+        if (urlLine) url = urlLine.replace('- URL:', '').trim();
+      }
 
-    // Build searchable content: include metadata lines and description
-    const contentLines = lines.slice(1).filter(l => {
-      // Keep description lines (starting with >) and all non-metadata content
-      const trimmed = l.trim();
-      if (trimmed.startsWith('- URL:')) return false; // already extracted
-      return true;
-    });
-    const content = contentLines.join('\n').trim();
-    if (!title) continue;
-    // Allow entries with just a title and URL (no content body)
-    const searchContent = content || title;
+      if (url && !url.startsWith('http')) {
+        url = `${DOCS_SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+      }
+      try {
+        const parsed = new URL(url);
+        url = parsed.pathname + (parsed.search || '');
+      } catch { /* keep as-is if not a valid URL */ }
 
-    const contentChunks = chunkContent(searchContent);
-    for (let i = 0; i < contentChunks.length; i++) {
-      const chunkText = contentChunks[i];
-
-      chunks.push({
-        id: `${section}:${url}#${i}`,
-        doc_url: url.replace(/\.md$/, ''),
-        doc_url_md: url,
-        doc_title: title,
-        section,
-        content: chunkText,
-        weight: 1.0,
+      const contentLines = lines.slice(1).filter(l => {
+        const trimmed = l.trim();
+        if (trimmed.startsWith('- URL:')) return false;
+        return true;
       });
+      const content = contentLines.join('\n').trim();
+      if (!title) continue;
+      const searchContent = content || title;
+      const contentChunks = chunkContent(searchContent);
+      for (let i = 0; i < contentChunks.length; i++) {
+        chunks.push({
+          id: `${section}:${url}#${i}`,
+          doc_url: url.replace(/\.md$/, ''),
+          doc_url_md: url,
+          doc_title: title,
+          section,
+          content: contentChunks[i],
+          weight: 1.0,
+        });
+      }
     }
   }
 
@@ -749,12 +807,12 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
   if (allChunks.length > 0) {
     const pool = getPool();
 
-    // Check if existing index in DB is fresh (same source, built within 30 min)
-    // This avoids unnecessary rebuild on pod restart when the PVC still has recent data
+    // Check if existing index in DB is fresh (same source, built within 30 min,
+    // and chunk count matches metadata to catch truncated builds)
     if (!force && !indexReady) {
       try {
         const { rows: metaRows } = await pool.query(
-          "SELECT key, value FROM metadata WHERE key IN ('last_build', 'source')"
+          "SELECT key, value FROM metadata WHERE key IN ('last_build', 'source', 'total_chunks')"
         );
         const metaMap = Object.fromEntries(metaRows.map((r: any) => [r.key, r.value]));
         if (metaMap.last_build && metaMap.source) {
@@ -767,11 +825,20 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
               console.log(`[RAG] Index is fresh but dimension mismatch: schema=${schemaDim}, expected=${expectedDim}. Rebuilding...`);
               // fall through to rebuild
             } else {
-              console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source) — using existing`);
-              indexReady = true;
-              lastRefreshedAt = metaMap.last_build;
-              indexLoading = false;
-              return;
+              // Verify chunk count consistency (catch truncated/partial builds)
+              const storedChunks = parseInt(metaMap.total_chunks || '0', 10);
+              const { rows: [{ n: dbChunks }] } = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks');
+              const chunkDiff = storedChunks > 0 ? Math.abs(dbChunks - storedChunks) / storedChunks : 0;
+              if (storedChunks > 0 && chunkDiff > 0.3) {
+                console.log(`[RAG] Index chunk count mismatch: DB=${dbChunks}, metadata=${storedChunks} (${(chunkDiff * 100).toFixed(0)}% diff). Rebuilding...`);
+                // fall through to rebuild
+              } else {
+                console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source, ${dbChunks} chunks) — using existing`);
+                indexReady = true;
+                lastRefreshedAt = metaMap.last_build;
+                indexLoading = false;
+                return;
+              }
             }
           }
         }

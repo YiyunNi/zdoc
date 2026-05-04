@@ -20,7 +20,7 @@ export const searchDocsTool = tool({
     const optimizedQuery = await rewriteQuery(query);
     // Extract entities to boost results mentioning key technical terms
     const entities = await extractEntities(query);
-    const results = await searchDocs(optimizedQuery, topK, getActiveSectionFilter(), entities);
+    const results = await searchDocs(optimizedQuery, topK, getActiveSectionFilter(), entities, entities);
     const confidence = computeRetrievalConfidence(results);
 
     return {

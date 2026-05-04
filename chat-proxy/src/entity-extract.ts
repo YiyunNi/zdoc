@@ -15,13 +15,18 @@ interface CacheEntry {
 const cache = new Map<string, CacheEntry>();
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
+function sleep(ms: number): Promise<void> {
+  return new Promise(r => setTimeout(r, ms));
+}
+
 /**
  * Extract named entities (products, technologies, concepts, features)
  * from a user query using a lightweight LLM call.
  *
  * Results are cached for 1 hour to avoid repeated extraction.
+ * Retries on transient failures and falls back to empty array.
  */
-export async function extractEntities(query: string): Promise<string[]> {
+export async function extractEntities(query: string, retries = 3): Promise<string[]> {
   if (!query || query.trim().length === 0) return [];
 
   const normalized = query.trim().toLowerCase();
@@ -30,26 +35,34 @@ export async function extractEntities(query: string): Promise<string[]> {
     return cached.entities;
   }
 
-  try {
-    const resolvedModel = await resolveModel('rewrite');
-    const result = await generateObject({
-      model: createModelInstance(resolvedModel),
-      schema: entitySchema,
-      maxOutputTokens: 200,
-      experimental_telemetry: makeTelemetry('entity-extract'),
-      prompt: `Extract named entities (products, technologies, people, concepts, features) from this query. Return them as a JSON array of strings. Be concise — only extract distinctive technical terms.
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const resolvedModel = await resolveModel('rewrite');
+      const result = await generateObject({
+        model: createModelInstance(resolvedModel),
+        schema: entitySchema,
+        maxOutputTokens: 500,
+        experimental_telemetry: makeTelemetry('entity-extract'),
+        prompt: `Extract named entities (products, technologies, people, concepts, features) from this query. Return them as a JSON array of strings. Be concise — only extract distinctive technical terms.
 
 Query: "${query}"`,
-    });
+      });
 
-    const entities = result.object.entities
-      .map(e => e.trim())
-      .filter(e => e.length > 0 && e.length < 50);
+      const entities = result.object.entities
+        .map(e => e.trim())
+        .filter(e => e.length > 0 && e.length < 50);
 
-    cache.set(normalized, {entities, expiresAt: Date.now() + CACHE_TTL_MS});
-    return entities;
-  } catch (err) {
-    console.warn('[EntityExtract] Failed:', err instanceof Error ? err.message : err);
-    return [];
+      cache.set(normalized, {entities, expiresAt: Date.now() + CACHE_TTL_MS});
+      return entities;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`[EntityExtract] Attempt ${attempt + 1}/${retries + 1} failed:`, msg);
+      if (attempt < retries) {
+        const delay = 1000 * Math.pow(2, attempt);
+        await sleep(delay);
+      }
+    }
   }
+
+  return [];
 }

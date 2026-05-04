@@ -64,8 +64,8 @@ export type ResolvedModel =
 const ENV_DEFAULTS: Record<string, { provider: string; modelEnv: string; defaultModel: string }> = {
   chat:          { provider: 'openai-compatible', modelEnv: 'AI_MODEL',              defaultModel: 'gpt-4o' },
   router:        { provider: 'openai-compatible', modelEnv: 'ROUTER_MODEL',           defaultModel: 'openai/gpt-4o-mini' },
-  grounding:     { provider: 'openai-compatible', modelEnv: 'GROUNDING_MODEL',        defaultModel: 'google/gemini-3.1-flash-lite-preview' },
-  rewrite:       { provider: 'openai-compatible', modelEnv: 'REWRITE_MODEL',          defaultModel: 'google/gemini-3.1-flash-lite-preview' },
+  grounding:     { provider: 'openai-compatible', modelEnv: 'GROUNDING_MODEL',        defaultModel: 'openai/gpt-4o-mini' },
+  rewrite:       { provider: 'openai-compatible', modelEnv: 'REWRITE_MODEL',          defaultModel: 'openai/gpt-4o-mini' },
   embedding:     { provider: 'openai-compatible', modelEnv: 'SEMANTIC_EMBEDDING_MODEL', defaultModel: 'text-embedding-3-small' },
   'agent:general':  { provider: 'openai-compatible', modelEnv: 'GENERAL_MODEL',       defaultModel: '' },
   'agent:schema':   { provider: 'openai-compatible', modelEnv: 'SCHEMA_MODEL',        defaultModel: '' },
