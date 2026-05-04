@@ -5,6 +5,21 @@ const path = require('node:path');
 const yaml = require('js-yaml');
 
 /**
+ * Parse YAML frontmatter from a content string.
+ * @param {string} content
+ * @returns {Record<string, any>}
+ */
+function parseFrontmatterFromContent(content) {
+  try {
+    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!match) return {};
+    return /** @type {Record<string, any>} */ (yaml.load(match[1])) || {};
+  } catch {
+    return {};
+  }
+}
+
+/**
  * Parse YAML frontmatter from a markdown file.
  * @param {string} filePath
  * @returns {Record<string, any>}
@@ -12,9 +27,7 @@ const yaml = require('js-yaml');
 function parseFrontmatter(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
-    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-    if (!match) return {};
-    return /** @type {Record<string, any>} */ (yaml.load(match[1])) || {};
+    return parseFrontmatterFromContent(content);
   } catch {
     return {};
   }
@@ -35,22 +48,67 @@ function cleanText(str) {
 }
 
 /**
- * Build a canonical URL from frontmatter slug or file path.
- * @param {Record<string, any>} fm
- * @param {string} filePath     Absolute path to the .md file
- * @param {string} sectionDir   Absolute path to the source root dir
- * @param {string} route        URL route prefix, e.g. "/docs"
- * @param {string} siteUrl      Base URL, e.g. "https://docs.zilliz.com"
+ * Detect programming languages from fenced code blocks.
+ * @param {string} rawContent
+ * @returns {string[]}
  */
-function buildUrl(fm, filePath, sectionDir, route, siteUrl) {
-  if (fm.slug) {
-    const slug = String(fm.slug).replace(/^\//, '');
-    return `${siteUrl}${route}/${slug}`.replace(/([^:])\/\/+/g, '$1/');
+function detectLanguages(rawContent) {
+  const langs = new Set();
+  const re = /^```(\w+)/gm;
+  const map = {
+    py: 'python', python: 'python',
+    java: 'java',
+    javascript: 'nodejs', js: 'nodejs', typescript: 'nodejs', ts: 'nodejs', node: 'nodejs',
+    go: 'go', golang: 'go',
+    curl: 'rest', http: 'rest', rest: 'rest',
+    bash: null, shell: null, sh: null, json: null, yaml: null, xml: null, sql: null, text: null,
+  };
+  let match;
+  while ((match = re.exec(rawContent)) !== null) {
+    const lang = match[1].toLowerCase();
+    const normalized = map.hasOwnProperty(lang) ? map[lang] : null;
+    if (normalized) langs.add(normalized);
   }
-  const rel = path.relative(path.dirname(sectionDir), filePath)
-    .replace(/\.mdx?$/, '')
-    .replace(/\\/g, '/');
-  return `${siteUrl}${route}/${rel}`.replace(/([^:])\/\/+/g, '$1/');
+  return [...langs];
+}
+
+/**
+ * Extract a one-line description from the page body.
+ * Takes the first non-heading, non-empty paragraph (up to 200 chars).
+ * @param {string} strippedBody  Output of stripMdxBody()
+ * @returns {string}
+ */
+function extractDescription(strippedBody) {
+  const lines = strippedBody.split('\n');
+  let paragraph = '';
+  for (const line of lines) {
+    if (!line || /^(#|```|>|- |\d+\.)/.test(line.trimStart())) continue;
+    if (/^\w+:/.test(line)) continue;
+    paragraph = line.trim();
+    break;
+  }
+  if (paragraph.length > 200) {
+    paragraph = paragraph.slice(0, 197) + '...';
+  }
+  return paragraph;
+}
+
+/**
+ * Infer content type from frontmatter or file path.
+ * @param {Record<string, any>} fm
+ * @param {string} filePath
+ * @returns {string}
+ */
+function inferContentType(fm, filePath) {
+  if (fm.content_type) {
+    const ct = String(fm.content_type).toLowerCase();
+    const valid = ['tutorial', 'api-reference', 'conceptual', 'troubleshooting'];
+    if (valid.includes(ct)) return ct;
+    console.warn(`[llms-txt] Invalid content_type "${fm.content_type}" in ${filePath}, inferring from path`);
+  }
+  if (/[/\\]reference[/\\]/.test(filePath)) return 'api-reference';
+  if (/faq|troubleshoot/i.test(filePath)) return 'troubleshooting';
+  return 'tutorial';
 }
 
 /**
@@ -212,6 +270,27 @@ function buildSectionContent(sourceDir, route, siteUrl) {
     content: parts.join('\n\n---\n\n'),
     count: parts.length,
   };
+}
+
+/**
+ * Build a canonical URL from frontmatter slug or file path.
+ * @param {Record<string, any>} fm
+ * @param {string} filePath     Absolute path to the .md file
+ * @param {string} sectionDir   Absolute path to the source root dir
+ * @param {string} route        URL route prefix, e.g. "/docs"
+ * @param {string} siteUrl      Base URL, e.g. "https://docs.zilliz.com"
+ */
+function buildUrl(fm, filePath, sectionDir, route, siteUrl) {
+  if (fm.slug) {
+    const slug = String(fm.slug).replace(/^\//, '');
+    return `${siteUrl}${route}/${slug}`.replace(/([^:])\/\/+/g, '$1/');
+  }
+  // Use relative path from sectionDir (not its parent) to avoid duplicating
+  // the folder name when using coarse sources like folder: 'docs'.
+  const rel = path.relative(sectionDir, filePath)
+    .replace(/\.mdx?$/, '')
+    .replace(/\\/g, '/');
+  return `${siteUrl}${route}/${rel}`.replace(/([^:])\/\/+/g, '$1/');
 }
 
 /**
