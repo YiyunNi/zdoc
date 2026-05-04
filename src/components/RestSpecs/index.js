@@ -604,6 +604,8 @@ export default function RestSpecs(props) {
     const [ selectedBaseUrl, setSelectedBaseUrl ] = useState(() =>
         target === 'zilliz' && Array.isArray(baseUrls) && baseUrls.length > 0 ? baseUrls[0] : null
     )
+    const selectedBaseUrlVar = selectedBaseUrl?.shell?.match(/export\s+(\w+)=/)?.[1]
+    const exampleBaseUrl = selectedBaseUrlVar ? `\${${selectedBaseUrlVar}}` : selectedBaseUrl?.url
     const validParams = parameters ? parameters.filter(param => {
         if (param?.['x-include-target'] && !param['x-include-target'].includes(target)) return false
         if (param?.['x-base-url-target']) {
@@ -765,7 +767,7 @@ export default function RestSpecs(props) {
                                 lang={lang}
                                 target={target}
                                 selectedRequest={selectedRequest}
-                                baseUrl={selectedBaseUrl?.url} />
+                                baseUrl={exampleBaseUrl} />
                         </section>
                     </>}
                 </div>
