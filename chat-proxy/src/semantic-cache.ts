@@ -48,7 +48,7 @@ async function embedCohereBedrock(text: string, resolved: { model: string; regio
   return embs[0];
 }
 
-async function embedCohereBedrockBatch(texts: string[], resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }, retries = 3): Promise<number[][]> {
+async function embedCohereBedrockBatch(texts: string[], resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }, retries = 6): Promise<number[][]> {
   const { BedrockRuntimeClient, InvokeModelCommand } = await import('@aws-sdk/client-bedrock-runtime');
   const region = resolved.region || process.env.AWS_REGION || 'us-east-1';
   const accessKeyId = resolved.accessKeyId || process.env.AWS_ACCESS_KEY_ID || '';
@@ -92,9 +92,16 @@ async function embedCohereBedrockBatch(texts: string[], resolved: { model: strin
 
       throw new Error(`Unexpected Cohere embedding response shape: ${JSON.stringify(json).slice(0, 200)}`);
     } catch (err) {
-      const msg = (err as Error).message;
-      if ((msg.includes('Too many requests') || (err as any).name === 'ThrottlingException') && attempt < retries) {
-        const delay = 1000 * Math.pow(2, attempt) + Math.random() * 500;
+      const msg = (err as Error).message || '';
+      const isThrottled =
+        msg.includes('Too many requests') ||
+        (err as any).name === 'ThrottlingException' ||
+        msg.includes('Rate exceeded') ||
+        msg.includes('ProvisionedThroughputExceededException');
+      if (isThrottled && attempt < retries) {
+        const baseDelay = 1000 * Math.pow(2, attempt);
+        const jitter = Math.random() * 1000;
+        const delay = baseDelay + jitter;
         console.log(`[Embedding] Rate limited, retrying in ${Math.round(delay)}ms (attempt ${attempt + 1}/${retries})`);
         await sleep(delay);
         continue;

@@ -652,16 +652,19 @@ function parseLlmsFullText(text: string, section: string): ParsedChunk[] {
 // Batch embedding: populate doc_chunks.embedding during index load
 // ---------------------------------------------------------------------------
 
-const EMBEDDING_BATCH_SIZE = 20;
+const EMBEDDING_BATCH_SIZE = 10;
+const BASE_INTER_BATCH_DELAY_MS = 1000;
+const MAX_INTER_BATCH_DELAY_MS = 16000;
 
 async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
   const pool = getPool();
   const totalChunks = allChunks.length;
   let embedded = 0;
   let failed = 0;
+  let interBatchDelay = BASE_INTER_BATCH_DELAY_MS;
   embeddingProgress = { total: totalChunks, done: 0, failed: 0, active: true };
 
-  console.log(`[RAG] Starting embedding backfill for ${totalChunks} chunks (batch size: ${EMBEDDING_BATCH_SIZE})`);
+  console.log(`[RAG] Starting embedding backfill for ${totalChunks} chunks (batch size: ${EMBEDDING_BATCH_SIZE}, base delay: ${BASE_INTER_BATCH_DELAY_MS}ms)`);
 
   for (let i = 0; i < totalChunks; i += EMBEDDING_BATCH_SIZE) {
     const batch = allChunks.slice(i, i + EMBEDDING_BATCH_SIZE);
@@ -689,6 +692,11 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
         }
       }
 
+      // After success, gradually reduce delay back toward base
+      if (interBatchDelay > BASE_INTER_BATCH_DELAY_MS) {
+        interBatchDelay = Math.max(BASE_INTER_BATCH_DELAY_MS, Math.floor(interBatchDelay / 2));
+      }
+
       if (embeddingProgress) {
         embeddingProgress.done = embedded;
         embeddingProgress.failed = failed;
@@ -696,16 +704,23 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
 
       // Progress log every 200 chunks
       if ((i + batch.length) % 200 === 0 || i + batch.length >= totalChunks) {
-        console.log(`[RAG] Embedding progress: ${Math.min(i + batch.length, totalChunks)}/${totalChunks} (embedded: ${embedded}, failed: ${failed})`);
-      }
-
-      // Small delay between batches to avoid rate limits
-      if (i + EMBEDDING_BATCH_SIZE < totalChunks) {
-        await new Promise(r => setTimeout(r, 300));
+        console.log(`[RAG] Embedding progress: ${Math.min(i + batch.length, totalChunks)}/${totalChunks} (embedded: ${embedded}, failed: ${failed}, delay: ${interBatchDelay}ms)`);
       }
     } catch (err) {
       failed += batch.length;
-      console.warn(`[RAG] Embedding batch failed at chunk ${i}:`, (err as Error).message);
+      const msg = (err as Error).message || '';
+      const isThrottled = /throttl|too many requests|rate exceeded|provisioned throughput/i.test(msg) || (err as any).name === 'ThrottlingException';
+      if (isThrottled && interBatchDelay < MAX_INTER_BATCH_DELAY_MS) {
+        interBatchDelay = Math.min(MAX_INTER_BATCH_DELAY_MS, interBatchDelay * 2);
+        console.warn(`[RAG] Embedding batch throttled at chunk ${i}, increasing delay to ${interBatchDelay}ms`);
+      } else {
+        console.warn(`[RAG] Embedding batch failed at chunk ${i}:`, msg);
+      }
+    }
+
+    // Adaptive delay between batches to avoid rate limits
+    if (i + EMBEDDING_BATCH_SIZE < totalChunks) {
+      await new Promise(r => setTimeout(r, interBatchDelay));
     }
   }
 
