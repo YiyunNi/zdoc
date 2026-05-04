@@ -296,6 +296,8 @@ export async function resetDb(): Promise<void> {
 export async function recreateEmbeddingTables(dimensions: number): Promise<void> {
   const pool = getPool();
   await pool.query('DROP TABLE IF EXISTS doc_chunks');
+  await pool.query('DROP TABLE IF EXISTS doc_chunks_new');
+  await pool.query('DROP TABLE IF EXISTS doc_chunks_old');
   await pool.query('DROP TABLE IF EXISTS answer_cache');
   await pool.query('DELETE FROM metadata');
 
@@ -303,6 +305,44 @@ export async function recreateEmbeddingTables(dimensions: number): Promise<void>
     .replace(/vector\(1024\)/g, `vector(${dimensions})`)
     .replace(/vector\(1536\)/g, `vector(${dimensions})`);
   await pool.query(ddl);
+}
+
+/** Create a shadow table with the same schema as doc_chunks for zero-downtime rebuilds */
+export async function ensureShadowTable(dimensions: number): Promise<void> {
+  const pool = getPool();
+  // Drop any stale shadow table from a previous failed build
+  await pool.query('DROP TABLE IF EXISTS doc_chunks_new');
+
+  const ddl = SCHEMA_DDL
+    .replace(/CREATE TABLE IF NOT EXISTS doc_chunks/g, 'CREATE TABLE doc_chunks_new')
+    .replace(/CREATE INDEX IF NOT EXISTS idx_chunks_(\w+)/g, 'CREATE INDEX idx_new_chunks_$1')
+    .replace(/vector\(1024\)/g, `vector(${dimensions})`)
+    .replace(/vector\(1536\)/g, `vector(${dimensions})`);
+
+  await pool.query(ddl);
+}
+
+/** Atomically swap shadow table to active. Old table becomes doc_chunks_old. */
+export async function swapDocChunksTables(): Promise<void> {
+  const pool = getPool();
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    await client.query('ALTER TABLE IF EXISTS doc_chunks RENAME TO doc_chunks_old');
+    await client.query('ALTER TABLE doc_chunks_new RENAME TO doc_chunks');
+    await client.query('COMMIT');
+  } catch (err) {
+    await client.query('ROLLBACK');
+    throw err;
+  } finally {
+    client.release();
+  }
+}
+
+/** Drop the old table left behind after a swap */
+export async function dropOldDocChunks(): Promise<void> {
+  const pool = getPool();
+  await pool.query('DROP TABLE IF EXISTS doc_chunks_old');
 }
 
 export async function getEmbeddingSchemaDimension(): Promise<number | null> {

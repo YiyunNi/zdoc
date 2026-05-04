@@ -1,6 +1,6 @@
 import type {ConfidenceLevel} from './types.js';
 import {isDemotedSource} from './demotion.js';
-import {getPool, resetDb, recreateEmbeddingTables, getEmbeddingSchemaDimension} from './db.js';
+import {getPool, ensureShadowTable, swapDocChunksTables, dropOldDocChunks, recreateEmbeddingTables, getEmbeddingSchemaDimension} from './db.js';
 import {computeEmbedding, computeEmbeddingsBatch} from './semantic-cache.js';
 import {resolveModel, inferEmbeddingDimension, detectEmbeddingDimension} from './runtime-config.js';
 import {extractTripletsBatch, flattenEntities} from './triplet-extract.js';
@@ -860,7 +860,9 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
       } catch { /* DB not ready or empty — proceed with build */ }
     }
 
-    await resetDb();
+    // Use shadow table for zero-downtime rebuild — old index stays live until swap
+    console.log('[RAG] Creating shadow table for zero-downtime rebuild');
+    await ensureShadowTable(expectedDim || 1024);
 
     // Optional triplet extraction for entity enrichment
     if (options?.extractTriplets) {
@@ -893,7 +895,7 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
       await client.query('BEGIN');
       for (const c of allChunks) {
         await client.query(
-          `INSERT INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight, entities)
+          `INSERT INTO doc_chunks_new (id, doc_url, doc_url_md, doc_title, section, content, weight, entities)
            VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
            ON CONFLICT (id) DO UPDATE SET
              doc_url = EXCLUDED.doc_url, doc_url_md = EXCLUDED.doc_url_md,
@@ -911,13 +913,10 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
       client.release();
     }
 
-    // Backfill embeddings in the background — do NOT block index readiness
-    const embeddingPromise = backfillEmbeddings(allChunks)
-      .catch(err => console.warn('[RAG] Embedding backfill failed:', (err as Error).message));
-
-    // Do NOT await — embeddings are populated asynchronously
-    // The index is usable immediately with FTS; vector search degrades gracefully
-    void embeddingPromise;
+    // Atomic swap: old index stays live until swap completes
+    console.log('[RAG] Swapping shadow table to active');
+    await swapDocChunksTables();
+    await dropOldDocChunks();
 
     // Write metadata
     await pool.query(
@@ -944,6 +943,14 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
     indexReady = true;
     lastRefreshedAt = new Date().toISOString();
     console.log(`[RAG] PostgreSQL index ready: ${allChunks.length} chunks`);
+
+    // Backfill embeddings in the background — do NOT block index readiness
+    const embeddingPromise = backfillEmbeddings(allChunks)
+      .catch(err => console.warn('[RAG] Embedding backfill failed:', (err as Error).message));
+
+    // Do NOT await — embeddings are populated asynchronously
+    // The index is usable immediately with FTS; vector search degrades gracefully
+    void embeddingPromise;
   } else {
     console.warn('[RAG] No chunks loaded — search will return empty results');
   }
