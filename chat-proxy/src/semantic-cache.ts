@@ -22,7 +22,12 @@ export async function computeEmbedding(text: string): Promise<number[]> {
   // Cohere Embed models on Bedrock require a custom request format (input_type, texts, etc.)
   // that the generic ai-sdk embed() does not send. Use Bedrock Runtime directly.
   if (resolved.provider === 'bedrock' && resolved.model.toLowerCase().includes('cohere') && resolved.model.toLowerCase().includes('embed')) {
-    return embedCohereBedrock(text, resolved);
+    try {
+      return await embedCohereBedrock(text, resolved);
+    } catch (err) {
+      console.error('[Embedding] Cohere Bedrock error:', (err as Error).message);
+      throw err;
+    }
   }
 
   const model = await getEmbeddingModel('embedding');

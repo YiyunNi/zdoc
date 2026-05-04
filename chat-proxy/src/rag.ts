@@ -616,7 +616,8 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
         try {
           const emb = await computeEmbedding(text);
           embeddings.push(emb);
-        } catch {
+        } catch (err) {
+          console.warn('[RAG] Embedding chunk failed:', (err as Error).message);
           embeddings.push([]); // empty = failure for this chunk
         }
       }
