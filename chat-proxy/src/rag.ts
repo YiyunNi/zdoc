@@ -1,7 +1,7 @@
 import type {ConfidenceLevel} from './types.js';
 import {isDemotedSource} from './demotion.js';
 import {getPool, resetDb, recreateEmbeddingTables, getEmbeddingSchemaDimension} from './db.js';
-import {computeEmbedding} from './semantic-cache.js';
+import {computeEmbedding, computeEmbeddingsBatch} from './semantic-cache.js';
 import {resolveModel, inferEmbeddingDimension, detectEmbeddingDimension} from './runtime-config.js';
 import {extractTripletsBatch, flattenEntities} from './triplet-extract.js';
 
@@ -611,20 +611,11 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
     const texts = batch.map(c => `${c.doc_title}\n${c.content}`);
 
     try {
-      const embeddings: number[][] = [];
-      for (const text of texts) {
-        try {
-          const emb = await computeEmbedding(text);
-          embeddings.push(emb);
-        } catch (err) {
-          console.warn('[RAG] Embedding chunk failed:', (err as Error).message);
-          embeddings.push([]); // empty = failure for this chunk
-        }
-      }
+      const embeddings = await computeEmbeddingsBatch(texts);
 
       // Update chunks with embeddings
       for (let j = 0; j < batch.length; j++) {
-        if (embeddings[j].length > 0) {
+        if (embeddings[j]?.length > 0) {
           try {
             await pool.query(
               `UPDATE doc_chunks SET embedding = $1::vector WHERE id = $2`,
@@ -648,6 +639,11 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
       // Progress log every 200 chunks
       if ((i + batch.length) % 200 === 0 || i + batch.length >= totalChunks) {
         console.log(`[RAG] Embedding progress: ${Math.min(i + batch.length, totalChunks)}/${totalChunks} (embedded: ${embedded}, failed: ${failed})`);
+      }
+
+      // Small delay between batches to avoid rate limits
+      if (i + EMBEDDING_BATCH_SIZE < totalChunks) {
+        await new Promise(r => setTimeout(r, 300));
       }
     } catch (err) {
       failed += batch.length;

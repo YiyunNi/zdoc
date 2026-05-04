@@ -11,6 +11,10 @@ const SEMANTIC_CACHE_TTL_MS = parseInt(process.env.SEMANTIC_CACHE_TTL_MS || '', 
 const SEMANTIC_CACHE_THRESHOLD = parseFloat(process.env.SEMANTIC_CACHE_THRESHOLD || '0.92');
 const SEMANTIC_CACHE_MAX_ENTRIES = parseInt(process.env.SEMANTIC_CACHE_MAX_ENTRIES || '5000', 10);
 
+function sleep(ms: number): Promise<void> {
+  return new Promise(r => setTimeout(r, ms));
+}
+
 // ---------------------------------------------------------------------------
 // Embedding
 // ---------------------------------------------------------------------------
@@ -39,7 +43,12 @@ export async function computeEmbedding(text: string): Promise<number[]> {
 }
 
 /** Call Cohere embedding models on Bedrock via InvokeModel (bypasses ai-sdk) */
-async function embedCohereBedrock(text: string, resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }): Promise<number[]> {
+async function embedCohereBedrock(text: string, resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }, retries = 3): Promise<number[]> {
+  const embs = await embedCohereBedrockBatch([text], resolved, retries);
+  return embs[0];
+}
+
+async function embedCohereBedrockBatch(texts: string[], resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }, retries = 3): Promise<number[][]> {
   const { BedrockRuntimeClient, InvokeModelCommand } = await import('@aws-sdk/client-bedrock-runtime');
   const region = resolved.region || process.env.AWS_REGION || 'us-east-1';
   const accessKeyId = resolved.accessKeyId || process.env.AWS_ACCESS_KEY_ID || '';
@@ -56,30 +65,69 @@ async function embedCohereBedrock(text: string, resolved: { model: string; regio
   });
 
   const body = JSON.stringify({
-    texts: [text],
+    texts,
     input_type: 'search_document',
     embedding_types: ['float'],
   });
 
-  const response = await client.send(new InvokeModelCommand({
-    modelId: resolved.model,
-    body,
-    accept: 'application/json',
-    contentType: 'application/json',
-  }));
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const response = await client.send(new InvokeModelCommand({
+        modelId: resolved.model,
+        body,
+        accept: 'application/json',
+        contentType: 'application/json',
+      }));
 
-  const json = JSON.parse(new TextDecoder().decode(response.body));
+      const json = JSON.parse(new TextDecoder().decode(response.body));
 
-  // Cohere Embed v4 single-type response: { embeddings: [[...]], response_type: 'embeddings_floats' }
-  // Multi-type response: { embeddings: { float: [[...]] }, response_type: 'embeddings_by_type' }
-  if (json.response_type === 'embeddings_by_type' && json.embeddings?.float) {
-    return json.embeddings.float[0];
+      // Cohere Embed v4 single-type response: { embeddings: [[...]], response_type: 'embeddings_floats' }
+      // Multi-type response: { embeddings: { float: [[...]] }, response_type: 'embeddings_by_type' }
+      if (json.response_type === 'embeddings_by_type' && json.embeddings?.float) {
+        return json.embeddings.float;
+      }
+      if (Array.isArray(json.embeddings) && json.embeddings.length > 0) {
+        return json.embeddings;
+      }
+
+      throw new Error(`Unexpected Cohere embedding response shape: ${JSON.stringify(json).slice(0, 200)}`);
+    } catch (err) {
+      const msg = (err as Error).message;
+      if ((msg.includes('Too many requests') || (err as any).name === 'ThrottlingException') && attempt < retries) {
+        const delay = 1000 * Math.pow(2, attempt) + Math.random() * 500;
+        console.log(`[Embedding] Rate limited, retrying in ${Math.round(delay)}ms (attempt ${attempt + 1}/${retries})`);
+        await sleep(delay);
+        continue;
+      }
+      throw err;
+    }
   }
-  if (Array.isArray(json.embeddings) && json.embeddings.length > 0) {
-    return json.embeddings[0];
+
+  throw new Error('Max retries exceeded for Cohere embedding');
+}
+
+/** Batch compute embeddings. Uses native Cohere batching on Bedrock when possible. */
+export async function computeEmbeddingsBatch(texts: string[]): Promise<number[][]> {
+  if (texts.length === 0) return [];
+
+  const resolved = await resolveModel('embedding');
+
+  // Use native Cohere batching on Bedrock (up to 96 texts per request)
+  if (resolved.provider === 'bedrock' && resolved.model.toLowerCase().includes('cohere') && resolved.model.toLowerCase().includes('embed')) {
+    try {
+      return await embedCohereBedrockBatch(texts, resolved);
+    } catch (err) {
+      console.error('[Embedding] Cohere Bedrock batch error:', (err as Error).message);
+      throw err;
+    }
   }
 
-  throw new Error(`Unexpected Cohere embedding response shape: ${JSON.stringify(json).slice(0, 200)}`);
+  // Fallback: individual calls via ai-sdk
+  const results: number[][] = [];
+  for (const text of texts) {
+    results.push(await computeEmbedding(text));
+  }
+  return results;
 }
 
 // ---------------------------------------------------------------------------
