@@ -2,7 +2,7 @@ import {Hono} from 'hono';
 import {readFileSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
-import {loadIndex, getIndexSize, getIndexStatus, getEmbeddingProgress} from './rag.js';
+import {loadIndex, getIndexSize, getIndexStatus} from './rag.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
 import {
   getPool,
@@ -228,6 +228,16 @@ adminApp.get('/stats', requireAuth, async c => {
   const cacheConfig = await getSemanticCacheConfig();
   const tokenSummary = await getTokenUsageSummary();
   const schemaDim = await getEmbeddingSchemaDimension();
+
+  // Compute embedding progress from DB so it’s accurate across pods
+  let embeddingProgress = {total: 0, done: 0, failed: 0, active: false};
+  try {
+    const pool = getPool();
+    const {rows: [{n: total}]} = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks');
+    const {rows: [{n: done}]} = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks WHERE embedding IS NOT NULL');
+    embeddingProgress = {total, done, failed: total - done, active: done < total};
+  } catch { /* ignore */ }
+
   return c.json({
     doc_chunks: await getIndexSize(),
     semantic_cache: {
@@ -236,7 +246,7 @@ adminApp.get('/stats', requireAuth, async c => {
       config: cacheConfig,
     },
     token_usage: tokenSummary,
-    embedding: getEmbeddingProgress(),
+    embedding: embeddingProgress,
     dimensions: schemaDim,
   });
 });
