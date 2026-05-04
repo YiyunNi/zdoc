@@ -230,12 +230,12 @@ adminApp.get('/stats', requireAuth, async c => {
   const schemaDim = await getEmbeddingSchemaDimension();
 
   // Compute embedding progress from DB so it’s accurate across pods
-  let embeddingProgress = {total: 0, done: 0, failed: 0, active: false};
+  let embeddingProgress = {total: 0, done: 0, pending: 0, active: false};
   try {
     const pool = getPool();
     const {rows: [{n: total}]} = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks');
     const {rows: [{n: done}]} = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks WHERE embedding IS NOT NULL');
-    embeddingProgress = {total, done, failed: total - done, active: done < total};
+    embeddingProgress = {total, done, pending: total - done, active: done < total};
   } catch { /* ignore */ }
 
   return c.json({

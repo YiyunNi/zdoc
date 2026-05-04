@@ -2592,10 +2592,10 @@ input, select { font-family: var(--body); }
         const em = s && s.embedding;
         if (em && em.active) {
           status.className = 'action-status';
-          status.textContent = 'Embedding: ' + em.done + '/' + em.total + ' done' + (em.failed ? ' · ' + em.failed + ' failed' : '');
+          status.textContent = 'Embedding: ' + em.done + '/' + em.total + ' done' + (em.pending ? ' · ' + em.pending + ' pending' : '');
         } else if (em && !em.active && em.total > 0) {
           status.className = 'action-status ok';
-          status.textContent = 'Embedding complete: ' + em.done + '/' + em.total + ' done' + (em.failed ? ' · ' + em.failed + ' failed' : '');
+          status.textContent = 'Embedding complete: ' + em.done + '/' + em.total + ' done' + (em.pending ? ' · ' + em.pending + ' pending' : '');
           stopPolling();
         }
       } catch {}
