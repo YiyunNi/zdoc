@@ -1,6 +1,6 @@
 import type {ConfidenceLevel} from './types.js';
 import {isDemotedSource} from './demotion.js';
-import {getPool, ensureShadowTable, swapDocChunksTables, dropOldDocChunks, recreateEmbeddingTables, getEmbeddingSchemaDimension} from './db.js';
+import {getPool, ensureShadowTable, swapDocChunksTables, dropOldDocChunks, recreateAnswerCache, getEmbeddingSchemaDimension} from './db.js';
 import {computeEmbedding, computeEmbeddingsBatch} from './semantic-cache.js';
 import {resolveModel, inferEmbeddingDimension, detectEmbeddingDimension} from './runtime-config.js';
 import {extractTripletsBatch, flattenEntities} from './triplet-extract.js';
@@ -778,20 +778,27 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
     console.warn('[RAG] Could not resolve embedding dimension:', (err as Error).message);
   }
 
-  // Check DB schema dimension and recreate tables if mismatch
+  // Check DB schema dimension. If mismatch, invalidate cache and let the normal
+  // shadow-table rebuild flow handle table recreation zero-downtime.
+  let dimensionMismatch = false;
   if (expectedDim) {
     try {
       const schemaDim = await getEmbeddingSchemaDimension();
       if (schemaDim !== null && schemaDim !== expectedDim) {
-        console.log(`[RAG] Embedding dimension mismatch: schema=${schemaDim}, expected=${expectedDim}. Recreating tables...`);
-        await recreateEmbeddingTables(expectedDim);
+        console.log(`[RAG] Embedding dimension mismatch: schema=${schemaDim}, expected=${expectedDim}. Rebuilding via shadow table...`);
+        await recreateAnswerCache(expectedDim);
+        dimensionMismatch = true;
       } else if (schemaDim === null) {
         // Table doesn't exist yet or has no embedding column; ensure schema is created with correct dim
-        await recreateEmbeddingTables(expectedDim);
+        await recreateAnswerCache(expectedDim);
+        dimensionMismatch = true;
       }
     } catch (err) {
       console.warn('[RAG] Schema dimension check failed:', (err as Error).message);
     }
+  }
+  if (dimensionMismatch) {
+    force = true;
   }
 
   console.log('[RAG] Loading doc index from', INDEX_BASE_URL);

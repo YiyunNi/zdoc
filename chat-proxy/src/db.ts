@@ -307,6 +307,29 @@ export async function recreateEmbeddingTables(dimensions: number): Promise<void>
   await pool.query(ddl);
 }
 
+/** Recreate answer_cache table with a specific vector dimension */
+export async function recreateAnswerCache(dimensions: number): Promise<void> {
+  const pool = getPool();
+  await pool.query('DROP TABLE IF EXISTS answer_cache');
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS answer_cache (
+      id              SERIAL PRIMARY KEY,
+      query_text      TEXT NOT NULL,
+      query_embedding vector(${dimensions}),
+      agent           TEXT NOT NULL,
+      section_filter  TEXT,
+      sse_events      JSONB NOT NULL,
+      sources         JSONB NOT NULL,
+      chunk_hashes    JSONB NOT NULL,
+      confidence      JSONB NOT NULL,
+      created_at      TIMESTAMPTZ DEFAULT NOW(),
+      hits            INTEGER NOT NULL DEFAULT 0
+    );
+    CREATE INDEX IF NOT EXISTS idx_cache_agent ON answer_cache(agent);
+    CREATE INDEX IF NOT EXISTS idx_cache_created ON answer_cache(created_at);
+  `);
+}
+
 /** Create a shadow table with the same schema as doc_chunks for zero-downtime rebuilds */
 export async function ensureShadowTable(dimensions: number): Promise<void> {
   const pool = getPool();
