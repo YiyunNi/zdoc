@@ -30,6 +30,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -678,6 +681,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -850,6 +856,82 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AuthorizationHeader"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CollectionCommons"
+              },
+              "example": {
+                "collectionName": "my_collection"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "None",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/EmptyResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ErrorResponse"
+                    }
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "success",
+                    "x-target-response": "OPTION 1",
+                    "value": {
+                      "code": 0,
+                      "data": {}
+                    }
+                  },
+                  "2": {
+                    "summary": "failure",
+                    "x-target-response": "OPTION 2",
+                    "value": {
+                      "code": 1800,
+                      "message": "User hasn't authenticated"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/vectordb/collections/truncate": {
+      "post": {
+        "summary": "Truncate Collection",
+        "deprecated": false,
+        "description": "This operation removes all data from the specified collection while keeping the collection schema.",
+        "x-i18n": {
+          "zh-CN": {
+            "summary": "清空 Collection",
+            "description": "本接口可清空指定 Collection 中的所有数据，但保留 Collection 的 Schema 定义。"
+          }
+        },
+        "tags": [
+          "Collection Operations (V2)"
+        ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -920,6 +1002,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -998,6 +1083,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -1162,6 +1250,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -1483,6 +1574,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -2127,6 +2221,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"

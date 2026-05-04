@@ -30,6 +30,9 @@
         "tags": [
           "Database Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -230,6 +233,9 @@
         "tags": [
           "Database Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -358,6 +364,9 @@
         "tags": [
           "Database Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -546,6 +555,9 @@
         "tags": [
           "Database Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -746,6 +758,9 @@
         "tags": [
           "Database Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -907,6 +922,9 @@
         "tags": [
           "Database Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -1038,6 +1056,9 @@
         "tags": [
           "Database Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -1122,6 +1143,36 @@
     }
   },
   "components": {
+    "x-base-urls": {
+      "ZillizVectorV2": [
+        {
+          "key": "cluster",
+          "label": "Cluster Endpoint",
+          "url": "https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530",
+          "prompt": "Use the cluster endpoint if you are using serving clusters.\n<ul><li><p><b>Free & Serverless</b></p><p><code>https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com</code></p></li><li><p><b>Dedicated</b></p><p><code>https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530</code></p></li></ul>",
+          "x-i18n": {
+            "zh-CN": {
+              "label": "集群端点",
+              "prompt": "如果您使用的是服务集群，请使用集群端点。\n<ul><li><p><b>Free 与 Serverless 版</b></p><p><code>https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com</code></p></li><li><p><b>Dedicated 版</b></p><p><code>https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530</code></p></li></ul>"
+            }
+          },
+          "shell": "export CLUSTER_ENDPOINT=\"https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530\""
+        },
+        {
+          "key": "on-demand-compute",
+          "label": "On-Demand Compute Endpoint",
+          "url": "https://{project-id}.{region}.api.zillizcloud.com",
+          "prompt": "<p>Use the on-demand compute endpoint if you are using on-demand clusters.</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>",
+          "x-i18n": {
+            "zh-CN": {
+              "label": "按需计算端点",
+              "prompt": "<p>如果您使用的是按需集群，请使用按需计算端点。</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>"
+            }
+          },
+          "shell": "export ON_DEMAND_COMPUTE_ENDPOINT=\"https://{project-id}.{region}.api.zillizcloud.com\""
+        }
+      ]
+    },
     "securitySchemes": {
       "bearer": {
         "type": "http",
