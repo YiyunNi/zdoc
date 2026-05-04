@@ -33,7 +33,7 @@ describe('listModelsForProfile — bedrock', () => {
     mockSend.mockReset();
   });
 
-  it('returns foundation models with TEXT/EMBEDDING + ON_DEMAND/INFERENCE_PROFILE', async () => {
+  it('returns foundation models with TEXT/EMBEDDING + ON_DEMAND only', async () => {
     mockSend.mockImplementation(async (cmd: any) => {
       if (cmd.__type === 'ListFoundationModels') {
         return {
@@ -41,6 +41,7 @@ describe('listModelsForProfile — bedrock', () => {
             { modelId: 'anthropic.claude-3-sonnet', modelName: 'Claude 3 Sonnet', outputModalities: ['TEXT'], inferenceTypesSupported: ['ON_DEMAND'] },
             { modelId: 'anthropic.claude-3-haiku', modelName: 'Claude 3 Haiku', outputModalities: ['TEXT'], inferenceTypesSupported: ['ON_DEMAND'] },
             { modelId: 'amazon.titan-embeddings', modelName: 'Titan Embeddings', outputModalities: ['EMBEDDING'], inferenceTypesSupported: ['ON_DEMAND'] },
+            // INFERENCE_PROFILE-only foundation models should be excluded
             { modelId: 'anthropic.claude-sonnet-4-5', modelName: 'Claude Sonnet 4.5', outputModalities: ['TEXT'], inferenceTypesSupported: ['INFERENCE_PROFILE'] },
             { modelId: 'cohere.embed-v4', modelName: 'Cohere Embed v4', outputModalities: ['EMBEDDING'], inferenceTypesSupported: ['INFERENCE_PROFILE'] },
           ],
@@ -57,8 +58,34 @@ describe('listModelsForProfile — bedrock', () => {
       'anthropic.claude-3-sonnet',
       'anthropic.claude-3-haiku',
       'amazon.titan-embeddings',
-      'anthropic.claude-sonnet-4-5',
-      'cohere.embed-v4',
+    ]);
+  });
+
+  it('excludes INFERENCE_PROFILE-only foundation models in favor of inference profiles', async () => {
+    mockSend.mockImplementation(async (cmd: any) => {
+      if (cmd.__type === 'ListFoundationModels') {
+        return {
+          modelSummaries: [
+            { modelId: 'anthropic.claude-sonnet-4-5', modelName: 'Claude Sonnet 4.5', outputModalities: ['TEXT'], inferenceTypesSupported: ['INFERENCE_PROFILE'] },
+            { modelId: 'cohere.embed-v4', modelName: 'Cohere Embed v4', outputModalities: ['EMBEDDING'], inferenceTypesSupported: ['INFERENCE_PROFILE'] },
+          ],
+        };
+      }
+      if (cmd.__type === 'ListInferenceProfiles') {
+        return {
+          inferenceProfileSummaries: [
+            { inferenceProfileId: 'us.anthropic.claude-sonnet-4-5', inferenceProfileName: 'Claude Sonnet 4.5 US', status: 'ACTIVE', type: 'SYSTEM_DEFINED' },
+            { inferenceProfileId: 'us.cohere.embed-v4', inferenceProfileName: 'Cohere Embed v4 US', status: 'ACTIVE', type: 'SYSTEM_DEFINED' },
+          ],
+        };
+      }
+      throw new Error('Unexpected command');
+    });
+
+    const models = await listModelsForProfile(buildBedrockProfile());
+    expect(models.map(m => m.id)).toEqual([
+      'us.anthropic.claude-sonnet-4-5',
+      'us.cohere.embed-v4',
     ]);
   });
 

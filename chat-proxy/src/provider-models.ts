@@ -90,7 +90,7 @@ async function listBedrockModels(profile: ProviderProfileFull, type?: 'chat' | '
     credentials: { accessKeyId, secretAccessKey, sessionToken },
   });
 
-  // Fetch standard foundation models (in-region/on-demand)
+  // Fetch standard foundation models (in-region/on-demand only)
   const foundationOut = await client.send(new ListFoundationModelsCommand({}));
   const foundationSummaries = foundationOut.modelSummaries || [];
   const foundationModels = foundationSummaries
@@ -102,9 +102,11 @@ async function listBedrockModels(profile: ProviderProfileFull, type?: 'chat' | '
         : type === 'chat'
           ? m.outputModalities.includes('TEXT')
           : (m.outputModalities.includes('TEXT') || m.outputModalities.includes('EMBEDDING'));
-      // Accept both on-demand and inference-profile models
+      // Only list foundation models that support ON_DEMAND.
+      // Models that only support INFERENCE_PROFILE will appear via the
+      // cross-region inference profile list (us.* / global.* prefixes).
       const inferenceTypes = m.inferenceTypesSupported as string[];
-      const hasInferenceType = inferenceTypes.includes('ON_DEMAND') || inferenceTypes.includes('INFERENCE_PROFILE');
+      const hasInferenceType = inferenceTypes.includes('ON_DEMAND');
       return hasRelevantModality && hasInferenceType;
     })
     .filter(m => typeof m.modelId === 'string')
