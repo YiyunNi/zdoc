@@ -18,12 +18,63 @@ const SEMANTIC_CACHE_MAX_ENTRIES = parseInt(process.env.SEMANTIC_CACHE_MAX_ENTRI
 export async function computeEmbedding(text: string): Promise<number[]> {
   const resolved = await resolveModel('embedding');
   console.log(`[Embedding] Using provider=${resolved.provider} model=${resolved.model} source=${resolved.source}`);
+
+  // Cohere Embed models on Bedrock require a custom request format (input_type, texts, etc.)
+  // that the generic ai-sdk embed() does not send. Use Bedrock Runtime directly.
+  if (resolved.provider === 'bedrock' && resolved.model.toLowerCase().includes('cohere') && resolved.model.toLowerCase().includes('embed')) {
+    return embedCohereBedrock(text, resolved);
+  }
+
   const model = await getEmbeddingModel('embedding');
   const response = await embed({
     model,
     value: text,
   });
   return response.embedding;
+}
+
+/** Call Cohere embedding models on Bedrock via InvokeModel (bypasses ai-sdk) */
+async function embedCohereBedrock(text: string, resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }): Promise<number[]> {
+  const { BedrockRuntimeClient, InvokeModelCommand } = await import('@aws-sdk/client-bedrock-runtime');
+  const region = resolved.region || process.env.AWS_REGION || 'us-east-1';
+  const accessKeyId = resolved.accessKeyId || process.env.AWS_ACCESS_KEY_ID || '';
+  const secretAccessKey = resolved.secretAccessKey || process.env.AWS_SECRET_ACCESS_KEY || '';
+  const sessionToken = resolved.sessionToken || process.env.AWS_SESSION_TOKEN;
+
+  if (!accessKeyId || !secretAccessKey) {
+    throw new Error('Bedrock credentials missing for Cohere embedding');
+  }
+
+  const client = new BedrockRuntimeClient({
+    region,
+    credentials: { accessKeyId, secretAccessKey, sessionToken },
+  });
+
+  const body = JSON.stringify({
+    texts: [text],
+    input_type: 'search_document',
+    embedding_types: ['float'],
+  });
+
+  const response = await client.send(new InvokeModelCommand({
+    modelId: resolved.model,
+    body,
+    accept: 'application/json',
+    contentType: 'application/json',
+  }));
+
+  const json = JSON.parse(new TextDecoder().decode(response.body));
+
+  // Cohere Embed v4 single-type response: { embeddings: [[...]], response_type: 'embeddings_floats' }
+  // Multi-type response: { embeddings: { float: [[...]] }, response_type: 'embeddings_by_type' }
+  if (json.response_type === 'embeddings_by_type' && json.embeddings?.float) {
+    return json.embeddings.float[0];
+  }
+  if (Array.isArray(json.embeddings) && json.embeddings.length > 0) {
+    return json.embeddings[0];
+  }
+
+  throw new Error(`Unexpected Cohere embedding response shape: ${JSON.stringify(json).slice(0, 200)}`);
 }
 
 // ---------------------------------------------------------------------------
