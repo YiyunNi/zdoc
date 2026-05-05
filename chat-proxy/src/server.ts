@@ -43,7 +43,7 @@ async function startup() {
 
   // Periodic background refresh
   setInterval(() => {
-    loadIndex(true).catch(err => console.warn('[RAG] Background refresh failed:', err));
+    loadIndex(false).catch(err => console.warn('[RAG] Background refresh failed:', err));
   }, INDEX_REFRESH_INTERVAL);
 
   // Initialize metrics counters so /metrics always exposes known series

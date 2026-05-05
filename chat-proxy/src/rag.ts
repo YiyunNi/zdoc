@@ -1,9 +1,10 @@
 import type {ConfidenceLevel} from './types.js';
 import {isDemotedSource} from './demotion.js';
-import {getPool, ensureShadowTable, swapDocChunksTables, dropOldDocChunks, recreateAnswerCache, getEmbeddingSchemaDimension} from './db.js';
+import {getPool, ensureShadowTable, swapDocChunksTables, dropOldDocChunks, recreateAnswerCache, getEmbeddingSchemaDimension, updateBuildStatus, copyExistingEmbeddingsToShadow, tryAcquireEmbeddingLock, releaseEmbeddingLock} from './db.js';
 import {computeEmbedding, computeEmbeddingsBatch} from './semantic-cache.js';
 import {resolveModel, inferEmbeddingDimension, detectEmbeddingDimension} from './runtime-config.js';
 import {extractTripletsBatch, flattenEntities} from './triplet-extract.js';
+import {createHash} from 'node:crypto';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -25,6 +26,12 @@ function cleanTitle(title: string): string {
     .replace(/\\?\{#[^}]*\}?/g, '')
     .replace(/\\+$/, '')
     .trim();
+}
+
+function computeContentHash(chunk: ParsedChunk): string {
+  return createHash('sha256')
+    .update(`${chunk.doc_title}\n${chunk.content}`)
+    .digest('hex');
 }
 
 // ---------------------------------------------------------------------------
@@ -162,6 +169,7 @@ interface ParsedChunk {
   content: string;
   weight: number;
   entities?: string[];
+  content_hash?: string;
 }
 
 let indexReady = false;
@@ -656,13 +664,16 @@ const EMBEDDING_BATCH_SIZE = 10;
 const BASE_INTER_BATCH_DELAY_MS = 1000;
 const MAX_INTER_BATCH_DELAY_MS = 16000;
 
-async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
+async function backfillEmbeddings(allChunks: { id: string; doc_title: string; content: string }[]): Promise<void> {
   const pool = getPool();
   const totalChunks = allChunks.length;
   let embedded = 0;
   let failed = 0;
   let interBatchDelay = BASE_INTER_BATCH_DELAY_MS;
   embeddingProgress = { total: totalChunks, done: 0, failed: 0, active: true };
+
+  const now = new Date().toISOString();
+  await updateBuildStatus({ state: 'embedding', total: totalChunks, done: 0, failed: 0, updatedAt: now });
 
   console.log(`[RAG] Starting embedding backfill for ${totalChunks} chunks (batch size: ${EMBEDDING_BATCH_SIZE}, base delay: ${BASE_INTER_BATCH_DELAY_MS}ms)`);
 
@@ -702,9 +713,10 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
         embeddingProgress.failed = failed;
       }
 
-      // Progress log every 200 chunks
+      // Progress log and status update every 200 chunks
       if ((i + batch.length) % 200 === 0 || i + batch.length >= totalChunks) {
         console.log(`[RAG] Embedding progress: ${Math.min(i + batch.length, totalChunks)}/${totalChunks} (embedded: ${embedded}, failed: ${failed}, delay: ${interBatchDelay}ms)`);
+        await updateBuildStatus({ done: embedded, failed, updatedAt: new Date().toISOString() }).catch(() => {});
       }
     } catch (err) {
       failed += batch.length;
@@ -730,6 +742,7 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
     embeddingProgress.failed = failed;
     embeddingProgress.active = false;
   }
+  await updateBuildStatus({ state: 'complete', done: embedded, failed, updatedAt: new Date().toISOString() }).catch(() => {});
 }
 
 let indexLoading = false;
@@ -756,8 +769,10 @@ async function fetchWithRetry(url: string, retries = 3): Promise<Response> {
 
 export async function loadIndex(force = false, options?: { extractTriplets?: boolean }): Promise<void> {
   if (indexLoading) return;
-  if (indexReady && !force) return;
   indexLoading = true;
+
+  const buildStartedAt = new Date().toISOString();
+  await updateBuildStatus({ state: 'loading', total: 0, done: 0, failed: 0, startedAt: buildStartedAt, updatedAt: buildStartedAt });
 
   // Resolve expected embedding dimension from runtime config
   let expectedDim: number | undefined;
@@ -802,167 +817,228 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
   }
 
   console.log('[RAG] Loading doc index from', INDEX_BASE_URL);
-  const allChunks: ParsedChunk[] = [];
 
-  let indexPaths: {url: string; section: string}[];
   try {
-    indexPaths = await fetchIndexPaths();
-    console.log(`[RAG] Discovered ${indexPaths.length} index files from llms.txt`);
-  } catch (err) {
-    console.warn('[RAG] Failed to fetch llms.txt, aborting index load:', (err as Error).message);
-    indexLoading = false;
-    return;
-  }
+    const allChunks: ParsedChunk[] = [];
 
-  for (const {url, section} of indexPaths) {
+    let indexPaths: {url: string; section: string}[];
     try {
-      const res = await fetchWithRetry(url);
-      const text = await res.text();
-      const chunks = parseLlmsFullText(text, section);
-      allChunks.push(...chunks);
-      console.log(`[RAG] Loaded ${chunks.length} chunks from ${url}`);
+      indexPaths = await fetchIndexPaths();
+      console.log(`[RAG] Discovered ${indexPaths.length} index files from llms.txt`);
     } catch (err) {
-      console.warn(`[RAG] Skipping ${url}:`, (err as Error).message);
+      console.warn('[RAG] Failed to fetch llms.txt, aborting index load:', (err as Error).message);
+      await updateBuildStatus({ state: 'failed', updatedAt: new Date().toISOString() }).catch(() => {});
+      return;
     }
-  }
 
-  if (allChunks.length > 0) {
-    const pool = getPool();
-
-    // Check if existing index in DB is fresh (same source, built within 30 min,
-    // and chunk count matches metadata to catch truncated builds)
-    if (!force && !indexReady) {
+    for (const {url, section} of indexPaths) {
       try {
-        const { rows: metaRows } = await pool.query(
-          "SELECT key, value FROM metadata WHERE key IN ('last_build', 'source', 'total_chunks')"
-        );
-        const metaMap = Object.fromEntries(metaRows.map((r: any) => [r.key, r.value]));
-        if (metaMap.last_build && metaMap.source) {
-          const lastBuild = new Date(metaMap.last_build).getTime();
-          const ageMin = (Date.now() - lastBuild) / 60000;
-          if (ageMin < 30 && metaMap.source === INDEX_BASE_URL) {
-            // Verify embedding dimension hasn't changed since last build
-            const schemaDim = await getEmbeddingSchemaDimension();
-            if (schemaDim !== null && expectedDim !== undefined && schemaDim !== expectedDim) {
-              console.log(`[RAG] Index is fresh but dimension mismatch: schema=${schemaDim}, expected=${expectedDim}. Rebuilding...`);
-              // fall through to rebuild
-            } else {
-              // Verify chunk count consistency (catch truncated/partial builds)
-              const storedChunks = parseInt(metaMap.total_chunks || '0', 10);
-              const { rows: [{ n: dbChunks }] } = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks');
-              const chunkDiff = storedChunks > 0 ? Math.abs(dbChunks - storedChunks) / storedChunks : 0;
-              if (storedChunks > 0 && chunkDiff > 0.3) {
-                console.log(`[RAG] Index chunk count mismatch: DB=${dbChunks}, metadata=${storedChunks} (${(chunkDiff * 100).toFixed(0)}% diff). Rebuilding...`);
+        const res = await fetchWithRetry(url);
+        const text = await res.text();
+        const chunks = parseLlmsFullText(text, section);
+        allChunks.push(...chunks);
+        console.log(`[RAG] Loaded ${chunks.length} chunks from ${url}`);
+      } catch (err) {
+        console.warn(`[RAG] Skipping ${url}:`, (err as Error).message);
+      }
+    }
+
+    if (allChunks.length > 0) {
+      const pool = getPool();
+
+      // Compute content hashes for change detection
+      for (const c of allChunks) {
+        c.content_hash = computeContentHash(c);
+      }
+
+      // Fast-path: if index is ready and all hashes match, skip rebuild
+      if (!force && indexReady) {
+        try {
+          const { rows } = await pool.query('SELECT id, content_hash FROM doc_chunks');
+          const dbHashMap = new Map<string, string | null>();
+          for (const r of rows) dbHashMap.set(r.id, r.content_hash);
+
+          if (allChunks.length === dbHashMap.size && allChunks.every(c => dbHashMap.get(c.id) === c.content_hash)) {
+            console.log('[RAG] All chunk hashes match existing index — skipping rebuild');
+            lastRefreshedAt = new Date().toISOString();
+            indexLoading = false;
+            return;
+          }
+        } catch {
+          // If DB query fails, fall through to rebuild
+        }
+      }
+
+      // Check if existing index in DB is fresh (same source, built within 30 min,
+      // and chunk count matches metadata to catch truncated builds)
+      if (!force && !indexReady) {
+        try {
+          const { rows: metaRows } = await pool.query(
+            "SELECT key, value FROM metadata WHERE key IN ('last_build', 'source', 'total_chunks')"
+          );
+          const metaMap = Object.fromEntries(metaRows.map((r: any) => [r.key, r.value]));
+          if (metaMap.last_build && metaMap.source) {
+            const lastBuild = new Date(metaMap.last_build).getTime();
+            const ageMin = (Date.now() - lastBuild) / 60000;
+            if (ageMin < 30 && metaMap.source === INDEX_BASE_URL) {
+              // Verify embedding dimension hasn't changed since last build
+              const schemaDim = await getEmbeddingSchemaDimension();
+              if (schemaDim !== null && expectedDim !== undefined && schemaDim !== expectedDim) {
+                console.log(`[RAG] Index is fresh but dimension mismatch: schema=${schemaDim}, expected=${expectedDim}. Rebuilding...`);
                 // fall through to rebuild
               } else {
-                console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source, ${dbChunks} chunks) — using existing`);
-                indexReady = true;
-                lastRefreshedAt = metaMap.last_build;
-                indexLoading = false;
-                return;
+                // Verify chunk count consistency (catch truncated/partial builds)
+                const storedChunks = parseInt(metaMap.total_chunks || '0', 10);
+                const { rows: [{ n: dbChunks }] } = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks');
+                const chunkDiff = storedChunks > 0 ? Math.abs(dbChunks - storedChunks) / storedChunks : 0;
+                if (storedChunks > 0 && chunkDiff > 0.3) {
+                  console.log(`[RAG] Index chunk count mismatch: DB=${dbChunks}, metadata=${storedChunks} (${(chunkDiff * 100).toFixed(0)}% diff). Rebuilding...`);
+                  // fall through to rebuild
+                } else {
+                  console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source, ${dbChunks} chunks) — using existing`);
+                  indexReady = true;
+                  lastRefreshedAt = metaMap.last_build;
+                  return;
+                }
               }
             }
           }
+        } catch { /* DB not ready or empty — proceed with build */ }
+      }
+
+      // Use shadow table for zero-downtime rebuild — old index stays live until swap
+      console.log('[RAG] Creating shadow table for zero-downtime rebuild');
+      await ensureShadowTable(expectedDim || 1024);
+
+      // Optional triplet extraction for entity enrichment
+      if (options?.extractTriplets) {
+        const TRIPLET_BATCH_SIZE = 5;
+        console.log(`[RAG] Extracting triplets for ${allChunks.length} chunks (batch size: ${TRIPLET_BATCH_SIZE})`);
+        for (let i = 0; i < allChunks.length; i += TRIPLET_BATCH_SIZE) {
+          const batch = allChunks.slice(i, i + TRIPLET_BATCH_SIZE);
+          const batchTexts = batch.map(c => c.content);
+          try {
+            const batchResults = await extractTripletsBatch(batchTexts);
+            for (let j = 0; j < batch.length; j++) {
+              const triplets = batchResults.get(j) ?? [];
+              batch[j].entities = flattenEntities(triplets);
+            }
+            if ((i + batch.length) % 20 === 0 || i + batch.length >= allChunks.length) {
+              console.log(`[RAG] Extracted triplets for ${Math.min(i + batch.length, allChunks.length)}/${allChunks.length} chunks`);
+            }
+          } catch (err) {
+            console.warn(`[RAG] Triplet extraction failed for batch ${i}:`, (err as Error).message);
+            // Graceful degradation: continue with empty entities
+            for (const chunk of batch) {
+              chunk.entities = [];
+            }
+          }
         }
-      } catch { /* DB not ready or empty — proceed with build */ }
-    }
+      }
 
-    // Use shadow table for zero-downtime rebuild — old index stays live until swap
-    console.log('[RAG] Creating shadow table for zero-downtime rebuild');
-    await ensureShadowTable(expectedDim || 1024);
+      const client = await pool.connect();
+      try {
+        await client.query('BEGIN');
+        for (const c of allChunks) {
+          await client.query(
+            `INSERT INTO doc_chunks_new (id, doc_url, doc_url_md, doc_title, section, content, weight, entities, content_hash)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+             ON CONFLICT (id) DO UPDATE SET
+               doc_url = EXCLUDED.doc_url, doc_url_md = EXCLUDED.doc_url_md,
+               doc_title = EXCLUDED.doc_title, section = EXCLUDED.section,
+               content = EXCLUDED.content, weight = EXCLUDED.weight,
+               entities = EXCLUDED.entities, content_hash = EXCLUDED.content_hash`,
+            [c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight, JSON.stringify(c.entities ?? []), c.content_hash]
+          );
+        }
+        await client.query('COMMIT');
+      } catch (err) {
+        await client.query('ROLLBACK');
+        throw err;
+      } finally {
+        client.release();
+      }
 
-    // Optional triplet extraction for entity enrichment
-    if (options?.extractTriplets) {
-      const TRIPLET_BATCH_SIZE = 5;
-      console.log(`[RAG] Extracting triplets for ${allChunks.length} chunks (batch size: ${TRIPLET_BATCH_SIZE})`);
-      for (let i = 0; i < allChunks.length; i += TRIPLET_BATCH_SIZE) {
-        const batch = allChunks.slice(i, i + TRIPLET_BATCH_SIZE);
-        const batchTexts = batch.map(c => c.content);
+      // Preserve existing embeddings for unchanged chunks
+      const copied = await copyExistingEmbeddingsToShadow();
+      console.log(`[RAG] Preserved ${copied} existing embeddings`);
+
+      // Atomic swap: old index stays live until swap completes
+      console.log('[RAG] Swapping shadow table to active');
+      await swapDocChunksTables();
+      await dropOldDocChunks();
+
+      // Write metadata
+      await pool.query(
+        `INSERT INTO metadata(key, value) VALUES($1, $2)
+         ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+        ['schema_version', '1']
+      );
+      await pool.query(
+        `INSERT INTO metadata(key, value) VALUES($1, $2)
+         ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+        ['last_build', new Date().toISOString()]
+      );
+      await pool.query(
+        `INSERT INTO metadata(key, value) VALUES($1, $2)
+         ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+        ['total_chunks', String(allChunks.length)]
+      );
+      await pool.query(
+        `INSERT INTO metadata(key, value) VALUES($1, $2)
+         ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+        ['source', INDEX_BASE_URL]
+      );
+
+      indexReady = true;
+      lastRefreshedAt = new Date().toISOString();
+      console.log(`[RAG] PostgreSQL index ready: ${allChunks.length} chunks`);
+      await updateBuildStatus({ state: 'complete', total: allChunks.length, done: allChunks.length, failed: 0, updatedAt: new Date().toISOString() });
+
+      // Backfill embeddings in the background — only for chunks that are missing embeddings
+      const embeddingPromise = (async () => {
+        const hasLock = await tryAcquireEmbeddingLock();
+        if (!hasLock) {
+          console.log('[RAG] Another pod is already backfilling embeddings — skipping');
+          return;
+        }
         try {
-          const batchResults = await extractTripletsBatch(batchTexts);
-          for (let j = 0; j < batch.length; j++) {
-            const triplets = batchResults.get(j) ?? [];
-            batch[j].entities = flattenEntities(triplets);
+          const { rows: missingRows } = await pool.query(
+            'SELECT id, doc_title, content FROM doc_chunks WHERE embedding IS NULL',
+          );
+          if (missingRows.length === 0) {
+            console.log('[RAG] All embeddings already present — no backfill needed');
+            return;
           }
-          if ((i + batch.length) % 20 === 0 || i + batch.length >= allChunks.length) {
-            console.log(`[RAG] Extracted triplets for ${Math.min(i + batch.length, allChunks.length)}/${allChunks.length} chunks`);
-          }
-        } catch (err) {
-          console.warn(`[RAG] Triplet extraction failed for batch ${i}:`, (err as Error).message);
-          // Graceful degradation: continue with empty entities
-          for (const chunk of batch) {
-            chunk.entities = [];
-          }
+          console.log(`[RAG] Backfilling ${missingRows.length} missing embeddings`);
+          const missingChunks = missingRows.map(r => ({
+            id: r.id,
+            doc_title: r.doc_title,
+            content: r.content,
+          }));
+          await backfillEmbeddings(missingChunks);
+        } finally {
+          await releaseEmbeddingLock();
         }
-      }
+      })().catch(async err => {
+        console.warn('[RAG] Embedding backfill failed:', (err as Error).message);
+        await updateBuildStatus({ state: 'failed', updatedAt: new Date().toISOString() }).catch(() => {});
+      });
+
+      // Do NOT await — embeddings are populated asynchronously
+      // The index is usable immediately with FTS; vector search degrades gracefully
+      void embeddingPromise;
+    } else {
+      console.warn('[RAG] No chunks loaded — search will return empty results');
+      await updateBuildStatus({ state: 'failed', updatedAt: new Date().toISOString() }).catch(() => {});
     }
-
-    const client = await pool.connect();
-    try {
-      await client.query('BEGIN');
-      for (const c of allChunks) {
-        await client.query(
-          `INSERT INTO doc_chunks_new (id, doc_url, doc_url_md, doc_title, section, content, weight, entities)
-           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-           ON CONFLICT (id) DO UPDATE SET
-             doc_url = EXCLUDED.doc_url, doc_url_md = EXCLUDED.doc_url_md,
-             doc_title = EXCLUDED.doc_title, section = EXCLUDED.section,
-             content = EXCLUDED.content, weight = EXCLUDED.weight,
-             entities = EXCLUDED.entities`,
-          [c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight, JSON.stringify(c.entities ?? [])]
-        );
-      }
-      await client.query('COMMIT');
-    } catch (err) {
-      await client.query('ROLLBACK');
-      throw err;
-    } finally {
-      client.release();
-    }
-
-    // Atomic swap: old index stays live until swap completes
-    console.log('[RAG] Swapping shadow table to active');
-    await swapDocChunksTables();
-    await dropOldDocChunks();
-
-    // Write metadata
-    await pool.query(
-      `INSERT INTO metadata(key, value) VALUES($1, $2)
-       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
-      ['schema_version', '1']
-    );
-    await pool.query(
-      `INSERT INTO metadata(key, value) VALUES($1, $2)
-       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
-      ['last_build', new Date().toISOString()]
-    );
-    await pool.query(
-      `INSERT INTO metadata(key, value) VALUES($1, $2)
-       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
-      ['total_chunks', String(allChunks.length)]
-    );
-    await pool.query(
-      `INSERT INTO metadata(key, value) VALUES($1, $2)
-       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
-      ['source', INDEX_BASE_URL]
-    );
-
-    indexReady = true;
-    lastRefreshedAt = new Date().toISOString();
-    console.log(`[RAG] PostgreSQL index ready: ${allChunks.length} chunks`);
-
-    // Backfill embeddings in the background — do NOT block index readiness
-    const embeddingPromise = backfillEmbeddings(allChunks)
-      .catch(err => console.warn('[RAG] Embedding backfill failed:', (err as Error).message));
-
-    // Do NOT await — embeddings are populated asynchronously
-    // The index is usable immediately with FTS; vector search degrades gracefully
-    void embeddingPromise;
-  } else {
-    console.warn('[RAG] No chunks loaded — search will return empty results');
+  } catch (err) {
+    console.error('[RAG] Index load failed:', (err as Error).message);
+    await updateBuildStatus({ state: 'failed', updatedAt: new Date().toISOString() }).catch(() => {});
+    throw err;
+  } finally {
+    indexLoading = false;
   }
-
-  indexLoading = false;
 }
 
 // ---------------------------------------------------------------------------

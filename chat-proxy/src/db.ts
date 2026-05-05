@@ -18,6 +18,7 @@ const SCHEMA_DDL = `
     weight      DOUBLE PRECISION NOT NULL DEFAULT 1.0,
     embedding   vector(1024),
     entities    JSONB DEFAULT '[]',
+    content_hash TEXT,
     created_at  TIMESTAMPTZ DEFAULT NOW(),
     search_vector tsvector GENERATED ALWAYS AS (
       setweight(to_tsvector('english', coalesce(doc_title, '')), 'A') ||
@@ -33,6 +34,9 @@ const SCHEMA_DDL = `
   -- Migration: add entities column to existing doc_chunks tables before indexing it
   ALTER TABLE doc_chunks ADD COLUMN IF NOT EXISTS entities JSONB DEFAULT '[]';
   CREATE INDEX IF NOT EXISTS idx_chunks_entities ON doc_chunks USING GIN(entities);
+
+  -- Migration: add content_hash column for change detection
+  ALTER TABLE doc_chunks ADD COLUMN IF NOT EXISTS content_hash TEXT;
 
   -- metadata: key-value store for index build info
   CREATE TABLE IF NOT EXISTS metadata (
@@ -368,6 +372,41 @@ export async function dropOldDocChunks(): Promise<void> {
   await pool.query('DROP TABLE IF EXISTS doc_chunks_old');
 }
 
+/** Copy embeddings from the active doc_chunks table into the shadow table
+ *  for chunks whose content_hash matches (i.e. unchanged content). */
+export async function copyExistingEmbeddingsToShadow(): Promise<number> {
+  const pool = getPool();
+  const result = await pool.query(`
+    UPDATE doc_chunks_new n
+    SET embedding = o.embedding,
+        content_hash = o.content_hash
+    FROM doc_chunks o
+    WHERE n.id = o.id
+      AND o.embedding IS NOT NULL
+      AND n.content_hash = o.content_hash
+  `);
+  return result.rowCount || 0;
+}
+
+const EMBEDDING_LOCK_KEY = 42424242;
+
+/** Try to acquire a PostgreSQL advisory lock for embedding backfill.
+ *  Returns true if the lock was acquired. */
+export async function tryAcquireEmbeddingLock(): Promise<boolean> {
+  const pool = getPool();
+  const { rows: [{ locked }] } = await pool.query(
+    'SELECT pg_try_advisory_lock($1) as locked',
+    [EMBEDDING_LOCK_KEY],
+  );
+  return locked === true;
+}
+
+/** Release the PostgreSQL advisory lock. */
+export async function releaseEmbeddingLock(): Promise<void> {
+  const pool = getPool();
+  await pool.query('SELECT pg_advisory_unlock($1)', [EMBEDDING_LOCK_KEY]);
+}
+
 export async function getEmbeddingSchemaDimension(): Promise<number | null> {
   const pool = getPool();
   try {
@@ -388,6 +427,66 @@ export async function getIndexStats(): Promise<{ chunks: number; lastBuild: stri
   return {
     chunks: row.count,
     lastBuild: metaRows[0]?.value ?? null,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Build status tracking (persistent across pods / restarts)
+// ---------------------------------------------------------------------------
+
+export interface BuildStatus {
+  state: 'idle' | 'loading' | 'embedding' | 'complete' | 'failed';
+  total: number;
+  done: number;
+  failed: number;
+  startedAt: string | null;
+  updatedAt: string | null;
+}
+
+export async function updateBuildStatus(status: Partial<BuildStatus>): Promise<void> {
+  const pool = getPool();
+  const entries: Array<[string, string]> = [];
+  if (status.state !== undefined) entries.push(['build_state', status.state]);
+  if (status.total !== undefined) entries.push(['build_total', String(status.total)]);
+  if (status.done !== undefined) entries.push(['build_done', String(status.done)]);
+  if (status.failed !== undefined) entries.push(['build_failed', String(status.failed)]);
+  if (status.startedAt !== undefined && status.startedAt !== null) entries.push(['build_started_at', status.startedAt]);
+  if (status.updatedAt !== undefined && status.updatedAt !== null) entries.push(['build_updated_at', status.updatedAt]);
+
+  if (entries.length === 0) return;
+
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    for (const [key, value] of entries) {
+      await client.query(
+        `INSERT INTO metadata(key, value) VALUES($1, $2)
+         ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+        [key, value],
+      );
+    }
+    await client.query('COMMIT');
+  } catch (err) {
+    await client.query('ROLLBACK');
+    throw err;
+  } finally {
+    client.release();
+  }
+}
+
+export async function getBuildStatus(): Promise<BuildStatus> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    "SELECT key, value FROM metadata WHERE key LIKE 'build_%'",
+  );
+  const map = Object.fromEntries(rows.map((r: any) => [r.key, r.value]));
+  return {
+    state: (map.build_state as BuildStatus['state']) || 'idle',
+    total: parseInt(map.build_total || '0', 10),
+    done: parseInt(map.build_done || '0', 10),
+    failed: parseInt(map.build_failed || '0', 10),
+    startedAt: map.build_started_at || null,
+    updatedAt: map.build_updated_at || null,
   };
 }
 

@@ -1,4 +1,4 @@
-import {embed} from 'ai';
+import {embed, embedMany} from 'ai';
 import {getPool, invalidateCacheByChunkHashes, getCacheStats, getCacheEntriesCount, isDbReady, type CacheEntry} from './db.js';
 import {getEmbeddingModel, resolveModel} from './runtime-config.js';
 
@@ -129,12 +129,13 @@ export async function computeEmbeddingsBatch(texts: string[]): Promise<number[][
     }
   }
 
-  // Fallback: individual calls via ai-sdk
-  const results: number[][] = [];
-  for (const text of texts) {
-    results.push(await computeEmbedding(text));
-  }
-  return results;
+  // Use ai-sdk embedMany for openai-compatible providers
+  const model = await getEmbeddingModel('embedding');
+  const response = await embedMany({
+    model,
+    values: texts,
+  });
+  return response.embeddings;
 }
 
 // ---------------------------------------------------------------------------
