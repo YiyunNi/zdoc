@@ -13,6 +13,7 @@ import {
   listObsSessions, getObsSessionDetail, getObsTokenUsage,
   getObsUsers, getObsSources, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue, deleteRuntimeConfigValue,
   getEmbeddingSchemaDimension,
+  getBuildStatus,
   isDbReady,
   listProviderProfiles, getProviderProfile, upsertProviderProfile, deleteProviderProfile,
   listOAuthProfiles, getActiveOAuthProfile, upsertOAuthProfile, setOAuthProfileActive, deleteOAuthProfile,
@@ -27,6 +28,7 @@ import {isOAuthEnabled} from './auth/session.js';
 import {requireAuth, requireAdmin, getAuth, setSessionCookie, setStateCookie, clearStateCookie, clearSessionCookie, verifyStateCookie} from './auth/middleware.js';
 import {listAdmins, addAdmin, removeAdmin, healAdminProfile} from './auth/admin-users.js';
 import {makeTelemetry} from './telemetry.js';
+import {reloadRules, getRules} from './hooks/index.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -191,6 +193,17 @@ adminApp.post('/rebuild-index', requireAuth, requireAdmin, async c => {
   }
 });
 
+// POST /admin/api/reload-hooks — reload prompt-hooks.yaml without restart
+adminApp.post('/api/reload-hooks', requireAuth, requireAdmin, async c => {
+  try {
+    const rules = reloadRules(import.meta.url);
+    console.log(`[Admin] Prompt hooks reloaded: ${rules.length} rule(s)`);
+    return c.json({ok: true, count: rules.length, rules: rules.map(r => ({name: r.name, enabled: r.enabled, priority: r.priority}))});
+  } catch (err) {
+    return c.json({error: String(err)}, 500);
+  }
+});
+
 // GET /admin/index/entities — entity enrichment stats
 adminApp.get('/index/entities', requireAuth, requireAdmin, async c => {
   try {
@@ -229,13 +242,19 @@ adminApp.get('/stats', requireAuth, async c => {
   const tokenSummary = await getTokenUsageSummary();
   const schemaDim = await getEmbeddingSchemaDimension();
 
-  // Compute embedding progress from DB so it’s accurate across pods
+  // Compute embedding progress from DB so it's accurate across pods
   let embeddingProgress = {total: 0, done: 0, pending: 0, active: false};
   try {
     const pool = getPool();
     const {rows: [{n: total}]} = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks');
     const {rows: [{n: done}]} = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks WHERE embedding IS NOT NULL');
     embeddingProgress = {total, done, pending: total - done, active: done < total};
+  } catch { /* ignore */ }
+
+  // Persistent build status (survives restarts / cross-pod)
+  let buildStatus: import('./db.js').BuildStatus = {state: 'idle', total: 0, done: 0, failed: 0, startedAt: null, updatedAt: null};
+  try {
+    buildStatus = await getBuildStatus();
   } catch { /* ignore */ }
 
   return c.json({
@@ -248,7 +267,52 @@ adminApp.get('/stats', requireAuth, async c => {
     token_usage: tokenSummary,
     embedding: embeddingProgress,
     dimensions: schemaDim,
+    build: buildStatus,
   });
+});
+
+// GET /admin/api/build-events — SSE stream for live build progress
+adminApp.get('/api/build-events', requireAuth, async c => {
+  c.header('Content-Type', 'text/event-stream');
+  c.header('Cache-Control', 'no-cache');
+  c.header('Connection', 'keep-alive');
+
+  const stream = new ReadableStream({
+    start(controller) {
+      const send = (data: unknown) => {
+        try {
+          controller.enqueue(new TextEncoder().encode(`data: ${JSON.stringify(data)}\n\n`));
+        } catch { /* stream closed */ }
+      };
+
+      send({type: 'connected'});
+
+      // Poll build status every 2 seconds and push updates
+      const interval = setInterval(async () => {
+        try {
+          const status = await getBuildStatus();
+          send({type: 'build', ...status});
+        } catch {
+          send({type: 'error', message: 'Failed to read build status'});
+        }
+      }, 2000);
+
+      // Close after 5 minutes to prevent stale connections
+      const timeout = setTimeout(() => {
+        clearInterval(interval);
+        try { controller.close(); } catch { /* ignore */ }
+      }, 300_000);
+
+      // Clean up on client disconnect
+      c.req.raw.signal.addEventListener('abort', () => {
+        clearInterval(interval);
+        clearTimeout(timeout);
+        try { controller.close(); } catch { /* ignore */ }
+      });
+    },
+  });
+
+  return c.body(stream);
 });
 
 // GET /admin/api/health — rich health data (formerly in public /health)
@@ -458,6 +522,7 @@ adminApp.get('/api/config', async c => {
   const {rows: [lastBuild]} = await getPool().query("SELECT value FROM metadata WHERE key = 'last_build'");
   const schemaDim = await getEmbeddingSchemaDimension();
 
+  const rules = getRules();
   return c.json({
     models: dbConfig,
     resolved: resolvedEntries,
@@ -468,6 +533,10 @@ adminApp.get('/api/config', async c => {
       refreshInterval: process.env.INDEX_REFRESH_INTERVAL || '1800000',
       sourceUrl: process.env.DOCS_SITE_URL || 'https://docs.zilliz.com',
       dimensions: schemaDim,
+    },
+    hooks: {
+      count: rules.length,
+      rules: rules.map(r => ({name: r.name, enabled: r.enabled, priority: r.priority})),
     },
   });
 });

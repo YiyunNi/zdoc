@@ -8,6 +8,17 @@ import {matchCondition} from './matcher.js';
 
 export type {Rule, RuleCondition, RuleAction, HookContext} from './types.js';
 
+let activeRules: Rule[] = [];
+
+export function getRules(): Rule[] {
+  return activeRules;
+}
+
+export function reloadRules(baseUrl: string): Rule[] {
+  activeRules = loadRules(baseUrl);
+  return activeRules;
+}
+
 const VALID_AGENTS = new Set<string>(['general', 'schema', 'resources', 'product', 'code']);
 const VALID_CONFIDENCE = new Set<string>(['high', 'medium', 'low']);
 const MAX_PRE_PROMPT_RULES = 5;
@@ -102,6 +113,7 @@ export function loadRules(baseUrl: string): Rule[] {
 
     rules.sort((a, b) => a.priority - b.priority);
     console.log(`[Hooks] Loaded ${rules.length} enabled rule(s)`);
+    activeRules = rules;
     return rules;
   } catch (err: unknown) {
     if (err instanceof Error && 'code' in err && (err as any).code === 'ENOENT') {
@@ -109,6 +121,7 @@ export function loadRules(baseUrl: string): Rule[] {
     } else {
       console.warn('[Hooks] Failed to load prompt-hooks.yaml:', err instanceof Error ? err.message : err);
     }
+    activeRules = [];
     return [];
   }
 }

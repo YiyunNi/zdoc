@@ -114,7 +114,8 @@ input, select { font-family: var(--body); }
 /* ------------------------------------------------------------------- */
 /* App layout                                                          */
 /* ------------------------------------------------------------------- */
-.app { display: flex; height: 100vh; }
+.app { display: flex; flex-direction: column; height: 100vh; }
+.app-body { display: flex; flex: 1; overflow: hidden; }
 .app.hidden { display: none; }
 
 /* Sidebar */
@@ -663,6 +664,36 @@ input, select { font-family: var(--body); }
 .modal-field input:focus, .modal-field select:focus { border-color: var(--blue); }
 .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
 
+/* Build monitor banner */
+.build-banner {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--amber-bg);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+.build-banner.active { display: flex; }
+.build-banner.complete { background: var(--green-bg); }
+.build-banner.failed { background: var(--red-bg); }
+.build-banner .build-label { font-weight: 600; white-space: nowrap; }
+.build-banner .build-bar-bg {
+  flex: 1; height: 6px; background: rgba(0,0,0,0.08); border-radius: 3px; overflow: hidden; min-width: 60px;
+}
+.build-banner .build-bar-fill {
+  height: 100%; background: var(--amber); border-radius: 3px; transition: width 0.3s ease;
+}
+.build-banner.complete .build-bar-fill { background: var(--green); }
+.build-banner.failed .build-bar-fill { background: var(--red); }
+.build-banner .build-meta { color: var(--text-secondary); font-size: 11px; white-space: nowrap; }
+.build-banner .build-close {
+  background: transparent; border: none; color: var(--text-muted); font-size: 14px; cursor: pointer; line-height: 1;
+}
+.build-banner .build-close:hover { color: var(--text); }
+
 /* Tabs visibility */
 .page { display: none; }
 .page.active { display: block; }
@@ -714,33 +745,41 @@ input, select { font-family: var(--body); }
 <!-- Main app                                                     -->
 <!-- ============================================================ -->
 <div class="app hidden" id="app">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h1>Chat Proxy</h1>
-      <p>Monitoring</p>
-    </div>
-    <nav class="sidebar-nav">
-      <a class="nav-item active" data-page="dashboard"><span>Dashboard</span></a>
-      <a class="nav-item" data-page="users"><span>Users &amp; Sessions</span></a>
-      <a class="nav-item" data-page="costs"><span>Costs &amp; Settings</span></a>
-    </nav>
-    <div class="sidebar-filters">
-      <label for="sourceFilter" class="sidebar-filter-label">Traffic Source</label>
-      <select id="sourceFilter" class="sidebar-filter-select">
-        <option value="">All sources</option>
-      </select>
-    </div>
-    <div class="sidebar-footer">
-      <div class="user-badge" id="userBadge">
-        <div class="user-badge-avatar" id="userBadgeAvatar"></div>
-        <div class="user-badge-name" id="userBadgeName">—</div>
-        <div class="user-badge-role" id="userBadgeRole">—</div>
-      </div>
-      <button class="signout-btn" id="signOutBtn">Sign out</button>
-    </div>
-  </aside>
+  <!-- Build monitor banner (visible across all pages) -->
+  <div class="build-banner" id="buildBanner">
+    <span class="build-label" id="buildLabel">Building index…</span>
+    <div class="build-bar-bg"><div class="build-bar-fill" id="buildBarFill" style="width:0%"></div></div>
+    <span class="build-meta" id="buildMeta">0 / 0</span>
+    <button class="build-close" id="buildClose" title="Dismiss">×</button>
+  </div>
 
+  <div class="app-body">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>Chat Proxy</h1>
+        <p>Monitoring</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" data-page="dashboard"><span>Dashboard</span></a>
+        <a class="nav-item" data-page="users"><span>Users &amp; Sessions</span></a>
+        <a class="nav-item" data-page="costs"><span>Costs &amp; Settings</span></a>
+      </nav>
+      <div class="sidebar-filters">
+        <label for="sourceFilter" class="sidebar-filter-label">Traffic Source</label>
+        <select id="sourceFilter" class="sidebar-filter-select">
+          <option value="">All sources</option>
+        </select>
+      </div>
+      <div class="sidebar-footer">
+        <div class="user-badge" id="userBadge">
+          <div class="user-badge-avatar" id="userBadgeAvatar"></div>
+          <div class="user-badge-name" id="userBadgeName">—</div>
+          <div class="user-badge-role" id="userBadgeRole">—</div>
+        </div>
+        <button class="signout-btn" id="signOutBtn">Sign out</button>
+      </div>
+    </aside>
   <!-- ============== Dashboard Page ============== -->
   <main class="main page active" id="pageDashboard">
     <div class="page-header">
@@ -987,6 +1026,7 @@ input, select { font-family: var(--body); }
           <button class="btn primary" id="btnRefreshIndex" data-require-admin>Refresh Index</button>
           <button class="btn secondary" id="btnRebuildEntities" data-require-admin>Rebuild with Entities</button>
           <button class="btn secondary" id="btnClearCache" data-require-admin>Clear Cache</button>
+          <button class="btn secondary" id="btnReloadHooks" data-require-admin>Reload Prompt Hooks</button>
           <span class="action-status" id="actionStatus"></span>
         </div>
       </div>
@@ -1100,6 +1140,7 @@ input, select { font-family: var(--body); }
       </div>
     </section>
   </main>
+  </div>
 </div>
 
 <script>
@@ -1254,6 +1295,7 @@ input, select { font-family: var(--body); }
     if (!refreshTimer) {
       refreshTimer = setInterval(refreshCurrentPage, 10000);
     }
+    initBuildMonitor();
   }
 
   function renderUserBadge() {
@@ -1383,6 +1425,108 @@ input, select { font-family: var(--body); }
     }
     if (r.status === 204) return null;
     return r.json();
+  }
+
+  // ------------------------------------------------------------------
+  // Build monitor — SSE + polling fallback
+  // ------------------------------------------------------------------
+  let buildEventSource = null;
+  let buildDismissedAt = 0;
+  let buildLastState = 'idle';
+
+  function initBuildMonitor() {
+    // Try SSE first
+    if (typeof EventSource !== 'undefined') {
+      connectBuildSSE();
+    }
+    // Polling fallback (also catches any missed SSE events)
+    setInterval(pollBuildStatus, 5000);
+    // Initial poll
+    pollBuildStatus();
+
+    $('buildClose').addEventListener('click', () => {
+      $('buildBanner').classList.remove('active');
+      buildDismissedAt = Date.now();
+    });
+  }
+
+  function connectBuildSSE() {
+    if (buildEventSource) { buildEventSource.close(); }
+    const url = '/admin/api/build-events?k=' + encodeURIComponent(apiKey);
+    const es = new EventSource(url);
+    buildEventSource = es;
+
+    es.onmessage = (e) => {
+      try {
+        const data = JSON.parse(e.data);
+        if (data.type === 'build') {
+          updateBuildBanner(data);
+        }
+      } catch { /* ignore parse errors */ }
+    };
+
+    es.onerror = () => {
+      // Will auto-reconnect or fall back to polling
+    };
+  }
+
+  async function pollBuildStatus() {
+    try {
+      const data = await apiFetch('/admin/stats');
+      if (data && data.build) {
+        updateBuildBanner(data.build);
+      }
+    } catch { /* ignore */ }
+  }
+
+  function updateBuildBanner(status) {
+    if (!status) return;
+    const state = status.state || 'idle';
+    buildLastState = state;
+
+    // Auto-dismiss complete/failed after 30s unless actively building
+    const banner = $('buildBanner');
+    const label = $('buildLabel');
+    const fill = $('buildBarFill');
+    const meta = $('buildMeta');
+
+    if (state === 'idle') {
+      banner.classList.remove('active', 'complete', 'failed');
+      return;
+    }
+
+    // If user dismissed within last 10s, don't re-show for same state transition
+    if (buildDismissedAt > Date.now() - 10000 && state === 'complete') {
+      return;
+    }
+
+    banner.classList.add('active');
+    banner.classList.toggle('complete', state === 'complete');
+    banner.classList.toggle('failed', state === 'failed');
+
+    const total = status.total || 0;
+    const done = status.done || 0;
+    const failed = status.failed || 0;
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+    if (state === 'loading') {
+      label.textContent = 'Building index…';
+      fill.style.width = '0%';
+      meta.textContent = 'Loading chunks';
+    } else if (state === 'embedding') {
+      label.textContent = 'Embedding chunks…';
+      fill.style.width = pct + '%';
+      meta.textContent = done.toLocaleString() + ' / ' + total.toLocaleString() + (failed ? ' (' + failed + ' failed)' : '');
+    } else if (state === 'complete') {
+      label.textContent = 'Index build complete';
+      fill.style.width = '100%';
+      meta.textContent = done.toLocaleString() + ' chunks' + (failed ? ' (' + failed + ' failed)' : '');
+      setTimeout(() => banner.classList.remove('active'), 30000);
+    } else if (state === 'failed') {
+      label.textContent = 'Index build failed';
+      fill.style.width = '100%';
+      meta.textContent = 'Check server logs';
+    }
   }
 
   // ------------------------------------------------------------------
@@ -1920,7 +2064,7 @@ input, select { font-family: var(--body); }
           apiFetch('/admin/index/entities').catch(() => null),
         ]);
         renderModelConfig(config.models || [], providerProfiles || [], config.resolved || []);
-        renderCacheConfig(config.cache, config.index, entityStats);
+        renderCacheConfig(config.cache, config.index, entityStats, config.hooks || {});
         renderGaps(gaps.gaps || []);
         renderQuality(quality.issues || []);
         renderProviderProfiles(providerProfiles || []);
@@ -2270,11 +2414,14 @@ input, select { font-family: var(--body); }
     }
   }
 
-  function renderCacheConfig(cache, index, entityStats) {
+  function renderCacheConfig(cache, index, entityStats, hooks) {
     cache = cache || {};
     index = index || {};
     entityStats = entityStats || {};
+    hooks = hooks || {};
     const enrichedPct = index.totalChunks ? Math.round((entityStats.enrichedChunks || 0) / index.totalChunks * 100) : 0;
+    const hookCount = hooks.count || 0;
+    const hookNames = (hooks.rules || []).map(r => r.name).join(', ');
     $('cacheConfigBody').innerHTML =
       '<div class="kv-list">' +
         kvRow('Cache enabled', cache.enabled === false ? 'Disabled' : 'Enabled') +
@@ -2289,6 +2436,7 @@ input, select { font-family: var(--body); }
         kvRow('Last build', index.lastBuild ? new Date(index.lastBuild).toLocaleString() : '—') +
         kvRow('Refresh interval', index.refreshInterval ? Math.round(Number(index.refreshInterval) / 60000) + ' min' : '—') +
         kvRow('Source URL', index.sourceUrl || '—') +
+        kvRow('Active hooks', hookCount ? hookCount + ' (' + hookNames + ')' : '0') +
       '</div>';
   }
 
@@ -2659,6 +2807,27 @@ input, select { font-family: var(--body); }
       }
       status.className = 'action-status ok';
       status.textContent = 'Cleared ' + count + ' entries';
+    } catch (e) {
+      status.className = 'action-status err';
+      status.textContent = 'Failed: ' + (e.message || 'unknown');
+    }
+  });
+
+  $('btnReloadHooks').addEventListener('click', async () => {
+    const status = $('actionStatus');
+    status.className = 'action-status';
+    status.textContent = 'Reloading prompt hooks…';
+    try {
+      const r = await fetch('/admin/api/reload-hooks', {
+        method: 'POST', headers: { Authorization: 'Bearer ' + apiKey },
+      });
+      if (r.status === 401) { showLogin('Session expired'); return; }
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const j = await r.json();
+      status.className = 'action-status ok';
+      status.textContent = 'Reloaded ' + (j.count || 0) + ' prompt hook rule(s)';
+      // Refresh the cache/index card to show updated hook count
+      await fetchConfig();
     } catch (e) {
       status.className = 'action-status err';
       status.textContent = 'Failed: ' + (e.message || 'unknown');

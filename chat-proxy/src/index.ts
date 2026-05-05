@@ -17,7 +17,7 @@ import {incCounter, renderMetrics} from './metrics.js';
 import type {FeedbackRequest} from './types.js';
 import {recordFeedback, getStats} from './feedback.js';
 import {inferSection} from './sources.js';
-import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.js';
+import {getRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.js';
 import type {AgentType} from './types.js';
 import {computeConfidence} from './confidence.js';
 import {loadPrompts, getBasePrompt, getTopicPrompt} from './prompts.js';
@@ -33,8 +33,6 @@ import {saveTokenUsage, isDbReady} from './db.js';
 import {startedAt, llmHealth, recordLlmSuccess, recordLlmError} from './health.js';
 import {handlePostAction} from './post-action-handler.js';
 import type {ResolvedModel} from './runtime-config.js';
-
-const promptRules = loadRules(import.meta.url);
 
 // Load topic prompts from disk at startup
 loadPrompts();
@@ -595,7 +593,7 @@ app.post('/chat', async c => {
 
           // Evaluate pre-prompt hooks (confidence not yet known)
           const preCtx = {message: ragQuery, agentType: routeResult.agent as AgentType};
-          const injections = evaluatePrePrompt(promptRules, preCtx);
+          const injections = evaluatePrePrompt(getRules(), preCtx);
           if (injections.length > 0) {
             systemPrompt += '\n\n## Additional Instructions\n' + injections.join('\n\n');
           }
@@ -795,7 +793,7 @@ app.post('/chat', async c => {
 
           // Evaluate post-response hooks (confidence now known)
           const postCtx = {message: ragQuery, agentType: agentConfig.type as AgentType, confidence};
-          const appends = evaluatePostResponse(promptRules, postCtx);
+          const appends = evaluatePostResponse(getRules(), postCtx);
           for (const text of appends) {
             sendAndRecord('hook-append', JSON.stringify({text: '\n\n' + text.trim()}));
           }
