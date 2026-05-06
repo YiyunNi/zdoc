@@ -77,14 +77,22 @@
                       }
                     }
                   },
+                  "id": {
+                    "type": "string",
+                    "description": "The primary key of the entity to delete. You can use this parameter instead of `filter` to delete a single entity by its ID.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "待删除 Entity 的主键。可以使用此参数替代 `filter` 来按主键删除单个 Entity。"
+                      }
+                    }
+                  },
                   "exprParams": {
                     "type": "object",
                     "description": "Expression template parameter values for parameterized filter expressions."
                   }
                 },
                 "required": [
-                  "collectionName",
-                  "filter"
+                  "collectionName"
                 ]
               },
               "examples": {
@@ -100,6 +108,13 @@
                   "value": {
                     "collectionName": "medium_articles",
                     "filter": "reading_time > 15"
+                  }
+                },
+                "3": {
+                  "summary": "Option 3",
+                  "value": {
+                    "collectionName": "medium_articles",
+                    "id": "4321034832910"
                   }
                 }
               }
@@ -513,10 +528,10 @@
                                   }
                                 }
                               },
-                              "description": "An array of the IDs of inserted entities.",
+                              "description": "An array of the IDs of inserted entities. Note: IDs are returned as strings unless the request includes the header `Accept-Type-Allow-Int64: true`.",
                               "x-i18n": {
                                 "zh-CN": {
-                                  "description": "已插入 Entity 的 ID 列表。"
+                                  "description": "已插入 Entity 的 ID 列表。注意：除非请求包含头 `Accept-Type-Allow-Int64: true`，否则 ID 以字符串形式返回。"
                                 }
                               }
                             }
@@ -871,14 +886,26 @@
                                   }
                                 }
                               },
-                              "description": "An array of the IDs of upserted entities.",
+                              "description": "An array of the IDs of upserted entities. Note: IDs are returned as strings unless the request includes the header `Accept-Type-Allow-Int64: true`.",
                               "x-i18n": {
                                 "zh-CN": {
-                                  "description": "插入或更新的 Entity ID 列表。"
+                                  "description": "插入或更新的 Entity ID 列表。注意：除非请求包含头 `Accept-Type-Allow-Int64: true`，否则 ID 以字符串形式返回。"
                                 }
                               }
                             }
                           }
+                        },
+                        "scanned_remote_bytes": {
+                          "type": "integer",
+                          "description": "Bytes read from remote storage. Only returned when storage usage tracking is enabled."
+                        },
+                        "scanned_total_bytes": {
+                          "type": "integer",
+                          "description": "Total bytes scanned. Only returned when storage usage tracking is enabled."
+                        },
+                        "cache_hit_ratio": {
+                          "type": "number",
+                          "description": "Cache hit ratio. Only returned when storage usage tracking is enabled."
                         }
                       }
                     },
@@ -1178,6 +1205,33 @@
                               "zh-CN": {
                                 "description": "Entity 对象。"
                               }
+                            }
+                          }
+                        },
+                        "scanned_remote_bytes": {
+                          "type": "integer",
+                          "description": "The number of bytes scanned from remote storage. Returned when storage usage tracking is enabled.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "从远程存储扫描的字节数。仅在启用存储用量跟踪时返回。"
+                            }
+                          }
+                        },
+                        "scanned_total_bytes": {
+                          "type": "integer",
+                          "description": "The total number of bytes scanned. Returned when storage usage tracking is enabled.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "扫描的总字节数。仅在启用存储用量跟踪时返回。"
+                            }
+                          }
+                        },
+                        "cache_hit_ratio": {
+                          "type": "number",
+                          "description": "The cache hit ratio. Returned when storage usage tracking is enabled.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "缓存命中率。仅在启用存储用量跟踪时返回。"
                             }
                           }
                         }
@@ -1735,6 +1789,42 @@
                             },
                             "properties": {}
                           }
+                        },
+                        "recalls": {
+                          "type": "array",
+                          "description": "Recall values for each search result group.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "每组搜索结果的召回率值。"
+                            }
+                          },
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "topks": {
+                          "type": "array",
+                          "description": "The number of top-K results returned for each query vector.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "每个查询向量返回的 Top-K 结果数量。"
+                            }
+                          },
+                          "items": {
+                            "type": "integer"
+                          }
+                        },
+                        "scanned_remote_bytes": {
+                          "type": "integer",
+                          "description": "Bytes read from remote storage. Only returned when storage usage tracking is enabled."
+                        },
+                        "scanned_total_bytes": {
+                          "type": "integer",
+                          "description": "Total bytes scanned. Only returned when storage usage tracking is enabled."
+                        },
+                        "cache_hit_ratio": {
+                          "type": "number",
+                          "description": "Cache hit ratio. Only returned when storage usage tracking is enabled."
                         }
                       }
                     },
@@ -2369,6 +2459,18 @@
                             },
                             "properties": {}
                           }
+                        },
+                        "topks": {
+                          "type": "array",
+                          "description": "The number of top-K results returned for each query vector.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "每个查询向量返回的 Top-K 结果数量。"
+                            }
+                          },
+                          "items": {
+                            "type": "integer"
+                          }
                         }
                       }
                     },
@@ -2692,6 +2794,33 @@
                               }
                             },
                             "properties": {}
+                          }
+                        },
+                        "scanned_remote_bytes": {
+                          "type": "integer",
+                          "description": "The number of bytes scanned from remote storage. Returned when storage usage tracking is enabled.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "从远程存储扫描的字节数。仅在启用存储用量跟踪时返回。"
+                            }
+                          }
+                        },
+                        "scanned_total_bytes": {
+                          "type": "integer",
+                          "description": "The total number of bytes scanned. Returned when storage usage tracking is enabled.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "扫描的总字节数。仅在启用存储用量跟踪时返回。"
+                            }
+                          }
+                        },
+                        "cache_hit_ratio": {
+                          "type": "number",
+                          "description": "The cache hit ratio. Returned when storage usage tracking is enabled.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "缓存命中率。仅在启用存储用量跟踪时返回。"
+                            }
                           }
                         }
                       }
