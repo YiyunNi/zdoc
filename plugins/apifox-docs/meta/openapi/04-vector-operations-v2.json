@@ -2471,6 +2471,18 @@
                           "items": {
                             "type": "integer"
                           }
+                        },
+                        "scanned_remote_bytes": {
+                          "type": "integer",
+                          "description": "Bytes read from remote storage. Only returned when storage usage tracking is enabled."
+                        },
+                        "scanned_total_bytes": {
+                          "type": "integer",
+                          "description": "Total bytes scanned. Only returned when storage usage tracking is enabled."
+                        },
+                        "cache_hit_ratio": {
+                          "type": "number",
+                          "description": "Cache hit ratio. Only returned when storage usage tracking is enabled."
                         }
                       }
                     },
