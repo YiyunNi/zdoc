@@ -101,7 +101,7 @@ The runtime coverage report is generated from `items.json` into `scripts/eval/re
 From `chat-proxy/`, build the eval input files:
 
 ```bash
-npm run eval:build-bank
+npm exec -- tsx scripts/eval/build-question-bank.ts
 ```
 
 This writes:
@@ -113,17 +113,17 @@ This writes:
 Useful filters:
 
 ```bash
-npm run eval:build-bank -- --ids known-cluster-status-values,deployment-hnsw-cloud
-npm run eval:build-bank -- --modules search,rbac
-npm run eval:build-bank -- --priorities P0
-npm run eval:build-bank -- --blocking-only
-npm run eval:build-bank -- --exclude-safety
+npm exec -- tsx scripts/eval/build-question-bank.ts -- --ids known-cluster-status-values,deployment-hnsw-cloud
+npm exec -- tsx scripts/eval/build-question-bank.ts -- --modules search,rbac
+npm exec -- tsx scripts/eval/build-question-bank.ts -- --priorities P0
+npm exec -- tsx scripts/eval/build-question-bank.ts -- --blocking-only
+npm exec -- tsx scripts/eval/build-question-bank.ts -- --exclude-safety
 ```
 
 Run the selected test set against a running server:
 
 ```bash
-npm run eval:run -- --model current --url http://localhost:8787
+npm exec -- tsx scripts/eval/run-eval.ts -- --model current --url http://localhost:8787
 ```
 
 ## Release Gates
