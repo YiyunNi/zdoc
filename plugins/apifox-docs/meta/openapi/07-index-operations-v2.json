@@ -1346,16 +1346,16 @@
         },
         {
           "key": "on-demand-compute",
-          "label": "On-Demand Compute Endpoint",
+          "label": "Project Endpoint (On-Demand)",
           "url": "https://{project-id}.{region}.api.zillizcloud.com",
           "prompt": "<p>Use the on-demand compute endpoint if you are using on-demand clusters.</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>",
           "x-i18n": {
             "zh-CN": {
-              "label": "按需计算端点",
-              "prompt": "<p>如果您使用的是按需集群，请使用按需计算端点。</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>"
+              "label": "项目端点（按需）",
+              "prompt": "<p>如果您使用的是按需集群，请使用项目端点（按需）。</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>"
             }
           },
-          "shell": "export ON_DEMAND_COMPUTE_ENDPOINT=\"https://{project-id}.{region}.api.zillizcloud.com\""
+          "shell": "export PROJECT_ENDPOINT=\"https://{project-id}.{region}.api.zillizcloud.com\""
         }
       ]
     },
