@@ -264,7 +264,7 @@
                                   "actions": {
                                     "type": "array",
                                     "description": "The actions to take when the alert rule is triggered.",
-                                    "x-18n": {
+                                    "x-i18n": {
                                       "zh-CN": {
                                         "description": "触发告警规则时采取的操作列表。"
                                       }
@@ -272,7 +272,7 @@
                                     "items": {
                                       "type": "object",
                                       "description": "An action to take when the alert rule is triggered.",
-                                      "x-18n": {
+                                      "x-i18n": {
                                         "zh-CN": {
                                           "description": "触发告警规则时采取的操作。"
                                         }
@@ -753,7 +753,7 @@
                   "actions": {
                     "type": "array",
                     "description": "The actions to take when the alert rule is triggered.",
-                    "x-18n": {
+                    "x-i18n": {
                       "zh-CN": {
                         "description": "触发告警规则时采取的操作列表。"
                       }
@@ -761,7 +761,7 @@
                     "items": {
                       "type": "object",
                       "description": "An action to take when the alert rule is triggered.",
-                      "x-18n": {
+                      "x-i18n": {
                         "zh-CN": {
                           "description": "触发告警规则时采取的操作。"
                         }
@@ -1290,7 +1290,7 @@
                             "actions": {
                               "type": "array",
                               "description": "The actions to take when the alert rule is triggered.",
-                              "x-18n": {
+                              "x-i18n": {
                                 "zh-CN": {
                                   "description": "触发告警规则时采取的操作列表。"
                                 }
@@ -1298,7 +1298,7 @@
                               "items": {
                                 "type": "object",
                                 "description": "An action to take when the alert rule is triggered.",
-                                "x-18n": {
+                                "x-i18n": {
                                   "zh-CN": {
                                     "description": "触发告警规则时采取的操作。"
                                   }
@@ -1767,7 +1767,7 @@
                   "actions": {
                     "type": "array",
                     "description": "The actions to take when the alert rule is triggered.",
-                    "x-18n": {
+                    "x-i18n": {
                       "zh-CN": {
                         "description": "触发告警规则时采取的操作列表。"
                       }
@@ -1775,7 +1775,7 @@
                     "items": {
                       "type": "object",
                       "description": "An action to take when the alert rule is triggered.",
-                      "x-18n": {
+                      "x-i18n": {
                         "zh-CN": {
                           "description": "触发告警规则时采取的操作。"
                         }
@@ -2295,7 +2295,7 @@
                             "actions": {
                               "type": "array",
                               "description": "The actions to take when the alert rule is triggered.",
-                              "x-18n": {
+                              "x-i18n": {
                                 "zh-CN": {
                                   "description": "触发告警规则时采取的操作列表。"
                                 }
@@ -2303,7 +2303,7 @@
                               "items": {
                                 "type": "object",
                                 "description": "An action to take when the alert rule is triggered.",
-                                "x-18n": {
+                                "x-i18n": {
                                   "zh-CN": {
                                     "description": "触发告警规则时采取的操作。"
                                   }
