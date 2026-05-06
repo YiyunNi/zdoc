@@ -2019,6 +2019,13 @@
                               "x-i18n": {
                                 "zh-CN": "创建当前集群时的时间戳。"
                               }
+                            },
+                            "autoSuspend": {
+                              "type": "integer",
+                              "description": "Auto-suspend idle window configured for the cluster. The cluster will be automatically suspended if there is no request within the specified period. The value is an integer representing the number of seconds. For example, `300` means 5 minutes.",
+                              "x-i18n": {
+                                "zh-CN": "自动挂起空闲时间。如果指定的时间段内无任何请求，集群将自动挂起。该值为一个整数，表示秒数。例如，`300` 表示 5 分钟。"
+                              }
                             }
                           }
                         }
