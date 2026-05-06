@@ -41,10 +41,10 @@ Zilliz Cloud uses the control plane to centralize the management of clusters and
 
 - When using the Data Plane APIs, you can use **either a valid API key or a valid pair of cluster username and password** to authenticate your requests.
 
-    The following is an example of listing all the available collections in the specified cluster.
+    The following is an example of listing all the available collections in the specified serving cluster.
 
     ```shell
-    export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
+    export CLUSTER_ENDPOINT="https://{cluster_id}.{region}.vectordb.zillizcloud.com"
     export TOKEN="db_admin:xxxxxxxxxxxx"
 
     curl --request GET \
@@ -53,6 +53,19 @@ Zilliz Cloud uses the control plane to centralize the management of clusters and
         --header "accept: application/json" \
         --header "content-type: application/json" \
         -d '{}'
+    ```
+
+    The following is an example of listing all available collections using project endpoint.
+
+    ```shell
+    export PROJECT_ENDPOINT="https://{project_id}.{region}.api.zillizcloud.com"
+    export TOKEN="YOUR_API_KEY"
+
+    curl --request POST \
+    --url "${PROJECT_ENDPOINT}/v2/vectordb/collections/list" \
+    --header "Authorization: Bearer ${TOKEN}" \
+    --header "Content-Type: application/json" \
+    -d '{}'
     ```
 
 <!-- openapi-downloads -->
