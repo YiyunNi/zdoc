@@ -22,7 +22,7 @@ import {resolveModel, createModelInstance, CONFIG_KEYS, type ResolvedModel} from
 import {listModelsForProfile} from './provider-models.js';
 import {getSessionCount} from './sessions.js';
 import {getStats} from './feedback.js';
-import {startedAt, llmHealth} from './health.js';
+import {startedAt, llmHealth, recordLlmSuccess} from './health.js';
 import {getFeishuConfig, buildAuthorizeUrl, exchangeCodeForToken, fetchFeishuUserInfo, generateOAuthState} from './auth/feishu.js';
 import {isOAuthEnabled} from './auth/session.js';
 import {requireAuth, requireAdmin, getAuth, setSessionCookie, setStateCookie, clearStateCookie, clearSessionCookie, verifyStateCookie} from './auth/middleware.js';
@@ -385,6 +385,7 @@ adminApp.get('/api/health/llm', async c => {
     const model = await createModelInstance(resolved);
     const {generateText} = await import('ai');
     await generateText({model, prompt: 'Say "ok"', maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-chat')});
+    recordLlmSuccess();
     return c.json({
       ok: true,
       provider: resolvedProviderDisplay(resolved),

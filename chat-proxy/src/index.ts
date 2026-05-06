@@ -30,7 +30,7 @@ import {
 import type {SemanticCacheHit} from './semantic-cache.js';
 import type {TokenUsage} from './types.js';
 import {saveTokenUsage, isDbReady} from './db.js';
-import {startedAt, llmHealth, recordLlmSuccess, recordLlmError} from './health.js';
+import {startedAt, llmHealth, recordLlmSuccess, recordLlmError, recordLlmDisconnect} from './health.js';
 import {handlePostAction} from './post-action-handler.js';
 import type {ResolvedModel} from './runtime-config.js';
 
@@ -459,6 +459,8 @@ app.post('/chat', async c => {
   const ragQuery = isFollowUp
     ? windowedMessages.slice(-3).filter(m => m.role === 'user').map(m => m.content).join(' ')
     : rawQuery;
+
+  const clientSignal = c.req.raw.signal;
 
   return c.newResponse(
     new ReadableStream({
@@ -912,8 +914,23 @@ app.post('/chat', async c => {
           incCounter('chat_proxy_requests_total', {agent: currentAgent, model: currentModel, status: 'success'});
         } catch (err: unknown) {
           const message = err instanceof Error ? err.message : 'Internal server error';
+
+          // Detect client disconnects — don't count them as LLM health failures
+          const isClientDisconnect = clientSignal?.aborted ||
+            message.includes('Controller is already closed');
+
+          if (isClientDisconnect) {
+            console.log('[Chat] Client disconnected:', message);
+            recordLlmDisconnect();
+            return; // Let finally block close the controller
+          }
+
           console.error('[Chat] Stream error:', message);
-          send('error', JSON.stringify({error: message}));
+          try {
+            send('error', JSON.stringify({error: message}));
+          } catch {
+            // Controller may already be closed; ignore secondary send errors
+          }
           // Allow the error event to flush before the finally block closes the controller
           await new Promise(r => setTimeout(r, 100));
           logEvent(session.id, userId, 'error', 'unknown', {error: message}, userMeta, source);

@@ -8,6 +8,7 @@ export const llmHealth = {
   lastError: null as string | null,
   totalCalls: 0,
   totalErrors: 0,
+  totalDisconnects: 0,
 };
 
 export function recordLlmSuccess(): void {
@@ -20,4 +21,8 @@ export function recordLlmError(message: string): void {
   llmHealth.lastError = message;
   llmHealth.totalCalls++;
   llmHealth.totalErrors++;
+}
+
+export function recordLlmDisconnect(): void {
+  llmHealth.totalDisconnects++;
 }
