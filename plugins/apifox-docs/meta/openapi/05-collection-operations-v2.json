@@ -68,10 +68,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/ListCollectionResponse"
+                      "$ref": "#/components/schemas/ListCollectionResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -118,6 +120,9 @@
         "tags": [
           "Collection Operations (V2)"
         ],
+        "x-base-urls": {
+          "$ref": "#/components/x-base-urls/ZillizVectorV2"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/AuthorizationHeader"
@@ -363,10 +368,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -447,10 +454,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -543,10 +552,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -630,10 +641,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/CompactionStateResponse"
+                      "$ref": "#/components/schemas/CompactionStateResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -884,10 +897,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -957,10 +972,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1035,10 +1052,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/HasCollectionResponse"
+                      "$ref": "#/components/schemas/HasCollectionResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1116,10 +1135,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/GetCollectionStatsResponse"
+                      "$ref": "#/components/schemas/GetCollectionStatsResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1205,10 +1226,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1286,10 +1309,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1364,10 +1389,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1450,10 +1477,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1529,10 +1558,12 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1603,10 +1634,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1684,10 +1717,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1766,10 +1801,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1842,10 +1879,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/CollectionLoadStateResponse"
+                      "$ref": "#/components/schemas/CollectionLoadStateResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1954,10 +1993,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -2072,10 +2113,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -2176,10 +2219,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -2355,10 +2400,12 @@
                             }
                           }
                         }
-                      }
+                      },
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -2541,7 +2588,7 @@
                     "value": {
                       "code": 0,
                       "data": {
-                        "jobId": 449503829274509312
+                        "jobId": 449503829274509300
                       }
                     }
                   },
@@ -2604,7 +2651,7 @@
                 "$ref": "#/components/schemas/RefreshExternalCollectionProgressRequest"
               },
               "example": {
-                "jobId": 449503829274509312
+                "jobId": 449503829274509300
               }
             }
           }
@@ -2774,7 +2821,7 @@
                     "value": {
                       "code": 0,
                       "data": {
-                        "jobId": 449503829274509312,
+                        "jobId": 449503829274509300,
                         "collectionName": "ext_books",
                         "state": "RefreshInProgress",
                         "progress": 42,
@@ -2793,7 +2840,7 @@
                     "value": {
                       "code": 0,
                       "data": {
-                        "jobId": 449503829274509312,
+                        "jobId": 449503829274509300,
                         "collectionName": "ext_books",
                         "state": "RefreshInProgress",
                         "progress": 42,
@@ -3075,7 +3122,7 @@
                       "data": {
                         "records": [
                           {
-                            "jobId": 449503829274509312,
+                            "jobId": 449503829274509300,
                             "collectionName": "ext_books",
                             "state": "RefreshCompleted",
                             "progress": 100,
@@ -3084,7 +3131,7 @@
                             "endTime": 1712832600000
                           },
                           {
-                            "jobId": 449503829274509313,
+                            "jobId": 449503829274509300,
                             "collectionName": "ext_movies",
                             "state": "RefreshInProgress",
                             "progress": 42,
@@ -3107,7 +3154,7 @@
                       "data": {
                         "records": [
                           {
-                            "jobId": 449503829274509312,
+                            "jobId": 449503829274509300,
                             "collectionName": "ext_books",
                             "state": "RefreshCompleted",
                             "progress": 100,
@@ -3116,7 +3163,7 @@
                             "endTime": 1712832600000
                           },
                           {
-                            "jobId": 449503829274509313,
+                            "jobId": 449503829274509300,
                             "collectionName": "ext_movies",
                             "state": "RefreshInProgress",
                             "progress": 42,
@@ -3177,19 +3224,19 @@
         },
         {
           "key": "on-demand-compute",
-          "label": "On-Demand Compute Endpoint",
+          "label": "Project Endpoint (On-Demand)",
           "url": "https://{project-id}.{region}.api.zillizcloud.com",
           "prompt": "<p>Use the on-demand compute endpoint if you are using on-demand clusters.</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>",
           "x-i18n": {
             "zh-CN": {
-              "label": "按需计算端点",
-              "prompt": "<p>如果您使用的是按需集群，请使用按需计算端点。</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>"
+              "label": "项目端点（按需）",
+              "prompt": "<p>如果您使用的是按需集群，请使用项目端点（按需）。</p><p><code>https://{project-id}.{region}.api.zillizcloud.com</code></p>"
             }
           },
-          "shell": "export ON_DEMAND_COMPUTE_ENDPOINT=\"https://{project-id}.{region}.api.zillizcloud.com\""
+          "shell": "export PROJECT_ENDPOINT=\"https://{project-id}.{region}.api.zillizcloud.com\""
         }
       ]
-    },    
+    },
     "securitySchemes": {
       "bearer": {
         "type": "http",

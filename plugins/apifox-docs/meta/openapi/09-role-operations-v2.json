@@ -1289,10 +1289,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
@@ -1404,10 +1406,12 @@
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/EmptyResponse"
+                      "$ref": "#/components/schemas/EmptyResponse",
+                      "x-tab-label": "success"
                     },
                     {
-                      "$ref": "#/components/schemas/ErrorResponse"
+                      "$ref": "#/components/schemas/ErrorResponse",
+                      "x-tab-label": "failure"
                     }
                   ]
                 },

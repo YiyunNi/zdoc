@@ -1180,7 +1180,8 @@
                             }
                           }
                         }
-                      }
+                      },
+                      "x-tab-label": "success"
                     },
                     {
                       "description": "Returns an error message.",
@@ -1212,7 +1213,8 @@
                             }
                           }
                         }
-                      }
+                      },
+                      "x-tab-label": "failure"
                     }
                   ]
                 },
