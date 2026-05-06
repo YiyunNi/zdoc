@@ -900,7 +900,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -909,7 +909,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -918,7 +918,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         }
@@ -1228,7 +1228,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -1237,7 +1237,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -1246,7 +1246,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         }
@@ -1834,7 +1834,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -1843,7 +1843,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -1852,7 +1852,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         }
@@ -2507,7 +2507,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -2516,7 +2516,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -2525,7 +2525,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         }
@@ -2858,7 +2858,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -2867,7 +2867,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
@@ -2876,7 +2876,7 @@
                           "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                              "description": "当部署使用 Tiered Storage 且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         }
