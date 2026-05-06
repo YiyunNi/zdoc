@@ -39,18 +39,18 @@ Current modules:
 
 ## Prompt Coverage
 
-Prompt files are topic references injected by the router. They do not have to match question-bank module names exactly.
+Prompt coverage follows the current router topics, so prompt files do not have to match question-bank module names exactly. Global facts that must apply regardless of routing belong in `prompts/base.md`.
 
 | Question-bank module | Primary prompt coverage | Notes |
 |---|---|---|
 | `search` | `prompts/search.md`, `prompts/schema-design.md` | Schema setup matters for BM25, hybrid, JSON, multi-vector, and filter-heavy search questions. |
 | `reranking` | `prompts/search.md`, `prompts/integrations.md` | Search covers local rank fusion; integrations covers model-provider rerankers such as Cohere and Voyage. |
 | `embedding` | `prompts/integrations.md`, `prompts/schema-design.md` | Integrations covers provider setup and credentials; schema design covers dimension and field compatibility. |
-| `rbac` | `prompts/access-control.md`, `prompts/security.md` | `rbac` is the eval module; `access-control` is the router topic name. |
+| `rbac` | `prompts/access-control.md`, `prompts/base.md` | `rbac` is the eval module; `access-control` is the router topic name. |
 | `clouds-and-regions` | `prompts/resources.md`, `prompts/pricing.md` | Region answers often combine availability, deployment fit, and pricing caveats. |
-| `deployment-mode` | `prompts/resources.md`, `prompts/cluster-connection.md`, `prompts/pricing.md`, `prompts/security.md` | Deployment answers can involve plan selection, endpoint behavior, cost model, and enterprise controls. |
-| `security` | `prompts/base.md`, `prompts/security.md`, `prompts/access-control.md`, `prompts/cluster-connection.md` | Base prompt carries global guardrails; topic prompt gives security-specific decision rules. |
-| `compliance-and-privacy` | `prompts/base.md`, `prompts/compliance-and-privacy.md` | Base prompt prevents overclaims; topic prompt covers Trust Center, certification, GDPR, HIPAA, and BAA handling. |
+| `deployment-mode` | `prompts/resources.md`, `prompts/cluster-connection.md`, `prompts/pricing.md`, `prompts/base.md` | Deployment answers can involve plan selection, endpoint behavior, cost model, and enterprise controls. |
+| `security` | `prompts/base.md`, `prompts/access-control.md`, `prompts/cluster-connection.md`, `prompts/security.md` | Current router topics cover security through global and access-control prompts; `security.md` is the module-level reference for future dedicated topic routing. |
+| `compliance-and-privacy` | `prompts/base.md`, `prompts/compliance-and-privacy.md` | Current router coverage is primarily global; `compliance-and-privacy.md` is the module-level reference for future dedicated topic routing. |
 | `agent-safety` | `prompts/base.md` | Safety gates should remain global and not depend on topic routing. |
 
 ## Item Schema
