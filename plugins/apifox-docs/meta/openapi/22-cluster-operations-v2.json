@@ -1018,11 +1018,11 @@
                     }
                   },
                   "autoSuspend": {
-                    "type": "string",
-                    "description": "Auto-suspend idle window. The cluster will be automatically suspended if there is no request within the specified period. The value can be an descriptive values like `120s`, `5m`, or `1h`.",
-                    "default": "60s",
+                    "type": "integer",
+                    "description": "Auto-suspend idle window. The cluster will be automatically suspended if there is no request within the specified period. The value should be an integer representing the number of seconds. For example, `300` means 5 minutes.",
+                    "default": 60,
                     "x-i18n": {
-                      "zh-CN": "自动挂起空闲时间。如果指定的时间段内无任何请求，集群将自动挂起。参数值为描述性时间，如 `120s`、`5m`、`1h`。"
+                      "zh-CN": "自动挂起空闲时间。如果指定的时间段内无任何请求，集群将自动挂起。该值应为一个整数，表示秒数。例如，`300` 表示 5 分钟。"
                     }
                   }
                 },
@@ -1093,6 +1093,15 @@
                               "x-i18n": {
                                 "zh-CN": {
                                   "description": "已创建集群的 ID。"
+                                }
+                              }
+                            },
+                            "prompt": {
+                              "type": "string",
+                              "description": "Prompt messages returned.",
+                              "x-i18n": {
+                                "zh-CN": {
+                                  "description": "返回的提示消息。"
                                 }
                               }
                             }
@@ -1551,20 +1560,6 @@
                                   "zh-CN": "分配给当前集群的 CU 大小。"
                                 }
                               },
-                              "replicas": {
-                                "type": "integer",
-                                "description": "Number of replicas created in the cluster",
-                                "x-i18n": {
-                                  "zh-CN": "为当前集群创建的 Replica 数量。"
-                                }
-                              },
-                              "readyReplicas": {
-                                "type": "integer",
-                                "description": "Number of replicas that are ready",
-                                "x-i18n": {
-                                  "zh-CN": "已经就绪的 Replica 数量。"
-                                }
-                              },
                               "status": {
                                 "type": "string",
                                 "description": "Current cluster status",
@@ -1607,6 +1602,13 @@
                                 "x-i18n": {
                                   "zh-CN": "创建当前集群时的时间戳。"
                                 }
+                              },
+                              "autoSuspend": {
+                                "type": "integer",
+                                "description": "Auto-suspend idle window configured for the cluster. The cluster will be automatically suspended if there is no request within the specified period. The value is an integer representing the number of seconds. For example, `300` means 5 minutes.",
+                                "x-i18n": {
+                                  "zh-CN": "自动挂起空闲时间。如果指定的时间段内无任何请求，集群将自动挂起。该值为一个整数，表示秒数。例如，`300` 表示 5 分钟。"
+                                }
                               }
                             },
                             "description": "An on-demand cluster.",
@@ -1635,8 +1637,6 @@
                             "clusterName": "Cluster-01",
                             "regionId": "aws-us-west-2",
                             "cu": 8,
-                            "replicas": 2,
-                            "readyReplicas": 2,
                             "status": "RUNNING",
                             "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com",
                             "privateLink": "",
@@ -1649,8 +1649,6 @@
                             "regionId": "aws-us-west-2",
                             "status": "RUNNING",
                             "cu": 8,
-                            "replicas": 2,
-                            "readyReplicas": 2,
                             "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com",
                             "privateLink": "",
                             "createdBy": "john.doe@zilliz.com",
@@ -1939,6 +1937,13 @@
                         "properties": {
                           "type": "object",
                           "properties": {
+                            "projectId": {
+                                "type": "string",
+                                "description": "ID of the project.",
+                                "x-i18n": {
+                                    "zh-CN": "项目 ID。"
+                                }
+                            },
                             "clusterId": {
                               "type": "string",
                               "description": "ID of the cluster.",
@@ -1970,20 +1975,6 @@
                               "description": "CU size of the cluster",
                               "x-i18n": {
                                 "zh-CN": "分配给当前集群的 CU 大小。"
-                              }
-                            },
-                            "replicas": {
-                              "type": "integer",
-                              "description": "Number of replicas created in the cluster",
-                              "x-i18n": {
-                                "zh-CN": "为当前集群创建的 Replica 数量。"
-                              }
-                            },
-                            "readyReplicas": {
-                              "type": "integer",
-                              "description": "Number of replicas that are ready",
-                              "x-i18n": {
-                                "zh-CN": "已经就绪的 Replica 数量。"
                               }
                             },
                             "status": {
@@ -2042,12 +2033,11 @@
                     "value": {
                       "code": 0,
                       "data": {
+                        "projectId": "proj-xxxxxxxxxxxxxxxxxx",
                         "clusterId": "inxx-xxxxxxxxxxxxxxx",
                         "clusterName": "Cluster-01",
                         "regionId": "aws-us-west-2",
                         "cu": 8,
-                        "replicas": 2,
-                        "readyReplicas": 2,
                         "status": "RUNNING",
                         "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com",
                         "privateLink": "",

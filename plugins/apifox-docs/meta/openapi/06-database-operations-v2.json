@@ -45,7 +45,13 @@
                 "type": "object",
                 "properties": {
                   "dbName": {
-                    "$ref": "#/components/schemas/CollectionCommons/properties/dbName"
+                    "type": "string",
+                    "description": "The name of the new database to be created.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "要创建的新 Database 的名称。"
+                      }
+                    }
                   },
                   "properties": {
                     "type": "object",
@@ -460,7 +466,13 @@
                 "type": "object",
                 "properties": {
                   "dbName": {
-                    "$ref": "#/components/schemas/CollectionCommons/properties/dbName"
+                    "type": "string",
+                    "description": "The name of the new database to be created.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "要创建的新 Database 的名称。"
+                      }
+                    }
                   }
                 },
                 "required": [
@@ -679,7 +691,13 @@
                 "type": "object",
                 "properties": {
                   "dbName": {
-                    "$ref": "#/components/schemas/CollectionCommons/properties/dbName"
+                    "type": "string",
+                    "description": "The name of the new database to be created.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "要创建的新 Database 的名称。"
+                      }
+                    }
                   },
                   "properties": {
                     "type": "object",
@@ -963,7 +981,13 @@
                 "type": "object",
                 "properties": {
                   "dbName": {
-                    "$ref": "#/components/schemas/CollectionCommons/properties/dbName"
+                    "type": "string",
+                    "description": "The name of the new database to be created.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "要创建的新 Database 的名称。"
+                      }
+                    }
                   },
                   "propertyKeys": {
                     "type": "array",
@@ -1133,7 +1157,13 @@
                 "type": "object",
                 "properties": {
                   "dbName": {
-                    "$ref": "#/components/schemas/CollectionCommons/properties/dbName"
+                    "type": "string",
+                    "description": "The name of the new database to be created.",
+                    "x-i18n": {
+                      "zh-CN": {
+                        "description": "要创建的新 Database 的名称。"
+                      }
+                    }
                   }
                 },
                 "required": [
