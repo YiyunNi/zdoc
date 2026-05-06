@@ -43,6 +43,32 @@ describe('routeIntent', () => {
     expect(result.reasoning).toBe('test');
   });
 
+  it('accepts security and compliance topics from the router', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {
+        agent: 'general',
+        topics: ['security', 'compliance-and-privacy'],
+        reasoning: 'security and compliance question',
+      },
+    } as any);
+
+    const result = await routeIntent('Do you support SOC 2 and Private Link?', [], 'sess-security-topic');
+
+    expect(result.topics).toEqual(['security', 'compliance-and-privacy']);
+  });
+
+  it('describes security and compliance topics in the router prompt', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {agent: 'general', topics: [], reasoning: 'ok'},
+    } as any);
+
+    await routeIntent('Can you help with a HIPAA vendor review?', [], 'sess-security-prompt');
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.prompt).toContain('security:');
+    expect(callArgs.prompt).toContain('compliance-and-privacy:');
+  });
+
   it('includes sticky agent in prompt for same session', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {agent: 'resources', reasoning: 'first call'},

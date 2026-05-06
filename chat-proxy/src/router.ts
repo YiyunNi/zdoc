@@ -18,6 +18,7 @@ const ROUTER_V2_ENABLED = process.env.ROUTER_V2_ENABLED !== 'false'; // default 
 const TOPIC_ENUM = [
   'schema-design', 'search', 'resources', 'cluster-connection',
   'import', 'migration', 'access-control', 'integrations', 'pricing',
+  'security', 'compliance-and-privacy',
 ] as const;
 
 export type TopicName = (typeof TOPIC_ENUM)[number];
@@ -86,6 +87,8 @@ Topics (select 1-2 most relevant):
 - access-control: RBAC, org/project/cluster roles, API keys, custom roles
 - integrations: LangChain, model providers, Datadog, SDK integrations
 - pricing: Pricing, billing, credits, cost optimization
+- security: Authentication, SSO/MFA, API keys, cluster credentials, Private Link, IP allowlists, encryption, CMEK, data isolation, audit logs
+- compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
 `;
 
 const FEW_SHOT_EXAMPLES = `
@@ -236,6 +239,8 @@ Topics (select 1-2 most relevant):
 - access-control: RBAC, org/project/cluster roles, API keys, custom roles
 - integrations: LangChain, model providers, Datadog, SDK integrations
 - pricing: Pricing, billing, credits, cost optimization
+- security: Authentication, SSO/MFA, API keys, cluster credentials, Private Link, IP allowlists, encryption, CMEK, data isolation, audit logs
+- compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
 
 ${stickyAgent ? `Current agent: ${stickyAgent}. Stay with this agent unless the topic has clearly changed.` : ''}
 
