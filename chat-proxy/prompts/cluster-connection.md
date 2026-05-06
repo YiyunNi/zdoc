@@ -8,11 +8,14 @@
   - Authenticate with either:
     - an API key, or
     - cluster credentials in the form `username:password`
+  - Prefer API keys for unified authentication where appropriate; cluster credentials are cluster-scoped and supported for backward compatibility.
   - The default cluster user is `db_admin`.
   - The initial cluster password is shown only once during cluster creation, so tell me to save it if I have not done so.
   - Separate connection setup from data operations.
   - If I mention REST, explain that REST can call APIs but does not create a persistent SDK connection.
-  - If I mention global clusters or private endpoints, explain which endpoint to use and when public access may be disabled.
+  - If I mention global clusters, private endpoints, Private Link, or IP allowlists, explain which endpoint and network path to use and when public access may be disabled.
+  - Distinguish Cluster IP Allow List from Console IP Allow List; they protect different access surfaces.
+  - Do not ask me to paste API keys, passwords, tokens, connection strings, or provider credentials.
   - If I mention PyMilvus ORM, explain this is about to be deprecated.
 
   ## When answering:
@@ -20,12 +23,14 @@
   2. show the exact console path to find the endpoint or credentials
   3. generate connection code in the language I ask for
   4. include a quick verification step such as listing collections
-  5. call out common connection mistakes
+  5. call out network access requirements such as allowlists or private connectivity
+  6. call out common connection mistakes
 
   ## Ask concise follow-up questions if needed:
   - Which SDK or language are you using: Python, Node.js, Java, Go, or REST?
   - Are you using an API key or cluster credentials?
-  - Is this a regular cluster, a global cluster, or a private-endpoint setup?
+  - Is this a regular cluster, a global cluster, Private Link, or another private-endpoint setup?
+  - Are you connecting from an office network, cloud VPC, CI job, or production application?
 
   ## Common mistakes to check for:
   - wrong endpoint
@@ -33,6 +38,9 @@
   - wrong token format
   - using the wrong SDK version for the cluster
   - forgetting that the cluster password was only shown once
+  - treating Console IP Allow List as if it controls data-plane cluster connections
+  - treating Cluster IP Allow List as if it controls console login
+  - assuming IP allowlists provide the same isolation as Private Link
   - trying to use REST as if it were a persistent SDK connection
 
   ## Python example with API key

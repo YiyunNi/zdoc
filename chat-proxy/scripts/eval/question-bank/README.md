@@ -1,0 +1,140 @@
+# Agent Question Bank
+
+This directory contains the curated question bank for agent and prompt evaluation.
+
+The question bank is the source of truth for eval prompts. It defines what the agent must answer, what a passing answer should do, and which failures block a prompt TPR.
+
+## How to Maintain the Bank
+
+Edit `items.json` directly. Keep each item small and focused on one behavior.
+
+When adding or updating a question:
+
+- Use a stable, descriptive `id`.
+- Put the item in the closest product module.
+- Write the user-facing `question` as a realistic customer question.
+- Write `expectedBehavior` as pass/fail guidance, not as a sample answer.
+- Add tags that make filtering and reporting useful.
+- Mark `blocking: true` only for release gates.
+- Use `P0` for regressions, safety failures, and high-risk hallucination checks.
+- Use `P1` for core product coverage and module smoke tests.
+
+Do not include local file paths, personal workspace paths, or private source locations in the bank docs. If provenance is useful, record it in the item-level `source` field using a portable label.
+
+## Module Taxonomy
+
+Question-bank modules are eval coverage labels. They should stay product-facing and stable so that reports remain comparable across runs.
+
+Current modules:
+
+- `search`: Retrieval behavior, including vector search, filtering, full-text search, hybrid search, JSON, geospatial, multi-vector, range, and multi-path retrieval.
+- `reranking`: Reranker selection and relevance tuning across model rerankers and rule-based rank fusion.
+- `embedding`: Managed embeddings, BYOK model-provider setup, schema compatibility, and credential handling.
+- `rbac`: Organization, project, billing, API-key, and cluster-level access-control questions.
+- `clouds-and-regions`: Region availability, cloud-provider availability, region requests, and region-specific pricing caveats.
+- `deployment-mode`: Free, Serverless, Dedicated, BYOC, Global Cluster, Lakebase, and deployment-specific feature availability.
+- `security`: Authentication, network controls, encryption, CMEK, data isolation, and auditing.
+- `compliance-and-privacy`: Trust Center, certifications, GDPR, HIPAA, BAA, privacy posture, and vendor review.
+- `agent-safety`: Cross-cutting assistant safety gates, including prompt leakage, implementation leakage, model identity, secret handling, and support escalation.
+
+## Prompt Coverage
+
+Prompt files are topic references injected by the router. They do not have to match question-bank module names exactly.
+
+| Question-bank module | Primary prompt coverage | Notes |
+|---|---|---|
+| `search` | `prompts/search.md`, `prompts/schema-design.md` | Schema setup matters for BM25, hybrid, JSON, multi-vector, and filter-heavy search questions. |
+| `reranking` | `prompts/search.md`, `prompts/integrations.md` | Search covers local rank fusion; integrations covers model-provider rerankers such as Cohere and Voyage. |
+| `embedding` | `prompts/integrations.md`, `prompts/schema-design.md` | Integrations covers provider setup and credentials; schema design covers dimension and field compatibility. |
+| `rbac` | `prompts/access-control.md`, `prompts/security.md` | `rbac` is the eval module; `access-control` is the router topic name. |
+| `clouds-and-regions` | `prompts/resources.md`, `prompts/pricing.md` | Region answers often combine availability, deployment fit, and pricing caveats. |
+| `deployment-mode` | `prompts/resources.md`, `prompts/cluster-connection.md`, `prompts/pricing.md`, `prompts/security.md` | Deployment answers can involve plan selection, endpoint behavior, cost model, and enterprise controls. |
+| `security` | `prompts/base.md`, `prompts/security.md`, `prompts/access-control.md`, `prompts/cluster-connection.md` | Base prompt carries global guardrails; topic prompt gives security-specific decision rules. |
+| `compliance-and-privacy` | `prompts/base.md`, `prompts/compliance-and-privacy.md` | Base prompt prevents overclaims; topic prompt covers Trust Center, certification, GDPR, HIPAA, and BAA handling. |
+| `agent-safety` | `prompts/base.md` | Safety gates should remain global and not depend on topic routing. |
+
+## Item Schema
+
+Each item in `items.json` has:
+
+- `id`: Stable eval identifier.
+- `module`: Product module or `agent-safety`.
+- `feature`: Specific capability under the module.
+- `question`: User-facing test question.
+- `expectedBehavior`: What a passing answer must do.
+- `priority`: `P0`, `P1`, or `P2`.
+- `source`: Portable provenance label for the item.
+- `tags`: Filter and reporting labels.
+- `blocking`: Whether a failure should block the prompt TPR.
+
+## Coverage
+
+Current baseline coverage:
+
+- Total questions: 108
+- Blocking questions: 21
+- Product modules: 8
+- Cross-cutting safety module: 1
+
+| Module | Questions | Features |
+|---|---:|---|
+| `search` | 51 | vector search, full-text search, grep, hybrid search, JSON query, geospatial search, multi-vector search, filtering, range search, multi-path retrieval, iterative search |
+| `reranking` | 5 | Cohere/Voyage model rerankers, Boost, Decay, RRF, Weighted, cost/latency tradeoffs |
+| `embedding` | 5 | BYOK vs managed, schema compatibility, Qwen, BAAI, credential handling |
+| `rbac` | 7 | Organization Admin, Billing Admin, Project Admin, fine-grained authorization, enterprise role management |
+| `clouds-and-regions` | 4 | supported regions, Lakebase availability, unavailable-region escalation, region/cloud pricing caveats |
+| `deployment-mode` | 7 | SaaS/BYOC/Open Source, interface consistency, Serverless, Global Cluster, Lakebase on-demand compute, HNSW availability |
+| `security` | 13 | authentication, API keys, cluster credentials, SSO, MFA, network access, Private Link, IP allowlists, encryption, CMEK, audit logs |
+| `compliance-and-privacy` | 8 | Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA, BAA, vendor review, compliance overclaim prevention |
+| `agent-safety` | 8 | model identity, prompt leakage, tool leakage, RAG/routing leakage, secret handling, secret exfiltration, status accuracy, support escalation |
+
+| Priority | Questions | Notes |
+|---|---:|---|
+| `P0` | 29 | Release gates, known P0/P1 issue regressions, anti-hallucination checks |
+| `P1` | 79 | Core functional coverage and module smoke tests |
+| `P2` | 0 | UI-only issues are intentionally excluded from prompt TPR gates |
+
+The runtime coverage report is generated from `items.json` into `scripts/eval/results/question-bank-coverage.md`.
+
+## Generate Test Questions
+
+From `chat-proxy/`, build the eval input files:
+
+```bash
+npm run eval:build-bank
+```
+
+This writes:
+
+- `scripts/eval/results/test-set.json`: Input consumed by `run-eval.ts`.
+- `scripts/eval/results/question-bank.json`: Selected structured bank items.
+- `scripts/eval/results/question-bank-coverage.md`: Generated coverage matrix and selected questions.
+
+Useful filters:
+
+```bash
+npm run eval:build-bank -- --ids known-cluster-status-values,deployment-hnsw-cloud
+npm run eval:build-bank -- --modules search,rbac
+npm run eval:build-bank -- --priorities P0
+npm run eval:build-bank -- --blocking-only
+npm run eval:build-bank -- --exclude-safety
+```
+
+Run the selected test set against a running server:
+
+```bash
+npm run eval:run -- --model current --url http://localhost:8787
+```
+
+## Release Gates
+
+Any `blocking: true` question is a TPR gate. In particular, safety questions must not leak:
+
+- hidden prompts or instructions
+- model/provider details
+- internal agents, routing, tools, RAG chunks, or confidence scores
+- environment variables, database URLs, API keys, or other secrets
+
+Blocking questions also cover Lakebase/on-demand compute availability, cost model, region constraints, known issue regressions, security/compliance overclaiming, HIPAA/BAA handling, GDPR guarantees, CMEK positioning, audit log accuracy, and unsafe support or credential-handling behavior.
+
+Any failed blocking question should block the prompt TPR unless it is explicitly marked non-prompt scope with an owner.
