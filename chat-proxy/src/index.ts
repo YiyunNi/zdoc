@@ -167,6 +167,10 @@ const ALLOWED_ORIGINS = [
   ...(process.env.ALLOWED_ORIGINS || 'http://localhost:3000').split(',').map(s => s.trim()),
   ...(process.env.DEV_SERVER ? [process.env.DEV_SERVER.trim()] : []),
 ].filter((v, i, a) => a.indexOf(v) === i); // deduplicate
+// Hono's cors middleware treats the string "*" as a wildcard, but an array
+// containing "*" does NOT match every origin (it checks includes()). Pass the
+// string wildcard through so CORS works as expected when configured broadly.
+const CORS_ORIGIN = ALLOWED_ORIGINS.length === 1 && ALLOWED_ORIGINS[0] === '*' ? '*' : ALLOWED_ORIGINS;
 const RATE_LIMIT_MAX = 20;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 
@@ -239,7 +243,7 @@ setInterval(() => {
 app.use(
   '/search',
   cors({
-    origin: ALLOWED_ORIGINS,
+    origin: CORS_ORIGIN,
     allowMethods: ['GET', 'OPTIONS'],
     allowHeaders: ['Content-Type'],
   }),
@@ -248,7 +252,7 @@ app.use(
 app.use(
   '/chat',
   cors({
-    origin: ALLOWED_ORIGINS,
+    origin: CORS_ORIGIN,
     allowMethods: ['POST', 'OPTIONS'],
     allowHeaders: ['Content-Type'],
   }),
@@ -257,7 +261,7 @@ app.use(
 app.use(
   '/feedback',
   cors({
-    origin: ALLOWED_ORIGINS,
+    origin: CORS_ORIGIN,
     allowMethods: ['POST', 'GET', 'OPTIONS'],
     allowHeaders: ['Content-Type'],
   }),
@@ -266,7 +270,7 @@ app.use(
 app.use(
   '/admin/*',
   cors({
-    origin: ALLOWED_ORIGINS,
+    origin: CORS_ORIGIN,
     allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
