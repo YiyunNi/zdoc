@@ -661,7 +661,7 @@
                         "state": "Completed",
                         "executingPlanNumber": 0,
                         "timeoutPlanNumber": 0,
-                        "completePlanNumber": 5
+                        "completedPlanNumber": 5
                       }
                     }
                   },
@@ -1290,7 +1290,7 @@
               "example": {
                 "collectionName": "test_collection",
                 "properties": {
-                  "mmmap.enabled": true
+                  "mmap.enabled": true
                 }
               }
             }
@@ -3270,9 +3270,31 @@
                 }
               },
               "enum": [
-                "ttlSeconds",
-                "mmap_enabled",
-                "partitionkeyIsolation"
+                "collection.ttl.seconds",
+                "collection.autocompaction.enabled",
+                "collection.description",
+                "collection.on.truncating",
+                "collection.function.allowInsertNonBM25FunctionOutputs",
+                "collection.insertRate.max.mb",
+                "collection.insertRate.min.mb",
+                "collection.deleteRate.max.mb",
+                "collection.deleteRate.min.mb",
+                "collection.bulkLoadRate.max.mb",
+                "collection.bulkLoadRate.min.mb",
+                "collection.queryRate.max.qps",
+                "collection.queryRate.min.qps",
+                "collection.searchRate.max.vps",
+                "collection.searchRate.min.vps",
+                "collection.diskProtection.diskQuota.mb",
+                "collection.replica.number",
+                "collection.resource_groups",
+                "mmap.enabled",
+                "partitionkey.isolation",
+                "ttl_field",
+                "warmup.scalarField",
+                "warmup.scalarIndex",
+                "warmup.vectorField",
+                "warmup.vectorIndex"
               ]
             }
           }
@@ -3429,7 +3451,7 @@
                   }
                 }
               },
-              "partitionNum": {
+              "partitionsNum": {
                 "type": "integer",
                 "description": "The number of partitions in the collection.",
                 "x-i18n": {
@@ -3726,12 +3748,57 @@
               }
             }
           },
-          "mmap_enabled": {
+          "mmap.enabled": {
             "type": "boolean",
             "description": "Specifies whether to enable memory mapping for the collection.",
             "x-i18n": {
               "zh-CN": {
                 "description": "是否为当前 Collection 启用内存映射功能。"
+              }
+            }
+          },
+          "ttlField": {
+            "type": "string",
+            "description": "The name of the field to use for TTL-based expiration.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "用于 TTL 过期策略的字段名称。"
+              }
+            }
+          },
+          "warmup.scalarField": {
+            "type": "boolean",
+            "description": "Whether to preload scalar field data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将标量字段数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.scalarIndex": {
+            "type": "boolean",
+            "description": "Whether to preload scalar index data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将标量索引数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.vectorField": {
+            "type": "boolean",
+            "description": "Whether to preload vector field data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将向量字段数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.vectorIndex": {
+            "type": "boolean",
+            "description": "Whether to preload vector index data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将向量索引数据预加载到内存中。"
               }
             }
           }
@@ -3999,12 +4066,57 @@
             },
             "default": false
           },
-          "mmap_enabled": {
+          "mmap.enabled": {
             "type": "boolean",
             "description": "Specifies whether to enable memory mapping for the collection.",
             "x-i18n": {
               "zh-CN": {
                 "description": "是否为当前 Collection 启用内存映射功能。"
+              }
+            }
+          },
+          "ttlField": {
+            "type": "string",
+            "description": "The name of the field to use for TTL-based expiration.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "用于 TTL 过期策略的字段名称。"
+              }
+            }
+          },
+          "warmup.scalarField": {
+            "type": "boolean",
+            "description": "Whether to preload scalar field data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将标量字段数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.scalarIndex": {
+            "type": "boolean",
+            "description": "Whether to preload scalar index data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将标量索引数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.vectorField": {
+            "type": "boolean",
+            "description": "Whether to preload vector field data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将向量字段数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.vectorIndex": {
+            "type": "boolean",
+            "description": "Whether to preload vector index data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将向量索引数据预加载到内存中。"
               }
             }
           }
@@ -4023,6 +4135,242 @@
           }
         ]
       },
+      "CollectionAlterProperties": {
+        "type": "object",
+        "description": "The collection properties to alter. Keys must be actual Milvus property names.",
+        "x-i18n": {
+          "zh-CN": {
+            "description": "待修改的 Collection 属性。键名必须为实际的 Milvus 属性名称。"
+          }
+        },
+        "properties": {
+          "collection.ttl.seconds": {
+            "type": "integer",
+            "description": "The time-to-live (TTL) period of the collection in seconds.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "当前 Collection 的 TTL 时间，单位为秒。"
+              }
+            }
+          },
+          "collection.autocompaction.enabled": {
+            "type": "boolean",
+            "description": "Whether to enable automatic compaction for the collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否为当前 Collection 启用自动 Compaction 功能。"
+              }
+            }
+          },
+          "collection.description": {
+            "type": "string",
+            "description": "The description of the collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "当前 Collection 的描述信息。"
+              }
+            }
+          },
+          "collection.on.truncating": {
+            "type": "boolean",
+            "description": "Whether the collection is currently truncating. When true, compaction is forbidden.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "当前 Collection 是否正在执行截断操作。为 true 时禁止执行 Compaction。"
+              }
+            }
+          },
+          "collection.function.allowInsertNonBM25FunctionOutputs": {
+            "type": "boolean",
+            "description": "Whether to allow inserting non-BM25 function outputs.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否允许插入非 BM25 函数的输出。"
+              }
+            }
+          },
+          "collection.insertRate.max.mb": {
+            "type": "number",
+            "description": "The maximum insert rate limit in MB/s.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最大插入速率限制，单位为 MB/s。"
+              }
+            }
+          },
+          "collection.insertRate.min.mb": {
+            "type": "number",
+            "description": "The minimum insert rate limit in MB/s.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最小插入速率限制，单位为 MB/s。"
+              }
+            }
+          },
+          "collection.deleteRate.max.mb": {
+            "type": "number",
+            "description": "The maximum delete rate limit in MB/s.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最大删除速率限制，单位为 MB/s。"
+              }
+            }
+          },
+          "collection.deleteRate.min.mb": {
+            "type": "number",
+            "description": "The minimum delete rate limit in MB/s.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最小删除速率限制，单位为 MB/s。"
+              }
+            }
+          },
+          "collection.bulkLoadRate.max.mb": {
+            "type": "number",
+            "description": "The maximum bulk load rate limit in MB/s.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最大批量加载速率限制，单位为 MB/s。"
+              }
+            }
+          },
+          "collection.bulkLoadRate.min.mb": {
+            "type": "number",
+            "description": "The minimum bulk load rate limit in MB/s.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最小批量加载速率限制，单位为 MB/s。"
+              }
+            }
+          },
+          "collection.queryRate.max.qps": {
+            "type": "number",
+            "description": "The maximum query rate limit in QPS.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最大查询速率限制，单位为 QPS。"
+              }
+            }
+          },
+          "collection.queryRate.min.qps": {
+            "type": "number",
+            "description": "The minimum query rate limit in QPS.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最小查询速率限制，单位为 QPS。"
+              }
+            }
+          },
+          "collection.searchRate.max.vps": {
+            "type": "number",
+            "description": "The maximum search rate limit in VPS.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最大搜索速率限制，单位为 VPS。"
+              }
+            }
+          },
+          "collection.searchRate.min.vps": {
+            "type": "number",
+            "description": "The minimum search rate limit in VPS.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "最小搜索速率限制，单位为 VPS。"
+              }
+            }
+          },
+          "collection.diskProtection.diskQuota.mb": {
+            "type": "number",
+            "description": "The maximum disk quota for the collection in MB.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "当前 Collection 的磁盘配额上限，单位为 MB。"
+              }
+            }
+          },
+          "collection.replica.number": {
+            "type": "integer",
+            "description": "The number of replicas for the collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "当前 Collection 的副本数量。"
+              }
+            }
+          },
+          "collection.resource_groups": {
+            "type": "string",
+            "description": "A comma-separated list of resource group names associated with the collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "与当前 Collection 关联的资源组名称列表，以逗号分隔。"
+              }
+            }
+          },
+          "mmap.enabled": {
+            "type": "boolean",
+            "description": "Whether to enable memory mapping for the collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否为当前 Collection 启用内存映射功能。"
+              }
+            }
+          },
+          "partitionkey.isolation": {
+            "type": "boolean",
+            "description": "Whether to enable partition key isolation for the collection.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否为当前 Collection 启用 Partition Key 隔离功能。"
+              }
+            }
+          },
+          "ttl_field": {
+            "type": "string",
+            "description": "The name of the field to use for TTL-based expiration.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "用于 TTL 过期策略的字段名称。"
+              }
+            }
+          },
+          "warmup.scalarField": {
+            "type": "boolean",
+            "description": "Whether to preload scalar field data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将标量字段数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.scalarIndex": {
+            "type": "boolean",
+            "description": "Whether to preload scalar index data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将标量索引数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.vectorField": {
+            "type": "boolean",
+            "description": "Whether to preload vector field data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将向量字段数据预加载到内存中。"
+              }
+            }
+          },
+          "warmup.vectorIndex": {
+            "type": "boolean",
+            "description": "Whether to preload vector index data into memory on load.",
+            "x-i18n": {
+              "zh-CN": {
+                "description": "是否在加载时将向量索引数据预加载到内存中。"
+              }
+            }
+          }
+        }
+      },
       "AlterCollectionPropertiesRequest": {
         "type": "object",
         "properties": {
@@ -4040,7 +4388,7 @@
                 "description": "待修改 Collection 属性。"
               }
             },
-            "$ref": "#/components/schemas/CustomCollectionParams/properties"
+            "$ref": "#/components/schemas/CollectionAlterProperties"
           }
         },
         "required": [
@@ -4274,7 +4622,7 @@
                   }
                 }
               },
-              "completePlanNumber": {
+              "completedPlanNumber": {
                 "type": "number",
                 "description": "The number of completed plans.",
                 "x-i18n": {
