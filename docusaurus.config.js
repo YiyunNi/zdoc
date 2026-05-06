@@ -4,6 +4,7 @@ import rehypeKatex from 'rehype-katex';
 import larkDocsConfig from './config/lark-docs.config';
 import { tutorialsItemsGenerator, ReferenceItemsGenerator, AgentsItemsGenerator } from './config/sidebar-generators';
 import i18nTranslatorConfig from './config/i18n-translator.config';
+const planeConfig = require('./plugins/apifox-docs/meta/plane-config.json');
 
 import 'dotenv/config';
 
@@ -44,6 +45,10 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ja-JP'],
+  },
+
+  customFields: {
+    planeConfig,
   },
 
   // future settings

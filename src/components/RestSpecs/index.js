@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import RestHeader from '../RestHeader';
 import Admonition from '@theme/Admonition'
 import CodeBlock from '@theme/CodeBlock'
@@ -11,10 +12,12 @@ const primitiveConstants = ["boolean", "integer", "number", "string"]
 
 const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
     const [selectedBaseUrl, setSelectedBaseUrl] = useState(0)
+    const { siteConfig } = useDocusaurusContext()
+    const planeConfig = siteConfig.customFields?.planeConfig
 
     // If no custom base URLs, fall back to auto-detection
     if (!baseUrls || baseUrls.length === 0) {
-        const { server, children, prompt } = getBaseUrl(endpoint, lang, target)
+        const { server, children, prompt } = getBaseUrl(endpoint, lang, target, planeConfig)
         return (<>
             <section>
                 <section className={styles.sectionHeader}>
@@ -38,7 +41,7 @@ const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
     const resolvedPrompt = current["x-i18n"]?.[lang]?.prompt ?? current.prompt
     const resolvedLabel = current["x-i18n"]?.[lang]?.label ?? current.label
     const resolvedUrl = current["x-i18n"]?.[lang]?.url ?? current.url
-    const { prompt: defaultPrompt } = getBaseUrl(endpoint, lang, target)
+    const { prompt: defaultPrompt } = getBaseUrl(endpoint, lang, target, planeConfig)
 
     return (<>
         <section>
@@ -514,7 +517,9 @@ const ExampleResponses = ({ examples, lang, target, selectedResponse }) => {
 }
 
 const ExampleRequests = ({ endpoint, method, headersExample, pathExample, queryExample, requestBody, lang, target, selectedRequest, baseUrl }) => {
-    const condition = isControlPlane(endpoint)
+    const { siteConfig } = useDocusaurusContext()
+    const planeConfig = siteConfig.customFields?.planeConfig
+    const condition = isControlPlane(endpoint, target, planeConfig)
     const effectiveBaseUrl = baseUrl ? baseUrl : (condition ? "\${BASE_URL}" : "\${CLUSTER_ENDPOINT}")
     const token = condition ? 'YOUR_API_KEY' : "db_admin:xxxxxxxxxxxxx"
     var req = `export TOKEN="${token}"${pathExample ? "\n"+pathExample : ''}\n\ncurl --request ${method.toUpperCase()} \\\n--url "${effectiveBaseUrl}${endpoint}`

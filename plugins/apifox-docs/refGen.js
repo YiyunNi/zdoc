@@ -1,11 +1,10 @@
 const nunjucks = require("nunjucks")
 const fs = require('node:fs')
 
+const planeConfig = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/plane-config.json', 'utf-8'))
+
 const CONFIG = {
-  controlPlaneKeywords: {
-    zilliz: ['cloud', 'cluster', 'import', 'pipeline', 'backup', 'restore', 'invoices', 'usage', 'metrics', 'extract', 'volume', 'project'],
-    milvus: [],
-  },
+  controlPlaneKeywords: planeConfig.controlPlaneKeywords,
   betaDefaults: { v1: 'DEPRECATED', v2: 'FALSE' },
   betaOverrides: { extract: 'PRIVATE', merge: 'PRIVATE' },
   maxRefDepth: 20,

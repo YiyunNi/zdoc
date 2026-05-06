@@ -1,9 +1,10 @@
 import { capitalize } from 'lodash';
 import { i18n } from './i18n'
 import Showdown from 'showdown';
+// planeConfig is passed from callers that read it via useDocusaurusContext
 
-export const getBaseUrl = (endpoint, lang, pubTarget) => {
-    const condition = isControlPlane(endpoint)
+export const getBaseUrl = (endpoint, lang, pubTarget, planeConfig) => {
+    const condition = isControlPlane(endpoint, pubTarget, planeConfig)
 
     var server = "https://api.cloud.zilliz.com";
     var children = `export BASE_URL="${server}"`
@@ -128,25 +129,9 @@ export const chooseParamExample = (param, lang, target) => {
     return param
 }
 
-export const isControlPlane = (endpoint) => {
-    
-    return endpoint.includes('cloud') || 
-        endpoint.includes('region') || 
-        endpoint.includes('cluster') || 
-        endpoint.includes('import') || 
-        endpoint.includes('pipeline') || 
-        endpoint.includes('project') || 
-        endpoint.includes('metrics') ||
-        endpoint.includes('migration') ||
-        endpoint.includes('backup') ||
-        endpoint.includes('restore') ||
-        endpoint.includes('usage') ||
-        endpoint.includes('invoices') ||
-        endpoint.includes('job') ||
-        endpoint.includes('alert') ||
-        endpoint.includes('etl') ||
-        endpoint.includes('stage') ||
-        endpoint.includes('project')
+export const isControlPlane = (endpoint, target = 'zilliz', planeConfig) => {
+    const keywords = planeConfig?.controlPlaneKeywords?.[target] || planeConfig?.controlPlaneKeywords?.zilliz || []
+    return keywords.some(k => endpoint.includes(k))
 }
 
 export const isBeta = (endpoint) => {
