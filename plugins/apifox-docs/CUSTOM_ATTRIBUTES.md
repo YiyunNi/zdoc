@@ -72,7 +72,7 @@ Controls the visibility badge shown on API reference pages. The effective value 
 }
 ```
 
-Valid values: `DEPRECATED`, `FALSE`, `PRIVATE`.
+Valid values: `DEPRECATED`, `FALSE`, `PRIVATE`, `PUBLIC`.
 
 ### 1.4 `x-admonition`
 
