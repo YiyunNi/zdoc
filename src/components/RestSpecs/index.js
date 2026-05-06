@@ -85,7 +85,7 @@ const BaseURL = ({ endpoint, lang, target, baseUrls, onBaseUrlChange }) => {
                         <li dangerouslySetInnerHTML={{__html: resolvedPrompt}} />
                     </ul>
                 )}
-                { defaultPrompt && <div dangerouslySetInnerHTML={{__html: defaultPrompt}} /> }
+                { defaultPrompt && current?.key !== 'on-demand-compute' && <div dangerouslySetInnerHTML={{__html: defaultPrompt}} /> }
             </Admonition>}
         </section>
         <section className={styles.exampleContainer}>
@@ -516,12 +516,12 @@ const ExampleResponses = ({ examples, lang, target, selectedResponse }) => {
     )
 }
 
-const ExampleRequests = ({ endpoint, method, headersExample, pathExample, queryExample, requestBody, lang, target, selectedRequest, baseUrl }) => {
+const ExampleRequests = ({ endpoint, method, headersExample, pathExample, queryExample, requestBody, lang, target, selectedRequest, baseUrl, selectedBaseUrl }) => {
     const { siteConfig } = useDocusaurusContext()
     const planeConfig = siteConfig.customFields?.planeConfig
     const condition = isControlPlane(endpoint, target, planeConfig)
     const effectiveBaseUrl = baseUrl ? baseUrl : (condition ? "\${BASE_URL}" : "\${CLUSTER_ENDPOINT}")
-    const token = condition ? 'YOUR_API_KEY' : "db_admin:xxxxxxxxxxxxx"
+    const token = (condition || selectedBaseUrl?.key === 'on-demand-compute') ? 'YOUR_API_KEY' : "db_admin:xxxxxxxxxxxxx"
     var req = `export TOKEN="${token}"${pathExample ? "\n"+pathExample : ''}\n\ncurl --request ${method.toUpperCase()} \\\n--url "${effectiveBaseUrl}${endpoint}`
     req = (queryExample ? `${req}?${queryExample}` : req) + `"`
     req = headersExample ? `${req} \\\n${headersExample + ` \\\n--header "Content-Type: application/json"`}` : req
@@ -772,7 +772,8 @@ export default function RestSpecs(props) {
                                 lang={lang}
                                 target={target}
                                 selectedRequest={selectedRequest}
-                                baseUrl={exampleBaseUrl} />
+                                baseUrl={exampleBaseUrl}
+                                selectedBaseUrl={selectedBaseUrl} />
                         </section>
                     </>}
                 </div>
