@@ -49,8 +49,8 @@ Prompt coverage follows the current router topics, so prompt files do not have t
 | `rbac` | `prompts/access-control.md`, `prompts/base.md` | `rbac` is the eval module; `access-control` is the router topic name. |
 | `clouds-and-regions` | `prompts/resources.md`, `prompts/pricing.md` | Region answers often combine availability, deployment fit, and pricing caveats. |
 | `deployment-mode` | `prompts/resources.md`, `prompts/cluster-connection.md`, `prompts/pricing.md`, `prompts/base.md` | Deployment answers can involve plan selection, endpoint behavior, cost model, and enterprise controls. |
-| `security` | `prompts/base.md`, `prompts/access-control.md`, `prompts/cluster-connection.md`, `prompts/security.md` | Current router topics cover security through global and access-control prompts; `security.md` is the module-level reference for future dedicated topic routing. |
-| `compliance-and-privacy` | `prompts/base.md`, `prompts/compliance-and-privacy.md` | Current router coverage is primarily global; `compliance-and-privacy.md` is the module-level reference for future dedicated topic routing. |
+| `security` | `prompts/base.md`, `prompts/access-control.md`, `prompts/cluster-connection.md`, `prompts/security.md` | Security has a dedicated router topic; global and access-control prompts still carry baseline security behavior for broad or mixed questions. |
+| `compliance-and-privacy` | `prompts/base.md`, `prompts/compliance-and-privacy.md` | Compliance and privacy has a dedicated router topic; global prompt coverage still protects broad vendor-review and overclaim-prevention behavior. |
 | `agent-safety` | `prompts/base.md` | Safety gates should remain global and not depend on topic routing. |
 
 ## Item Schema

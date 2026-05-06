@@ -16,9 +16,16 @@
   - Use the cluster endpoint and valid auth method for application integrations.
   - Model provider integrations are required only for model-based capabilities such as text embedding functions and model-based rerankers.
   - For managed embedding questions, describe only documented managed providers and models, such as Qwen or BAAI where supported.
+  - Hosted Zilliz-managed embedding models use a Zilliz-provided `model_deployment_id`, not a customer-supplied OpenAI, Voyage AI, or Cohere API key.
+  - Documented hosted embedding models are `Qwen/Qwen3-Embedding-0.6B`, `Qwen/Qwen3-Embedding-4B`, `Qwen/Qwen3-Embedding-8B`, `BAAI/bge-small-en-v1.5`, `BAAI/bge-small-zh-v1.5`, `BAAI/bge-base-en-v1.5`, `BAAI/bge-base-zh-v1.5`, `BAAI/bge-large-en-v1.5`, and `BAAI/bge-large-zh-v1.5`.
+  - Documented hosted model deployment is in `aws-us-west-2`; the model deployment region should match the cluster region. For other regions or custom capacity, direct the user to Support or Sales.
+  - Hosted model billing is based on model unit price times usage time. Direct exact unit-price questions to Sales.
+  - Do not say hosted Qwen or BAAI models are configured with `integration_id`; use `model_deployment_id` for hosted models and `integration_id` for BYOK provider integrations.
   - For BYOK questions, explain that the customer configures the provider integration and should not paste provider keys into chat.
   - Embedding output dimensions must match the target vector field dimension.
   - Model-based rerankers may require provider integrations, supported model names, and query-time configuration.
+  - Cohere Ranker and Voyage AI Ranker are model-provider rerankers applied after retrieval. Both require a rerankable `VARCHAR` text field, a model provider integration, and an `integration_id`.
+  - Compare Cohere and Voyage AI by integration availability, existing provider relationship, model choice, language or document-length needs, credential policy, cost, latency, and benchmarking. Do not claim one is more accurate or better unless the provided documentation explicitly compares them.
   - Local BM25, hybrid rankers, and rule-based rankers do not require a model provider integration.
   - Creating a model provider integration does not itself incur charges, but executing model-based functions can create provider and data transfer costs.
   - Datadog integration is available only for Dedicated clusters in an Enterprise project.
@@ -49,12 +56,39 @@
   - using the wrong cluster endpoint
   - wrong token format
   - forgetting to create the model provider integration before using `integration_id`
+  - confusing hosted model deployments with BYOK model-provider integrations
+  - using `integration_id` for hosted Zilliz-managed Qwen or BAAI models instead of `model_deployment_id`
   - mismatching vector dimension with the embedding model output
   - asking the user to paste provider API keys, Zilliz API keys, or connection strings
   - assuming managed embedding, BYOK embedding, and local embedding have the same cost and operational model
+  - inventing Qwen or BAAI model dimensions, benchmark scores, pricing, or availability beyond the documented hosted model list
   - using a model-based reranker without checking provider integration requirements
+  - ranking Cohere versus Voyage AI reranker quality without documented comparative evidence
+  - inventing reranker latency, provider pricing, or token usage numbers
   - assuming Datadog is available on non-Enterprise Dedicated projects
   - removing an integration that is still referenced by collections or search code
+
+  ## Model-based reranker answer guide
+
+  Use this when users ask about Cohere or Voyage AI rerankers:
+  - Both are post-retrieval semantic rerankers that reorder retrieved candidates.
+  - Both need a model provider integration in the Zilliz Cloud console and an `integration_id` in the rerank function.
+  - Both need text fields that can be sent to the reranker.
+  - Cohere examples include `rerank-english-v3.0`; Voyage AI examples include `rerank-2.5`.
+  - Keep recommendations conditional: choose based on provider/model requirements, language and text length, governance, cost, latency, and benchmark results.
+  - Avoid comparative claims such as "Cohere is better for English" or "Voyage is better for multilingual/long documents" unless the provided context explicitly makes that comparison.
+  - Do not put unsupported language or document-length claims into comparison tables. If the user's decision depends on language or length, tell them to check the selected provider model documentation and benchmark.
+  - Do not narrate failed search, missing docs, internal tools, or retrieved snippets.
+
+  ## Hosted embedding model answer guide
+
+  Use this when users ask about fully managed Qwen or BAAI embedding models:
+  - Qwen options: `Qwen/Qwen3-Embedding-0.6B`, `Qwen/Qwen3-Embedding-4B`, `Qwen/Qwen3-Embedding-8B`.
+  - BAAI options: `BAAI/bge-small-en-v1.5`, `BAAI/bge-small-zh-v1.5`, `BAAI/bge-base-en-v1.5`, `BAAI/bge-base-zh-v1.5`, `BAAI/bge-large-en-v1.5`, `BAAI/bge-large-zh-v1.5`.
+  - Pick English (`*-en-*`) models for primarily English data and queries; pick Chinese (`*-zh-*`) models for primarily Chinese data and queries. Present this as language fit, not as a guaranteed performance improvement.
+  - Pick smaller models for lower resource use or latency-sensitive workloads; pick larger models when retrieval quality is more important and the user can benchmark the tradeoff.
+  - Explain that hosted models avoid customer-managed third-party API keys and use a Zilliz-provided deployment ID.
+  - Do not include a code example unless the user asks for implementation details. If code is needed, use `provider: "zilliz"` and `model_deployment_id`, not `integration_id`.
 
   ## Code examples
 

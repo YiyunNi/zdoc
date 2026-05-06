@@ -514,7 +514,7 @@
     "module": "reranking",
     "feature": "model-rerankers",
     "question": "When should I use Cohere Reranker versus Voyage AI Reranker with Zilliz Cloud?",
-    "expectedBehavior": "Compare supported reranker integrations at a high level, mention prerequisites and cost/key considerations, and avoid unsupported model-quality rankings.",
+    "expectedBehavior": "Compare Cohere and Voyage AI as post-retrieval model-based rerankers without declaring one better. Mention that both require a rerankable VARCHAR text field, a model provider integration, and an integration_id. Recommend choosing by existing provider relationship, model/language/document-length requirements, governance, cost, latency, and benchmark results.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["reranking", "integrations"]
@@ -524,7 +524,7 @@
     "module": "reranking",
     "feature": "boost-reranker",
     "question": "How does Boost Reranker promote or demote results based on metadata conditions?",
-    "expectedBehavior": "Explain conditional score adjustment with a practical example and note that base retrieval still determines candidate results.",
+    "expectedBehavior": "Explain that Boost Ranker applies a basic filter expression to retrieved candidates and uses a weight to promote or demote matching candidates. Note that base retrieval still determines the candidate set, input_field_names must be empty, and Boost Ranker is not for multi-vector hybrid search.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["reranking", "boost"]
@@ -534,7 +534,7 @@
     "module": "reranking",
     "feature": "decay-reranker",
     "question": "How would I use Decay Reranker to make newer or closer results rank higher?",
-    "expectedBehavior": "Explain decay based on distance or time, target values, and score tradeoffs without unsupported formula internals.",
+    "expectedBehavior": "Explain numeric-field decay for time, distance, or popularity using one numeric field. Cover origin, scale, offset, decay, and gauss/exp/linear choices conceptually; mention unit consistency for time values and that grouping search is unsupported. Avoid unsupported API parameter names or unnecessary formula detail.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["reranking", "decay"]
@@ -544,7 +544,7 @@
     "module": "reranking",
     "feature": "rank-fusion",
     "question": "What is the difference between RRF Reranker and Weighted Reranker for hybrid search?",
-    "expectedBehavior": "Explain rank-position fusion versus score-weighted fusion, when each is useful, and configuration tradeoffs.",
+    "expectedBehavior": "Explain that RRF Ranker combines multiple search paths by rank positions and is useful when paths should be balanced without explicit weights, while Weighted Ranker combines normalized scores using per-path weights when one field/modality/path should matter more. Avoid unnecessary formulas unless asked.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["reranking", "rrf", "weighted"]
@@ -554,7 +554,7 @@
     "module": "reranking",
     "feature": "reranking-tradeoffs",
     "question": "What extra latency and cost should I expect when adding reranking to retrieval?",
-    "expectedBehavior": "Avoid invented numbers, explain cost/latency drivers, and recommend measuring with the user's model, candidate count, and workload.",
+    "expectedBehavior": "Avoid invented milliseconds, dollar amounts, token counts, or pricing examples. Explain cost/latency drivers: candidate count, number of search paths, model-based versus rule-based reranking, text length sent to model providers, provider/model choice, hosted model usage time, data transfer, and workload concurrency. Recommend measuring with the user's model, topK/candidate count, and workload.",
     "priority": "P0",
     "source": "core-features.docx",
     "tags": ["reranking", "performance", "anti-hallucination"]
@@ -564,7 +564,7 @@
     "module": "embedding",
     "feature": "provider-options",
     "question": "Should I bring my own OpenAI, Voyage, or Cohere embedding key, or use a fully managed Qwen or BAAI embedding model?",
-    "expectedBehavior": "Compare BYOK and fully managed options, mention credential ownership, model availability, cost, data handling, and operational tradeoffs.",
+    "expectedBehavior": "Compare BYOK model-provider integrations with hosted Zilliz-managed models. Mention that BYOK uses customer-managed provider credentials/integration IDs for providers such as OpenAI, Voyage AI, or Cohere, while hosted Qwen/BAAI uses a Zilliz-provided model deployment ID. Cover credential ownership, model availability, data handling, cost/billing tradeoffs, dimension/schema compatibility, and operational responsibility without claiming hosted models are free or universally available.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["embedding", "integrations", "byok"]
@@ -574,7 +574,7 @@
     "module": "embedding",
     "feature": "schema-compatibility",
     "question": "If I switch embedding models, what do I need to change in my collection schema?",
-    "expectedBehavior": "Explain vector dimension and metric compatibility, reindex/reingestion implications, and validation before switching.",
+    "expectedBehavior": "Explain that the vector field dimension must match the new embedding output dimension, the index/search metric should match the model and normalization strategy, and existing data generally needs re-embedding and reingestion into a compatible collection before searching. Mention validation/benchmarking before production and avoid implying an existing vector field dimension can be changed in place without migration.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["embedding", "schema"]
@@ -584,7 +584,7 @@
     "module": "embedding",
     "feature": "managed-qwen",
     "question": "Which Qwen embedding models are available as fully managed options, and how should I choose among them?",
-    "expectedBehavior": "List only documented Qwen managed models from the current docs and avoid unsupported quality or pricing claims.",
+    "expectedBehavior": "List only the documented hosted Qwen embedding models: Qwen/Qwen3-Embedding-0.6B, Qwen/Qwen3-Embedding-4B, and Qwen/Qwen3-Embedding-8B. Explain selection as a size/resource/latency/quality tradeoff that should be benchmarked on the user's corpus. Avoid unsupported dimensions, benchmark scores, exact pricing, or availability beyond documented hosted model deployment constraints.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["embedding", "qwen", "managed"]
@@ -594,7 +594,7 @@
     "module": "embedding",
     "feature": "managed-baai",
     "question": "What are the BAAI managed embedding model options, and when would I pick an English versus Chinese model?",
-    "expectedBehavior": "List documented BAAI options and explain language-fit considerations without overclaiming benchmark performance.",
+    "expectedBehavior": "List only the documented hosted BAAI embedding models: BAAI/bge-small-en-v1.5, BAAI/bge-small-zh-v1.5, BAAI/bge-base-en-v1.5, BAAI/bge-base-zh-v1.5, BAAI/bge-large-en-v1.5, and BAAI/bge-large-zh-v1.5. Explain that English models fit primarily English corpora/queries and Chinese models fit primarily Chinese corpora/queries; small/base/large should be chosen by latency, cost, and quality tradeoffs after testing. Avoid invented code APIs, benchmark claims, or exact pricing.",
     "priority": "P1",
     "source": "core-features.docx",
     "tags": ["embedding", "baai", "managed"]
