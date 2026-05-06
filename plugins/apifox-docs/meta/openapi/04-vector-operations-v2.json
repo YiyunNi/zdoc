@@ -897,15 +897,30 @@
                         },
                         "scanned_remote_bytes": {
                           "type": "integer",
-                          "description": "Bytes read from remote storage. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         },
                         "scanned_total_bytes": {
                           "type": "integer",
-                          "description": "Total bytes scanned. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         },
                         "cache_hit_ratio": {
                           "type": "number",
-                          "description": "Cache hit ratio. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         }
                       }
                     },
@@ -1210,28 +1225,28 @@
                         },
                         "scanned_remote_bytes": {
                           "type": "integer",
-                          "description": "The number of bytes scanned from remote storage. Returned when storage usage tracking is enabled.",
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "从远程存储扫描的字节数。仅在启用存储用量跟踪时返回。"
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
                         "scanned_total_bytes": {
                           "type": "integer",
-                          "description": "The total number of bytes scanned. Returned when storage usage tracking is enabled.",
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "扫描的总字节数。仅在启用存储用量跟踪时返回。"
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
                         "cache_hit_ratio": {
                           "type": "number",
-                          "description": "The cache hit ratio. Returned when storage usage tracking is enabled.",
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "缓存命中率。仅在启用存储用量跟踪时返回。"
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         }
@@ -1816,15 +1831,30 @@
                         },
                         "scanned_remote_bytes": {
                           "type": "integer",
-                          "description": "Bytes read from remote storage. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         },
                         "scanned_total_bytes": {
                           "type": "integer",
-                          "description": "Total bytes scanned. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         },
                         "cache_hit_ratio": {
                           "type": "number",
-                          "description": "Cache hit ratio. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         }
                       }
                     },
@@ -2474,15 +2504,30 @@
                         },
                         "scanned_remote_bytes": {
                           "type": "integer",
-                          "description": "Bytes read from remote storage. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         },
                         "scanned_total_bytes": {
                           "type": "integer",
-                          "description": "Total bytes scanned. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         },
                         "cache_hit_ratio": {
                           "type": "number",
-                          "description": "Cache hit ratio. Only returned when storage usage tracking is enabled."
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
+                          "x-i18n": {
+                            "zh-CN": {
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
+                            }
+                          }
                         }
                       }
                     },
@@ -2810,28 +2855,28 @@
                         },
                         "scanned_remote_bytes": {
                           "type": "integer",
-                          "description": "The number of bytes scanned from remote storage. Returned when storage usage tracking is enabled.",
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "从远程存储扫描的字节数。仅在启用存储用量跟踪时返回。"
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
                         "scanned_total_bytes": {
                           "type": "integer",
-                          "description": "The total number of bytes scanned. Returned when storage usage tracking is enabled.",
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "扫描的总字节数。仅在启用存储用量跟踪时返回。"
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         },
                         "cache_hit_ratio": {
                           "type": "number",
-                          "description": "The cache hit ratio. Returned when storage usage tracking is enabled.",
+                          "description": "Returned when the deployment uses tiered storage with usage tracking enabled and the operation reads from remote/disk storage. Omitted when all data is served from local cache.",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "缓存命中率。仅在启用存储用量跟踪时返回。"
+                              "description": "当部署使用分层存储且已启用用量跟踪，并且操作从远程/磁盘存储读取数据时返回。当所有数据均从本地缓存提供时，此字段将被省略。"
                             }
                           }
                         }
