@@ -1,11 +1,12 @@
 ---
 title: "Index Vector Fields | BYOC"
 slug: /index-vector-fields
-sidebar_label: "Index Vector Fields"
-beta: FALSE
+sidebar_key: index-vector-fields
+sidebar_label: "Vector Indexes"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "This guide walks you through the basic operations on creating and managing indexes on vector fields in a collection. | BYOC"
 type: origin

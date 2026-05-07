@@ -1,11 +1,12 @@
 ---
 title: "Jieba | Cloud"
 slug: /jieba-tokenizer
+sidebar_key: jieba-tokenizer
 sidebar_label: "Jieba"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `jieba` tokenizer processes Chinese text by breaking it down into its component words. | Cloud"
 type: origin
@@ -176,11 +177,14 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("customDictionary"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("customDictionary"));             
+  put("mode", "exact");
+  put("hmm", false);
+}});
+
 ```
 
 </TabItem>
@@ -196,7 +200,14 @@ analyzerParams.put("hmm", false);
 <TabItem value='go'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"customDictionary"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"customDictionary"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>
@@ -238,6 +249,8 @@ analyzerParams = map[string]any{"type": "jieba", "dict": []any{"customDictionary
    </tr>
 </table>
 
+To load a large custom vocabulary from an external file instead of inlining it via `dict`, see [Custom configuration with a dictionary file](./jieba-tokenizer#custom-configuration-with-a-dictionary-file) below.
+
 After defining `analyzer_params`, you can apply them to a `VARCHAR` field when defining a collection schema. This allows Zilliz Cloud to process the text in that field using the specified analyzer for efficient tokenization and filtering. For details, refer to [Example use](./analyzer-overview#example-use).
 
 ## Examples\{#examples}
@@ -265,11 +278,13 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("结巴分词器"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("结巴分词器"));                   
+  put("mode", "exact");
+  put("hmm", false);
+}});
 ```
 
 </TabItem>
@@ -285,7 +300,14 @@ analyzerParams.put("hmm", false);
 <TabItem value='go'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"结巴分词器"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"结巴分词器"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>

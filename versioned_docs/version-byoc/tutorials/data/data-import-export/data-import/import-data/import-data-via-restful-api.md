@@ -89,7 +89,7 @@ After Zilliz Cloud processes the above request, you will receive a job ID. Use t
 
 ```bash
 curl --request POST \
-     --url "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/getProgress" \
+     --url "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/get_progress" \
      --header "Authorization: Bearer ${API_KEY}" \
      --header "Accept: application/json" \
      --header "Content-Type: application/json" \

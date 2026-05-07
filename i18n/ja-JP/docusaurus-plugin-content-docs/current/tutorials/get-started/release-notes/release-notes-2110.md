@@ -1,45 +1,42 @@
 ---
-title: "リリースノート (2024年11月6日) | Cloud"
+title: "リリースノート（2024年11月6日） | Cloud"
 slug: /release-notes-2110
+sidebar_key: release-notes-2110
 sidebar_label: "2024年11月6日"
 beta: FALSE
 notebook: FALSE
-description: "今回のリリースには、新しいWebコンソールユーザーインターフェース、Qdrant、Pinecone Serverless、Tencent VectorDBからのデータ移行のサポート、よりスムーズな支払いプロセス、および詳細な支払い情報を含む刷新された請求書ページが含まれています。 | Cloud"
+description: "このリリースでは、新しい Web コンソールのユーザーインターフェース、Qdrant・Pinecone Serverless・Tencent VectorDB からのデータ移行サポート、よりスムーズな支払いプロセス、および詳細な支払い情報を備えた刷新された請求書ページが含まれています。 | Cloud"
 type: origin
 token: HwWfwN9SViqU0Ukcv68cufBAnBe
-sidebar_position: 13
+sidebar_position: 16
 keywords: 
-  - Zilliz
+  - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - リリースノート
-  - 埋め込みモデル
-  - 画像類似性検索
-  - コンテキストウィンドウ
-  - 自然言語検索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# リリースノート (2024年11月6日)
+# リリースノート（2024年11月6日）
 
-今回のリリースには、新しいウェブコンソールユーザーインターフェース、Qdrant、Pinecone Serverless、Tencent VectorDB からのデータ移行のサポート、よりスムーズな支払いプロセス、詳細な支払い情報を含む刷新された請求書ページが含まれています。
+このリリースには、刷新されたWebコンソールのユーザーインターフェース、Qdrant、Pinecone Serverless、Tencent VectorDBからのデータ移行のサポート、よりスムーズな支払いプロセス、および詳細な支払い情報を備えた刷新された請求書ページが含まれています。
 
-## Milvus 互換性{#milvus-compatibility}
+## Milvus 互換性\{#milvus-compatibility}
 
 このリリースは **Milvus 2.4.x** と互換性があります。
 
-## 真新しいウェブコンソールユーザーインターフェース{#a-brand-new-web-console-user-interface}
+## まったく新しいWebコンソールのユーザーインターフェース\{#a-brand-new-web-console-user-interface}
 
-今回のリリースで、Zilliz Cloud は完全にアップグレードされたウェブコンソール UI を導入します。使い慣れたワークフローを維持しつつ、新しいインターフェースはユーザーのインタラクティブな体験と視覚的な体験の両方を大幅に向上させます。
+このリリースでは、Zilliz Cloud は完全にアップグレードされたWebコンソールUIを導入しました。おなじみのワークフローを維持しながら、新しいインターフェースはユーザーのインタラクティブな体験と視覚的な体験の両方を大幅に向上させます。
 
 [Zilliz Cloud](https://cloud.zilliz.com) アカウントにログインして、新しいインターフェースをぜひお試しください！
 
-## 拡張されたソースサポートによるデータ移行の強化{#enhanced-data-migration-with-expanded-source-support}
+## 拡張されたソースサポートによる強化されたデータ移行\{#enhanced-data-migration-with-expanded-source-support}
 
-今回のリリースで、Zilliz Cloud はデータ移行機能をアップグレードし、以下の追加データソースをサポートしました。
+このリリースでは、Zilliz Cloud はデータ移行機能をアップグレードし、以下の追加データソースをサポートするようになりました：
 
 - Qdrant
 
@@ -47,21 +44,21 @@ import Admonition from '@theme/Admonition';
 
 - Tencent VectorDB
 
-これらの機能強化により、これらのベンダーから Zilliz Cloud へデータを簡単に移行し、Zilliz Cloud が提供する独自の機能と能力を活用できます。これらのソースからのデータ移行に関する詳細な手順については、[Qdrant から Zilliz Cloud へ移行する](./migrate-from-qdrant)、[Pinecone から Zilliz Cloud へ移行する](./migrate-from-pinecone)、および [Tencent Cloud から Zilliz Cloud へ移行する](./migrate-from-tencent-cloud) を参照してください。
+これらの強化により、これらのベンダーからZilliz Cloudへのデータ移行を簡単に行うことができ、Zilliz Cloud が提供する独自の機能と能力を活用できます。これらのソースからのデータ移行の詳細な手順については、[Qdrant から Zilliz Cloud への移行](./migrate-from-qdrant)、[Pinecone から Zilliz Cloud への移行](./migrate-from-pinecone)、および [Tencent Cloud から Zilliz Cloud への移行](./migrate-from-tencent-cloud) を参照してください。
 
-## 支払いプロセスの改善と請求書ページのデザイン変更{#improved-payment-process-and-redesigned-invoice-page}
+## 改善された支払いプロセスと再設計された請求書ページ\{#improved-payment-process-and-redesigned-invoice-page}
 
-今回のリリースで、Zilliz Cloud は支払いプロセスを合理化し、請求書ページを刷新しました。これにより、コスト管理の明確さと利便性が向上しました。主な更新内容は以下の通りです。
+このリリースでは、Zilliz Cloud は支払いプロセスを効率化し、請求書ページを刷新し、コスト管理においてより高い明確性と利便性を提供します。主なアップデートは以下の通りです：
 
-- 支払期日が来た際のタイムリーな通知
+- 支払い期限が近づいた際のタイムリーな通知
 
-- 拡張された請求サイクルをサポートし、支払い条件を企業の財務ワークフローに合わせることで、中断のないサービスを保証
+- 拡張された請求サイクルのサポートにより、支払い条件を企業の財務ワークフローに合わせ、サービスの中断を防止
 
-- コストの内訳とダウンロードオプションを備えた明細化された請求書
+- コストの可視性とダウンロードオプションを備えた項目別の請求書
 
-これらの更新の詳細については、[請求書](./view-invoice) を参照してください。
+これらのアップデートの詳細については、[請求書](./view-invoice) を参照してください。
 
-### 強化点{#enhancements}
+### 機能強化\{#enhancements}
 
-- replica の設定プロセスを最適化しました。この新しいバージョンでは、ユーザーは事前にすべての collection を release する必要なく、replica の数を直接調整できるようになりました。
+- レプリカ設定プロセスを最適化しました。この新しいバージョンでは、ユーザーは事前にすべてのコレクションを解放する必要なく、レプリカの数を直接調整できるようになりました。
 

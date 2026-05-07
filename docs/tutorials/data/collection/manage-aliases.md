@@ -1,16 +1,17 @@
 ---
 title: "Manage Aliases | Cloud"
 slug: /manage-aliases
-sidebar_label: "Manage Aliases"
-beta: FALSE
+sidebar_key: manage-aliases
+sidebar_label: "Aliases"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "In Zilliz Cloud, an alias is a secondary, mutable name for a collection. Using aliases provides a layer of abstraction that allows you to dynamically switch between collections without modifying your application code. This is particularly useful in production environments for seamless data updates, A/B testing, and other operational tasks. | Cloud"
 type: origin
 token: OLn1wMgW0iceBlkuey2cBD91neb
-sidebar_position: 9
+sidebar_position: 10
 keywords: 
   - zilliz
   - vector database

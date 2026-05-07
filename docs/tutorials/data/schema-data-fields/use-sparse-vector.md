@@ -1,11 +1,12 @@
 ---
 title: "Sparse Vector | Cloud"
 slug: /use-sparse-vector
+sidebar_key: use-sparse-vector
 sidebar_label: "Sparse Vector"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Sparse vectors are an important method of capturing surface-level term matching in information retrieval and natural language processing. While dense vectors excel in semantic understanding, sparse vectors often provide more predictable matching results, especially when searching for special terms or textual identifiers. | Cloud"
 type: origin

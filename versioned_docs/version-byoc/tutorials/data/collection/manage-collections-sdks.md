@@ -1,11 +1,12 @@
 ---
-title: "Create Collection | BYOC"
+title: "Create a Collection | BYOC"
 slug: /manage-collections-sdks
-sidebar_label: "Create Collection"
-beta: FALSE
+sidebar_key: manage-collections-sdks
+sidebar_label: "Create"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "You can create a collection by defining its schema, index parameters, metric type, and whether to load it upon creation. This page introduces how to create a collection from scratch. | BYOC"
 type: origin
@@ -16,8 +17,7 @@ keywords:
   - vector database
   - cloud
   - collection
-  - create collection
-  - custom setup
+  - create collections
 
 ---
 
@@ -25,14 +25,14 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create Collection
+# Create a Collection
 
 You can create a collection by defining its schema, index parameters, metric type, and whether to load it upon creation. This page introduces how to create a collection from scratch.
 
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>If you need strong data isolation and manage only a small number of tenants, you can create a separate collection for each tenant.</p>
-<p>However, you can only create a maximum of 16,384 collections depending on your <a href="./limits">cluster plan</a>. Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see <a href="./multi-tenancy">Implement Multi-tenancy</a>.</p>
+<p>However, you can only create a maximum of 16,384 collections depending on your <a href="./limits">project plan and cluster deployment option</a>. Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see <a href="./multi-tenancy">Implement Multi-tenancy</a>.</p>
 
 </Admonition>
 
@@ -185,8 +185,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())
@@ -234,6 +237,12 @@ export schema='{
 
 </TabItem>
 </Tabs>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 ## (Optional) Set Index Parameters\{#optional-set-index-parameters}
 

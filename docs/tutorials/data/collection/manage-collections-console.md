@@ -1,16 +1,17 @@
 ---
 title: "Manage Collections (Console) | Cloud"
 slug: /manage-collections-console
-sidebar_label: "Manage Collections (Console)"
-beta: FALSE
+sidebar_key: manage-collections-console
+sidebar_label: "On Console"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A collection is a two-dimensional table used to store vector embeddings and metadata. All entities in a collection share the same schema. You can create multiple collections for data management or multi-tenancy purposes. | Cloud"
 type: origin
 token: CmR5wFcybi3iMokOJBxcXDQcntg
-sidebar_position: 12
+sidebar_position: 13
 keywords: 
   - zilliz
   - vector database
@@ -39,7 +40,7 @@ This guide walks you through the collection creation and management operations o
 
 </Admonition>
 
-## Create collection\{#create-collection}
+## Create a collection\{#create-a-collection}
 
 The Zilliz Cloud console provides 3 ways to create a collection, each designed for different scenarios:
 
@@ -174,7 +175,7 @@ A shard is a horizontal slice of a collection that corresponds to a data input c
 
 As a general guideline, consider adding 1 shard for every 100 million rows of data. The maximum number of shards allowed depends on the cluster plan and cluster CU size. For details, see [Zilliz Cloud Limits](./limits#shards).
 
-The number of shards can be later edited via the [clone collection](./manage-collections-console#create-collection) feature once the collection is created.
+The number of shards can be later edited via the [clone collection](./manage-collections-console#create-a-collection) feature once the collection is created.
 
 ### Full text search\{#full-text-search}
 
@@ -208,11 +209,11 @@ Zilliz Cloud supports the following management operations on created collections
 
     - You can add new scalar fields to an existing schema.
 
-    - To change **shard** settings, use the [Clone collection](./manage-collections-console#create-collection) feature instead.
+    - To change **shard** settings, use the [Clone collection](./manage-collections-console#create-a-collection) feature instead.
 
     - To modify **mmap**, or **partition key** settings, use the SDKs instead. For details, see [Modify Collection](./modify-collections).
 
-    - If you have not enabled dynamic field when creating a collection, you can later enable it by using the SDK or web console. For details about the SDKs, see [Modify Collection](./modify-collections#example-4-enable-dynamic-field). For details about how to enable dynamic field on the web console, refer to the demo above.
+    - If you have not enabled dynamic field when creating a collection, you can later enable it by using the SDK or web console. For details about the SDKs, see [Modify Collection](./modify-collections#example-5-enable-dynamic-field). For details about how to enable dynamic field on the web console, refer to the demo above.
 
     Other collection schema settings are not editable. To apply changes, create a new collection with the desired configuration and import the data into it.
 
@@ -232,7 +233,16 @@ Zilliz Cloud supports the following management operations on created collections
 
 - **Edit collection TTL**: Time-to-live (TTL) is a collection property that determines the expiration time for data in a collection. For details, see [Set Collection TTL](./set-collection-ttl).
 
-- **Enable Allow Insert Auto ID:** The `allow_insert_auto_id` property allows a collection with AutoID enabled to accept user-provided primary key values during insert, upsert, and bulk import. For details, see [Modify Collection](./modify-collections#example-5-enable-allowinsertautoid).
+- **Enable Allow Insert Auto ID:** The `allow_insert_auto_id` property allows a collection with AutoID enabled to accept user-provided primary key values during insert, upsert, and bulk import. For details, see [Modify Collection](./modify-collections#example-6-enable-allowinsertautoid).
 
 - **Drop collection:** To reduce resource overhead, you can drop collections that are no longer needed. Dropping a collection irreversibly deletes all data within it.
 
+## Preview collection data\{#preview-collection-data}
+
+Use the **Data** tab to preview entities in a collection directly from the Zilliz Cloud console. 
+
+You can define a filter expression, configure the `limit` parameter to control the number of entities displayed in preview (100 by default, up to 16,384), and query matching entities to inspect field values in a table.
+
+You can also use **Order By** to sort the data preview in ascending or descending order by a primary key field, numeric fields, or scalar fields.
+
+![WHDsw55d9hAOZeboD3Fc7yTwnSg](https://zdoc-images.s3.us-west-2.amazonaws.com/WHDsw55d9hAOZeboD3Fc7yTwnSg.png)

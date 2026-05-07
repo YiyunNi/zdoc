@@ -1,11 +1,12 @@
 ---
 title: "Add Fields to an Existing Collection | Cloud"
 slug: /add-fields-to-an-existing-collection
-sidebar_label: "Add Fields to an Existing Collection"
-beta: FALSE
+sidebar_key: add-fields-to-an-existing-collection
+sidebar_label: "Add Fields"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Milvus allows you to dynamically add new fields to existing collections, making it easy to evolve your data schema as your application needs change. This guide shows you how to add fields in different scenarios using practical examples. | Cloud"
 type: origin
@@ -501,7 +502,7 @@ To enable dynamic schema functionality:
 
 - **New collection**: Set `enable_dynamic_field` to True when creating the collection. For details, refer to [Create Collection](./manage-collections-sdks#create-schema)
 
-- **Existing collection**: Set the collection-level property `dynamicfield.enabled` to True. For details, refer to [Modify Collection](./modify-collections#example-4-enable-dynamic-field).
+- **Existing collection**: Set the collection-level property `dynamicfield.enabled` to True. For details, refer to [Modify Collection](./modify-collections#example-5-enable-dynamic-field).
 
 ### What happens when I add a field with the same name as a dynamic field key?\{#what-happens-when-i-add-a-field-with-the-same-name-as-a-dynamic-field-key}
 
