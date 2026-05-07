@@ -1783,6 +1783,95 @@ input, select { font-family: var(--body); }
     });
   }
 
+  function initMetricsCharts() {
+    if (charts.reqByAgent) return;
+
+    charts.reqByAgent = new Chart($('chartReqByAgent'), {
+      type: 'bar',
+      data: { labels: [], datasets: [{ data: [], backgroundColor: '#3b6de0', borderRadius: 4, barThickness: 18 }] },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { backgroundColor: '#1a1d23', titleFont: { family: "'Figtree', sans-serif", size: 11 }, bodyFont: { family: "'Figtree', sans-serif", size: 11 }, cornerRadius: 6 },
+        },
+        scales: {
+          x: { grid: { color: '#f0f1f3' }, ticks: { font: { family: "'Figtree', sans-serif", size: 10 }, color: '#8b8f9a' }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { font: { family: "'Figtree', sans-serif", size: 10 }, color: '#1a1d23' }, border: { display: false } },
+        },
+      },
+    });
+
+    charts.tokensByModel = new Chart($('chartTokensByModel'), {
+      type: 'bar',
+      data: {
+        labels: [],
+        datasets: [
+          { label: 'Input', data: [], backgroundColor: '#3b6de0', stack: 't', borderRadius: 3 },
+          { label: 'Output', data: [], backgroundColor: '#6c4de0', stack: 't', borderRadius: 3 },
+          { label: 'Total', data: [], backgroundColor: '#2a9d5c', stack: 't', borderRadius: 3 },
+        ],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { family: "'Figtree', sans-serif", size: 10 }, color: '#6b7080', boxWidth: 10, boxHeight: 10, padding: 12 } },
+          tooltip: { backgroundColor: '#1a1d23', titleFont: { family: "'Figtree', sans-serif", size: 11 }, bodyFont: { family: "'Figtree', sans-serif", size: 11 }, cornerRadius: 6 },
+        },
+        scales: {
+          x: { stacked: true, grid: { display: false }, ticks: { font: { family: "'Figtree', sans-serif", size: 9 }, color: '#8b8f9a' }, border: { display: false } },
+          y: { stacked: true, grid: { color: '#f0f1f3' }, ticks: { font: { family: "'Figtree', sans-serif", size: 9 }, color: '#8b8f9a' }, border: { display: false } },
+        },
+      },
+    });
+
+    charts.cacheRatio = new Chart($('chartCacheRatio'), {
+      type: 'doughnut',
+      data: { labels: ['Hits', 'Misses'], datasets: [{ data: [1, 0], backgroundColor: ['#2a9d5c', '#d44040'], borderWidth: 0, borderRadius: 4 }] },
+      options: {
+        responsive: true, maintainAspectRatio: true, cutout: '72%',
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { family: "'Figtree', sans-serif", size: 10 }, color: '#6b7080', boxWidth: 10, boxHeight: 10, padding: 12 } },
+          tooltip: { backgroundColor: '#1a1d23', titleFont: { family: "'Figtree', sans-serif" }, bodyFont: { family: "'Figtree', sans-serif" }, cornerRadius: 6 },
+        },
+      },
+    });
+
+    charts.toolCalls = new Chart($('chartToolCalls'), {
+      type: 'bar',
+      data: { labels: [], datasets: [{ data: [], backgroundColor: '#6c4de0', borderRadius: 4, barThickness: 18 }] },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { backgroundColor: '#1a1d23', titleFont: { family: "'Figtree', sans-serif", size: 11 }, bodyFont: { family: "'Figtree', sans-serif", size: 11 }, cornerRadius: 6 },
+        },
+        scales: {
+          x: { grid: { color: '#f0f1f3' }, ticks: { font: { family: "'Figtree', sans-serif", size: 10 }, color: '#8b8f9a' }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { font: { family: "'Figtree', sans-serif", size: 10 }, color: '#1a1d23' }, border: { display: false } },
+        },
+      },
+    });
+
+    charts.stepDuration = new Chart($('chartStepDuration'), {
+      type: 'bar',
+      data: { labels: [], datasets: [{ data: [], backgroundColor: '#3b6de0', borderRadius: 4, barThickness: 18 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { backgroundColor: '#1a1d23', titleFont: { family: "'Figtree', sans-serif", size: 11 }, bodyFont: { family: "'Figtree', sans-serif", size: 11 }, cornerRadius: 6 },
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { family: "'Figtree', sans-serif", size: 9 }, color: '#8b8f9a' }, border: { display: false } },
+          y: { grid: { color: '#f0f1f3' }, ticks: { font: { family: "'Figtree', sans-serif", size: 9 }, color: '#8b8f9a' }, border: { display: false } },
+        },
+      },
+    });
+  }
+
   // ------------------------------------------------------------------
   // Dashboard tab
   // ------------------------------------------------------------------
