@@ -721,6 +721,33 @@ app.post('/chat', async c => {
             }
           }
 
+          // Nuclear fallback: Bedrock provider appears to lose text deltas entirely
+          // when messages contain tool history. Construct a plain-text prompt from
+          // the tool results and ask again without any tool definitions.
+          if (!fullText && toolsCalled.length > 0 && toolChunks.length > 0) {
+            try {
+              const context = toolChunks
+                .map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`)
+                .join('\n\n---\n\n');
+              const fallbackResult = await generateText({
+                model: modelInstance,
+                system: systemPrompt,
+                messages: [
+                  {role: 'user', content: `Question: ${ragQuery}\n\nRelevant documentation:\n\n${context}\n\nPlease answer the question based on the documentation above.`},
+                ],
+                maxOutputTokens: 4096,
+                temperature: 0.2,
+              });
+              if (fallbackResult.text) {
+                fullText = fallbackResult.text;
+                sendAndRecord('delta', JSON.stringify({text: fullText}));
+                console.log(`[Nuclear] generateText recovered ${fullText.length} chars from ${toolChunks.length} chunks`);
+              }
+            } catch (err) {
+              console.error('[Nuclear] generateText failed:', (err as Error).message);
+            }
+          }
+
           // Stream completed successfully — mark LLM health as good
           recordLlmSuccess();
 
