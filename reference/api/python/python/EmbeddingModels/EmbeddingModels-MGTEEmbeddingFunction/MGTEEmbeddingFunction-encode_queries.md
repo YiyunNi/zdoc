@@ -13,10 +13,10 @@ type: docx
 token: HEWIdid9BoFMyNxN8Bbc0P3nn6g
 sidebar_position: 2
 keywords: 
-  - Video deduplication
   - Video similarity search
   - Vector retrieval
   - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud

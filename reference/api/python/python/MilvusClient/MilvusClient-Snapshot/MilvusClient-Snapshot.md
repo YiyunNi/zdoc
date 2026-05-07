@@ -12,10 +12,10 @@ token: RoBzflamplZFzYd1ZSWccuVfnnc
 sidebar_position: 15
 sidebar_label: "Snapshot"
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud

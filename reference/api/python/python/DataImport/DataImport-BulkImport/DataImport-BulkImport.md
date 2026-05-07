@@ -12,10 +12,10 @@ token: ODiwfm3z9lpSIZdyCjtcTQXgnfb
 sidebar_position: 2
 sidebar_label: "BulkImport"
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud

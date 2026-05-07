@@ -13,10 +13,10 @@ type: docx
 token: UjjpdBwaooRDdlxFHScc6dKwnTg
 sidebar_position: 8
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation inserts or updates data in a specific collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>External collections do not support this operation.</p>
+External collections do not support this operation.
 
 </Admonition>
 

@@ -13,10 +13,10 @@ type: docx
 token: SlrCd1GEbooMh2xLylZc6Oirnrc
 sidebar_position: 15
 keywords: 
+  - Vector index
   - vector database open source
   - open source vector db
   - vector database example
-  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud

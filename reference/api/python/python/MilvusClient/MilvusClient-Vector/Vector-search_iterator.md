@@ -13,10 +13,10 @@ type: docx
 token: T9KhdDJQColJEuxZ7YOcV2zdnlb
 sidebar_position: 7
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation conducts a vector similarity search with an optional scalar filte
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>External collections do not support this operation.</p>
+External collections do not support this operation.
 
 </Admonition>
 

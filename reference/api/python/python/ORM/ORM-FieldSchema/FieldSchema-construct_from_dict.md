@@ -13,10 +13,10 @@ type: docx
 token: DCLUdOpVjohl8HxPUx1cGjokngf
 sidebar_position: 1
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,8 +43,9 @@ construct_from_dict(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This is a class method. You should call it from the class instead of an instance of the class as follows:</p>
-<p><code>FieldSchema.construct_from_dict()</code></p>
+This is a class method. You should call it from the class instead of an instance of the class as follows:
+
+`FieldSchema.construct_from_dict()`
 
 </Admonition>
 

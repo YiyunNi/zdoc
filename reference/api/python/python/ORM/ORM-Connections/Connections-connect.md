@@ -13,10 +13,10 @@ type: docx
 token: KzCXdTVVSoOmkbxuFjsccDlXnff
 sidebar_position: 2
 keywords: 
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud
@@ -56,10 +56,9 @@ connect(
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <ul>
-    <li><p>If the specified connection alias does not exist, a new one will be added, and the parameters specified below are added as the parameters of the connection alias.</p></li>
-    <li><p>If the specified connection alias has already been added by calling <strong>add_connection()</strong>, the parameters specified below overwrite those of the connection alias.</p></li>
-    </ul>
+    - If the specified connection alias does not exist, a new one will be added, and the parameters specified below are added as the parameters of the connection alias.
+
+    - If the specified connection alias has already been added by calling **add_connection()**, the parameters specified below overwrite those of the connection alias.
 
     </Admonition>
 

@@ -12,10 +12,10 @@ token: PWyVfD7HUl1x3ydji7RcraKin1g
 sidebar_position: 7
 sidebar_label: "FileResource"
 keywords: 
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud

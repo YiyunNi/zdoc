@@ -13,10 +13,10 @@ type: docx
 token: HkOFdhgbOoz1wlxJIgWcU7EonWc
 sidebar_position: 2
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation drops a specified partition from the current collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Before dropping a partition, you must first release it.</p>
+Before dropping a partition, you must first release it.
 
 </Admonition>
 

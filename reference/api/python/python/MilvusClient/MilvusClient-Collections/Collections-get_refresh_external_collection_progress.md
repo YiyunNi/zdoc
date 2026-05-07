@@ -13,10 +13,10 @@ type: docx
 token: HITBdKb0HotcK0xCKsycEeuqnXe
 sidebar_position: 26
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

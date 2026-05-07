@@ -13,10 +13,10 @@ type: docx
 token: LZL1d0kckouPXNxJLCmcwbCTnkG
 sidebar_position: 11
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
   - zilliz
   - zilliz cloud
   - cloud
@@ -50,7 +50,7 @@ Role(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Calling the constructor alone does not create the role. You have to explicitly call the <code>create()</code> method of the role object to create the role.</p>
+Calling the constructor alone does not create the role. You have to explicitly call the `create()` method of the role object to create the role.
 
 </Admonition>
 

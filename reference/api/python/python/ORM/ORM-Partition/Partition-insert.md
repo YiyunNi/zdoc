@@ -13,10 +13,10 @@ type: docx
 token: QXDxdv36FoVgjcxDV1gcDwWXnsd
 sidebar_position: 5
 keywords: 
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation inserts data into the current partition.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Using the <strong>partition_name</strong> parameter in the <strong>insert()</strong> method of a <strong><a href="./ORM-Collection">Collection</a></strong> object is equivalent to using the <strong>insert()</strong> method of a <strong><a href="./ORM-Partition">Partition</a></strong> object.</p>
+Using the **partition_name** parameter in the **insert()** method of a **[Collection](./ORM-Collection)** object is equivalent to using the **insert()** method of a **[Partition](./ORM-Partition)** object.
 
 </Admonition>
 

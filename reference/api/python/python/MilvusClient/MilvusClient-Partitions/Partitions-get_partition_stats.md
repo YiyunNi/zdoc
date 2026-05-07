@@ -13,10 +13,10 @@ type: docx
 token: Jjbsd2I8doQ9pBxBp57ckRdZnZd
 sidebar_position: 3
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud
@@ -79,8 +79,9 @@ A dictionary that contains the row count in the specified partition.
 
 <Admonition type="info" icon="📘" title="**Why doesn't the row count match the number of entities inserted?**">
 
-<p>The data that you insert will go through a process before it is finally saved. Initially, it will flow in as data streams. Then, it will be stored in segments as entities. Milvus will select an appropriate growing segment to store the data in streams until the segment reaches its upper limit and becomes sealed.</p>
-<p>However, it's important to note that the row count displayed may not match the number of records that were inserted because data in streams is not taken into account.</p>
+The data that you insert will go through a process before it is finally saved. Initially, it will flow in as data streams. Then, it will be stored in segments as entities. Milvus will select an appropriate growing segment to store the data in streams until the segment reaches its upper limit and becomes sealed.
+
+However, it's important to note that the row count displayed may not match the number of records that were inserted because data in streams is not taken into account.
 
 </Admonition>
 

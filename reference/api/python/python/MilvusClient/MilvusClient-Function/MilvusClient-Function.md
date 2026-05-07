@@ -13,10 +13,10 @@ type: docx
 token: RrW9dOM8do7d3ixXIP9clJJUnVg
 sidebar_position: 3
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud
@@ -83,7 +83,7 @@ Function(
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>This applies only when you set <code>function_type</code> to <code>FunctionType.BM25</code> and <code>FunctionType.TEXTEMBEDDING</code>.</p>
+    This applies only when you set `function_type` to `FunctionType.BM25` and `FunctionType.TEXTEMBEDDING`.
 
     </Admonition>
 
@@ -137,7 +137,7 @@ Function(
 
             <Admonition type="info" icon="📘" title="Notes">
 
-            <p>If you shorten the vector dimension, ensure the <code>dim</code> value specified in the schema's <code>add_field</code> method for the vector field matches the final output dimension of your embedding function.</p>
+            If you shorten the vector dimension, ensure the `dim` value specified in the schema's `add_field` method for the vector field matches the final output dimension of your embedding function.
 
             </Admonition>
 

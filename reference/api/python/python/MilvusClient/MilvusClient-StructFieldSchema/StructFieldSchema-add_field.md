@@ -13,10 +13,10 @@ type: docx
 token: Up73d8d78oPM2FxkvlIcuxeBn9g
 sidebar_position: 1
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

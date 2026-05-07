@@ -13,10 +13,10 @@ type: docx
 token: MhRidjHwYorxaexS8WXcaxWQnjd
 sidebar_position: 23
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation optimizes a collection by adjusting segment sizes to improve quer
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-<p>This is a Preview version feature for non-production use only (Benchmark, POC).</p>
+This is a Preview version feature for non-production use only (Benchmark, POC).
 
 </Admonition>
 

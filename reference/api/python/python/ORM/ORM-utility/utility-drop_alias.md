@@ -13,10 +13,10 @@ type: docx
 token: V7BWdrC39oPAauxoWBzcaldwnVc
 sidebar_position: 9
 keywords: 
+  - IVF
+  - knn
   - Image Search
   - LLMs
-  - Machine Learning
-  - RAG
   - zilliz
   - zilliz cloud
   - cloud
@@ -54,7 +54,7 @@ drop_alias(
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>When dropping an alias, you do not need to provide the collection name because one alias can only be assigned to exactly one collection. Therefore, the server knows which collection the specified alias belongs to.</p>
+    When dropping an alias, you do not need to provide the collection name because one alias can only be assigned to exactly one collection. Therefore, the server knows which collection the specified alias belongs to.
 
     </Admonition>
 
