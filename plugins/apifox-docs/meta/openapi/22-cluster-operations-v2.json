@@ -1041,7 +1041,7 @@
                     "regionId": "aws-us-west-2",
                     "clusterName": "my-on-demand",
                     "cuSize": 8,
-                    "autoSuspend": "5m"
+                    "autoSuspend": 60
                   }
                 },
                 "2": {
@@ -1052,7 +1052,7 @@
                     "regionId": "ali-cn-hangzhou",
                     "clusterName": "my-on-demand",
                     "cuSize": 8,
-                    "autoSuspend": "5m"
+                    "autoSuspend": 60
                   }
                 }
               }
