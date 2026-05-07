@@ -29,6 +29,7 @@ import {requireAuth, requireAdmin, getAuth, setSessionCookie, setStateCookie, cl
 import {listAdmins, addAdmin, removeAdmin, healAdminProfile} from './auth/admin-users.js';
 import {makeTelemetry} from './telemetry.js';
 import {reloadRules, getRules} from './hooks/index.js';
+import {getMetricsData} from './metrics.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -269,6 +270,11 @@ adminApp.get('/stats', requireAuth, async c => {
     dimensions: schemaDim,
     build: buildStatus,
   });
+});
+
+// GET /admin/api/metrics — structured Prometheus-style metrics for dashboard
+adminApp.get('/api/metrics', requireAuth, async c => {
+  return c.json(getMetricsData());
 });
 
 // GET /admin/api/build-events — SSE stream for live build progress
