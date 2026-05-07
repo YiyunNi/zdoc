@@ -1147,6 +1147,93 @@ input, select { font-family: var(--body); }
       </div>
     </section>
   </main>
+
+  <!-- ============== Pipeline Metrics Page ============== -->
+  <main class="main page" id="pageMetrics">
+    <div class="page-header">
+      <div>
+        <h2>Pipeline Metrics</h2>
+        <p>Real-time Prometheus-style pipeline metrics</p>
+      </div>
+      <div class="header-controls">
+        <div class="live-badge ok" id="metricsLiveBadge">
+          <div class="live-dot"></div>
+          <span>Live</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="metric-strip">
+      <div class="metric">
+        <div class="metric-label">Total Requests</div>
+        <div class="metric-value" id="mTotalRequests">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Total Tokens</div>
+        <div class="metric-value" id="mTotalTokens">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Cache Hit Rate</div>
+        <div class="metric-value" id="mCacheHitRate">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Tool Calls</div>
+        <div class="metric-value" id="mToolCalls">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Active Sessions</div>
+        <div class="metric-value" id="mActiveSessions">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Router Accuracy</div>
+        <div class="metric-value" id="mRouterAccuracy">—</div>
+      </div>
+    </div>
+
+    <div class="charts-area">
+      <div class="charts-grid">
+        <div class="chart-col">
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Requests by Agent</div>
+              <div class="chart-card-subtitle">Total chat requests per agent</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartReqByAgent"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Token Usage by Model</div>
+              <div class="chart-card-subtitle">Input / output / total</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartTokensByModel"></canvas></div>
+          </div>
+        </div>
+        <div class="chart-col">
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Cache Hits vs Misses</div>
+              <div class="chart-card-subtitle">Response and semantic cache</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartCacheRatio"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Tool Calls by Name</div>
+              <div class="chart-card-subtitle">Total invocations per tool</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartToolCalls"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card" style="margin-top: 16px;">
+        <div class="chart-card-header">
+          <div class="chart-card-title">Step Duration Distribution</div>
+          <div class="chart-card-subtitle">Pipeline step latency buckets (ms)</div>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartStepDuration"></canvas></div>
+      </div>
+    </div>
+  </main>
   </div>
 </div>
 
