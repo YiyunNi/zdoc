@@ -1128,14 +1128,14 @@ export async function getObsUsers(options: {
     conditions.push(`source = $${params.length}`);
   }
 
-  const whereClause = conditions.join(' AND ');
+  const whereClause = conditions.length > 0 ? 'WHERE ' + conditions.join(' AND ') : '';
 
   const { rows: [countRow] } = await pool.query(
     `SELECT
        COUNT(DISTINCT user_id)::int as total,
        COUNT(*)::int as "totalSessions"
      FROM obs_sessions
-     WHERE ${whereClause}`,
+     ${whereClause}`,
     params,
   );
 
@@ -1151,7 +1151,7 @@ export async function getObsUsers(options: {
        (ARRAY_AGG(DISTINCT user_meta) FILTER (WHERE user_meta IS NOT NULL))[1] as user_meta,
        COALESCE(JSON_AGG(JSON_BUILD_OBJECT('first_question', first_question, 'agent', agent, 'message_count', message_count, 'created_at', created_at) ORDER BY created_at DESC) FILTER (WHERE first_question IS NOT NULL), '[]'::json) as session_rows
      FROM obs_sessions
-     WHERE ${whereClause}
+     ${whereClause}
      GROUP BY user_id
      ORDER BY MAX(last_active_at) DESC
      LIMIT $${params.length + 1}::int OFFSET $${params.length + 2}::int`,
