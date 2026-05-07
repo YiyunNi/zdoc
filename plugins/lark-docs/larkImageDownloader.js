@@ -59,7 +59,12 @@ class larkImageDownloader {
             console.log(`Successfully uploaded image to ${key}`);
         } catch (err) {
             console.log(`S3 error for ${key}: name=${err.name} Code=${err.Code}`)
-            if (err.name === 'NoSuchKey' || err.Code === 'NoSuchKey') {
+            const isMissingObjectError = err.name === 'NoSuchKey'
+                || err.name === 'NotFound'
+                || err.Code === 'NoSuchKey'
+                || err.Code === 'NotFound'
+                || err.$metadata?.httpStatusCode === 404
+            if (isMissingObjectError) {
                 console.log(`S3 PUT (new): ${key}`)
                 const putObjectCommand = new PutObjectCommand(put_params);
                 try {

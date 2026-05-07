@@ -3,7 +3,8 @@ const docWriter = require('./larkDocWriter.js')
 const driveWriter = require('./larkDriveWriter.js')
 const Utils = require('./larkUtils.js')
 const fs = require('node:fs')
-const inquirer = require('inquirer')
+const inquirerModule = require('inquirer')
+const inquirer = inquirerModule.default ?? inquirerModule
 require('dotenv/config');
 
 module.exports = function (context, options) {
