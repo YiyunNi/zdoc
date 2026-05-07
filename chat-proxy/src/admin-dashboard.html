@@ -2285,6 +2285,7 @@ input, select { font-family: var(--body); }
       content: (e.data && (e.data.content || e.data.answer)) || '',
       confidence: e.data && e.data.confidence,
       sources: e.data && e.data.sources,
+      toolsCalled: e.data && e.data.toolsCalled,
       tokens: e.totalTokens,
       timestamp: e.timestamp,
     }));
@@ -2315,7 +2316,7 @@ input, select { font-family: var(--body); }
               (conf ? '<span style="color:' + confColor + ';font-weight:600">' + esc(conf) + '</span>' : '') +
             '</div>' +
           '</div>' +
-          '<div class="msg-agent-text">' + renderMsg(msg.content) + '</div>' +
+          '<div class="msg-agent-text">' + (msg.content ? renderMsg(msg.content) : '<em style="color:#999">No response text generated' + (msg.toolsCalled && msg.toolsCalled.length ? ' (tools used: ' + esc(msg.toolsCalled.join(', ')) + ')' : '') + '</em>') + '</div>' +
           ((msg.sources && msg.sources.length) ? '<div class="msg-sources">' +
             msg.sources.map(s => '<div class="msg-source">' + (typeof s === 'string' ? esc(s) : esc(s.title || s.url || '')) + '</div>').join('') +
           '</div>' : '') +

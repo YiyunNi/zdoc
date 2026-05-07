@@ -682,6 +682,18 @@ app.post('/chat', async c => {
                   content: toolResult.content,
                 });
               }
+            } else if (process.env.DEBUG_STREAM === 'true') {
+              console.log('[stream] unhandled part type:', (part as any).type, part);
+            }
+          }
+
+          // Fallback: some providers do not emit text-delta for the final answer
+          // when tool calls consume the stream steps, so assemble from result.text.
+          if (!fullText) {
+            const assembled = await result.text;
+            if (assembled) {
+              fullText = assembled;
+              sendAndRecord('delta', JSON.stringify({text: fullText}));
             }
           }
 

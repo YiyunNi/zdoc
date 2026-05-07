@@ -342,7 +342,7 @@ export async function ensureShadowTable(dimensions: number): Promise<void> {
 
   const ddl = SCHEMA_DDL
     .replace(/CREATE TABLE IF NOT EXISTS doc_chunks/g, 'CREATE TABLE doc_chunks_new')
-    .replace(/CREATE INDEX IF NOT EXISTS idx_chunks_(\w+)/g, 'CREATE INDEX idx_new_chunks_$1')
+    .replace(/CREATE INDEX IF NOT EXISTS idx_chunks_(\w+)/g, 'CREATE INDEX IF NOT EXISTS idx_new_chunks_$1')
     .replace(/vector\(1024\)/g, `vector(${dimensions})`)
     .replace(/vector\(1536\)/g, `vector(${dimensions})`);
 

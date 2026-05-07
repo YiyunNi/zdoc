@@ -910,7 +910,28 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
 
       // Use shadow table for zero-downtime rebuild — old index stays live until swap
       console.log('[RAG] Creating shadow table for zero-downtime rebuild');
-      await ensureShadowTable(expectedDim || 1024);
+
+      // Coordinate across pods: only one pod should rebuild at a time
+      const REBUILD_LOCK_KEY = 42424243;
+      const lockClient = await pool.connect();
+      try {
+        await lockClient.query('SELECT pg_advisory_lock($1)', [REBUILD_LOCK_KEY]);
+
+        // Re-check: another pod may have finished while we waited
+        if (!force && !indexReady) {
+          try {
+            const { rows: [{ n: dbChunks }] } = await pool.query('SELECT COUNT(*)::int AS n FROM doc_chunks');
+            if (dbChunks > 0) {
+              console.log(`[RAG] Index already built by another pod (${dbChunks} chunks) — skipping rebuild`);
+              indexReady = true;
+              lastRefreshedAt = new Date().toISOString();
+              await updateBuildStatus({ state: 'idle', updatedAt: new Date().toISOString() }).catch(() => {});
+              return;
+            }
+          } catch { /* proceed with rebuild */ }
+        }
+
+        await ensureShadowTable(expectedDim || 1024);
 
       // Optional triplet extraction for entity enrichment
       if (options?.extractTriplets) {
@@ -969,6 +990,10 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
       console.log('[RAG] Swapping shadow table to active');
       await swapDocChunksTables();
       await dropOldDocChunks();
+      } finally {
+        await lockClient.query('SELECT pg_advisory_unlock($1)', [REBUILD_LOCK_KEY]).catch(() => {});
+        lockClient.release();
+      }
 
       // Write metadata
       await pool.query(
