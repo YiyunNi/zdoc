@@ -13,10 +13,10 @@ type: docx
 token: U9w7dQeEBom2UBxJZM1cJAIYniL
 sidebar_position: 21
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud

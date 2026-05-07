@@ -1,10 +1,11 @@
 ---
-title: "詳細なプラン比較 | Cloud"
+title: "プランの詳細比較 | Cloud"
 slug: /select-zilliz-cloud-service-plans
+sidebar_key: select-zilliz-cloud-service-plans
 sidebar_label: "プラン比較"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、多様な要件に対応するさまざまなプロジェクトプランを提供しています。ベクトルデータベースを初めて利用する方でも、エンタープライズレベルのタスクに堅牢なソリューションを必要とする方でも、適切な選択をすることで最適なパフォーマンス、スケーラビリティ、コスト効率を確保できます。このガイドは、情報に基づいた意思決定を行うのに役立ちます。 | Cloud"
+description: "Zilliz Cloud は、多様な要件に対応する幅広いプロジェクトプランを提供しています。ベクトルデータベースを初めて利用する方から、エンタープライズレベルのタスクに堅牢なソリューションを必要とする方まで、適切な選択により最適なパフォーマンス、スケーラビリティ、コスト効率を確保できます。このガイドでは、十分な情報に基づいた判断を行うための参考となります。"
 type: origin
 token: Ghq9wEiOOivgeIkmj2HcHC9onXe
 sidebar_position: 1
@@ -13,37 +14,33 @@ keywords:
   - ベクトルデータベース
   - cloud
   - クラスタープラン
-  - RAG
-  - NLP
-  - ニューラルネットワーク
-  - ディープラーニング
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# 詳細なプラン比較
+# プラン詳細比較
 
-Zilliz Cloud は、多様な要件に対応するさまざまなプロジェクトプランを提供しています。ベクトルデータベースの初心者であろうと、エンタープライズレベルのタスクに堅牢なソリューションを必要としようと、適切な選択をすることで、最適なパフォーマンス、スケーラビリティ、およびコスト効率が保証されます。このガイドは、情報に基づいた意思決定を行うのに役立ちます。
+Zilliz Cloud は、多様な要件に対応する幅広いプロジェクトプランを提供しています。ベクトルデータベースの初心者であっても、エンタープライズレベルのタスクに堅牢なソリューションが必要な場合でも、適切な選択により最適なパフォーマンス、スケーラビリティ、コスト効率を確保できます。このガイドでは、十分な情報に基づいた意思決定を支援します。
 
-## プラン概要{#plan-overview}
+## プラン概要\{#plan-overview}
 
-Zilliz Cloud は、その提供物を5つの異なるプランに分類しています。
+Zilliz Cloud は、提供サービスを5つの異なるプランに分類しています。
 
-- **Standard:** Standard プランは、重要度の低いワークロード向けに調整されています。プロトタイプやテスト環境に最適です。[Zilliz Cloud Pricing](https://zilliz.com/pricing) で詳細をご覧ください。
+- **Standard:** Standard プランは、非クリティカルなワークロード向けに設計されています。プロトタイプやテスト環境に最適です。詳細については、[Zilliz Cloud 料金](https://zilliz.com/pricing) を参照してください。
 
-- **Enterprise:** Enterprise プランは、エンタープライズグレードの信頼性と制御を提供します。本番アプリケーションに最適です。[Zilliz Cloud Pricing](https://zilliz.com/pricing) で詳細をご覧ください。
+- **Enterprise:** Enterprise プランは、エンタープライズグレードの信頼性と制御機能を提供します。本番アプリケーションに最適です。詳細については、[Zilliz Cloud 料金](https://zilliz.com/pricing) を参照してください。
 
-- **Business Critical**: Business Critical プランは、最高の回復力を備えた規制対応型です。ヘルスケア、金融、ミッションクリティカルなシステムに最適です。Business Critical プランを選択するには、[営業担当者にお問い合わせください](http://zilliz.com/contact-sales)。
+- **ビジネスクリティカル**: ビジネスクリティカル プランは、規制対応が完了しており、最大限の耐障害性を備えています。医療、金融、ミッションクリティカルなシステムに最適です。ビジネスクリティカル プランを選択するには、[営業部門にお問い合わせ](http://zilliz.com/contact-sales) ください。
 
-- **Bring Your Own Cloud (BYOC):** BYOC プランは、カスタムインフラストラクチャ、強化されたデータ保護、およびコンプライアンスを優先する組織向けに設計されています。SaaS Dedicated クラスターと同じ機能とエクスペリエンスを提供します。BYOC プランを選択するには、[営業担当者にお問い合わせください](http://zilliz.com/contact-sales)。
+- **Bring Your Own Cloud (BYOC):** BYOC プランは、カスタムインフラストラクチャ、強化されたデータ保護、およびコンプライアンスを優先する組織向けに設計されています。SaaS Dedicated クラスターと同じ機能と体験を提供します。BYOC プランを選択するには、[営業部門にお問い合わせ](http://zilliz.com/contact-sales) ください。
 
-## プラン比較{#plan-comparison}
+## プラン比較\{#plan-comparison}
 
-以下のセクションでは、プランとデプロイオプションを比較し、各プランで利用可能な特定の機能を詳述します。
+以下のセクションでは、プランとデプロイメントオプションを比較し、各プランで利用可能な特定の機能について詳しく説明します。
 
-### デプロイメント{#deployment}
+### デプロイメント\{#deployment}
 
 <table>
    <tr>
@@ -52,7 +49,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
@@ -71,56 +68,56 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>AWS, GCP, Azure</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダーとリージョン</a>を参照してください。</p></td>
      <td><p>AWS, GCP, Azure</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダーとリージョン</a>を参照してください。</p></td>
      <td><p>AWS, GCP, Azure</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダーとリージョン</a>を参照してください。</p></td>
-     <td><p>ユーザーのVPC</p></td>
+     <td><p>ユーザーの VPC</p></td>
    </tr>
    <tr>
-     <td><p>クエリCU数 </p></td>
-     <td><p>シングルクエリCU</p></td>
+     <td><p>クエリ CU 数 </p></td>
+     <td><p>シングルクエリ CU</p></td>
      <td><p>自動スケール。設定不要</p></td>
-     <td><ul><li><p>最大32クエリCU。(Web UIで32クエリCU以下のクラスターを直接作成できます。より大きなクエリCUについては、<a href="https://zilliz.com/contact-sales">営業担当者にお問い合わせください</a>。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32。</p></li></ul></td>
-     <td><ul><li><p>最大1,024クエリCU。より大きなクエリCUについては、<a href="https://zilliz.com/contact-sales">営業担当者にお問い合わせください</a>。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(注: クエリCUが8より大きい場合、増分は4CUになります。クエリCUが64より大きい場合、増分は8CUになります。クエリCUが256より大きい場合、増分は16CUになります。)</em></p></li></ul></td>
-     <td><ul><li><p>最大256クエリCU。より大きなクエリCUについては、<a href="https://zilliz.com/contact-sales">営業担当者にお問い合わせください</a>。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(注: クエリCUが8より大きい場合、増分は4CUになります。クエリCUが64より大きい場合、増分は8CUになります。クエリCUが256より大きい場合、増分は16CUになります。)</em></p></li></ul></td>
+     <td><ul><li><p>最大 32 クエリ CU。（Web UI で最大 32 クエリ CU のクラスターを直接作成できます。それ以上のクエリ CU が必要な場合は、<a href="https://zilliz.com/contact-sales">営業部門にお問い合わせ</a>ください。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32。</p></li></ul></td>
+     <td><ul><li><p>最大 1,024 クエリ CU。それ以上のクエリ CU が必要な場合は、<a href="https://zilliz.com/contact-sales">営業部門にお問い合わせ</a>ください。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(注: クエリ CU が 8 を超える場合、増分は 4 CU ずつ増加します。クエリ CU が 64 を超える場合、増分は 8 CU ずつ増加します。クエリ CU が 256 を超える場合、増分は 16 CU ずつ増加します。)</em></p></li></ul></td>
+     <td><ul><li><p>最大 256 クエリ CU。それ以上のクエリ CU が必要な場合は、<a href="https://zilliz.com/contact-sales">営業部門にお問い合わせ</a>ください。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(注: クエリ CU が 8 を超える場合、増分は 4 CU ずつ増加します。クエリ CU が 64 を超える場合、増分は 8 CU ずつ増加します。クエリ CU が 256 を超える場合、増分は 16 CU ずつ増加します。)</em></p></li></ul></td>
      <td><p>カスタマイズ可能</p></td>
    </tr>
    <tr>
      <td><p><a href="./scale-query-cu">コンピューティングスケーリング</a></p></td>
      <td></td>
-     <td><p>システム管理の自動スケーリング</p><p>(設定不要)</p></td>
-     <td><p>32 CUへの手動スケーリング</p></td>
-     <td><p>設定可能な自動スケーリング</p><p>1,024 CU以上への手動スケーリング</p></td>
-     <td><p>設定可能な自動スケーリング</p><p>1,024 CU以上への手動スケーリング</p></td>
-     <td><p>設定可能な自動スケーリング</p><p>1,024 CU以上への手動スケーリング</p></td>
+     <td><p>システム管理の自動スケーリング</p><p>（設定不要）</p></td>
+     <td><p>手動スケーリングで</p><p>32 CU まで</p></td>
+     <td><p>設定可能な自動スケーリング</p><p>手動スケーリングで 1,024 CU 以上</p></td>
+     <td><p>設定可能な自動スケーリング</p><p>手動スケーリングで 1,024 CU 以上</p></td>
+     <td><p>設定可能な自動スケーリング</p><p>手動スケーリングで 1,024 CU 以上</p></td>
    </tr>
    <tr>
-     <td><p><a href="./cu-types-explained">クラスタータイプ</a>オプション</p></td>
+     <td><p><a href="./cu-types-explained">クラスタータイプ</a> オプション</p></td>
      <td></td>
      <td></td>
-     <td><p>3つのオプション:</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li><li><p>階層型ストレージCU</p></li></ul></td>
-     <td><p>3つのオプション:</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li><li><p>階層型ストレージCU</p></li></ul></td>
-     <td><p>3つのオプション:</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li><li><p>階層型ストレージCU</p></li></ul></td>
-     <td><p>2つのオプション</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li></ul></td>
+     <td><p>3 オプション:</p><ul><li><p>パフォーマンス最適化済み CU</p></li><li><p>容量最適化済み CU</p></li><li><p>階層型ストレージ CU</p></li></ul></td>
+     <td><p>3 オプション:</p><ul><li><p>パフォーマンス最適化済み CU</p></li><li><p>容量最適化済み CU</p></li><li><p>階層型ストレージ CU</p></li></ul></td>
+     <td><p>3 オプション:</p><ul><li><p>パフォーマンス最適化済み CU</p></li><li><p>容量最適化済み CU</p></li><li><p>階層型ストレージ CU</p></li></ul></td>
+     <td><p>2 オプション</p><ul><li><p>パフォーマンス最適化済み CU</p></li><li><p>容量最適化済み CU</p></li></ul></td>
    </tr>
    <tr>
      <td><p>最大コレクション数</p></td>
-     <td><p>5コレクション</p></td>
-     <td><p>クラスターあたり10コレクション</p></td>
-     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud Limits</a>を参照してください。</p></td>
-     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud Limits</a>を参照してください。</p></td>
-     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud Limits</a>を参照してください。</p></td>
+     <td><p>5 コレクション</p></td>
+     <td><p>クラスターあたり 10 コレクション。</p></td>
+     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud 制限</a>を参照してください。</p></td>
+     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud 制限</a>を参照してください。</p></td>
+     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud 制限</a>を参照してください。</p></td>
      <td><p>カスタマイズ可能</p></td>
    </tr>
    <tr>
-     <td><p>稼働時間SLA</p></td>
+     <td><p>稼働時間 SLA</p></td>
      <td></td>
      <td></td>
      <td></td>
      <td><p>99.95%</p></td>
-     <td><p>99.99% (マルチレプリカが有効な場合)</p></td>
+     <td><p>99.99%（マルチレプリカが有効な場合）</p></td>
      <td><p>99.95%</p></td>
    </tr>
 </table>
 
-### 高可用性{#high-availability}
+### 高可用性\{#high-availability}
 
 <table>
    <tr>
@@ -129,17 +126,17 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
-     <td><p>アベイラビリティゾーン</p></td>
+     <td><p>可用性ゾーン</p></td>
      <td></td>
      <td><p>シングル</p></td>
      <td><p>シングル</p></td>
-     <td><p>複数</p></td>
-     <td><p>複数</p></td>
-     <td><p>複数</p></td>
+     <td><p>マルチ</p></td>
+     <td><p>マルチ</p></td>
+     <td><p>マルチ</p></td>
    </tr>
    <tr>
      <td><p><a href="./manage-replica">レプリカ</a></p></td>
@@ -170,7 +167,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
    </tr>
 </table>
 
-### データ管理{#data-managment}
+### データ管理\{#data-managment}
 
 <table>
    <tr>
@@ -179,23 +176,14 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
-     <td><p><a href="./offline-migration">クロス・クラスター・マイグレーション</a></p></td>
+     <td><p><a href="./offline-migration">クラスター間マイグレーション</a></p></td>
      <td></td>
-     <td><p>Freeクラスターから</p></td>
+     <td><p>Free クラスターから</p></td>
      <td><p>✔</p></td>
-     <td><p>✔</p></td>
-     <td><p>✔</p></td>
-     <td><p>✔</p></td>
-   </tr>
-   <tr>
-     <td><p><a href="./zero-downtime-migration">ゼロダウンタイムマイグレーション</a></p></td>
-     <td></td>
-     <td></td>
-     <td></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -210,7 +198,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./manage-stages">ステージ</a></p></td>
+     <td><p><a href="null">ステージ</a></p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -238,7 +226,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
    </tr>
 </table>
 
-### データセキュリティとコンプライアンス{#data-security-and-compliance}
+### データセキュリティとコンプライアンス\{#data-security-and-compliance}
 
 <table>
    <tr>
@@ -247,7 +235,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
@@ -260,7 +248,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./single-sign-on">エンタープライズSSO</a></p></td>
+     <td><p><a href="./single-sign-on">エンタープライズ SSO</a></p></td>
      <td></td>
      <td></td>
      <td></td>
@@ -269,7 +257,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p>顧客管理暗号化キー (CMEK)</p></td>
+     <td><p>カスタマー管理の暗号化キー (CMEK)</p></td>
      <td></td>
      <td></td>
      <td></td>
@@ -296,7 +284,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./manage-api-keys">APIキー管理</a></p></td>
+     <td><p><a href="./manage-api-keys">API キー管理</a></p></td>
      <td></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -305,7 +293,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./data-security#data-encryption">転送中および保存中のデータ暗号化</a></p></td>
+     <td><p><a href="./data-security#data-encryption">転送中および保存時のデータ暗号化</a></p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -332,7 +320,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./setup-whitelist">IPアドレスアクセス制御</a></p></td>
+     <td><p><a href="./setup-whitelist">IP アドレスアクセス制御</a></p></td>
      <td></td>
      <td></td>
      <td><p>✔</p></td>
@@ -341,7 +329,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./setup-a-private-link">プライベートネットワーキング</a></p></td>
+     <td><p><a href="./setup-a-private-link">プライベートネットワーク</a></p></td>
      <td></td>
      <td></td>
      <td></td>
@@ -369,7 +357,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
    </tr>
 </table>
 
-### 可観測性{#observability}
+### オブザーバビリティ\{#observability}
 
 <table>
    <tr>
@@ -378,11 +366,11 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
-     <td><p><a href="./view-cluster-metric-charts">リアルタイム監視ダッシュボードによる詳細なメトリクス</a></p></td>
+     <td><p><a href="./view-cluster-metric-charts">きめ細かいメトリクスとリアルタイムモニタリングダッシュボード</a></p></td>
      <td></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -400,7 +388,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./integrate-with-third-parties">アラートと監視の統合</a></p></td>
+     <td><p><a href="./integrate-with-third-parties">アラートおよびモニタリング統合</a></p></td>
      <td></td>
      <td></td>
      <td></td>
@@ -419,7 +407,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
    </tr>
 </table>
 
-### ロールベースのアクセス制御{#role-based-access-control}
+### ロールベースのアクセス制御\{#role-based-access-control}
 
 <table>
    <tr>
@@ -428,11 +416,11 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
-     <td><p><a href="./access-control-overview">組織およびプロジェクトのRBAC</a></p></td>
+     <td><p><a href="./access-control-overview">組織およびプロジェクト RBAC</a></p></td>
      <td></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -441,7 +429,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="./access-control">データプレーンRBAC</a></p></td>
+     <td><p><a href="./access-control">データプレーン RBAC</a></p></td>
      <td></td>
      <td></td>
      <td><p>✔</p></td>
@@ -451,7 +439,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
    </tr>
 </table>
 
-### 統合とツール{#integrations-and-tools}
+### 統合とツール\{#integrations-and-tools}
 
 <table>
    <tr>
@@ -460,11 +448,11 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
-     <td><p><a href="/reference/restful">制御およびデータプレーン操作のための直感的なRESTful API</a></p></td>
+     <td><p><a href="/reference/restful">コントロールプレーンおよびデータプレーン操作のための直感的な RESTful API</a></p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -473,7 +461,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p><a href="/reference/python">複数のプログラミング言語で利用可能な使いやすいSDK</a> (Python, Java, Go, および Node.js SDK)</p></td>
+     <td><p><a href="/reference/python">複数のプログラミング言語に対応したユーザーフレンドリーな SDK</a>（Python、Java、Go、および Node.js SDK）</p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -501,7 +489,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
    </tr>
 </table>
 
-### テクニカルサポート{#technical-support}
+### テクニカルサポート\{#technical-support}
 
 <table>
    <tr>
@@ -510,7 +498,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated (Standard)</strong></p></th>
      <th><p><strong>Dedicated (Enterprise)</strong></p></th>
-     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Dedicated (ビジネスクリティカル)</strong></p></th>
      <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
@@ -518,45 +506,45 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td></td>
      <td><p>営業時間内</p></td>
      <td><p>営業時間内</p></td>
-     <td><p>24時間365日</p></td>
-     <td><p>24時間365日</p></td>
+     <td><p>24/7/365</p></td>
+     <td><p>24/7/365</p></td>
      <td></td>
    </tr>
    <tr>
-     <td rowspan="4"><p>初回応答SLA</p></td>
+     <td rowspan="4"><p>初回対応 SLA</p></td>
      <td><p>緊急</p></td>
      <td></td>
      <td></td>
      <td></td>
      <td></td>
-     <td><p>30分オンコール</p></td>
+     <td><p>30 分オンコール</p></td>
      <td></td>
    </tr>
    <tr>
      <td><p>緊急</p></td>
      <td></td>
-     <td><p>4時間</p></td>
-     <td><p>4時間</p></td>
-     <td><p>1時間</p></td>
-     <td><p>1時間</p></td>
+     <td><p>4 時間</p></td>
+     <td><p>4 時間</p></td>
+     <td><p>1 時間</p></td>
+     <td><p>1 時間</p></td>
      <td></td>
    </tr>
    <tr>
      <td><p>高</p></td>
      <td></td>
-     <td><p>1営業日</p></td>
-     <td><p>1営業日</p></td>
-     <td><p>4時間</p></td>
-     <td><p>4時間</p></td>
+     <td><p>1 営業日</p></td>
+     <td><p>1 営業日</p></td>
+     <td><p>4 時間</p></td>
+     <td><p>4 時間</p></td>
      <td></td>
    </tr>
    <tr>
      <td><p>中/通常</p></td>
      <td></td>
-     <td><p>2営業日</p></td>
-     <td><p>2営業日</p></td>
-     <td><p>1営業日</p></td>
-     <td><p>1営業日</p></td>
+     <td><p>2 営業日</p></td>
+     <td><p>2 営業日</p></td>
+     <td><p>1 営業日</p></td>
+     <td><p>1 営業日</p></td>
      <td></td>
    </tr>
    <tr>
@@ -579,7 +567,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p>メール/チケットポータル</p></td>
+     <td><p>Eメール/チケットポータル</p></td>
      <td></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
@@ -588,7 +576,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p>Slackチャンネル</p></td>
+     <td><p>Slack チャンネル</p></td>
      <td></td>
      <td></td>
      <td></td>
@@ -606,7 +594,7 @@ Zilliz Cloud は、その提供物を5つの異なるプランに分類してい
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p>担当サポートエンジニア</p></td>
+     <td><p>専任サポートエンジニア</p></td>
      <td></td>
      <td></td>
      <td></td>

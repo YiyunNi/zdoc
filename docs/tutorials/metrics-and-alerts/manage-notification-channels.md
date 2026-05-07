@@ -1,11 +1,12 @@
 ---
 title: "Manage Notification Channels | Cloud"
 slug: /manage-notification-channels
+sidebar_key: manage-notification-channels
 sidebar_label: "Manage Notification Channels"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Alert notifications in Zilliz Cloud keep you informed about events occurring within your clusters. By default, these notifications are sent to specified user email addresses. However, you can also set up custom notification channels using webhooks for more integrated, event-driven notifications. This guide will walk you through the process of configuring alert notification channels. | Cloud"
 type: origin
@@ -51,7 +52,7 @@ To set up email notifications,
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+    For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
     </Admonition>
 
@@ -81,7 +82,7 @@ To integrate with a PagerDuty service,
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+        For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
         </Admonition>
 
@@ -111,7 +112,7 @@ To set up Slack integration,
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+        For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
         </Admonition>
 
@@ -147,7 +148,7 @@ To set up Opsgenie integration,
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+        For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
         </Admonition>
 
@@ -175,7 +176,7 @@ To set up Lark integration,
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+        For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
         </Admonition>
 
@@ -203,7 +204,7 @@ The **Webhook** option offered by Zilliz Cloud allows you to set up a custom not
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+        For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
         </Admonition>
 
@@ -237,7 +238,7 @@ To set up WeCom alert notifications, follow these steps:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>Due to WeCom settings, some groups may not be able to add group bots.</p>
+    Due to WeCom settings, some groups may not be able to add group bots.
 
     </Admonition>
 
@@ -251,7 +252,7 @@ To set up WeCom alert notifications, follow these steps:
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+        For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
         </Admonition>
 
@@ -273,11 +274,11 @@ To set up DingTalk alert notifications, follow these steps:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>When configuring a custom bot, specify <strong>Custom Keywords</strong> in <strong>Security Setting</strong>:</p>
-    <ul>
-    <li><p><strong>Test</strong>: Receive alert notifications for connectivity tests.</p></li>
-    <li><p><strong>Alert</strong>: Receive alert notifications for actual events.</p></li>
-    </ul>
+    When configuring a custom bot, specify **Custom Keywords** in **Security Setting**:
+
+    - **Test**: Receive alert notifications for connectivity tests.
+
+    - **Alert**: Receive alert notifications for actual events.
 
     </Admonition>
 
@@ -291,7 +292,7 @@ To set up DingTalk alert notifications, follow these steps:
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a>.</p>
+        For organization alerts, you can only edit existing alert targets; creating new ones is not supported. For more information, refer to [Manage Organization Alerts](./manage-organization-alerts).
 
         </Admonition>
 

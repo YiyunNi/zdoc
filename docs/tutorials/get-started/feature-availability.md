@@ -1,16 +1,17 @@
 ---
 title: "Feature Availability | Cloud"
 slug: /feature-availability
+sidebar_key: feature-availability
 sidebar_label: "Feature Availability"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Last updated Oct 13, 2025 | Cloud"
 type: origin
 token: HpbSwzS6kiW9gikHpQ0cUZLWnlc
-sidebar_position: 17
+sidebar_position: 19
 keywords: 
   - zilliz
   - vector database
@@ -76,17 +77,13 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 
 ### Private Preview\{#private-preview}
 
-- [Extract, Transform & Load (ETL)](/reference/restful/merge-data-v2)
-
-- [Zero downtime migration](./zero-downtime-migration)
-
 - [Export backup files](./export-backup-files)
 
 - [Hosted models](./hosted-models)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Contact <a href="http://support.zilliz.com">Zilliz Support</a> to request access to these features. </p>
+Contact [Zilliz Support](http://support.zilliz.com) to request access to these features. 
 
 </Admonition>
 
@@ -96,7 +93,17 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Upgrade your cluster Milvus version to access these features.</p>
+Upgrade your cluster Milvus version to access these features.
+
+</Admonition>
+
+- [Access Logs](./access-logs)
+
+- [On-demand compute](./on-demand-compute)
+
+<Admonition type="info" icon="📘" title="Notes">
+
+If your region does support this feature, [contact us](http://support.zilliz.com) to request more regions
 
 </Admonition>
 
@@ -105,6 +112,8 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 - [Import Data from NumPy Files](./data-import-numpy)
 
 - [RESTful APIs (V1)](/reference/restful/v1)
+
+- [Merge Data](./merge-data)
 
 ### Deprecated\{#deprecated}
 

@@ -1,11 +1,12 @@
 ---
 title: "Data Model Design for Search | Cloud"
 slug: /schema-design-hands-on
+sidebar_key: schema-design-hands-on
 sidebar_label: "Data Model Design"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Information Retrieval systems, also known as search engines, are essential for various AI applications such as Retrieval-augmented generation (RAG), visual search, and product recommendation. At the core of these systems is a carefully-designed data model to organize, index and retrieve the information. | Cloud"
 type: origin

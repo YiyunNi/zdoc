@@ -1,11 +1,12 @@
 ---
 title: "Scale Replica | BYOC"
 slug: /manage-replica
+sidebar_key: manage-replica
 sidebar_label: "Scale Replica"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud supports cluster-level replication. Each replica is an exact copy of the resources and data in a cluster. Using replicas can increase query throughput and availability. | BYOC"
 type: origin
@@ -33,19 +34,19 @@ For users experiencing QPS bottlenecks, adding replicas can distribute the query
 
 Note that adding replicas will not increase the cluster capacity because the capacity is only determined by the number of query CUs of each cluster. If you want to increase the cluster capacity, please refer to [Scale Cluster](./scale-query-cu).
 
-This guide outlines the procedures of configuring replicas for a cluster in Zilliz Cloud.
+This guide outlines the procedures of configuring replicas for a **serving cluster** in Zilliz Cloud.
 
 ## Limits\{#limits}
 
 You can configure replicas for an existing Dedicated cluster as long as the following conditions are met:
 
-- The cluster has 8 query CUs or more
+- The cluster has 12 query CUs or more
 
-- The product of the cluster query CU count x replica count should not exceed 256.
+- The product of the cluster query CU count x replica count should not exceed 10,240.
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-<p>Updating the replica configurations may lead to slight service jitter. Please exercise caution.</p>
+Updating the replica configurations may lead to slight service jitter. Please exercise caution.
 
 </Admonition>
 
@@ -59,12 +60,13 @@ The following demo shows how to configure replicas on the Zilliz Cloud web conso
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>When clicking <strong>Save</strong> in the <strong>Scale Cluster Replicas</strong> dialog box, you will be prompted to check the resource quota for your project. If the resources are sufficient, the dialog box will disappear after the check is complete, otherwise, you can </p>
-<ul>
-<li><p>Click <strong>Go To Project Resource Settings</strong> to edit resource settings for the project, or</p></li>
-<li><p>Click <strong>Back to Last Step</strong> to change your cluster settings.</p></li>
-</ul>
-<p>During the process, some additional resources will be required for rolling; these resources will be released after use.</p>
+When clicking **Save** in the **Scale Cluster Replicas** dialog box, you will be prompted to check the resource quota for your project. If the resources are sufficient, the dialog box will disappear after the check is complete, otherwise, you can 
+
+- Click **Go To Project Resource Settings** to edit resource settings for the project, or
+
+- Click **Back to Last Step** to change your cluster settings.
+
+During the process, some additional resources will be required for rolling; these resources will be released after use.
 
 </Admonition>
 
@@ -133,10 +135,9 @@ When setting up dynamic scaling, you can configure the following bounds:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Selecting a maximum replica below the current value triggers an immediate scale-in.</p></li>
-<li><p>Selecting a minimum replica above the current value triggers an immediate scale-out.</p></li>
-</ul>
+- Selecting a maximum replica below the current value triggers an immediate scale-in.
+
+- Selecting a minimum replica above the current value triggers an immediate scale-out.
 
 </Admonition>
 

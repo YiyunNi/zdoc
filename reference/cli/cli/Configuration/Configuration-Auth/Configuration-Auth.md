@@ -12,10 +12,10 @@ token: CcG3fA4kslvDAzdAfK6cYC3unvb
 sidebar_position: 2
 sidebar_label: "Auth"
 keywords: 
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
   - zilliz
   - zilliz cloud
   - cloud

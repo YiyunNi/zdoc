@@ -13,10 +13,10 @@ type: docx
 token: GZ2jdLkKAojfofxm9BTcvwVCn4b
 sidebar_position: 1
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud
@@ -67,7 +67,7 @@ Running this command without any options triggers a set of interactive prompts.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Tiered-storage clusters are unavailable in BYOC projects.</p>
+Tiered-storage clusters are unavailable in BYOC projects.
 
 </Admonition>
 
@@ -159,7 +159,7 @@ zilliz cluster create
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>For available regions in your BYOC project, consult with your organization owner.</p>
+    For available regions in your BYOC project, consult with your organization owner.
 
     </Admonition>
 

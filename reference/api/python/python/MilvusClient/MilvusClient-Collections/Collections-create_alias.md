@@ -13,10 +13,10 @@ type: docx
 token: Kqlodu0AWoefKvxczcxc1c36nlf
 sidebar_position: 4
 keywords: 
+  - vector search algorithms
   - Question answering system
   - llm-as-a-judge
   - hybrid vector search
-  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation creates an alias for an existing collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
+This method applies to dedicated serving clusters and on-demand compute. 
 
 - For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
 

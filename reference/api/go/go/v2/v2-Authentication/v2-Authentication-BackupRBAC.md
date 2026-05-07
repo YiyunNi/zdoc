@@ -13,10 +13,10 @@ type: docx
 token: Iz1ZdJDWVo0uoUxQjlPcIbS2nMo
 sidebar_position: 2
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -1,28 +1,25 @@
 ---
 title: "Cohere Ranker | Cloud"
 slug: /cohere-model-ranker
+sidebar_key: cohere-model-ranker
 sidebar_label: "Cohere Ranker"
 beta: FALSE
 notebook: FALSE
-description: "Cohere Ranker は、Cohere の rerank モデルを活用して、取得された候補にセマンティックな再ランキングを適用することで、結果の順序付けを改善します。"
+description: "Cohere Ranker は、Cohere の再ランクモデルを活用し、取得された候補に対してセマンティックな再ランキングを適用することで、結果の順序を改善します。| Cloud"
 type: origin
 token: Mtxfwvu2fiOLwXkcURCcJxDPnLd
 sidebar_position: 4
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
   - collection
-  - データ
+  - data
   - 検索結果の再ランキング
   - 結果の再ランキング
   - 再ランキングモデル
   - モデルランカー
   - cohere
-  - 異常検知
-  - sentence transformers
-  - レコメンダーシステム
-  - 情報検索
 
 ---
 
@@ -31,47 +28,45 @@ import Admonition from '@theme/Admonition';
 
 # Cohere Ranker
 
-Cohere Ranker は [Cohere](https://cohere.com/) の rerank モデルを活用し、取得した候補にセマンティックな再ランキングを適用することで、結果の順序を改善します。
+Cohere Ranker は、[Cohere](https://cohere.com/) のリランクモデルを活用し、取得された候補に対してセマンティックなリランクを適用することで、結果の順序付けを改善します。
 
-検索または埋め込み関数とは異なり、Cohere Ranker は**検索後のステップ**として実行されます。クエリとドキュメントテキスト間のセマンティックな関連性を評価し、それに応じて候補結果を並べ替えます。
+検索や埋め込み（embedding）関数とは異なり、Cohere Ranker は **取得後ステップ** として実行されます。このステップでは、クエリとドキュメントテキスト間のセマンティックな関連性を評価し、それに応じて候補結果を並べ替えます。
 
-Cohere Ranker は、特に次のような場合に役立ちます。
+Cohere Ranker は、以下のケースで特に有用です。
 
-- 取得された結果は関連性があるが、理想的な順序ではない場合
+- 取得された結果は関連性があるものの、理想的な順序になっていない場合
+- ベクトル距離だけでなく、セマンティックな関連性が重要となる場合
+- 多言語または長文テキストに対するリランクが必要な場合
 
-- ベクトル距離だけよりもセマンティックな関連性が重要な場合
+## 利用前の準備\{#before-you-start}
 
-- 多言語または長文の再ランキングが必要な場合
+Cohere Ranker を使用する前に、以下の前提条件を満たしていることを確認してください。
 
-## 開始する前に{#before-you-start}
+- **リランクモデルを選択**
 
-Cohere Ranker を使用する前に、以下の前提条件が満たされていることを確認してください。
+    `rerank-english-v3.0` のような Cohere のリランクモデルをどれにするか決定します。選択したモデルによって、リランク時のセマンティック関連性の評価方法が決まります。詳細については、[Cohere 公式ドキュメント](https://docs.cohere.com/docs/models#rerank) を参照してください。
 
-- **再ランキングモデルを選択する**
+- **Cohere と統合し、統合IDを取得**
 
-    `rerank-english-v3.0` など、使用する Cohere 再ランキングモデルを決定します。選択によって、再ランキング中にセマンティックな関連性がどのように評価されるかが決まります。詳細については、[Cohere 公式ドキュメント](https://docs.cohere.com/docs/models#rerank)を参照してください。
+    Cohere Ranker を使用するには、まず [Zilliz Cloud コンソール](https://cloud.zilliz.com/login) で Cohere をモデルプロバイダーとして統合する必要があります。手順の詳細については、[モデルプロバイダーとの統合](./integrate-with-model-providers) を参照してください。
 
-- **Cohere と統合し、統合 ID を取得する**
+- **リランク可能なテキストフィールドを含むコレクションスキーマを設計**
 
-    Cohere Ranker を使用するには、まず [Zilliz Cloud コンソール](https://cloud.zilliz.com/login)で Cohere をモデルプロバイダーとして統合する必要があります。詳細な手順については、[モデルプロバイダーとの統合](./integrate-with-model-providers)を参照してください。
+    コレクションに、リランク対象のテキストを含む `VARCHAR` 型のフィールドが1つ含まれていることを確認してください。
 
-- **再ランキング可能なテキストフィールドを含むコレクションスキーマを計画する**
+## Cohere Ranker の使用\{#use-cohere-ranker}
 
-    コレクションに、再ランキングするテキストを含む `VARCHAR` フィールドが1つ含まれていることを確認してください。
+このセクションでは、検索時に Cohere Ranker を適用して取得結果をリランクする方法を説明します。
 
-## Cohere Ranker を使用する{#use-cohere-ranker}
+Cohere Ranker は検索時に定義・適用されるため、クエリごとにリランクを有効化または無効化できます。
 
-このセクションでは、検索中に Cohere Ranker を適用して、取得された結果を再ランキングする方法を示します。
+### 準備\{#preparations}
 
-Cohere Ranker は検索時に定義および適用され、クエリごとに再ランキングを有効または無効にできます。
-
-### 準備{#preparations}
-
-以下のセットアップは、検索と再ランキングのためのコレクションとサンプルデータを準備します。
+以下のセットアップにより、検索およびリランク用のコレクションとサンプルデータを準備します。
 
 <details>
 
-<summary><strong>サンプルデータを含むコレクションを準備する</strong></summary>
+<summary><strong>サンプルデータ付きコレクションを準備</strong></summary>
 
 ```python
 from pymilvus import MilvusClient, DataType
@@ -135,15 +130,15 @@ client.insert(collection_name, data)
 
 </details>
 
-### リランク関数の定義{#define-the-rerank-function}
+### リランク関数の定義\{#define-the-rerank-function}
 
-Cohere Rankerは、コレクションスキーマの一部としてではなく、**検索時に**定義されます。
+Cohere Ranker は、コレクションスキーマの一部としてではなく、**検索時**に定義されます。
 
-リランク関数は以下を指定します。
+リランク関数は以下の内容を指定します：
 
-- リランクするテキストフィールド（`VARCHAR`）
+- リランク対象のテキストフィールド（`VARCHAR`）
 
-- 使用するCohereリランクモデル
+- 使用する Cohere リランクモデル
 
 - 関連性を評価するクエリテキスト
 
@@ -169,11 +164,11 @@ cohere_ranker = Function(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>queries</code> 内の文字列の数は、検索リクエストで発行されたクエリの数と一致する必要があります。</p>
+<p><code>queries</code> 内の文字列の数は、検索リクエストで発行されたクエリの数と一致している必要があります。</p>
 
 </Admonition>
 
-### rerank 関数を使用した検索{#search-with-the-rerank-function}
+### rerank 機能を使用した検索\{#search-with-the-rerank-function}
 
 ```python
 query_vector = [0.12, 0.21, 0.29, 0.41]
@@ -191,21 +186,21 @@ results = client.search(
 print(results)
 ```
 
-この検索中:
+この検索の際に、以下の処理が行われます。
 
-1. Zilliz Cloud はベクトル検索を使用して候補を取得します。
+1. Zilliz Cloud はベクトル検索を用いて候補を取得します。
 
-1. Cohere Ranker は各候補のセマンティックな関連性を評価します。
+1. Cohere Ranker が各候補のセマンティック関連性を評価します。
 
-1. 結果セットは返される前に並べ替えられます。
+1. 結果セットは返却前に並べ替えられます。
 
-## 次のステップ{#next-steps}
+## Next steps\{#next-steps}
 
 Cohere Ranker はハイブリッド検索でも使用できます。
 
-検索とハイブリッド検索は同じ方法でランカーを適用します。
+通常の検索とハイブリッド検索では、ランカーの適用方法は同じです。
 
-どちらの場合も、検索時に `ranker` パラメータを介して rerank 関数を渡します。
+いずれの場合も、検索時に `ranker` パラメータ経由で rerank 関数を渡します。
 
 詳細については、[Multi-Vector Hybrid Search](./hybrid-search) を参照してください。
 

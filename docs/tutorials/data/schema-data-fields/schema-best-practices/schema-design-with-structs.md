@@ -1,11 +1,12 @@
 ---
 title: "Data Model Design with an Array of Structs | Cloud"
 slug: /schema-design-with-structs
+sidebar_key: schema-design-with-structs
 sidebar_label: "Data Model with Structs"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Modern AI applications, especially in the Internet of Things (IoT) and autonomous driving, typically reason over rich, structured events a sensor reading with its timestamp and vector embedding, a diagnostic log with an error code and audio snippet, or a trip segment with location, speed, and scene context. These require the database to natively support the ingestion and search of nested data. | Cloud"
 type: origin
@@ -304,7 +305,7 @@ To start, we need to initialize the schema for a caption Struct, a front_cars St
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>Although a front car does not involve vector embeddings, you still need to include it as an array of Struct because the data size exceeds the maximum for a JSON field.</p>
+    Although a front car does not involve vector embeddings, you still need to include it as an array of Struct because the data size exceeds the maximum for a JSON field.
 
     </Admonition>
 

@@ -1,11 +1,12 @@
 ---
 title: "Required GCP API Services | BYOC"
 slug: /required-api-services-gcp
+sidebar_key: required-api-services-gcp
 sidebar_label: "Required GCP API Services"
-beta: CONTACT SALES
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: CONTACT SALES
 notebook: FALSE
 description: "This page lists the Google Cloud Platform (GCP) API services required to create GCP resources using the Zilliz Cloud Terraform Provider and provides several ways to enable them. | BYOC"
 type: origin
@@ -32,7 +33,7 @@ This page lists the Google Cloud Platform (GCP) API services required to create 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
+Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
 
 </Admonition>
 
@@ -86,10 +87,9 @@ gcloud services enable \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Before running the above command, ensure you have sufficient permissions to enable these services. Otherwise, ask a security admin in your GCP project first.</p></li>
-<li><p>You must replace <code>PROJECT_ID</code> in the above command with your GCP project ID.</p></li>
-</ul>
+- Before running the above command, ensure you have sufficient permissions to enable these services. Otherwise, ask a security admin in your GCP project first.
+
+- You must replace `PROJECT_ID` in the above command with your GCP project ID.
 
 </Admonition>
 
@@ -113,7 +113,7 @@ gcloud services list --enabled --project=PROJECT_ID
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You must replace <code>PROJECT_ID</code> in the above command with your GCP project ID.</p>
+You must replace `PROJECT_ID` in the above command with your GCP project ID.
 
 </Admonition>
 

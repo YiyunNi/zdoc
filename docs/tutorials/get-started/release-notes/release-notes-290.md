@@ -1,16 +1,17 @@
 ---
 title: "Release Notes (June 18, 2024) | Cloud"
 slug: /release-notes-290
+sidebar_key: release-notes-290
 sidebar_label: "June 18, 2024"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "In this release, Zilliz Cloud has unveiled an array of new features backed by Milvus 2.4, including sparse vector support, enhanced multi-vector and hybrid search, an inverted index and fuzzy matching for faster queries, and grouping search for document-level recall. It also introduces Float16 and BFloat16 data types for improved search efficiency. In addition, the Pipelines feature now tracks token usage stats with every data ingestion and search request, streamlining performance monitoring. You can find detailed stats on the invoice page. | Cloud"
 type: origin
 token: GanXwLnJkiymKVkNPhecdi9MnGf
-sidebar_position: 18
+sidebar_position: 20
 keywords: 
   - zilliz
   - vector database
@@ -38,7 +39,7 @@ Milvus 2.4 offers many efficient capabilities for RAG and multimodal data search
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Milvus 2.4 has not reached a stable version. Be cautious when you adopt Milvus 2.4 features in your production environment.</p>
+Milvus 2.4 has not reached a stable version. Be cautious when you adopt Milvus 2.4 features in your production environment.
 
 </Admonition>
 

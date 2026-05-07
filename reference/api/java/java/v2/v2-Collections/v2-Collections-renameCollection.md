@@ -13,10 +13,10 @@ type: docx
 token: EZw8dwHXzoggBsxB0SWc0MANnud
 sidebar_position: 21
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud

@@ -1,11 +1,12 @@
 ---
 title: "Range Search | BYOC"
 slug: /range-search
+sidebar_key: range-search
 sidebar_label: "Range Search"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A range search improves search result relevancy by restricting the distance or score of the returned entities within a specific range. This page helps you understand what range search is and the procedures to conduct a range search. | BYOC"
 type: origin
@@ -270,6 +271,6 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If the query vectors already exist in the target collection, consider using <code>ids</code> instead of retrieving them before searches. For details, refer to <a href="./primary-key-search">Primary-Key Search</a>.</p>
+If the query vectors already exist in the target collection, consider using `ids` instead of retrieving them before searches. For details, refer to [Primary-Key Search](./primary-key-search).
 
 </Admonition>

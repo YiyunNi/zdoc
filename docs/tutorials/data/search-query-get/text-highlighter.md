@@ -1,11 +1,12 @@
 ---
 title: "Lexical Highlighter | Cloud"
 slug: /text-highlighter
+sidebar_key: text-highlighter
 sidebar_label: "Lexical Highlighter"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The Highlighter in Zilliz Cloud annotates matched terms in text fields by wrapping them with customizable tags. Highlighting helps explain why a document matches, improves result readability, and supports rich rendering in search and RAG applications. | Cloud"
 type: origin
@@ -118,7 +119,7 @@ In addition to highlighting search terms, you can highlight terms used in text-b
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Currently, only the <code>TEXT_MATCH</code> filtering condition is supported for query term highlighting. To learn more, refer to <a href="./text-match">Text Match</a>.</p>
+Currently, only the `TEXT_MATCH` filtering condition is supported for query term highlighting. To learn more, refer to [Text Match](./text-match).
 
 </Admonition>
 

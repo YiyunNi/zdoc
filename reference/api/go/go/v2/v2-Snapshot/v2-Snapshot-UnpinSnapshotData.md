@@ -13,10 +13,10 @@ type: docx
 token: NgKmd79aSob0ruxRuUEcZba7nge
 sidebar_position: 9
 keywords: 
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud

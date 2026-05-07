@@ -1,11 +1,12 @@
 ---
 title: "Index Vector Fields | BYOC"
 slug: /index-vector-fields
-sidebar_label: "Index Vector Fields"
-beta: FALSE
+sidebar_key: index-vector-fields
+sidebar_label: "Vector Indexes"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "This guide walks you through the basic operations on creating and managing indexes on vector fields in a collection. | BYOC"
 type: origin
@@ -252,7 +253,7 @@ In the provided code snippet, we have established indexes on the vector field wi
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Currently, you can create only one index file for each field in a collection.</p>
+Currently, you can create only one index file for each field in a collection.
 
 </Admonition>
 
@@ -387,7 +388,7 @@ You can simply drop an index if it is no longer needed.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Before dropping an index, make sure it has been released first.</p>
+Before dropping an index, make sure it has been released first.
 
 </Admonition>
 

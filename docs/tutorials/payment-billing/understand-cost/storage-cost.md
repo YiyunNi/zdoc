@@ -1,16 +1,17 @@
 ---
 title: "Storage Cost | Cloud"
 slug: /storage-cost
+sidebar_key: storage-cost
 sidebar_label: "Storage"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "In Zilliz Cloud, storage costs are incurred when you store data or backup files, regardless of whether your cluster is running. | Cloud"
 type: origin
 token: PNj2w5fY9ifr82kbX8ucKgXAn0r
-sidebar_position: 3
+sidebar_position: 4
 keywords: 
   - zilliz
   - vector database
@@ -32,11 +33,19 @@ In Zilliz Cloud, storage costs are incurred when you store data or backup files,
 
 You will be billed for storage in the following scenarios:
 
-- Cluster data storage: raw data and indexes stored in your clusters. If your cluster type is tiered-storage, additional cold data access costs may incur.
+- Dedicated cluster: data stored in your Dedicated cluster.
+
+- Serverless cluster: data stored in your Serverless cluster.
+
+- [Database](./on-demand-database): data stored in your databases used for on-demand search.
+
+    - Data and indexes in your managed collections.
+
+    - Indexes in your external collections.
 
 - [Backup](./backup-and-restore) storage: backup files you create for disaster recovery.
 
-- [Volume](./volume-explained) storage: either structured data or collections of unstructured data files stored in a volume.
+- [Managed volume](./managed-volume) storage: either structured data or collections of unstructured data files stored in a volume.
 
 ## Cost calculation\{#cost-calculation}
 
@@ -50,41 +59,21 @@ Storage Cost = Storage Unit Price x Data Size x Duration
 
 - Duration: The length of time data or backup files are stored in Zilliz Cloud.
 
-### Cold data access\{#cold-data-access}
-
-<Admonition type="info" icon="📘" title="Note">
-
-<p>This billing item is only applicable to tiered-storage clusters that are compatible with Milvus 2.6.x. </p>
-
-</Admonition>
-
-If your cluster type is **tiered-storage**, additional cold data access costs may incur. The following formula demonstrates how to calculate cold data access costs.
-
-```bash
-Cold Data Access Cost =  Cold Data Access Unit Price x Cold Data Size
-```
-
-- Cold Data Access Unit Price: Determined by the cloud region. For detailed rates, refer to [Zilliz Cloud Pricing Guide](https://zilliz.com/pricing/pricing-guide).
-
-- Cold Data Size: The size of cold data stored in object storage that is scanned during each read request (search or query). Data size is measured in GB.
-
 ## Billing rules\{#billing-rules}
 
 The billing rules of cluster, volume storage is slightly different from backup storage and cold data access.
 
-- **Cluster Data and Volume Storage:** Billed hourly, minimum charge of 1 hour.
+- **Dedicated & Serverless Cluster, Volume, and Database Storage:** Billed hourly, minimum charge of 1 hour.
 
 - **Backup Storage:** Billed daily, minimum charge of 1 day.
-
-- **Cold Data Access**: Billed per read request (search or query), minimum charge of 1 MB. Requests larger than 1 MB are billed based on the actual scanned data size.
 
 ## Examples\{#examples}
 
 The following are some examples to help you understand how storage costs are calculated.
 
-### Example 1: Cluster storage cost\{#example-1-cluster-storage-cost}
+### Example 1: Dedicated cluster storage cost\{#example-1-dedicated-cluster-storage-cost}
 
-Suppose your cluster configuration is as follows:
+Suppose your serving cluster configuration is as follows:
 
 - **Cloud Provider & Region**: AWS us-east-1 (Virginia)
 
@@ -118,23 +107,9 @@ Due to the [billing rule](./storage-cost#billing-rules), any partial day is roun
 
 The total backup storage cost of the example cluster is  `$0.025 x 20 x 1.5 = $0.75`.
 
-### Example 3: Volume storage cost\{#example-3-volume-storage-cost}
+### Example 3: Managed volume storage cost\{#example-3-managed-volume-storage-cost}
 
 If you upload **10 GB** of data to a volume for import and keep it for **1 month**, with a unit price of **&#36;0.04/GB per month**, the cost is  `$0.04 × 10 × 1 = $0.40`.
-
-### Example 4: Cluster cold data access cost\{#example-4-cluster-cold-data-access-cost}
-
-Suppose your cluster configuration is as follows:
-
-- **Cloud Provider & Region**: AWS us-east-1 (Virginia)
-
-- **Cluster Type**: Tiered-storage
-
-- **Cold Data Size**: 200 GB
-
-With the cloud provider and region, and the cluster type information, you can find on the [Pricing Guide](https://zilliz.com/pricing/pricing-guide) that the cold data access unit price is **&#36;0.0005/GB**.
-
-The total cold data access cost is `$0.0005 x 200 = $0.1`.
 
 ## FAQs\{#faqs}
 

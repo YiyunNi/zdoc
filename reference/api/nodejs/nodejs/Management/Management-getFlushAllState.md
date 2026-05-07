@@ -13,10 +13,10 @@ type: docx
 token: WgfTdXbMmoFhO9xBpencxLRRnbb
 sidebar_position: 25
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud

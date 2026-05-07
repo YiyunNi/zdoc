@@ -1,11 +1,12 @@
 ---
 title: "Manage Cluster Roles (Console) | Cloud"
 slug: /cluster-roles
+sidebar_key: cluster-roles
 sidebar_label: "Manage Cluster Roles (Console)"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A cluster role defines the privileges that a user has within the cluster. More specifically, the cluster role controls a cluster user's privileges on the cluster, database, and collection level. | Cloud"
 type: origin
@@ -92,8 +93,9 @@ For collection-level access control, it is recommended to create custom roles.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is exclusively available to Dedicated clusters.</p>
-<p>Currently, Zilliz Cloud only supports creating custom roles with built-in privilege groups on the web console. If you need to create custom roles with specific privileges or custom privilege groups, please <a href="http://support.zilliz.com">create a support ticket</a> first so that we can enable this feature for you. Once the feature is enabled, you can use the SDKs to <a href="./cluster-privileges#custom-privilege-groups">create custom privilege groups</a>.</p>
+This feature is exclusively available to Dedicated clusters.
+
+Currently, Zilliz Cloud only supports creating custom roles with built-in privilege groups on the web console. If you need to create custom roles with specific privileges or custom privilege groups, please [create a support ticket](http://support.zilliz.com) first so that we can enable this feature for you. Once the feature is enabled, you can use the SDKs to [create custom privilege groups](./cluster-privileges#custom-privilege-groups).
 
 </Admonition>
 
@@ -119,7 +121,7 @@ For collection-level access control, it is recommended to create custom roles.
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>The three levels of built-in privilege groups do not have a cascading relationship. Setting a built-in privilege group at the instance level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.</p>
+    The three levels of built-in privilege groups do not have a cascading relationship. Setting a built-in privilege group at the instance level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.
 
     </Admonition>
 

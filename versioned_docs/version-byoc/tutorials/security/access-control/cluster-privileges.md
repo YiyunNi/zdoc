@@ -1,11 +1,12 @@
 ---
 title: "Privileges & Privilege Groups | BYOC"
 slug: /cluster-privileges
+sidebar_key: cluster-privileges
 sidebar_label: "Privileges & Privilege Groups"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A privilege refers to the permission of specific operations on certain Zilliz Cloud resources such as clusters, databases, and collections. Privileges are assigned to roles, which are then granted to users, defining the operations users can perform on the resources. An example of a privilege could be the permission to insert data into a collection named `collection01`. | BYOC"
 type: origin
@@ -46,7 +47,7 @@ Zilliz Cloud offers a total of 9 built-in privilege groups on the collection, da
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The three levels of built-in privilege groups do not have a cascading relationship. Setting a privilege group at the cluster level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.</p>
+The three levels of built-in privilege groups do not have a cascading relationship. Setting a privilege group at the cluster level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.
 
 </Admonition>
 
@@ -455,7 +456,7 @@ If the built-in privileges do not meet your needs, you can create custom privile
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>To create and manage custom privilege groups, please <a href="http://support.zilliz.com">create a support ticket</a> so that we can enable this feature for you.</p>
+To create and manage custom privilege groups, please [create a support ticket](http://support.zilliz.com) so that we can enable this feature for you.
 
 </Admonition>
 

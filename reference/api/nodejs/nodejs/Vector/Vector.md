@@ -12,10 +12,10 @@ token: HgpMfqiBwlO0sudMbiVcYpHHn5f
 sidebar_position: 7
 sidebar_label: "Vector"
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

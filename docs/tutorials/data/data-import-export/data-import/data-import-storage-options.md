@@ -1,11 +1,12 @@
 ---
 title: "Storage Options | Cloud"
 slug: /data-import-storage-options
+sidebar_key: data-import-storage-options
 sidebar_label: "Storage Options"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Before importing data, it's important to understand the supported cloud storage options and their corresponding URL formats. This ensures that your requests can be properly processed without undergoing validation errors. | Cloud"
 type: origin
@@ -65,7 +66,7 @@ Before importing data, it's important to understand the supported cloud storage 
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>If your bucket or specific items in the bucket are encrypted with a custom KMS ID, you must provide decryption permissions for that KMS ID along with the authentication credentials.</p>
+        If your bucket or specific items in the bucket are encrypted with a custom KMS ID, you must provide decryption permissions for that KMS ID along with the authentication credentials.
 
         </Admonition>
 

@@ -1,11 +1,12 @@
 ---
 title: "Hosted Models | Cloud"
 slug: /hosted-models
+sidebar_key: hosted-models
 sidebar_label: "Hosted Models"
-beta: PRIVATE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: PRIVATE
 notebook: FALSE
 description: "Zilliz Cloud can host embedding and reranking models on Zilliz-managed infrastructure. You can deploy dedicated, fully managed model instances and use them directly from Zilliz Cloud for stable and high-performance inference. | Cloud"
 type: origin
@@ -40,7 +41,7 @@ Currently, Zilliz Cloud supports the following regions, instance types, and mode
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you have specific requirements for hosted models, please <a href="http://support.zilliz.com">contact us</a>.</p>
+If you have specific requirements for hosted models, please [contact us](http://support.zilliz.com).
 
 </Admonition>
 

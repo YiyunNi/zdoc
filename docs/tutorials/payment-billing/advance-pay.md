@@ -1,11 +1,12 @@
 ---
 title: "Use Advance Pay | Cloud"
 slug: /advance-pay
+sidebar_key: advance-pay
 sidebar_label: "Advance Pay"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud also accepts advance pay (bank transfer) as the payment method in alternative to adding a credit card or subscribing on AWS Marketplace. | Cloud"
 type: origin
@@ -32,8 +33,9 @@ Currently, you can only [contact us](https://zilliz.com/contact-sales) to add fu
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>The payment method priority is:  Credits &gt; Advance Pay &gt; Credit card /AWS marketplace subscription.</p>
-<p>This means if there are still remaining credits, and you have added funds and added a credit card or subscribed on AWS Marketplace, your credits will be deducted first to cover your usage fee. If the credits are not sufficient, we will deduct your Advance Pay funds. If the funds and credits are still not enough to cover the fee, we will resort to charging your credit card or AWS Marketplace account.</p>
+The payment method priority is:  Credits > Advance Pay > Credit card /AWS marketplace subscription.
+
+This means if there are still remaining credits, and you have added funds and added a credit card or subscribed on AWS Marketplace, your credits will be deducted first to cover your usage fee. If the credits are not sufficient, we will deduct your Advance Pay funds. If the funds and credits are still not enough to cover the fee, we will resort to charging your credit card or AWS Marketplace account.
 
 </Admonition>
 

@@ -13,10 +13,10 @@ type: docx
 token: BcAVdlDIioMUXTxqyZkcXfqznKd
 sidebar_position: 25
 keywords: 
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
   - zilliz
   - zilliz cloud
   - cloud

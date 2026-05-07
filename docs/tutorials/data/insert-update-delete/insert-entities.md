@@ -1,11 +1,12 @@
 ---
 title: "Insert Entities | Cloud"
 slug: /insert-entities
-sidebar_label: "Insert Entities"
-beta: FALSE
+sidebar_key: insert-entities
+sidebar_label: "Insert"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Entities in a collection are data records that share the same set of fields. Field values in every data record form an entity. This page introduces how to insert entities into a collection. | Cloud"
 type: origin
@@ -32,9 +33,7 @@ Entities in a collection are data records that share the same set of fields. Fie
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><strong>Duplicate handling</strong>: The standard <code>insert</code> operation does not check for duplicate primary keys. Inserting data with an existing primary key creates a new entity with the same key, leading to data duplication and potential application issues. To update existing entities or avoid duplicates, use the <code>upsert</code> operation instead. For more information, refer to <a href="./upsert-entities">Upsert Entities</a>.</li>
-</ul>
+- **Duplicate handling**: The standard `insert` operation does not check for duplicate primary keys. Inserting data with an existing primary key creates a new entity with the same key, leading to data duplication and potential application issues. To update existing entities or avoid duplicates, use the `upsert` operation instead. For more information, refer to [Upsert Entities](./upsert-entities).
 
 </Admonition>
 

@@ -1,11 +1,12 @@
 ---
 title: "Migrate from Milvus to Zilliz Cloud Via Backup Files | BYOC"
 slug: /via-backup-files
+sidebar_key: via-backup-files
 sidebar_label: "Via Backup Files"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud offers Milvus as a fully managed, cloud-hosted solution for users who want to use the Milvus vector database without the need to manage the infrastructure themselves. This topic describes how to migrate from Milvus by uploading backup files directly. | BYOC"
 type: origin
@@ -41,8 +42,6 @@ Make sure the following prerequisites are met:
     - **From Local File**: Prepare local backup files in advance. For information on how to prepare backup files, refer to [Prepare backup files for migration](./via-backup-files#prepare-backup-files-for-migration).
 
     - **From Object Storage**: The public URL and access credentials for the Milvus object storage. You can choose long-term or temporary credentials. For detailed examples of an object storage URL, see [FAQ](./via-backup-files#faq).
-
-    - **From Volume**: For very large local backup files, upload the file to a Zilliz Cloud volume first, then specify the file path in that volume.
 
 - You have been granted the **Organization Owner** or **Project Admin** role. If you do not have the necessary permissions, contact your Zilliz Cloud Organization Owner.
 
@@ -96,10 +95,9 @@ To prepare migration data for Milvus 2.x,
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <ul>
-    <li><p>For a Milvus instance installed using Docker Compose, <code>minio.bucketName</code> defaults to <code>a-bucket</code> and <code>rootPath</code> defaults to <code>files</code>.</p></li>
-    <li><p>For a Milvus instance installed on Kubernetes, <code>minio.bucketName</code> defaults to <code>milvus-bucket</code> and <code>rootPath</code> defaults to <code>file</code>.</p></li>
-    </ul>
+    - For a Milvus instance installed using Docker Compose, `minio.bucketName` defaults to `a-bucket` and `rootPath` defaults to `files`.
+
+    - For a Milvus instance installed on Kubernetes, `minio.bucketName` defaults to `milvus-bucket` and `rootPath` defaults to `file`.
 
     </Admonition>
 
@@ -142,13 +140,13 @@ To prepare migration data for Milvus 2.x,
 
 ## Migrate data to Zilliz Cloud\{#migrate-data-to-zilliz-cloud}
 
-With backup files ready, you can migrate the data from local files, an object storage, or a volume.
+With backup files ready, you can migrate the data from local files.
 
 <Supademo id="cmbhd2wj85jktsn1rnjmi4t5o" title="Zilliz Cloud - Migrate from Milvus via Backup File Demo" />
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If full text search is already enabled for the source collection, Zilliz Cloud will preserve its Function settings in the target collection after migration. These inherited settings cannot be modified.</p>
+If full text search is already enabled for the source collection, Zilliz Cloud will preserve its Function settings in the target collection after migration. These inherited settings cannot be modified.
 
 </Admonition>
 
@@ -160,7 +158,7 @@ Once you click **Migrate**, a migration job will be generated. You can check the
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>After migration, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.</p>
+After migration, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.
 
 </Admonition>
 

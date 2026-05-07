@@ -12,10 +12,10 @@ token: IU8kfKYCwlJHotdqhJ0cTaaknDJ
 sidebar_position: 6
 sidebar_label: "Milvus Standalone"
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
   - zilliz
   - zilliz cloud
   - cloud

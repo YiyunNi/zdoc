@@ -1,11 +1,12 @@
 ---
 title: "Remove Punct | BYOC"
 slug: /remove-punct-filter
+sidebar_key: remove-punct-filter
 sidebar_label: "Remove Punct"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `removepunct` filter removes standalone punctuation tokens from the token stream. Use it when you want cleaner text processing that focuses on meaningful content words rather than punctuation marks. | BYOC"
 type: origin
@@ -33,7 +34,7 @@ The `removepunct` filter removes standalone punctuation tokens from the token st
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This filter is most effective with <code>jieba</code>, <code>lindera</code>, and <code>icu</code> tokenizers, which preserve punctuation as separate tokens (e.g., <code>"Hello!"</code> → <code>["Hello", "!"]</code>). Other tokenizers like <code>standard</code> and <code>whitespace</code> discard punctuation during tokenization, so <code>removepunct</code> has no effect on them.</p>
+This filter is most effective with `jieba`, `lindera`, and `icu` tokenizers, which preserve punctuation as separate tokens (e.g., `"Hello!"` → `["Hello", "!"]`). Other tokenizers like `standard` and `whitespace` discard punctuation during tokenization, so `removepunct` has no effect on them.
 
 </Admonition>
 

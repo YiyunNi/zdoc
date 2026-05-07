@@ -12,10 +12,10 @@ token: P8hMfnsOjlir3rdvsKDcEQG8nCc
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud

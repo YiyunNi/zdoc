@@ -1,11 +1,12 @@
 ---
 title: "Standard Tokenizer | Cloud"
 slug: /standard-tokenizer
-sidebar_label: "Standard Tokenizer"
-beta: FALSE
+sidebar_key: standard-tokenizer
+sidebar_label: "Standard"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `standard` tokenizer in Zilliz Cloud splits text based on spaces and punctuation marks, making it suitable for most languages. | Cloud"
 type: origin
@@ -145,7 +146,7 @@ analyzerParams='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>For simpler setup, you may choose to use the <a href="./standard-analyzer"><code>standard</code></a> <a href="./standard-analyzer">analyzer</a>, which combines the <code>standard</code> tokenizer with the <a href="./lowercase-filter"><code>lowercase</code></a><a href="./lowercase-filter"> filter</a>.</p>
+For simpler setup, you may choose to use the [`standard`](./standard-analyzer) [analyzer](./standard-analyzer), which combines the `standard` tokenizer with the [`lowercase`](./lowercase-filter)[ filter](./lowercase-filter).
 
 </Admonition>
 

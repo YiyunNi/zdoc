@@ -13,10 +13,10 @@ type: docx
 token: EhzHdkYfUoOsprxhtPNcmMPKnEc
 sidebar_position: 5
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

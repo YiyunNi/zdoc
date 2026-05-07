@@ -13,10 +13,10 @@ type: docx
 token: Hl6adortyo5I2nxdGx8cEDJ8noe
 sidebar_position: 22
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
   - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
   - zilliz
   - zilliz cloud
   - cloud

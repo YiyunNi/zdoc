@@ -1,11 +1,12 @@
 ---
 title: "View Platform Audit Logs | BYOC"
 slug: /view-activities
+sidebar_key: view-activities
 sidebar_label: "View Platform Audit Logs"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The Zilliz Cloud Platform Audit Logs feature provides a comprehensive view of logs associated with a specific Zilliz Cloud organization, encompassing  access logs. | BYOC"
 type: origin
@@ -43,7 +44,7 @@ To enhance your control and ease in navigating through the platform audit logs, 
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>Ensure that the time span between your chosen start date and end date does not exceed 30 days.</p>
+    Ensure that the time span between your chosen start date and end date does not exceed 30 days.
 
     </Admonition>
 

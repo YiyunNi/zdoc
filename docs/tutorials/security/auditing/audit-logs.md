@@ -1,11 +1,12 @@
 ---
 title: "VectorDB Audit Logs | Cloud"
 slug: /audit-logs
+sidebar_key: audit-logs
 sidebar_label: "VectorDB Audit Logs"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Audit logging allows administrators to track and monitor user-driven operations and API calls on Zilliz Cloud clusters. This feature provides a detailed record of vector db activities, including vector searches, query execution, index management, and other data operations. | Cloud"
 type: origin
@@ -34,12 +35,13 @@ Audit logging allows administrators to track and monitor user-driven operations 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Audit logging is available only for <strong>Dedicated</strong> clusters in <strong>Enterprise</strong> projects or higher plan tiers.</p></li>
-<li><p>Audit logging is supported only for Zilliz Cloud clusters running Milvus 2.5.x.</p></li>
-<li><p>Audit logging can be forwarded to <a href="./integrate-with-aws-s3">AWS S3</a>, <a href="./integrate-with-azure-blob-storage">Azure Blob Storage</a>, or <a href="./integrate-with-gcp">Google Cloud Storage</a>.</p></li>
-<li><p>Enabling audit logging incur charges. For details, see <a href="./audit-log-cost">Audit Log</a>.</p></li>
-</ul>
+- Audit logging is available only for **Dedicated** clusters in **Enterprise** projects or higher plan tiers.
+
+- Audit logging is supported only for Zilliz Cloud clusters running Milvus 2.5.x or later.
+
+- Audit logging can be forwarded to [AWS S3](./integrate-with-aws-s3), [Azure Blob Storage](./integrate-with-azure-blob-storage), or [Google Cloud Storage](./integrate-with-gcp).
+
+- Enabling audit logging incur charges. For details, see [Audit Log](./audit-log-cost).
 
 </Admonition>
 
@@ -55,7 +57,7 @@ Audit logging tracks a wide range of operations on the data plane, including:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Cluster-level data jobs such as migration, backup, and restore do not generate audit logs. To view these activity records, refer to <a href="./view-activities">View Activities</a>.</p>
+Cluster-level data jobs such as migration, backup, and restore do not generate audit logs. To view these activity records, refer to [View Activities](./view-activities).
 
 </Admonition>
 
@@ -162,7 +164,7 @@ Audit logging on Zilliz Cloud forwards audit logs directly to your storage bucke
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>Only the buckets in the same region as your cluster will appear in the drop-down list.</p>
+        Only the buckets in the same region as your cluster will appear in the drop-down list.
 
         </Admonition>
 

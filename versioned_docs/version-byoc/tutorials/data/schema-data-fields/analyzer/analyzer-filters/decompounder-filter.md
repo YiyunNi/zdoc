@@ -1,11 +1,12 @@
 ---
 title: "Decompounder | BYOC"
 slug: /decompounder-filter
+sidebar_key: decompounder-filter
 sidebar_label: "Decompounder"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `decompounder` filter splits compound words into individual components based on a specified dictionary, making it easier to search for parts of compound terms. This filter is particularly useful for languages that frequently use compound words, such as German. | BYOC"
 type: origin
@@ -32,6 +33,10 @@ import TabItem from '@theme/TabItem';
 The `decompounder` filter splits compound words into individual components based on a specified dictionary, making it easier to search for parts of compound terms. This filter is particularly useful for languages that frequently use compound words, such as German.
 
 ## Configuration\{#configuration}
+
+The `decompounder` filter accepts its component dictionary either inline via the `word_list` parameter or from a registered file resource via the `word_list_file` parameter.
+
+### Inline word list\{#inline-word-list}
 
 The `decompounder` filter is a custom filter in Zilliz Cloud. To use it, specify `"type": "decompounder"` in the filter configuration, along with a `word_list` parameter that provides the dictionary of word components to recognize.
 

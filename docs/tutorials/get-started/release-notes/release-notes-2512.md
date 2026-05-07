@@ -1,16 +1,17 @@
 ---
 title: "December 2025 Release Notes | Cloud"
 slug: /release-notes-2512
+sidebar_key: release-notes-2512
 sidebar_label: "December, 2025"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "December 2025 Release Notes | Cloud"
 type: origin
 token: LX0RwtoEEihhNukmt1DcSQGfnjb
-sidebar_position: 4
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database
@@ -40,7 +41,7 @@ import Grid from '@site/src/components/Grid';
 
         This release marks the GA milestone for the Milvus v2.6.x, bringing production-ready stability and full feature support on Zilliz Cloud, including Geometry, Struct, and TimestampTz data types, field addition without downtime, enhanced full-text search, accelerated JSON filtering, new reranking functions, INT8 vector support, partial upserts, and the MINHASH_LSH index.
 
-        Tiered Storage also reaches GA, introducing the upgraded hot/warm/cold architecture and beginning cold data-access billing. See [Storage Cost](./storage-cost#cold-data-access) for full details.
+        Tiered Storage also reaches GA, introducing the upgraded hot/warm/cold architecture and beginning cold data-access billing. See [Storage Cost](./storage-cost) for full details.
 
     </div>
 
@@ -102,7 +103,7 @@ import Grid from '@site/src/components/Grid';
 
         With GA, Volume now supports two billing modes: Free Trial Volume and Pay-as-you-go Volume. Pay-as-you-go Volumes will begin billing based on storage usage.
 
-        For details, refer to [Volume Explained](./volume-explained), [Manage Volumes (SDK)](./manage-stages), and [Manage Volumes (Console)](./manage-volumes-via-console).
+        For details, refer to Volume Explained, Manage Volumes (SDK), and Manage Volumes (Console).
 
         ## Organization-Level IP Access Allowlist\{#organization-level-ip-access-allowlist}
 

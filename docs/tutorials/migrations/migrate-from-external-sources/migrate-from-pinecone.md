@@ -1,11 +1,12 @@
 ---
 title: "Migrate from Pinecone to Zilliz Cloud | Cloud"
 slug: /migrate-from-pinecone
+sidebar_key: migrate-from-pinecone
 sidebar_label: "Pinecone"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "This topic describes how Zilliz Cloud handles data type mapping, field conversion, namespace processing, and collection naming rules when migrating from Pinecone. | Cloud"
 type: origin
@@ -118,7 +119,7 @@ Understanding how Pinecone data types map to Zilliz Cloud is crucial for plannin
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloud samples 100 rows to detect metadata schema. You can manually add additional fields if needed.</p>
+Zilliz Cloud samples 100 rows to detect metadata schema. You can manually add additional fields if needed.
 
 </Admonition>
 
@@ -195,12 +196,13 @@ Pinecone namespaces can be migrated using two strategies:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Pinecone's <code>default</code> namespace handling:</p>
-<ul>
-<li><p><strong>As Partition</strong>: Becomes <code>_default</code> partition in Zilliz Cloud</p></li>
-<li><p><strong>As Partition Key</strong>: Becomes empty string <code>""</code> value</p></li>
-</ul>
-<p>For more information on partition and partition key concepts, refer to <a href="./manage-partitions">Manage Partitions</a> and <a href="./use-partition-key">Use Partition Key</a>.</p>
+Pinecone's `default` namespace handling:
+
+- **As Partition**: Becomes `_default` partition in Zilliz Cloud
+
+- **As Partition Key**: Becomes empty string `""` value
+
+For more information on partition and partition key concepts, refer to [Manage Partitions](./manage-partitions) and [Use Partition Key](./use-partition-key).
 
 </Admonition>
 

@@ -1,11 +1,12 @@
 ---
 title: "ARRAY Operators | Cloud"
 slug: /array-filtering-operators
-sidebar_label: "ARRAY Operators"
-beta: FALSE
+sidebar_key: array-filtering-operators
+sidebar_label: "Array"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud provides powerful operators to query array fields, allowing you to filter and retrieve entities based on the contents of arrays. | Cloud"
 type: origin
@@ -33,7 +34,7 @@ Zilliz Cloud provides powerful operators to query array fields, allowing you to 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>All elements within an array must be the same type, and nested structures within arrays are treated as plain strings. Therefore, when working with ARRAY fields, it is advisable to avoid excessively deep nesting and ensure that your data structures are as flat as possible for optimal performance.</p>
+All elements within an array must be the same type, and nested structures within arrays are treated as plain strings. Therefore, when working with ARRAY fields, it is advisable to avoid excessively deep nesting and ensure that your data structures are as flat as possible for optimal performance.
 
 </Admonition>
 

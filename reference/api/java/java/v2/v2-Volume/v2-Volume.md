@@ -12,10 +12,10 @@ token: OOcKfRAVdlXgf4dqW0sc9Zl2nyg
 sidebar_position: 10
 sidebar_label: "Volume"
 keywords: 
-  - NLP
   - Neural Network
   - Deep Learning
   - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

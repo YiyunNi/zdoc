@@ -1,11 +1,12 @@
 ---
 title: "Select the Right Cluster Type | Cloud"
 slug: /cu-types-explained
+sidebar_key: cu-types-explained
 sidebar_label: "Cluster Types"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Selecting the right Compute Unit (CU) is a crucial step when creating a cluster in Zilliz Cloud. A CU is the basic unit of compute resources used for parallel processing of data, and different cluster types comprise varying combinations of CPU, memory, and storage. | Cloud"
 type: origin
@@ -43,24 +44,24 @@ The following table offers a quick comparison of the three cluster types in diff
    </tr>
    <tr>
      <td><p><strong>Performance-optimized</strong></p></td>
-     <td><p>500~1500</p></td>
-     <td><p>sub-10 ms</p></td>
-     <td><p>1.5 million 768-dim vectors</p></td>
-     <td><p>from &#36;65/mo.</p></td>
+     <td><p>500-1500</p></td>
+     <td><p>10 ms</p></td>
+     <td><p>2 million 768-dim vectors</p></td>
+     <td><p>from &#36;63/mo.</p></td>
    </tr>
    <tr>
      <td><p><strong>Capacity-optimized</strong></p></td>
-     <td><p>100~300</p></td>
-     <td><p>tens-ms</p></td>
-     <td><p>5 million 768-dim vectors</p></td>
-     <td><p>from &#36;20/mo.</p></td>
+     <td><p>100-300</p></td>
+     <td><p>50-100 ms</p></td>
+     <td><p>6 million 768-dim vectors</p></td>
+     <td><p>from &#36;21/mo.</p></td>
    </tr>
    <tr>
      <td><p><strong>Tiered-storage</strong></p></td>
-     <td><p>5~20</p></td>
-     <td><p>hundreds-ms</p></td>
-     <td><p>20 million 768-dim vectors</p></td>
-     <td><p>from &#36;7/mo.</p></td>
+     <td><p>10-50</p></td>
+     <td><p>100-1000 ms</p></td>
+     <td><p>25 million 768-dim vectors</p></td>
+     <td><p>from &#36;8/mo.</p></td>
    </tr>
 </table>
 
@@ -78,7 +79,7 @@ The following table offers a quick comparison of the three cluster types in diff
 
 ### Tiered-storage cluster\{#tiered-storage-cluster}
 
-- Best for ultra-large-scale, cost-sensitive workloads with clear hot and cold data patterns.
+- Best for ultra-large-scale, cost-sensitive workloads.
 
 - Ideal for applications that need to store massive volumes of data at a low cost. The capacity of a Tiered-storage cluster is 4 times that of a Capacity-optimized cluster.
 
@@ -90,52 +91,7 @@ Factor in data volume, performance expectations, and budgets while selecting the
 
 The number of entities a cluster can accommodate depends on the query CU capacity of a cluster.
 
-The reference table below illustrates the capacity of a performance-optimized and capacity-optimized with 1 query CU, taking into account the vector dimensions and the total vector count. For an estimation of the number of query CU needed for your data volume, please use [our calculator](https://zilliz.com/pricing#calculator).
-
-<table>
-   <tr>
-     <th><p>Vector Dimensions</p></th>
-     <th><p>Performance-optimized (Max. Vectors per query CU)</p></th>
-     <th><p>Capacity-optimized (Max. Vectors per query CU)</p></th>
-     <th><p>Tiered-storage (Max. Vectors per query CU)</p></th>
-   </tr>
-   <tr>
-     <td><p>128</p></td>
-     <td><p>7.5 million</p></td>
-     <td><p>25 million</p></td>
-     <td><p>100 million</p></td>
-   </tr>
-   <tr>
-     <td><p>256</p></td>
-     <td><p>4.5 million</p></td>
-     <td><p>15 million</p></td>
-     <td><p>60 million</p></td>
-   </tr>
-   <tr>
-     <td><p>512</p></td>
-     <td><p>2.25 million</p></td>
-     <td><p>7.5 million</p></td>
-     <td><p>30 million</p></td>
-   </tr>
-   <tr>
-     <td><p>768</p></td>
-     <td><p>1.5 million</p></td>
-     <td><p>5 million</p></td>
-     <td><p>20 million</p></td>
-   </tr>
-   <tr>
-     <td><p>1024</p></td>
-     <td><p>1.125 million</p></td>
-     <td><p>3.75 million</p></td>
-     <td><p>15 million</p></td>
-   </tr>
-</table>
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>The above metrics are based on tests considering only primary keys and vectors. If your dataset has extra scalar fields (e.g., id, label, keywords), the actual capacity may deviate. It's prudent to conduct personal tests for a precise evaluation.</p>
-
-</Admonition>
+For an estimation of the number of query CU needed for your data volume, please use [our calculator](https://zilliz.com/pricing#calculator).
 
 ### Evaluate performance\{#evaluate-performance}
 

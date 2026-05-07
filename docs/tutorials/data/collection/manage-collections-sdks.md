@@ -1,11 +1,12 @@
 ---
-title: "Create Collection | Cloud"
+title: "Create a Collection | Cloud"
 slug: /manage-collections-sdks
-sidebar_label: "Create Collection"
-beta: FALSE
+sidebar_key: manage-collections-sdks
+sidebar_label: "Create"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "You can create a collection by defining its schema, index parameters, metric type, and whether to load it upon creation. This page introduces how to create a collection from scratch. | Cloud"
 type: origin
@@ -16,8 +17,7 @@ keywords:
   - vector database
   - cloud
   - collection
-  - create collection
-  - custom setup
+  - create collections
 
 ---
 
@@ -25,14 +25,15 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create Collection
+# Create a Collection
 
 You can create a collection by defining its schema, index parameters, metric type, and whether to load it upon creation. This page introduces how to create a collection from scratch.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you need strong data isolation and manage only a small number of tenants, you can create a separate collection for each tenant.</p>
-<p>However, you can only create a maximum of 16,384 collections depending on your <a href="./limits">cluster plan</a>. Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see <a href="./multi-tenancy">Implement Multi-tenancy</a>.</p>
+If you need strong data isolation and manage only a small number of tenants, you can create a separate collection for each tenant.
+
+However, you can only create a maximum of 16,384 collections depending on your [project plan and cluster deployment option](./limits). Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see [Implement Multi-tenancy](./multi-tenancy).
 
 </Admonition>
 
@@ -58,7 +59,7 @@ The following code snippets create a schema with the enabled dynamic field and t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You can set default values for any scalar field and make it nullable. For details, refer to  <a href="./nullable-fields">Nullable & Default</a>.</p>
+You can set default values for any scalar field and make it nullable. For details, refer to  [Nullable & Default](./nullable-fields).
 
 </Admonition>
 
@@ -185,8 +186,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())

@@ -1,11 +1,12 @@
 ---
 title: "Decay Ranker Overview | BYOC"
 slug: /decay-ranker-oveview
+sidebar_key: decay-ranker-oveview
 sidebar_label: "Decay Ranker Overview"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "In traditional vector search, results are ranked purely by vector similarity—how closely vectors match in mathematical space. But in real-world applications, what makes content truly relevant often depends on more than just semantic similarity. | BYOC"
 type: origin
@@ -111,7 +112,7 @@ Let's see decay ranking in a practical scenario—searching for **"AI research p
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>In this example, decay scores reflect how relevance diminishes with time—newer papers receive scores closer to 1.0, older papers receive lower scores. These values are calculated using a specific decay ranker. For details, refer to <a href="./decay-ranker-oveview#choose-the-right-decay-ranker">Choose the right decay ranker</a>.</p>
+In this example, decay scores reflect how relevance diminishes with time—newer papers receive scores closer to 1.0, older papers receive lower scores. These values are calculated using a specific decay ranker. For details, refer to [Choose the right decay ranker](./decay-ranker-oveview#choose-the-right-decay-ranker).
 
 </Admonition>
 
@@ -216,7 +217,7 @@ Decay rankers can be applied to both standard vector search and hybrid search op
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to <a href="./tutorial-implement-time-based-ranking">Tutorial: Implement Time-based Ranking in Milvus</a>.</p>
+Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to [Tutorial: Implement Time-based Ranking in Milvus](./tutorial-implement-time-based-ranking).
 
 </Admonition>
 

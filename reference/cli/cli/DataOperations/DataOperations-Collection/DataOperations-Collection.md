@@ -12,10 +12,10 @@ token: VXxdfhu8ZlORxZdXc1gcFwgtnb7
 sidebar_position: 2
 sidebar_label: "Collection"
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud

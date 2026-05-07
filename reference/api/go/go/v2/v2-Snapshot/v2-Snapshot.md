@@ -12,10 +12,10 @@ token: G4vvf4YHtlwg02d1ZyXcsRCCnud
 sidebar_position: 10
 sidebar_label: "Snapshot"
 keywords: 
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: EGSzfJvZplcqb5dWwzkcksiQn5d
 sidebar_position: 2
 sidebar_label: "Configuration"
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

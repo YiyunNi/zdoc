@@ -13,10 +13,10 @@ type: docx
 token: FzEydqTwRoajhnxZOftcKxKpndg
 sidebar_position: 25
 keywords: 
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud

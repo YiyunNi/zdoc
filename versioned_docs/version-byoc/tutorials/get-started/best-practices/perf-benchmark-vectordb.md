@@ -1,16 +1,17 @@
 ---
 title: "Performance Benchmarking with VectorDBBench | BYOC"
 slug: /perf-benchmark-vectordb
+sidebar_key: perf-benchmark-vectordb
 sidebar_label: "Use VectorDBBench"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "VectorDBBench is an open-source benchmarking tool designed specifically for vector databases. | BYOC"
 type: origin
 token: Za3QwAcfjiSSvxk8UzUcTPmfnmb
-sidebar_position: 1
+sidebar_position: 2
 keywords: 
   - zilliz
   - vector database
@@ -157,7 +158,7 @@ Optionally, you can set up the **DB Filter** and **Case Filter** in the left nav
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The databases are named in the format of [database<em>name]-[db</em>label]. </p>
+The databases are named in the format of [database_name]-[db_label]. 
 
 </Admonition>
 

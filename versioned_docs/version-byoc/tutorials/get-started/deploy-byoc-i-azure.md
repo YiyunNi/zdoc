@@ -1,11 +1,12 @@
 ---
 title: "Deploy BYOC-I on Microsoft Azure | BYOC"
 slug: /deploy-byoc-i-azure
+sidebar_key: deploy-byoc-i-azure
 sidebar_label: "Deploy BYOC-I on Microsoft Azure"
-beta: CONTACT SALES
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: CONTACT SALES
 notebook: FALSE
 description: "This page explains how to deploy a Bring-Your-Own-Cloud (BYOC) data plane with a BYOC agent in your Microsoft Azure Virtual Network. | BYOC"
 type: origin
@@ -34,10 +35,9 @@ This page explains how to deploy a Bring-Your-Own-Cloud (BYOC) data plane with a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud support</a>.</p></li>
-<li><p>This guide demonstrates how to create the necessary resources on the Microsoft Azure console step-by-step. If you prefer to use a Terraform script to provision the infrastructure,  see <a href="./terraform-provider">Terraform Provider</a>. </p></li>
-</ul>
+- Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
+
+- This guide demonstrates how to create the necessary resources on the Microsoft Azure console step-by-step. If you prefer to use a Terraform script to provision the infrastructure,  see [Terraform Provider](./terraform-provider). 
 
 </Admonition>
 

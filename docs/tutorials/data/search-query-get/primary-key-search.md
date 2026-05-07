@@ -1,11 +1,12 @@
 ---
 title: "Primary-Key Search | Cloud"
 slug: /primary-key-search
+sidebar_key: primary-key-search
 sidebar_label: "Primary-Key Search"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "When conducting similarity searches, you are always asked to provide one or more query vectors, even if the query vectors are already present in the target collection. To avoid retrieving vectors before the search, you can use primary keys instead. | Cloud"
 type: origin
@@ -59,7 +60,7 @@ The following examples assume that all provided Int64 IDs are available in the t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The primary keys are not used for filtering; they are used only for vector retrieval.</p>
+The primary keys are not used for filtering; they are used only for vector retrieval.
 
 </Admonition>
 

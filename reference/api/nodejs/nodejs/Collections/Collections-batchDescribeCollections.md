@@ -13,10 +13,10 @@ type: docx
 token: ByKKdHVcAojjyZxKK3PciOTVnQg
 sidebar_position: 23
 keywords: 
-  - vector database tutorial
   - how do vector databases work
   - vector db comparison
   - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud

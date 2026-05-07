@@ -12,10 +12,10 @@ token: PWyVfD7HUl1x3ydji7RcraKin1g
 sidebar_position: 7
 sidebar_label: "FileResource"
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud

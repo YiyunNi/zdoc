@@ -1,11 +1,12 @@
 ---
 title: "Subscribe by Adding Credit Card | Cloud"
 slug: /subscribe-by-adding-credit-card
+sidebar_key: subscribe-by-adding-credit-card
 sidebar_label: "Credit Card"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "This guide provides comprehensive instructions on how to add a payment credit card for your organization on Zilliz Cloud. | Cloud"
 type: origin
@@ -31,9 +32,7 @@ This guide provides comprehensive instructions on how to add a payment credit ca
 
 <Admonition type="info" icon="📘" title="Note">
 
-<ul>
-<li><strong>Taxation:</strong> Taxes on the invoices are calculated based on the billing address you provide. For companies that require to enter VAT or GST ID, please <a href="http://support.zilliz.com">contact us</a>.</li>
-</ul>
+- **Taxation:** Taxes on the invoices are calculated based on the billing address you provide. For companies that require to enter VAT or GST ID, please [contact us](http://support.zilliz.com).
 
 </Admonition>
 
@@ -145,7 +144,7 @@ Upon successful subscription via AWS Marketplace, your existing credit card info
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>Please allow a few minutes for the billing overview to reflect the changes.</p>
+Please allow a few minutes for the billing overview to reflect the changes.
 
 </Admonition>
 

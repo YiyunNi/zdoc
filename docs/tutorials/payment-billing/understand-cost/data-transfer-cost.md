@@ -1,16 +1,17 @@
 ---
 title: "Data Transfer Cost | Cloud"
 slug: /data-transfer-cost
+sidebar_key: data-transfer-cost
 sidebar_label: "Data Transfer"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Data transfer can be traffic coming into Zilliz Cloud, leaving Zilliz Cloud out into the internet, or in between two resources within Zilliz Cloud. Data transfer costs in Zilliz Cloud are billed based on the amount of data transferred. | Cloud"
 type: origin
 token: BClgwKlHaiushBkPPssclTkYnef
-sidebar_position: 4
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database
@@ -30,7 +31,7 @@ Data transfer can be traffic coming into Zilliz Cloud, leaving Zilliz Cloud out 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Each organization receives a &#36;10 monthly data transfer discount, covering the first 100 GB.</p>
+Each organization receives a &#36;10 monthly data transfer discount, covering the first 100 GB.
 
 </Admonition>
 
@@ -67,8 +68,6 @@ You will be billed for data transfer in the following scenarios:
 
 - Forwarding [audit logs](./audit-logs) to cloud object storage
 
-- [Zero downtime migration](./zero-downtime-migration) data sync
-
 - [Offline migration](./offline-migration)
 
 - [Cross-region backup](/docs/backup-to-other-regions)
@@ -77,8 +76,9 @@ You will be billed for data transfer in the following scenarios:
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>If the data transfer occurs within the same cloud region, the cost may be &#36;0.</p>
-<p>If you use a private endpoint to conduct operations like search or query, no data transfer cost will incur.</p>
+If the data transfer occurs within the same cloud region, the cost may be &#36;0.
+
+If you use a private endpoint to conduct operations like search or query, no data transfer cost will incur.
 
 </Admonition>
 

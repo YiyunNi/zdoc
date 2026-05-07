@@ -1,11 +1,12 @@
 ---
 title: "Stop | Cloud"
 slug: /stop-filter
+sidebar_key: stop-filter
 sidebar_label: "Stop"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `stop` filter removes specified stop words from tokenized text, helping to eliminate common, less meaningful words. You can configure the list of stop words using the `stopwords` parameter. | Cloud"
 type: origin
@@ -33,7 +34,11 @@ The `stop` filter removes specified stop words from tokenized text, helping to e
 
 ## Configuration\{#configuration}
 
-The `stop` filter is a custom filter in Zilliz Cloud. To use it, specify `"type": "stop"` in the filter configuration, along with a `stop_words` parameter that provides a list of stop words.
+The `stop` filter accepts its stop-words list either inline via the `stop_words` parameter or from a registered file resource via the `stop_words_file` parameter.
+
+### Inline stop-words list\{#inline-stop-words-list}
+
+To use the `stop` filter with an inline list, specify `"type": "stop"` in the filter configuration, along with a `stop_words` parameter that provides the list of stop words.
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

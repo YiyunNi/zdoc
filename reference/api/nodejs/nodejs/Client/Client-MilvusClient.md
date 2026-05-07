@@ -13,10 +13,10 @@ type: docx
 token: DsyLdmJr0o7FAfxwPcNct1Bqnth
 sidebar_position: 5
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -229,9 +229,7 @@ new MilvusClient(config: ClientConfig)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li>Set <strong>configOrAddress</strong> to your cluster endpoint. You can find the relevant information in Cluster details on the Zilliz Cloud console.</li>
-</ul>
+- Set **configOrAddress** to your cluster endpoint. You can find the relevant information in Cluster details on the Zilliz Cloud console.
 
 </Admonition>
 

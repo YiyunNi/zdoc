@@ -13,10 +13,10 @@ type: docx
 token: V65MdZWnsoMwpfxkt0sc5qQPnbb
 sidebar_position: 1
 keywords: 
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud

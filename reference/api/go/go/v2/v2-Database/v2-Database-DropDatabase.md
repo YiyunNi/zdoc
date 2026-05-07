@@ -13,10 +13,10 @@ type: docx
 token: FfZ6dqEk2o9Cn3xFAgTckLhsnS6
 sidebar_position: 5
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
   - zilliz
   - zilliz cloud
   - cloud

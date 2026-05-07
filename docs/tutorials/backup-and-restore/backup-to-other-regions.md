@@ -1,11 +1,12 @@
 ---
 title: "Cross-Region Backup | Cloud"
 slug: /backup-to-other-regions
+sidebar_key: backup-to-other-regions
 sidebar_label: "Cross-Region Backup"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Cross-region backup in Zilliz Cloud enhances data protection by copying backups to multiple cloud regions. It safeguards against regional outages and supports disaster recovery, business continuity, and high availability by minimizing risks from localized failures. | Cloud"
 type: origin
@@ -36,7 +37,7 @@ Currently, clusters on Azure do not support cross-region backup.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is available only to <strong>Dedicated</strong> clusters.</p>
+This feature is available only to **Dedicated** clusters in a **Business Critical** project.
 
 </Admonition>
 
@@ -66,10 +67,7 @@ You can enable cross-region backup either when [creating a backup manually](./cr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li>You can select regions only for the same cloud provider as the original region.</li>
-</ul>
-<p></p>
+- You can select regions only for the same cloud provider as the original region.
 
 </Admonition>
 

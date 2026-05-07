@@ -12,10 +12,10 @@ token: ODiwfm3z9lpSIZdyCjtcTQXgnfb
 sidebar_position: 2
 sidebar_label: "BulkImport"
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
   - zilliz
   - zilliz cloud
   - cloud

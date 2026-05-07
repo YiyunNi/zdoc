@@ -1,11 +1,12 @@
 ---
 title: "JSON Field Overview | Cloud"
 slug: /json-field-overview
-sidebar_label: "JSON Field Overview"
-beta: FALSE
+sidebar_key: json-field-overview
+sidebar_label: "Overview"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "When building applications like product catalogs, content management systems, or user preference engines, you often need to store flexible metadata alongside your vector embeddings. Product attributes vary by category, user preferences evolve over time, and document properties have complex nested structures. JSON fields in Zilliz Cloud solve this challenge by allowing you to store and query flexible structured data without sacrificing performance. | Cloud"
 type: origin
@@ -61,7 +62,7 @@ In this example, `metadata` is a single JSON field that contains a mix of flat v
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><strong>Naming convention:</strong> Use only letters, numbers, and underscores in JSON keys. Avoid special characters, spaces, or dots as they may cause parsing issues in queries.</p>
+**Naming convention:** Use only letters, numbers, and underscores in JSON keys. Avoid special characters, spaces, or dots as they may cause parsing issues in queries.
 
 </Admonition>
 
@@ -174,7 +175,7 @@ client.create_collection(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>In this example, the JSON field defined in the collection schema allows null values with <code>nullable=True</code>. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
+In this example, the JSON field defined in the collection schema allows null values with `nullable=True`. For details, refer to [Nullable & Default](./nullable-fields).
 
 </Admonition>
 

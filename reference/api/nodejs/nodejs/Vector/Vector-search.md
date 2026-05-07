@@ -5,18 +5,18 @@ sidebar_key: node/Vector-search
 sidebar_label: "search()"
 added_since: v2.3.x
 last_modified: v3.0.x
-deprecate_since: FALSE
-beta: FALSE
-notebook: FALSE
+deprecate_since: false
+beta: false
+notebook: false
 description: "This operation conducts a vector similarity search with an optional scalar filtering expression. | Node.js"
 type: docx
 token: HYv3d0NiRoc09Bx4rz0cIhqknb5
 sidebar_position: 7
 keywords: 
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
   - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud

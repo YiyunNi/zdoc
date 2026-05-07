@@ -13,10 +13,10 @@ type: docx
 token: EAs8dmRIuoMvW5xXLHdcDw2Gn0d
 sidebar_position: 6
 keywords: 
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud

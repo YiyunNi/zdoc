@@ -1,11 +1,12 @@
 ---
 title: "Use Recycle Bin | BYOC"
 slug: /use-recycle-bin
+sidebar_key: use-recycle-bin
 sidebar_label: "Use Recycle Bin"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud's Recycle Bin feature safeguards your data by keeping a record of all clusters that have been dropped, whether intentionally or as a result of trial expiration or service suspension. If you have changed your mind or dropped a cluster by mistake, the recycle bin offers a 30-day grace period for cluster restoration. | BYOC"
 type: origin
@@ -50,7 +51,7 @@ To use recycle bin, you must be an **Organization Owner**.
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>The load status of the collections in the cluster will be retained.</p>
+    The load status of the collections in the cluster will be retained.
 
     </Admonition>
 

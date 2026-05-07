@@ -1,11 +1,12 @@
 ---
 title: "Export Data Using Iterators | Cloud"
 slug: /export-data-iterators
+sidebar_key: export-data-iterators
 sidebar_label: "Using Iterators"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "This guide provides an example of how to export data from a Zilliz Cloud collection. | Cloud"
 type: origin
@@ -44,7 +45,7 @@ You can make use of these APIs to export certain or all of the entities from a Z
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is available for the Zilliz Cloud clusters that are compatible with Milvus 2.3.x and above.</p>
+This feature is available for the Zilliz Cloud clusters that are compatible with Milvus 2.3.x and above.
 
 </Admonition>
 

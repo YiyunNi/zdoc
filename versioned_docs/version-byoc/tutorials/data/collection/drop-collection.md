@@ -1,16 +1,17 @@
 ---
 title: "Drop Collection | BYOC"
 slug: /drop-collection
-sidebar_label: "Drop Collection"
-beta: FALSE
+sidebar_key: drop-collection
+sidebar_label: "Drop"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "You can drop a collection if it is no longer needed. | BYOC"
 type: origin
 token: DEUuwEwM4iMLOikU7XpcpNnKnGd
-sidebar_position: 11
+sidebar_position: 12
 keywords: 
   - zilliz
   - vector database

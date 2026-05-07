@@ -13,10 +13,10 @@ type: docx
 token: J0IBdbw3Voyqw9xnInUcn9EonTe
 sidebar_position: 28
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,14 +39,13 @@ await milvusClient.truncateCollection(data: TruncateCollectionRequest)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><strong>Irreversible operation</strong></li>
-</ul>
-<p>Truncating a collection permanently removes all data.</p>
-<ul>
-<li><strong>Schema preserved</strong></li>
-</ul>
-<p>The collection structure, fields, indexes, and properties remain intact.</p>
+- **Irreversible operation**
+
+    Truncating a collection permanently removes all data.
+
+- **Schema preserved**
+
+    The collection structure, fields, indexes, and properties remain intact.
 
 </Admonition>
 

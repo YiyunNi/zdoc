@@ -1,11 +1,12 @@
 ---
 title: "Filtered Search | BYOC"
 slug: /filtered-search
+sidebar_key: filtered-search
 sidebar_label: "Filtered Search"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "An ANN search finds vector embeddings most similar to specified vector embeddings. However, the search results may not always be correct. You can include filtering conditions in a search request so that Zilliz Cloud conducts metadata filtering before conducting ANN searches, reducing the search scope from the whole collection to only the entities matching the specified filtering conditions. | BYOC"
 type: origin
@@ -81,7 +82,7 @@ This section demonstrates how to conduct a filtered search. Code snippets in thi
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If the query vectors already exist in the target collection, consider using <code>ids</code> instead of retrieving them before searches. For details, refer to <a href="./primary-key-search">Primary-Key Search</a>.</p>
+If the query vectors already exist in the target collection, consider using `ids` instead of retrieving them before searches. For details, refer to [Primary-Key Search](./primary-key-search).
 
 </Admonition>
 

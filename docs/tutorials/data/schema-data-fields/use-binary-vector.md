@@ -1,11 +1,12 @@
 ---
 title: "Binary Vector | Cloud"
 slug: /use-binary-vector
+sidebar_key: use-binary-vector
 sidebar_label: "Binary Vector"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Binary vectors are a special form of data representation that convert traditional high-dimensional floating-point vectors into binary vectors containing only 0s and 1s. This transformation not only compresses the size of the vector but also reduces storage and computational costs while retaining semantic information. When precision for non-critical features is not essential, binary vectors can effectively maintain most of the integrity and utility of the original floating-point vectors. | Cloud"
 type: origin
@@ -57,7 +58,7 @@ After binary vectorization, the data can be stored in Zilliz Cloud clusters for 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Although binary vectors excel in specific scenarios, they have limitations in their expressive capability, making it difficult to capture complex semantic relationships. Therefore, in real-world scenarios, binary vectors are often used alongside other vector types to balance efficiency and expressiveness. For more information, refer to <a href="./use-dense-vector">Dense Vector</a> and <a href="./use-sparse-vector">Sparse Vector</a>.</p>
+Although binary vectors excel in specific scenarios, they have limitations in their expressive capability, making it difficult to capture complex semantic relationships. Therefore, in real-world scenarios, binary vectors are often used alongside other vector types to balance efficiency and expressiveness. For more information, refer to [Dense Vector](./use-dense-vector) and [Sparse Vector](./use-sparse-vector).
 
 </Admonition>
 

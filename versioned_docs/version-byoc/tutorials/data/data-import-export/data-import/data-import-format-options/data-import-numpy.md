@@ -1,11 +1,12 @@
 ---
 title: "Import from NumPy Files | BYOC"
 slug: /data-import-numpy
+sidebar_key: data-import-numpy
 sidebar_label: "NumPy"
-beta: NEAR DEPRECATE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: NEAR DEPRECATE
 notebook: FALSE
 description: "The `.npy` format is NumPy's standard binary format](https//numpy.org/devdocs/reference/generated/numpy.lib.format.html) for saving a single array, including its shape and dtype information, ensuring it can be correctly reconstructed on different machines.  You are advised to use [the BulkWriter tool to prepare your raw data into Parquet files. The following figure demonstrates how your raw data can be mapped into a set of `.npy` file. | BYOC"
 type: origin
@@ -31,7 +32,7 @@ The `.npy` format is [NumPy's standard binary format](https://numpy.org/devdocs/
 
 <Admonition type="danger" icon="🚧" title="Caution">
 
-<p>This feature has been deprecated. You are not recommended to use it in production.</p>
+This feature has been deprecated. You are not recommended to use it in production.
 
 </Admonition>
 
@@ -39,18 +40,17 @@ The `.npy` format is [NumPy's standard binary format](https://numpy.org/devdocs/
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><strong>Whether to enable AutoID</strong></li>
-</ul>
-<p>The <strong>id</strong> field serves as the primary field of the collection. To make the primary field automatically increment, you can enable <strong>AutoID</strong> in the schema. In this case, you should exclude the <strong>id</strong> field from each row in the source data.</p>
-<ul>
-<li><strong>Whether to enable dynamic fields</strong></li>
-</ul>
-<p>When the target collection enables dynamic fields, if you need to store fields that are not included in the pre-defined schema, you can specify the <strong>&#36;meta</strong> column during the write operation and provide the corresponding key-value data.</p>
-<ul>
-<li><strong>Case-sensitive</strong></li>
-</ul>
-<p>Dictionary keys and collection field names are case-sensitive. Ensure that the dictionary keys in your data exactly match the field names in the target collection. If there is a field named <strong>id</strong> in the target collection, each entity dictionary should have a key named <strong>id.</strong> Using <strong>ID</strong> or <strong>Id</strong> results in errors. </p>
+- **Whether to enable AutoID**
+
+    The **id** field serves as the primary field of the collection. To make the primary field automatically increment, you can enable **AutoID** in the schema. In this case, you should exclude the **id** field from each row in the source data.
+
+- **Whether to enable dynamic fields**
+
+    When the target collection enables dynamic fields, if you need to store fields that are not included in the pre-defined schema, you can specify the **&#36;meta** column during the write operation and provide the corresponding key-value data.
+
+- **Case-sensitive**
+
+    Dictionary keys and collection field names are case-sensitive. Ensure that the dictionary keys in your data exactly match the field names in the target collection. If there is a field named **id** in the target collection, each entity dictionary should have a key named **id.** Using **ID** or **Id** results in errors. 
 
 </Admonition>
 
@@ -84,7 +84,7 @@ Once your data is ready, you can use either of the following methods to import t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If your files are relatively small, it is recommended to use the folder or multiple-path method to import them all at once. This approach allows for internal optimizations during the import process, which helps reduce resource consumption later.</p>
+If your files are relatively small, it is recommended to use the folder or multiple-path method to import them all at once. This approach allows for internal optimizations during the import process, which helps reduce resource consumption later.
 
 </Admonition>
 
@@ -138,7 +138,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If the folder contains multiple formats of files, the request will fail.</p>
+If the folder contains multiple formats of files, the request will fail.
 
 </Admonition>
 
@@ -171,7 +171,7 @@ There are some limits you need to observe when you import data in NumPy files fr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>A valid set of NumPy files should be named after the fields in the schema of the target collection, and the data in them should match the corresponding field definitions.</p>
+A valid set of NumPy files should be named after the fields in the schema of the target collection, and the data in them should match the corresponding field definitions.
 
 </Admonition>
 

@@ -1,11 +1,12 @@
 ---
 title: "Offline Migration | BYOC"
 slug: /offline-migration
+sidebar_key: offline-migration
 sidebar_label: "Offline Migration"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Offline Migration transfers all existing data from a source Zilliz Cloud cluster to a target Zilliz Cloud cluster. This method supports migrations both within the same organization and across different organizations. It is ideal for scenarios where temporary write interruptions are acceptable, such as during planned maintenance or smaller-scale database transitions. | BYOC"
 type: origin
@@ -108,11 +109,11 @@ Before starting your offline migration, ensure you meet these requirements:
 
 The following demo walks you through the complete offline migration process:
 
-<Supademo id="cmb91ow5v0me4sn1rzlbzqi8x" title="Zilliz Cloud - Offline Migration Demo" />
+<Supademo id="cmb91ow5v0me4sn1rzlbzqi8x" title=""  />
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The migrated collections are not immediately available for search or query operations. You must manually load the collections in Zilliz Cloud to enable search and query functionalities. For details, refer to <a href="./load-release-collections">Load & Release</a>.</p>
+The migrated collections are not immediately available for search or query operations. You must manually load the collections in Zilliz Cloud to enable search and query functionalities. For details, refer to [Load & Release](./load-release-collections).
 
 </Admonition>
 

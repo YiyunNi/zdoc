@@ -13,10 +13,10 @@ type: docx
 token: YKm9dpXcVoy277xHVT2cIymfnRj
 sidebar_position: 12
 keywords: 
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

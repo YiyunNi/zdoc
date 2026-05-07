@@ -39,7 +39,7 @@ io.milvus.v2.service.collection.request.CreateCollectionReq.StructFieldSchema
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This class cannot be explicitly instantiated. You need to describe a collection with an Array of Structs field to view its instances.</p>
+This class cannot be explicitly instantiated. You need to describe a collection with an Array of Structs field to view its instances.
 
 </Admonition>
 

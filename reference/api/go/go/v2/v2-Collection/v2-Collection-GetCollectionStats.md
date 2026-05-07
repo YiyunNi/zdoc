@@ -13,10 +13,10 @@ type: docx
 token: L4CvdyBIVoFsMNx546qcBqrOnJd
 sidebar_position: 18
 keywords: 
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud

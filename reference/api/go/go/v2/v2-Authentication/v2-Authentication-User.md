@@ -13,10 +13,10 @@ type: docx
 token: FCnndgcaworiHGxozvocjrZonIj
 sidebar_position: 26
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

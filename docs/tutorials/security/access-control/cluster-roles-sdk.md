@@ -1,11 +1,12 @@
 ---
 title: "Manage Cluster Roles (SDK) | Cloud"
 slug: /cluster-roles-sdk
+sidebar_key: cluster-roles-sdk
 sidebar_label: "Manage Cluster Roles (SDK)"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A cluster role defines the privileges that a user has within the cluster. More specifically, the cluster role controls a cluster user's privileges on the cluster, database, and collection level. | Cloud"
 type: origin
@@ -34,7 +35,7 @@ This guide walks you through how to create a role, grant built-in privilege grou
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is exclusively available to Dedicated clusters.</p>
+This feature is exclusively available to Dedicated clusters.
 
 </Admonition>
 
@@ -162,7 +163,7 @@ In Zilliz Cloud, you can grant the followings to a role:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you need to grant specific privileges and custom privilege groups to a role, please <a href="http://support.zilliz.com">create a support ticket</a> first so that we can enable this feature for you.</p>
+If you need to grant specific privileges and custom privilege groups to a role, please [create a support ticket](http://support.zilliz.com) first so that we can enable this feature for you.
 
 </Admonition>
 
@@ -416,7 +417,7 @@ Below is an example output.
 {
      "role": "role_a",
      "privileges": [
-         "COLL_ADMIN"
+         "Search"
      ]
 }
 ```
@@ -583,7 +584,7 @@ The following example demonstrates how to drop the role `role_a`.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The built-in role <code>admin</code> cannot be dropped.</p>
+The built-in role `admin` cannot be dropped.
 
 </Admonition>
 

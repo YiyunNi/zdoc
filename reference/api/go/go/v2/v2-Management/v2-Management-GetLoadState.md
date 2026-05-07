@@ -13,10 +13,10 @@ type: docx
 token: AvOXd92pPoAXPcxvArwcvKnSnph
 sidebar_position: 12
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -1,11 +1,12 @@
 ---
 title: "Dynamic Field | BYOC"
 slug: /enable-dynamic-field
+sidebar_key: enable-dynamic-field
 sidebar_label: "Dynamic Field"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud allows you to insert entities with flexible, evolving structures through a special feature called the dynamic field. This field is implemented as a hidden JSON field named `$meta`, which automatically stores any fields in your data that are not explicitly defined in the collection schema. | BYOC"
 type: origin
@@ -392,13 +393,13 @@ _, err = client.Insert(ctx, milvusclient.NewColumnBasedInsertOption("my_collecti
     column.NewColumnVarChar("overview", []string{"Great product"}),
     column.NewColumnInt32("words", []int32{150}),
     column.NewColumnJSONBytes("dynamic_json", [][]byte{
-        []byte(`{
+        []byte(\`{
             varchar: 'some text',
             nested: {
                 value: 42.5,
             },
             string_price: '99.99',
-        }`),
+        }\`),
     }),
 ))
 if err != nil {
@@ -445,7 +446,7 @@ Zilliz Cloud allows you to use **JSON path indexing** to create indexes on speci
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Indexing dynamic field keys is <strong>optional</strong>. You can still query or filter by dynamic field keys without an index, but it may result in slower performance due to brute-force search.</p>
+Indexing dynamic field keys is **optional**. You can still query or filter by dynamic field keys without an index, but it may result in slower performance due to brute-force search.
 
 </Admonition>
 
@@ -652,9 +653,9 @@ jsonIndex1 := index.NewJSONPathIndex(index.AUTOINDEX, "varchar", "overview")
     .WithIndexName("overview_index")
 jsonIndex2 := index.NewJSONPathIndex(index.AUTOINDEX, "double", "words")
     .WithIndexName("words_index")
-jsonIndex3 := index.NewJSONPathIndex(index.AUTOINDEX, "varchar", `dynamic_json['varchar']`)
+jsonIndex3 := index.NewJSONPathIndex(index.AUTOINDEX, "varchar", \`dynamic_json['varchar']\`)
     .WithIndexName("json_varchar_index")
-jsonIndex4 := index.NewJSONPathIndex(index.AUTOINDEX, "double", `dynamic_json['nested']['value']`)
+jsonIndex4 := index.NewJSONPathIndex(index.AUTOINDEX, "double", \`dynamic_json['nested']['value']\`)
     .WithIndexName("json_nested_index")
 
 indexOpt1 := milvusclient.NewCreateIndexOption("my_collection", "overview", jsonIndex1)
@@ -777,7 +778,7 @@ indexParams.push({
 <TabItem value='go'>
 
 ```go
-jsonIndex5 := index.NewJSONPathIndex(index.AUTOINDEX, "double", `dynamic_json['string_price']`)
+jsonIndex5 := index.NewJSONPathIndex(index.AUTOINDEX, "double", \`dynamic_json['string_price']\`)
     .WithIndexName("json_string_price_index")
 indexOpt5 := milvusclient.NewCreateIndexOption("my_collection", "dynamic_json", jsonIndex5)
 ```
@@ -808,10 +809,9 @@ export stringPriceIndex='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>If type conversion fails (e.g. value <code>"not_a_number"</code> cannot be converted to a number), the value is skipped and unindexed.</p></li>
-<li><p>For details on cast function parameters, refer to <a href="./use-json-fields">JSON Field</a>.</p></li>
-</ul>
+- If type conversion fails (e.g. value `"not_a_number"` cannot be converted to a number), the value is skipped and unindexed.
+
+- For details on cast function parameters, refer to [JSON Field](./use-json-fields).
 
 </Admonition>
 
@@ -1114,7 +1114,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Dynamic field keys are not included in results by default and must be explicitly requested.</p>
+Dynamic field keys are not included in results by default and must be explicitly requested.
 
 </Admonition>
 
