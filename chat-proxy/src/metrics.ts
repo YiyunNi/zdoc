@@ -179,7 +179,7 @@ export function getMetricsData(): {
   gauges: { name: string; help: string; values: { labels: Record<string, string>; value: number }[] }[];
   histograms: { name: string; help: string; values: { labels: Record<string, string>; buckets: number[]; counts: number[]; totalCount: number }[] }[];
 } {
-  const counterData = [];
+  const counterData: { name: string; help: string; values: { labels: Record<string, string>; value: number }[] }[] = [];
   for (const [name, items] of counters) {
     counterData.push({
       name,
@@ -187,7 +187,7 @@ export function getMetricsData(): {
       values: items.map(i => ({ labels: i.labels, value: i.value })),
     });
   }
-  const gaugeData = [];
+  const gaugeData: { name: string; help: string; values: { labels: Record<string, string>; value: number }[] }[] = [];
   for (const [name, items] of gauges) {
     gaugeData.push({
       name,
@@ -195,7 +195,7 @@ export function getMetricsData(): {
       values: items.map(i => ({ labels: i.labels, value: i.value })),
     });
   }
-  const histogramData = [];
+  const histogramData: { name: string; help: string; values: { labels: Record<string, string>; buckets: number[]; counts: number[]; totalCount: number }[] }[] = [];
   for (const [name, items] of histograms) {
     histogramData.push({
       name,
