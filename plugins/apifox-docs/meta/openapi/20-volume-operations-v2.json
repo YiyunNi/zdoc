@@ -253,26 +253,15 @@
                         "volumes": [
                           {
                             "volumeName": "my_volume_1",
-                            "type": "MANAGED",
-                            "regionId": "aws-us-west-2",
-                            "status": "Running",
-                            "createTime": 1704067200000
+                            "type": "MANAGED"
                           },
                           {
                             "volumeName": "my_volume_2",
-                            "type": "EXTERNAL",
-                            "regionId": "aws-us-west-2",
-                            "storageIntegrationId": "si-123456",
-                            "path": "/data",
-                            "status": "Running",
-                            "createTime": 1704153600000
+                            "type": "EXTERNAL"
                           },
                           {
                             "volumeName": "my_volume_3",
-                            "type": "MANAGED",
-                            "regionId": "ali-cn-hangzhou",
-                            "status": "Running",
-                            "createTime": 1704240000000
+                            "type": "MANAGED"
                           }
                         ]
                       }
@@ -722,7 +711,7 @@
                 },
                 "examples": {
                   "1": {
-                    "summary": "success",
+                    "summary": "Managed",
                     "x-target-response": "OPTION 1",
                     "value": {
                       "code": 0,
@@ -736,7 +725,7 @@
                     }
                   },
                   "2": {
-                    "summary": "external",
+                    "summary": "External",
                     "x-target-response": "OPTION 1",
                     "value": {
                       "code": 0,

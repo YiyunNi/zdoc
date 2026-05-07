@@ -2076,7 +2076,7 @@
                         "clusterId": "inxx-xxxxxxxxxxxxxxx",
                         "clusterName": "Cluster-01",
                         "regionId": "aws-us-west-2",
-                        "cu": 8,
+                        "cuSize": 8,
                         "status": "RUNNING",
                         "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com",
                         "privateLink": "",
