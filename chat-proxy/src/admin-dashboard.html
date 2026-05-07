@@ -1645,7 +1645,7 @@ input, select { font-family: var(--body); }
   function setActivePage(page) {
     document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.page === page));
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const target = page === 'users' ? 'pageUsers' : page === 'costs' ? 'pageCosts' : 'pageDashboard';
+    const target = page === 'users' ? 'pageUsers' : page === 'costs' ? 'pageCosts' : page === 'metrics' ? 'pageMetrics' : 'pageDashboard';
     $(target).classList.add('active');
   }
 
@@ -1685,6 +1685,7 @@ input, select { font-family: var(--body); }
     if (!active) return 'dashboard';
     if (active.id === 'pageUsers') return 'users';
     if (active.id === 'pageCosts') return 'costs';
+    if (active.id === 'pageMetrics') return 'metrics';
     return 'dashboard';
   }
 
@@ -1694,6 +1695,7 @@ input, select { font-family: var(--body); }
     if (page === 'dashboard') fetchDashboard();
     else if (page === 'users') fetchUsers();
     else if (page === 'costs' && !editingModelKey) fetchCosts();
+    else if (page === 'metrics') fetchMetrics();
   }
 
   // ------------------------------------------------------------------
