@@ -412,12 +412,14 @@ adminApp.get('/api/health/llm', async c => {
 
 // GET /admin/api/live — active sessions
 adminApp.get('/api/live', async c => {
-  return c.json({sessions: await getObsLiveSessions()});
+  const source = c.req.query('source') || undefined;
+  return c.json({sessions: await getObsLiveSessions({ source })});
 });
 
 // GET /admin/api/performance — per-agent/model stats
 adminApp.get('/api/performance', async c => {
-  return c.json({agents: await getObsPerformance()});
+  const source = c.req.query('source') || undefined;
+  return c.json({agents: await getObsPerformance({ source })});
 });
 
 // GET /admin/api/feedback — recent feedback entries
@@ -475,7 +477,8 @@ adminApp.get('/api/analytics/trends', async c => {
 // GET /admin/api/analytics/recent-activity — recent message events
 adminApp.get('/api/analytics/recent-activity', async c => {
   const limit = parseInt(c.req.query('limit') || '10', 10);
-  return c.json({entries: await getObsRecentActivity(limit)});
+  const source = c.req.query('source') || undefined;
+  return c.json({entries: await getObsRecentActivity(limit, { source })});
 });
 
 // GET /admin/api/analytics/users — user-aggregated session data

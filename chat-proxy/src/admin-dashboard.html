@@ -1697,8 +1697,8 @@ input, select { font-family: var(--body); }
       const [overview, trends, activity, live] = await Promise.all([
         apiFetch(withSource('/admin/api/analytics/overview')),
         apiFetch(withSource('/admin/api/analytics/trends?days=' + days)),
-        apiFetch('/admin/api/analytics/recent-activity?limit=8'),
-        apiFetch('/admin/api/live'),
+        apiFetch(withSource('/admin/api/analytics/recent-activity?limit=8')),
+        apiFetch(withSource('/admin/api/live')),
       ]);
       updateDashboardMetrics(overview, live);
       updateDashboardCharts(trends);
