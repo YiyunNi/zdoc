@@ -1526,11 +1526,24 @@
                           "items": {
                             "type": "object",
                             "properties": {
+                              "projectId": {
+                                "type": "string",
+                                "description": "ID of the project to which the cluster belongs.",
+                                "example": "proj-xxxxxxxxxxxxxxx",
+                                "x-i18n": {
+                                  "zh-CN": {
+                                    "description": "集群所属项目 ID。",
+                                    "example": "proj-xxxxxxxxxxxxxxx"
+                                  }
+                                }
+                              },
                               "clusterId": {
                                 "type": "string",
                                 "description": "ID of the cluster.",
                                 "x-i18n": {
-                                  "zh-CN": "集群 ID。"
+                                  "zh-CN": {
+                                    "description": "集群 ID。"
+                                  }
                                 },
                                 "example": "inxx-xxxxxxxxxxxxxxx"
                               },
@@ -1538,7 +1551,9 @@
                                 "type": "string",
                                 "description": "Name of the cluster.",
                                 "x-i18n": {
-                                  "zh-CN": "集群名称。"
+                                  "zh-CN": {
+                                    "description": "集群名称。"
+                                  }
                                 }
                               },
                               "regionId": {
@@ -1556,14 +1571,18 @@
                                 "type": "integer",
                                 "description": "CU size of the cluster",
                                 "x-i18n": {
-                                  "zh-CN": "分配给当前集群的 CU 大小。"
+                                  "zh-CN": {
+                                    "description": "分配给当前集群的 CU 大小。"
+                                  }
                                 }
                               },
                               "status": {
                                 "type": "string",
                                 "description": "Current cluster status",
                                 "x-i18n": {
-                                  "zh-CN": "当前集群所处状态。"
+                                  "zh-CN": {
+                                    "description": "当前集群所处状态。"
+                                  }
                                 },
                                 "enum": [
                                   "CREATING",
@@ -1577,7 +1596,9 @@
                                 "type": "string",
                                 "description": "Cluster public endpoint. For an on-demand cluster, the endpoint is an on-demand compute endpoint, which is shared among all on-demand clusters in the project. Use that with the target cluster ID for searches and queries.",
                                 "x-i18n": {
-                                  "zh-CN": "访问集群时使用的公共端点。注意对于按需集群来说，该端点是一个项目级别的按需计算端点，项目中的所有按需集群共享该端点。在进行搜索和查询时，请和集群 ID 共同使用。"
+                                  "zh-CN": {
+                                    "description": "访问集群时使用的公共端点。注意对于按需集群来说，该端点是一个项目级别的按需计算端点，项目中的所有按需集群共享该端点。在进行搜索和查询时，请和集群 ID 共同使用。"
+                                  }
                                 },
                                 "example": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com"
                               },
@@ -1585,28 +1606,36 @@
                                 "type": "string",
                                 "description": "Cluster private endpoint. This is an empty string if private link is not enabled.",
                                 "x-i18n": {
-                                  "zh-CN": "访问集群时使用的私有端点。若未开启 Private Link。此参数值为空。"
+                                  "zh-CN": {
+                                    "description": "访问集群时使用的私有端点。若未开启 Private Link。此参数值为空。"
+                                  }
                                 }
                               },
                               "createdBy": {
                                 "type": "string",
                                 "description": "Email address of the user who create the cluster.",
                                 "x-i18n": {
-                                  "zh-CN": "集群创建人的邮箱。"
+                                  "zh-CN": {
+                                    "description": "集群创建人的邮箱。"
+                                  }
                                 }
                               },
                               "createTime": {
                                 "type": "integer",
                                 "description": "Timestamp at which the cluster is created.",
                                 "x-i18n": {
-                                  "zh-CN": "创建当前集群时的时间戳。"
+                                  "zh-CN": {
+                                    "description": "创建当前集群时的时间戳。"
+                                  }
                                 }
                               },
                               "autoSuspend": {
                                 "type": "integer",
                                 "description": "Auto-suspend idle window configured for the cluster. The cluster will be automatically suspended if there is no request within the specified period. The value is an integer representing the number of seconds. For example, `300` means 5 minutes.",
                                 "x-i18n": {
-                                  "zh-CN": "自动挂起空闲时间。如果指定的时间段内无任何请求，集群将自动挂起。该值为一个整数，表示秒数。例如，`300` 表示 5 分钟。"
+                                  "zh-CN": {
+                                    "description": "自动挂起空闲时间。如果指定的时间段内无任何请求，集群将自动挂起。该值为一个整数，表示秒数。例如，`300` 表示 5 分钟。"
+                                  }
                                 }
                               }
                             },
@@ -1632,26 +1661,30 @@
                         "count": 2,
                         "onDemandClusters": [
                           {
+                            "projectId": "proj-xxxxxxxxxxxxxxx",
                             "clusterId": "inxx-xxxxxxxxxxxxxxx",
                             "clusterName": "Cluster-01",
                             "regionId": "aws-us-west-2",
-                            "cu": 8,
+                            "cuSize": 8,
                             "status": "RUNNING",
                             "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com",
                             "privateLink": "",
                             "createdBy": "john.doe@zilliz.com",
-                            "createTime": 1745396115000
+                            "createTime": 1745396115000,
+                            "autoSuspend": 60
                           },
                           {
+                            "projectId": "proj-xxxxxxxxxxxxxxx",
                             "clusterId": "inxx-xxxxxxxxxxxxxxx",
                             "clusterName": "Cluster-02",
                             "regionId": "aws-us-west-2",
                             "status": "RUNNING",
-                            "cu": 8,
+                            "cuSize": 8,
                             "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com",
                             "privateLink": "",
                             "createdBy": "john.doe@zilliz.com",
-                            "creatTime": 1745396116450
+                            "createTime": 1745396116450,
+                            "autoSuspend": 60
                           }
                         ]
                       }
@@ -1765,12 +1798,12 @@
                                 }
                               }
                             },
-                            "status": {
+                            "prompt": {
                               "type": "string",
-                              "description": "Status of the dropped cluster",
+                              "description": "Prompt messages returned.",
                               "x-i18n": {
                                 "zh-CN": {
-                                  "description": "已删除的集群状态。"
+                                  "description": "返回的提示信息。"
                                 }
                               }
                             }
@@ -1827,7 +1860,7 @@
                       "code": 0,
                       "data": {
                         "clusterId": "inxx-xxxxxxxxxxxxxxx",
-                        "status": "DELETING"
+                        "prompt": "The cluster has been deleted. If you consider this action to be an error, you have the option to restore the deleted cluster from the recycle bin within a 30-day period. Kindly note, this recovery feature does not apply to free clusters."
                       }
                     }
                   },
@@ -2048,7 +2081,8 @@
                         "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.zillizcloud.com",
                         "privateLink": "",
                         "createdBy": "john.doe@zilliz.com",
-                        "createTime": 1745396115000
+                        "createTime": 1745396115000,
+                        "autoSuspend": 60
                       }
                     }
                   },
@@ -2894,92 +2928,6 @@
           }
         },
         "security": []
-      }
-    },
-    "/v2/clusters/{CLUSTER_ID}/metrics/export": {
-      "get": {
-        "summary": "Export Cluster Metrics",
-        "description": "Exports raw metrics for the specified cluster. The response is streamed directly from the metrics service preserving the original content type and encoding.",
-        "x-i18n": {
-          "zh-CN": {
-            "summary": "导出集群指标",
-            "description": "本接口用于导出指定集群的原始指标数据。响应直接从指标服务流式传输，保留原始内容类型和编码。"
-          }
-        },
-        "tags": [
-          "Cluster Operations (V2)"
-        ],
-        "parameters": [
-          {
-            "name": "CLUSTER_ID",
-            "in": "path",
-            "description": "ID of the cluster whose metrics are to export.",
-            "required": true,
-            "example": "inxx-xxxxxxxxxxxxxxx",
-            "schema": {
-              "type": "string"
-            },
-            "x-i18n": {
-              "zh-CN": {
-                "description": " cluster 的 metrics are 待 export."
-              }
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "The authentication token should be an API key with appropriate privileges.",
-            "required": true,
-            "example": "Bearer {{TOKEN}}",
-            "schema": {
-              "type": "string"
-            },
-            "x-i18n": {
-              "zh-CN": {
-                "description": "认证令牌，应为具备适当权限的 API 密钥。"
-              }
-            }
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "description": "Use `application/json`.",
-            "required": false,
-            "example": "application/json",
-            "schema": {
-              "type": "string"
-            },
-            "x-i18n": {
-              "zh-CN": {
-                "description": "使用 `application/json`。"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Returns raw metrics data.",
-            "x-i18n": {
-              "zh-CN": {
-                "description": "返回原始指标数据。"
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string",
-                  "description": "Raw metrics data."
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "type": "string",
-                  "description": "Raw metrics data."
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/v2/clusters/{CLUSTER_ID}/modify": {
