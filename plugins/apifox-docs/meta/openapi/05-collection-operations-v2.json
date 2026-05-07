@@ -284,7 +284,7 @@
                   "value": {
                     "collectionName": "test_collection",
                     "schema": {
-                      "externalSource": "volume://my_volume/path/to/a/folder/",
+                      "externalSource": "volume://my_volume/path/to/a/folder",
                       "externalSpec": "{\"format\": \"parquet\"}",
                       "fields": [
                         {
@@ -2468,27 +2468,23 @@
               },
               "examples": {
                 "1": {
-                  "summary": "From an S3 source",
+                  "summary": "Refresh from an S3 source",
                   "x-include-target": [
                     "milvus"
                   ],
                   "value": {
                     "dbName": "default",
-                    "collectionName": "ext_books",
-                    "externalSource": "{\"type\":\"s3\",\"path\":\"s3://my-bucket/books/\"}",
-                    "externalSpec": "{\"format\":\"parquet\"}"
+                    "collectionName": "ext_books"
                   }
                 },
                 "2": {
-                  "summary": "From a Zilliz Cloud volume",
+                  "summary": "Refresh from a Zilliz Cloud volume",
                   "x-include-target": [
                     "zilliz"
                   ],
                   "value": {
                     "dbName": "default",
-                    "collectionName": "ext_books",
-                    "externalSource": "{\"type\":\"volume\",\"path\":\"volume://my-volume/books/\"}",
-                    "externalSpec": "{\"format\":\"parquet\"}"
+                    "collectionName": "ext_books"
                   }
                 }
               }
@@ -3406,19 +3402,19 @@
               },
               "externalSource": {
                 "type": "string",
-                "description": "The external source configuration in JSON string. This field is returned only when the collection is created from an external source.",
+                "description": "The JSON-encoded external source configuration if this collection is an external collection. <include target=\"milvus\">An object url in an S3 bucket applies.</include><include target=\"zilliz\">An object url in a Zilliz Cloud volume applies.</include>",
                 "x-i18n": {
                   "zh-CN": {
-                    "description": "外部数据源配置的 JSON 字符串。仅当 Collection 从外部数据源创建时返回该字段。"
+                    "description": "如果当前 Collection 是外部 Collection，则返回 JSON 编码的外部数据源配置。<include target=\"milvus\">S3 存储桶中的对象 URL 适用。</include><include target=\"zilliz\">Zilliz Cloud Volume 中的对象 URL 适用。</include>"
                   }
                 }
               },
               "externalSpec": {
-                "type": "object",
-                "description": "The external source specification. This field is returned only when the collection is created from an external source.",
+                "type": "string",
+                "description": "The JSON-encoded external specification if this collection is an external collection. The content of this field may vary depending on the connector type and the source data format, which may include, but not limited to, file format, field mapping, etc.",
                 "x-i18n": {
                   "zh-CN": {
-                    "description": "外部数据源规格。仅当 Collection 从外部数据源创建时返回该字段。"
+                    "description": "如果当前 Collection 是外部 Collection，则返回 JSON 编码的外部规范。该字段的内容可能因连接器类型和源数据格式而异，可能包括但不限于文件格式、字段映射等。"
                   }
                 }
               },

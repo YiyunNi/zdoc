@@ -564,7 +564,7 @@
                       },
                       "regionId": {
                         "type": "string",
-                        "description": "The ID of the cloud region to create the destination cluster in. The region must be bound to the project."
+                        "description": "The ID of the cloud region to create the destination cluster in. The region should be bound to the specified project."
                       },
                       "plan": {
                         "type": "string",

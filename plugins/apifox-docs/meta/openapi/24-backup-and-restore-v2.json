@@ -633,10 +633,10 @@
                             },
                             "regionId": {
                               "type": "string",
-                              "description": "The ID of the cloud region where the backup is located.",
+                              "description": "The ID of the cloud region where the backup is located. The region should be bound to the project to which the specified cluster belongs.",
                               "x-i18n": {
                                 "zh-CN": {
-                                  "description": "备份所在的云区域 ID。"
+                                  "description": "备份所在的云区域 ID。该区域应与指定集群所属项目绑定。"
                                 }
                               }
                             },
@@ -1313,11 +1313,11 @@
                       "properties": {
                         "regionId": {
                           "type": "string",
-                          "description": "The ID of the target cloud region to which the backup will be copied. The region must be bound to the project to which the specified cluster belongs.",
+                          "description": "The ID of the target cloud region to which the backup will be copied.",
                           "example": "aws-us-west-2",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "目标云区域 ID，当前集群的备份将被复制到该区域。该区域必须绑定到指定集群所属的项目。",
+                              "description": "目标云区域 ID，当前集群的备份将被复制到该区域。",
                               "example": "ali-cn-hangzhou"
                             }
                           }
@@ -1917,11 +1917,11 @@
                       "properties": {
                         "regionId": {
                           "type": "string",
-                          "description": "The ID of the target cloud region to which the backup will be copied. The region must be bound to the project to which the specified cluster belongs.",
+                          "description": "The ID of the target cloud region to which the backup will be copied. The region should be bound the to project to which the specified cluster belongs.",
                           "example": "aws-us-west-2",
                           "x-i18n": {
                             "zh-CN": {
-                              "description": "目标云区域 ID。该区域必须绑定到指定集群所属的项目。",
+                              "description": "目标云区域 ID。该区域应与指定集群所属项目绑定。",
                               "example": "ali-cn-hangzhou"
                             }
                           }
@@ -2191,15 +2191,6 @@
                     "x-i18n": {
                       "zh-CN": {
                         "description": "恢复后的集群所属的项目 ID。"
-                      }
-                    }
-                  },
-                  "regionId": {
-                    "type": "string",
-                    "description": "The ID of the cloud region where the restored cluster will be created. The region must be the same as the original cluster and must be bound to the project.",
-                    "x-i18n": {
-                      "zh-CN": {
-                        "description": "恢复后的集群所在的云区域 ID。该区域必须与原集群所在区域相同，并且必须绑定到项目。"
                       }
                     }
                   },

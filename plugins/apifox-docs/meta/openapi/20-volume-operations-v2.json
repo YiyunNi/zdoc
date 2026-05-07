@@ -331,10 +331,10 @@
                   },
                   "regionId": {
                     "type": "string",
-                    "description": "The ID of the region where the volume will be created. You can use [List Cloud Regions](/reference/list-cloud-regions-v2) to list available regions. The region must be bound to the project.",
+                    "description": "The ID of the region where the volume will be created. You can use [List Cloud Regions](/reference/list-cloud-regions-v2) to list available regions. The region should be bound to the specified project.",
                     "x-i18n": {
                       "zh-CN": {
-                        "description": "Volume 所属区域的 ID。您可以使用 [查看云服务区域](/reference/list-cloud-regions-v2) 接口列出可用区域。该区域必须绑定到项目。"
+                        "description": "Volume 所属区域的 ID。您可以使用 [查看云服务区域](/reference/list-cloud-regions-v2) 接口列出可用区域。该区域应与指定项目绑定。"
                       }
                     }
                   },
