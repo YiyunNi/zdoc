@@ -7,6 +7,8 @@ displayed_sidebar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
 # Python SDK Reference
