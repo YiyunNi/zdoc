@@ -929,15 +929,16 @@
                   },
                   "cuType": {
                     "type": "string",
-                    "description": "The type of CU used for the cluster.",
+                    "description": "The type of CU used for the cluster. You can find the actual CU types when you create a cluster on the console. And also the drop-down below.",
                     "x-i18n": {
                       "zh-CN": {
-                        "description": "集群使用的 CU 类型。"
+                        "description": "集群使用的 CU 类型。您可以在控制台创建集群时查看实际的 CU 类型，或者查看下方的下拉列表。"
                       }
                     },
                     "enum": [
                       "Performance-optimized",
-                      "Capacity-optimized"
+                      "Capacity-optimized",
+                      "Tiered-storage"
                     ]
                   },
                   "projectId": {

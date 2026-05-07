@@ -104,6 +104,24 @@
                                   }
                                 }
                               },
+                              "regionIds": {
+                                "type": "array",
+                                "description": "A list of region IDs bound to the project.",
+                                "x-i18n": {
+                                  "zh-CN": {
+                                    "description": "绑定到项目的地域 ID 列表。"
+                                  }
+                                },
+                                "items": {
+                                  "type": "string",
+                                  "description": "A region ID. You can use the [List regions](https://docs.zilliz.com/reference/restful/list-cloud-regions-v2) to list applicable region IDs.",
+                                  "x-i18n": {
+                                    "zh-CN": {
+                                      "description": "地域 ID。您可以使用 [查看云服务地域](https://docs.zilliz.com.cn/reference/restful/list-cloud-regions-v2) 来获取可用地域 ID。"
+                                    }
+                                  }
+                                }
+                              },
                               "projectName": {
                                 "type": "string",
                                 "description": "Name of a project.",

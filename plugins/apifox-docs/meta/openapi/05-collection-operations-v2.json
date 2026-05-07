@@ -284,7 +284,7 @@
                   "value": {
                     "collectionName": "test_collection",
                     "schema": {
-                      "externalSource": "volume://my_volume/path/to/a/folder",
+                      "externalSource": "volume://my_volume/path/to/a/folder/",
                       "externalSpec": "{\"format\": \"parquet\"}",
                       "fields": [
                         {
@@ -2468,7 +2468,7 @@
               },
               "examples": {
                 "1": {
-                  "summary": "Refresh from an S3 source",
+                  "summary": "From an S3 source",
                   "x-include-target": [
                     "milvus"
                   ],
@@ -2480,7 +2480,7 @@
                   }
                 },
                 "2": {
-                  "summary": "Refresh from a Zilliz Cloud volume",
+                  "summary": "From a Zilliz Cloud volume",
                   "x-include-target": [
                     "zilliz"
                   ],
@@ -3401,6 +3401,24 @@
                 "x-i18n": {
                   "zh-CN": {
                     "description": "是否已启用保留的动态字段，用于以键值对的形式存放 Schema 中未定义的字段。"
+                  }
+                }
+              },
+              "externalSource": {
+                "type": "string",
+                "description": "The external source configuration in JSON string. This field is returned only when the collection is created from an external source.",
+                "x-i18n": {
+                  "zh-CN": {
+                    "description": "外部数据源配置的 JSON 字符串。仅当 Collection 从外部数据源创建时返回该字段。"
+                  }
+                }
+              },
+              "externalSpec": {
+                "type": "object",
+                "description": "The external source specification. This field is returned only when the collection is created from an external source.",
+                "x-i18n": {
+                  "zh-CN": {
+                    "description": "外部数据源规格。仅当 Collection 从外部数据源创建时返回该字段。"
                   }
                 }
               },
