@@ -128,12 +128,6 @@
                   "anyOf": [
                     {
                       "x-tab-label": "success",
-                      "description": "Returns a list of volumes.",
-                      "x-i18n": {
-                        "zh-CN": {
-                          "description": "返回 Volume 列表。"
-                        }
-                      },
                       "type": "object",
                       "properties": {
                         "code": {
@@ -150,7 +144,7 @@
                           "properties": {
                             "count": {
                               "type": "integer",
-                              "description": "The total number of volumes.",
+                              "description": "Total number of volumes.",
                               "x-i18n": {
                                 "zh-CN": {
                                   "description": "Volume 总数。"
@@ -159,7 +153,7 @@
                             },
                             "currentPage": {
                               "type": "integer",
-                              "description": "The current page number.",
+                              "description": "Current page number.",
                               "x-i18n": {
                                 "zh-CN": {
                                   "description": "当前页码。"
@@ -168,16 +162,16 @@
                             },
                             "pageSize": {
                               "type": "integer",
-                              "description": "The number of records in each response.",
+                              "description": "Number of volumes per page.",
                               "x-i18n": {
                                 "zh-CN": {
-                                  "description": "每页记录数。"
+                                  "description": "每页的 Volume 数量。"
                                 }
                               }
                             },
                             "volumes": {
                               "type": "array",
-                              "description": "The list of volumes.",
+                              "description": "List of volumes.",
                               "x-i18n": {
                                 "zh-CN": {
                                   "description": "Volume 列表。"
@@ -201,51 +195,6 @@
                                     "x-i18n": {
                                       "zh-CN": {
                                         "description": "Volume 的类别。"
-                                      }
-                                    }
-                                  },
-                                  "regionId": {
-                                    "type": "string",
-                                    "description": "The ID of the region where the volume is located.",
-                                    "x-i18n": {
-                                      "zh-CN": {
-                                        "description": "Volume 所属区域的 ID。"
-                                      }
-                                    }
-                                  },
-                                  "storageIntegrationId": {
-                                    "type": "string",
-                                    "description": "The storage integration ID. Only returned for external volumes.",
-                                    "x-i18n": {
-                                      "zh-CN": {
-                                        "description": "存储集成 ID。仅对外部 Volume 返回。"
-                                      }
-                                    }
-                                  },
-                                  "path": {
-                                    "type": "string",
-                                    "description": "The path prefix within the volume. Only returned for external volumes.",
-                                    "x-i18n": {
-                                      "zh-CN": {
-                                        "description": "存储卷内的路径前缀。仅对外部 Volume 返回。"
-                                      }
-                                    }
-                                  },
-                                  "status": {
-                                    "type": "string",
-                                    "description": "The current status of the volume.",
-                                    "x-i18n": {
-                                      "zh-CN": {
-                                        "description": "Volume 的当前状态。"
-                                      }
-                                    }
-                                  },
-                                  "createTime": {
-                                    "type": "integer",
-                                    "description": "The Unix timestamp when the volume was created.",
-                                    "x-i18n": {
-                                      "zh-CN": {
-                                        "description": "Volume 创建时间的 Unix 时间戳。"
                                       }
                                     }
                                   }
@@ -337,334 +286,6 @@
                       "message": "User hasn't authenticated"
                     }
                   }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v2/volumes/apply": {
-      "post": {
-        "summary": "Apply Volume",
-        "description": "Applies a volume configuration, creating a temporary stage if no stage name is provided.",
-        "x-i18n": {
-          "zh-CN": {
-            "summary": "应用存储卷",
-            "description": "本接口用于应用存储卷配置。如果未提供存储卷名称，则会创建一个临时 Stage。"
-          }
-        },
-        "tags": [
-          "Volume Operations (V2)"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "The authentication token should be an API key with appropriate privileges.",
-            "required": true,
-            "example": "Bearer {{TOKEN}}",
-            "schema": {
-              "type": "string"
-            },
-            "x-i18n": {
-              "zh-CN": {
-                "description": "认证令牌，应为具备适当权限的 API 密钥。"
-              }
-            }
-          },
-          {
-            "name": "Accept",
-            "in": "header",
-            "description": "Use `application/json`.",
-            "required": false,
-            "example": "application/json",
-            "schema": {
-              "type": "string"
-            },
-            "x-i18n": {
-              "zh-CN": {
-                "description": "使用 `application/json`。"
-              }
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "volumeName": {
-                    "type": "string",
-                    "description": "Name of the volume.",
-                    "x-i18n": {
-                      "zh-CN": {
-                        "description": "存储卷名称。"
-                      }
-                    }
-                  },
-                  "projectId": {
-                    "type": "string",
-                    "description": "ID of the project.",
-                    "x-i18n": {
-                      "zh-CN": {
-                        "description": "项目 ID。"
-                      }
-                    }
-                  },
-                  "regionId": {
-                    "type": "string",
-                    "description": "ID of the cloud region.",
-                    "x-i18n": {
-                      "zh-CN": {
-                        "description": "云地域 ID。"
-                      }
-                    }
-                  },
-                  "clusterId": {
-                    "type": "string",
-                    "description": "ID of the cluster.",
-                    "x-i18n": {
-                      "zh-CN": {
-                        "description": "集群 ID。"
-                      }
-                    }
-                  },
-                  "path": {
-                    "type": "string",
-                    "description": "Path within the volume.",
-                    "x-i18n": {
-                      "zh-CN": {
-                        "description": "存储卷内的路径。"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Returns details of the applied volume.",
-            "x-i18n": {
-              "zh-CN": {
-                "description": "返回已应用存储卷的详细信息。"
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "anyOf": [
-                    {
-                      "x-tab-label": "success",
-                      "type": "object",
-                      "properties": {
-                        "code": {
-                          "type": "integer",
-                          "description": "Response code.",
-                          "x-i18n": {
-                            "zh-CN": {
-                              "description": "响应码。"
-                            }
-                          }
-                        },
-                        "data": {
-                          "type": "object",
-                          "properties": {
-                            "endpoint": {
-                              "type": "string",
-                              "description": "Endpoint of the volume.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "存储卷端点。"
-                                }
-                              }
-                            },
-                            "cloud": {
-                              "type": "string",
-                              "description": "Cloud provider.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "云提供商。"
-                                }
-                              }
-                            },
-                            "region": {
-                              "type": "string",
-                              "description": "Cloud region.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "云地域。"
-                                }
-                              }
-                            },
-                            "bucketName": {
-                              "type": "string",
-                              "description": "Name of the bucket.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "存储桶名称。"
-                                }
-                              }
-                            },
-                            "remotePath": {
-                              "type": "string",
-                              "description": "Remote path of the volume.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "存储卷的远程路径。"
-                                }
-                              }
-                            },
-                            "volumeName": {
-                              "type": "string",
-                              "description": "Name of the volume.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "存储卷名称。"
-                                }
-                              }
-                            },
-                            "volumePrefix": {
-                              "type": "string",
-                              "description": "Prefix of the volume.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "存储卷前缀。"
-                                }
-                              }
-                            },
-                            "uploadPath": {
-                              "type": "string",
-                              "description": "The upload path. Deprecated, use `remotePath` instead.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "上传路径。已弃用，请使用 `remotePath`。"
-                                }
-                              }
-                            },
-                            "condition": {
-                              "type": "object",
-                              "description": "Access conditions for the volume.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "存储卷的访问条件。"
-                                }
-                              },
-                              "properties": {
-                                "maxContentLength": {
-                                  "type": "integer",
-                                  "description": "Maximum content length allowed.",
-                                  "x-i18n": {
-                                    "zh-CN": {
-                                      "description": "允许的最大内容长度。"
-                                    }
-                                  }
-                                },
-                                "maxFileNumber": {
-                                  "type": "integer",
-                                  "description": "Maximum number of files allowed.",
-                                  "x-i18n": {
-                                    "zh-CN": {
-                                      "description": "允许的最大文件数量。"
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "credentials": {
-                              "type": "object",
-                              "description": "Temporary credentials for accessing the volume.",
-                              "x-i18n": {
-                                "zh-CN": {
-                                  "description": "访问存储卷的临时凭证。"
-                                }
-                              },
-                              "properties": {
-                                "tmpAK": {
-                                  "type": "string",
-                                  "description": "Temporary access key.",
-                                  "x-i18n": {
-                                    "zh-CN": {
-                                      "description": "临时访问密钥。"
-                                    }
-                                  }
-                                },
-                                "tmpSK": {
-                                  "type": "string",
-                                  "description": "Temporary secret key.",
-                                  "x-i18n": {
-                                    "zh-CN": {
-                                      "description": "临时私有密钥。"
-                                    }
-                                  }
-                                },
-                                "sessionToken": {
-                                  "type": "string",
-                                  "description": "Session token.",
-                                  "x-i18n": {
-                                    "zh-CN": {
-                                      "description": "会话令牌。"
-                                    }
-                                  }
-                                },
-                                "expireTime": {
-                                  "type": "string",
-                                  "description": "Expiration time of the credentials.",
-                                  "x-i18n": {
-                                    "zh-CN": {
-                                      "description": "凭证过期时间。"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "description": "Response payload which contains the applied volume details.",
-                          "x-i18n": {
-                            "zh-CN": {
-                              "description": "响应载荷，包含已应用存储卷的详细信息。"
-                            }
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "x-tab-label": "failure",
-                      "type": "object",
-                      "properties": {
-                        "code": {
-                          "type": "integer",
-                          "description": "Response code.",
-                          "x-i18n": {
-                            "zh-CN": {
-                              "description": "响应码。"
-                            }
-                          }
-                        },
-                        "message": {
-                          "type": "string",
-                          "description": "Error message.",
-                          "x-i18n": {
-                            "zh-CN": {
-                              "description": "错误描述。"
-                            }
-                          }
-                        }
-                      },
-                      "description": "A failure response.",
-                      "x-i18n": {
-                        "zh-CN": {
-                          "description": "失败响应。"
-                        }
-                      },
-                      "x-i18n-langs": [
-                        "zh-CN"
-                      ]
-                    }
-                  ]
                 }
               }
             }
@@ -773,7 +394,7 @@
               },
               "examples": {
                 "1": {
-                  "summary": "success",
+                  "summary": "Managed Volume",
                   "x-target-response": "OPTION 1",
                   "x-target-lang": "en-US",
                   "value": {
@@ -783,7 +404,7 @@
                   }
                 },
                 "2": {
-                  "summary": "success",
+                  "summary": "Managed Volume",
                   "x-target-response": "OPTION 1",
                   "x-target-lang": "zh-CN",
                   "value": {
@@ -793,7 +414,7 @@
                   }
                 },
                 "3": {
-                  "summary": "external",
+                  "summary": "External Volume",
                   "x-target-response": "OPTION 1",
                   "x-target-lang": "en-US",
                   "value": {
@@ -802,7 +423,7 @@
                     "volumeName": "my_external_volume",
                     "type": "EXTERNAL",
                     "storageIntegrationId": "si-123456",
-                    "path": "/data"
+                    "path": "data/"
                   }
                 }
               }
@@ -1124,7 +745,7 @@
                         "type": "EXTERNAL",
                         "regionId": "aws-us-west-2",
                         "storageIntegrationId": "si-123456",
-                        "path": "/data",
+                        "path": "data/",
                         "status": "RUNNING",
                         "createTime": "2026-05-06T03:50:35Z"
                       }

@@ -900,7 +900,7 @@
                   "summary": "example",
                   "x-target-lang": "en-US",
                   "value": {
-                    "regionId": [
+                    "regions": [
                       "aws-us-west-2"
                     ]
                   }
@@ -909,7 +909,7 @@
                   "summary": "example",
                   "x-target-lang": "zh-CN",
                   "value": {
-                    "regionId": [
+                    "regions": [
                       "ali-cn-hangzhou"
                     ]
                   }
