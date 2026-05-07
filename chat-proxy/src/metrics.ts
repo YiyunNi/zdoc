@@ -173,3 +173,40 @@ export function initMetrics(): void {
     }
   }
 }
+
+export function getMetricsData(): {
+  counters: { name: string; help: string; values: { labels: Record<string, string>; value: number }[] }[];
+  gauges: { name: string; help: string; values: { labels: Record<string, string>; value: number }[] }[];
+  histograms: { name: string; help: string; values: { labels: Record<string, string>; buckets: number[]; counts: number[]; totalCount: number }[] }[];
+} {
+  const counterData = [];
+  for (const [name, items] of counters) {
+    counterData.push({
+      name,
+      help: COUNTER_HELP[name] || name,
+      values: items.map(i => ({ labels: i.labels, value: i.value })),
+    });
+  }
+  const gaugeData = [];
+  for (const [name, items] of gauges) {
+    gaugeData.push({
+      name,
+      help: GAUGE_HELP[name] || name,
+      values: items.map(i => ({ labels: i.labels, value: i.value })),
+    });
+  }
+  const histogramData = [];
+  for (const [name, items] of histograms) {
+    histogramData.push({
+      name,
+      help: HISTOGRAM_HELP[name] || name,
+      values: items.map(i => ({
+        labels: i.labels,
+        buckets: i.buckets,
+        counts: i.counts,
+        totalCount: i.totalCount,
+      })),
+    });
+  }
+  return { counters: counterData, gauges: gaugeData, histograms: histogramData };
+}
