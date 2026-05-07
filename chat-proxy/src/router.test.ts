@@ -69,6 +69,20 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('compliance-and-privacy:');
   });
 
+  it('guides conceptual reranking questions away from code routing', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {agent: 'product', topics: ['reranking', 'integrations'], reasoning: 'reranker tradeoff'},
+    } as any);
+
+    await routeIntent('When should I use Cohere Reranker instead of Boost Reranker?', [], 'sess-reranker-concept');
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.prompt).toContain('Do not route conceptual product, reranking');
+    expect(callArgs.prompt).toContain('reranking:');
+    expect(callArgs.prompt).toContain('When should I use Cohere Reranker instead of Boost Reranker?');
+    expect(callArgs.prompt).toContain('What weights should I use for Weighted Reranker in production?');
+  });
+
   it('includes sticky agent in prompt for same session', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {agent: 'resources', reasoning: 'first call'},
