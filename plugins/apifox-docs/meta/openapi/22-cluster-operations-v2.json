@@ -1159,8 +1159,7 @@
                       "code": 0,
                       "data": {
                         "clusterId": "inxx-xxxxxxxxxxxxxxx",
-                        "regionId": "aws-us-west-2",
-                        "projectId": "proj-xxxxxxxxxxxxxxxxxxxx"
+                        "prompt": "Successfully submitted. The on-demand cluster is being created. Use the Describe On-Demand Cluster API to check its creation progress and status. Once the cluster status is RUNNING, use your API key to access the on-demand cluster."
                       }
                     }
                   },
