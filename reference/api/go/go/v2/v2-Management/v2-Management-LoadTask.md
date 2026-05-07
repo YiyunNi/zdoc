@@ -13,10 +13,10 @@ type: docx
 token: U9w7dQeEBom2UBxJZM1cJAIYniL
 sidebar_position: 21
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

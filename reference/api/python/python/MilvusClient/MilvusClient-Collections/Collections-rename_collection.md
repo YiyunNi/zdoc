@@ -13,10 +13,10 @@ type: docx
 token: WR4qdjFUXog2JHxuJpMcWcVlnEf
 sidebar_position: 18
 keywords: 
+  - NLP
+  - Neural Network
+  - Deep Learning
   - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

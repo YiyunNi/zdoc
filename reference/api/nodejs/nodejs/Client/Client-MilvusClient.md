@@ -13,10 +13,10 @@ type: docx
 token: DsyLdmJr0o7FAfxwPcNct1Bqnth
 sidebar_position: 5
 keywords: 
+  - information retrieval
+  - dimension reduction
   - hnsw algorithm
   - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud

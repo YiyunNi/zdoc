@@ -12,10 +12,10 @@ token: PXOyfwEUtlY8xWdzQ62cXQeenOd
 sidebar_position: 3
 sidebar_label: "Cluster"
 keywords: 
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud

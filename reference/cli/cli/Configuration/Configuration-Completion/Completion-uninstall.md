@@ -13,10 +13,10 @@ type: docx
 token: M7iad7XTioIjaUxy3k7cqQWAn6f
 sidebar_position: 4
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud

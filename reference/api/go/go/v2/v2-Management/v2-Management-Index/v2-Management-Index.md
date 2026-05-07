@@ -13,10 +13,10 @@ type: docx
 token: ERQodkjAzotUQ3xKvA8c6jmLn3e
 sidebar_position: 1
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud

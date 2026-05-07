@@ -13,10 +13,10 @@ type: docx
 token: LMXGdDnueontIFxuqAIcS8D6nJc
 sidebar_position: 19
 keywords: 
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: SmI4dGF4qoAjbKxamfhcndjxnCc
 sidebar_position: 21
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud

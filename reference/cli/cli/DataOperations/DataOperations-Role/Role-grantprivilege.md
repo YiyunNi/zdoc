@@ -13,10 +13,10 @@ type: docx
 token: U83ddOym4o7WgAx1ekac4nFHnzf
 sidebar_position: 4
 keywords: 
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud

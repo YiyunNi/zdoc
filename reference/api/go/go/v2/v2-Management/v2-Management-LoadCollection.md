@@ -13,10 +13,10 @@ type: docx
 token: B5w2dyWunogsmAxlJfQcQp8qnRg
 sidebar_position: 18
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud

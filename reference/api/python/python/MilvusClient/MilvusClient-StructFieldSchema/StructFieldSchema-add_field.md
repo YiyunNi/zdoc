@@ -13,10 +13,10 @@ type: docx
 token: Up73d8d78oPM2FxkvlIcuxeBn9g
 sidebar_position: 1
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -56,7 +56,7 @@ add_field(
 
     The data type of the field.
 
-    You can choose from the following options when selecting a data type for different fields. For details, refer to [Array of Structs](/docs/array-of-structs).
+    You can choose from the following options when selecting a data type for different fields. For details, refer to [Array of Structs](/docs/use-array-of-structs).
 
 - **max_length** (*int*) -
 

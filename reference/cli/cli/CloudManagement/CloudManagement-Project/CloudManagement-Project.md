@@ -12,10 +12,10 @@ token: RMdtf53TElufWpdluDgc5veVnqc
 sidebar_position: 7
 sidebar_label: "Project"
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud

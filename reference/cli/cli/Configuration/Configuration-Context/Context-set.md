@@ -13,10 +13,10 @@ type: docx
 token: Mbj7dQ8OmojO2fxa3PPcr8V8n4c
 sidebar_position: 3
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
   - zilliz
   - zilliz cloud
   - cloud

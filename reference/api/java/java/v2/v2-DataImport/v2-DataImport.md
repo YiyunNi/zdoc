@@ -12,10 +12,10 @@ token: JNwTf1Enil3jErdNcSQc04LKnRd
 sidebar_position: 9
 sidebar_label: "Data Import"
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: SCP5dY88horVwExBCD2cuSChnZM
 sidebar_position: 11
 keywords: 
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: A6atfZDQxl1INud6VYGcX54zngf
 sidebar_position: 2
 sidebar_label: "EmbeddingModels"
 keywords: 
-  - Faiss vector database
   - Chroma vector database
   - nlp search
   - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud

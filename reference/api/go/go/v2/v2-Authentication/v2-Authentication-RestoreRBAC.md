@@ -13,10 +13,10 @@ type: docx
 token: YYvkdK6o5ovGGsxVyEtcEGXnn6b
 sidebar_position: 20
 keywords: 
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud

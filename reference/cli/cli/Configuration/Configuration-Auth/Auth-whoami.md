@@ -13,10 +13,10 @@ type: docx
 token: LrKvdmIVCoeSGfxmyf6cdJ5TnFe
 sidebar_position: 5
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud

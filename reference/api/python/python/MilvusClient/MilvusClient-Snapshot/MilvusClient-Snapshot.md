@@ -12,10 +12,10 @@ token: RoBzflamplZFzYd1ZSWccuVfnnc
 sidebar_position: 15
 sidebar_label: "Snapshot"
 keywords: 
-  - rag vector database
-  - what is vector db
   - what are vector databases
   - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud

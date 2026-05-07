@@ -13,10 +13,10 @@ type: docx
 token: QSmmdf6jgoi8rFxzDnzcqr3cnMe
 sidebar_position: 15
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: GppedViHro8TJMxQCZ3cJRKRnHg
 sidebar_position: 16
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud

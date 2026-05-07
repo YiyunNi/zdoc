@@ -12,10 +12,10 @@ token: IxaefGzWtlPFlTd617bcYS4cn4d
 sidebar_position: 10
 sidebar_label: "Snapshot"
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud

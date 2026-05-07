@@ -12,10 +12,10 @@ token: EsbCfRCYllSGzXdrs2zcrQWcnHg
 sidebar_position: 7
 sidebar_label: "Partition"
 keywords: 
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
   - zilliz
   - zilliz cloud
   - cloud

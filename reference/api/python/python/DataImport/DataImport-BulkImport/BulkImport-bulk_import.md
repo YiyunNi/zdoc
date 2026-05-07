@@ -4,19 +4,19 @@ slug: /python/python/BulkImport-bulk_import
 sidebar_key: python/BulkImport-bulk_import
 sidebar_label: "bulk_import()"
 added_since: Inherit
-last_modified: v2.5.x
+last_modified: v3.0.x
 deprecate_since: false
 beta: false
 notebook: false
 description: "This operation imports the prepared data files to Zilliz Cloud. To learn how to prepare your data files, read Prepare Data Import. | Python"
 type: docx
-token: RFSCdiUYGouQrtx8c1RczPVvnmf
+token: SE6wdwuONoUwQ8x7fdgcKvNwnyg
 sidebar_position: 1
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,6 +43,8 @@ bulk_import(
     access_key: str,
     secret_key: str,
     cluster_id: str,
+    project_id: str,
+    region_id: str,
     collection_name: str,
     **kwargs,
 )
@@ -103,6 +105,28 @@ bulk_import(
     The instance ID of the target cluster of this operation.
 
     You can get the instance ID of a cluster on its details page from the Zilliz Cloud console.
+
+    This parameter applies when you use a **cluster endpoint**. For details, refer to [Connection Endpoints.](/docs/access-connection-endpoints)
+
+- **project_id** (*string*) -
+
+    **[REQUIRED]**
+
+    The project ID of the target cluster of this operation.
+
+    You can get the project ID for a cluster from its details page in the Zilliz Cloud console.
+
+    This parameter applies when you use a **project endpoint**. For details, refer to [Connection Endpoints](/docs/access-connection-endpoints)
+
+- **region_id** (*string*) -
+
+    **[REQUIRED]**
+
+    The region ID of the target cluster of this operation.
+
+    You can get the region ID of a cluster on its details page from the Zilliz Cloud console.
+
+    This parameter applies when you use a **project endpoint**. For details, refer to [Connection Endpoints](/docs/access-connection-endpoints)
 
 **RETURN TYPE:**
 

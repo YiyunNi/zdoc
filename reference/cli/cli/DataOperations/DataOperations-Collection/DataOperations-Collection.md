@@ -12,10 +12,10 @@ token: VXxdfhu8ZlORxZdXc1gcFwgtnb7
 sidebar_position: 2
 sidebar_label: "Collection"
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
   - zilliz
   - zilliz cloud
   - cloud

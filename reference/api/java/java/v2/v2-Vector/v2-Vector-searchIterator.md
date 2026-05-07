@@ -13,10 +13,10 @@ type: docx
 token: NYIqdKnfWobgPrxOmxFcbi3JnSd
 sidebar_position: 8
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: CnuHdninQoBoJXxWe2pczq7snGd
 sidebar_position: 11
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud

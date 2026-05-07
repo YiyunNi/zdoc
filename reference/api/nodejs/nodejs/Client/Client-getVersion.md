@@ -13,10 +13,10 @@ type: docx
 token: WA81dokeYotwt9xAiKKcaaIpnxc
 sidebar_position: 6
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
   - zilliz
   - zilliz cloud
   - cloud

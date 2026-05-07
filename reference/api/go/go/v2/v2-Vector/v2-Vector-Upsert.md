@@ -13,10 +13,10 @@ type: docx
 token: O1oidP1nEoZmlrxzGRRc30mjn5d
 sidebar_position: 14
 keywords: 
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

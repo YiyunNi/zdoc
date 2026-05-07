@@ -13,10 +13,10 @@ type: docx
 token: P9MFdEHMKoAfshxQhamcWrGknWg
 sidebar_position: 26
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: FewAfDseeli62CdqFcBc7Lh2ncD
 sidebar_position: 5
 sidebar_label: "Context"
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud

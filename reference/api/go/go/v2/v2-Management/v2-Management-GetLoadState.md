@@ -13,10 +13,10 @@ type: docx
 token: AvOXd92pPoAXPcxvArwcvKnSnph
 sidebar_position: 12
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud

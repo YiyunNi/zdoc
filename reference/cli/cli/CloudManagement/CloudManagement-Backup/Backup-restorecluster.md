@@ -13,10 +13,10 @@ type: docx
 token: XAhudiqXqoHS1zxSDqgcNY9anxb
 sidebar_position: 7
 keywords: 
-  - Faiss
   - Video search
   - AI Hallucination
   - AI Agent
+  - semantic search
   - zilliz
   - zilliz cloud
   - cloud

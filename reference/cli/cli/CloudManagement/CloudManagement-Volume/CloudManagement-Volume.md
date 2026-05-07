@@ -12,10 +12,10 @@ token: YJ0WfaSiClY9p5d6Jykcba2anbc
 sidebar_position: 8
 sidebar_label: "Volume"
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud

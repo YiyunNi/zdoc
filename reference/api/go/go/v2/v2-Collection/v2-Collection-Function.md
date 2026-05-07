@@ -13,10 +13,10 @@ type: docx
 token: G4dTdejt8otbQWxUqvucwKnBnYg
 sidebar_position: 17
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud

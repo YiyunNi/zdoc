@@ -5,18 +5,18 @@ sidebar_key: node/Collections-createCollection
 sidebar_label: "createCollection()"
 added_since: v2.3.x
 last_modified: v3.0.x
-deprecate_since: FALSE
-beta: FALSE
-notebook: FALSE
+deprecate_since: false
+beta: false
+notebook: false
 description: "This operation creates a collection either with default or customized settings. | Node.js"
 type: docx
 token: Z55qdPU2foS8h0xLs6QcWg6enrC
 sidebar_position: 5
 keywords: 
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: E5cpfv4EPlpWJ5dV0iJcPwo4nyf
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud

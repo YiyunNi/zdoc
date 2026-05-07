@@ -12,10 +12,10 @@ token: CsRZfOAHhly4fSd5kxvcAfkFnpf
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

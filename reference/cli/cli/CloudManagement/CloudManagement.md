@@ -12,10 +12,10 @@ token: CRpLfHplvlPKBDdxyCqcPFqWncd
 sidebar_position: 1
 sidebar_label: "Cloud Management"
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud

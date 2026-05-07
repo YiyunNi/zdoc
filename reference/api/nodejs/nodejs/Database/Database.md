@@ -12,10 +12,10 @@ token: F0ZXfs6XSlspHxdg7DwcYb84nMf
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud

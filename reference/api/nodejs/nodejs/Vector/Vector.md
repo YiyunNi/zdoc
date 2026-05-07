@@ -12,10 +12,10 @@ token: HgpMfqiBwlO0sudMbiVcYpHHn5f
 sidebar_position: 7
 sidebar_label: "Vector"
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud

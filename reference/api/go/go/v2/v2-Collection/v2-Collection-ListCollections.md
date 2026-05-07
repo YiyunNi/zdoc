@@ -13,10 +13,10 @@ type: docx
 token: AVEcd3SCwoRyiTxcNodcQAepnGf
 sidebar_position: 21
 keywords: 
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud

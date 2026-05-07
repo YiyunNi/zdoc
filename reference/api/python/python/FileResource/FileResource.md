@@ -12,10 +12,10 @@ token: PWyVfD7HUl1x3ydji7RcraKin1g
 sidebar_position: 7
 sidebar_label: "FileResource"
 keywords: 
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

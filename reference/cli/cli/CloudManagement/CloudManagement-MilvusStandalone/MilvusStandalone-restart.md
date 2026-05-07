@@ -13,10 +13,10 @@ type: docx
 token: KpgUdQv1Woy0r3xOx1WcGlcNn4d
 sidebar_position: 3
 keywords: 
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

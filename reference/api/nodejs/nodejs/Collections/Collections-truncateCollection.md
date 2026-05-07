@@ -13,10 +13,10 @@ type: docx
 token: J0IBdbw3Voyqw9xnInUcn9EonTe
 sidebar_position: 28
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud

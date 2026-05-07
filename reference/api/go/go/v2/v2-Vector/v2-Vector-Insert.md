@@ -13,10 +13,10 @@ type: docx
 token: T6S4dcpZ7oeKD6xeTofc2mn9nrb
 sidebar_position: 6
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud

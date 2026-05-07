@@ -13,10 +13,10 @@ type: docx
 token: WiVnd8VXooFQ9PxVgiyc7FkqnAg
 sidebar_position: 26
 keywords: 
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud

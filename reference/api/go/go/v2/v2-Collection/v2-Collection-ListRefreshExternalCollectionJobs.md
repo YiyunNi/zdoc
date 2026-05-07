@@ -13,10 +13,10 @@ type: docx
 token: KTeqdqUI2o3YO1xg3EXcJqGcnbe
 sidebar_position: 26
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

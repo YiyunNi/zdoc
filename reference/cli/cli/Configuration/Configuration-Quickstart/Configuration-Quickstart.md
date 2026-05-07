@@ -12,10 +12,10 @@ token: CLbTfXENAlL9T5dPoG8cmgGPnxP
 sidebar_position: 8
 sidebar_label: "Quickstart"
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

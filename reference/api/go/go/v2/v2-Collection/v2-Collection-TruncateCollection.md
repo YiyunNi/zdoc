@@ -13,10 +13,10 @@ type: docx
 token: V7bwdcBPGosCFWxjYQfctDDInmb
 sidebar_position: 24
 keywords: 
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

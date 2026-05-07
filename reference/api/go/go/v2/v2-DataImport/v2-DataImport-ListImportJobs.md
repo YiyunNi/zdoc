@@ -13,10 +13,10 @@ type: docx
 token: YmqKdQyDDo2Yyjx5rkMcQBGvnEg
 sidebar_position: 7
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud

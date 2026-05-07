@@ -12,10 +12,10 @@ token: WlKqf2dXKljRPDdiiUIcdsh5nxd
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
+  - cheap vector database
   - Managed vector database
   - Pinecone vector database
   - Audio search
-  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud

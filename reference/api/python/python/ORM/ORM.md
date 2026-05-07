@@ -12,10 +12,10 @@ token: QYo4fSeVFlex8ZdeGZ4cAlmcnof
 sidebar_position: 4
 sidebar_label: "ORM"
 keywords: 
+  - Machine Learning
   - RAG
   - NLP
   - Neural Network
-  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud

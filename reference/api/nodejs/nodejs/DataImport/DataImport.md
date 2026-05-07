@@ -12,10 +12,10 @@ token: OE6ef37Ztlb6FgdouLvcTcrpnAp
 sidebar_position: 9
 sidebar_label: "Data Import"
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud

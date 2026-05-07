@@ -13,10 +13,10 @@ type: docx
 token: I053djRjsob1JJxKXvUcGelbn2d
 sidebar_position: 21
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: OFtRfQzb0luqK8d7zV1cskGKnYd
 sidebar_position: 6
 sidebar_label: "Global"
 keywords: 
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud

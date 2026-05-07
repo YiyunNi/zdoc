@@ -4,19 +4,19 @@ slug: /python/python/Client-MilvusClient
 sidebar_key: python/Client-MilvusClient
 sidebar_label: "MilvusClient"
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: v3.0.x
 deprecate_since: false
 beta: false
 notebook: false
 description: "A MilvusClient instance represents a Python client that connects to a specific Zilliz Cloud cluster. | Python | MilvusClient"
 type: docx
-token: TUrSdmskuoGdFRxFT75c6xhinzc
+token: SojTdgw1joOuA8xMzb5cMUFYnce
 sidebar_position: 2
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -65,9 +65,19 @@ MilvusClient(
 
     The URI of the Zilliz Cloud cluster. For example:
 
-    ```plaintext
-    https://inxx-xxxxxxxxxxxxxxxxx.aws-us-west-2.vectordb-uat3.zillizcloud.com:19540
-    ```
+    - **Cluster endpoint**
+
+        - **Free & Serverless**
+
+            `<i>http</i>s://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com`
+
+        - **Dedicated**
+
+            `<i>http</i>s://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
+
+    - **Project Endpoint (On-Demand)**
+
+        `<i>http</i>s://{project-id}.{region}.api.zillizcloud.com`
 
 - **user** (*string*) -
 
@@ -97,7 +107,7 @@ MilvusClient(
 
     - An [API](/docs/manage-api-keys)[ key](/docs/manage-api-keys) with sufficient permissions, or
 
-    - A pair of [username and password ](/docs/cluster-credentials)used to access the target cluster, joined by a colon (:). For example, you can set this to `username:p@ssw0rd`.
+    - A pair of [username and password ](/docs/cluster-credentials)used to access the target cluster, joined by a colon (:). For example, you can set this to `username:p@ssw0rd`. This applies only when you use a cluster endpoint.
 
 - **timeout** (*float* | *None*)  
 

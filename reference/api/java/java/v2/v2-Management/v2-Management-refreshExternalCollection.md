@@ -13,10 +13,10 @@ type: docx
 token: G8JydoIzPoKb2MxASemcW2spnbe
 sidebar_position: 27
 keywords: 
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud

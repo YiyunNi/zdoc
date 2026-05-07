@@ -13,10 +13,10 @@ type: docx
 token: KLrMdFtVko5QGwxyIs9ckmtUn0c
 sidebar_position: 4
 keywords: 
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud

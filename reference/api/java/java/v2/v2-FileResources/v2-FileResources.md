@@ -12,10 +12,10 @@ token: W5gwfoADilawLFd64CWcpuFMn0g
 sidebar_position: 11
 sidebar_label: "File Resources"
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud
