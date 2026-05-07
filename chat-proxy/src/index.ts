@@ -610,7 +610,7 @@ app.post('/chat', async c => {
             maxOutputTokens: 4096,
             temperature: 0.2,
             tools: agentTools,
-            stopWhen: stepCountIs(8),
+            stopWhen: stepCountIs(4),
             abortSignal: AbortSignal.timeout(120000),
             system: systemPrompt,
             messages: windowedMessages.map(m => ({
