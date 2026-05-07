@@ -1873,6 +1873,134 @@ input, select { font-family: var(--body); }
   }
 
   // ------------------------------------------------------------------
+  // Pipeline Metrics tab
+  // ------------------------------------------------------------------
+  async function fetchMetrics() {
+    initMetricsCharts();
+    try {
+      const data = await apiFetch('/admin/api/metrics');
+      updateMetricsCards(data);
+      updateMetricsCharts(data);
+      $('metricsLiveBadge').className = 'live-badge ok';
+    } catch (e) {
+      if (e.message !== 'Unauthorized') {
+        console.error('Metrics fetch error:', e);
+        $('metricsLiveBadge').className = 'live-badge err';
+      }
+    }
+  }
+
+  function updateMetricsCards(data) {
+    const counters = data.counters || [];
+    const gauges = data.gauges || [];
+
+    const reqCounter = counters.find(c => c.name === 'chat_proxy_requests_total');
+    const totalRequests = reqCounter ? reqCounter.values.reduce((s, v) => s + v.value, 0) : 0;
+    animateValue($('mTotalRequests'), totalRequests);
+
+    const tokenCounter = counters.find(c => c.name === 'chat_proxy_token_usage_total');
+    const totalTokens = tokenCounter ? tokenCounter.values.reduce((s, v) => s + v.value, 0) : 0;
+    animateValue($('mTotalTokens'), totalTokens);
+
+    const hitCounter = counters.find(c => c.name === 'chat_proxy_cache_hits_total');
+    const missCounter = counters.find(c => c.name === 'chat_proxy_cache_misses_total');
+    const hits = hitCounter ? hitCounter.values.reduce((s, v) => s + v.value, 0) : 0;
+    const misses = missCounter ? missCounter.values.reduce((s, v) => s + v.value, 0) : 0;
+    const hitRate = hits + misses > 0 ? Math.round((hits / (hits + misses)) * 100) : 0;
+    $('mCacheHitRate').textContent = hitRate + '%';
+
+    const toolCounter = counters.find(c => c.name === 'chat_proxy_tool_calls_total');
+    const toolCalls = toolCounter ? toolCounter.values.reduce((s, v) => s + v.value, 0) : 0;
+    animateValue($('mToolCalls'), toolCalls);
+
+    const activeGauge = gauges.find(g => g.name === 'chat_proxy_active_sessions');
+    const activeSessions = activeGauge ? activeGauge.values.reduce((s, v) => s + v.value, 0) : 0;
+    animateValue($('mActiveSessions'), activeSessions);
+
+    const accuracyGauge = gauges.find(g => g.name === 'chat_proxy_router_accuracy');
+    const accuracy = accuracyGauge ? accuracyGauge.values.reduce((s, v) => s + v.value, 0) : 0;
+    const accuracyCount = accuracyGauge ? accuracyGauge.values.length : 0;
+    const avgAccuracy = accuracyCount > 0 ? Math.round((accuracy / accuracyCount) * 100) : 0;
+    $('mRouterAccuracy').textContent = avgAccuracy + '%';
+  }
+
+  function updateMetricsCharts(data) {
+    const counters = data.counters || [];
+    const histograms = data.histograms || [];
+
+    // Requests by Agent
+    const reqCounter = counters.find(c => c.name === 'chat_proxy_requests_total');
+    if (reqCounter && charts.reqByAgent) {
+      const byAgent = {};
+      for (const v of reqCounter.values) {
+        const agent = v.labels.agent || 'unknown';
+        byAgent[agent] = (byAgent[agent] || 0) + v.value;
+      }
+      const sorted = Object.entries(byAgent).sort((a, b) => b[1] - a[1]);
+      charts.reqByAgent.data.labels = sorted.map(([k]) => k);
+      charts.reqByAgent.data.datasets[0].data = sorted.map(([, v]) => v);
+      charts.reqByAgent.update('none');
+    }
+
+    // Token Usage by Model
+    const tokenCounter = counters.find(c => c.name === 'chat_proxy_token_usage_total');
+    if (tokenCounter && charts.tokensByModel) {
+      const byModel = {};
+      for (const v of tokenCounter.values) {
+        const model = v.labels.model || 'unknown';
+        const type = v.labels.type || 'total';
+        if (!byModel[model]) byModel[model] = { input: 0, output: 0, total: 0 };
+        byModel[model][type] = (byModel[model][type] || 0) + v.value;
+      }
+      const models = Object.keys(byModel).sort();
+      charts.tokensByModel.data.labels = models;
+      charts.tokensByModel.data.datasets[0].data = models.map(m => byModel[m].input || 0);
+      charts.tokensByModel.data.datasets[1].data = models.map(m => byModel[m].output || 0);
+      charts.tokensByModel.data.datasets[2].data = models.map(m => byModel[m].total || 0);
+      charts.tokensByModel.update('none');
+    }
+
+    // Cache Hits vs Misses
+    const hitCounter = counters.find(c => c.name === 'chat_proxy_cache_hits_total');
+    const missCounter = counters.find(c => c.name === 'chat_proxy_cache_misses_total');
+    if (charts.cacheRatio) {
+      const hits = hitCounter ? hitCounter.values.reduce((s, v) => s + v.value, 0) : 0;
+      const misses = missCounter ? missCounter.values.reduce((s, v) => s + v.value, 0) : 0;
+      charts.cacheRatio.data.datasets[0].data = [hits, misses];
+      charts.cacheRatio.update('none');
+    }
+
+    // Tool Calls by Name
+    const toolCounter = counters.find(c => c.name === 'chat_proxy_tool_calls_total');
+    if (toolCounter && charts.toolCalls) {
+      const byTool = {};
+      for (const v of toolCounter.values) {
+        const tool = v.labels.tool || 'unknown';
+        byTool[tool] = (byTool[tool] || 0) + v.value;
+      }
+      const sorted = Object.entries(byTool).sort((a, b) => b[1] - a[1]);
+      charts.toolCalls.data.labels = sorted.map(([k]) => k);
+      charts.toolCalls.data.datasets[0].data = sorted.map(([, v]) => v);
+      charts.toolCalls.update('none');
+    }
+
+    // Step Duration histogram
+    const stepHist = histograms.find(h => h.name === 'chat_proxy_step_duration_ms');
+    if (stepHist && stepHist.values.length && charts.stepDuration) {
+      const first = stepHist.values[0];
+      const aggCounts = new Array(first.buckets.length).fill(0);
+      for (const v of stepHist.values) {
+        for (let i = 0; i < v.counts.length; i++) {
+          aggCounts[i] += v.counts[i];
+        }
+      }
+      charts.stepDuration.data.labels = first.buckets.map(b => '≤' + b + 'ms');
+      charts.stepDuration.data.datasets[0].data = aggCounts;
+      charts.stepDuration.update('none');
+    }
+  }
+
+  // ------------------------------------------------------------------
   // Dashboard tab
   // ------------------------------------------------------------------
   async function fetchDashboard() {
