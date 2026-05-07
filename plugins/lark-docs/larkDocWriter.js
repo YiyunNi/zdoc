@@ -1,5 +1,5 @@
 const larkTokenFetcher = require('./larkTokenFetcher.js')
-const { removeTabsHallucinations, unescapeKnownJsxTags } = require('../mdx-parse/mdxPatcher')
+const { removeTabsHallucinations, unescapeKnownJsxTags, normalizeCodeTagContent } = require('../mdx-parse/mdxPatcher')
 const Downloader = require('./larkImageDownloader.js')
 const slugify = require('slugify')
 const fs = require('node:fs')
@@ -997,6 +997,7 @@ export const method = "${method}"`
             // Pre-process: fix translation/editor artefacts, then escape problem characters
             let patchedContent = removeTabsHallucinations(content);
             patchedContent = unescapeKnownJsxTags(patchedContent);
+            patchedContent = normalizeCodeTagContent(patchedContent);
             patchedContent = this.__escape_currency_dollars(patchedContent);
             patchedContent = this.__escape_non_html_tags(patchedContent);
             let maxIterations = 50; // Prevent infinite loops

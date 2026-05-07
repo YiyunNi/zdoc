@@ -108,6 +108,90 @@ function escapeCurrencyDollars(content) {
     return result.join('\n');
 }
 
+function transformOutsideFencedCodeBlocks(content, transform) {
+    const lines = content.split('\n');
+    const result = [];
+    let pending = [];
+    let inCodeBlock = false;
+
+    const flushPending = () => {
+        if (pending.length > 0) {
+            result.push(transform(pending.join('\n')));
+            pending = [];
+        }
+    };
+
+    for (const line of lines) {
+        const stripped = line.trim();
+        if (stripped.startsWith('```') || stripped.startsWith('~~~')) {
+            if (!inCodeBlock) {
+                flushPending();
+                inCodeBlock = true;
+                result.push(line);
+            } else {
+                result.push(line);
+                inCodeBlock = false;
+            }
+            continue;
+        }
+
+        if (inCodeBlock) {
+            result.push(line);
+        } else {
+            pending.push(line);
+        }
+    }
+
+    flushPending();
+    return result.join('\n');
+}
+
+function stripTagsFromCodeContent(inner) {
+    return inner.replace(/<\/?[A-Za-z][^>]*>/g, '');
+}
+
+function escapeCodeContentBraces(inner) {
+    return inner.replace(/(?<!\\)([{}])/g, '\\$1');
+}
+
+function normalizeSingleCodeTag(match, attrs = '', inner) {
+    const stripped = stripTagsFromCodeContent(inner);
+    const escaped = escapeCodeContentBraces(stripped);
+    return `<code${attrs}>${escaped}</code>`;
+}
+
+function normalizeCodeTagContent(content) {
+    return transformOutsideFencedCodeBlocks(content, segment => {
+        return segment.replace(/<code(\s[^>]*)?>([\s\S]*?)<\/code>/g, normalizeSingleCodeTag);
+    });
+}
+
+function findUnnormalizedCodeTags(content) {
+    const findings = [];
+
+    transformOutsideFencedCodeBlocks(content, segment => {
+        segment.replace(/<code(\s[^>]*)?>([\s\S]*?)<\/code>/g, (match, attrs = '', inner) => {
+            const stripped = stripTagsFromCodeContent(inner);
+            const hasNestedTags = stripped !== inner;
+            const hasUnescapedBraces = /(?<!\\)[{}]/.test(stripped);
+
+            if (hasNestedTags || hasUnescapedBraces) {
+                findings.push({
+                    snippet: match.replace(/\s+/g, ' ').slice(0, 120),
+                    hasNestedTags,
+                    hasUnescapedBraces,
+                });
+            }
+
+            return match;
+        });
+
+        return segment;
+    });
+
+    return findings;
+}
+
 /**
  * Pre-processing: escape any lowercase tag whose name is not a known HTML element or
  * content-filter tag, outside fenced code blocks and inline code spans.
@@ -245,7 +329,15 @@ function validateMdxStructure(content) {
         errors.push('unrestored XTAG translation placeholders found (placeholder restore failed)');
     }
 
-    // Check 4: tag balance for <Tabs> and <TabItem> (outside code blocks)
+    // Check 4: JSX <code> spans must render literal code text.
+    // MDX treats `{placeholder}` inside JSX children as JavaScript expressions,
+    // and nested formatting tags like <i> split code text into JSX children.
+    const unnormalizedCodeTags = findUnnormalizedCodeTags(content);
+    if (unnormalizedCodeTags.length > 0) {
+        errors.push(`unnormalized JSX <code> tag(s) found (${unnormalizedCodeTags.length} span(s) with nested tags or unescaped braces)`);
+    }
+
+    // Check 5: tag balance for <Tabs> and <TabItem> (outside code blocks)
     const lines = content.split('\n');
     let inCodeBlock = false;
     const delta = { Tabs: 0, TabItem: 0 };
@@ -280,6 +372,7 @@ async function applyMdxPatches(content) {
         // Pre-process: fix hallucination patterns, then escape problem characters
         let patchedContent = removeTabsHallucinations(content);
         patchedContent = unescapeKnownJsxTags(patchedContent);
+        patchedContent = normalizeCodeTagContent(patchedContent);
         patchedContent = escapeCurrencyDollars(patchedContent);
         patchedContent = escapeNonHtmlTags(patchedContent);
         let maxIterations = 50; // Prevent infinite loops
@@ -452,4 +545,6 @@ module.exports = {
     validateMdxStructure,
     removeTabsHallucinations,
     unescapeKnownJsxTags,
+    normalizeCodeTagContent,
+    findUnnormalizedCodeTags,
 };

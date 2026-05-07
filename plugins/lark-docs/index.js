@@ -3,11 +3,32 @@ const docWriter = require('./larkDocWriter.js')
 const driveWriter = require('./larkDriveWriter.js')
 const Utils = require('./larkUtils.js')
 const fs = require('node:fs')
+const node_path = require('node:path')
 const inquirerModule = require('inquirer')
 const inquirer = inquirerModule.default ?? inquirerModule
 require('dotenv/config');
 
-module.exports = function (context, options) {
+function resolveRepoBranch(cwd = process.cwd()) {
+    const dotGitPath = node_path.join(cwd, '.git')
+    const dotGitStat = fs.statSync(dotGitPath)
+    let headPath
+
+    if (dotGitStat.isDirectory()) {
+        headPath = node_path.join(dotGitPath, 'HEAD')
+    } else {
+        const gitFile = fs.readFileSync(dotGitPath, 'utf8').trim()
+        const gitDir = gitFile.match(/^gitdir:\s*(.+)$/)?.[1]
+        if (!gitDir) {
+            throw new Error(`Cannot resolve git directory from ${dotGitPath}`)
+        }
+        headPath = node_path.join(node_path.isAbsolute(gitDir) ? gitDir : node_path.resolve(cwd, gitDir), 'HEAD')
+    }
+
+    const head = fs.readFileSync(headPath, 'utf8').trim()
+    return head.startsWith('ref: ') ? head.split('/').slice(-1)[0] : head
+}
+
+function fetchLarkDocsPlugin(context, options) {
     return {
         name: "fetch-lark-docs",
         extendCli(cli) {
@@ -25,7 +46,7 @@ module.exports = function (context, options) {
                 .option('-s3, --uploadToS3', 'Upload images to S3 instead of local storage')
                 .action(async (opts) => {
                     const options = context.siteConfig.plugins.filter(plugin => plugin[0].includes('lark-docs'))[0][1]
-                    process.env.REPO_BRANCH = fs.readFileSync('.git/HEAD', 'utf8').split(': ')[1].trim().split('/').slice(-1)[0]
+                    process.env.REPO_BRANCH = resolveRepoBranch()
                     const manuals = Object.keys(options)
                     const utils = new Utils()
 
@@ -285,3 +306,6 @@ module.exports = function (context, options) {
         }
     }
 }
+
+module.exports = fetchLarkDocsPlugin
+module.exports.resolveRepoBranch = resolveRepoBranch
