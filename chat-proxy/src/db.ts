@@ -1102,11 +1102,15 @@ export async function getObsUsers(options: {
   agent?: string;
   country?: string;
   source?: string;
+  includeAnonymous?: boolean;
 }): Promise<{ users: any[]; total: number; totalSessions: number }> {
   const pool = getPool();
 
   // Build WHERE clause
-  const conditions = [`user_id != 'anonymous'`];
+  const conditions: string[] = [];
+  if (!options.includeAnonymous) {
+    conditions.push(`user_id != 'anonymous'`);
+  }
   const params: any[] = [];
 
   if (options.agent) {

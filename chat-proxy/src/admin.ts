@@ -488,7 +488,8 @@ adminApp.get('/api/analytics/users', async c => {
   const country = c.req.query('country') || undefined;
   const agent = c.req.query('agent') || undefined;
   const source = c.req.query('source') || undefined;
-  const { users, total, totalSessions } = await getObsUsers({ page, pageSize, country, agent, source });
+  const includeAnonymous = c.req.query('includeAnonymous') === '1';
+  const { users, total, totalSessions } = await getObsUsers({ page, pageSize, country, agent, source, includeAnonymous });
   return c.json({ users, total, totalSessions });
 });
 

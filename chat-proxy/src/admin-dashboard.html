@@ -922,7 +922,13 @@ input, select { font-family: var(--body); }
       <div class="users-list-panel">
         <div class="panel-header">
           <span>Users</span>
-          <span class="panel-meta" id="usersPanelMeta"></span>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span class="panel-meta" id="usersPanelMeta"></span>
+            <label style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--text-muted);cursor:pointer;">
+              <input type="checkbox" id="anonToggle" style="cursor:pointer;">
+              Include anonymous
+            </label>
+          </div>
         </div>
         <div class="panel-body" id="usersListBody">
           <div class="empty-state">Loading users…</div>
@@ -1776,7 +1782,8 @@ input, select { font-family: var(--body); }
   // ------------------------------------------------------------------
   async function fetchUsers() {
     try {
-      const data = await apiFetch(withSource('/admin/api/analytics/users?page=' + usersPage + '&pageSize=' + usersPageSize));
+      const includeAnon = $('anonToggle').checked ? '&includeAnonymous=1' : '';
+      const data = await apiFetch(withSource('/admin/api/analytics/users?page=' + usersPage + '&pageSize=' + usersPageSize + includeAnon));
       renderUsers(data);
     } catch (e) {
       if (e.message !== 'Unauthorized') console.error('Users fetch error:', e);
@@ -2018,6 +2025,10 @@ input, select { font-family: var(--body); }
   });
   $('usersNextBtn').addEventListener('click', () => {
     usersPage++;
+    fetchUsers();
+  });
+  $('anonToggle').addEventListener('change', () => {
+    usersPage = 1;
     fetchUsers();
   });
 
