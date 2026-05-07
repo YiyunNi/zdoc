@@ -13,10 +13,10 @@ type: docx
 token: DvaZdhYnyoo7lOxNIBwc5eKEn7d
 sidebar_position: 6
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,25 @@ import Admonition from '@theme/Admonition';
 # search()
 
 This operation conducts a vector similarity search with an optional scalar filtering expression.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
+<ul>
+<li><p>For this operation in a collection of a serving cluster, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p><strong>Free & Serverless</strong></p></li>
+</ul>
+<p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
+<ul>
+<li><strong>Dedicated</strong></li>
+</ul>
+<p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
+<ul>
+<li>For this operation in a collection for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints, and then create a session to attach to an on-demand cluster for searches.</li>
+</ul>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

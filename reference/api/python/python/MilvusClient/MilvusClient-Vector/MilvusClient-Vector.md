@@ -12,10 +12,10 @@ token: KSDYfo9pCl89wKdRNGccbzT2nid
 sidebar_position: 7
 sidebar_label: "Vector"
 keywords: 
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: T9KhdDJQColJEuxZ7YOcV2zdnlb
 sidebar_position: 7
 keywords: 
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # search_iterator()
 
 This operation conducts a vector similarity search with an optional scalar filtering expression in an iterative manner.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>External collections do not support this operation.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

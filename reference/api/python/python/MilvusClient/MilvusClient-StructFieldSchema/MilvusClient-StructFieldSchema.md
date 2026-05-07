@@ -13,10 +13,10 @@ type: docx
 token: ZnKKd2PsyoRc1MxtC1BcJQjgnBh
 sidebar_position: 3
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: HWYXdlaGIoTNVUx34GycfwjAnrb
 sidebar_position: 1
 keywords: 
-  - milvus open source
   - how does milvus work
   - Zilliz vector database
   - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud
@@ -55,13 +55,25 @@ create_volume(
 
     **[REQUIRED]**
 
-    The ID of the cloud region in which the volume will be created. You can use [List Cloud Regions](/reference/restful/list-cloud-regions-v2) to view possible values.
+    The ID of the cloud region in which the volume will be created. You can use [List Cloud Regions](/reference/restful/list-cloud-regions-v2) to view possible values. The region must be bound to the specified project.
 
 - **volume_name** (*str*) -
 
     **[REQUIRED]**
 
     The name of the volume to create.
+
+- **volume_type** (*str*) -
+
+    The type of the volume to create. Possible values are `MANAGED` and `EXTERNAL`.
+
+- **storage_integration_id** (*str*) -
+
+    The storage integration from which the volume is to create. You can refer to [AWS](/docs/integrate-with-aws-s3), [GCS](/docs/integrate-with-gcp), and [Azure](/docs/integrate-with-azure-blob-storage) guides for this. This is required when you create an external volume.
+
+- **path** (*str*) -
+
+    The path in the integrated storage. Note that the value should end with a forward slash (`/`).
 
 **RETURN TYPE**
 

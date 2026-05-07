@@ -783,7 +783,7 @@
                     }
                   },
                   "2": {
-                    "summary": "success",
+                    "summary": "Managed Collection",
                     "x-target-response": "OPTION 1",
                     "x-include-target": [
                       "zilliz"
@@ -838,6 +838,63 @@
                     }
                   },
                   "3": {
+                    "summary": "External Collection",
+                    "x-target-response": "OPTION 1",
+                    "x-include-target": [
+                      "zilliz"
+                    ],
+                    "value": {
+                      "code": 0,
+                      "data": {
+                        "aliases": [],
+                        "autoId": false,
+                        "collectionID": 448707763883002000,
+                        "collectionName": "test_collection",
+                        "consistencyLevel": "Bounded",
+                        "description": "",
+                        "enableDynamicField": true,
+                        "externalSource":"volume://volume-vdc/demo_lance/",
+                        "externalSpec":"{\"format\":\"lance-table\"}",
+                        "fields": [
+                          {
+                            "autoId": false,
+                            "description": "",
+                            "id": 100,
+                            "name": "id",
+                            "partitionKey": false,
+                            "primaryKey": true,
+                            "type": "Int64"
+                          },
+                          {
+                            "autoId": false,
+                            "description": "",
+                            "id": 101,
+                            "name": "vector",
+                            "params": [
+                              {
+                                "key": "dim",
+                                "value": "5"
+                              }
+                            ],
+                            "partitionKey": false,
+                            "primaryKey": false,
+                            "type": "FloatVector"
+                          }
+                        ],
+                        "indexes": [
+                          {
+                            "fieldName": "vector",
+                            "indexName": "vector",
+                            "metricType": "COSINE"
+                          }
+                        ],
+                        "load": "LoadStateLoaded",
+                        "partitionsNum": 1,
+                        "properties": []
+                      }
+                    }
+                  },
+                  "4": {
                     "summary": "failure",
                     "x-target-response": "OPTION 2",
                     "value": {

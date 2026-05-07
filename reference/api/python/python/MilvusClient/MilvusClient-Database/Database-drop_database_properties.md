@@ -13,10 +13,10 @@ type: docx
 token: AdSXdtNDsoTMnJx1QoGcSsnZnWd
 sidebar_position: 5
 keywords: 
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

@@ -8,15 +8,15 @@ last_modified: false
 deprecate_since: false
 beta: false
 notebook: false
-description: "A `VolumeFileManager` instance maintains a connection to a specific Zilliz Cloud volume. Before uploading data files to a volume, you need to initiate a `VolumeFileManager` instance. | Python"
+description: "A `VolumeFileManager` instance maintains a connection to a specific Zilliz Cloud managed volume. Before uploading data files to a volume, you need to initiate a `VolumeFileManager` instance. | Python"
 type: docx
 token: IbWgdAwWOoTa1exF2LicP9henJJ
 sidebar_position: 2
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # VolumeFileManager
 
-A `VolumeFileManager` instance maintains a connection to a specific Zilliz Cloud volume. Before uploading data files to a volume, you need to initiate a `VolumeFileManager` instance.
+A `VolumeFileManager` instance maintains a connection to a specific Zilliz Cloud managed volume. Before uploading data files to a volume, you need to initiate a `VolumeFileManager` instance.
 
 ```python
 class pymilvus.bulk_writer.volume_file_manager import VolumeFileManager
@@ -39,7 +39,7 @@ class pymilvus.bulk_writer.volume_file_manager import VolumeFileManager
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>A volume is an intermediate storage spot where you can hold your data for further processing, such as data merging, migration, or importing. For details, refer to <a href="/docs/volume">Volume</a>.</p>
+<p>A managed volume is an intermediate storage spot where you can hold your data for further processing, such as data merging, migration, or importing. For details, refer to <a href="/docs/volume">Volume</a>.</p>
 
 </Admonition>
 

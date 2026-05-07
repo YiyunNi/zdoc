@@ -8,15 +8,15 @@ last_modified: false
 deprecate_since: false
 beta: false
 notebook: false
-description: "This operation uploads the local file at the specified source path to the target file path within the specified volume. | Python"
+description: "This operation uploads the local file at the specified source path to the target file path within the specified managed volume. | Python"
 type: docx
 token: Fr3rdPTuXoC0Lzx7urIcwBqWnDb
 sidebar_position: 1
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # upload_file_to_volume()
 
-This operation uploads the local file at the specified source path to the target file path within the specified volume.
+This operation uploads the local file at the specified source path to the target file path within the specified managed volume.
 
 ## Request Syntax\{#request-syntax}
 

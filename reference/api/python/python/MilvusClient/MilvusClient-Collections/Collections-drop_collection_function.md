@@ -13,10 +13,10 @@ type: docx
 token: F1mJdDLyzoMTrxxarPMcqPkqnqg
 sidebar_position: 24
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # drop_collection_function()
 
 This operation drops an existing function from the collection.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This does not apply to external collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

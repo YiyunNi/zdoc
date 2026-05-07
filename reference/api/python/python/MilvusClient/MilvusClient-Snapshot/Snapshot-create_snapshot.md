@@ -13,10 +13,10 @@ type: docx
 token: C8vld732kopQNMxbHyLcrORNnze
 sidebar_position: 1
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud

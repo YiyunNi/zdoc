@@ -13,10 +13,10 @@ type: docx
 token: DLsXdlRA3odugzx4sIccnBVKn0d
 sidebar_position: 3
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud

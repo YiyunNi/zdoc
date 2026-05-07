@@ -13,10 +13,10 @@ type: docx
 token: WgmLdM6nUogd7LxGtmfc5dBKnku
 sidebar_position: 6
 keywords: 
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: HTnvdQ8SbodURtxPEv5cURL0n5b
 sidebar_position: 12
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # drop_collection_properties()
 
 This operation drops the specified collection properties.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This does not apply to external collections.</p>
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 

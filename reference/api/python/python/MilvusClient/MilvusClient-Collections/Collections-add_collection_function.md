@@ -13,10 +13,10 @@ type: docx
 token: Qe3GdWZa9oAxjrx85tkct8ManRe
 sidebar_position: 21
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # add_collection_function()
 
 This operation adds a new function to the collection. Functions allow you to define custom processing logic such as BM25 scoring or embedding generation.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This does not apply to external collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

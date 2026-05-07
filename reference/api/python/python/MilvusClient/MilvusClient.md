@@ -12,10 +12,10 @@ token: BBPZfcRbOlWEnjdbIJgc3wgynsg
 sidebar_position: 3
 sidebar_label: "MilvusClient"
 keywords: 
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud

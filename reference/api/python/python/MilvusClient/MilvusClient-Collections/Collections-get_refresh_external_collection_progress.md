@@ -13,10 +13,10 @@ type: docx
 token: HITBdKb0HotcK0xCKsycEeuqnXe
 sidebar_position: 26
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud
@@ -104,11 +104,15 @@ A **RefreshExternalCollectionJobInfo** object that records the details of the sp
 
     The current progress of the specified job. The value is an integer ranging from 0 to 100.
 
-- **external_source** (*string*) -
+- **external_source** (*str*) -
 
     The external source URI specified in `refresh_external_collection()`.
 
-- **reason** (*string*) -
+- **external_specs** (*str*) -
+
+    The external specs specified in `refresh_external_collection()`.
+
+- **reason** (*str*) -
 
     The error prompt if the refresh operation failed. It is an empty string in normal cases.
 

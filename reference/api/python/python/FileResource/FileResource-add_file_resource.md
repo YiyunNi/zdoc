@@ -13,10 +13,10 @@ type: docx
 token: F9CHd2o4po3VC2xX3zHczWVan2c
 sidebar_position: 1
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
   - zilliz
   - zilliz cloud
   - cloud

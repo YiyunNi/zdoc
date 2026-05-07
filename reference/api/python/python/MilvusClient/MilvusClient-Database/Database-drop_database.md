@@ -13,10 +13,10 @@ type: docx
 token: Vjd7dE5OyoGvYaxd7OCcubBWnLd
 sidebar_position: 4
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,20 @@ This operation drops the specified database.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This method applies only to dedicated clusters.</p>
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
+<ul>
+<li><p>For a database in dedicated serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p><strong>Free & Serverless</strong></p></li>
+</ul>
+<p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
+<ul>
+<li><strong>Dedicated</strong></li>
+</ul>
+<p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
+<ul>
+<li>For a database for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints.</li>
+</ul>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
 
 </Admonition>
 

@@ -13,10 +13,10 @@ type: docx
 token: FpWXdmIuforYz9xUCsqclyCXnLe
 sidebar_position: 10
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
   - zilliz
   - zilliz cloud
   - cloud
@@ -31,7 +31,26 @@ import Admonition from '@theme/Admonition';
 
 # drop_alias()
 
-This operation drops a specified collection alias. 
+This operation drops a specified collection alias.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
+<ul>
+<li><p>For a managed collection in serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p><strong>Free & Serverless</strong></p></li>
+</ul>
+<p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
+<ul>
+<li><strong>Dedicated</strong></li>
+</ul>
+<p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
+<ul>
+<li>For an external collection for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints.</li>
+</ul>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

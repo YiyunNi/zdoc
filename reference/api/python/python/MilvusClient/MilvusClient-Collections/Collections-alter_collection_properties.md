@@ -13,10 +13,10 @@ type: docx
 token: SJ1FdUQQnohtObxhNgpcHalMnUc
 sidebar_position: 3
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # alter_collection_properties()
 
 This operation alters the specified collection properties.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This does not apply to external collections.</p>
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 

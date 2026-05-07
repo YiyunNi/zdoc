@@ -777,9 +777,13 @@
         "tags": [
           "Index Operations (V2)"
         ],
-        "x-base-urls": {
-          "$ref": "#/components/x-base-urls/ZillizVectorV2"
-        },
+        "x-admonition": [
+          {
+            "type": "info",
+            "title": "Note",
+            "content": "External collections do not support this operation."
+          }
+        ],
         "parameters": [
           {
             "name": "Authorization",
@@ -970,9 +974,13 @@
         "tags": [
           "Index Operations (V2)"
         ],
-        "x-base-urls": {
-          "$ref": "#/components/x-base-urls/ZillizVectorV2"
-        },
+        "x-admonition": [
+          {
+            "type": "info",
+            "title": "Note",
+            "content": "External collections do not support this operation."
+          }
+        ],
         "parameters": [
           {
             "name": "Authorization",

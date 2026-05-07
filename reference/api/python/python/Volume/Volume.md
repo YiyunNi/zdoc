@@ -12,10 +12,10 @@ token: UJtvfGYb4lKoF1dy7iicFwcAnWr
 sidebar_position: 6
 sidebar_label: "Volume"
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

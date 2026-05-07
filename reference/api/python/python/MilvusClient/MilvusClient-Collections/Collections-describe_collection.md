@@ -13,10 +13,10 @@ type: docx
 token: LXASdPs6KoRfCJx11A1cl2Ssngg
 sidebar_position: 9
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,25 @@ import Admonition from '@theme/Admonition';
 # describe_collection()
 
 This operation lists detailed information about a specific collection.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
+<ul>
+<li><p>For a managed collection in serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p><strong>Free & Serverless</strong></p></li>
+</ul>
+<p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
+<ul>
+<li><strong>Dedicated</strong></li>
+</ul>
+<p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
+<ul>
+<li>For an external collection for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints.</li>
+</ul>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 
@@ -95,6 +114,8 @@ A dictionary that contains detailed information about the specified collection.
               'element_type': 0
           }
      ],
+     'externalSource': '',
+     'externalSpecs': '',
      'functions': [],
      'aliases': [],
      'collection_id': 446738261026541332,
@@ -124,6 +145,14 @@ A dictionary that contains detailed information about the specified collection.
 - **description** (*str*) -
 
     The description of the current collection.
+
+- **external_source** (*str*) -
+
+    The external source of the collection. This applies only to external collections. 
+
+- **external_specs** (*str*) -
+
+    The external specifications of the collection. This applies only to external collections.
 
 - **fields** (*list*) -
 

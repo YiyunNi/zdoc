@@ -11,12 +11,12 @@ notebook: false
 description: "A `VolumeManager` instance maintains a connection to Zilliz Cloud's Volume service. Before creating, listing, or deleting volumes, you need to initiate a `VolumeManager` instance. | Python"
 type: docx
 token: XdZ6dFzA3oUu4dxWh7Kcz4dhnQg
-sidebar_position: 4
+sidebar_position: 5
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: I2OZdk40IomugOx9MTqcooVcnEf
 sidebar_position: 7
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: ZVs4dDpvmoXI0OxOnKhc9numnJd
 sidebar_position: 28
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud

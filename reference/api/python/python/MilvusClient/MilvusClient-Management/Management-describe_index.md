@@ -13,10 +13,10 @@ type: docx
 token: WhsHdyIgyoFlsQxNJt9cFCTxnDe
 sidebar_position: 4
 keywords: 
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,25 @@ import Admonition from '@theme/Admonition';
 # describe_index()
 
 This operation describes a specific index.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
+<ul>
+<li><p>For this operation in a collection of a serving cluster, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p><strong>Free & Serverless</strong></p></li>
+</ul>
+<p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
+<ul>
+<li><strong>Dedicated</strong></li>
+</ul>
+<p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
+<ul>
+<li>For this operation in a collection for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints, and then create a session to attach to an on-demand cluster for searches.</li>
+</ul>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 
@@ -82,7 +101,7 @@ A dictionary that contains the details of the specified index.
     'total_rows': 0,
     'indexed_rows': 0,
     'pending_index_rows': 0,
-    'state': 3,
+    'state': 'Finished',
     'field_name': 'my_vector',
     'index_name': 'my_vector'
 }
@@ -114,9 +133,9 @@ A dictionary that contains the details of the specified index.
 
     The number of rows to be indexed in the specified field.
 
-- **state** (*int*) -
+- **state** (*str*) -
 
-    The state of the index-building process. Possible values are as follows:
+    The state of the index-building process.
 
 - **field_name** (*str*) -
 

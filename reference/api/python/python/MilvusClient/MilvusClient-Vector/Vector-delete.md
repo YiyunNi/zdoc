@@ -13,10 +13,10 @@ type: docx
 token: DWLXdSCYnoPT4ExktRKceEqLnAd
 sidebar_position: 1
 keywords: 
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # delete()
 
 This operation deletes entities by their IDs or with a boolean expression.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>External collections do not support this operation.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

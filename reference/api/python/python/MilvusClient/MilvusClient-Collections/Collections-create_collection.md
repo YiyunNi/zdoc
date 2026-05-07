@@ -13,10 +13,10 @@ type: docx
 token: NbYidGUPcokra9xJ6IAcUNLEn9f
 sidebar_position: 5
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -31,7 +31,26 @@ import Admonition from '@theme/Admonition';
 
 # create_collection()
 
-This operation supports creating a collection in two distinct ways: quick setup or custom setup. 
+This operation supports creating a collection in two distinct ways: quick setup or custom setup.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
+<ul>
+<li><p>For a managed collection in serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p><strong>Free & Serverless</strong></p></li>
+</ul>
+<p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
+<ul>
+<li><strong>Dedicated</strong></li>
+</ul>
+<p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
+<ul>
+<li>For an external collection for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints.</li>
+</ul>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 
@@ -345,3 +364,83 @@ You can choose between a quick setup or a customized setup as follows:
     ```
 
     In the above code, the collection will also be created. However, without `index_param`, data in the collection will not be indexed and loaded into memory.
+
+- **Create an external collection**
+
+    ```python
+    from pymilvus import MilvusClient, DataType
+    
+    # connect the database
+    client = MilvusClient(
+        uri="https://{project-id}.{region}.vectordb.zillizcloud.com",
+        token="YOUR_API_KEY"
+    )
+    
+    schema = MilvusClient.create_schema(
+        external_source='volume://my_volume/path/to/a/folder/',
+        external_spec='{"format": "parquet"}'
+    )
+    
+    schema.add_field(
+        field_name="product_id",
+        datatype=DataType.INT64,
+        # highlight-next
+        external_field="id" # field name in the external data file
+    )
+    schema.add_field(
+        field_name="product_name",
+        datatype=DataType.VARCHAR,
+        max_length=512,
+        # highlight-next
+        external_field="name"
+    )
+    schema.add_field(
+        field_name="embedding",
+        datatype=DataType.FLOAT_VECTOR,
+        dim=768,
+        # highlight-next
+        external_field="vector"
+    )
+    
+    client.use_database(
+        db_name="my_database"
+    )
+    # create the collection
+    client.create_collection(
+        collection_name="test_collection",
+        schema=schema
+    )
+    
+    index_params = client.prepare_index_params()
+    # Add indexes
+    index_params.add_index(
+        field_name="embedding",
+        index_type="AUTOINDEX",
+        metric_type="COSINE"
+    )
+    index_params.add_index(
+        field_name="product_name",
+        index_type="AUTOINDEX"
+    )
+    client.create_index(
+        db_name="my_database",
+        collection_name="test_collection",
+        index_params=index_params
+    )
+    
+    job_id = client.refresh_external_collection(
+        db_name="my_database",
+        collection_name="test_collection"
+    )
+    while True:
+        progress = client.get_refresh_external_collection_progress(job_id=job_id)
+        print(f"  {progress.state}: {progress.progress}%")
+        if progress.state == "RefreshCompleted":
+            elapsed = progress.end_time - progress.start_time
+            print(f"  Completed in {elapsed}ms")
+            break
+        elif progress.state == "RefreshFailed":
+            print(f"  Failed: {progress.reason}")
+            break
+        time.sleep(2)
+    ```

@@ -8,14 +8,14 @@ last_modified: v2.5.x
 deprecate_since: false
 description: "Modules and classes related to the import of large-volume data into a collection. | Python"
 type: folder
-token: LJfHfKQ8QlHpC1dCjxvcurBunGQ
+token: SIN6f7FuAlseoDdllIXck663nBg
 sidebar_position: 1
 sidebar_label: "DataImport"
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud

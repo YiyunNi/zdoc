@@ -13,10 +13,10 @@ type: docx
 token: MSDVdu103obklexX8GvcW5cWnCf
 sidebar_position: 18
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

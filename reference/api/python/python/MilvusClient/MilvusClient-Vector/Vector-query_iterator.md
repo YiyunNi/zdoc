@@ -13,10 +13,10 @@ type: docx
 token: L6i8dmvsBogcmIxtORsc1Mu0nhg
 sidebar_position: 5
 keywords: 
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # query_iterator()
 
 This operation conducts a scalar filtering with a specified boolean expression in an iterative manner.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>External collections do not support this operation.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

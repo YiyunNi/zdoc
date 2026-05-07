@@ -11,12 +11,12 @@ notebook: false
 description: "This operation lists all volumes within a specific project in a paginated manner. | Python"
 type: docx
 token: E5uudOLJ3o1BIhx4LLoctf8TnLf
-sidebar_position: 3
+sidebar_position: 4
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud
@@ -106,6 +106,10 @@ An object with the following data structure:
 
         The name of a volume.
 
+    - **type** (*str*) -
+
+        The type of a volume. Possible values are `EXTERNAL` and `MANAGED`.
+
 ## Example\{#example}
 
 ```python
@@ -130,7 +134,8 @@ print(f"\nlistVolumes results: \n", volume_list.json()['data'])
 #     "pageSize": 10,
 #     "volumes": [
 #         {
-#             "volumeName": "my_volume"
+#             "volumeName": "my_volume",
+#             "type": "MANAGED"
 #         }        
 #     ]
 # }

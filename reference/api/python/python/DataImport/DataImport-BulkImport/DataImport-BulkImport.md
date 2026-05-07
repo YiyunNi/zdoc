@@ -8,14 +8,14 @@ last_modified: false
 deprecate_since: false
 description: "Functions related to bulk import data into Zilliz Cloud clusters. | Python"
 type: folder
-token: I5i9f86n4lsy9IddsDocMOsfnXg
+token: ODiwfm3z9lpSIZdyCjtcTQXgnfb
 sidebar_position: 2
 sidebar_label: "BulkImport"
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

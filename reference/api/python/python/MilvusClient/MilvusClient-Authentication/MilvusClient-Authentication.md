@@ -12,10 +12,10 @@ token: Tjnufe7LvlX9wtddOfEctVJ6nKB
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud

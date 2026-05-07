@@ -12,10 +12,10 @@ token: WidffJPNIlfIlZdHlU8cMiGOnpg
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud

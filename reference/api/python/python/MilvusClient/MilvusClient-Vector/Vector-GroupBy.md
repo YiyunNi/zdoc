@@ -13,10 +13,10 @@ type: docx
 token: CFS4dOq2LowXPSxB124cBwQsn0c
 sidebar_position: 10
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud

@@ -4,19 +4,19 @@ slug: /python/python/Collections-create_schema
 sidebar_key: python/Collections-create_schema
 sidebar_label: "create_schema()"
 added_since: v2.3.x
-last_modified: false
+last_modified: v3.0.x
 deprecate_since: false
 beta: false
 notebook: false
 description: "This operation creates a collection schema. | Python | MilvusClient"
 type: docx
-token: RxU7dBjGlop0e1xZShYcZ4qCnnh
+token: Er8vdVepxoqhPFxVyZUcxSHMnqe
 sidebar_position: 6
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
@@ -84,13 +84,27 @@ MilvusClient.create_schema(**kwargs) -> CollectionSchema
 
         </Admonition>
 
+- **external_source** (*string*) -
+
+    The external source URI, which should be the name of an accessible external volume..
+
+- **external_spec** (*string*) -
+
+    The external source specifications, which are a set of secondary parameters:
+
+    - **format** (*string*) - 
+
+        The format of the target source data files.
+
+        Possible values are `parquet`, `vortex`, `lance-table`, and `iceberg-table`.
+
 **RETURN TYPE:**
 
-*[CollectionSchema](./ORM-CollectionSchema)*
+*[CollectionSchema](null)*
 
 **RETURNS:**
 
-A **[CollectionSchema](./ORM-CollectionSchema)** object.
+A **[CollectionSchema](null)** object.
 
 **EXCEPTIONS:**
 
@@ -100,54 +114,87 @@ A **[CollectionSchema](./ORM-CollectionSchema)** object.
 
 ## Examples\{#examples}
 
-```python
-from pymilvus import MilvusClient, DataType
+- Schema for managed collection
 
-# 1. Create a schema
-schema = MilvusClient.create_schema(
-    auto_id=False,
-    enable_dynamic_field=False,
-)
+    ```python
+    from pymilvus import MilvusClient, DataType
+    
+    # 1. Create a schema
+    schema = MilvusClient.create_schema(
+        auto_id=False,
+        enable_dynamic_field=False,
+    )
+    
+    # 2. Add fields to schema
+    schema.add_field(field_name="my_id", datatype=DataType.INT64, is_primary=True)
+    
+    # {
+    #     'auto_id': False, 
+    #     'description': '', 
+    #     'fields': [
+    #         {
+    #             'name': 'my_id', 
+    #             'description': '', 
+    #             'type': <DataType.INT64: 5>, 
+    #             'is_primary': True, 
+    #             'auto_id': False
+    #         }
+    #     ]
+    # }
+    
+    schema.add_field(field_name="my_vector", datatype=DataType.FLOAT_VECTOR, dim=5)
+    
+    # {
+    #     'auto_id': False, 
+    #     'description': '', 
+    #     'fields': [
+    #         {
+    #             'name': 'my_id', 
+    #             'description': '', 
+    #             'type': <DataType.INT64: 5>, 
+    #             'is_primary': True, 
+    #             'auto_id': False
+    #         }, 
+    #         {
+    #             'name': 'my_vector', 
+    #             'description': '', 
+    #             'type': <DataType.FLOAT_VECTOR: 101>, 
+    #             'params': {
+    #                 'dim': 5
+    #             }
+    #         }        
+    #     ]
+    # }
+    ```
 
-# 2. Add fields to schema
-schema.add_field(field_name="my_id", datatype=DataType.INT64, is_primary=True)
+- Schema for external collection
 
-# {
-#     'auto_id': False, 
-#     'description': '', 
-#     'fields': [
-#         {
-#             'name': 'my_id', 
-#             'description': '', 
-#             'type': <DataType.INT64: 5>, 
-#             'is_primary': True, 
-#             'auto_id': False
-#         }
-#     ]
-# }
+    ```python
+    schema = MilvusClient.create_schema(
+        external_source='volume://my_volume/path/to/a/folder/',
+        external_spec='{"format": "parquet"}'
+    )
+    
+    schema.add_field(
+        field_name="product_id",
+        datatype=DataType.INT64,
+        # highlight-next
+        external_field="id" # field name in the external data file
+    )
+    schema.add_field(
+        field_name="product_name",
+        datatype=DataType.VARCHAR,
+        max_length=512,
+        # highlight-next
+        external_field="name"
+    )
+    schema.add_field(
+        field_name="embedding",
+        datatype=DataType.FLOAT_VECTOR,
+        dim=768,
+        # highlight-next
+        external_field="vector"
+    )
+    ```
 
-schema.add_field(field_name="my_vector", datatype=DataType.FLOAT_VECTOR, dim=5)
-
-# {
-#     'auto_id': False, 
-#     'description': '', 
-#     'fields': [
-#         {
-#             'name': 'my_id', 
-#             'description': '', 
-#             'type': <DataType.INT64: 5>, 
-#             'is_primary': True, 
-#             'auto_id': False
-#         }, 
-#         {
-#             'name': 'my_vector', 
-#             'description': '', 
-#             'type': <DataType.FLOAT_VECTOR: 101>, 
-#             'params': {
-#                 'dim': 5
-#             }
-#         }        
-#     ]
-# }
-```
-
+    

@@ -13,6 +13,12 @@ import Admonition from '@theme/Admonition';
 
 This is the Node.js SDK reference documentation.
 
+<Admonition type="info" icon="📘" title="Notes">
+
+Currently, Node.js SDK do not support on-demand compute.
+
+</Admonition>
+
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

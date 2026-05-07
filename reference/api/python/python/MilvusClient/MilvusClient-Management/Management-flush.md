@@ -8,15 +8,15 @@ last_modified: false
 deprecate_since: false
 beta: false
 notebook: false
-description: "This operation flushes the streaming data and seals segments. It is recommended to call this operation after all the data has been inserted into a collection. | Python | MilvusClient"
+description: "This operation flushes the streaming data and seals segments. It is not advised to call this operation after all the data has been inserted into a collection to avoid small segments, which may degrade search performance. | Python | MilvusClient"
 type: docx
 token: JnPrdOiPyo2e5gxzzFycbnvwnSd
 sidebar_position: 6
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # flush()
 
-This operation flushes the streaming data and seals segments. It is recommended to call this operation after all the data has been inserted into a collection.
+This operation flushes the streaming data and seals segments. It is not advised to call this operation after all the data has been inserted into a collection to avoid small segments, which may degrade search performance.
 
 ## Request Syntax\{#request-syntax}
 

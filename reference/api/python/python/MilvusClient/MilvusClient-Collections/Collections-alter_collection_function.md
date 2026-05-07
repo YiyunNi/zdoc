@@ -13,10 +13,10 @@ type: docx
 token: N9d9df9IIojLZDxft1HcU0mkn0b
 sidebar_position: 22
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - vector databases comparison
+  - Faiss
+  - Video search
+  - AI Hallucination
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # alter_collection_function()
 
 This operation alters an existing function in the collection by replacing it with a new function schema.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This does not apply to external collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

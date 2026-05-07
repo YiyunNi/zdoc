@@ -13,10 +13,10 @@ type: docx
 token: VkBFdLHwao9hVMxzRurcBYIynFh
 sidebar_position: 27
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud
@@ -102,11 +102,15 @@ A list of **RefreshExternalCollectionJobInfo** objects, each recording the detai
 
     The current progress of the specified job. The value is an integer ranging from 0 to 100.
 
-- **external_source** (*string*) -
+- **external_source** (*str*) -
 
     The external source URI specified in `refresh_external_collection()`.
 
-- **reason** (*string*) -
+- **external_specs** (*str*) -
+
+    The external specs specified in `refresh_external_collection()`.
+
+- **reason** (*str*) -
 
     The error prompt if the refresh operation failed. It is an empty string in normal cases.
 

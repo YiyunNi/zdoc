@@ -13,10 +13,10 @@ type: docx
 token: JdR3dVpCaoq6s2xSFmsc0e13nnh
 sidebar_position: 2
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud

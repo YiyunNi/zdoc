@@ -13,10 +13,10 @@ type: docx
 token: UjjpdBwaooRDdlxFHScc6dKwnTg
 sidebar_position: 8
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # upsert()
 
 This operation inserts or updates data in a specific collection.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>External collections do not support this operation.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

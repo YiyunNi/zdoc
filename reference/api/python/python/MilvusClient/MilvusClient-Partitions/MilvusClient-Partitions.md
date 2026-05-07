@@ -12,10 +12,10 @@ token: Snf8fZZTklTziidxXP2cL4cRnOf
 sidebar_position: 6
 sidebar_label: "Partitions"
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
   - zilliz
   - zilliz cloud
   - cloud
