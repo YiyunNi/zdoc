@@ -862,6 +862,7 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
             console.log('[RAG] All chunk hashes match existing index — skipping rebuild');
             lastRefreshedAt = new Date().toISOString();
             indexLoading = false;
+            await updateBuildStatus({ state: 'idle', updatedAt: new Date().toISOString() }).catch(() => {});
             return;
           }
         } catch {
@@ -898,6 +899,7 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
                   console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source, ${dbChunks} chunks) — using existing`);
                   indexReady = true;
                   lastRefreshedAt = metaMap.last_build;
+                  await updateBuildStatus({ state: 'idle', updatedAt: new Date().toISOString() }).catch(() => {});
                   return;
                 }
               }
