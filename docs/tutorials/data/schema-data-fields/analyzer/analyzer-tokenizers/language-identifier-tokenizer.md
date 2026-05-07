@@ -1,11 +1,12 @@
 ---
 title: "Language Identifier | Cloud"
 slug: /language-identifier-tokenizer
+sidebar_key: language-identifier-tokenizer
 sidebar_label: "Language Identifier"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `languageidentifier` is a specialized tokenizer designed to enhance the text search capabilities of Zilliz Cloud by automating the language analysis process. Its primary function is to detect the language of a text field and then dynamically apply a pre-configured analyzer that is most suitable for that language. This is particularly valuable for applications that handle a variety of languages, as it eliminates the need for manual language assignment on a per-input basis. | Cloud"
 type: origin
@@ -126,11 +127,11 @@ Below is a recommended mapping of languages to suitable Zilliz Cloud analyzers. 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p><strong>Matching is Key:</strong> The name of your analyzer <strong>must exactly match</strong> the language output of the detection engine. For instance, if you're using <code>whatlang</code>, the key for Chinese text must be <code>Mandarin</code>.</p></li>
-<li><p><strong>Best practices:</strong> The table above provides recommended configurations for a few common languages, but it is not an exhaustive list. For a more comprehensive guide on choosing analyzers, refer to <a href="./choose-the-right-analyzer-for-your-use-case">Choose the Right Analyzer for Your Use Case</a>.</p></li>
-<li><p><strong>Detector output</strong>: For a complete list of language names returned by the detection engines, refer to <a href="https://github.com/greyblake/whatlang-rs">Whatlang supported languages table</a> and the <a href="https://github.com/pemistahl/lingua-rs">Lingua supported languages list</a>.</p></li>
-</ul>
+- **Matching is Key:** The name of your analyzer **must exactly match** the language output of the detection engine. For instance, if you're using `whatlang`, the key for Chinese text must be `Mandarin`.
+
+- **Best practices:** The table above provides recommended configurations for a few common languages, but it is not an exhaustive list. For a more comprehensive guide on choosing analyzers, refer to [Choose the Right Analyzer for Your Use Case](./choose-the-right-analyzer-for-your-use-case).
+
+- **Detector output**: For a complete list of language names returned by the detection engines, refer to [Whatlang supported languages table](https://github.com/greyblake/whatlang-rs) and the [Lingua supported languages list](https://github.com/pemistahl/lingua-rs).
 
 </Admonition>
 
@@ -171,8 +172,8 @@ For both `whatlang` and `lingua`, use the language names as shown in their respe
 ```python
 analyzer_params = {
     "tokenizer": {
-        "type": "language_identifier",  # Must be `language_identifier`
-        "identifier": "whatlang",  # or `lingua`
+        "type": "language_identifier",  # Must be \`language_identifier\`
+        "identifier": "whatlang",  # or \`lingua\`
         "analyzers": {  # A set of analyzer configs
             "default": {
                 "tokenizer": "standard"  # fallback if language detection fails

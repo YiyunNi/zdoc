@@ -1,11 +1,12 @@
 ---
 title: "Import Data (SDK) | BYOC"
 slug: /import-data-via-sdks
+sidebar_key: import-data-via-sdks
 sidebar_label: "SDKs"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "This guide helps you learn how to use our SDKs to import data into a collection with the bulk-writer and bulk-import APIs. | BYOC"
 type: origin
@@ -246,7 +247,7 @@ public static void main(String[] args) throws Exception {
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.</p>
+For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.
 
 </Admonition>
 

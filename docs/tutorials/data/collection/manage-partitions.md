@@ -1,16 +1,17 @@
 ---
 title: "Manage Partitions | Cloud"
 slug: /manage-partitions
-sidebar_label: "Manage Partitions"
-beta: FALSE
+sidebar_key: manage-partitions
+sidebar_label: "Partitions"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A partition is a subset of a collection. Each partition shares the same data structure with its parent collection but contains only a subset of the data in the collection. This page helps you understand how to manage partitions. | Cloud"
 type: origin
 token: JCMPwIyVciCT4Hk4O20c96MEnch
-sidebar_position: 8
+sidebar_position: 9
 keywords: 
   - zilliz
   - vector database
@@ -29,6 +30,12 @@ import TabItem from '@theme/TabItem';
 
 A partition is a subset of a collection. Each partition shares the same data structure with its parent collection but contains only a subset of the data in the collection. This page helps you understand how to manage partitions.
 
+<Admonition type="info" icon="📘" title="Notes">
+
+This feature applies only to managed collections.
+
+</Admonition>
+
 ## Overview\{#overview}
 
 When creating a collection, Zilliz Cloud also creates a partition named **_default** in the collection. If you are not going to add any other partitions, all entities inserted into the collection go into the default partition, and all searches and queries are also carried out within the default partition.
@@ -39,8 +46,9 @@ A collection can have a maximum of 1,024 partitions.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The <strong>Partition Key</strong> feature is a search optimization based on partitions and allows Zilliz Cloud to distribute entities into different partitions based on the values in a specific scalar field. This feature helps implement partition-oriented multi-tenancy and improves search performance.</p>
-<p>This feature will not be discussed on this page. To find more, refer to <a href="./use-partition-key">Use Partition Key</a>.</p>
+The **Partition Key** feature is a search optimization based on partitions and allows Zilliz Cloud to distribute entities into different partitions based on the values in a specific scalar field. This feature helps implement partition-oriented multi-tenancy and improves search performance.
+
+This feature will not be discussed on this page. To find more, refer to [Use Partition Key](./use-partition-key).
 
 </Admonition>
 

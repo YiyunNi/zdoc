@@ -1,11 +1,12 @@
 ---
 title: "Standard Analyzer | Cloud"
 slug: /standard-analyzer
-sidebar_label: "Standard Analyzer"
-beta: FALSE
+sidebar_key: standard-analyzer
+sidebar_label: "Standard"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `standard` analyzer is the default analyzer in Zilliz Cloud, which is automatically applied to text fields if no analyzer is specified. It uses grammar-based tokenization, making it effective for most languages. | Cloud"
 type: origin
@@ -33,7 +34,7 @@ The `standard` analyzer is the default analyzer in Zilliz Cloud, which is automa
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The <code>standard</code> analyzer is suitable for languages that rely on separators (such as spaces, punctuation) for word boundaries. However, languages like Chinese, Japanese, and Korean require dictionary-based tokenizations. In such cases, using a language-specific analyzer like <a href="./chinese-analyzer"><code>chinese</code></a> or custom analyzers with specialized tokenizers (such as <a href="./lindera-tokenizer"><code>lindera</code></a>, <a href="./icu-tokenizer"><code>icu</code></a>) and filters is highly recommended to ensure accurate tokenization and better search results.</p>
+The `standard` analyzer is suitable for languages that rely on separators (such as spaces, punctuation) for word boundaries. However, languages like Chinese, Japanese, and Korean require dictionary-based tokenizations. In such cases, using a language-specific analyzer like [`chinese`](./chinese-analyzer) or custom analyzers with specialized tokenizers (such as [`lindera`](./lindera-tokenizer), [`icu`](./icu-tokenizer)) and filters is highly recommended to ensure accurate tokenization and better search results.
 
 </Admonition>
 

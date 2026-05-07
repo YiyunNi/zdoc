@@ -1,16 +1,17 @@
 ---
 title: "Release Notes (July 15, 2025) | Cloud"
 slug: /release-notes-2180
+sidebar_key: release-notes-2180
 sidebar_label: "July 15, 2025"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "In this release, Zilliz Cloud introduces several powerful enhancements aimed at improving operational efficiency, flexibility, and user experience. These include support for cluster-level scheduled auto-scaling, schema evolution via the new Merge Data API, the introduction of stage — a cloud-native data layer for streamlined data ingestion, partial restore from cluster-level backups with cross-database selection, and UI support for JSON Path indexes. Together, these features enable users to manage complex workloads more effectively, reduce maintenance overhead, and speed up development cycles in the GenAI era. | Cloud"
 type: origin
 token: WBONwyqFAi02DTkCG41c93wCn6e
-sidebar_position: 8
+sidebar_position: 10
 keywords: 
   - zilliz
   - vector database
@@ -42,7 +43,7 @@ Under the hood, the Merge Data API orchestrates a distributed batch processing e
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>During the merge process, writes to the base Collection must be suspended to ensure data consistency.</p>
+During the merge process, writes to the base Collection must be suspended to ensure data consistency.
 
 </Admonition>
 
@@ -120,7 +121,7 @@ For details, refer to [Deploy BYOC on AWS](/docs/byoc/deploy-byoc-aws), [Deploy 
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>This setting only applies to newly created backups.</p>
+    This setting only applies to newly created backups.
 
     </Admonition>
 

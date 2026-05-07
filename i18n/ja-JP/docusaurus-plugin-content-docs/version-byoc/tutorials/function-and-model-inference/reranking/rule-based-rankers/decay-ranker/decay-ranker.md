@@ -1,28 +1,25 @@
 ---
 title: "Decay Ranker | BYOC"
 slug: /decay-ranker
+sidebar_key: decay-ranker
 sidebar_label: "Decay Ranker"
 beta: FALSE
 notebook: FALSE
-description: "この章では、特定のエンティティの類似度スコアが特定の数値フィールドの値に応じて減少するべきであるという考えに基づいた動的ランキング手法を使用するDecay Rankerについて説明し、他のエンティティが目立つようにします。 | BYOC"
+description: "この章では、特定のエンティティの類似度スコアが数値フィールドの値に応じて減少し、他のエンティティを際立たせる動的ランキング手法である Decay Ranker について説明します。| BYOC"
 type: origin
 token: HPP3wBq1xiuGWYk4QfKcZ2PrnHf
 sidebar_position: 2
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - collection
-  - データ
+  - data
   - 検索結果の再ランキング
   - 結果の再ランキング
-  - 減衰
+  - decay
   - decay ranker
   - decay rankers
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
 
 ---
 
@@ -31,7 +28,7 @@ import Admonition from '@theme/Admonition';
 
 # Decay Ranker
 
-この章では、特定のエンティティの類似度スコアが特定の数値フィールドの値に応じて減少するべきであるという考えに基づいた動的ランキング手法を使用するDecay Rankerについて説明します。これにより、他のエンティティが際立つようになります。 
+この章では、Decay Ranker（減衰ランカー）について説明します。Decay Ranker は動的ランキング手法を用いて、特定の数値フィールドの値に応じて特定エンティティの類似度スコアを減衰させることで、他のエンティティを目立たせます。 
 
 
 

@@ -1,11 +1,12 @@
 ---
 title: "Data Resilience | Cloud"
 slug: /data-resilience
+sidebar_key: data-resilience
 sidebar_label: "Data Resilience"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud, as a fully managed vector database service, delivers enterprise-grade High Availability (HA) and Disaster Recovery (DR) capabilities to ensure the continuous availability of your mission-critical data and services under various failure scenarios. | Cloud"
 type: origin
@@ -120,7 +121,7 @@ Zilliz Cloud, as a fully managed vector database service, delivers enterprise-gr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Cross-region HA will be available in November 2025. </p>
+Cross-region HA will be available in November 2025. 
 
 </Admonition>
 
@@ -316,7 +317,7 @@ Zilliz Cloud uses a compute-storage disaggregated architecture with three data t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><strong>The roadmap for 2026:</strong> Achieve <strong>RPO = 0</strong> with cross-region Woodpecker</p>
+**The roadmap for 2026:** Achieve **RPO = 0** with cross-region Woodpecker
 
 </Admonition>
 

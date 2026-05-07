@@ -1,11 +1,12 @@
 ---
 title: "Subscribe on Azure Marketplace | Cloud"
 slug: /subscribe-on-azure-marketplace
+sidebar_key: subscribe-on-azure-marketplace
 sidebar_label: "Azure Marketplace"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "This guide provides a step-by-step walkthrough of the subscription process and outlines the pricing terms of Zilliz Cloud on Azure Marketplace. | Cloud"
 type: origin
@@ -35,7 +36,7 @@ This guide provides a step-by-step walkthrough of the subscription process and o
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>Once subscribed, you can pay for the usage of Azure clusters via Azure Marketplace. If you have clusters deployed on other cloud providers, you can also use Azure Marketplace to pay.</p>
+Once subscribed, you can pay for the usage of Azure clusters via Azure Marketplace. If you have clusters deployed on other cloud providers, you can also use Azure Marketplace to pay.
 
 </Admonition>
 
@@ -255,7 +256,7 @@ Visit [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us) and star
 
             <Admonition type="info" icon="📘" title="Note">
 
-            <p>When auto-renew is on, you will be automatically subscribed to Zilliz Cloud on Azure at the end of the contract duration. When auto-renew is off, your subscription will end at the end of the contract duration and your Zilliz Cloud organization and account will be automatically unlinked from this Azure Marketplace subscription.</p>
+            When auto-renew is on, you will be automatically subscribed to Zilliz Cloud on Azure at the end of the contract duration. When auto-renew is off, your subscription will end at the end of the contract duration and your Zilliz Cloud organization and account will be automatically unlinked from this Azure Marketplace subscription.
 
             </Admonition>
 
@@ -305,7 +306,7 @@ You can verify the update in the **Payment Method** section on the **Billing Ove
 
     <Admonition type="info" icon="📘" title="Note">
 
-    <p>It takes a few minutes for Azure Marketplace to complete the cancellation process.</p>
+    It takes a few minutes for Azure Marketplace to complete the cancellation process.
 
     </Admonition>
 

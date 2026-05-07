@@ -1,11 +1,12 @@
 ---
 title: "Set Up Console IP Allowlist | BYOC"
 slug: /setup-console-ip-allowlist
+sidebar_key: setup-console-ip-allowlist
 sidebar_label: "Set Up Console IP Allowlist"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "By default, your organization’s web console is accessible from any IP address. To restrict access and enhance security, configure a console IP allowlist so that uses can access the web console only from specified addresses, such as the IP of your office network. | BYOC"
 type: origin
@@ -45,8 +46,9 @@ It is recommended to add your current IP and frequently used IPs to avoid lockou
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>0.0.0.0/0</code> allows access from any IPs.</p>
-<p>Updates to the console IP allowlist take effect within 30 seconds.</p>
+`0.0.0.0/0` allows access from any IPs.
+
+Updates to the console IP allowlist take effect within 30 seconds.
 
 </Admonition>
 
@@ -68,7 +70,7 @@ You can remove an IP or CIDR  entry to deny console access from that source. If 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Updates to the console IP allowlist take effect within 30 seconds.</p>
+Updates to the console IP allowlist take effect within 30 seconds.
 
 </Admonition>
 

@@ -1,16 +1,17 @@
 ---
 title: "Manage Collections (Console) | BYOC"
 slug: /manage-collections-console
-sidebar_label: "Manage Collections (Console)"
-beta: FALSE
+sidebar_key: manage-collections-console
+sidebar_label: "On Console"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A collection is a two-dimensional table used to store vector embeddings and metadata. All entities in a collection share the same schema. You can create multiple collections for data management or multi-tenancy purposes. | BYOC"
 type: origin
 token: CmR5wFcybi3iMokOJBxcXDQcntg
-sidebar_position: 12
+sidebar_position: 13
 keywords: 
   - zilliz
   - vector database
@@ -34,12 +35,13 @@ This guide walks you through the collection creation and management operations o
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you need strong data isolation and manage only a small number of tenants, you can create a separate collection for each tenant.</p>
-<p>However, you can only create a maximum of 16,384 collections depending on your <a href="./limits">cluster plan</a>. Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see <a href="./multi-tenancy">Implement Multi-tenancy</a>.</p>
+If you need strong data isolation and manage only a small number of tenants, you can create a separate collection for each tenant.
+
+However, you can only create a maximum of 16,384 collections depending on your [cluster plan](./limits). Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see [Implement Multi-tenancy](./multi-tenancy).
 
 </Admonition>
 
-## Create collection\{#create-collection}
+## Create a collection\{#create-a-collection}
 
 The Zilliz Cloud console provides 3 ways to create a collection, each designed for different scenarios:
 
@@ -83,7 +85,7 @@ A schema defines the data structure of your collection and must include:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Most of the schema configurations cannot be modified once the collection is created. Design your schema carefully to ensure it meets current and future business needs. For best practices, see <a href="./schema-explained">Schema Explained</a>.</p>
+Most of the schema configurations cannot be modified once the collection is created. Design your schema carefully to ensure it meets current and future business needs. For best practices, see [Schema Explained](./schema-explained).
 
 </Admonition>
 
@@ -131,12 +133,13 @@ Functions fall into two main categories based on when they are applied:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>To decide whether you need to create partitions or use partition key, you can consider the following factors:</p>
-<ul>
-<li><p><strong>Multi-tenancy strategies:</strong> If you need to support millions of tenants, please use partition key. If you need strong physical data isolation between tenants, please use partitions. For details, refer to <a href="./multi-tenancy">Implement Multi-tenancy</a>.</p></li>
-<li><p><strong>Resource management:</strong> If you prefer creating and managing partitions on you own, you can choose to use partitions. If you need automatic creation and management of partitions, please use partitions keys.</p></li>
-<li><p><strong>Hot and cold data management:</strong> If you need efficient handling of hot and cold data, please use partition key. To use partition key for hot and cold data management in Dedicated clusters, please <a href="http://support.zilliz.com">contact us</a>.</p></li>
-</ul>
+To decide whether you need to create partitions or use partition key, you can consider the following factors:
+
+- **Multi-tenancy strategies:** If you need to support millions of tenants, please use partition key. If you need strong physical data isolation between tenants, please use partitions. For details, refer to [Implement Multi-tenancy](./multi-tenancy).
+
+- **Resource management:** If you prefer creating and managing partitions on you own, you can choose to use partitions. If you need automatic creation and management of partitions, please use partitions keys.
+
+- **Hot and cold data management:** If you need efficient handling of hot and cold data, please use partition key. To use partition key for hot and cold data management in Dedicated clusters, please [contact us](http://support.zilliz.com).
 
 </Admonition>
 
@@ -154,7 +157,7 @@ During collection creation, you can optionally configure mmap settings at the **
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Please be cautious with mmap settings. Changing the default mmap settings may cause performance degradation or load failures due to out-of-memory (OOM) issues. For best practices, see <a href="./use-mmap#collection-specific-mmap-settings">Use mmap</a>.</p>
+Please be cautious with mmap settings. Changing the default mmap settings may cause performance degradation or load failures due to out-of-memory (OOM) issues. For best practices, see [Use mmap](./use-mmap#collection-specific-mmap-settings).
 
 </Admonition>
 
@@ -168,7 +171,7 @@ A shard is a horizontal slice of a collection that corresponds to a data input c
 
 As a general guideline, consider adding 1 shard for every 100 million rows of data. The maximum number of shards allowed depends on the cluster plan and cluster CU size. For details, see [Zilliz Cloud Limits](./limits#shards).
 
-The number of shards can be later edited via the [clone collection](./manage-collections-console#create-collection) feature once the collection is created.
+The number of shards can be later edited via the [clone collection](./manage-collections-console#create-a-collection) feature once the collection is created.
 
 ### Full text search\{#full-text-search}
 
@@ -202,11 +205,11 @@ Zilliz Cloud supports the following management operations on created collections
 
     - You can add new scalar fields to an existing schema.
 
-    - To change **shard** settings, use the [Clone collection](./manage-collections-console#create-collection) feature instead.
+    - To change **shard** settings, use the [Clone collection](./manage-collections-console#create-a-collection) feature instead.
 
     - To modify **mmap**, or **partition key** settings, use the SDKs instead. For details, see [Modify Collection](./modify-collections).
 
-    - If you have not enabled dynamic field when creating a collection, you can later enable it by using the SDK or web console. For details about the SDKs, see [Modify Collection](./modify-collections#example-4-enable-dynamic-field). For details about how to enable dynamic field on the web console, refer to the demo above.
+    - If you have not enabled dynamic field when creating a collection, you can later enable it by using the SDK or web console. For details about the SDKs, see [Modify Collection](./modify-collections#example-5-enable-dynamic-field). For details about how to enable dynamic field on the web console, refer to the demo above.
 
     Other collection schema settings are not editable. To apply changes, create a new collection with the desired configuration and import the data into it.
 
@@ -226,7 +229,16 @@ Zilliz Cloud supports the following management operations on created collections
 
 - **Edit collection TTL**: Time-to-live (TTL) is a collection property that determines the expiration time for data in a collection. For details, see [Set Collection TTL](./set-collection-ttl).
 
-- **Enable Allow Insert Auto ID:** The `allow_insert_auto_id` property allows a collection with AutoID enabled to accept user-provided primary key values during insert, upsert, and bulk import. For details, see [Modify Collection](./modify-collections#example-5-enable-allowinsertautoid).
+- **Enable Allow Insert Auto ID:** The `allow_insert_auto_id` property allows a collection with AutoID enabled to accept user-provided primary key values during insert, upsert, and bulk import. For details, see [Modify Collection](./modify-collections#example-6-enable-allowinsertautoid).
 
 - **Drop collection:** To reduce resource overhead, you can drop collections that are no longer needed. Dropping a collection irreversibly deletes all data within it.
 
+## Preview collection data\{#preview-collection-data}
+
+Use the **Data** tab to preview entities in a collection directly from the Zilliz Cloud console. 
+
+You can define a filter expression, configure the `limit` parameter to control the number of entities displayed in preview (100 by default, up to 16,384), and query matching entities to inspect field values in a table.
+
+You can also use **Order By** to sort the data preview in ascending or descending order by a primary key field, numeric fields, or scalar fields.
+
+![WHDsw55d9hAOZeboD3Fc7yTwnSg](https://zdoc-images.s3.us-west-2.amazonaws.com/WHDsw55d9hAOZeboD3Fc7yTwnSg.png)

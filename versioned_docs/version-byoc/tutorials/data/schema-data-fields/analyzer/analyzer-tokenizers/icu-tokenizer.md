@@ -1,11 +1,12 @@
 ---
 title: "ICU | BYOC"
 slug: /icu-tokenizer
+sidebar_key: icu-tokenizer
 sidebar_label: "ICU"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `icu` tokenizer is built on the Internationalization Components of Unicode open‑source project, which provides key tools for software internationalization. By using ICU's word‑break algorithm, the tokenizer can accurately split text into words across the majority of the world’s languages. | BYOC"
 type: origin
@@ -33,7 +34,7 @@ The `icu` tokenizer is built on the [Internationalization Components of Unicode]
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The <code>icu</code> tokenizer preserves punctuation marks and spaces as separate tokens in the output. For example, <code>"Привет! Как дела?"</code> becomes <code>["Привет", "!", " ", "Как", " ", "дела", "?"]</code>. To remove these standalone punctuation tokens, use the <a href="./remove-punct-filter"><code>removepunct</code></a> filter.</p>
+The `icu` tokenizer preserves punctuation marks and spaces as separate tokens in the output. For example, `"Привет! Как дела?"` becomes `["Привет", "!", " ", "Как", " ", "дела", "?"]`. To remove these standalone punctuation tokens, use the [`removepunct`](./remove-punct-filter) filter.
 
 </Admonition>
 

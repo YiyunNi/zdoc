@@ -1,11 +1,12 @@
 ---
 title: "Prepare for Cluster Connection | BYOC"
 slug: /prepare-for-cluster-connection
+sidebar_key: prepare-for-cluster-connection
 sidebar_label: "Prepare for Cluster Connection"
-beta: CONTACT SALES
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: CONTACT SALES
 notebook: FALSE
 description: "All BYOC clusters are hosted entirely on your own virtual networks (AWS VPC, GCP VPC, or Microsoft Azure VNet) and do not have public endpoints. This guide explains the two approaches to connecting to these BYOC clusters. | BYOC"
 type: origin
@@ -169,11 +170,11 @@ The diagram above illustrates the traffic flow from your client application to B
 
 1. On the **Cluster Details** page, locate the **Connect** card.
 
-1. Copy the **Cluster Endpoint** — it is in the format `<i>http</i>s://${cluster-id}-internal.${region}.byoc.vectordb.zillizcloud.com:19530`.
+1. Copy the **Cluster Endpoint** — it is in the format `https://${cluster-id}-internal.${region}.byoc.vectordb.zillizcloud.com:19530`.
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>For those BYOC clusters deployed using Terraform, you can also retrieve their endpoints from the Terraform output.</p>
+    For those BYOC clusters deployed using Terraform, you can also retrieve their endpoints from the Terraform output.
 
     </Admonition>
 
@@ -197,7 +198,7 @@ The cluster endpoint (`*.${region}.byoc.vectordb.zillizcloud.com`) resolves to a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you deselect the private endpoint option during the data plane deployment and require private endpoint access, <a href="https://support.zilliz.com/hc/en-us/requests/new">contact us</a> so that we can enable the gateway deployment in your data plane. </p>
+If you deselect the private endpoint option during the data plane deployment and require private endpoint access, [contact us](https://support.zilliz.com/hc/en-us/requests/new) so that we can enable the gateway deployment in your data plane. 
 
 </Admonition>
 
@@ -571,7 +572,7 @@ The following table lists common issues you may encounter during preparation.
    <tr>
      <td><p>TLS error</p></td>
      <td><p><code>secure=True</code> / HTTPS not specified in SDK</p></td>
-     <td><p>Ensure the endpoint URI starts with <code><i>http</i>s://</code></p></td>
+     <td><p>Ensure the endpoint URI starts with <code>https://</code></p></td>
    </tr>
 </table>
 

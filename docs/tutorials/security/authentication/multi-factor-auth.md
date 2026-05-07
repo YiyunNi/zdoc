@@ -1,11 +1,12 @@
 ---
 title: "MFA | Cloud"
 slug: /multi-factor-auth
+sidebar_key: multi-factor-auth
 sidebar_label: "MFA"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Authentication verifies your identity when you sign in to Zilliz Cloud. To strengthen this process, Zilliz Cloud supports multi-factor authentication (MFA). | Cloud"
 type: origin
@@ -36,7 +37,7 @@ With MFA enabled, you must provide two factors at login:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloud has upgraded MFA for enhanced account security. Starting <strong>November 25, 2025</strong>, email-based MFA is deprecated. Users who previously used email-based MFA must switch to a TOTP authenticator app.</p>
+Zilliz Cloud has upgraded MFA for enhanced account security. Starting **November 25, 2025**, email-based MFA is deprecated. Users who previously used email-based MFA must switch to a TOTP authenticator app.
 
 </Admonition>
 
@@ -60,7 +61,7 @@ The following demo shows how to enable MFA for your own account. The demo uses M
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If your organization has <a href="./multi-factor-auth#enforce-mfa-for-all-organization-users">MFA enforcement</a> enabled, you cannot disable MFA for your account.</p>
+If your organization has [MFA enforcement](./multi-factor-auth#enforce-mfa-for-all-organization-users) enabled, you cannot disable MFA for your account.
 
 </Admonition>
 
@@ -72,8 +73,9 @@ The following demo shows how to disable MFA for your own account.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You must be an Organization Owner to access this feature.</p>
-<p>You must have a valid payment method, an <strong>Enterprise</strong> project and a <strong>Dedicated</strong> cluster to use this feature.</p>
+You must be an Organization Owner to access this feature.
+
+You must have a valid payment method, an **Enterprise** project and a **Dedicated** cluster to use this feature.
 
 </Admonition>
 
@@ -93,7 +95,7 @@ The following demo shows how to enforce MFA for an organization.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You must be an Organization Owner to access this feature.</p>
+You must be an Organization Owner to access this feature.
 
 </Admonition>
 

@@ -1,11 +1,12 @@
 ---
 title: "JSON Indexing | Cloud"
 slug: /json-indexing
-sidebar_label: "JSON Indexing"
-beta: FALSE
+sidebar_key: json-indexing
+sidebar_label: "Indexing"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "JSON fields provide a flexible way to store structured metadata in Zilliz Cloud. Without indexing, queries on JSON fields require full collection scans, which become slow as your dataset grows. JSON indexing enables fast lookups by creating indexes on within your JSON data. | Cloud"
 type: origin
@@ -43,7 +44,7 @@ JSON indexing is ideal for:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>For complex JSON documents with diverse query patterns, consider <a href="./json-shredding">JSON Shredding</a> as an alternative.</p>
+For complex JSON documents with diverse query patterns, consider [JSON Shredding](./json-shredding) as an alternative.
 
 </Admonition>
 
@@ -162,7 +163,7 @@ Zilliz Cloud supports the following data types for casting at index time. These 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Arrays should contain elements of the same type for optimal indexing. For more information, refer to <a href="./use-array-fields">Array Field</a>.</p>
+Arrays should contain elements of the same type for optimal indexing. For more information, refer to [Array Field](./use-array-fields).
 
 </Admonition>
 
@@ -187,7 +188,7 @@ Cast functions are case-insensitive. The following functions are supported:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If conversion fails (e.g., non-numeric string), the value is skipped and not indexed.</p>
+If conversion fails (e.g., non-numeric string), the value is skipped and not indexed.
 
 </Admonition>
 

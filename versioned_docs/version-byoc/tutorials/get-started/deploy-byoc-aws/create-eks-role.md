@@ -1,11 +1,12 @@
 ---
 title: "Create EKS IAM Role | BYOC"
 slug: /create-eks-role
+sidebar_key: create-eks-role
 sidebar_label: "Create EKS IAM Role"
-beta: CONTACT SALES
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: CONTACT SALES
 notebook: FALSE
 description: "This page describes how to create and configure an IAM role for Zilliz Cloud to deploy an EKS cluster for your Zilliz Cloud project. | BYOC"
 type: origin
@@ -35,7 +36,7 @@ This page describes how to create and configure an IAM role for Zilliz Cloud to 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
+Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
 
 </Admonition>
 
@@ -190,7 +191,7 @@ You will find that these policies are listed in the **Permissions** policies lis
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Upon the creation of an EKS cluster, two <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-service-linked-role">service-linked roles</a> will also be automatically created along with the cluster, and they are <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSServiceRolePolicy.html">AmazonEKSServiceRolePolicy</a> and <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSServiceRoleForAmazonEKSNodegroup.html">AWSServiceRoleForAmazonEKSNodegroup</a>. These two roles are required for Amazon EKS to call other AWS services on your behalf.</p>
+Upon the creation of an EKS cluster, two [service-linked roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-service-linked-role) will also be automatically created along with the cluster, and they are [AmazonEKSServiceRolePolicy](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSServiceRolePolicy.html) and [AWSServiceRoleForAmazonEKSNodegroup](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSServiceRoleForAmazonEKSNodegroup.html). These two roles are required for Amazon EKS to call other AWS services on your behalf.
 
 </Admonition>
 

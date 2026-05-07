@@ -1,11 +1,12 @@
 ---
 title: "MINHASH_LSH | Cloud"
 slug: /minhash-lsh
+sidebar_key: minhash-lsh
 sidebar_label: "MINHASH_LSH"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Efficient deduplication and similarity search are critical for large-scale machine learning datasets, especially for tasks like cleaning training corpora for Large Language Models (LLMs). When dealing with millions or billions of documents, traditional exact matching becomes too slow and costly. | Cloud"
 type: origin
@@ -44,7 +45,7 @@ This guide walks you through the concepts, prerequisites, setup, and best practi
 Jaccard similarity measures the overlap between two sets A and B, formally defined as:
 
 $$
-J(A, B) = \frac\{|A \cap B|}\{|A \cup B|}
+J(A, B) = \frac{|A \cap B|}{|A \cup B|}
 $$
 
 Where its value ranges from 0 (completely disjoint) to 1 (identical).
@@ -75,7 +76,7 @@ You can see the entire process illustrated below:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The number of hash functions used determines the dimensionality of the MinHash signature. Higher dimensions provide better approximation accuracy, at the cost of increased storage and computation.</p>
+The number of hash functions used determines the dimensionality of the MinHash signature. Higher dimensions provide better approximation accuracy, at the cost of increased storage and computation.
 
 </Admonition>
 
@@ -103,14 +104,17 @@ The process involves:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Why it works?</p>
-<p>Mathematically, if two signatures have Jaccard similarity $s$,</p>
-<ul>
-<li><p>The probability they are identical in one row (hash position) is $s$</p></li>
-<li><p>The probability they match in all $r$ rows of a band is $s^r$</p></li>
-<li><p>The probability that they match in <strong>at least one band</strong> is &#36;1 - (1 - s^r)^b$</p></li>
-</ul>
-<p>For details, refer to <a href="https://en.wikipedia.org/wiki/Locality-sensitive_hashing">Locality-sensitive hashing</a>.</p>
+Why it works?
+
+Mathematically, if two signatures have Jaccard similarity $s$,
+
+- The probability they are identical in one row (hash position) is $s$
+
+- The probability they match in all $r$ rows of a band is $s^r$
+
+- The probability that they match in **at least one band** is &#36;1 - (1 - s^r)^b$
+
+For details, refer to [Locality-sensitive hashing](https://en.wikipedia.org/wiki/Locality-sensitive_hashing).
 
 </Admonition>
 
@@ -128,7 +132,7 @@ Then, each band is hashed into different buckets using a hash function. Document
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The number of bands is controlled by the <code>mh_lsh_band</code> parameter. For more information, refer to <a href="./minhash-lsh#index-building-params">Index building params</a>.</p>
+The number of bands is controlled by the `mh_lsh_band` parameter. For more information, refer to [Index building params](./minhash-lsh#index-building-params).
 
 </Admonition>
 
@@ -154,7 +158,7 @@ For more information about this metric type, refer to [MHJACCARD](./search-metri
 
 The deduplication process powered by MinHash LSH allows Zilliz Cloud to efficiently identify and filter out near-duplicate text or structured records before inserting them into the collection.
 
-![NuokbSgbroyVPQx14fKcm37bnoh](https://zdoc-images.s3.us-west-2.amazonaws.com/nuokbsgbroyvpqx14fkcm37bnoh.png "NuokbSgbroyVPQx14fKcm37bnoh")
+![It9wwbCFwhfT0RbwosAcGltZneb](https://zdoc-images.s3.us-west-2.amazonaws.com/It9wwbCFwhfT0RbwosAcGltZneb.png)
 
 1. **Chunk & preprocess**: Split incoming text data or structured data (e.g., records, fields) into chunks; normalize text (lowercasing, punctuation removal), and remove stopwords as needed.
 
@@ -171,6 +175,16 @@ The deduplication process powered by MinHash LSH allows Zilliz Cloud to efficien
 ## Prerequisites\{#prerequisites}
 
 Before using MinHash LSH in Zilliz Cloud, you must first generate **MinHash signatures**. These compact binary signatures approximate Jaccard similarity between sets and are required for `MHJACCARD`-based search in Zilliz Cloud.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+You can prepare MinHash signatures for the `MINHASH_LSH` index in two ways:
+
+- Generate signatures yourself using external tools and insert them into a BINARY_VECTOR field, or
+
+- Use the built-in MinHash function to automatically generate compatible binary vectors from text. For the end-to-end workflow and configuration options of the MinHash function, see [MinHash Function](./minhash-function).
+
+</Admonition>
 
 ### Choose a method to generate MinHash signatures\{#choose-a-method-to-generate-minhash-signatures}
 

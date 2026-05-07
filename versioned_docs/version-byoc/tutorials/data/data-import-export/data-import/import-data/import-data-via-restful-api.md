@@ -60,7 +60,7 @@ For more information about using session tokens, refer to [this FAQ](/docs/faq-d
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.</p>
+For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.
 
 </Admonition>
 
@@ -89,7 +89,7 @@ After Zilliz Cloud processes the above request, you will receive a job ID. Use t
 
 ```bash
 curl --request POST \
-     --url "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/getProgress" \
+     --url "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/get_progress" \
      --header "Authorization: Bearer ${API_KEY}" \
      --header "Accept: application/json" \
      --header "Content-Type: application/json" \

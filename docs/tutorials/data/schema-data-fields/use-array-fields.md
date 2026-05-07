@@ -1,11 +1,12 @@
 ---
 title: "Array Field | Cloud"
 slug: /use-array-fields
-sidebar_label: "Array Field"
-beta: FALSE
+sidebar_key: use-array-fields
+sidebar_label: "Array"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "An ARRAY field stores an ordered set of elements of the same data type. | Cloud"
 type: origin
@@ -62,7 +63,7 @@ Here’s how to define a collection schema that includes ARRAY fields:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you set <code>enable_dynamic_fields=True</code> when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to <a href="./enable-dynamic-field">Dynamic Field</a>.</p>
+If you set `enable_dynamic_fields=True` when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to [Dynamic Field](./enable-dynamic-field).
 
 </Admonition>
 
@@ -85,7 +86,7 @@ schema = client.create_schema(
     enable_dynamic_fields=True,
 )
 
-#  Add `tags` and `ratings` ARRAY fields with nullable=True
+#  Add \`tags\` and \`ratings\` ARRAY fields with nullable=True
 schema.add_field(field_name="tags", datatype=DataType.ARRAY, element_type=DataType.VARCHAR, max_capacity=10, max_length=65535, nullable=True)
 schema.add_field(field_name="ratings", datatype=DataType.ARRAY, element_type=DataType.INT64, max_capacity=5, nullable=True)
 schema.add_field(field_name="pk", datatype=DataType.INT64, is_primary=True)
@@ -293,14 +294,14 @@ The following example creates indexes on the vector field `embedding` and the AR
 
 index_params = client.prepare_index_params()
 
-# Index `age` with AUTOINDEX
+# Index \`age\` with AUTOINDEX
 index_params.add_index(
     field_name="tags",
     index_type="AUTOINDEX",
     index_name="tags_index"
 )
 
-# Index `embedding` with AUTOINDEX and specify similarity metric type
+# Index \`embedding\` with AUTOINDEX and specify similarity metric type
 index_params.add_index(
     field_name="embedding",
     index_type="AUTOINDEX",  # Use automatic indexing to simplify complex index settings
@@ -613,7 +614,7 @@ To retrieve entities where the `tags` is not null:
 <TabItem value='python'>
 
 ```python
-# Query to exclude entities where `tags` is not null
+# Query to exclude entities where \`tags\` is not null
 
 filter = 'tags IS NOT NULL'
 

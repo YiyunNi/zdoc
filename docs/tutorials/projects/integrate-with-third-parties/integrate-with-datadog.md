@@ -1,11 +1,12 @@
 ---
 title: "Integrate with Datadog | Cloud"
 slug: /integrate-with-datadog
+sidebar_key: integrate-with-datadog
 sidebar_label: "Datadog"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Datadog is a cloud monitoring and analytics platform that provides real-time insights into application performance, infrastructure, and log management. By integrating Zilliz Cloud with Datadog, you can send metric data about your Zilliz Cloud clusters to your Datadog dashboards. | Cloud"
 type: origin
@@ -32,7 +33,7 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
+This feature is available only to **Dedicated** clusters in an **Enterprise** project.
 
 </Admonition>
 
@@ -73,31 +74,31 @@ import Procedures from '@site/src/components/Procedures';
                </tr>
                <tr>
                  <td><p><code>US1</code></p></td>
-                 <td><p><code><i>http</i>s://app.datadoghq.com</code></p></td>
+                 <td><p><code>https://app.datadoghq.com</code></p></td>
                  <td><p><code>datadoghq.com</code></p></td>
                  <td><p>US</p></td>
                </tr>
                <tr>
                  <td><p><code>US3</code></p></td>
-                 <td><p><code><i>http</i>s://us3.datadoghq.com</code></p></td>
+                 <td><p><code>https://us3.datadoghq.com</code></p></td>
                  <td><p><code>us3.datadoghq.com</code></p></td>
                  <td><p>US</p></td>
                </tr>
                <tr>
                  <td><p><code>US5</code></p></td>
-                 <td><p><code><i>http</i>s://us5.datadoghq.com</code></p></td>
+                 <td><p><code>https://us5.datadoghq.com</code></p></td>
                  <td><p><code>us5.datadoghq.com</code></p></td>
                  <td><p>US</p></td>
                </tr>
                <tr>
                  <td><p><code>EU1</code></p></td>
-                 <td><p><code><i>http</i>s://app.datadoghq.eu</code></p></td>
+                 <td><p><code>https://app.datadoghq.eu</code></p></td>
                  <td><p><code>datadoghq.eu</code></p></td>
                  <td><p>EU (Germany)</p></td>
                </tr>
                <tr>
                  <td><p><code>AP1</code></p></td>
-                 <td><p><code><i>http</i>s://ap1.datadoghq.com</code></p></td>
+                 <td><p><code>https://ap1.datadoghq.com</code></p></td>
                  <td><p><code>ap1.datadoghq.com</code></p></td>
                  <td><p>Japan</p></td>
                </tr>
@@ -111,7 +112,7 @@ import Procedures from '@site/src/components/Procedures';
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        <p>Only clusters of the <strong>Dedicated-Enterprise</strong> plan tier can be selected.</p>
+        Only clusters of the **Dedicated-Enterprise** plan tier can be selected.
 
         </Admonition>
 

@@ -1,10 +1,11 @@
 ---
 title: "Voyage AI Ranker | Cloud"
 slug: /voyage-ai-model-ranker
+sidebar_key: voyage-ai-model-ranker
 sidebar_label: "Voyage AI Ranker"
 beta: FALSE
 notebook: FALSE
-description: "Voyage AI Ranker は、Voyage AI と検索アプリケーションを活用します。| Cloud"
+description: "Voyage AI Ranker は、Voyage AI の機能を活用して検索アプリケーションの精度を向上させます。| Cloud"
 type: origin
 token: PpGlwYU6PiSsfVkZ7doco50vnKg
 sidebar_position: 5
@@ -13,16 +14,12 @@ keywords:
   - ベクトルデータベース
   - cloud
   - collection
-  - データ
+  - data
   - 検索結果の再ランキング
   - 結果の再ランキング
   - 再ランキングモデル
   - モデルランカー
   - voyage ai
-  - マルチモーダル検索
-  - ベクトル検索アルゴリズム
-  - 質問応答システム
-  - llm-as-a-judge
 
 ---
 
@@ -31,49 +28,49 @@ import Admonition from '@theme/Admonition';
 
 # Voyage AI Ranker
 
-Voyage AI Ranker は、[Voyage AI](https://www.voyageai.com/) の専門的なリランカーを活用して、セマンティックなリランキングを通じて検索の関連性を高めます。これは、検索拡張生成 (RAG) および検索アプリケーション向けに最適化された、高性能なリランキング機能を提供します。
+Voyage AI Ranker は、[Voyage AI](https://www.voyageai.com/) の専用リランカーを活用し、セマンティックリランキングを通じて検索関連性を向上させます。これは、検索拡張生成（RAG）および検索アプリケーション向けに最適化された高性能なリランキング機能を提供します。
 
-Voyage AI Ranker は、特に次のようなアプリケーションで役立ちます。
+Voyage AI Ranker は、以下の要件を持つアプリケーションにとって特に有用です。
 
-- リランキングタスクのために特別にトレーニングされたモデルによる高度なセマンティック理解
+- リランキングタスクに特化してトレーニングされたモデルによる高度なセマンティック理解
 
 - 本番ワークロード向けに最適化された推論による高性能処理
 
-- さまざまなドキュメント長に対応するための柔軟な切り捨て制御
+- 多様な文書長に対応する柔軟な切り捨て制御
 
-- さまざまなモデルバリアント (rerank-2、rerank-lite など) 全体で微調整されたパフォーマンス
+- 複数のモデルバリアント（rerank-2、rerank-lite など）にわたる微調整されたパフォーマンス
 
-## 開始する前に{#before-you-start}
+## Before you start\{#before-you-start}
 
-Voyage AI Ranker を使用する前に、以下の前提条件が満たされていることを確認してください。
+Voyage AI Ranker を使用する前に、以下の前提条件を満たしていることを確認してください。
 
-- **リランクモデルを選択する**
+- **リランクモデルを選択**
 
-    `rerank-2.5` など、使用する Cohere リランクモデルを決定します。選択したモデルによって、リランキング中にセマンティックな関連性がどのように評価されるかが決まります。詳細については、[Voyage AI 公式ドキュメント](https://docs.voyageai.com/docs/reranker)を参照してください。
+    使用する Cohere リランクモデル（例: `rerank-2.5`）を決定します。この選択により、リランキング時のセマンティック関連性の評価方法が決まります。詳細については、[Voyage AI 公式ドキュメント](https://docs.voyageai.com/docs/reranker) を参照してください。
 
-- **Voyage AI と統合し、統合 ID を取得する**
+- **Voyage AI と統合し、統合IDを取得**
 
-    Voyage AI Ranker を使用するには、まず [Zilliz Cloud コンソール](https://cloud.zilliz.com/login)で Voyage AI をモデルプロバイダーとして統合する必要があります。
+    Voyage AI Ranker を使用するには、まず [Zilliz Cloud コンソール](https://cloud.zilliz.com/login) で Voyage AI をモデルプロバイダーとして統合する必要があります。
 
-    統合後、Zilliz Cloud は**統合 ID** を生成します。これは、リランク関数を定義する際に参照します。詳細な手順については、[モデルプロバイダーとの統合](./integrate-with-model-providers)を参照してください。
+    統合後、Zilliz Cloud は**統合ID**を生成します。この ID は、リランキング関数を定義する際に参照します。手順の詳細については、[モデルプロバイダーとの統合](./integrate-with-model-providers) を参照してください。
 
-- **リランキング可能なテキストフィールドを持つコレクションスキーマを計画する**
+- **リランキング可能なテキストフィールドを含むコレクションスキーマを計画**
 
-    コレクションに、リランキングするテキストを含む `VARCHAR` フィールドが 1 つ含まれていることを確認してください。
+    コレクションに、リランキング対象のテキストを含む `VARCHAR` フィールドが1つ含まれていることを確認してください。
 
-## Voyage AI Ranker を使用する{#use-voyage-ai-ranker}
+## Use Voyage AI Ranker\{#use-voyage-ai-ranker}
 
-このセクションでは、検索中に Voyage AI Ranker を適用して、取得した結果をリランキングする方法を示します。
+このセクションでは、検索時に Voyage AI Ranker を適用して取得結果をリランキングする方法を示します。
 
-リランク関数は検索時に定義および適用され、クエリごとにリランキング動作を有効、無効、または変更できます。
+リランキング関数は検索時に定義・適用されるため、クエリごとにリランキング機能を有効化、無効化、または変更できます。
 
-### 準備{#preparations}
+### Preparations\{#preparations}
 
-以下の設定は、検索とリランキングのためのコレクションとサンプルデータを準備します。
+以下の準備手順により、検索およびリランキング用のコレクションとサンプルデータをセットアップします。
 
 <details>
 
-<summary><strong>サンプルデータを含むコレクションを準備する</strong></summary>
+<summary><strong>サンプルデータ付きコレクションを準備</strong></summary>
 
 ```python
 from pymilvus import MilvusClient, DataType
@@ -135,17 +132,17 @@ client.insert(collection_name, data)
 
 </details>
 
-### リランク関数の定義{#define-the-rerank-function}
+### リランク関数の定義\{#define-the-rerank-function}
 
-Voyage AI Rankerは、コレクションのschemaの一部としてではなく、**検索時に**定義されます。
+Voyage AI Ranker は、コレクションスキーマの一部としてではなく、**検索時**に定義されます。
 
-リランク関数は以下を指定します。
+リランク関数では、以下の内容を指定します：
 
-- リランクするテキストフィールド（`VARCHAR`）
+- リランク対象のテキストフィールド（`VARCHAR`）
 
-- 使用するVoyage AIモデル
+- 使用する Voyage AI モデル
 
-- クエリとドキュメントがどのように切り詰められるか、または検証されるか
+- クエリおよびドキュメントの切り捨て方法または検証方法
 
 ```python
 from pymilvus import Function, FunctionType
@@ -169,11 +166,11 @@ voyage_ranker = Function(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>queries</code> 内の文字列の数は、検索リクエストで発行されたクエリの数と一致する必要があります。</p>
+<p><code>queries</code> 内の文字列の数は、検索リクエストで発行されたクエリの数と一致している必要があります。</p>
 
 </Admonition>
 
-### rerank 関数を使用した検索{#search-with-the-rerank-function}
+### rerank 機能を使用した検索\{#search-with-the-rerank-function}
 
 ```python
 query_vector = [0.12, 0.21, 0.29, 0.41]
@@ -191,20 +188,20 @@ results = client.search(
 print(results)
 ```
 
-この検索中：
+この検索では、以下の手順が実行されます。
 
-1. ベクトル検索を使用して候補が取得されます。
+1. ベクトル検索を用いて候補が取得されます。
 
-1. Voyage AI Ranker は、各候補のセマンティックな関連性を評価します。
+1. Voyage AI Ranker が各候補のセマンティックな関連性を評価します。
 
-1. 結果セットは、返される前に並べ替えられます。
+1. 結果セットは返される前に並べ替えられます。
 
-## 次のステップ{#next-steps}
+## 次のステップ\{#next-steps}
 
-Voyage AI Ranker は、ハイブリッド検索でも使用できます。
+Voyage AI Ranker はハイブリッド検索でも使用できます。
 
-検索とハイブリッド検索は、同じ方法でランカーを適用します。
+通常の検索とハイブリッド検索の両方で、ランカーの適用方法は同じです。
 
-どちらの場合も、検索時に `ranker` パラメーターを介して rerank 関数を渡します。
+どちらの場合も、検索時に `ranker` パラメータ経由で rerank 関数を渡します。
 
-詳細については、「[Multi-Vector Hybrid Search](./hybrid-search)」を参照してください。
+詳細については、[マルチベクターハイブリッド検索](./hybrid-search) を参照してください。

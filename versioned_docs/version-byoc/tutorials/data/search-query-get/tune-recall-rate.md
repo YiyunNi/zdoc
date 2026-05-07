@@ -1,11 +1,12 @@
 ---
 title: "Tune Recall Rate | BYOC"
 slug: /tune-recall-rate
+sidebar_key: tune-recall-rate
 sidebar_label: "Tune Recall Rate"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud introduces a search parameter `level` to allow users to balance search recall and performance. It also provides another search parameter, `enablerecallcalculation`, to give users the estimated recall rate of the current search. You can combine these two parameters to tune the recall rate of vector searches. | BYOC"
 type: origin
@@ -33,7 +34,7 @@ Zilliz Cloud introduces a search parameter `level` to allow users to balance sea
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This applies to all searches, including basic vector searches, filtered searches, range searches, grouping searches, hybrid searches, and search iterators.</p>
+This applies to all searches, including basic vector searches, filtered searches, range searches, grouping searches, hybrid searches, and search iterators.
 
 </Admonition>
 
@@ -73,7 +74,7 @@ For scenarios that require a high recall rate (**99%** or above), try setting th
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If the top-most level settings still do not suffice, contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud support</a>.</p>
+If the top-most level settings still do not suffice, contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
 
 </Admonition>
 
@@ -116,7 +117,7 @@ While setting `enable_recall_calculation` to `True`, you can adjust the value of
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Enabling <code>enable_recall_calculation</code> may impact search performance and is not recommended in production.</p>
+Enabling `enable_recall_calculation` may impact search performance and is not recommended in production.
 
 </Admonition>
 

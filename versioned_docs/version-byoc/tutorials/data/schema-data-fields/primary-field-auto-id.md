@@ -1,11 +1,12 @@
 ---
 title: "Primary Field & AutoID | BYOC"
 slug: /primary-field-auto-id
-sidebar_label: "Primary Field & AutoID"
-beta: FALSE
+sidebar_key: primary-field-auto-id
+sidebar_label: "Primary Field"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Every collection in Zilliz Cloud must have a primary field to uniquely identify each entity. This field ensures that every entity can be inserted, updated, queried, or deleted without ambiguity. | BYOC"
 type: origin
@@ -88,10 +89,9 @@ Zilliz Cloud supports two modes for assigning primary key values.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>If you are unsure which mode to choose, <a href="./primary-field-auto-id#quickstart-use-autoid">start with AutoID</a> for simpler ingestion and guaranteed uniqueness.</p></li>
-<li><p>You are advised to rely on <code>autoId</code> in all cases unless manually setting primary keys is beneficial.</p></li>
-</ul>
+- If you are unsure which mode to choose, [start with AutoID](./primary-field-auto-id#quickstart-use-autoid) for simpler ingestion and guaranteed uniqueness.
+
+- You are advised to rely on `autoId` in all cases unless manually setting primary keys is beneficial.
 
 </Admonition>
 
@@ -377,7 +377,7 @@ curl -X POST 'YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/insert' \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Use <code>upsert()</code> instead of <code>insert()</code> when working with existing entities to avoid duplicate ID errors.</p>
+Use `upsert()` instead of `insert()` when working with existing entities to avoid duplicate ID errors.
 
 </Admonition>
 
@@ -567,7 +567,7 @@ You must include the primary field column in every insert operation.
 <TabItem value='python'>
 
 ```python
-# Each entity must contain the primary field `product_id`
+# Each entity must contain the primary field \`product_id\`
 data = [
     {"product_id": "PROD-001", "embedding": [0.1, 0.2, 0.3, 0.4], "category": "book"},
     {"product_id": "PROD-002", "embedding": [0.2, 0.3, 0.4, 0.5], "category": "toy"},

@@ -1,11 +1,12 @@
 ---
 title: "Customer-Managed Encryption Keys | Cloud"
 slug: /cmek
+sidebar_key: cmek
 sidebar_label: "CMEK"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud encrypts data at rest on disk/object storage using the 256-bit Advanced Encryption Standard (AES-256) algorithm by default. For customers with the highest security requirements, Zilliz Cloud adds an additional layer of security by leveraging the customer's cloud provider's Key Management Service (KMS) in combination with Zilliz Cloud's Customer-Managed Encryption Key (CMEK) feature. | Cloud"
 type: origin
@@ -29,7 +30,7 @@ Zilliz Cloud encrypts data at rest on disk/object storage using the 256-bit Adva
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
+This feature is available only to **Dedicated** clusters in a **Business Critical** project.
 
 </Admonition>
 
@@ -71,7 +72,7 @@ All data-related files stored in the following locations are encrypted:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Currently, CMEK is available only in AWS regions. For other regions, please <a href="https://support.zilliz.com/hc/en-us">contact us</a>.</p>
+Currently, CMEK is available only in AWS regions. For other regions, please [contact us](https://support.zilliz.com/hc/en-us).
 
 </Admonition>
 

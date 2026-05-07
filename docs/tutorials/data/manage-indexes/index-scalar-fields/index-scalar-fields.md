@@ -1,11 +1,12 @@
 ---
 title: "Index Scalar Fields | Cloud"
 slug: /index-scalar-fields
-sidebar_label: "Index Scalar Fields"
-beta: FALSE
+sidebar_key: index-scalar-fields
+sidebar_label: "Scalar Indexes"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud supports indexing on scalar fields (non-vector fields) to significantly accelerate filtering and search performance, especially on large datasets. | Cloud"
 type: origin
@@ -37,37 +38,61 @@ Zilliz Cloud supports `AUTOINDEX` for the following field types:
 <table>
    <tr>
      <th><p>Field Type</p></th>
+     <th><p>AUTOINDEX Resolves to</p></th>
      <th><p>Description</p></th>
    </tr>
    <tr>
      <td><p><code>VARCHAR</code></p></td>
+     <td><p><strong>BITMAP</strong> (C&ast; &lt; 100) / <strong>INVERTED</strong> ( C ≥ 100)</p></td>
      <td><p>String data type. For details, refer to <a href="./use-string-field">String Field</a>.</p></td>
    </tr>
    <tr>
-     <td><p><code>INT8</code>, <code>INT32</code>, <code>INT64</code></p></td>
+     <td><p><code>INT8</code>, <code>INT16</code>, <code>INT32</code>, <code>INT64</code></p></td>
+     <td><p><strong>BITMAP</strong> (C &lt; 100) / <strong>STL_SORT</strong> (C ≥ 100)</p></td>
      <td><p>Integer. For details, refer to <a href="./use-number-field">Boolean & Number</a>.</p></td>
    </tr>
    <tr>
      <td><p><code>FLOAT</code>, <code>DOUBLE</code></p></td>
+     <td><p><strong>BITMAP</strong> (C&ast; &lt; 100) / <strong>INVERTED</strong> ( C ≥ 100)</p></td>
      <td><p>Floating point. For details, refer to <a href="./use-number-field">Boolean & Number</a>.</p></td>
    </tr>
    <tr>
      <td><p><code>BOOL</code></p></td>
+     <td><p><strong>BITMAP</strong></p></td>
      <td><p>Boolean. For details, refer to <a href="./use-number-field">Boolean & Number</a>.</p></td>
    </tr>
    <tr>
      <td><p><code>ARRAY</code></p></td>
+     <td><p><strong>BITMAP</strong> (C&ast; &lt; 100) / <strong>INVERTED</strong> ( C ≥ 100)</p></td>
      <td><p>Homogeneous array of scalar values. For details, refer to <a href="./use-array-fields">Array Field</a>.</p></td>
    </tr>
    <tr>
      <td><p><code>GEOMETRY</code></p></td>
+     <td><p><strong>RTREE</strong></p></td>
      <td><p>Geometric data that stores spatial information. For details, refer to <a href="./use-geometry-field">Geometry Field</a>.</p></td>
    </tr>
    <tr>
      <td><p><code>TIMESTAMPTZ</code></p></td>
+     <td><p><strong>STL_SORT</strong></p></td>
      <td><p>time zone-aware ISO 8601 inputs, stored as UTC for consistent filtering and ordering across time zones. For details, refer to <a href="./use-timestamptz-field">TIMESTAMPTZ Field</a>.</p></td>
    </tr>
 </table>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+Cardinality (C in the above table) shows the number of unique values in a field across a whole collection. For example, the cardinality of a float field is the number of distinct float values in that field.
+
+For an array field, the cardinality is the number of **distinct element values** across all arrays in the segment. For example:
+
+```plaintext
+[1, 2, 3]
+[2, 3, 4]
+[1, 4, 5]
+```
+
+The distinct element values are `{1, 2, 3, 4, 5}` → cardinality = **5**. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.
+
+</Admonition>
 
 ## Preparations\{#preparations}
 
@@ -509,7 +534,7 @@ Use the `drop_index()` method to remove an existing index from a collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>In your cluster compatible with <strong>Milvus v2.6.x</strong>, you can drop a scalar index directly once it’s no longer needed—no need to release the collection first.</p>
+In your cluster compatible with **Milvus v2.6.x**, you can drop a scalar index directly once it’s no longer needed—no need to release the collection first.
 
 </Admonition>
 

@@ -1,11 +1,12 @@
 ---
 title: "Gaussian Decay | Cloud"
 slug: /gaussian-decay
+sidebar_key: gaussian-decay
 sidebar_label: "Gaussian Decay"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Gaussian decay, also known as normal decay, creates the most natural-feeling adjustment to your search results. Like human vision that gradually blurs with distance, Gaussian decay creates a smooth, bell-shaped curve that gently reduces relevance as items move away from your ideal point. This approach is ideal when you want a balanced decay that doesn't harshly penalize items just outside your preferred range but still significantly reduces the relevance of distant items. | Cloud"
 type: origin
@@ -101,13 +102,13 @@ This behavior mimics how people naturally think about distance relevance—nearb
 The mathematical formula for calculating a Gaussian decay score is:
 
 $$
-S(doc) = \exp\left( -\frac\{\left( \max\left(0, \left|fieldvalue_{doc} - origin\right| - offset \right) \right)^2}\{2\sigma^2} \right)
+S(doc) = \exp\left( -\frac{\left( \max\left(0, \left|fieldvalue_{doc} - origin\right| - offset \right) \right)^2}{2\sigma^2} \right)
 $$
 
 Where:
 
 $$
-\sigma^2 = -\frac{scale^2}\{2 \cdot \ln(decay)}
+\sigma^2 = -\frac{scale^2}{2 \cdot \ln(decay)}
 $$
 
 Breaking this down in plain language:
@@ -130,7 +131,7 @@ Gaussian decay can be applied to both standard vector search and hybrid search o
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to <a href="./tutorial-implement-time-based-ranking">Tutorial: Implement Time-based Ranking in Milvus</a>.</p>
+Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to [Tutorial: Implement Time-based Ranking in Milvus](./tutorial-implement-time-based-ranking).
 
 </Admonition>
 

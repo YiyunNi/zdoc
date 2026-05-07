@@ -1,11 +1,12 @@
 ---
 title: "Exponential Decay | Cloud"
 slug: /exponential-decay
+sidebar_key: exponential-decay
 sidebar_label: "Exponential Decay"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Exponential decay creates a steep initial drop followed by a long tail in your search results. Like a breaking news cycle where relevance diminishes rapidly at first but some stories retain importance over time, exponential decay applies a sharp penalty to items just beyond your ideal range while still keeping distant items discoverable. This approach is ideal when you want to heavily prioritize proximity or recency but don't want to completely eliminate more distant options. | Cloud"
 type: origin
@@ -88,7 +89,7 @@ Exponential decay creates a curve that drops quickly at first, then gradually fl
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>All time parameters (<code>origin</code>, <code>offset</code>, <code>scale</code>) must use the same unit as the collection data. If your collection stores timestamps in a different unit (milliseconds, microseconds), adjust all parameters accordingly.</p>
+All time parameters (`origin`, `offset`, `scale`) must use the same unit as the collection data. If your collection stores timestamps in a different unit (milliseconds, microseconds), adjust all parameters accordingly.
 
 </Admonition>
 
@@ -119,7 +120,7 @@ $$
 Where:
 
 $$
-\lambda = \frac\{\ln(decay)}{scale}
+\lambda = \frac{\ln(decay)}{scale}
 $$
 
 Breaking this down in plain language:
@@ -140,7 +141,7 @@ Exponential decay can be applied to both standard vector search and hybrid searc
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to <a href="./tutorial-implement-time-based-ranking">Decay Ranker Tutorial</a>.</p>
+Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to [Decay Ranker Tutorial](./tutorial-implement-time-based-ranking).
 
 </Admonition>
 
@@ -150,7 +151,7 @@ After your collection is set up with a numeric field (in this example, `publish_
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><strong>Time unit consistency</strong>: When using time-based decay, ensure that <code>origin</code>, <code>scale</code>, and <code>offset</code> parameters use the same time unit as your collection data. If your collection stores timestamps in seconds, use seconds for all parameters. If it uses milliseconds, use milliseconds for all parameters.</p>
+**Time unit consistency**: When using time-based decay, ensure that `origin`, `scale`, and `offset` parameters use the same time unit as your collection data. If your collection stores timestamps in seconds, use seconds for all parameters. If it uses milliseconds, use milliseconds for all parameters.
 
 </Admonition>
 

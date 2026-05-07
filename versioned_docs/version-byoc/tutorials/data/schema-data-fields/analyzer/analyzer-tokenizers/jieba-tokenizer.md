@@ -1,11 +1,12 @@
 ---
 title: "Jieba | BYOC"
 slug: /jieba-tokenizer
+sidebar_key: jieba-tokenizer
 sidebar_label: "Jieba"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The `jieba` tokenizer processes Chinese text by breaking it down into its component words. | BYOC"
 type: origin
@@ -33,7 +34,7 @@ The `jieba` tokenizer processes Chinese text by breaking it down into its compon
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The <code>jieba</code> tokenizer preserves punctuation marks as separate tokens in the output. For example, <code>"你好！世界。"</code> becomes <code>["你好", "！", "世界", "。"]</code>. To remove these standalone punctuation tokens, use the <a href="./remove-punct-filter"><code>removepunct</code></a> filter.</p>
+The `jieba` tokenizer preserves punctuation marks as separate tokens in the output. For example, `"你好！世界。"` becomes `["你好", "！", "世界", "。"]`. To remove these standalone punctuation tokens, use the [`removepunct`](./remove-punct-filter) filter.
 
 </Admonition>
 
@@ -176,11 +177,14 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("customDictionary"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("customDictionary"));             
+  put("mode", "exact");
+  put("hmm", false);
+}});
+
 ```
 
 </TabItem>
@@ -196,7 +200,14 @@ analyzerParams.put("hmm", false);
 <TabItem value='go'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"customDictionary"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"customDictionary"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>
@@ -265,11 +276,13 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("结巴分词器"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("结巴分词器"));                   
+  put("mode", "exact");
+  put("hmm", false);
+}});
 ```
 
 </TabItem>
@@ -285,7 +298,14 @@ analyzerParams.put("hmm", false);
 <TabItem value='go'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"结巴分词器"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"结巴分词器"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>

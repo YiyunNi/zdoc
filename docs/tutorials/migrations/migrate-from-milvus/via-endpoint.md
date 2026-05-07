@@ -1,11 +1,12 @@
 ---
 title: "Migrate from Milvus to Zilliz Cloud Via Endpoint | Cloud"
 slug: /via-endpoint
+sidebar_key: via-endpoint
 sidebar_label: "Via Endpoint"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud offers Milvus as a fully managed, cloud-hosted solution for users who want to use the Milvus vector database without the need to manage the infrastructure themselves. This topic describes how to migrate from Milvus via the database endpoint. | Cloud"
 type: origin
@@ -86,10 +87,9 @@ The following demo walks you through how to start migrating from Milvus via endp
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>If full text search is already enabled for the source collection, Zilliz Cloud will preserve its Function settings in the target collection after migration. These inherited settings cannot be modified.</p></li>
-<li><p>You can also enable full text search for other VARCHAR fields during migration. For details, refer to <a href="./full-text-search">Full Text Search</a>.</p></li>
-</ul>
+- If full text search is already enabled for the source collection, Zilliz Cloud will preserve its Function settings in the target collection after migration. These inherited settings cannot be modified.
+
+- You can also enable full text search for other VARCHAR fields during migration. For details, refer to [Full Text Search](./full-text-search).
 
 </Admonition>
 
@@ -109,7 +109,7 @@ After the migration job is completed, note the following:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Once your collection is loaded, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.</p>
+Once your collection is loaded, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.
 
 </Admonition>
 

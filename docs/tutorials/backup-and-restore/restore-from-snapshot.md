@@ -1,11 +1,12 @@
 ---
 title: "Restore from Backup Files | Cloud"
 slug: /restore-from-snapshot
+sidebar_key: restore-from-snapshot
 sidebar_label: "Restore from Backup Files"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "The restore feature in Zilliz Cloud lets you recover data from backup files in cases of accidental loss, corruption, or system failure—ensuring business continuity. It is a reliable way to recover from incidents, revert unintended changes, or clone a cluster for testing with minimal disruption. | Cloud"
 type: origin
@@ -33,7 +34,7 @@ This guide walks you through how to restore a full or partial cluster from backu
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is available only to <strong>Dedicated</strong> clusters.</p>
+This feature is available only to **Dedicated** clusters.
 
 </Admonition>
 
@@ -49,7 +50,7 @@ During restoration, you may choose whether to include RBAC settings.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>RBAC restoration is currently supported only via the web console; the RESTful API does not support it yet.</p>
+RBAC restoration is currently supported only via the web console; the RESTful API does not support it yet.
 
 </Admonition>
 
@@ -66,9 +67,13 @@ The following demo shows how to restore a full cluster on the Zilliz Cloud web c
 The following example restores a full cluster for an existing backup file to a new cluster named `Dedicated-01-backup`. For details about the RESTful API, see [Restore Cluster Backup](/reference/restful/restore-cluster-backup-v2).
 
 ```bash
+export API_KEY="YOUR_API_KEY"
+export BASE_URL="https://api.cloud.zilliz.com"
+export CLUSTER_ID="your-cluster-id"
+
 curl --request POST \
      --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/${BACKUP_ID}/restoreCluster" \
-     --header "Authorization: Bearer ${TOKEN}" \
+     --header "Authorization: Bearer ${API_KEY}" \
      --header "Accept: application/json" \
      --header "Content-type: application/json" \
      --data-raw '{
@@ -110,7 +115,7 @@ The following example restores a collection from backup file to an existing clus
 ```bash
 curl --request POST \
 --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/${BACKUP_ID}/restoreCollection" \
---header "Authorization: Bearer ${TOKEN}" \
+--header "Authorization: Bearer ${API_KEY}" \
 --header "Content-Type: application/json" \
 -d '{
     "destClusterId": "in01-xxxxxxxxxxxxxx",
@@ -145,7 +150,7 @@ When you restore an encrypted backup to a new cluster, Zilliz Cloud will use the
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
+This feature is available only to **Dedicated** clusters in a **Business Critical** project.
 
 </Admonition>
 
@@ -159,3 +164,8 @@ The restoration procedure from an encrypted backup is almost the same as a norma
 
 - When this option is disabled, the cluster created after the restoration is unencrypted.
 
+## FAQ\{#faq}
+
+**What Milvus version will a restored cluster run?**
+
+The restored cluster runs the latest Milvus version supported by Zilliz Cloud at the time of restoration, regardless of the version used when the backup was created. For example, if you back up a Milvus 2.5.x cluster and restore it after the platform has upgraded to 2.6.x, the restored cluster will run Milvus 2.6.x. Backup files contain data only — the cluster version is determined by the platform.           

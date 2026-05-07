@@ -1,11 +1,12 @@
 ---
 title: "Schema Explained | BYOC"
 slug: /schema-explained
-sidebar_label: "Schema Explained"
-beta: FALSE
+sidebar_key: schema-explained
+sidebar_label: "Overview"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "A schema defines the data structure of a collection. Before creating a collection, you need to work out a design of its schema. This page helps you understand the collection schema and design an example schema on your own. | BYOC"
 type: origin
@@ -191,7 +192,7 @@ You can also set the `autoId` properties to `True` to make Zilliz Cloud automati
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You are advised to rely on <code>autoId</code> in all cases unless manually setting primary keys is beneficial.</p>
+You are advised to rely on `autoId` in all cases unless manually setting primary keys is beneficial.
 
 </Admonition>
 

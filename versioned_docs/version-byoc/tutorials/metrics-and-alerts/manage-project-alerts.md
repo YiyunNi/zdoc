@@ -1,11 +1,12 @@
 ---
 title: "Manage Project Alerts | BYOC"
 slug: /manage-project-alerts
+sidebar_key: manage-project-alerts
 sidebar_label: "Manage Project Alerts"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Project alerts enable proactive monitoring of your Zilliz Cloud clusters by sending notifications when specified conditions are met. You can configure project alerts to monitor cluster metrics such as CU capacity, query performance, ensuring you're immediately notified of potential issues that require attention. | BYOC"
 type: origin
@@ -178,7 +179,7 @@ Modify, organize, and maintain your existing alerts to keep monitoring relevant 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You can also manage project alerts via RESTful APIs. For details, refer to <a href="/reference/restful/update-alert-rule-v2">Update Alert Rule</a> and <a href="/reference/restful/delete-alert-rule-v2">Delete Alert Rule</a>.</p>
+You can also manage project alerts via RESTful APIs. For details, refer to [Update Alert Rule](/reference/restful/update-alert-rule-v2) and [Delete Alert Rule](/reference/restful/delete-alert-rule-v2).
 
 </Admonition>
 
@@ -220,7 +221,7 @@ Remove obsolete or redundant monitoring rules.
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-<p>Alert deletion is permanent and cannot be undone. Ensure you no longer need the alert before proceeding.</p>
+Alert deletion is permanent and cannot be undone. Ensure you no longer need the alert before proceeding.
 
 </Admonition>
 

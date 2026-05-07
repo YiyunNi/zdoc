@@ -1,11 +1,12 @@
 ---
 title: "Set up Cluster IP Allowlist | Cloud"
 slug: /setup-whitelist
+sidebar_key: setup-whitelist
 sidebar_label: "Set up Cluster IP Allowlist"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Cluster IP allowlist on Zilliz Cloud serves as a robust security layer at the project level, extending its benefits to every cluster within a specified project. By implementing an IP allowlist, you effectively narrow down access to your project’s clusters to a select group of IP addresses, substantially mitigating the risk of malicious attacks. | Cloud"
 type: origin
@@ -74,11 +75,11 @@ Ensure the following prerequisites are met before proceeding:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Without any entries in the allowlist, Zilliz Cloud allows access from any IP address.</p></li>
-<li><p>Upon adding a CIDR block, cluster access is exclusively limited to the IP addresses within that block.</p></li>
-<li><p>Adding 0.0.0.0/0 equates to having an empty allowlist.</p></li>
-</ul>
+- Without any entries in the allowlist, Zilliz Cloud allows access from any IP address.
+
+- Upon adding a CIDR block, cluster access is exclusively limited to the IP addresses within that block.
+
+- Adding 0.0.0.0/0 equates to having an empty allowlist.
 
 </Admonition>
 

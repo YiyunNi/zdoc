@@ -1,11 +1,12 @@
 ---
 title: "Manage Organization Users | BYOC"
 slug: /organization-users
+sidebar_key: organization-users
 sidebar_label: "Organization Users"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "In Zilliz Cloud, an organization typically represents a company. You can invite employees to your organization and assign them roles based on their job functions. These roles determine the user's access to specific resources and the operations they can perform. For example, developers typically need access to data but do not require billing privileges. | BYOC"
 type: origin
@@ -53,6 +54,12 @@ The following table lists the corresponding UI and API privileges of this organi
      <td><p><a href="/reference/restful/data-plane-v2">All data plane operations</a></p></td>
    </tr>
 </table>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+Use a colon-separated username and password of the target cluster, like `username:password`, as the authentication token when calling data-plane RESTful API endpoints.
+
+</Admonition>
 
 ### Organization Billing Admin\{#organization-billing-admin}
 
@@ -112,7 +119,7 @@ Invitation recipients will receive an email invitation that must be accepted wit
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Each time, you can invite one or more users with the same role to the organization. Each organization can have up to 100 users.</p>
+Each time, you can invite one or more users with the same role to the organization. Each organization can have up to 100 users.
 
 </Admonition>
 
@@ -138,7 +145,7 @@ To remove an organization user, you must be an **Organization Owner**.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Upon removing a member, the corresponding personal API key will be immediately revoked and access will be denied. To prevent service disruption, please ensure that any personal keys utilized in your environments are replaced prior to removal. This action cannot be undone.</p>
+Upon removing a member, the corresponding personal API key will be immediately revoked and access will be denied. To prevent service disruption, please ensure that any personal keys utilized in your environments are replaced prior to removal. This action cannot be undone.
 
 </Admonition>
 
@@ -152,7 +159,7 @@ Each organization must have at least one organization owner. If you are the only
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-<p>Once you leave an organization, you will no longer be able to access the organization and associated resources.</p>
+Once you leave an organization, you will no longer be able to access the organization and associated resources.
 
 </Admonition>
 

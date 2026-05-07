@@ -1,31 +1,28 @@
 ---
-title: "データのインポート | Cloud"
+title: "データインポート | Cloud"
 slug: /import-data
-sidebar_label: "データのインポート"
+sidebar_key: import-data
+sidebar_label: "データインポート"
 beta: FALSE
 notebook: FALSE
-description: "「データのインポート準備」の手順に従ってデータを準備したら、Zilliz Cloud コンソール、RESTful API、または SDK を介してデータのインポートを開始できます。 | Cloud"
+description: "「データインポートの準備」の手順に従ってデータを準備したら、Zilliz Cloud コンソール、RESTful API、または SDK を介してデータインポートを開始できます。| Cloud"
 type: origin
 token: VTZZwCkkCi7FwnklLDhcMJwvnQb
 sidebar_position: 4
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - データインポート
-  - 自然言語処理データベース
-  - 安価なベクトルデータベース
-  - マネージドベクトルデータベース
-  - Pinecone ベクトルデータベース
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# データのインポート
+# データインポート
 
-[データのインポート準備](./prepare-data-import)の手順に従ってデータを準備したら、Zilliz Cloud コンソール、RESTful API、または SDK を介してデータのインポートを開始できます。
+[データインポートの準備](./prepare-data-import)でデータの準備が完了したら、Zilliz Cloud コンソール、RESTful API、または SDK を使ってデータインポートを開始できます。
 
 import DocCardList from '@theme/DocCardList';
 

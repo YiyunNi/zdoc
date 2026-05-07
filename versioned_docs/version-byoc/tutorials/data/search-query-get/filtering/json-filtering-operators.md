@@ -1,11 +1,12 @@
 ---
 title: "JSON Operators | BYOC"
 slug: /json-filtering-operators
-sidebar_label: "JSON Operators"
-beta: FALSE
+sidebar_key: json-filtering-operators
+sidebar_label: "JSON"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud supports advanced operators for querying and filtering JSON fields, making them perfect for managing complex, structured data. These operators enable highly effective querying of JSON documents, allowing you to retrieve entities based on specific elements, values, or conditions within the JSON fields. This section will guide you through using JSON-specific operators in Zilliz Cloud, providing practical examples to illustrate their functionality. | BYOC"
 type: origin
@@ -33,7 +34,7 @@ Zilliz Cloud supports advanced operators for querying and filtering JSON fields,
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>JSON fields cannot deal with complex, nested structures and treats all nested structures as plain strings. Therefore, when working with JSON fields, it is advisable to avoid excessively deep nesting and ensure that your data structures are as flat as possible for optimal performance.</p>
+JSON fields cannot deal with complex, nested structures and treats all nested structures as plain strings. Therefore, when working with JSON fields, it is advisable to avoid excessively deep nesting and ensure that your data structures are as flat as possible for optimal performance.
 
 </Admonition>
 

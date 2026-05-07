@@ -1,11 +1,12 @@
 ---
 title: "Linear Decay | Cloud"
 slug: /linear-decay
+sidebar_key: linear-decay
 sidebar_label: "Linear Decay"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Linear decay creates a straight-line decline that terminates at an absolute zero point in your search results. Like an upcoming event countdown where relevance gradually fades until the event has passed, linear decay applies a predictable, steady reduction in relevance as items move away from your ideal point until they completely disappear. This approach is ideal when you want a consistent decay rate with a clear cutoff, ensuring that items beyond a certain boundary are completely excluded from results. | Cloud"
 type: origin
@@ -90,7 +91,7 @@ Linear decay creates a straight-line drop that decreases at a constant rate unti
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>All time parameters (<code>origin</code>, <code>offset</code>, <code>scale</code>) must use the same unit as the collection data. If your collection stores timestamps in a different unit (milliseconds, microseconds), adjust all parameters accordingly.</p>
+All time parameters (`origin`, `offset`, `scale`) must use the same unit as the collection data. If your collection stores timestamps in a different unit (milliseconds, microseconds), adjust all parameters accordingly.
 
 </Admonition>
 
@@ -115,7 +116,7 @@ This behavior mirrors how event planning typically works—imminent events are m
 The mathematical formula for calculating a linear decay score is:
 
 $$
-S(doc) = \max\left( \frac\{s - \max(0, |fieldvalue_{doc} - origin| - offset)}{s}, 0 \right)
+S(doc) = \max\left( \frac{s - \max(0, |fieldvalue_{doc} - origin| - offset)}{s}, 0 \right)
 $$
 
 Where:
@@ -144,7 +145,7 @@ Linear decay can be applied to both standard vector search and hybrid search ope
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to <a href="./tutorial-implement-time-based-ranking">Decay Ranker Tutorial</a>.</p>
+Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to [Decay Ranker Tutorial](./tutorial-implement-time-based-ranking).
 
 </Admonition>
 
@@ -154,7 +155,7 @@ After your collection is set up with a numeric field (in this example, `event_da
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><strong>Time unit consistency</strong>: When using time-based decay, ensure that <code>origin</code>, <code>scale</code>, and <code>offset</code> parameters use the same time unit as your collection data. If your collection stores timestamps in seconds, use seconds for all parameters. If it uses milliseconds, use milliseconds for all parameters.</p>
+**Time unit consistency**: When using time-based decay, ensure that `origin`, `scale`, and `offset` parameters use the same time unit as your collection data. If your collection stores timestamps in seconds, use seconds for all parameters. If it uses milliseconds, use milliseconds for all parameters.
 
 </Admonition>
 

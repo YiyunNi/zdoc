@@ -1,11 +1,12 @@
 ---
 title: "Alter Collection Field | BYOC"
 slug: /alter-collection-field
-sidebar_label: "Alter Collection Field"
-beta: FALSE
+sidebar_key: alter-collection-field
+sidebar_label: "Alter Field"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "You can alter the properties of a collection field to change column constraints or enforce stricter data integrity rules. | BYOC"
 type: origin
@@ -32,10 +33,9 @@ You can alter the properties of a collection field to change column constraints 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Each collection consists of only one primary field. Once set during collection creation, you cannot change the primary field or alter its properties.</p></li>
-<li><p>Each collection can have only one partition key. Once set during collection creation, you cannot change the partition key.</p></li>
-</ul>
+- Each collection consists of only one primary field. Once set during collection creation, you cannot change the primary field or alter its properties.
+
+- Each collection can have only one partition key. Once set during collection creation, you cannot change the partition key.
 
 </Admonition>
 

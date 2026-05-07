@@ -1,11 +1,12 @@
 ---
 title: "Configure a Customer-Managed VPC on AWS | BYOC"
 slug: /configure-vpc
+sidebar_key: configure-vpc
 sidebar_label: "Configure a Customer-Managed VPC on AWS"
-beta: CONTACT SALES
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: CONTACT SALES
 notebook: FALSE
 description: "The Zilliz Cloud Bring-Your-Own-Cloud (BYOC) solution enables you to set up a project within your own Virtual Private Cloud (VPC). With a Zilliz Cloud project running in a customer-managed VPC, you gain greater control over your network configurations, allowing you to meet specific cloud security and governance standards required by your organization. | BYOC"
 type: origin
@@ -37,7 +38,7 @@ This page enumerates the minimum requirements for you to host a Zilliz Cloud BYO
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
+Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
 
 </Admonition>
 
@@ -86,7 +87,7 @@ Zilliz Cloud recommends using the **/16** netmask in IPv4 CIDR settings for the 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloud currently supports only IPv4 CIDR blocks.</p>
+Zilliz Cloud currently supports only IPv4 CIDR blocks.
 
 </Admonition>
 
@@ -216,7 +217,7 @@ VPC endpoint ensures secure cluster connectivity relay and enables private calls
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The VPC endpoint created in this section is used to set up an AWS PrivateLink. Once the VPC endpoint is ready, you must create a hosted zone and add some DNS records. For details, refer to <a href="./setup-a-private-link-aws">Set up a PrivateLink (AWS)</a>.</p>
+The VPC endpoint created in this section is used to set up an AWS PrivateLink. Once the VPC endpoint is ready, you must create a hosted zone and add some DNS records. For details, refer to [Set up a PrivateLink (AWS)](./setup-a-private-link-aws).
 
 </Admonition>
 

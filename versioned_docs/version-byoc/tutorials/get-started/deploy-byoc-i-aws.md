@@ -1,11 +1,12 @@
 ---
 title: "Deploy BYOC-I on AWS | BYOC"
 slug: /deploy-byoc-i-aws
+sidebar_key: deploy-byoc-i-aws
 sidebar_label: "Deploy BYOC-I on AWS"
-beta: CONTACT SALES
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: CONTACT SALES
 notebook: FALSE
 description: "This page explains how to deploy a Bring-Your-Own-Cloud (BYOC) data plane with a BYOC agent in your AWS Virtual Private Cloud (VPC). | BYOC"
 type: origin
@@ -34,10 +35,9 @@ This page explains how to deploy a Bring-Your-Own-Cloud (BYOC) data plane with a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud support</a>.</p></li>
-<li><p>This guide demonstrates how to create the necessary resources on the AWS console step-by-step. If you prefer to use a Terraform script to provision the infrastructure,  see <a href="./terraform-provider">Terraform Provider</a>. </p></li>
-</ul>
+- Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
+
+- This guide demonstrates how to create the necessary resources on the AWS console step-by-step. If you prefer to use a Terraform script to provision the infrastructure,  see [Terraform Provider](./terraform-provider). 
 
 </Admonition>
 

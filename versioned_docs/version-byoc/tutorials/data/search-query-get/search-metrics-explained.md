@@ -1,11 +1,12 @@
 ---
 title: "Metric Types | BYOC"
 slug: /search-metrics-explained
+sidebar_key: search-metrics-explained
 sidebar_label: "Metric Types"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Similarity metrics are used to measure similarities among vectors. Choosing an appropriate distance metric helps improve classification and clustering performance significantly. | BYOC"
 type: origin
@@ -84,10 +85,9 @@ The table below summarizes the mapping between different field types and their c
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>For vector fields of the <code>SPARSE\_FLOAT\_VECTOR</code> type, use the <code>BM25</code> metric type only when performing full text search. For more information, refer to <a href="./full-text-search">Full Text Search</a>.</p></li>
-<li><p>For vector fields of the <code>BINARY_VECTOR</code> type, the dimension value (<code>dim</code>) must be a multiple of 8. </p></li>
-</ul>
+- For vector fields of the `SPARSE\_FLOAT\_VECTOR` type, use the `BM25` metric type only when performing full text search. For more information, refer to [Full Text Search](./full-text-search).
+
+- For vector fields of the `BINARY_VECTOR` type, the dimension value (`dim`) must be a multiple of 8. 
 
 </Admonition>
 
@@ -150,7 +150,7 @@ It's the most commonly used distance metric and is very useful when the data are
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloud only calculates the value before applying the square root when Euclidean distance is chosen as the distance metric.</p>
+Zilliz Cloud only calculates the value before applying the square root when Euclidean distance is chosen as the distance metric.
 
 </Admonition>
 
@@ -164,7 +164,7 @@ IP is more useful if you need to compare non-normalized data or when you care ab
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you use IP to calculate similarities between embeddings, you must normalize your embeddings. After normalization, the inner product equals cosine similarity.</p>
+If you use IP to calculate similarities between embeddings, you must normalize your embeddings. After normalization, the inner product equals cosine similarity.
 
 </Admonition>
 
@@ -245,7 +245,7 @@ BM25 is a widely used text relevance measurement method, specifically designed f
 The BM25 scoring is calculated as follows:
 
 $$
-score(D, Q)=\sum_{i=1}^{n}IDF(q_i)\cdot \{\{TF(q_i,D)\cdot(k_1+1)}\over\{TF(q_i, D)+k_1\cdot(1-b+b\cdot \{\{|D|}\over{avgdl}})}}
+score(D, Q)=\sum_{i=1}^{n}IDF(q_i)\cdot {{TF(q_i,D)\cdot(k_1+1)}\over{TF(q_i, D)+k_1\cdot(1-b+b\cdot {{|D|}\over{avgdl}})}}
 $$
 
 Parameter description:
@@ -259,7 +259,7 @@ Parameter description:
 - $IDF(q_i)$: Inverse document frequency, calculated as:
 
     $$
-    IDF(q_i)=\log(\{N-n(q_i)+0.5\over n(q_i)+0.5} + 1)
+    IDF(q_i)=\log({N-n(q_i)+0.5\over n(q_i)+0.5} + 1)
     $$
 
     where $N$ is the total number of documents in the corpus, and$n(q_i)$ is the number of documents containing term $q_i$.

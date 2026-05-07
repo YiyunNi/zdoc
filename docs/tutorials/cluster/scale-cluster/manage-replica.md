@@ -1,11 +1,12 @@
 ---
 title: "Scale Replica | Cloud"
 slug: /manage-replica
+sidebar_key: manage-replica
 sidebar_label: "Scale Replica"
-beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Zilliz Cloud supports cluster-level replication. Each replica is an exact copy of the resources and data in a cluster. Using replicas can increase query throughput and availability. | Cloud"
 type: origin
@@ -33,11 +34,13 @@ For users experiencing QPS bottlenecks, adding replicas can distribute the query
 
 Note that adding replicas will not increase the cluster capacity because the capacity is only determined by the number of query CUs of each cluster. If you want to increase the cluster capacity, please refer to [Scale Cluster](./scale-query-cu).
 
-This guide outlines the procedures of configuring replicas for a cluster in Zilliz Cloud.
+This guide outlines the procedures of configuring replicas for a **serving cluster** in Zilliz Cloud.
+
+The content on this page applies to serving clusters only.  On-demand clusters scale automatically — they spin up when a request arrives and scale back to zero when idle, with no manual intervention required.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
+This feature is available only to **Dedicated** clusters in an **Enterprise** project.
 
 </Admonition>
 
@@ -45,13 +48,13 @@ This guide outlines the procedures of configuring replicas for a cluster in Zill
 
 You can configure replicas for an existing Dedicated cluster as long as the following conditions are met:
 
-- The cluster has 8 query CUs or more
+- The cluster has 12 query CUs or more
 
-- The product of the cluster query CU count x replica count should not exceed 256.
+- The product of the cluster query CU count x replica count should not exceed 10,240.
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-<p>Updating the replica configurations may lead to slight service jitter. Please exercise caution.</p>
+Updating the replica configurations may lead to slight service jitter. Please exercise caution.
 
 </Admonition>
 
@@ -128,10 +131,9 @@ When setting up dynamic scaling, you can configure the following bounds:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>Selecting a maximum replica below the current value triggers an immediate scale-in.</p></li>
-<li><p>Selecting a minimum replica above the current value triggers an immediate scale-out.</p></li>
-</ul>
+- Selecting a maximum replica below the current value triggers an immediate scale-in.
+
+- Selecting a minimum replica above the current value triggers an immediate scale-out.
 
 </Admonition>
 

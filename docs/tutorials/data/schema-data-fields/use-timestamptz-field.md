@@ -1,11 +1,12 @@
 ---
 title: "TIMESTAMPTZ Field | Cloud"
 slug: /use-timestamptz-field
-sidebar_label: "TIMESTAMPTZ Field"
-beta: FALSE
+sidebar_key: use-timestamptz-field
+sidebar_label: "TIMSTAMPTZ"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
+beta: FALSE
 notebook: FALSE
 description: "Applications that track time across regions, such as e-commerce systems, collaboration tools, or distributed logging, need precise handling of timestamps with time zones. The `TIMESTAMPTZ` data type in Zilliz Cloud provides this capability by storing timestamps with their associated time zone. | Cloud"
 type: origin
@@ -60,11 +61,11 @@ A `TIMESTAMPTZ` field is a schema-defined data type (`DataType.TIMESTAMPTZ`) in 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>You can set <code>nullable=True</code> for <code>TIMESTAMPTZ</code> fields to allow missing values.</p></li>
-<li><p>You can specify a default timestamp value using the <code>default_value</code> attribute in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</p></li>
-</ul>
-<p>See <a href="./nullable-fields">Nullable & Default</a> for details.</p>
+- You can set `nullable=True` for `TIMESTAMPTZ` fields to allow missing values.
+
+- You can specify a default timestamp value using the `default_value` attribute in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+
+See [Nullable & Default](./nullable-fields) for details.
 
 </Admonition>
 
@@ -332,7 +333,7 @@ const dayStr = String(day).padStart(2, '0');
 const hourStr = String(hour).padStart(2, '0');
 const minuteStr = String(minute).padStart(2, '0');
 const secondStr = String(second).padStart(2, '0');
-return `${year}-${monthStr}-${dayStr}T${hourStr}:${minuteStr}:${secondStr}${timezoneOffset}`;
+return \`${year}-${monthStr}-${dayStr}T${hourStr}:${minuteStr}:${secondStr}${timezoneOffset}\`;
 };
 
 const data = [];
@@ -479,8 +480,9 @@ Use arithmetic operators like `==`, `!=`, `<`, `>`, `<=`, `>=`. For a full list 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Chained range expressions (for example, <code>lower_bound &lt; tsz &lt; upper_bound</code>) are not supported.</p>
-<p>Use logical conjunction instead: <code>tsz &gt; lower_bound AND tsz &lt; upper_bound</code>.</p>
+Chained range expressions (for example, `lower_bound < tsz < upper_bound`) are not supported.
+
+Use logical conjunction instead: `tsz > lower_bound AND tsz < upper_bound`.
 
 </Admonition>
 
@@ -663,17 +665,19 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/quer
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>INTERVAL</code> values follow the <a href="https://www.w3.org/TR/xmlschema-2/#duration">ISO 8601 duration syntax</a>. For example:</p>
-<ul>
-<li><p><code>P1D</code> → 1 day</p></li>
-<li><p><code>PT3H</code> → 3 hours</p></li>
-<li><p><code>P2DT6H</code> → 2 days and 6 hours</p></li>
-</ul>
-<p>You can use <code>INTERVAL</code> arithmetic directly in filter expressions, such as:</p>
-<ul>
-<li><p><code>tsz + INTERVAL 'P3D'</code> → Adds 3 days</p></li>
-<li><p><code>tsz - INTERVAL 'PT2H'</code> → Subtracts 2 hours</p></li>
-</ul>
+`INTERVAL` values follow the [ISO 8601 duration syntax](https://www.w3.org/TR/xmlschema-2/#duration). For example:
+
+- `P1D` → 1 day
+
+- `PT3H` → 3 hours
+
+- `P2DT6H` → 2 days and 6 hours
+
+You can use `INTERVAL` arithmetic directly in filter expressions, such as:
+
+- `tsz + INTERVAL 'P3D'` → Adds 3 days
+
+- `tsz - INTERVAL 'PT2H'` → Subtracts 2 hours
 
 </Admonition>
 
@@ -765,7 +769,7 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/sear
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If your collection has two or more vector fields, you can perform hybrid search operations with timestamp filtering. For details, refer to <a href="./hybrid-search">Multi-Vector Hybrid Search</a>.</p>
+If your collection has two or more vector fields, you can perform hybrid search operations with timestamp filtering. For details, refer to [Multi-Vector Hybrid Search](./hybrid-search).
 
 </Admonition>
 
@@ -800,7 +804,7 @@ You can control the time zone for `TIMESTAMPTZ` fields at the **collection** or 
 
 For step-by-step instructions and code samples, refer to the dedicated pages:
 
-- [Modify Collection](./modify-collections#example-6-set-collection-time-zone)
+- [Modify Collection](./modify-collections#example-7-set-collection-time-zone)
 
 - [Query](./get-and-scalar-query#temporarily-set-a-timezone-for-a-query)
 

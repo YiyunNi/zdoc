@@ -1,0 +1,23 @@
+{
+  "title": "Global Docs Build",
+  "stages": [
+    "Fetch EN docs",
+    "Build EN docs",
+    "Check EN links",
+    "Fetch SDK refs",
+    "Build SDK docs",
+    "Check SDK links"
+  ],
+  "statuses": [
+    "done",
+    "done",
+    "done",
+    "running",
+    "pending",
+    "pending"
+  ],
+  "currentIndex": 3,
+  "notes": [],
+  "startedAt": "2026-05-07T20:11:56.738Z",
+  "messageId": "om_x100b50fb6e02dca0c4d17560e496d14"
+}
