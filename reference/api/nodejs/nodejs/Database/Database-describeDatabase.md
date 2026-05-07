@@ -13,10 +13,10 @@ type: docx
 token: PzXldcfljoU9rOx9TFUcIoNknt6
 sidebar_position: 8
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
   - zilliz
   - zilliz cloud
   - cloud

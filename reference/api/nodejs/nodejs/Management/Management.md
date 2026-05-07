@@ -12,10 +12,10 @@ token: E5cpfv4EPlpWJ5dV0iJcPwo4nyf
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

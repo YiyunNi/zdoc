@@ -13,10 +13,10 @@ type: docx
 token: M7iad7XTioIjaUxy3k7cqQWAn6f
 sidebar_position: 4
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
   - zilliz
   - zilliz cloud
   - cloud

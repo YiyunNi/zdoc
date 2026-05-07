@@ -13,10 +13,10 @@ type: docx
 token: FpDzdA1nSo6sOHxYxAhcTPCLn5d
 sidebar_position: 4
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: VqTofXsTzlF4nbdugKMcbg0onWd
 sidebar_position: 5
 sidebar_label: "Job"
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

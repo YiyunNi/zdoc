@@ -13,10 +13,10 @@ type: docx
 token: Bs3OdQ56zohZEbx9KaHcInM4nHh
 sidebar_position: 6
 keywords: 
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
   - zilliz
   - zilliz cloud
   - cloud

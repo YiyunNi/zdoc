@@ -13,10 +13,10 @@ type: docx
 token: KiwWdLJ8houEeRxGECEcc3glnoh
 sidebar_position: 4
 keywords: 
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation lists all databases.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This command applies to Dedicated clusters.</p>
+This command applies to Dedicated clusters.
 
 </Admonition>
 

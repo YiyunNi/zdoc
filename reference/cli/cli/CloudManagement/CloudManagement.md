@@ -12,10 +12,10 @@ token: CRpLfHplvlPKBDdxyCqcPFqWncd
 sidebar_position: 1
 sidebar_label: "Cloud Management"
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
   - zilliz
   - zilliz cloud
   - cloud

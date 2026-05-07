@@ -13,10 +13,10 @@ type: docx
 token: Mbj7dQ8OmojO2fxa3PPcr8V8n4c
 sidebar_position: 3
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud

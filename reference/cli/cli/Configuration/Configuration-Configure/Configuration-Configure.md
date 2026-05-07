@@ -12,10 +12,10 @@ token: LPAcfkgMhlSeEqdFJ7CcxeL3nCh
 sidebar_position: 4
 sidebar_label: "Configure"
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud

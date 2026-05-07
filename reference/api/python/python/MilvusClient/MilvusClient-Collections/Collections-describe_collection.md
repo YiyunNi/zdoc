@@ -13,10 +13,10 @@ type: docx
 token: LXASdPs6KoRfCJx11A1cl2Ssngg
 sidebar_position: 9
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation lists detailed information about a specific collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
+This method applies to dedicated serving clusters and on-demand compute. 
 
 - For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
 

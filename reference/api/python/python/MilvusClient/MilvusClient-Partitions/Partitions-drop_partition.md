@@ -13,10 +13,10 @@ type: docx
 token: HkOFdhgbOoz1wlxJIgWcU7EonWc
 sidebar_position: 2
 keywords: 
-  - natural language processing database
   - cheap vector database
   - Managed vector database
   - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud

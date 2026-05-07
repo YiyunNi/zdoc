@@ -13,10 +13,10 @@ type: docx
 token: HZByd7LqQoiorTxCgyrcu3VUnof
 sidebar_position: 11
 keywords: 
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation drops a collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
+This method applies to dedicated serving clusters and on-demand compute. 
 
 - For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
 

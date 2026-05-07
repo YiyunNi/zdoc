@@ -12,10 +12,10 @@ token: CLbTfXENAlL9T5dPoG8cmgGPnxP
 sidebar_position: 8
 sidebar_label: "Quickstart"
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

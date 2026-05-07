@@ -13,10 +13,10 @@ type: docx
 token: YYvkdK6o5ovGGsxVyEtcEGXnn6b
 sidebar_position: 20
 keywords: 
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

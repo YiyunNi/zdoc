@@ -13,10 +13,10 @@ type: docx
 token: Zyi9dGUnQodt7MxIq17cyN54nOd
 sidebar_position: 22
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud

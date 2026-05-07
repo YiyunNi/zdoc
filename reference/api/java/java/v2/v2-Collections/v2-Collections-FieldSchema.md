@@ -13,10 +13,10 @@ type: docx
 token: ZwKPdk2rzoQUU7xm4CHcPiZqnjh
 sidebar_position: 16
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: EVpQfxDmQloZX4dVW63c5h9mnHd
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud

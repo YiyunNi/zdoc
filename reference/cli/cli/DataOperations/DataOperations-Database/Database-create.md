@@ -13,10 +13,10 @@ type: docx
 token: DaK3dvUJpoKOLTxy1iRc4YZAnjf
 sidebar_position: 1
 keywords: 
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,7 +39,7 @@ In Zilliz Cloud, a database serves as a logical unit for organizing and managing
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This command applies to Dedicated clusters.</p>
+This command applies to Dedicated clusters.
 
 </Admonition>
 

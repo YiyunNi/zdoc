@@ -13,10 +13,10 @@ type: docx
 token: XJN5dD1ifo5A9xxEfFKcf7Fxn1g
 sidebar_position: 22
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: Zyf1dXoBIo83V2xWHiKcXUEAnMc
 sidebar_position: 14
 keywords: 
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
   - zilliz
   - zilliz cloud
   - cloud

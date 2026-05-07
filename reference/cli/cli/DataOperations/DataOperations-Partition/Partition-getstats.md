@@ -13,10 +13,10 @@ type: docx
 token: VEEzdJ5tyoaFVbxG6JvcDpULnMg
 sidebar_position: 3
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud

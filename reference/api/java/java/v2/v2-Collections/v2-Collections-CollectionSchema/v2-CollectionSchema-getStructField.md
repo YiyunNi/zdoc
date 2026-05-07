@@ -13,10 +13,10 @@ type: docx
 token: KJSvdrks9o6WOsxr0rZcPXe5ngn
 sidebar_position: 7
 keywords: 
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud

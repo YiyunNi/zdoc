@@ -13,10 +13,10 @@ type: docx
 token: Kw0KdCb7yom9alxtZRTcV3m7nCb
 sidebar_position: 4
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud

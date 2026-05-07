@@ -13,10 +13,10 @@ type: docx
 token: Xq9Ydn3OJoYrHmxMVOLcMn9onHc
 sidebar_position: 16
 keywords: 
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

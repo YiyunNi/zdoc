@@ -13,10 +13,10 @@ type: docx
 token: HN7nddgueo3scIxmPXAcpjkFnDf
 sidebar_position: 8
 keywords: 
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation displays the details of an alias.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
+This method applies to dedicated serving clusters and on-demand compute. 
 
 - For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
 

@@ -12,10 +12,10 @@ token: Gc1lf2ABblRExId5rTucKTp6n2q
 sidebar_position: 6
 sidebar_label: "Management"
 keywords: 
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

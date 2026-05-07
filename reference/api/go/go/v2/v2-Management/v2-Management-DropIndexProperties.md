@@ -13,10 +13,10 @@ type: docx
 token: VuYydaf7loMiRAxkB3scXzA1nPb
 sidebar_position: 8
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
   - zilliz
   - zilliz cloud
   - cloud

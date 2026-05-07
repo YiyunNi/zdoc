@@ -13,10 +13,10 @@ type: docx
 token: UouKd4h01oL9Rqx73jjcHM3enSh
 sidebar_position: 2
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,7 +39,7 @@ await milvusClient.createDatabase(data)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This method applies only to dedicated clusters.</p>
+This method applies only to dedicated clusters.
 
 </Admonition>
 

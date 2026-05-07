@@ -13,10 +13,10 @@ type: docx
 token: FpWXdmIuforYz9xUCsqclyCXnLe
 sidebar_position: 10
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation drops a specified collection alias.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
+This method applies to dedicated serving clusters and on-demand compute. 
 
 - For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
 

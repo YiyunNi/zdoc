@@ -13,10 +13,10 @@ type: docx
 token: C6WkdFvLuon9i8xlu3FcomiDn0b
 sidebar_position: 9
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud

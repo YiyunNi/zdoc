@@ -12,10 +12,10 @@ token: MLhsf6VLElWmWudpYZXcamShn0e
 sidebar_position: 7
 sidebar_label: "User"
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud

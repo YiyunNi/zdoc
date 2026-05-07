@@ -13,10 +13,10 @@ type: docx
 token: K6obdWvXyoNLbMxNkggc9JyMnPd
 sidebar_position: 13
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
   - zilliz
   - zilliz cloud
   - cloud

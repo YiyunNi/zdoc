@@ -12,10 +12,10 @@ token: CcKQfofa1lkWPhdqzZ3cg3FAnDb
 sidebar_position: 3
 sidebar_label: "Database"
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud

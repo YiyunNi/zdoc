@@ -13,10 +13,10 @@ type: docx
 token: GyCrdXyvzobrrAxzFRbcRTlSnUb
 sidebar_position: 18
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud

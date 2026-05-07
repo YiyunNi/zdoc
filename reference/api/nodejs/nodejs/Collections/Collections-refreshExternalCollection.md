@@ -13,10 +13,10 @@ type: docx
 token: JoiWdRIFcojRI4xVXnCclEoVnh2
 sidebar_position: 31
 keywords: 
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
   - zilliz
   - zilliz cloud
   - cloud

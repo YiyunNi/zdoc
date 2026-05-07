@@ -13,10 +13,10 @@ type: docx
 token: BujpdsEJnozVT4xY3NFczyfrnDe
 sidebar_position: 6
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud

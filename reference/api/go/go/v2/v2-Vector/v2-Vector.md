@@ -13,10 +13,10 @@ type: docx
 token: CE0odAFVdoh2ehxNFRecD8WEn3f
 sidebar_position: 16
 keywords: 
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: KSDYfo9pCl89wKdRNGccbzT2nid
 sidebar_position: 7
 sidebar_label: "Vector"
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: MINQfdgeRlnbDzd1ofucUJDsnuW
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: QTM7fqREelEFXhdTaMqc18IxnVb
 sidebar_position: 1
 sidebar_label: "Backup"
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

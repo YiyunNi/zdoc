@@ -13,10 +13,10 @@ type: docx
 token: KaW0dGLZ9os1SExEsbqcHM4yn8c
 sidebar_position: 3
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud

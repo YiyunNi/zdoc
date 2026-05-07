@@ -13,10 +13,10 @@ type: docx
 token: Krd6dVuQbohTF5xFHGYcomHsnEg
 sidebar_position: 2
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud

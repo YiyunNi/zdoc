@@ -13,10 +13,10 @@ type: docx
 token: CnuHdninQoBoJXxWe2pczq7snGd
 sidebar_position: 11
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud

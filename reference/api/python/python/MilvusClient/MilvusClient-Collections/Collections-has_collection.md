@@ -13,10 +13,10 @@ type: docx
 token: SSQ6dFGdxouy7hxRwCOcatnEn0e
 sidebar_position: 14
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation checks whether a specific collection exists.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
+This method applies to dedicated serving clusters and on-demand compute. 
 
 - For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
 

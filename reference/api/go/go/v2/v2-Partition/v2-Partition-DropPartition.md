@@ -13,10 +13,10 @@ type: docx
 token: XnbJdLilXobGn1x1Uq6cvhKTnhf
 sidebar_position: 2
 keywords: 
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud

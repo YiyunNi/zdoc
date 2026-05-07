@@ -12,10 +12,10 @@ token: SDTtfq1P5lBVV7d45b0cYrljnup
 sidebar_position: 4
 sidebar_label: "Import"
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

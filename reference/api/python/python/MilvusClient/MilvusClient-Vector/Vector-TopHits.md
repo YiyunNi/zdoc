@@ -13,10 +13,10 @@ type: docx
 token: EgeGdZL4LoCuv2xVUfFc9eDAnkd
 sidebar_position: 11
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud

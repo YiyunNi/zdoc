@@ -13,10 +13,10 @@ type: docx
 token: XpaudNsR2o3MRoxTbAMcj4tEn1w
 sidebar_position: 7
 keywords: 
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

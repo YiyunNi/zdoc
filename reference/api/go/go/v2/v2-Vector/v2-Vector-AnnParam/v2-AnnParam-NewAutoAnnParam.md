@@ -13,10 +13,10 @@ type: docx
 token: VFR6dvKoyo0Pl5x6a44cbIJ8n3f
 sidebar_position: 2
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud

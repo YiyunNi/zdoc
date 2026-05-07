@@ -13,10 +13,10 @@ type: docx
 token: Du2ZdjCWIorDg4xdwercNnYgnJb
 sidebar_position: 23
 keywords: 
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud

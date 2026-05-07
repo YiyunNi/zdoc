@@ -13,10 +13,10 @@ type: docx
 token: NvlZd3VOpoMrsoxmavQckdAOnQg
 sidebar_position: 4
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud

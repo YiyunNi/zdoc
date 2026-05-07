@@ -12,10 +12,10 @@ token: DC00fqL8UlOSaJdNqeJcCEHYnFW
 sidebar_position: 1
 sidebar_label: "Alert"
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud

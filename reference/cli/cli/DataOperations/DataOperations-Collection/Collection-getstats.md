@@ -13,10 +13,10 @@ type: docx
 token: XTHTd7x3soBmeTx9ftwc369PnCe
 sidebar_position: 7
 keywords: 
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

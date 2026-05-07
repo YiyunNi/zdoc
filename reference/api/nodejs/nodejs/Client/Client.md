@@ -12,10 +12,10 @@ token: WlKqf2dXKljRPDdiiUIcdsh5nxd
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
   - zilliz
   - zilliz cloud
   - cloud

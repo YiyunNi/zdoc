@@ -13,10 +13,10 @@ type: docx
 token: GulFdOWMboEK9bxnzMSc8Uf8n8b
 sidebar_position: 4
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,7 +39,7 @@ await milvusClient.dropDatabaseProperties(data)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This method applies only to dedicated clusters.</p>
+This method applies only to dedicated clusters.
 
 </Admonition>
 

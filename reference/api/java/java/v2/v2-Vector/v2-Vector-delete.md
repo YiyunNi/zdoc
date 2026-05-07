@@ -13,10 +13,10 @@ type: docx
 token: NTCHdGKwNo9kl2xFzgKcjo8wndg
 sidebar_position: 1
 keywords: 
+  - Zilliz vector database
   - Zilliz database
   - Unstructured Data
   - vector database
-  - IVF
   - zilliz
   - zilliz cloud
   - cloud

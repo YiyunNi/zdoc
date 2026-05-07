@@ -13,10 +13,10 @@ type: docx
 token: I2OZdk40IomugOx9MTqcooVcnEf
 sidebar_position: 7
 keywords: 
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
   - zilliz
   - zilliz cloud
   - cloud

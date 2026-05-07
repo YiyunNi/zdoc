@@ -12,10 +12,10 @@ token: CQeKfK0rYlSpjTd0uFlcAZrYnZb
 sidebar_position: 6
 sidebar_label: "Role"
 keywords: 
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud

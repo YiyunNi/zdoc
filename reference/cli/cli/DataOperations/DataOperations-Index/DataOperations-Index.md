@@ -12,10 +12,10 @@ token: EflgfwlI7lX3Dgd6xrbcFXhunzh
 sidebar_position: 4
 sidebar_label: "Index"
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: OE6ef37Ztlb6FgdouLvcTcrpnAp
 sidebar_position: 9
 sidebar_label: "Data Import"
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud

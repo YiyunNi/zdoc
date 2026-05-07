@@ -13,10 +13,10 @@ type: docx
 token: G31wdmzVFo687JxZTAGctQlKnir
 sidebar_position: 19
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud

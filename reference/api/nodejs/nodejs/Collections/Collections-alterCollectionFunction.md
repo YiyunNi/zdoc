@@ -13,10 +13,10 @@ type: docx
 token: DBEFdVorMomen0x4xNEcKkM1n8O
 sidebar_position: 22
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
   - zilliz
   - zilliz cloud
   - cloud

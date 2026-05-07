@@ -13,10 +13,10 @@ type: docx
 token: XKRWdKvQVolmduxrtrDc0dhjnzc
 sidebar_position: 28
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

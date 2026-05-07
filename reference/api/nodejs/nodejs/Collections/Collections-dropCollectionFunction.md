@@ -13,10 +13,10 @@ type: docx
 token: T6xNdPPtsotGiYxL1WActF3qnxb
 sidebar_position: 24
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

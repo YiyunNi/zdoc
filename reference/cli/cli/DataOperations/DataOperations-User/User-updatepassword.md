@@ -13,10 +13,10 @@ type: docx
 token: AB6Hd6NHUoNLXIxgXywc3hmtnjc
 sidebar_position: 7
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation updates the user password.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This command is available for Dedicated clusters only. You can run <code>zilliz context set</code> to switch among clusters.</p>
+This command is available for Dedicated clusters only. You can run `zilliz context set` to switch among clusters.
 
 </Admonition>
 

@@ -13,10 +13,10 @@ type: docx
 token: GYyKdrbkvozJxVx6uGhcpMfonoe
 sidebar_position: 6
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

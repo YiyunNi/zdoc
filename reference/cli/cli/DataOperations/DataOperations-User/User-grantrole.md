@@ -13,10 +13,10 @@ type: docx
 token: SvpmdXjkYo3LYTxt2ipcKhLFnZg
 sidebar_position: 4
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation grants a role to a user.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This command is available for Dedicated clusters only. You can run <code>zilliz context set</code> to switch among clusters.</p>
+This command is available for Dedicated clusters only. You can run `zilliz context set` to switch among clusters.
 
 </Admonition>
 

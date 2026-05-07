@@ -13,10 +13,10 @@ type: docx
 token: Y0IAdifhVoYQVAxiZEdcjIS0nog
 sidebar_position: 5
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud

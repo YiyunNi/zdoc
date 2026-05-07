@@ -13,10 +13,10 @@ type: docx
 token: SE6wdwuONoUwQ8x7fdgcKvNwnyg
 sidebar_position: 1
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
   - zilliz
   - zilliz cloud
   - cloud

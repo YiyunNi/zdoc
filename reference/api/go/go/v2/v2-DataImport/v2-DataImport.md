@@ -12,10 +12,10 @@ token: Bzpgf2nwnlirRodpt9zcacAun7d
 sidebar_position: 5
 sidebar_label: "DataImport"
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud

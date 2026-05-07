@@ -12,10 +12,10 @@ token: R8pjfCQvPlA4IEdzRUPcc8eAnxc
 sidebar_position: 7
 sidebar_label: "History"
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

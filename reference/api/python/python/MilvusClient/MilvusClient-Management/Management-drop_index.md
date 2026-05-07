@@ -13,10 +13,10 @@ type: docx
 token: NPnQdZCJ7oF002xTntecdI2ini8
 sidebar_position: 5
 keywords: 
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,21 +35,7 @@ This operation drops an index from a specific collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
-
-- For this operation in a collection of a serving cluster, please create **MilvusClient** with the cluster endpoint.
-
-    - **Free & Serverless**
-
-        `https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com`
-
-    - **Dedicated**
-
-        `https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
-
-- For this operation in a collection for on-demand compute, create **MilvusClient** with the project endpoints, and then create a session to attach to an on-demand cluster for searches.
-
-    `https://{project-id}.{region}.api.zillizcloud.com`
+Collections for on-demand compute do not support this operation.
 
 </Admonition>
 

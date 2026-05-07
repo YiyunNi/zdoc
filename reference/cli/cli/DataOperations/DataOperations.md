@@ -12,10 +12,10 @@ token: Ji3xfyZmUlvCShdh8rbc845Znnh
 sidebar_position: 3
 sidebar_label: "Data Operations"
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud

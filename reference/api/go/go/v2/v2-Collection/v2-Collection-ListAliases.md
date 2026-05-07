@@ -13,10 +13,10 @@ type: docx
 token: Xq1Dd1B8goDbeRxHfMKc84VOnxg
 sidebar_position: 20
 keywords: 
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud

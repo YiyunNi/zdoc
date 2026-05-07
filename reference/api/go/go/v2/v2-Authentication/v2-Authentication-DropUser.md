@@ -13,10 +13,10 @@ type: docx
 token: QM8QdP63jofHxkxwxSEcXVXZnKX
 sidebar_position: 10
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
   - zilliz
   - zilliz cloud
   - cloud

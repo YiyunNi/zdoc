@@ -13,10 +13,10 @@ type: docx
 token: FxUedhePWogwX4xRxFucLvaqnGg
 sidebar_position: 6
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud

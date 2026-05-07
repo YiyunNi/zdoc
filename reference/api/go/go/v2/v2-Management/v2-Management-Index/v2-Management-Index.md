@@ -13,10 +13,10 @@ type: docx
 token: ERQodkjAzotUQ3xKvA8c6jmLn3e
 sidebar_position: 1
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
   - zilliz
   - zilliz cloud
   - cloud
