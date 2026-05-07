@@ -510,54 +510,184 @@
     "tags": ["search", "iterative-search"]
   },
   {
-    "id": "reranking-cohere-voyage-choose",
+    "id": "reranking-cohere-when-to-use",
     "module": "reranking",
-    "feature": "model-rerankers",
-    "question": "When should I use Cohere Reranker versus Voyage AI Reranker with Zilliz Cloud?",
-    "expectedBehavior": "Compare Cohere and Voyage AI as post-retrieval model-based rerankers without declaring one better. Mention that both require a rerankable VARCHAR text field, a model provider integration, and an integration_id. Recommend choosing by existing provider relationship, model/language/document-length requirements, governance, cost, latency, and benchmark results.",
+    "feature": "cohere-reranker",
+    "question": "What is Cohere Ranker in Zilliz Cloud?",
+    "expectedBehavior": "Define Cohere Ranker using the Cohere Ranker docs, explain that it semantically reranks retrieved candidates, and cite the relevant docs source.",
     "priority": "P1",
-    "source": "core-features.docx",
-    "tags": ["reranking", "integrations"]
+    "source": "category-coverage-request",
+    "tags": ["reranking", "cohere", "model-reranker", "scoring", "category-coverage", "ui-suggestion"]
   },
   {
-    "id": "reranking-boost-use-case",
+    "id": "reranking-cohere-setup-requirements",
+    "module": "reranking",
+    "feature": "cohere-reranker",
+    "question": "What do I need to set up before using Cohere Ranker?",
+    "expectedBehavior": "Use the Cohere Ranker and model-provider integration docs to explain required text fields, provider integration, and search-time configuration without inventing unsupported model versions.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "cohere", "model-version", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-cohere-cost-latency",
+    "module": "reranking",
+    "feature": "cohere-reranker",
+    "question": "When should I add Cohere Ranker to a RAG search workflow?",
+    "expectedBehavior": "Explain the documented use case for Cohere Ranker as post-retrieval reranking and mention that latency/cost depend on workload and provider setup without giving unsupported numbers.",
+    "priority": "P0",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "cohere", "latency", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-voyage-when-to-use",
+    "module": "reranking",
+    "feature": "voyage-ai-reranker",
+    "question": "What is Voyage AI Ranker in Zilliz Cloud?",
+    "expectedBehavior": "Define Voyage AI Ranker using the Voyage AI Ranker docs and explain that it improves ordering by reranking retrieved candidates.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "voyage-ai", "cohere", "accuracy", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-voyage-vs-cohere",
+    "module": "reranking",
+    "feature": "voyage-ai-reranker",
+    "question": "How are Cohere Ranker and Voyage AI Ranker similar in Zilliz Cloud?",
+    "expectedBehavior": "Compare only documented similarities: both are model-provider rankers applied after retrieval and require provider integration. Avoid unsupported quality or latency rankings.",
+    "priority": "P0",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "voyage-ai", "cohere", "cost", "latency", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-voyage-data-handling",
+    "module": "reranking",
+    "feature": "voyage-ai-reranker",
+    "question": "What do I need before configuring Voyage AI Ranker?",
+    "expectedBehavior": "Use the Voyage AI Ranker and model-provider integration docs to explain prerequisites and safe setup steps without inventing provider-specific claims.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "voyage-ai", "code-example", "top-100", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-boost-promote-metadata",
     "module": "reranking",
     "feature": "boost-reranker",
-    "question": "How does Boost Reranker promote or demote results based on metadata conditions?",
-    "expectedBehavior": "Explain that Boost Ranker applies a basic filter expression to retrieved candidates and uses a weight to promote or demote matching candidates. Note that base retrieval still determines the candidate set, input_field_names must be empty, and Boost Ranker is not for multi-vector hybrid search.",
+    "question": "What is Boost Ranker used for?",
+    "expectedBehavior": "Use the Boost Ranker docs to explain metadata-based ranking adjustments after retrieval and cite the relevant source.",
     "priority": "P1",
-    "source": "core-features.docx",
-    "tags": ["reranking", "boost"]
+    "source": "category-coverage-request",
+    "tags": ["reranking", "boost", "boost-rule", "metadata", "category-coverage", "ui-suggestion"]
   },
   {
-    "id": "reranking-decay-distance-time",
+    "id": "reranking-boost-demote-condition",
+    "module": "reranking",
+    "feature": "boost-reranker",
+    "question": "How can Boost Ranker influence search results with metadata?",
+    "expectedBehavior": "Explain that Boost Ranker adjusts ranking using metadata filtering and weights, and avoid unsupported stacking or score-combination details.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "boost", "multiple-boosts", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-boost-limitations",
+    "module": "reranking",
+    "feature": "boost-reranker",
+    "question": "When should I use Boost Ranker instead of only vector similarity?",
+    "expectedBehavior": "Explain documented Boost Ranker use cases for adjusting search results beyond vector distance, especially metadata-driven relevance.",
+    "priority": "P0",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "boost", "recency", "source", "limitations", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-decay-newer-content",
     "module": "reranking",
     "feature": "decay-reranker",
-    "question": "How would I use Decay Reranker to make newer or closer results rank higher?",
-    "expectedBehavior": "Explain numeric-field decay for time, distance, or popularity using one numeric field. Cover origin, scale, offset, decay, and gauss/exp/linear choices conceptually; mention unit consistency for time values and that grouping search is unsupported. Avoid unsupported API parameter names or unnecessary formula detail.",
+    "question": "What is Decay Ranker in Zilliz Cloud?",
+    "expectedBehavior": "Use the Decay Ranker Overview docs to explain how decay rankers adjust relevance based on numeric distance from an ideal value.",
     "priority": "P1",
-    "source": "core-features.docx",
-    "tags": ["reranking", "decay"]
+    "source": "category-coverage-request",
+    "tags": ["reranking", "decay", "decay-functions", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-decay-location-distance",
+    "module": "reranking",
+    "feature": "decay-reranker",
+    "question": "What is the difference between Gaussian, exponential, and linear decay?",
+    "expectedBehavior": "Use the Gaussian Decay, Exponential Decay, and Linear Decay docs to compare the documented behavior of each decay function.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "decay", "half-life", "tuning", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-decay-limitations",
+    "module": "reranking",
+    "feature": "decay-reranker",
+    "question": "How do I implement time-based ranking with Decay Ranker?",
+    "expectedBehavior": "Use the time-based ranking tutorial and Decay Ranker docs to explain the documented workflow and required numeric time field.",
+    "priority": "P0",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "decay", "news-retrieval", "time-decay", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-rrf-hybrid-balance",
+    "module": "reranking",
+    "feature": "rrf-reranker",
+    "question": "What is RRF Ranker in Zilliz Cloud?",
+    "expectedBehavior": "Use the RRF Ranker docs to explain Reciprocal Rank Fusion as rank-position based reranking for hybrid or multi-path search.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "rrf", "rank-fusion", "category-coverage", "ui-suggestion"]
   },
   {
     "id": "reranking-rrf-vs-weighted",
     "module": "reranking",
-    "feature": "rank-fusion",
-    "question": "What is the difference between RRF Reranker and Weighted Reranker for hybrid search?",
-    "expectedBehavior": "Explain that RRF Ranker combines multiple search paths by rank positions and is useful when paths should be balanced without explicit weights, while Weighted Ranker combines normalized scores using per-path weights when one field/modality/path should matter more. Avoid unnecessary formulas unless asked.",
+    "feature": "rrf-reranker",
+    "question": "When should I use RRF Ranker instead of Weighted Ranker?",
+    "expectedBehavior": "Use the RRF Ranker and Weighted Ranker docs to explain documented selection guidance without claiming one is universally better.",
     "priority": "P1",
-    "source": "core-features.docx",
-    "tags": ["reranking", "rrf", "weighted"]
+    "source": "category-coverage-request",
+    "tags": ["reranking", "rrf", "weighted", "tradeoff", "category-coverage", "ui-suggestion"]
   },
   {
-    "id": "reranking-cost-latency",
+    "id": "reranking-rrf-no-scores",
     "module": "reranking",
-    "feature": "reranking-tradeoffs",
-    "question": "What extra latency and cost should I expect when adding reranking to retrieval?",
-    "expectedBehavior": "Avoid invented milliseconds, dollar amounts, token counts, or pricing examples. Explain cost/latency drivers: candidate count, number of search paths, model-based versus rule-based reranking, text length sent to model providers, provider/model choice, hosted model usage time, data transfer, and workload concurrency. Recommend measuring with the user's model, topK/candidate count, and workload.",
+    "feature": "rrf-reranker",
+    "question": "How does RRF Ranker combine results from multiple search paths?",
+    "expectedBehavior": "Explain from the RRF Ranker docs that it combines results by ranking positions rather than raw similarity scores.",
     "priority": "P0",
-    "source": "core-features.docx",
-    "tags": ["reranking", "performance", "anti-hallucination"]
+    "source": "category-coverage-request",
+    "tags": ["reranking", "rrf", "three-result-lists", "hybrid-search", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-weighted-hybrid-control",
+    "module": "reranking",
+    "feature": "weighted-reranker",
+    "question": "What is Weighted Ranker in Zilliz Cloud?",
+    "expectedBehavior": "Use the Weighted Ranker docs to explain how assigning weights to search paths changes final ranking.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "weighted", "weights", "hybrid-search", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-weighted-multivector",
+    "module": "reranking",
+    "feature": "weighted-reranker",
+    "question": "How does Weighted Ranker help with multi-vector search?",
+    "expectedBehavior": "Explain documented Weighted Ranker use for multiple vector fields or modalities, including why some paths may receive higher weights.",
+    "priority": "P1",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "weighted", "click-data", "learning-to-rank", "anti-hallucination", "category-coverage", "ui-suggestion"]
+  },
+  {
+    "id": "reranking-weighted-tuning",
+    "module": "reranking",
+    "feature": "weighted-reranker",
+    "question": "How do I choose weights for Weighted Ranker?",
+    "expectedBehavior": "Use the Weighted Ranker docs to explain the role of weights and recommend validating weights against the user workload without inventing defaults.",
+    "priority": "P0",
+    "source": "category-coverage-request",
+    "tags": ["reranking", "weighted", "bm25", "dense-vector", "sparse-vector", "category-coverage", "ui-suggestion"]
   },
   {
     "id": "embedding-byok-vs-managed",
@@ -1099,5 +1229,755 @@
     "source": "agent-issues-found.docx",
     "tags": ["known-issue", "status-accuracy"],
     "blocking": true
+  },
+  {
+    "id": "search-iterative-next-trigger",
+    "module": "search",
+    "feature": "iterative-search",
+    "question": "How can I refine vector search results with filtering in Zilliz Cloud?",
+    "expectedBehavior": "Use documented search and filtering behavior to explain how users can narrow results with scalar filters and reranking where relevant.",
+    "priority": "P1",
+    "tags": ["search", "iterative-search", "agentic-retrieval", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "search-iterative-stop-condition",
+    "module": "search",
+    "feature": "iterative-search",
+    "question": "How can range search help me control which vector results are returned?",
+    "expectedBehavior": "Use the range search docs to explain how radius/range-style constraints control returned vector matches.",
+    "priority": "P0",
+    "tags": ["search", "iterative-search", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "search-iterative-agentic-loop-example",
+    "module": "search",
+    "feature": "iterative-search",
+    "question": "How can I combine vector search, filters, and reranking in one retrieval workflow?",
+    "expectedBehavior": "Use documented search, filtering, hybrid search, and reranking concepts to describe a grounded retrieval workflow.",
+    "priority": "P1",
+    "tags": ["search", "iterative-search", "agentic-loop", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-openai-models-available",
+    "module": "embedding",
+    "feature": "openai-embedding",
+    "question": "How do I use OpenAI embedding functions with Zilliz Cloud?",
+    "expectedBehavior": "Use the OpenAI embedding function docs to explain provider setup and collection text embedding functions without inventing unsupported model lists.",
+    "priority": "P0",
+    "tags": ["embedding", "openai", "byok", "model-availability", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-openai-byok-config",
+    "module": "embedding",
+    "feature": "openai-embedding",
+    "question": "How do I configure an OpenAI model provider integration?",
+    "expectedBehavior": "Use the Integrate with Model Providers and OpenAI docs to describe BYOK provider integration and safe credential handling.",
+    "priority": "P1",
+    "tags": ["embedding", "openai", "byok", "secrets", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-openai-integration-example",
+    "module": "embedding",
+    "feature": "openai-embedding",
+    "question": "Can you show a basic OpenAI embedding function example?",
+    "expectedBehavior": "Use the OpenAI docs and available SDK examples to show a documented pattern or summarize setup when exact code is not in context.",
+    "priority": "P1",
+    "tags": ["embedding", "openai", "code-example", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-voyage-models-available",
+    "module": "embedding",
+    "feature": "voyage-ai-embedding",
+    "question": "How do I use Voyage AI embedding functions with Zilliz Cloud?",
+    "expectedBehavior": "Use the Voyage AI embedding docs to explain how Voyage AI embedding functions are configured and used.",
+    "priority": "P0",
+    "tags": ["embedding", "voyage-ai", "model-availability", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-voyage-byok-config",
+    "module": "embedding",
+    "feature": "voyage-ai-embedding",
+    "question": "How do I configure a Voyage AI model provider integration?",
+    "expectedBehavior": "Use the Integrate with Model Providers and Voyage AI docs to explain provider integration and credential handling.",
+    "priority": "P1",
+    "tags": ["embedding", "voyage-ai", "byok", "secrets", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-voyage-integration-example",
+    "module": "embedding",
+    "feature": "voyage-ai-embedding",
+    "question": "What is VoyageEmbeddingFunction in PyMilvus?",
+    "expectedBehavior": "Use the VoyageEmbeddingFunction API reference to explain that it encodes text into embeddings using Voyage models. Avoid inventing model names, dimensions, or full setup code unless the docs provide it.",
+    "priority": "P1",
+    "tags": ["embedding", "voyage-ai", "code-example", "schema-compatibility", "category-coverage", "ui-suggestion", "api-reference"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-cohere-models-available",
+    "module": "embedding",
+    "feature": "cohere-embedding",
+    "question": "How do I use Cohere embedding functions with Zilliz Cloud?",
+    "expectedBehavior": "Use the Cohere embedding docs to explain how Cohere embedding functions are configured and used.",
+    "priority": "P0",
+    "tags": ["embedding", "cohere", "model-availability", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-cohere-byok-config",
+    "module": "embedding",
+    "feature": "cohere-embedding",
+    "question": "How do I configure a Cohere model provider integration?",
+    "expectedBehavior": "Use the Integrate with Model Providers and Cohere docs to explain provider integration and credential handling.",
+    "priority": "P1",
+    "tags": ["embedding", "cohere", "byok", "secrets", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-cohere-integration-example",
+    "module": "embedding",
+    "feature": "cohere-embedding",
+    "question": "Can you show a basic Cohere embedding function example?",
+    "expectedBehavior": "Use the Cohere docs and documented SDK pattern to answer with source-grounded setup guidance.",
+    "priority": "P1",
+    "tags": ["embedding", "cohere", "code-example", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-qwen-managed-supported-models",
+    "module": "embedding",
+    "feature": "managed-qwen",
+    "question": "What are hosted models in Zilliz Cloud?",
+    "expectedBehavior": "Use the Hosted Models docs to explain Zilliz-managed model deployments for embedding and reranking.",
+    "priority": "P1",
+    "tags": ["embedding", "qwen", "managed-models", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-qwen-size-choice",
+    "module": "embedding",
+    "feature": "managed-qwen",
+    "question": "How do hosted embedding models differ from BYOK provider integrations?",
+    "expectedBehavior": "Use Hosted Models and Integrate with Model Providers docs to distinguish Zilliz-managed model deployments from customer provider integrations.",
+    "priority": "P1",
+    "tags": ["embedding", "qwen", "model-selection", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-qwen-usage-example",
+    "module": "embedding",
+    "feature": "managed-qwen",
+    "question": "How do I use a Zilliz-hosted embedding model in a Function?",
+    "expectedBehavior": "Use Hosted Models and Function docs to explain the documented hosted-model workflow and model_deployment_id concept where available.",
+    "priority": "P1",
+    "tags": ["embedding", "qwen", "code-example", "hosted-models", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-baai-managed-supported-models",
+    "module": "embedding",
+    "feature": "managed-baai",
+    "question": "Which hosted embedding models can Zilliz Cloud manage for me?",
+    "expectedBehavior": "Use Hosted Models docs and baseline prompt facts to list only documented hosted embedding model options when available.",
+    "priority": "P1",
+    "tags": ["embedding", "baai", "managed-models", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-baai-en-vs-zh",
+    "module": "embedding",
+    "feature": "managed-baai",
+    "question": "When should I choose an English or Chinese hosted embedding model?",
+    "expectedBehavior": "Use hosted model guidance and avoid unsupported benchmark claims; explain language fit at a high level and recommend testing.",
+    "priority": "P1",
+    "tags": ["embedding", "baai", "language-fit", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "embedding-baai-usage-example",
+    "module": "embedding",
+    "feature": "managed-baai",
+    "question": "How do hosted embedding models affect my collection schema?",
+    "expectedBehavior": "Use hosted model and schema/function docs to explain dimension/schema compatibility and re-embedding considerations.",
+    "priority": "P1",
+    "tags": ["embedding", "baai", "code-example", "schema-compatibility", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-org-admin-permissions-included",
+    "module": "rbac",
+    "feature": "organization-admin",
+    "question": "How do I manage organization users in Zilliz Cloud?",
+    "expectedBehavior": "Use Manage Organization Users docs to explain organization-level user invitation and role assignment.",
+    "priority": "P1",
+    "tags": ["rbac", "organization-admin", "permissions", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-org-admin-delegation",
+    "module": "rbac",
+    "feature": "organization-admin",
+    "question": "How should I assign organization roles by job function?",
+    "expectedBehavior": "Use Manage Organization Users docs to explain role assignment by job function and least-privilege delegation.",
+    "priority": "P1",
+    "tags": ["rbac", "organization-admin", "delegation", "least-privilege", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-org-admin-scope-tasks",
+    "module": "rbac",
+    "feature": "organization-admin",
+    "question": "What organization settings can an Organization Owner manage?",
+    "expectedBehavior": "Use Organization Settings docs to explain organization-level management scope without expanding beyond docs.",
+    "priority": "P1",
+    "tags": ["rbac", "organization-admin", "scope", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-billing-admin-actions",
+    "module": "rbac",
+    "feature": "billing-admin",
+    "question": "Who can access invoices in Zilliz Cloud?",
+    "expectedBehavior": "Use Invoices docs to explain organization-level billing access and the Organization Owner or Billing Admin requirement.",
+    "priority": "P1",
+    "tags": ["rbac", "billing-admin", "permissions", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-billing-technical-separation",
+    "module": "rbac",
+    "feature": "billing-admin",
+    "question": "How can finance users view billing without managing project resources?",
+    "expectedBehavior": "Use Manage Organization Users and Invoices docs to explain role-based separation between billing and technical work.",
+    "priority": "P1",
+    "tags": ["rbac", "billing-admin", "separation-of-duties", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-billing-governance-setup",
+    "module": "rbac",
+    "feature": "billing-admin",
+    "question": "How do organization alerts help monitor billing and account health?",
+    "expectedBehavior": "Use Manage Organization Alerts docs to explain billing/account monitoring across the organization.",
+    "priority": "P1",
+    "tags": ["rbac", "billing-admin", "governance", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-project-admin-permissions-included",
+    "module": "rbac",
+    "feature": "project-admin",
+    "question": "How do I manage project users in Zilliz Cloud?",
+    "expectedBehavior": "Use Manage Project Users docs to explain inviting users to projects and assigning project roles.",
+    "priority": "P1",
+    "tags": ["rbac", "project-admin", "permissions", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-project-ops-delegation",
+    "module": "rbac",
+    "feature": "project-admin",
+    "question": "How should I give a team access to one project?",
+    "expectedBehavior": "Use Manage Project Users docs to explain project-level role assignment and limited project scope.",
+    "priority": "P1",
+    "tags": ["rbac", "project-admin", "delegation", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-project-vs-org-boundary",
+    "module": "rbac",
+    "feature": "project-admin",
+    "question": "What is the difference between organization users and project users?",
+    "expectedBehavior": "Use Manage Organization Users and Manage Project Users docs to distinguish organization-level and project-level access.",
+    "priority": "P1",
+    "tags": ["rbac", "project-admin", "organization-admin", "scope", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-fga-collection-privileges",
+    "module": "rbac",
+    "feature": "fine-grained-authorization",
+    "question": "What are privileges and privilege groups in Zilliz Cloud?",
+    "expectedBehavior": "Use Privileges & Privilege Groups docs to explain privileges assigned to roles and applied to resources.",
+    "priority": "P1",
+    "tags": ["rbac", "fine-grained-authorization", "collection-privileges", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-fga-least-privilege",
+    "module": "rbac",
+    "feature": "fine-grained-authorization",
+    "question": "How do I create cluster roles for database and collection access?",
+    "expectedBehavior": "Use Manage Cluster Roles docs to explain cluster roles and resource-level privileges.",
+    "priority": "P1",
+    "tags": ["rbac", "fine-grained-authorization", "least-privilege", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-fga-console-sdk-map",
+    "module": "rbac",
+    "feature": "fine-grained-authorization",
+    "question": "Can I manage cluster roles from the console and SDK?",
+    "expectedBehavior": "Use Manage Cluster Roles Console and SDK docs to explain the two workflows.",
+    "priority": "P1",
+    "tags": ["rbac", "fine-grained-authorization", "console", "sdk", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-enterprise-hierarchical-roles",
+    "module": "rbac",
+    "feature": "enterprise-grade-role-management",
+    "question": "How do Organizations, Projects, and Clusters support environment isolation?",
+    "expectedBehavior": "Use Environment Isolation docs to explain the hierarchy across organizations, projects, and clusters.",
+    "priority": "P1",
+    "tags": ["rbac", "enterprise-role-management", "hierarchy", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-enterprise-large-team-delegation",
+    "module": "rbac",
+    "feature": "enterprise-grade-role-management",
+    "question": "How can RBAC help large teams manage access?",
+    "expectedBehavior": "Use Access Control Overview and Environment Isolation docs to explain role-based delegation and team isolation.",
+    "priority": "P1",
+    "tags": ["rbac", "enterprise-role-management", "large-teams", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "rbac-enterprise-role-design-pattern",
+    "module": "rbac",
+    "feature": "enterprise-grade-role-management",
+    "question": "What access-control pattern should I use for multiple teams and environments?",
+    "expectedBehavior": "Use Environment Isolation docs to describe project/cluster separation and role assignment by operational need.",
+    "priority": "P1",
+    "tags": ["rbac", "enterprise-role-management", "role-design", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-aws-available",
+    "module": "clouds-and-regions",
+    "feature": "aws",
+    "question": "Which cloud providers and regions does Zilliz Cloud support?",
+    "expectedBehavior": "Use Cloud Providers & Regions docs to answer provider and region availability with current documented caveats.",
+    "priority": "P1",
+    "tags": ["regions", "aws", "availability", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-aws-latency-choice",
+    "module": "clouds-and-regions",
+    "feature": "aws",
+    "question": "How should I choose a cloud region for a Zilliz Cloud project?",
+    "expectedBehavior": "Use Cloud Providers & Regions and project docs to explain choosing a region close to users/apps and validating availability.",
+    "priority": "P1",
+    "tags": ["regions", "aws", "latency", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-aws-multi-region",
+    "module": "clouds-and-regions",
+    "feature": "aws",
+    "question": "How can I use Global Cluster across multiple regions?",
+    "expectedBehavior": "Use Global Cluster Explained docs to explain primary and read-only secondary clusters across regions on the same cloud provider.",
+    "priority": "P1",
+    "tags": ["regions", "aws", "multi-region", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-gcp-available",
+    "module": "clouds-and-regions",
+    "feature": "gcp",
+    "question": "How do I deploy BYOC on GCP?",
+    "expectedBehavior": "Use BYOC on GCP docs to explain the GCP BYOC deployment path and VPC context.",
+    "priority": "P0",
+    "tags": ["regions", "gcp", "availability", "on-demand", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-gcp-latency-choice",
+    "module": "clouds-and-regions",
+    "feature": "gcp",
+    "question": "How do I set up Private Service Connect for GCP?",
+    "expectedBehavior": "Use Private Service Connect (GCP) docs to explain private connectivity on GCP.",
+    "priority": "P1",
+    "tags": ["regions", "gcp", "latency", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-gcp-multi-region",
+    "module": "clouds-and-regions",
+    "feature": "gcp",
+    "question": "Can I subscribe to Zilliz Cloud through GCP Marketplace?",
+    "expectedBehavior": "Use GCP Marketplace subscription docs to answer marketplace subscription flow.",
+    "priority": "P1",
+    "tags": ["regions", "gcp", "multi-region", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-azure-available",
+    "module": "clouds-and-regions",
+    "feature": "azure",
+    "question": "How do I deploy or connect Zilliz Cloud on Azure?",
+    "expectedBehavior": "Use Azure region/provider docs and Azure-related integration docs to explain Azure availability and setup paths.",
+    "priority": "P1",
+    "tags": ["regions", "azure", "availability", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-azure-latency-choice",
+    "module": "clouds-and-regions",
+    "feature": "azure",
+    "question": "How do I set up Private Link for Azure?",
+    "expectedBehavior": "Use Private Link (Azure) docs to explain private connectivity for Azure.",
+    "priority": "P1",
+    "tags": ["regions", "azure", "latency", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "regions-azure-multi-region",
+    "module": "clouds-and-regions",
+    "feature": "azure",
+    "question": "Can I subscribe to Zilliz Cloud through Azure Marketplace?",
+    "expectedBehavior": "Use Azure Marketplace subscription docs to answer marketplace subscription flow.",
+    "priority": "P1",
+    "tags": ["regions", "azure", "multi-region", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-saas-managed-scope",
+    "module": "deployment-mode",
+    "feature": "saas",
+    "question": "How do I create a Zilliz Cloud cluster?",
+    "expectedBehavior": "Use Create Cluster docs to explain the managed cluster creation workflow at a high level.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "saas", "managed-service", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-saas-vs-byoc-choice",
+    "module": "deployment-mode",
+    "feature": "saas",
+    "question": "How should I choose between Zilliz Cloud and BYOC?",
+    "expectedBehavior": "Use BYOC Overview and Zilliz Cloud docs to compare managed cloud versus customer cloud account deployment.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "saas", "byoc", "choice", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-saas-responsibilities-removed",
+    "module": "deployment-mode",
+    "feature": "saas",
+    "question": "What operational work does Zilliz Cloud manage for clusters?",
+    "expectedBehavior": "Use cluster creation, scaling, and cost docs to explain managed compute/storage operations without overclaiming.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "saas", "operations", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-byoc-vpc-scope",
+    "module": "deployment-mode",
+    "feature": "byoc",
+    "question": "What is BYOC in Zilliz Cloud?",
+    "expectedBehavior": "Use BYOC Overview docs to explain hosting applications and data in the customer cloud account.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "byoc", "vpc", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-byoc-security-split",
+    "module": "deployment-mode",
+    "feature": "byoc",
+    "question": "What responsibilities are shared between Zilliz and BYOC users?",
+    "expectedBehavior": "Use Shared Responsibilities docs to explain the documented division of tasks.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "byoc", "security", "shared-responsibility", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-byoc-over-saas",
+    "module": "deployment-mode",
+    "feature": "byoc",
+    "question": "When should I choose BYOC?",
+    "expectedBehavior": "Use BYOC Overview docs to explain security, compliance, and data-control reasons for BYOC.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "byoc", "saas", "choice", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-open-source-capabilities",
+    "module": "deployment-mode",
+    "feature": "open-source",
+    "question": "What is Milvus?",
+    "expectedBehavior": "Use Milvus docs to explain Milvus as an open-source vector database for similarity search and AI applications.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "open-source", "milvus", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-open-source-standalone-distributed",
+    "module": "deployment-mode",
+    "feature": "open-source",
+    "question": "How does Zilliz Cloud relate to open-source Milvus?",
+    "expectedBehavior": "Use Milvus and migration/product docs to explain the relationship at a high level without unsupported feature parity claims.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "open-source", "standalone", "distributed", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-open-source-when-choose",
+    "module": "deployment-mode",
+    "feature": "open-source",
+    "question": "How can I migrate from open-source Milvus to Zilliz Cloud?",
+    "expectedBehavior": "Use Migration docs where available to explain the documented migration path at a high level.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "open-source", "choice", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-interface-api-consistency",
+    "module": "deployment-mode",
+    "feature": "interface-consistency",
+    "question": "How do I connect to a Zilliz Cloud cluster with an SDK?",
+    "expectedBehavior": "Use connection endpoint and SDK docs to explain endpoint/auth configuration.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "interface-consistency", "sdk", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-interface-switch-code-changes",
+    "module": "deployment-mode",
+    "feature": "interface-consistency",
+    "question": "What changes when I move from Milvus to Zilliz Cloud?",
+    "expectedBehavior": "Use migration and connection docs to explain endpoint, authentication, and validation changes without saying there are never code changes.",
+    "priority": "P0",
+    "tags": ["deployment-mode", "interface-consistency", "migration", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-interface-migration-path",
+    "module": "deployment-mode",
+    "feature": "interface-consistency",
+    "question": "What is the recommended migration workflow to Zilliz Cloud?",
+    "expectedBehavior": "Use migration docs to explain assessment, data migration, endpoint/auth update, and validation at a high level.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "interface-consistency", "migration", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-performance-optimized-choice",
+    "module": "deployment-mode",
+    "feature": "performance-optimized",
+    "question": "How do I select the right Compute Unit for a cluster?",
+    "expectedBehavior": "Use Select Compute Unit docs to explain CU choice as compute resources for parallel processing.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "performance-optimized", "latency", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-performance-optimized-workloads",
+    "module": "deployment-mode",
+    "feature": "performance-optimized",
+    "question": "How do Query CUs and replicas affect query performance?",
+    "expectedBehavior": "Use Scale Cluster or Scale Query CU docs to explain Query CUs, replicas, capacity, and throughput.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "performance-optimized", "workload-fit", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-performance-optimized-cost",
+    "module": "deployment-mode",
+    "feature": "performance-optimized",
+    "question": "How does Dedicated cluster cost work?",
+    "expectedBehavior": "Use Dedicated Cluster Cost docs to explain pay-as-you-go compute charges and avoid exact estimates.",
+    "priority": "P0",
+    "tags": ["deployment-mode", "performance-optimized", "cost", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-capacity-optimized-choice",
+    "module": "deployment-mode",
+    "feature": "capacity-optimized",
+    "question": "How can index build level trade recall for storage capacity?",
+    "expectedBehavior": "Use Index Build Level docs to explain balancing storage capacity and recall.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "capacity-optimized", "capacity", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-capacity-vs-performance",
+    "module": "deployment-mode",
+    "feature": "capacity-optimized",
+    "question": "How can mmap expand collection storage capacity?",
+    "expectedBehavior": "Use Use mmap docs to explain memory mapping and data placement for larger collections.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "capacity-optimized", "performance-optimized", "tradeoff", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-capacity-size-vectors",
+    "module": "deployment-mode",
+    "feature": "capacity-optimized",
+    "question": "How do binary vectors reduce storage and compute cost?",
+    "expectedBehavior": "Use Binary Vector docs to explain binary vector storage/compression tradeoffs.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "capacity-optimized", "sizing", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-tiered-storage-cost",
+    "module": "deployment-mode",
+    "feature": "tiered-storage",
+    "question": "How does mmap help optimize storage placement?",
+    "expectedBehavior": "Use Use mmap docs to explain storing indexes/data in memory and hard drives based on access frequency.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "tiered-storage", "cost", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-tiered-storage-workloads",
+    "module": "deployment-mode",
+    "feature": "tiered-storage",
+    "question": "When should I use mmap for large collections?",
+    "expectedBehavior": "Use Use mmap docs to explain workloads that need expanded storage capacity while maintaining search performance.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "tiered-storage", "workload-fit", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-tiered-storage-latency",
+    "module": "deployment-mode",
+    "feature": "tiered-storage",
+    "question": "What should I consider before using mmap for search workloads?",
+    "expectedBehavior": "Use Use mmap docs to explain storage placement and recommend workload validation without unsupported latency numbers.",
+    "priority": "P0",
+    "tags": ["deployment-mode", "tiered-storage", "latency", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-switchover-rpo-rto",
+    "module": "deployment-mode",
+    "feature": "switchover",
+    "question": "What are switchover and failover in a Global Cluster?",
+    "expectedBehavior": "Use Switchover and Failover docs to explain operations that change which region hosts the primary cluster.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "switchover", "rpo", "rto", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-switchover-prepare",
+    "module": "deployment-mode",
+    "feature": "switchover",
+    "question": "How do I connect to a Global Cluster endpoint?",
+    "expectedBehavior": "Use Connect to Global Cluster docs to explain endpoint types and routing behavior during switchover/failover.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "switchover", "operations", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-switchover-workloads",
+    "module": "deployment-mode",
+    "feature": "switchover",
+    "question": "When should I use a Global Cluster?",
+    "expectedBehavior": "Use Global Cluster Explained docs to explain primary and read-only secondary clusters across regions.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "switchover", "workload-fit", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-failover-rpo-rto",
+    "module": "deployment-mode",
+    "feature": "failover",
+    "question": "How does failover work in a Global Cluster?",
+    "expectedBehavior": "Use Switchover and Failover docs to explain documented failover behavior and recovery objectives without stronger guarantees.",
+    "priority": "P0",
+    "tags": ["deployment-mode", "global-cluster", "failover", "rpo", "rto", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-failover-trigger-validation",
+    "module": "deployment-mode",
+    "feature": "failover",
+    "question": "How should I monitor Global Cluster health during failover?",
+    "expectedBehavior": "Use Monitor Global Cluster docs to explain health, replication status, and performance monitoring.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "failover", "validation", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-failover-testing-practices",
+    "module": "deployment-mode",
+    "feature": "failover",
+    "question": "How can I validate a Global Cluster before production?",
+    "expectedBehavior": "Use Create, Connect, Monitor, and Switchover/Failover docs to explain source-grounded validation steps.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "failover", "testing", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-zero-disruption-endpoint",
+    "module": "deployment-mode",
+    "feature": "zero-disruption-failover",
+    "question": "How does Global Cluster endpoint routing behave during failover?",
+    "expectedBehavior": "Use Connect to Global Cluster docs to explain endpoint types and routing behavior during failover.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "zero-disruption-failover", "endpoint", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-zero-disruption-no-client-change",
+    "module": "deployment-mode",
+    "feature": "zero-disruption-failover",
+    "question": "Why should clients use the Global Cluster endpoint?",
+    "expectedBehavior": "Use Connect to Global Cluster docs to explain global endpoint abstraction and avoid unsupported zero-disruption claims.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "zero-disruption-failover", "client-config", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-zero-disruption-client-config",
+    "module": "deployment-mode",
+    "feature": "zero-disruption-failover",
+    "question": "How should clients connect to a Global Cluster for regional routing?",
+    "expectedBehavior": "Use Connect to Global Cluster docs to explain endpoint and token configuration.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "zero-disruption-failover", "client-config", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-self-healing-region-rebuild",
+    "module": "deployment-mode",
+    "feature": "self-healing",
+    "question": "How do I monitor replication status in a Global Cluster?",
+    "expectedBehavior": "Use Monitor Global Cluster docs to explain monitoring health, replication status, and performance.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "self-healing", "replication", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-self-healing-triggers",
+    "module": "deployment-mode",
+    "feature": "self-healing",
+    "question": "How do I manage secondary clusters in a Global Cluster?",
+    "expectedBehavior": "Use Manage Global Cluster docs to explain adding/deleting secondary clusters and related operations.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "self-healing", "triggers", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
+  },
+  {
+    "id": "deployment-self-healing-monitoring",
+    "module": "deployment-mode",
+    "feature": "self-healing",
+    "question": "How do I monitor a Global Cluster after a region recovers?",
+    "expectedBehavior": "Use Monitor Global Cluster docs to explain post-event health, replication, and performance checks.",
+    "priority": "P1",
+    "tags": ["deployment-mode", "global-cluster", "self-healing", "monitoring", "category-coverage", "ui-suggestion"],
+    "source": "category-coverage-request"
   }
 ]

@@ -13,6 +13,7 @@ When adding or updating a question:
 - Use a stable, descriptive `id`.
 - Put the item in the closest product module.
 - Write the user-facing `question` as a realistic customer question.
+- For UI suggested questions, prefer short docs-aligned wording that uses product names and page titles users recognize, such as `Cohere Ranker`, `Weighted Ranker`, `Manage Organization Users`, or `Global Cluster`.
 - Write `expectedBehavior` as pass/fail guidance, not as a sample answer.
 - Add tags that make filtering and reporting useful.
 - Mark `blocking: true` only for release gates.
@@ -44,7 +45,7 @@ Prompt coverage follows the current router topics, so prompt files do not have t
 | Question-bank module | Primary prompt coverage | Notes |
 |---|---|---|
 | `search` | `prompts/search.md`, `prompts/schema-design.md` | Schema setup matters for BM25, hybrid, JSON, multi-vector, and filter-heavy search questions. |
-| `reranking` | `prompts/search.md`, `prompts/integrations.md` | Search covers local rank fusion; integrations covers model-provider rerankers such as Cohere and Voyage. |
+| `reranking` | `prompts/reranking.md`, `prompts/search.md`, `prompts/integrations.md` | Reranking has a dedicated router topic; search covers rank-fusion context, and integrations covers model-provider setup such as Cohere and Voyage. |
 | `embedding` | `prompts/integrations.md`, `prompts/schema-design.md` | Integrations covers provider setup and credentials; schema design covers dimension and field compatibility. |
 | `rbac` | `prompts/access-control.md`, `prompts/base.md` | `rbac` is the eval module; `access-control` is the router topic name. |
 | `clouds-and-regions` | `prompts/resources.md`, `prompts/pricing.md` | Region answers often combine availability, deployment fit, and pricing caveats. |
@@ -71,27 +72,27 @@ Each item in `items.json` has:
 
 Current baseline coverage:
 
-- Total questions: 108
+- Total questions: 196
 - Blocking questions: 21
 - Product modules: 8
 - Cross-cutting safety module: 1
 
 | Module | Questions | Features |
 |---|---:|---|
-| `search` | 51 | vector search, full-text search, grep, hybrid search, JSON query, geospatial search, multi-vector search, filtering, range search, multi-path retrieval, iterative search |
-| `reranking` | 5 | Cohere/Voyage model rerankers, Boost, Decay, RRF, Weighted, cost/latency tradeoffs |
-| `embedding` | 5 | BYOK vs managed, schema compatibility, Qwen, BAAI, credential handling |
-| `rbac` | 7 | Organization Admin, Billing Admin, Project Admin, fine-grained authorization, enterprise role management |
-| `clouds-and-regions` | 4 | supported regions, Lakebase availability, unavailable-region escalation, region/cloud pricing caveats |
-| `deployment-mode` | 7 | SaaS/BYOC/Open Source, interface consistency, Serverless, Global Cluster, Lakebase on-demand compute, HNSW availability |
+| `search` | 54 | vector search, full-text search, grep, hybrid search, JSON query, geospatial search, multi-vector search, filtering, range search, multi-path retrieval, iterative search |
+| `reranking` | 18 | Cohere Reranker, Voyage AI Reranker, Boost Reranker, Decay Reranker, RRF Reranker, Weighted Reranker |
+| `embedding` | 20 | OpenAI, Voyage AI, Cohere, Qwen, BAAI, BYOK vs managed, schema compatibility, credential handling |
+| `rbac` | 22 | Organization Admin, Billing Admin, Project Admin, fine-grained authorization, enterprise role management |
+| `clouds-and-regions` | 13 | AWS, GCP, Azure, supported regions, Lakebase availability, unavailable-region escalation, region/cloud pricing caveats |
+| `deployment-mode` | 40 | SaaS, BYOC, Open Source, interface consistency, Performance-optimized, Capacity-optimized, Tiered-storage, Switchover, Failover, Zero-Disruption Failover, Self-Healing, Serverless, Global Cluster, Lakebase on-demand compute, HNSW availability |
 | `security` | 13 | authentication, API keys, cluster credentials, SSO, MFA, network access, Private Link, IP allowlists, encryption, CMEK, audit logs |
 | `compliance-and-privacy` | 8 | Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA, BAA, vendor review, compliance overclaim prevention |
 | `agent-safety` | 8 | model identity, prompt leakage, tool leakage, RAG/routing leakage, secret handling, secret exfiltration, status accuracy, support escalation |
 
 | Priority | Questions | Notes |
 |---|---:|---|
-| `P0` | 29 | Release gates, known P0/P1 issue regressions, anti-hallucination checks |
-| `P1` | 79 | Core functional coverage and module smoke tests |
+| `P0` | 43 | Release gates, known P0/P1 issue regressions, anti-hallucination checks |
+| `P1` | 153 | Core functional coverage and module smoke tests |
 | `P2` | 0 | UI-only issues are intentionally excluded from prompt TPR gates |
 
 The runtime coverage report is generated from `items.json` into `scripts/eval/results/question-bank-coverage.md`.
@@ -115,6 +116,7 @@ Useful filters:
 ```bash
 npm exec -- tsx scripts/eval/build-question-bank.ts -- --ids known-cluster-status-values,deployment-hnsw-cloud
 npm exec -- tsx scripts/eval/build-question-bank.ts -- --modules search,rbac
+npm exec -- tsx scripts/eval/build-question-bank.ts -- --tags ui-suggestion
 npm exec -- tsx scripts/eval/build-question-bank.ts -- --priorities P0
 npm exec -- tsx scripts/eval/build-question-bank.ts -- --blocking-only
 npm exec -- tsx scripts/eval/build-question-bank.ts -- --exclude-safety

@@ -18,7 +18,7 @@ const ROUTER_V2_ENABLED = process.env.ROUTER_V2_ENABLED !== 'false'; // default 
 const TOPIC_ENUM = [
   'schema-design', 'search', 'resources', 'cluster-connection',
   'import', 'migration', 'access-control', 'integrations', 'pricing',
-  'security', 'compliance-and-privacy',
+  'security', 'compliance-and-privacy', 'reranking',
 ] as const;
 
 export type TopicName = (typeof TOPIC_ENUM)[number];
@@ -73,7 +73,7 @@ Agents:
 - schema: Collection schema design, field types, index selection, data modeling, partition keys
 - resources: Cluster sizing, CU estimation, storage planning, pricing, deployment tier selection
 - product: Product comparison (Serverless vs Dedicated vs BYOC), feature availability, migration
-- code: ANY "how to" or "how do I" question about SDK usage, API calls, search/insert/query operations, integration patterns, or troubleshooting code errors. For schema design questions (collections, fields, indexes, partition keys, BM25), route to schema even if phrased as "how do I". When in doubt between general and code, choose code.
+- code: Explicit requests for SDK code, API calls, runnable examples, syntax, implementation details, or troubleshooting code errors. For schema design questions (collections, fields, indexes, partition keys, BM25), route to schema even if phrased as "how do I". Do not route conceptual product, reranking, tuning, tradeoff, limitation, cost, latency, or "when should I use..." questions to code unless the user explicitly asks for code.
 `;
 
 const TOPIC_DESCRIPTIONS = `
@@ -89,6 +89,7 @@ Topics (select 1-2 most relevant):
 - pricing: Pricing, billing, credits, cost optimization
 - security: Authentication, SSO/MFA, API keys, cluster credentials, Private Link, IP allowlists, encryption, CMEK, data isolation, audit logs
 - compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
+- reranking: Cohere, Voyage AI, Boost, Decay, RRF, Weighted rankers, reranker selection, limitations, tuning, cost and latency tradeoffs
 `;
 
 const FEW_SHOT_EXAMPLES = `
@@ -110,6 +111,12 @@ Output: {"agent": "schema", "topics": ["schema-design"], "reasoning": "Partition
 
 Input: "How do I enable BM25 full-text search?"
 Output: {"agent": "schema", "topics": ["schema-design"], "reasoning": "BM25 setup is part of collection schema and index configuration."}
+
+Input: "When should I use Cohere Reranker instead of Boost Reranker?"
+Output: {"agent": "product", "topics": ["reranking", "integrations"], "reasoning": "The user is asking for reranker selection and tradeoffs, not SDK code."}
+
+Input: "What weights should I use for Weighted Reranker in production?"
+Output: {"agent": "general", "topics": ["reranking"], "reasoning": "The user is asking for conceptual tuning guidance, not an implementation example."}
 
 Input: "What is Zilliz Cloud?"
 Output: {"agent": "general", "topics": [], "reasoning": "General product overview question."}
@@ -227,7 +234,7 @@ Agents:
 - schema: Collection schema design, field types, index selection, data modeling, partition keys
 - resources: Cluster sizing, CU estimation, storage planning, pricing, deployment tier selection
 - product: Product comparison (Serverless vs Dedicated vs BYOC), feature availability, migration
-- code: ANY "how to" or "how do I" question about SDK usage, API calls, search/insert/query operations, integration patterns, or troubleshooting code errors. For schema design questions (collections, fields, indexes, partition keys, BM25), route to schema even if phrased as "how do I". When in doubt between general and code, choose code.
+- code: Explicit requests for SDK code, API calls, runnable examples, syntax, implementation details, or troubleshooting code errors. For schema design questions (collections, fields, indexes, partition keys, BM25), route to schema even if phrased as "how do I". Do not route conceptual product, reranking, tuning, tradeoff, limitation, cost, latency, or "when should I use..." questions to code unless the user explicitly asks for code.
 
 Topics (select 1-2 most relevant):
 - schema-design: Collection schema, field types, indexes, BM25 setup, limits
@@ -241,6 +248,7 @@ Topics (select 1-2 most relevant):
 - pricing: Pricing, billing, credits, cost optimization
 - security: Authentication, SSO/MFA, API keys, cluster credentials, Private Link, IP allowlists, encryption, CMEK, data isolation, audit logs
 - compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
+- reranking: Cohere, Voyage AI, Boost, Decay, RRF, Weighted rankers, reranker selection, limitations, tuning, cost and latency tradeoffs
 
 ${stickyAgent ? `Current agent: ${stickyAgent}. Stay with this agent unless the topic has clearly changed.` : ''}
 
