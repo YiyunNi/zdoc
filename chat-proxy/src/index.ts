@@ -1,6 +1,6 @@
 import {Hono, type Context, type MiddlewareHandler} from 'hono';
 import {cors} from 'hono/cors';
-import {streamText, stepCountIs, smoothStream} from 'ai';
+import {streamText, generateText, stepCountIs} from 'ai';
 import type {ChatRequest} from './types.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
@@ -605,8 +605,9 @@ app.post('/chat', async c => {
           }
 
           const tLlmStart = Date.now();
+          const modelInstance = await createModelInstance(chatModelResolved);
           const result = streamText({
-            model: await createModelInstance(chatModelResolved),
+            model: modelInstance,
             maxOutputTokens: 4096,
             temperature: 0.2,
             tools: agentTools,
@@ -617,7 +618,6 @@ app.post('/chat', async c => {
               role: m.role as 'user' | 'assistant',
               content: m.content,
             })),
-            experimental_transform: smoothStream({delayInMs: 15}),
             experimental_telemetry: makeTelemetry('chat-stream', {
               agentType: agentConfig.type,
               sessionId: session.id,
@@ -694,6 +694,30 @@ app.post('/chat', async c => {
             if (assembled) {
               fullText = assembled;
               sendAndRecord('delta', JSON.stringify({text: fullText}));
+            }
+          }
+
+          // Stronger fallback: if tools were called but no text emerged at all,
+          // re-run with generateText using the full conversation history.
+          // This works around provider bugs where the streamed final step
+          // produces no text deltas (observed with Bedrock after tool loops).
+          if (!fullText && toolsCalled.length > 0) {
+            try {
+              const response = await result.response;
+              const fallbackResult = await generateText({
+                model: modelInstance,
+                system: systemPrompt,
+                messages: response.messages,
+                maxOutputTokens: 4096,
+                temperature: 0.2,
+              });
+              if (fallbackResult.text) {
+                fullText = fallbackResult.text;
+                sendAndRecord('delta', JSON.stringify({text: fullText}));
+                console.log(`[Fallback] generateText recovered ${fullText.length} chars`);
+              }
+            } catch (err) {
+              console.error('[Fallback] generateText failed:', (err as Error).message);
             }
           }
 
