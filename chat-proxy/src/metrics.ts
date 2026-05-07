@@ -1,6 +1,6 @@
 /**
  * Lightweight Prometheus-style metrics registry.
- * Exposes counters and gauges in Prometheus text format at /metrics.
+ * Exposes counters, gauges, and histograms in Prometheus text format at /metrics.
  */
 
 interface Counter {
@@ -13,8 +13,18 @@ interface Gauge {
   labels: Record<string, string>;
 }
 
+interface Histogram {
+  buckets: number[];
+  counts: number[];
+  totalCount: number;
+  labels: Record<string, string>;
+}
+
 const counters = new Map<string, Counter[]>();
 const gauges = new Map<string, Gauge[]>();
+const histograms = new Map<string, Histogram[]>();
+
+const DEFAULT_BUCKETS = [50, 100, 200, 500, 1000, 2000, 5000, 10000, 30000];
 
 function labelsKey(labels: Record<string, string>): string {
   const entries = Object.entries(labels).sort(([a], [b]) => a.localeCompare(b));
@@ -45,6 +55,23 @@ export function setGauge(name: string, labels: Record<string, string> = {}, valu
   gauges.set(name, list);
 }
 
+export function observeHistogram(name: string, labels: Record<string, string> = {}, value: number): void {
+  const list = histograms.get(name) || [];
+  const key = labelsKey(labels);
+  let existing = list.find(h => labelsKey(h.labels) === key);
+  if (!existing) {
+    existing = {buckets: [...DEFAULT_BUCKETS], counts: new Array(DEFAULT_BUCKETS.length).fill(0), totalCount: 0, labels};
+    list.push(existing);
+  }
+  existing.totalCount++;
+  for (let i = 0; i < existing.buckets.length; i++) {
+    if (value <= existing.buckets[i]) {
+      existing.counts[i]++;
+    }
+  }
+  histograms.set(name, list);
+}
+
 function renderMetric(
   name: string,
   help: string,
@@ -69,6 +96,33 @@ function renderMetric(
   return lines.join('\n') + '\n';
 }
 
+function renderHistogramMetric(name: string, help: string, items: Histogram[]): string {
+  if (items.length === 0) return '';
+  const lines: string[] = [];
+  lines.push(`# HELP ${name} ${help}`);
+  lines.push(`# TYPE ${name} histogram`);
+  for (const item of items) {
+    const baseLabels = Object.entries(item.labels)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([k, v]) => `${k}="${v}"`)
+      .join(',');
+    for (let i = 0; i < item.buckets.length; i++) {
+      const bucketLabels = baseLabels
+        ? `${baseLabels},le="${item.buckets[i]}"`
+        : `le="${item.buckets[i]}"`;
+      lines.push(`${name}_bucket{${bucketLabels}} ${item.counts[i]}`);
+    }
+    const infLabels = baseLabels ? `${baseLabels},le="+Inf"` : 'le="+Inf"';
+    lines.push(`${name}_bucket{${infLabels}} ${item.totalCount}`);
+    if (baseLabels) {
+      lines.push(`${name}_count{${baseLabels}} ${item.totalCount}`);
+    } else {
+      lines.push(`${name}_count ${item.totalCount}`);
+    }
+  }
+  return lines.join('\n') + '\n';
+}
+
 export function renderMetrics(): string {
   const sections: string[] = [];
 
@@ -80,6 +134,11 @@ export function renderMetrics(): string {
   for (const [name, items] of gauges) {
     const help = GAUGE_HELP[name] || name;
     sections.push(renderMetric(name, help, 'gauge', items));
+  }
+
+  for (const [name, items] of histograms) {
+    const help = HISTOGRAM_HELP[name] || name;
+    sections.push(renderHistogramMetric(name, help, items));
   }
 
   return sections.filter(Boolean).join('\n');
@@ -96,6 +155,10 @@ const COUNTER_HELP: Record<string, string> = {
 const GAUGE_HELP: Record<string, string> = {
   'chat_proxy_router_accuracy': 'Router accuracy rate by model (0-1)',
   'chat_proxy_active_sessions': 'Number of active sessions',
+};
+
+const HISTOGRAM_HELP: Record<string, string> = {
+  'chat_proxy_step_duration_ms': 'Duration of each pipeline step in milliseconds',
 };
 
 export function initMetrics(): void {

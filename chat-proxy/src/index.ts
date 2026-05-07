@@ -13,7 +13,7 @@ import {getToolsForAgent, type ToolName} from './tools/index.js';
 import {logEvent, saveConversation, updateUserProfile} from './logger.js';
 import {adminApp} from './admin.js';
 import {makeTelemetry} from './telemetry.js';
-import {incCounter, renderMetrics} from './metrics.js';
+import {incCounter, renderMetrics, observeHistogram} from './metrics.js';
 import type {FeedbackRequest} from './types.js';
 import {recordFeedback, getStats} from './feedback.js';
 import {inferSection} from './sources.js';
@@ -857,7 +857,26 @@ app.post('/chat', async c => {
           }, userMeta, source);
 
           const tGround = Date.now() - tGroundStart;
-          console.log(`[timing] embed=${tEmbed}ms route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${Date.now() - tChatStart}ms tools=${toolsCalled.length} sources=${allSources.length}`);
+          const tTotal = Date.now() - tChatStart;
+          console.log(`[timing] embed=${tEmbed}ms route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${tTotal}ms tools=${toolsCalled.length} sources=${allSources.length}`);
+
+          // Record per-step duration histograms
+          observeHistogram('chat_proxy_step_duration_ms', {step: 'embed', agent: agentConfig.type}, tEmbed);
+          observeHistogram('chat_proxy_step_duration_ms', {step: 'route', agent: agentConfig.type}, tRoute);
+          observeHistogram('chat_proxy_step_duration_ms', {step: 'llm', agent: agentConfig.type}, tLlm);
+          observeHistogram('chat_proxy_step_duration_ms', {step: 'ground', agent: agentConfig.type}, tGround);
+          observeHistogram('chat_proxy_step_duration_ms', {step: 'total', agent: agentConfig.type}, tTotal);
+
+          // Emit structured timing event so clients can observe per-request breakdown
+          sendAndRecord('timing', JSON.stringify({
+            embed: tEmbed,
+            route: tRoute,
+            llm: tLlm,
+            ground: tGround,
+            total: tTotal,
+            tools: toolsCalled.length,
+            sources: allSources.length,
+          }));
 
           // Save conversation (fire-and-forget)
           saveConversation({
