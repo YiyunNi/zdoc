@@ -17,9 +17,23 @@ MilvusClient provides a simple and easy-to-use alternative to the legacy ORM app
 
 You can run the following command in your terminal to install the latest PyMilvus or update your PyMilvus to this version.
 
+<Tabs>
+<TabItem groupId="endpoint" value="cluster" label="Cluster Endpoint">   
+
 ```shell
-pip install --upgrade pymilvus==v2.3.7
+pip install --upgrade pymilvus==v2.6.12
 ```
+
+</TabItem>
+<TabItem groupId="endpoint" value="project" label="Project Endpoint (On-Demand)">
+
+
+```shell
+pip install --upgrade pymilvus==v3.0.0
+```
+
+</TabItem>
+</Tabs>
 
 After the installation, you can check the pymilvus version by running the following
 
@@ -28,20 +42,39 @@ from pymilvus import __version__
 
 print(__version__)
 
-# v2.3.7
+# v2.6.12
 ```
 
 ## Connect to Cluster
+
+<Tabs>
+<TabItem groupId="endpoint" value="cluster" label="Cluster Endpoint">   
 
 ```python
 from pymilvus import MilvusClient
 
 # Authentication enabled with a cluster user
 client = MilvusClient(
-    uri="https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530",
+    uri="https://inxx-xxxxxxxxxxxx.gcp-us-west1.vectordb.zillizcloud.com:19530",
     token="user:password", # replace this with your token
 )
 ```
+
+</TabItem>
+<TabItem groupId="endpoint" value="project" label="Project Endpoint (On-Demand)">
+
+```python
+from pymilvus import MilvusClient
+
+# Authentication enabled with a cluster user
+client = MilvusClient(
+    uri="https://proj-xxxxxxxxxxxx.gcp-us-west1.api.zillizcloud.com",
+    token="user:password", # replace this with your token
+)
+```
+
+</TabItem>
+</Tabs>
 
 ## What's New
 
@@ -53,4 +86,4 @@ import DocCardList from '@theme/DocCardList';
 
 ## Examples
 
-In addition to the documents, you can also refer to [the example sets](https://github.com/milvus-io/pymilvus/tree/2.3/examples/milvus_client) in our GitHub repo.
+In addition to the documents, you can also refer to [the example sets](https://github.com/milvus-io/pymilvus/tree/v2.6.12/examples) in our GitHub repo.
