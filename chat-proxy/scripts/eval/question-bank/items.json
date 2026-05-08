@@ -1979,5 +1979,125 @@
     "priority": "P1",
     "tags": ["deployment-mode", "global-cluster", "self-healing", "monitoring", "category-coverage", "ui-suggestion"],
     "source": "category-coverage-request"
+  },
+  {
+    "id": "cli-get-started",
+    "module": "cli",
+    "feature": "zilliz-cli",
+    "question": "How do I get started with the Zilliz CLI?",
+    "expectedBehavior": "Use Zilliz CLI docs to explain installation, authentication with zilliz login, and the first management or data-operation steps.",
+    "priority": "P1",
+    "tags": ["cli", "zilliz-cli", "getting-started", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "cli-management-workflows",
+    "module": "cli",
+    "feature": "zilliz-cli",
+    "question": "How do I manage clusters and projects from the Zilliz CLI?",
+    "expectedBehavior": "Use Zilliz CLI docs to describe Cloud Management commands for clusters, projects, volumes, backups, and related control-plane resources.",
+    "priority": "P1",
+    "tags": ["cli", "zilliz-cli", "cloud-management", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "cli-vector-search",
+    "module": "cli",
+    "feature": "zilliz-cli",
+    "question": "How do I run vector search from the Zilliz CLI?",
+    "expectedBehavior": "Use Zilliz CLI docs to explain Data Operations, especially vector search/query workflows, without inventing unsupported command syntax.",
+    "priority": "P1",
+    "tags": ["cli", "zilliz-cli", "vector-search", "data-operations", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "search-on-demand-when-to-use",
+    "module": "search",
+    "feature": "on-demand-search",
+    "question": "When should I use On-demand Compute for vector search?",
+    "expectedBehavior": "Use On-demand Compute docs to explain batch search, evaluation, notebooks, one-off analysis, cold-start tolerance, and scale-to-zero cost behavior.",
+    "priority": "P1",
+    "tags": ["search", "on-demand-search", "on-demand-compute", "lakebase", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "search-on-demand-vs-serving",
+    "module": "search",
+    "feature": "on-demand-search",
+    "question": "How is On-demand Compute different from a Serving Cluster?",
+    "expectedBehavior": "Use compute docs to compare On-demand Compute with Realtime Serving/Serving Cluster across workload shape, latency, lifecycle, write support, and billing.",
+    "priority": "P1",
+    "tags": ["search", "on-demand-search", "on-demand-compute", "serving-cluster", "comparison", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "search-on-demand-scale-to-zero",
+    "module": "search",
+    "feature": "on-demand-search",
+    "question": "What happens when an On-demand Cluster scales to zero?",
+    "expectedBehavior": "Use On-demand Cluster lifecycle docs to explain provisioning, compute, idle wait, release, billing phases, and cold-start behavior after scale-to-zero.",
+    "priority": "P1",
+    "tags": ["search", "on-demand-search", "on-demand-compute", "scale-to-zero", "billing", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "search-external-data-s3",
+    "module": "search",
+    "feature": "external-data-search",
+    "question": "How do I search data in S3 without copying it into Zilliz Cloud?",
+    "expectedBehavior": "Use External Collection docs to explain external volumes, external sources, field mapping, refresh, indexing, and search without duplicating raw data.",
+    "priority": "P1",
+    "tags": ["search", "external-data-search", "external-collection", "s3", "zero-copy", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "search-external-collection-definition",
+    "module": "search",
+    "feature": "external-data-search",
+    "question": "What is an external collection, and when should I use one?",
+    "expectedBehavior": "Use External and Managed Collections docs to define external collections, explain read-only behavior, supported source formats, and when to choose them over managed collections.",
+    "priority": "P1",
+    "tags": ["search", "external-data-search", "external-collection", "managed-collection", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "search-external-refresh",
+    "module": "search",
+    "feature": "external-data-search",
+    "question": "How do I refresh an external collection when my source data changes?",
+    "expectedBehavior": "Use External Collection refresh docs to explain that refresh regenerates manifests, must be called after source updates, is asynchronous, and is needed before indexing.",
+    "priority": "P1",
+    "tags": ["search", "external-data-search", "external-collection", "refresh", "manifest", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "schema-iteration-add-fields",
+    "module": "schema-design",
+    "feature": "schema-iteration",
+    "question": "How can I add new fields to an existing collection?",
+    "expectedBehavior": "Use Add Fields docs to explain that added fields must be scalar and nullable, existing entities get NULL or defaults, and vector fields cannot be added to existing collections.",
+    "priority": "P1",
+    "tags": ["schema-design", "schema-iteration", "add-fields", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "schema-iteration-backfill-values",
+    "module": "schema-design",
+    "feature": "schema-iteration",
+    "question": "How do I backfill values after adding a new field?",
+    "expectedBehavior": "Use Add Fields and TTL docs to explain backfilling with upsert for historical rows and clarify what happens to rows that remain NULL.",
+    "priority": "P1",
+    "tags": ["schema-design", "schema-iteration", "backfill", "upsert", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
+  },
+  {
+    "id": "schema-iteration-merge-data-api",
+    "module": "schema-design",
+    "feature": "schema-iteration",
+    "question": "When should I use Merge Data API for schema evolution?",
+    "expectedBehavior": "Use Merge Data API docs and release notes to explain large-scale schema evolution with external files, merge fields, target collections, alias switchover, write-suspension caveat, and preview/support status.",
+    "priority": "P1",
+    "tags": ["schema-design", "schema-iteration", "merge-data", "schema-evolution", "anti-hallucination", "category-coverage", "ui-suggestion"],
+    "source": "new-feature-coverage-request"
   }
 ]

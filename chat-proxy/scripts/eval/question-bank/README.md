@@ -28,7 +28,9 @@ Question-bank modules are eval coverage labels. They should stay product-facing 
 
 Current modules:
 
+- `cli`: Zilliz CLI management and data-operation workflows, including setup, cloud resources, and vector operations.
 - `search`: Retrieval behavior, including vector search, filtering, full-text search, hybrid search, JSON, geospatial, multi-vector, range, and multi-path retrieval.
+- `schema-design`: Collection schema design and schema iteration, including adding fields, backfilling values, and schema evolution workflows.
 - `reranking`: Reranker selection and relevance tuning across model rerankers and rule-based rank fusion.
 - `embedding`: Managed embeddings, BYOK model-provider setup, schema compatibility, and credential handling.
 - `rbac`: Organization, project, billing, API-key, and cluster-level access-control questions.
@@ -44,7 +46,9 @@ Prompt coverage follows the current router topics, so prompt files do not have t
 
 | Question-bank module | Primary prompt coverage | Notes |
 |---|---|---|
-| `search` | `prompts/search.md`, `prompts/schema-design.md` | Schema setup matters for BM25, hybrid, JSON, multi-vector, and filter-heavy search questions. |
+| `cli` | `prompts/base.md`, `prompts/search.md`, `prompts/resources.md` | CLI questions often combine setup, cloud management, and data operations; answers should stay grounded in CLI docs and avoid invented command syntax. |
+| `search` | `prompts/search.md`, `prompts/schema-design.md`, `prompts/resources.md` | Schema setup matters for BM25, hybrid, JSON, multi-vector, filter-heavy search, on-demand search, and external data search questions. |
+| `schema-design` | `prompts/schema-design.md`, `prompts/search.md` | Schema iteration questions need collection field constraints, nullable/default behavior, backfill guidance, and Merge Data caveats. |
 | `reranking` | `prompts/reranking.md`, `prompts/search.md`, `prompts/integrations.md` | Reranking has a dedicated router topic; search covers rank-fusion context, and integrations covers model-provider setup such as Cohere and Voyage. |
 | `embedding` | `prompts/integrations.md`, `prompts/schema-design.md` | Integrations covers provider setup and credentials; schema design covers dimension and field compatibility. |
 | `rbac` | `prompts/access-control.md`, `prompts/base.md` | `rbac` is the eval module; `access-control` is the router topic name. |
@@ -72,14 +76,16 @@ Each item in `items.json` has:
 
 Current baseline coverage:
 
-- Total questions: 196
+- Total questions: 208
 - Blocking questions: 21
-- Product modules: 8
+- Product modules: 10
 - Cross-cutting safety module: 1
 
 | Module | Questions | Features |
 |---|---:|---|
-| `search` | 54 | vector search, full-text search, grep, hybrid search, JSON query, geospatial search, multi-vector search, filtering, range search, multi-path retrieval, iterative search |
+| `cli` | 3 | Zilliz CLI setup, cloud management, data operations, vector search |
+| `search` | 60 | vector search, full-text search, grep, hybrid search, JSON query, geospatial search, multi-vector search, filtering, range search, multi-path retrieval, iterative search, on-demand search, external data search |
+| `schema-design` | 3 | schema iteration, add fields, backfill, Merge Data API schema evolution |
 | `reranking` | 18 | Cohere Reranker, Voyage AI Reranker, Boost Reranker, Decay Reranker, RRF Reranker, Weighted Reranker |
 | `embedding` | 20 | OpenAI, Voyage AI, Cohere, Qwen, BAAI, BYOK vs managed, schema compatibility, credential handling |
 | `rbac` | 22 | Organization Admin, Billing Admin, Project Admin, fine-grained authorization, enterprise role management |
@@ -92,7 +98,7 @@ Current baseline coverage:
 | Priority | Questions | Notes |
 |---|---:|---|
 | `P0` | 43 | Release gates, known P0/P1 issue regressions, anti-hallucination checks |
-| `P1` | 153 | Core functional coverage and module smoke tests |
+| `P1` | 165 | Core functional coverage and module smoke tests |
 | `P2` | 0 | UI-only issues are intentionally excluded from prompt TPR gates |
 
 The runtime coverage report is generated from `items.json` into `scripts/eval/results/question-bank-coverage.md`.
