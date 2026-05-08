@@ -68,7 +68,7 @@ Alternatively, navigate to the **Credits** section on the **Billing Overview** p
 
 <Admonition type="info" icon="📘" title="Notes">
 
-To avoid unintentional usage of your credits, you are recommended to manually suspend clusters that are not in use.
+<p>To avoid unintentional usage of your credits, you are recommended to manually suspend clusters that are not in use.</p>
 
 </Admonition>
 

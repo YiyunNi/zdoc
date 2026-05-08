@@ -60,7 +60,7 @@ The following table lists the geometry operators available in Zilliz Cloud.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Operator names must be **all uppercase** or **all lowercase**. Do not mix cases within the same operator name.
+<p>Operator names must be <strong>all uppercase</strong> or <strong>all lowercase</strong>. Do not mix cases within the same operator name.</p>
 
 </Admonition>
 

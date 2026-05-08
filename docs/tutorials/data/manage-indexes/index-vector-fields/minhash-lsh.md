@@ -76,7 +76,7 @@ You can see the entire process illustrated below:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The number of hash functions used determines the dimensionality of the MinHash signature. Higher dimensions provide better approximation accuracy, at the cost of increased storage and computation.
+<p>The number of hash functions used determines the dimensionality of the MinHash signature. Higher dimensions provide better approximation accuracy, at the cost of increased storage and computation.</p>
 
 </Admonition>
 
@@ -104,17 +104,14 @@ The process involves:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Why it works?
-
-Mathematically, if two signatures have Jaccard similarity $s$,
-
-- The probability they are identical in one row (hash position) is $s$
-
-- The probability they match in all $r$ rows of a band is $s^r$
-
-- The probability that they match in **at least one band** is &#36;1 - (1 - s^r)^b$
-
-For details, refer to [Locality-sensitive hashing](https://en.wikipedia.org/wiki/Locality-sensitive_hashing).
+<p>Why it works?</p>
+<p>Mathematically, if two signatures have Jaccard similarity $s$,</p>
+<ul>
+<li><p>The probability they are identical in one row (hash position) is $s$</p></li>
+<li><p>The probability they match in all $r$ rows of a band is $s^r$</p></li>
+<li><p>The probability that they match in <strong>at least one band</strong> is &#36;1 - (1 - s^r)^b$</p></li>
+</ul>
+<p>For details, refer to <a href="https://en.wikipedia.org/wiki/Locality-sensitive_hashing">Locality-sensitive hashing</a>.</p>
 
 </Admonition>
 
@@ -132,7 +129,7 @@ Then, each band is hashed into different buckets using a hash function. Document
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The number of bands is controlled by the `mh_lsh_band` parameter. For more information, refer to [Index building params](./minhash-lsh#index-building-params).
+<p>The number of bands is controlled by the <code>mh_lsh_band</code> parameter. For more information, refer to <a href="./minhash-lsh#index-building-params">Index building params</a>.</p>
 
 </Admonition>
 
@@ -178,11 +175,11 @@ Before using MinHash LSH in Zilliz Cloud, you must first generate **MinHash sign
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You can prepare MinHash signatures for the `MINHASH_LSH` index in two ways:
-
-- Generate signatures yourself using external tools and insert them into a BINARY_VECTOR field, or
-
-- Use the built-in MinHash function to automatically generate compatible binary vectors from text. For the end-to-end workflow and configuration options of the MinHash function, see [MinHash Function](./minhash-function).
+<p>You can prepare MinHash signatures for the <code>MINHASH_LSH</code> index in two ways:</p>
+<ul>
+<li><p>Generate signatures yourself using external tools and insert them into a BINARY_VECTOR field, or</p></li>
+<li><p>Use the built-in MinHash function to automatically generate compatible binary vectors from text. For the end-to-end workflow and configuration options of the MinHash function, see <a href="./minhash-function">MinHash Function</a>.</p></li>
+</ul>
 
 </Admonition>
 

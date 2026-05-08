@@ -319,7 +319,7 @@ The rate limit for flush requests is 0.1 requests per second, imposed at the col
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You are not advised to perform flush operations manually. Zilliz Cloud clusters handle it gracefully for you.
+<p>You are not advised to perform flush operations manually. Zilliz Cloud clusters handle it gracefully for you.</p>
 
 </Admonition>
 
@@ -329,7 +329,7 @@ The rate limit for load requests is **20** req/s per cluster.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You do not need to perform the load collection for collections that are already loaded, even if new data is coming into these collections.
+<p>You do not need to perform the load collection for collections that are already loaded, even if new data is coming into these collections.</p>
 
 </Admonition>
 

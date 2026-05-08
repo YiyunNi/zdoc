@@ -105,7 +105,7 @@ Understanding how Tencent Cloud VectorDB data types map to Zilliz Cloud is cruci
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud samples 100 rows to detect JSON schema. You can manually add additional fields if needed.
+<p>Zilliz Cloud samples 100 rows to detect JSON schema. You can manually add additional fields if needed.</p>
 
 </Admonition>
 

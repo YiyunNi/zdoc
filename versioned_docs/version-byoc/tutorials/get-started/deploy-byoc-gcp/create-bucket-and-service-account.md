@@ -37,7 +37,7 @@ This page describes the procedure for creating and configuring the root storage 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
+<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
 
 </Admonition>
 
@@ -121,7 +121,7 @@ The steps to create the storage service account are as follows:
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        You should replace `YOUR_BUCKET_NAME` with the name of the bucket created in the previous step.
+        <p>You should replace <code>YOUR_BUCKET_NAME</code> with the name of the bucket created in the previous step.</p>
 
         </Admonition>
 
@@ -139,7 +139,7 @@ The steps to create the storage service account are as follows:
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        **Condition builder** and **Condition editor** are equivalent ways to set conditions. In either case, you should replace `YOUR_BUCKET_NAME` with the name of the bucket created in the previous step.
+        <p><strong>Condition builder</strong> and <strong>Condition editor</strong> are equivalent ways to set conditions. In either case, you should replace <code>YOUR_BUCKET_NAME</code> with the name of the bucket created in the previous step.</p>
 
         </Admonition>
 

@@ -36,7 +36,7 @@ After your global cluster is running, connect to it using an endpoint and an aut
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 
@@ -85,7 +85,7 @@ The following table compares the two connection endpoints.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-It is recommended to use the global endpoint for production workloads. It eliminates the need to handle endpoint changes in your application code during switchover or failover.
+<p>It is recommended to use the global endpoint for production workloads. It eliminates the need to handle endpoint changes in your application code during switchover or failover.</p>
 
 </Admonition>
 
@@ -290,7 +290,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-When using public endpoints, only the primary cluster's public endpoint accepts write operations. Writing to a secondary cluster's public endpoint will fail.
+<p>When using public endpoints, only the primary cluster's public endpoint accepts write operations. Writing to a secondary cluster's public endpoint will fail.</p>
 
 </Admonition>
 

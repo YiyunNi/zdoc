@@ -35,7 +35,7 @@ This page explains the scaling behavior for global clusters and how to scale eac
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 

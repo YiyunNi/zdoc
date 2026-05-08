@@ -33,9 +33,8 @@ Currently, you can only [contact us](https://zilliz.com/contact-sales) to add fu
 
 <Admonition type="info" icon="📘" title="Note">
 
-The payment method priority is:  Credits > Advance Pay > Credit card /AWS marketplace subscription.
-
-This means if there are still remaining credits, and you have added funds and added a credit card or subscribed on AWS Marketplace, your credits will be deducted first to cover your usage fee. If the credits are not sufficient, we will deduct your Advance Pay funds. If the funds and credits are still not enough to cover the fee, we will resort to charging your credit card or AWS Marketplace account.
+<p>The payment method priority is:  Credits &gt; Advance Pay &gt; Credit card /AWS marketplace subscription.</p>
+<p>This means if there are still remaining credits, and you have added funds and added a credit card or subscribed on AWS Marketplace, your credits will be deducted first to cover your usage fee. If the credits are not sufficient, we will deduct your Advance Pay funds. If the funds and credits are still not enough to cover the fee, we will resort to charging your credit card or AWS Marketplace account.</p>
 
 </Admonition>
 

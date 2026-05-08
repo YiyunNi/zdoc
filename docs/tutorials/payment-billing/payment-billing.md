@@ -33,7 +33,7 @@ This guide details the available ways for you to subscribe to our services on Zi
 
 <Admonition type="info" icon="📘" title="Note">
 
-In order to manage payment and billing, you need to be an **Organization Owner**.
+<p>In order to manage payment and billing, you need to be an <strong>Organization Owner</strong>.</p>
 
 </Admonition>
 
@@ -74,7 +74,7 @@ Credits and Advance Pay can be combined with either a credit card or a Marketpla
 
 <Admonition type="info" icon="📘" title="Note">
 
-The Marketplace subscription is only a payment method and does not affect the cloud service provider when creating a cluster. For example, even after subscribing through AWS Marketplace, you can still [create](./create-cluster) clusters on GCP, Azure, or AWS.
+<p>The Marketplace subscription is only a payment method and does not affect the cloud service provider when creating a cluster. For example, even after subscribing through AWS Marketplace, you can still <a href="./create-cluster">create</a> clusters on GCP, Azure, or AWS.</p>
 
 </Admonition>
 

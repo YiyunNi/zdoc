@@ -35,9 +35,10 @@ This page explains how to deploy a Bring-Your-Own-Cloud (BYOC) data plane with a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
-
-- This guide demonstrates how to create the necessary resources on the AWS console step-by-step. If you prefer to use a Terraform script to provision the infrastructure,  see [Terraform Provider](./terraform-provider). 
+<ul>
+<li><p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud support</a>.</p></li>
+<li><p>This guide demonstrates how to create the necessary resources on the AWS console step-by-step. If you prefer to use a Terraform script to provision the infrastructure,  see <a href="./terraform-provider">Terraform Provider</a>. </p></li>
+</ul>
 
 </Admonition>
 

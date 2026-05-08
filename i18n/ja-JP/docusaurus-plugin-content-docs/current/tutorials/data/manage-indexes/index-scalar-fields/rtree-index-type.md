@@ -5,7 +5,7 @@ sidebar_key: rtree-index-type
 sidebar_label: "RTREE"
 beta: FALSE
 notebook: FALSE
-description: "`RTREE` インデックスは、Zilliz Cloud において `GEOMETRY` フィールドに対するクエリを高速化するツリーベースのデータ構造です。コレクションに Well-known text (WKT) 形式のポイント、ライン、ポリゴンなどの幾何オブジェクトが格納されており、空間フィルタリングを高速化したい場合、`RTREE` が最適な選択肢となります。 | Cloud"
+description: "`RTREE` インデックスは、Zilliz Cloud の `GEOMETRY` フィールドに対するクエリを高速化するツリー構造のデータ構造です。コレクションにポイント、ライン、ポリゴンなどの幾何オブジェクトを Well-known text (WKT) 形式で格納しており、空間フィルタリングを高速化したい場合、`RTREE` は最適な選択です。"
 type: origin
 token: RlY2wylVQiZswikT0G2cBHVznTf
 sidebar_position: 4
@@ -24,35 +24,35 @@ import Admonition from '@theme/Admonition';
 
 # RTREE
 
-`RTREE` インデックスは、Zilliz Cloud において `GEOMETRY` フィールドに対するクエリの高速化を実現するツリーベースのデータ構造です。コレクションに [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 形式のポイント、ライン、ポリゴンなどの幾何オブジェクトが格納されており、空間フィルタリングを高速化したい場合、`RTREE` は理想的な選択肢です。
+`RTREE` インデックスは、Zilliz Cloud で `GEOMETRY` フィールドのクエリを高速化するツリーベースのデータ構造です。コレクションに [Well-known text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 形式で点、線、ポリゴンなどの幾何オブジェクトが格納されており、空間フィルタリングを高速化したい場合、`RTREE` は理想的な選択です。
 
 ## 仕組み\{#how-it-works}
 
-Zilliz Cloud では、`RTREE` インデックスを使用して幾何データを効率的に整理およびフィルタリングします。このプロセスは以下の 2 つの段階で構成されます。
+Zilliz Cloud は `RTREE` インデックスを使用して、幾何データを効率的に整理およびフィルタリングします。これは2段階のプロセスに従います：
 
 ### フェーズ 1: インデックスの構築\{#phase-1-build-the-index}
 
-1. **リーフノードの作成:** 各幾何オブジェクトについて、そのオブジェクトを完全に包含する最小の矩形である [Minimum Bounding Rectangle](https://en.wikipedia.org/wiki/Minimum_bounding_rectangle) (MBR) を計算し、それをリーフノードとして保存します。
+1. **リーフノードの作成:** 各幾何オブジェクトについて、[Minimum Bounding Rectangle](https://en.wikipedia.org/wiki/Minimum_bounding_rectangle)（MBR、オブジェクトを完全に含む最小の矩形）を計算し、リーフノードとして格納します。
 
-1. **より大きなボックスへのグループ化:** 近接するリーフノードをクラスタリングし、各グループを新しい MBR で囲んで内部ノードを形成します。例えば、グループ **B** には **D** と **E** が含まれ、グループ **C** には **F** と **G** が含まれます。
+1. **より大きなボックスへのグループ化:** 近くのリーフノードをクラスタリングし、各グループを新しい MBR で囲んで内部ノードを形成します。例えば、グループ **B** は **D** と **E** を含み、グループ **C** は **F** と **G** を含みます。
 
-1. **ルートノードの追加:** すべての内部グループをカバーする MBR を持つルートノードを追加し、高さ平衡の木構造を作成します。
+1. **ルートノードの追加:** すべての内部グループをカバーする MBR を持つルートノードを追加し、高さが平衡なツリー構造を形成します。
 
 ![Asy8w0umqh9jJ1biNUHcialonfd](https://zdoc-images.s3.us-west-2.amazonaws.com/Asy8w0umqh9jJ1biNUHcialonfd.png)
 
 ### フェーズ 2: クエリの高速化\{#phase-2-accelerate-queries}
 
-1. **クエリ MBR の作成:** クエリ幾何オブジェクトの MBR を計算します。
+1. **クエリ MBR の形成:** クエリの幾何オブジェクトの MBR を計算します。
 
-1. **ブランチの剪定:** ルートから開始し、クエリ MBR と各内部ノードを比較します。クエリ MBR と交差しない MBR を持つブランチはスキップします。
+1. **ブランチの剪定:** ルートから開始し、クエリ MBR を各内部ノードと比較します。クエリ MBR と交差しない MBR を持つブランチはスキップします。
 
-1. **候補の収集:** 交差するブランチ descend して、候補となるリーフノードを集めます。
+1. **候補の収集:** 交差するブランチを降りて、候補となるリーフノードを収集します。
 
-1. **完全一致:** 各候補に対して、正確な空間述語を実行して真の一致を判定します。
+1. **完全一致:** 各候補に対して、厳密な空間述語を実行して真の一致を判定します。
 
 ## RTREE インデックスの作成\{#create-an-rtree-index}
 
-コレクションスキーマで定義された `GEOMETRY` フィールドに対して `RTREE` インデックスを作成できます。
+コレクションスキーマで定義された `GEOMETRY` フィールドに `RTREE` インデックスを作成できます。
 
 ```python
 from pymilvus import MilvusClient
@@ -81,15 +81,15 @@ client.create_index(
 )
 ```
 
-## Query with RTREE\{#query-with-rtree}
+## RTREE を使用したクエリ\{#query-with-rtree}
 
-`filter` 式でジオメトリ演算子を使用してフィルタリングできます。対象の `GEOMETRY` フィールドに `RTREE` が存在する場合、Zilliz Cloud はそれを自動的に使用して候補を絞り込みます。インデックスがない場合、フィルタはフルスキャンにフォールバックします。
+`filter` 式でジオメトリ演算子を使用してフィルタリングします。対象の `GEOMETRY` フィールドに `RTREE` が存在する場合、Zilliz Cloud は自動的にこれを使用して候補を剪定します。インデックスがない場合、フィルタはフルスキャンにフォールバックします。
 
-利用可能なジオメトリ固有の演算子の完全なリストについては、[ジオメトリ Operators](./geometry-operators) を参照してください。
+使用可能なジオメトリ固有の演算子の完全なリストについては、[ジオメトリ演算子](./geometry-operators) を参照してください。
 
-### Example 1: Filter only\{#example-1-filter-only}
+### 例 1: フィルタのみ\{#example-1-filter-only}
 
-指定されたポリゴン内のすべてのジオメトリオブジェクトを検索します：
+指定されたポリゴン内にあるすべてのジオメトリオブジェクトを検索します:
 
 ```python
 filter_expr = "ST_CONTAINS(geo, 'POLYGON ((0 0, 10 0, 10 10, 0 10, 0 0))')"
@@ -122,7 +122,7 @@ hits = client.search(
 print(hits)  # Expected: top-k by vector similarity among rows whose geo intersects the line
 ```
 
-`GEOMETRY` フィールドの使用方法の詳細については、[ジオメトリフィールド](./use-geometry-field) を参照してください。
+`GEOMETRY` フィールドの使用方法の詳細については、[ジオメトリ フィールド](./use-geometry-field) を参照してください。
 
 ## インデックスの削除\{#drop-an-index}
 
@@ -130,7 +130,7 @@ print(hits)  # Expected: top-k by vector similarity among rows whose geo interse
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><strong>Milvus v2.6.x</strong> と互換性のあるクラスターでは、不要になったスカラーインデックスを、コレクションを最初にリリースすることなく直接削除できます。</p>
+**Milvus v2.6.x** 互換のクラスタでは、不要になったスカラーインデックスを直接削除できます。事前にコレクションをリリースする必要はありません。
 
 </Admonition>
 

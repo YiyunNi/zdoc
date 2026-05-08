@@ -498,7 +498,7 @@ You can switch from one database to another without disconnecting from Zilliz Cl
 
 <Admonition type="info" icon="📘" title="Notes">
 
-RESTful API does not support this operation.
+<p>RESTful API does not support this operation.</p>
 
 </Admonition>
 

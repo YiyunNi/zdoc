@@ -85,9 +85,10 @@ The table below summarizes the mapping between different field types and their c
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- For vector fields of the `SPARSE\_FLOAT\_VECTOR` type, use the `BM25` metric type only when performing full text search. For more information, refer to [Full Text Search](./full-text-search).
-
-- For vector fields of the `BINARY_VECTOR` type, the dimension value (`dim`) must be a multiple of 8. 
+<ul>
+<li><p>For vector fields of the <code>SPARSE\_FLOAT\_VECTOR</code> type, use the <code>BM25</code> metric type only when performing full text search. For more information, refer to <a href="./full-text-search">Full Text Search</a>.</p></li>
+<li><p>For vector fields of the <code>BINARY_VECTOR</code> type, the dimension value (<code>dim</code>) must be a multiple of 8. </p></li>
+</ul>
 
 </Admonition>
 
@@ -150,7 +151,7 @@ It's the most commonly used distance metric and is very useful when the data are
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud only calculates the value before applying the square root when Euclidean distance is chosen as the distance metric.
+<p>Zilliz Cloud only calculates the value before applying the square root when Euclidean distance is chosen as the distance metric.</p>
 
 </Admonition>
 
@@ -164,7 +165,7 @@ IP is more useful if you need to compare non-normalized data or when you care ab
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you use IP to calculate similarities between embeddings, you must normalize your embeddings. After normalization, the inner product equals cosine similarity.
+<p>If you use IP to calculate similarities between embeddings, you must normalize your embeddings. After normalization, the inner product equals cosine similarity.</p>
 
 </Admonition>
 

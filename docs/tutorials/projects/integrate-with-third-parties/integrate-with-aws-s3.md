@@ -96,9 +96,10 @@ Zilliz Cloud allows you to integrate with Amazon Simple Storage Service (Amazon 
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - The AWS region to create a bucket should be consistent with the region where your Zilliz Cloud cluster or external volume resides. For Zilliz Cloud-supported regions, refer to [Cloud Providers & Regions](./cloud-providers-and-regions).
-
-    - For clusters running in different regions, create separate integrations for each region to ensure backup files or audit logs can be exported properly.
+    <ul>
+    <li><p>The AWS region to create a bucket should be consistent with the region where your Zilliz Cloud cluster or external volume resides. For Zilliz Cloud-supported regions, refer to <a href="./cloud-providers-and-regions">Cloud Providers & Regions</a>.</p></li>
+    <li><p>For clusters running in different regions, create separate integrations for each region to ensure backup files or audit logs can be exported properly.</p></li>
+    </ul>
 
     </Admonition>
 
@@ -204,9 +205,10 @@ For simplicity, create a policy using the JSON editor.
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - `<bucket>` should be replaced with the actual name of your S3 bucket.
-
-    - `<region>`, `<account_id>`, and `<key_id>` should be replaced with their actual values. For details, refer to [Key identifiers](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id) in AWS docs.
+    <ul>
+    <li><p><code>&lt;bucket&gt;</code> should be replaced with the actual name of your S3 bucket.</p></li>
+    <li><p><code>&lt;region&gt;</code>, <code>&lt;account_id&gt;</code>, and <code>&lt;key_id&gt;</code> should be replaced with their actual values. For details, refer to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers</a> in AWS docs.</p></li>
+    </ul>
 
     </Admonition>
 
@@ -266,7 +268,7 @@ Once that's done, do the following to create an IAM role:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    `965570967084` and `my-external-id` should be replaced with the actual AWS account ID and external ID shown in the **Create IAM Role** step on the Zilliz Cloud console.
+    <p><code>965570967084</code> and <code>my-external-id</code> should be replaced with the actual AWS account ID and external ID shown in the <strong>Create IAM Role</strong> step on the Zilliz Cloud console.</p>
 
     </Admonition>
 

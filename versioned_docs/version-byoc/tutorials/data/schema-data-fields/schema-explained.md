@@ -192,7 +192,7 @@ You can also set the `autoId` properties to `True` to make Zilliz Cloud automati
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You are advised to rely on `autoId` in all cases unless manually setting primary keys is beneficial.
+<p>You are advised to rely on <code>autoId</code> in all cases unless manually setting primary keys is beneficial.</p>
 
 </Admonition>
 

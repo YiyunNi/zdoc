@@ -42,7 +42,7 @@ The content on this page applies to serving clusters only.  On-demand clusters s
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters.
+<p>This feature is available only to <strong>Dedicated</strong> clusters.</p>
 
 </Admonition>
 
@@ -106,7 +106,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in an **Enterprise** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
 
 </Admonition>
 
@@ -155,9 +155,10 @@ When setting up dynamic scaling, you can configure the following bounds:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Selecting a maximum query CU below the current value triggers an immediate scale-down.
-
-- Selecting a minimum query CU above the current value triggers an immediate scale-up.
+<ul>
+<li><p>Selecting a maximum query CU below the current value triggers an immediate scale-down.</p></li>
+<li><p>Selecting a minimum query CU above the current value triggers an immediate scale-up.</p></li>
+</ul>
 
 </Admonition>
 

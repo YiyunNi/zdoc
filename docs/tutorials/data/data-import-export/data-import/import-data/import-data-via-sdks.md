@@ -322,7 +322,7 @@ public static void main(String[] args) throws Exception {
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.
+<p>For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.</p>
 
 </Admonition>
 

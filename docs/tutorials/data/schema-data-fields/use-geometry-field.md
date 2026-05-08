@@ -40,7 +40,7 @@ Use a GEOMETRY field when you need to combine vector similarity with spatial con
 
 <Admonition type="info" icon="📘" title="Notes">
 
-To use the GEOMETRY field, upgrade your SDK to the latest version.
+<p>To use the GEOMETRY field, upgrade your SDK to the latest version.</p>
 
 </Admonition>
 
@@ -229,7 +229,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In this example, the `GEOMETRY` field defined in the collection schema allows null values with `nullable=True`. For details, refer to [Nullable & Default](./nullable-fields).
+<p>In this example, the <code>GEOMETRY</code> field defined in the collection schema allows null values with <code>nullable=True</code>. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 

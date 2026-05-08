@@ -35,7 +35,7 @@ This guide explains how to view, pay, and download invoices, as well as how to i
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you subscribe on Marketplace, you will receive invoices for your Zilliz Cloud usage through the Marketplace. 
+<p>If you subscribe on Marketplace, you will receive invoices for your Zilliz Cloud usage through the Marketplace. </p>
 
 </Admonition>
 
@@ -118,7 +118,7 @@ Zilliz Cloud offers three cluster types: Free, Serverless, and Dedicated. Charge
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    For Dedicated cluster cost, runtime is defined as the period during which the cluster status is "**Running**", "**Modifying**", "**Frozen**", etc. Cluster under the following four statuses is not charged: "**Creating**", "**Suspending**", "**Resuming**", or "**Suspended**." 
+    <p>For Dedicated cluster cost, runtime is defined as the period during which the cluster status is "<strong>Running</strong>", "<strong>Modifying</strong>", "<strong>Frozen</strong>", etc. Cluster under the following four statuses is not charged: "<strong>Creating</strong>", "<strong>Suspending</strong>", "<strong>Resuming</strong>", or "<strong>Suspended</strong>." </p>
 
     </Admonition>
 
@@ -132,7 +132,7 @@ Additional charges include:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    For storage cost, runtime is defined as the period during which the cluster status is "**Running**", "**Modifying**", "**Frozen**", etc. Cluster under the following status is not charged: "**Creating**".
+    <p>For storage cost, runtime is defined as the period during which the cluster status is "<strong>Running</strong>", "<strong>Modifying</strong>", "<strong>Frozen</strong>", etc. Cluster under the following status is not charged: "<strong>Creating</strong>".</p>
 
     </Admonition>
 
@@ -172,7 +172,7 @@ If you are an Organization Owner or a Billing Admin, you can view, pay, and down
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The List Invoices RESTful API is currently in public preview. To use this API, please [contact us](http://support.zilliz.com).
+<p>The List Invoices RESTful API is currently in public preview. To use this API, please <a href="http://support.zilliz.com">contact us</a>.</p>
 
 </Admonition>
 
@@ -216,7 +216,7 @@ curl --request GET \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In the results returned by the API, all amounts are in cents.
+<p>In the results returned by the API, all amounts are in cents.</p>
 
 </Admonition>
 
@@ -248,7 +248,7 @@ In the results returned by the API, all amounts are in cents.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The Describe Invoice RESTful API is currently in public preview. To use this API, please [contact us](http://support.zilliz.com).
+<p>The Describe Invoice RESTful API is currently in public preview. To use this API, please <a href="http://support.zilliz.com">contact us</a>.</p>
 
 </Admonition>
 
@@ -291,7 +291,7 @@ In the command above,
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In the results returned by the API, all amounts are in cents.
+<p>In the results returned by the API, all amounts are in cents.</p>
 
 </Admonition>
 

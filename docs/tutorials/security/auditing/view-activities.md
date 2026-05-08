@@ -44,7 +44,7 @@ To enhance your control and ease in navigating through the platform audit logs, 
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    Ensure that the time span between your chosen start date and end date does not exceed 30 days.
+    <p>Ensure that the time span between your chosen start date and end date does not exceed 30 days.</p>
 
     </Admonition>
 

@@ -37,7 +37,7 @@ This guide demonstrates the procedure for setting up a private link from a Zilli
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters.
+<p>This feature is available only to <strong>Dedicated</strong> clusters.</p>
 
 </Admonition>
 
@@ -45,7 +45,7 @@ A private link is set up at the project level and is effective for all clusters 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud does not charge you for private links. However, your cloud provider may [charge you for each endpoint](https://azure.microsoft.com/en-us/pricing/details/private-link/) that you create to access Zilliz Cloud.
+<p>Zilliz Cloud does not charge you for private links. However, your cloud provider may <a href="https://azure.microsoft.com/en-us/pricing/details/private-link/">charge you for each endpoint</a> that you create to access Zilliz Cloud.</p>
 
 </Admonition>
 
@@ -219,9 +219,10 @@ To disable public endpoints:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Private endpoints only impact [data plane](/reference/restful/data-plane-v2) access. [Control plane](/reference/restful/control-plane-v2) can still be accessed over the public internet.
-
-- After you re-enable the public endpoint, you may need to wait until the local DNS cache to expire before you can access the public endpoint.
+<ul>
+<li><p>Private endpoints only impact <a href="/reference/restful/data-plane-v2">data plane</a> access. <a href="/reference/restful/control-plane-v2">Control plane</a> can still be accessed over the public internet.</p></li>
+<li><p>After you re-enable the public endpoint, you may need to wait until the local DNS cache to expire before you can access the public endpoint.</p></li>
+</ul>
 
 </Admonition>
 

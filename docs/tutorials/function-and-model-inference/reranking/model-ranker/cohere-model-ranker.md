@@ -169,7 +169,7 @@ cohere_ranker = Function(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The number of strings in `queries` must match the number of queries issued in the search request.
+<p>The number of strings in <code>queries</code> must match the number of queries issued in the search request.</p>
 
 </Admonition>
 

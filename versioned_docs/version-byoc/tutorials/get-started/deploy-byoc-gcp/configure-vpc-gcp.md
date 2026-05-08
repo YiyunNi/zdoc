@@ -39,7 +39,7 @@ This page enumerates the minimum requirements for hosting a Zilliz Cloud BYOC pr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
+<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
 
 </Admonition>
 
@@ -82,7 +82,7 @@ Zilliz Cloud recommends using the **/18** netmask in IPv4 CIDR settings for the 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud currently supports only IPv4 CIDR blocks.
+<p>Zilliz Cloud currently supports only IPv4 CIDR blocks.</p>
 
 </Admonition>
 

@@ -33,7 +33,7 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in an **Enterprise** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
 
 </Admonition>
 
@@ -112,7 +112,7 @@ This feature is available only to **Dedicated** clusters in an **Enterprise** pr
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        Only clusters of the **Dedicated-Enterprise** plan tier can be selected.
+        <p>Only clusters of the <strong>Dedicated-Enterprise</strong> plan tier can be selected.</p>
 
         </Admonition>
 

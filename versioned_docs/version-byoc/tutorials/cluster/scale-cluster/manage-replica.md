@@ -46,7 +46,7 @@ You can configure replicas for an existing Dedicated cluster as long as the foll
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-Updating the replica configurations may lead to slight service jitter. Please exercise caution.
+<p>Updating the replica configurations may lead to slight service jitter. Please exercise caution.</p>
 
 </Admonition>
 
@@ -60,13 +60,12 @@ The following demo shows how to configure replicas on the Zilliz Cloud web conso
 
 <Admonition type="info" icon="📘" title="Notes">
 
-When clicking **Save** in the **Scale Cluster Replicas** dialog box, you will be prompted to check the resource quota for your project. If the resources are sufficient, the dialog box will disappear after the check is complete, otherwise, you can 
-
-- Click **Go To Project Resource Settings** to edit resource settings for the project, or
-
-- Click **Back to Last Step** to change your cluster settings.
-
-During the process, some additional resources will be required for rolling; these resources will be released after use.
+<p>When clicking <strong>Save</strong> in the <strong>Scale Cluster Replicas</strong> dialog box, you will be prompted to check the resource quota for your project. If the resources are sufficient, the dialog box will disappear after the check is complete, otherwise, you can </p>
+<ul>
+<li><p>Click <strong>Go To Project Resource Settings</strong> to edit resource settings for the project, or</p></li>
+<li><p>Click <strong>Back to Last Step</strong> to change your cluster settings.</p></li>
+</ul>
+<p>During the process, some additional resources will be required for rolling; these resources will be released after use.</p>
 
 </Admonition>
 
@@ -135,9 +134,10 @@ When setting up dynamic scaling, you can configure the following bounds:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Selecting a maximum replica below the current value triggers an immediate scale-in.
-
-- Selecting a minimum replica above the current value triggers an immediate scale-out.
+<ul>
+<li><p>Selecting a maximum replica below the current value triggers an immediate scale-in.</p></li>
+<li><p>Selecting a minimum replica above the current value triggers an immediate scale-out.</p></li>
+</ul>
 
 </Admonition>
 

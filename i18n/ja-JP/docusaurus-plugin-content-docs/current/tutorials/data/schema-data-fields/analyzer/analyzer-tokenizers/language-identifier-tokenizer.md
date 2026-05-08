@@ -5,7 +5,7 @@ sidebar_key: language-identifier-tokenizer
 sidebar_label: "言語識別子"
 beta: FALSE
 notebook: FALSE
-description: "`languageidentifier` は、言語分析プロセスを自動化することで Zilliz Cloud のテキスト検索機能を強化するように設計された専用トークナイザーです。その主な機能は、テキストフィールドの言語を検出し、その言語に最も適した事前設定済みアナライザーを動的に適用することです。これは多様な言語を扱うアプリケーションにおいて特に価値があり、入力ごとに手動で言語を割り当てる必要がなくなります。 | Cloud"
+description: "`languageidentifier` は、言語分析プロセスを自動化することで Zilliz Cloud のテキスト検索機能を強化するための専用トークナイザーです。その主な機能は、テキストフィールドの言語を検出し、その言語に最も適した事前設定されたアナライザーを動的に適用することです。これは、複数の言語を扱うアプリケーションに特に有用で、入力ごとに手動で言語を割り当てる必要がなくなります。"
 type: origin
 token: X6wiwFkuFiF8nekse05cnBIPnic
 sidebar_position: 6
@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みトークナイザー
   - 言語識別子
 
@@ -24,39 +24,39 @@ keywords:
 import Admonition from '@theme/Admonition';
 
 
-# 言語識別子
+# 言語 Identifier
 
-`language_identifier` は、Zilliz Cloud のテキスト検索機能を強化するために設計された特殊なトークナイザーです。このトークナイザーは言語分析プロセスを自動化し、テキストフィールドの言語を検出し、その言語に最も適した事前設定済みアナライザーを動的に適用します。これは多言語を扱うアプリケーションにとって特に有用であり、入力ごとに手動で言語を指定する必要がなくなります。
+`language_identifier` は、言語分析プロセスを自動化することで Zilliz Cloud のテキスト検索機能を強化するために設計された専用トークナイザーです。その主な機能は、テキストフィールドの言語を検出し、その言語に最も適した事前設定されたアナライザーを動的に適用することです。これは、さまざまな言語を扱うアプリケーションにとって特に価値があり、入力ごとに手動で言語を割り当てる必要をなくします。
 
-テキストデータを適切な処理パイプラインにスマートにルーティングすることで、`language_identifier` は多言語データの取り込みを合理化し、後続の検索および取得操作のために正確なトークン化を保証します。
+テキストデータを適切な処理パイプラインにインテリジェントにルーティングすることで、`language_identifier` は多言語データの取り込みを効率化し、後続の検索および取得操作のための正確なトークン化を保証します。
 
-## 言語検出ワークフロー\{#language-detection-workflow}
+## 言語 detection workflow\{#language-detection-workflow}
 
-`language_identifier` はテキスト文字列を処理するために一連のステップを実行します。このワークフローを理解することは、ユーザーがこれを正しく設定するために重要です。
+`language_identifier` はテキスト文字列を処理するために一連のステップを実行します。このワークフローは、ユーザーが正しく設定する方法を理解するために重要です。
 
 ![NZcFw5PuxhQcl1bUG60cS54QnMu](https://zdoc-images.s3.us-west-2.amazonaws.com/NZcFw5PuxhQcl1bUG60cS54QnMu.png)
 
-1. **入力:** ワークフローはテキスト文字列を入力として開始します。
+1. **Input:** ワークフローはテキスト文字列を入力として開始します。
 
-1. **言語検出:** この文字列はまず言語検出エンジンに渡され、言語を識別しようとします。Zilliz Cloud は **whatlang** と **lingua** の2つのエンジンをサポートしています。
+1. **言語 detection:** この文字列はまず言語検出エンジンに渡され、言語の識別を試みます。Zilliz Cloud は **whatlang** と **lingua** の2つのエンジンをサポートしています。
 
-1. **アナライザー選択:**
+1. **Analyzer selection:**
 
-    - **成功:** 言語が正常に検出された場合、システムは検出された言語名が `analyzers` 辞書内に設定されたアナライザーと一致するかどうかを確認します。一致するアナライザーが見つかった場合、そのアナライザーが入力テキストに適用されます。たとえば、「Mandarin」と検出されたテキストは `jieba` トークナイザーにルーティングされます。
+    - **Success:** 言語が正常に検出された場合、システムは検出された言語名に対応するアナライザーが `analyzers` 辞書に設定されているかどうかを確認します。一致が見つかった場合、システムは指定されたアナライザーを入力テキストに適用します。例えば、検出された「Mandarin」のテキストは `jieba` トークナイザーにルーティングされます。
 
-    - **フォールバック:** 検出に失敗した場合、または言語が正常に検出されたものの該当するアナライザーが設定されていない場合、システムは事前設定された **デフォルトアナライザー** を使用します。重要な点として、この `default` アナライザーは検出失敗時と一致するアナライザーが存在しない場合の両方でフォールバックとして機能します。
+    - **Fallback:** 検出が失敗した場合、または言語は正常に検出されたが特定のアナライザーが提供されていない場合、システムは事前設定された **デフォルトアナライザー** にフォールバックします。これは重要な説明点です。`default` アナライザーは、検出失敗と一致するアナライザーの不在の両方に対するフォールバックです。
 
-適切なアナライザーが選択された後、テキストはトークン化および処理され、ワークフローが完了します。
+適切なアナライザーが選択された後、テキストはトークン化され処理され、ワークフローが完了します。
 
-## 利用可能な言語検出エンジン\{#available-language-detection-engines}
+## Available language detection engines\{#available-language-detection-engines}
 
-Zilliz Cloud では、以下の2つの言語検出エンジンから選択できます:
+Zilliz Cloud は2つの言語検出エンジンから選択できます：
 
 - [whatlang](https://github.com/greyblake/whatlang-rs)
 
 - [lingua](https://github.com/pemistahl/lingua)
 
-選択は、アプリケーションの特定のパフォーマンスおよび精度要件によって異なります。
+選択は、アプリケーションの特定のパフォーマンスと精度の要件に依存します。
 
 <table>
    <tr>
@@ -82,17 +82,17 @@ Zilliz Cloud では、以下の2つの言語検出エンジンから選択でき
    </tr>
 </table>
 
-重要な考慮事項として、エンジンの命名規則があります。両エンジンとも英語で言語名を返しますが、一部の言語に対して異なる用語を使用します（例: `whatlang` は `Mandarin` を返し、`lingua` は `Chinese` を返します）。アナライザーのキーは、選択した検出エンジンが返す名前と完全に一致している必要があります。
+重要な考慮事項はエンジンの命名規則です。両方のエンジンが英語で言語名を返しますが、一部の言語に対して異なる用語を使用します（例：`whatlang` は `Mandarin` を返しますが、`lingua` は `Chinese` を返します）。アナライザーのキーは、選択した検出エンジンが返す名前と完全に一致する必要があります。
 
 ## 設定\{#configuration}
 
-`language_identifier` トークナイザーを正しく使用するには、以下の手順に従って設定を定義および適用する必要があります。
+`language_identifier` トークナイザーを正しく使用するには、以下のステップに従ってその設定を定義および適用する必要があります。
 
-### ステップ 1: 言語とアナライザーを選択する\{#step-1-choose-your-languages-and-analyzers}
+### Step 1: Choose your languages and analyzers\{#step-1-choose-your-languages-and-analyzers}
 
-`language_identifier` を設定する際の核となるのは、サポートする特定の言語に合わせてアナライザーを調整することです。このシステムは検出された言語を正しいアナライザーとマッチングさせることで動作するため、このステップは正確なテキスト処理にとって不可欠です。
+`language_identifier` の設定の核心は、サポートする予定の特定の言語にアナライザーを調整することです。システムは検出された言語と正しいアナライザーを一致させて動作するため、このステップは正確なテキスト処理にとって重要です。
 
-以下は、言語と適切な Zilliz Cloud アナライザーとの推奨マッピングです。この表は言語検出エンジンの出力と最適なツールを結びつける役割を果たします。
+以下は、言語に適した Zilliz Cloud アナライザーへの推奨マッピングです。このテーブルは、言語検出エンジンの出力と最適なツールの間の架け橋として機能します。
 
 <table>
    <tr>
@@ -124,45 +124,45 @@ Zilliz Cloud では、以下の2つの言語検出エンジンから選択でき
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p><strong>Matching is キー:</strong> The name of your analyzer <strong>must exactly match</strong> the language output of the detection engine. For instance, if you're using <code>whatlang</code>, the key for Chinese text must be <code>Mandarin</code>.</p></li>
-<li><p><strong>Best practices:</strong> The table above provides recommended configurations for a few common languages, but it is not an exhaustive list. For a more comprehensive guide on choosing analyzers, refer to <a href="./choose-the-right-analyzer-for-your-use-case">Choose the Right Analyzer for Your Use Case</a>.</p></li>
-<li><p><strong>Detector output</strong>: For a complete list of language names returned by the detection engines, refer to <a href="https://github.com/greyblake/whatlang-rs">Whatlang supported languages table</a> and the <a href="https://github.com/pemistahl/lingua-rs">Lingua supported languages list</a>.</p></li>
-</ul>
+- **Matching is キー:** アナライザーの名前は、検出エンジンの言語出力と**完全に一致する必要があります**。例えば、`whatlang` を使用している場合、中国語テキストのキーは `Mandarin` である必要があります。
+
+- **Best practices:** 上記のテーブルは、いくつかの一般的な言語に対する推奨設定を提供しますが、網羅的なリストではありません。アナライザーの選択に関するより包括的なガイドについては、[Choose the Right Analyzer for Your Use Case](./choose-the-right-analyzer-for-your-use-case) を参照してください。
+
+- **Detector output**: 検出エンジンが返す言語名の完全なリストについては、[Whatlang supported languages table](https://github.com/greyblake/whatlang-rs) および [Lingua supported languages list](https://github.com/pemistahl/lingua-rs) を参照してください。
 
 </Admonition>
 
-### ステップ 2: analyzer_params を定義する\{#step-2-define-analyzerparams}
+### Step 2: Define analyzer_params\{#step-2-define-analyzerparams}
 
-Zilliz Cloud で `language_identifier` トークナイザーを使用するには、以下の主要コンポーネントを含む辞書を作成します:
+Zilliz Cloud で `language_identifier` トークナイザーを使用するには、以下の主要コンポーネントを含む辞書を作成します：
 
-**必須コンポーネント:**
+**Required components:**
 
-- `analyzers` 設定セット – すべてのアナライザー設定を含む辞書で、以下を含む必要があります:
+- `analyzers` config set – すべてのアナライザー設定を含む辞書で、以下を含む必要があります：
 
-    - `default` – 言語検出が失敗した場合や一致するアナライザーが見つからない場合に使用されるフォールバックアナライザー
+    - `default` – 言語検出が失敗した場合、または一致するアナライザーが見つからない場合に使用されるフォールバック アナライザー
 
-    - **言語固有のアナライザー** – `<analyzer_name>: <analyzer_config>` の形式で定義され、以下を含みます:
+    - **言語固有のアナライザー** – それぞれ `<analyzer_name>: <analyzer_config>` として定義され、ここで：
 
-        - `analyzer_name` は選択した検出エンジンの出力と一致するもの（例: `"English"`, `"Japanese"`）
+        - `analyzer_name` は選択した検出エンジンの出力と一致します（例：`"English"`、`"Japanese"`）
 
-        - `analyzer_config` は標準的なアナライザーのパラメータ形式に従うもの（[Analyzer Overview](./analyzer-overview#analyzer-types) を参照）
+        - `analyzer_config` は標準のアナライザー パラメーター形式に従います（[Analyzer Overview](./analyzer-overview#analyzer-types) を参照）
 
-**オプションコンポーネント:**
+**Optional components:**
 
-- `identifier` – 使用する言語検出エンジンを指定（`whatlang` または `lingua`）。指定しない場合はデフォルトで `whatlang` が使用されます
+- `identifier` – 使用する言語検出エンジンを指定します（`whatlang` または `lingua`）。指定されていない場合、デフォルトは `whatlang` です
 
-- `mapping` – アナライザーのカスタムエイリアスを作成し、検出エンジンの正確な出力形式の代わりにわかりやすい名前を使用できるようにします
+- `mapping` – アナライザーのカスタムエイリアスを作成し、検出エンジンの正確な出力形式の代わりに説明的な名前を使用できるようにします
 
-このトークナイザーは、まず入力テキストの言語を検出し、次に設定から適切なアナライザーを選択します。検出に失敗した場合や一致するアナライザーが存在しない場合は、自動的に `default` アナライザーにフォールバックします。
+トークナイザーは、まず入力テキストの言語を検出し、次に設定から適切なアナライザーを選択して動作します。検出が失敗した場合、または一致するアナライザーが存在しない場合、自動的に `default` アナライザーにフォールバックします。
 
-#### 推奨: 直接的な名前マッチング\{#recommended-direct-name-matching}
+#### Recommended: Direct name matching\{#recommended-direct-name-matching}
 
-アナライザー名は、選択した言語検出エンジンの出力と完全に一致させるべきです。このアプローチはシンプルで、混乱を避けることができます。
+アナライザー名は、選択した言語検出エンジンの出力と完全に一致する必要があります。このアプローチはよりシンプルで、潜在的な混乱を回避できます。
 
-`whatlang` および `lingua` の両方について、それぞれのドキュメントに記載されている言語名を使用してください:
+`whatlang` と `lingua` の両方について、それぞれのドキュメントに示されている言語名を使用します：
 
-- [whatlang supported languages](https://github.com/greyblake/whatlang-rs/blob/master/SUPPORTED_LANGUAGES.md) （「**言語**」列を使用）
+- [whatlang supported languages](https://github.com/greyblake/whatlang-rs/blob/master/SUPPORTED_LANGUAGES.md)（「**言語**」列を使用）
 
 - [lingua supported languages](https://github.com/pemistahl/lingua?tab=readme-ov-file#3-which-languages-are-supported)
 
@@ -214,13 +214,13 @@ analyzer_params = {
 }
 ```
 
-`analyzer_params` を定義した後、コレクションスキーマを定義する際にそれを `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールド内のテキストを処理し、効率的なトークン化とフィルタリングを実現します。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマの定義時に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定したアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークン化とフィルタリングを行います。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
 ## 例\{#examples}
 
-以下は一般的なシナリオ向けのすぐに使える設定例です。各例には設定と検証コードの両方が含まれており、すぐにセットアップをテストできます。
+一般的なシナリオ向けのすぐに使える設定をいくつか紹介します。各例には設定と検証コードの両方が含まれているため、すぐにセットアップをテストできます。
 
-### 英語および中国語の検出\{#english-and-chinese-detection}
+### 英語と中国語の検出\{#english-and-chinese-detection}
 
 ```python
 from pymilvus import MilvusClient

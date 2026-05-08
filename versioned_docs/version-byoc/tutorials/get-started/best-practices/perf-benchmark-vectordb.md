@@ -158,7 +158,7 @@ Optionally, you can set up the **DB Filter** and **Case Filter** in the left nav
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The databases are named in the format of [database_name]-[db_label]. 
+<p>The databases are named in the format of [database<em>name]-[db</em>label]. </p>
 
 </Admonition>
 

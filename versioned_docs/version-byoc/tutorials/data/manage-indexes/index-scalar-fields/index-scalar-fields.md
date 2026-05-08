@@ -80,9 +80,8 @@ Zilliz Cloud supports `AUTOINDEX` for the following field types:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Cardinality (C in the above table) shows the number of unique values in a field across a whole collection. For example, the cardinality of a float field is the number of distinct float values in that field.
-
-For an array field, the cardinality is the number of **distinct element values** across all arrays in the segment. For example:
+<p>Cardinality (C in the above table) shows the number of unique values in a field across a whole collection. For example, the cardinality of a float field is the number of distinct float values in that field.</p>
+<p>For an array field, the cardinality is the number of <strong>distinct element values</strong> across all arrays in the segment. For example:</p>
 
 ```plaintext
 [1, 2, 3]
@@ -90,7 +89,7 @@ For an array field, the cardinality is the number of **distinct element values**
 [1, 4, 5]
 ```
 
-The distinct element values are `{1, 2, 3, 4, 5}` → cardinality = **5**. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.
+<p>The distinct element values are <code>\{1, 2, 3, 4, 5\}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
 
 </Admonition>
 
@@ -534,7 +533,7 @@ Use the `drop_index()` method to remove an existing index from a collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In your cluster compatible with **Milvus v2.6.x**, you can drop a scalar index directly once it’s no longer needed—no need to release the collection first.
+<p>In your cluster compatible with <strong>Milvus v2.6.x</strong>, you can drop a scalar index directly once it’s no longer needed—no need to release the collection first.</p>
 
 </Admonition>
 

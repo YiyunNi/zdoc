@@ -260,7 +260,7 @@ The following table lists the limits on the capacity of each type of cluster pla
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The upper limits for dedicated cluster capacity depend on the CU type and size used. If your cluster's capacity is not enough, consider adjusting the CU type and size. For details, see [Scale Cluster](./scale-query-cu).
+<p>The upper limits for dedicated cluster capacity depend on the CU type and size used. If your cluster's capacity is not enough, consider adjusting the CU type and size. For details, see <a href="./scale-query-cu">Scale Cluster</a>.</p>
 
 </Admonition>
 
@@ -310,11 +310,11 @@ You can create a maximum of **1,024** collections or **4,096** partitions per CU
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For **Free** and **Serverless** clusters, the following limits apply instead:
-
-- A **Free** cluster allows a maximum of **5** collections, while
-
-- A **Serverless** cluster supports up to **100** collections.
+<p>For <strong>Free</strong> and <strong>Serverless</strong> clusters, the following limits apply instead:</p>
+<ul>
+<li><p>A <strong>Free</strong> cluster allows a maximum of <strong>5</strong> collections, while</p></li>
+<li><p>A <strong>Serverless</strong> cluster supports up to <strong>100</strong> collections.</p></li>
+</ul>
 
 </Admonition>
 
@@ -489,7 +489,7 @@ The rate limit for flush requests is 0.1 requests per second, imposed at the col
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You are not advised to perform flush operations manually. Zilliz Cloud clusters handle it gracefully for you.
+<p>You are not advised to perform flush operations manually. Zilliz Cloud clusters handle it gracefully for you.</p>
 
 </Admonition>
 
@@ -499,7 +499,7 @@ The rate limit for load requests is **20** req/s per cluster.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You do not need to perform the load collection for collections that are already loaded, even if new data is coming into these collections.
+<p>You do not need to perform the load collection for collections that are already loaded, even if new data is coming into these collections.</p>
 
 </Admonition>
 

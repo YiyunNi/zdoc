@@ -146,7 +146,7 @@ analyzerParams='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For simpler setup, you may choose to use the [`standard`](./standard-analyzer) [analyzer](./standard-analyzer), which combines the `standard` tokenizer with the [`lowercase`](./lowercase-filter)[ filter](./lowercase-filter).
+<p>For simpler setup, you may choose to use the <a href="./standard-analyzer"><code>standard</code></a> <a href="./standard-analyzer">analyzer</a>, which combines the <code>standard</code> tokenizer with the <a href="./lowercase-filter"><code>lowercase</code></a><a href="./lowercase-filter"> filter</a>.</p>
 
 </Admonition>
 

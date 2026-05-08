@@ -30,7 +30,7 @@ A Zilliz Cloud collection allows you to retrieve up to 16,384 entities in a sear
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available for Zilliz Cloud clusters that are compatible with Milvus v2.6.x. If you would like to try this feature, please [get in touch with us](https://support.zilliz.com/hc/en-us).
+<p>This feature is available for Zilliz Cloud clusters that are compatible with Milvus v2.6.x. If you would like to try this feature, please <a href="https://support.zilliz.com/hc/en-us">get in touch with us</a>.</p>
 
 </Admonition>
 

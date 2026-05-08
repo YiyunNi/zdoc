@@ -61,11 +61,11 @@ A `TIMESTAMPTZ` field is a schema-defined data type (`DataType.TIMESTAMPTZ`) in 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- You can set `nullable=True` for `TIMESTAMPTZ` fields to allow missing values.
-
-- You can specify a default timestamp value using the `default_value` attribute in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
-
-See [Nullable & Default](./nullable-fields) for details.
+<ul>
+<li><p>You can set <code>nullable=True</code> for <code>TIMESTAMPTZ</code> fields to allow missing values.</p></li>
+<li><p>You can specify a default timestamp value using the <code>default_value</code> attribute in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</p></li>
+</ul>
+<p>See <a href="./nullable-fields">Nullable & Default</a> for details.</p>
 
 </Admonition>
 
@@ -480,9 +480,8 @@ Use arithmetic operators like `==`, `!=`, `<`, `>`, `<=`, `>=`. For a full list 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Chained range expressions (for example, `lower_bound < tsz < upper_bound`) are not supported.
-
-Use logical conjunction instead: `tsz > lower_bound AND tsz < upper_bound`.
+<p>Chained range expressions (for example, <code>lower_bound &lt; tsz &lt; upper_bound</code>) are not supported.</p>
+<p>Use logical conjunction instead: <code>tsz &gt; lower_bound AND tsz &lt; upper_bound</code>.</p>
 
 </Admonition>
 
@@ -665,19 +664,17 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/quer
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`INTERVAL` values follow the [ISO 8601 duration syntax](https://www.w3.org/TR/xmlschema-2/#duration). For example:
-
-- `P1D` → 1 day
-
-- `PT3H` → 3 hours
-
-- `P2DT6H` → 2 days and 6 hours
-
-You can use `INTERVAL` arithmetic directly in filter expressions, such as:
-
-- `tsz + INTERVAL 'P3D'` → Adds 3 days
-
-- `tsz - INTERVAL 'PT2H'` → Subtracts 2 hours
+<p><code>INTERVAL</code> values follow the <a href="https://www.w3.org/TR/xmlschema-2/#duration">ISO 8601 duration syntax</a>. For example:</p>
+<ul>
+<li><p><code>P1D</code> → 1 day</p></li>
+<li><p><code>PT3H</code> → 3 hours</p></li>
+<li><p><code>P2DT6H</code> → 2 days and 6 hours</p></li>
+</ul>
+<p>You can use <code>INTERVAL</code> arithmetic directly in filter expressions, such as:</p>
+<ul>
+<li><p><code>tsz + INTERVAL 'P3D'</code> → Adds 3 days</p></li>
+<li><p><code>tsz - INTERVAL 'PT2H'</code> → Subtracts 2 hours</p></li>
+</ul>
 
 </Admonition>
 
@@ -769,7 +766,7 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/sear
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If your collection has two or more vector fields, you can perform hybrid search operations with timestamp filtering. For details, refer to [Multi-Vector Hybrid Search](./hybrid-search).
+<p>If your collection has two or more vector fields, you can perform hybrid search operations with timestamp filtering. For details, refer to <a href="./hybrid-search">Multi-Vector Hybrid Search</a>.</p>
 
 </Admonition>
 

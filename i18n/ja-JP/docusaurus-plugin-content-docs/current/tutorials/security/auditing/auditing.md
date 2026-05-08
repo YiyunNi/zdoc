@@ -5,7 +5,7 @@ sidebar_key: auditing
 sidebar_label: "監査ログ"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud クラスターの監査を設定する方法について学びます。| Cloud"
+description: "Zilliz Cloud クラスターの監査を構成する方法を学びます。 | Cloud"
 type: origin
 token: UfGkwPQIPiJi6OkEu47cH3Umnvb
 sidebar_position: 6
@@ -14,7 +14,7 @@ keywords:
   - ベクトルデータベース
   - cloud
   - 監査
-  - log
+  - ログ
 
 ---
 
@@ -23,11 +23,11 @@ import Admonition from '@theme/Admonition';
 
 # 監査ログ
 
-Zilliz Cloud クラスターの監査を設定する方法について学びます。
+Zilliz Cloud クラスターの監査を構成する方法について説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>BYOC デプロイメントでは、VDB 監査ログはデータプレーンのローカルオブジェクトストレージ（S3/Azure Blob Storage/GCS）で構成されたログバケットに直接書き込まれ、データがインフラストラクチャから外部に出ることはありません。監査ログを有効にして設定するには、<a href="https://support.zilliz.com/hc/en-us">お問い合わせください</a>。</p>
+BYOC デプロイメントでは、VDB 監査ログはデータプレーンのローカルオブジェクトストレージ（S3/Azure Blob Storage/GCS）に構成されたログバケットに直接書き込まれ、データがインフラストラクチャから流出しないようにしています。監査ログの有効化と構成については、[お問い合わせ](https://support.zilliz.com/hc/en-us) ください。
 
 </Admonition>
 

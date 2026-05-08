@@ -31,9 +31,8 @@ You can create a collection by defining its schema, index parameters, metric typ
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you need strong data isolation and manage only a small number of tenants, you can create a separate collection for each tenant.
-
-However, you can only create a maximum of 16,384 collections depending on your [project plan and cluster deployment option](./limits). Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see [Implement Multi-tenancy](./multi-tenancy).
+<p>If you need strong data isolation and manage only a small number of tenants, you can create a separate collection for each tenant.</p>
+<p>However, you can only create a maximum of 16,384 collections depending on your <a href="./limits">project plan and cluster deployment option</a>. Therefore, for large-scale multi-tenancy, consider using alternative strategies such as partition-based or partition-key-based multi-tenancy, depending on your use case. For details, see <a href="./multi-tenancy">Implement Multi-tenancy</a>.</p>
 
 </Admonition>
 
@@ -59,7 +58,7 @@ The following code snippets create a schema with the enabled dynamic field and t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You can set default values for any scalar field and make it nullable. For details, refer to  [Nullable & Default](./nullable-fields).
+<p>You can set default values for any scalar field and make it nullable. For details, refer to  <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 

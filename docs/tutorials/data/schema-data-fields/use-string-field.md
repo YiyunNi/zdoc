@@ -39,7 +39,7 @@ When you define a `VARCHAR` field, two parameters are mandatory:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud supports null values and default values for `VARCHAR` fields. To enable these features, set `nullable` to `True` and `default_value` to a string value. For details, refer to [Nullable & Default](./nullable-fields).
+<p>Zilliz Cloud supports null values and default values for <code>VARCHAR</code> fields. To enable these features, set <code>nullable</code> to <code>True</code> and <code>default_value</code> to a string value. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 
@@ -53,7 +53,7 @@ To store string data in Zilliz Cloud clusters, define a `VARCHAR` field in your 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you set `enable_dynamic_fields=True` when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to [Dynamic Field](./enable-dynamic-field).
+<p>If you set <code>enable_dynamic_fields=True</code> when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to <a href="./enable-dynamic-field">Dynamic Field</a>.</p>
 
 </Admonition>
 

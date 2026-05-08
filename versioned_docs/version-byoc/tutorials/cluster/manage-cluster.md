@@ -107,13 +107,12 @@ Navigate to the **Cluster Details** page of your target cluster and then follow 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-When clicking **Resume** in the **Resume Cluster** dialog box, you will be prompted to check the resource quota for your project. If the resources are sufficient, the dialog box will disappear after the check is complete, otherwise, you can 
-
-- Click **Go To Project Resource Settings** to edit resource settings for the project, or
-
-- Click **Back to Last Step** to change your cluster settings.
-
-During the process, some additional resources will be required for rolling; these resources will be released after use.
+<p>When clicking <strong>Resume</strong> in the <strong>Resume Cluster</strong> dialog box, you will be prompted to check the resource quota for your project. If the resources are sufficient, the dialog box will disappear after the check is complete, otherwise, you can </p>
+<ul>
+<li><p>Click <strong>Go To Project Resource Settings</strong> to edit resource settings for the project, or</p></li>
+<li><p>Click <strong>Back to Last Step</strong> to change your cluster settings.</p></li>
+</ul>
+<p>During the process, some additional resources will be required for rolling; these resources will be released after use.</p>
 
 </Admonition>
 

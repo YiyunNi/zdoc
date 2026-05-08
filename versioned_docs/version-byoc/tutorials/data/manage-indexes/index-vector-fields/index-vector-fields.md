@@ -253,7 +253,7 @@ In the provided code snippet, we have established indexes on the vector field wi
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Currently, you can create only one index file for each field in a collection.
+<p>Currently, you can create only one index file for each field in a collection.</p>
 
 </Admonition>
 
@@ -388,7 +388,7 @@ You can simply drop an index if it is no longer needed.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Before dropping an index, make sure it has been released first.
+<p>Before dropping an index, make sure it has been released first.</p>
 
 </Admonition>
 

@@ -38,7 +38,7 @@ This page enumerates the minimum requirements for you to host a Zilliz Cloud BYO
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
+<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
 
 </Admonition>
 
@@ -87,7 +87,7 @@ Zilliz Cloud recommends using the **/16** netmask in IPv4 CIDR settings for the 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud currently supports only IPv4 CIDR blocks.
+<p>Zilliz Cloud currently supports only IPv4 CIDR blocks.</p>
 
 </Admonition>
 
@@ -217,7 +217,7 @@ VPC endpoint ensures secure cluster connectivity relay and enables private calls
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The VPC endpoint created in this section is used to set up an AWS PrivateLink. Once the VPC endpoint is ready, you must create a hosted zone and add some DNS records. For details, refer to [Set up a PrivateLink (AWS)](./setup-a-private-link-aws).
+<p>The VPC endpoint created in this section is used to set up an AWS PrivateLink. Once the VPC endpoint is ready, you must create a hosted zone and add some DNS records. For details, refer to <a href="./setup-a-private-link-aws">Set up a PrivateLink (AWS)</a>.</p>
 
 </Admonition>
 

@@ -53,7 +53,7 @@ Once you have [registered an account](./register-with-zilliz-cloud) with Zilliz 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Updating the email address will not affect the receiver of billing invoices and alerts. Please update these information manually if necessary.
+<p>Updating the email address will not affect the receiver of billing invoices and alerts. Please update these information manually if necessary.</p>
 
 </Admonition>
 
@@ -81,7 +81,7 @@ Maintaining a consistent login method with your initial registration is required
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For organization users, you can set up Single Sign-on (SSO) with the identity provider (IdP) Okta. This allows your organization users to authenticate with Okta and then seamlessly access Zilliz Cloud using their business email rather than creating a separate Zilliz Cloud account. For details, refer to [Single Sign-on with Okta](./single-sign-on-with-okta).
+<p>For organization users, you can set up Single Sign-on (SSO) with the identity provider (IdP) Okta. This allows your organization users to authenticate with Okta and then seamlessly access Zilliz Cloud using their business email rather than creating a separate Zilliz Cloud account. For details, refer to <a href="./single-sign-on-with-okta">Single Sign-on with Okta</a>.</p>
 
 </Admonition>
 
@@ -147,7 +147,7 @@ If you have already linked your Zilliz Cloud account with a third-party account 
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-Once the account is closed, you cannot use it to log into Zilliz Cloud. If you change your mind and need to reopen the account, please create a support ticket at the [Zilliz Cloud Support Portal](https://support.zilliz.com/hc/en-us). After 30 days, all data in this account will be cleaned.
+<p>Once the account is closed, you cannot use it to log into Zilliz Cloud. If you change your mind and need to reopen the account, please create a support ticket at the <a href="https://support.zilliz.com/hc/en-us">Zilliz Cloud Support Portal</a>. After 30 days, all data in this account will be cleaned.</p>
 
 </Admonition>
 

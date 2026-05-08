@@ -124,7 +124,7 @@ The `LIKE` operator is used for pattern matching in string fields. It can match 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In most cases, **infix** or **suffix** matching is significantly slower than prefix matching. Use them with caution if performance is critical.
+<p>In most cases, <strong>infix</strong> or <strong>suffix</strong> matching is significantly slower than prefix matching. Use them with caution if performance is critical.</p>
 
 </Admonition>
 
@@ -238,7 +238,7 @@ The `IS NULL` and `IS NOT NULL` operators are used to filter fields based on whe
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The operators are case-insensitive, so you can use `IS NULL` or `is null`, and `IS NOT NULL` or `is not null`.
+<p>The operators are case-insensitive, so you can use <code>IS NULL</code> or <code>is null</code>, and <code>IS NOT NULL</code> or <code>is not null</code>.</p>
 
 </Admonition>
 
@@ -248,7 +248,7 @@ Zilliz Cloud allows filtering on regular scalar fields, such as strings or numbe
 
 <Admonition type="info" icon="📘" title="Notes">
 
-An empty string `""` is not treated as a null value for a `VARCHAR` field.
+<p>An empty string <code>""</code> is not treated as a null value for a <code>VARCHAR</code> field.</p>
 
 </Admonition>
 
@@ -280,7 +280,7 @@ Zilliz Cloud allows filtering on JSON fields that contain null values. A JSON fi
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If some elements within a JSON object are null (e.g. individual keys), the field is still considered non-null. For example, `\{"metadata": \{"category": None, "price": 99.99}}` is not treated as null, even though the `category` key is null.
+<p>If some elements within a JSON object are null (e.g. individual keys), the field is still considered non-null. For example, <code>\{"metadata": \{"category": None, "price": 99.99\}\}</code> is not treated as null, even though the <code>category</code> key is null.</p>
 
 </Admonition>
 
@@ -348,7 +348,7 @@ Zilliz Cloud allows filtering on ARRAY fields that contain null values. An ARRAY
 
 <Admonition type="info" icon="📘" title="Notes">
 
-An ARRAY field cannot contain partial null values as all elements in an ARRAY field must have the same data type. For details, refer to [Array Field](./use-array-fields).
+<p>An ARRAY field cannot contain partial null values as all elements in an ARRAY field must have the same data type. For details, refer to <a href="./use-array-fields">Array Field</a>.</p>
 
 </Admonition>
 

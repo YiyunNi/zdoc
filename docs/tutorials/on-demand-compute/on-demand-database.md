@@ -34,7 +34,7 @@ This guide explains how to manage a database in on-demand compute.
 
 <Admonition type="info" icon="📘" title="Note">
 
-This feature is only available to **Enterprise** projects.
+<p>This feature is only available to <strong>Enterprise</strong> projects.</p>
 
 </Admonition>
 
@@ -108,7 +108,7 @@ This type of database is project-level resource shared by all on-demand clusters
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-Once you drop a database, it is removed immediately and cannot be recovered. This action cannot be undone.
+<p>Once you drop a database, it is removed immediately and cannot be recovered. This action cannot be undone.</p>
 
 </Admonition>
 

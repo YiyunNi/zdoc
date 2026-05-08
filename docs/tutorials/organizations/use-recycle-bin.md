@@ -55,7 +55,7 @@ To restore a cluster in the recycle bin, you need to [add a payment method](/doc
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    The load status of the collections in the cluster will be retained.
+    <p>The load status of the collections in the cluster will be retained.</p>
 
     </Admonition>
 

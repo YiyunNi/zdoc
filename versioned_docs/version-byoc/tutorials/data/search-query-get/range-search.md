@@ -271,6 +271,6 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If the query vectors already exist in the target collection, consider using `ids` instead of retrieving them before searches. For details, refer to [Primary-Key Search](./primary-key-search).
+<p>If the query vectors already exist in the target collection, consider using <code>ids</code> instead of retrieving them before searches. For details, refer to <a href="./primary-key-search">Primary-Key Search</a>.</p>
 
 </Admonition>

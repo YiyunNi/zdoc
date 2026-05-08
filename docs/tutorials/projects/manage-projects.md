@@ -313,7 +313,7 @@ Once a project is deleted, all its associated data and resources will be irrever
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The default project cannot be deleted.
+<p>The default project cannot be deleted.</p>
 
 </Admonition>
 

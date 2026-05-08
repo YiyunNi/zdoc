@@ -35,7 +35,7 @@ Text match in Zilliz Cloud enables precise document retrieval based on specific 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Text match focuses on finding exact occurrences of the query terms, without scoring the relevance of the matched documents. If you want to retrieve the most relevant documents based on the semantic meaning and importance of the query terms, we recommend you use [Full Text Search](./full-text-search).
+<p>Text match focuses on finding exact occurrences of the query terms, without scoring the relevance of the matched documents. If you want to retrieve the most relevant documents based on the semantic meaning and importance of the query terms, we recommend you use <a href="./full-text-search">Full Text Search</a>.</p>
 
 </Admonition>
 

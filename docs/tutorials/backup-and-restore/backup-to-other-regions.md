@@ -37,7 +37,7 @@ Currently, clusters on Azure do not support cross-region backup.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 
@@ -67,7 +67,10 @@ You can enable cross-region backup either when [creating a backup manually](./cr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- You can select regions only for the same cloud provider as the original region.
+<ul>
+<li>You can select regions only for the same cloud provider as the original region.</li>
+</ul>
+<p></p>
 
 </Admonition>
 

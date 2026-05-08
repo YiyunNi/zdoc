@@ -222,7 +222,7 @@ Zilliz Cloud integrates with leading model providers that offer different capabi
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Provider availability and supported capabilities may vary by region and release. Refer to provider-specific documentation for the most up-to-date information.
+<p>Provider availability and supported capabilities may vary by region and release. Refer to provider-specific documentation for the most up-to-date information.</p>
 
 </Admonition>
 

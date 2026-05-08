@@ -732,7 +732,7 @@ In addition, by configuring the `expr` parameter in an `AnnSearchRequest`, you c
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In Hybrid Search, each `AnnSearchRequest` supports only one query data.
+<p>In Hybrid Search, each <code>AnnSearchRequest</code> supports only one query data.</p>
 
 </Admonition>
 

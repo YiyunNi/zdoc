@@ -93,9 +93,8 @@ For collection-level access control, it is recommended to create custom roles.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is exclusively available to Dedicated clusters.
-
-Currently, Zilliz Cloud only supports creating custom roles with built-in privilege groups on the web console. If you need to create custom roles with specific privileges or custom privilege groups, please [create a support ticket](http://support.zilliz.com) first so that we can enable this feature for you. Once the feature is enabled, you can use the SDKs to [create custom privilege groups](./cluster-privileges#custom-privilege-groups).
+<p>This feature is exclusively available to Dedicated clusters.</p>
+<p>Currently, Zilliz Cloud only supports creating custom roles with built-in privilege groups on the web console. If you need to create custom roles with specific privileges or custom privilege groups, please <a href="http://support.zilliz.com">create a support ticket</a> first so that we can enable this feature for you. Once the feature is enabled, you can use the SDKs to <a href="./cluster-privileges#custom-privilege-groups">create custom privilege groups</a>.</p>
 
 </Admonition>
 
@@ -121,7 +120,7 @@ Currently, Zilliz Cloud only supports creating custom roles with built-in privil
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    The three levels of built-in privilege groups do not have a cascading relationship. Setting a built-in privilege group at the instance level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.
+    <p>The three levels of built-in privilege groups do not have a cascading relationship. Setting a built-in privilege group at the instance level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.</p>
 
     </Admonition>
 

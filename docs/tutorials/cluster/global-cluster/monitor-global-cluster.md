@@ -32,7 +32,7 @@ This page explains how to monitor the health, replication status, and performanc
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 

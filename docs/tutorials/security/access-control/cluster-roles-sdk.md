@@ -35,7 +35,7 @@ This guide walks you through how to create a role, grant built-in privilege grou
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is exclusively available to Dedicated clusters.
+<p>This feature is exclusively available to Dedicated clusters.</p>
 
 </Admonition>
 
@@ -163,7 +163,7 @@ In Zilliz Cloud, you can grant the followings to a role:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you need to grant specific privileges and custom privilege groups to a role, please [create a support ticket](http://support.zilliz.com) first so that we can enable this feature for you.
+<p>If you need to grant specific privileges and custom privilege groups to a role, please <a href="http://support.zilliz.com">create a support ticket</a> first so that we can enable this feature for you.</p>
 
 </Admonition>
 
@@ -584,7 +584,7 @@ The following example demonstrates how to drop the role `role_a`.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The built-in role `admin` cannot be dropped.
+<p>The built-in role <code>admin</code> cannot be dropped.</p>
 
 </Admonition>
 

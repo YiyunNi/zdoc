@@ -127,11 +127,11 @@ Below is a recommended mapping of languages to suitable Zilliz Cloud analyzers. 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- **Matching is Key:** The name of your analyzer **must exactly match** the language output of the detection engine. For instance, if you're using `whatlang`, the key for Chinese text must be `Mandarin`.
-
-- **Best practices:** The table above provides recommended configurations for a few common languages, but it is not an exhaustive list. For a more comprehensive guide on choosing analyzers, refer to [Choose the Right Analyzer for Your Use Case](./choose-the-right-analyzer-for-your-use-case).
-
-- **Detector output**: For a complete list of language names returned by the detection engines, refer to [Whatlang supported languages table](https://github.com/greyblake/whatlang-rs) and the [Lingua supported languages list](https://github.com/pemistahl/lingua-rs).
+<ul>
+<li><p><strong>Matching is Key:</strong> The name of your analyzer <strong>must exactly match</strong> the language output of the detection engine. For instance, if you're using <code>whatlang</code>, the key for Chinese text must be <code>Mandarin</code>.</p></li>
+<li><p><strong>Best practices:</strong> The table above provides recommended configurations for a few common languages, but it is not an exhaustive list. For a more comprehensive guide on choosing analyzers, refer to <a href="./choose-the-right-analyzer-for-your-use-case">Choose the Right Analyzer for Your Use Case</a>.</p></li>
+<li><p><strong>Detector output</strong>: For a complete list of language names returned by the detection engines, refer to <a href="https://github.com/greyblake/whatlang-rs">Whatlang supported languages table</a> and the <a href="https://github.com/pemistahl/lingua-rs">Lingua supported languages list</a>.</p></li>
+</ul>
 
 </Admonition>
 

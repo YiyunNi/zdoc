@@ -59,7 +59,7 @@ This guide assumes you have:
 
 <Admonition type="info" icon="📘" title="**Need help setting up?**">
 
-Refer to our [Create Collection](./manage-collections-sdks) for collection creation and basic operations.
+<p>Refer to our <a href="./manage-collections-sdks">Create Collection</a> for collection creation and basic operations.</p>
 
 </Admonition>
 

@@ -5,7 +5,7 @@ sidebar_key: cluster-roles-sdk
 sidebar_label: "クラスターロールの管理 (SDK)"
 beta: FALSE
 notebook: FALSE
-description: "クラスターロールは、ユーザーがクラスター内で持つ権限を定義します。具体的には、クラスターロールはクラスター、データベース、およびコレクションレベルにおけるクラスターユーザーの権限を制御します。| BYOC"
+description: "クラスターロールは、ユーザーがクラスター内で持つ権限を定義します。具体的には、クラスターロールはクラスターユーザーのクラスター、データベース、およびコレクションレベルでの権限を制御します。 | BYOC"
 type: origin
 token: PBZwwNqWjiikeYkXgHPcGhLznTh
 sidebar_position: 5
@@ -13,7 +13,7 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - クラスター
+  - cluster
   - アクセス制御
   - rbac
   - ロール
@@ -26,21 +26,21 @@ import TabItem from '@theme/TabItem';
 
 # クラスターロールの管理 (SDK)
 
-クラスターロールは、ユーザーがクラスター内で持つ特権を定義します。具体的には、クラスターロールはクラスターユーザーのクラスター、データベース、およびコレクションレベルにおける特権を制御します。
+クラスターロールは、ユーザーがクラスター内で持つ特権を定義します。より具体的には、クラスターロールはクラスターユーザーのクラスター、データベース、およびコレクションレベルでの特権を制御します。
 
-このガイドでは、ロールの作成、ビルトイン特権グループのロールへの付与、ロールからの特権グループの剥奪、そしてロールの削除までの手順を説明します。ビルトイン特権グループの詳細については、[特権](./cluster-privileges#built-in-privilege-groups) を参照してください。
+このガイドでは、ロールの作成、ロールへの組み込み特権グループの付与、ロールからの特権グループの取り消し、および最終的にロールの削除について説明します。組み込み特権グループの詳細については、[特権](./cluster-privileges#built-in-privilege-groups) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>この機能は Dedicated クラスターでのみ利用可能です。</p>
+この機能は Dedicated クラスターでのみ利用可能です。
 
 </Admonition>
 
 ## ロールの作成\{#create-a-role}
 
-以下の例では、`role_a` という名前のロールを作成する方法を示します。
+次の例は、`role_a` という名前のロールを作成する方法を示しています。
 
-ロール名は文字で始まる必要があり、大文字・小文字のアルファベット、数字、アンダースコアのみを含めることができます。
+ロール名は文字で始まる必要があり、大文字、小文字、数字、アンダースコアのみを含めることができます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -148,23 +148,23 @@ curl --request POST \
 ['role_a']
 ```
 
-## 特権または特権グループをロールに付与する\{#grant-a-privilege-or-a-privilege-group-to-a-role}
+## ロールに特権または特権グループを付与する\{#grant-a-privilege-or-a-privilege-group-to-a-role}
 
-Zilliz Cloud では、以下の内容をロールに付与できます。
+Zilliz Cloud では、ロールに以下を付与できます。
 
-- **特権:** Zilliz Cloud はさまざまな種類の特権を提供しています。詳細については、[すべての特権](./cluster-privileges#all-privileges) を参照してください。
+- **特権:** Zilliz Cloud では、さまざまな種類の特権が提供されています。詳細については、[すべての特権](./cluster-privileges#all-privileges) を参照してください。
 
-- **組み込み特権グループ:** Zilliz Cloud は 9 つの組み込み特権グループを提供しています。各組み込み特権グループに含まれる具体的な特権の詳細については、[組み込み特権グループ](./cluster-privileges#built-in-privilege-groups) を参照してください。
+- **組み込み特権グループ:** Zilliz Cloud では、9 つの組み込み特権グループが提供されています。各組み込み特権グループに含まれる具体的な特権の詳細については、[組み込み特権グループ](./cluster-privileges#built-in-privilege-groups) を参照してください。
 
-- **カスタム特権グループ:** 組み込み特権がニーズを満たさない場合、異なる特権を組み合わせて独自のカスタム特権グループを作成できます。詳細については、[カスタム特権グループ](./cluster-privileges#custom-privilege-groups) を参照してください。
+- **カスタム特権グループ:** 組み込みの特権がニーズを満たさない場合は、異なる特権を組み合わせて独自のカスタム特権グループを作成できます。詳細については、[カスタム特権グループ](./cluster-privileges#custom-privilege-groups) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>特定の特権とカスタム特権グループをロールに付与する必要がある場合は、まず<a href="http://support.zilliz.com">サポートチケットを作成</a>し、この機能を有効化してください。</p>
+特定の特権とカスタム特権グループをロールに付与する必要がある場合は、まず [サポートチケットを作成](http://support.zilliz.com) して、この機能を有効化できるようにしてください。
 
 </Admonition>
 
-次の例では、`default` データベース内の `collection_01` に対する `PrivilegeSearch` 特権および `privilege_group_1` という名前のカスタム特権グループを、`role_a` ロールに付与する方法を示します。
+以下の例では、`default` データベース配下の `collection_01` に対する `PrivilegeSearch` 特権および `privilege_group_1` という名前のカスタム特権グループをロール `role_a` に付与する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -577,11 +577,11 @@ curl --request POST \
 
 ## ロールの削除\{#drop-a-role}
 
-次の例では、ロール `role_a` を削除する方法を示します。
+以下の例は、ロール `role_a` を削除する方法を示しています。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>組み込みロール <code>admin</code> は削除できません。</p>
+組み込みロール `admin` は削除できません。
 
 </Admonition>
 

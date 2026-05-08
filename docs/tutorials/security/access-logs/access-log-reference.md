@@ -291,7 +291,7 @@ This release logs search- or query-class actions only:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Support for additional actions is planned for a future release.
+<p>Support for additional actions is planned for a future release.</p>
 
 </Admonition>
 

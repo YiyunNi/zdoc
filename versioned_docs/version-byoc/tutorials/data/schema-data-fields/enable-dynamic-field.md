@@ -446,7 +446,7 @@ Zilliz Cloud allows you to use **JSON path indexing** to create indexes on speci
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Indexing dynamic field keys is **optional**. You can still query or filter by dynamic field keys without an index, but it may result in slower performance due to brute-force search.
+<p>Indexing dynamic field keys is <strong>optional</strong>. You can still query or filter by dynamic field keys without an index, but it may result in slower performance due to brute-force search.</p>
 
 </Admonition>
 
@@ -809,9 +809,10 @@ export stringPriceIndex='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- If type conversion fails (e.g. value `"not_a_number"` cannot be converted to a number), the value is skipped and unindexed.
-
-- For details on cast function parameters, refer to [JSON Field](./use-json-fields).
+<ul>
+<li><p>If type conversion fails (e.g. value <code>"not_a_number"</code> cannot be converted to a number), the value is skipped and unindexed.</p></li>
+<li><p>For details on cast function parameters, refer to <a href="./use-json-fields">JSON Field</a>.</p></li>
+</ul>
 
 </Admonition>
 
@@ -1114,7 +1115,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Dynamic field keys are not included in results by default and must be explicitly requested.
+<p>Dynamic field keys are not included in results by default and must be explicitly requested.</p>
 
 </Admonition>
 

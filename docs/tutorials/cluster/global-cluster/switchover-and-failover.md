@@ -44,7 +44,7 @@ This page explains when to use each operation, how to perform them, and what to 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 
@@ -199,7 +199,7 @@ The following demo shows how to perform a failover.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If the failover fails, the cluster remains in ABNORMAL status. You can retry the failover operation or [create a support ticket](http://support.zilliz.com).
+<p>If the failover fails, the cluster remains in ABNORMAL status. You can retry the failover operation or <a href="http://support.zilliz.com">create a support ticket</a>.</p>
 
 </Admonition>
 

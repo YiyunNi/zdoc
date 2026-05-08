@@ -62,7 +62,7 @@ In this example, `metadata` is a single JSON field that contains a mix of flat v
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**Naming convention:** Use only letters, numbers, and underscores in JSON keys. Avoid special characters, spaces, or dots as they may cause parsing issues in queries.
+<p><strong>Naming convention:</strong> Use only letters, numbers, and underscores in JSON keys. Avoid special characters, spaces, or dots as they may cause parsing issues in queries.</p>
 
 </Admonition>
 
@@ -175,7 +175,7 @@ client.create_collection(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In this example, the JSON field defined in the collection schema allows null values with `nullable=True`. For details, refer to [Nullable & Default](./nullable-fields).
+<p>In this example, the JSON field defined in the collection schema allows null values with <code>nullable=True</code>. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 

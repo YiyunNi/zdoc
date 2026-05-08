@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 # クイックスタート：Serving Cluster
 
-Serving Cluster は、リアルタイムの本番環境でのサービングのために、コンピューティングとストレージの両方を統合した自己完結型のサーバーです。Extract-Transform-Load (ETL) パイプラインでデータをクリーニングした後、それを Serving Cluster にインポートして、大幅なパフォーマンス向上を実現できます。
+Serving cluster は、リアルタイムの本番環境でのサービングのために、コンピュートとストレージの両方を組み合わせた自己完結型のサーバーです。Extract-Transform-Load (ETL) パイプラインでデータをクリーニングした後、それを serving cluster にインポートして、大幅なパフォーマンス向上を実現できます。
 
 ## 開始前に\{#before-you-start}
 
@@ -45,7 +45,7 @@ Zilliz Cloud は、Bring-Your-Own-Cloud (BYOC) ソリューションを提供し
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>Zilliz BYOC は現在<strong>一般提供</strong>されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud 営業担当</a>までお問い合わせください。</p>
+    Zilliz BYOC は現在 **一般提供** されています。アクセスと実装の詳細については、[Zilliz Cloud 営業担当](https://zilliz.com/contact-sales) までお問い合わせください。
 
     </Admonition>
 
@@ -61,11 +61,11 @@ Zilliz Cloud は、Bring-Your-Own-Cloud (BYOC) ソリューションを提供し
 
     - [Microsoft Azure への BYOC-I デプロイ](./deploy-byoc-i-azure)
 
-    お客様のクラウドプロバイダーが上記にない場合は、[Zilliz Cloud サポート](https://zilliz.com/contact-sales) にお問い合わせください。
+    お使いのクラウドプロバイダーが上記にない場合は、[Zilliz Cloud サポート](https://zilliz.com/contact-sales) までお問い合わせください。
 
 - BYOC クラスターへの接続方法を決定していること。詳細については、[クラスター接続の準備](./prepare-for-cluster-connection) を参照してください。
 
-以下の手順では、Serving Cluster を既に作成し、そのエンドポイントとアクセス認証情報を取得していることを前提としています。
+以下の手順では、serving cluster を既に作成し、そのエンドポイントとアクセス認証情報を取得済みであることを前提としています。
 
 ## ステップ 1: 接続の設定\{#step-1-set-up-connection}
 

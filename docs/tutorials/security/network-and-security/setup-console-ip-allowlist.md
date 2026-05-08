@@ -34,7 +34,7 @@ The console IP allowlist applies only to the organization web console. It does n
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in an **Enterprise** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
 
 </Admonition>
 
@@ -56,9 +56,8 @@ It is recommended to add your current IP and frequently used IPs to avoid lockou
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`0.0.0.0/0` allows access from any IPs.
-
-Updates to the console IP allowlist take effect within 30 seconds.
+<p><code>0.0.0.0/0</code> allows access from any IPs.</p>
+<p>Updates to the console IP allowlist take effect within 30 seconds.</p>
 
 </Admonition>
 
@@ -80,7 +79,7 @@ You can remove an IP or CIDR  entry to deny console access from that source. If 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Updates to the console IP allowlist take effect within 30 seconds.
+<p>Updates to the console IP allowlist take effect within 30 seconds.</p>
 
 </Admonition>
 

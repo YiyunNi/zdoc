@@ -121,7 +121,7 @@ Zilliz Cloud, as a fully managed vector database service, delivers enterprise-gr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Cross-region HA will be available in November 2025. 
+<p>Cross-region HA will be available in November 2025. </p>
 
 </Admonition>
 
@@ -317,7 +317,7 @@ Zilliz Cloud uses a compute-storage disaggregated architecture with three data t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**The roadmap for 2026:** Achieve **RPO = 0** with cross-region Woodpecker
+<p><strong>The roadmap for 2026:</strong> Achieve <strong>RPO = 0</strong> with cross-region Woodpecker</p>
 
 </Admonition>
 

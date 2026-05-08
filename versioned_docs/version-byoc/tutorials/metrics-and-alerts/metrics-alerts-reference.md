@@ -36,7 +36,7 @@ Zilliz Cloud organizes metrics into the following levels:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Most metrics support alerts. An alert evaluates a metric against a condition (operator + threshold) over a time window and notifies you when it’s met. For configuration, refer to [Manage Organization Alerts](./manage-organization-alerts) and [Manage Project Alerts](./manage-project-alerts).
+<p>Most metrics support alerts. An alert evaluates a metric against a condition (operator + threshold) over a time window and notifies you when it’s met. For configuration, refer to <a href="./manage-organization-alerts">Manage Organization Alerts</a> and <a href="./manage-project-alerts">Manage Project Alerts</a>.</p>
 
 </Admonition>
 
@@ -68,7 +68,7 @@ These metrics describe resource usage, performance, and data within individual c
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In this section, **Availability** refers to the project plan & deployment options. For detailed plan comparison, refer to [Detailed Plan Comparison](./select-zilliz-cloud-service-plans).
+<p>In this section, <strong>Availability</strong> refers to the project plan &amp; deployment options. For detailed plan comparison, refer to <a href="./select-zilliz-cloud-service-plans">Detailed Plan Comparison</a>.</p>
 
 </Admonition>
 

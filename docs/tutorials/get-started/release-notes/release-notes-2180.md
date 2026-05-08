@@ -43,7 +43,7 @@ Under the hood, the Merge Data API orchestrates a distributed batch processing e
 
 <Admonition type="info" icon="📘" title="Notes">
 
-During the merge process, writes to the base Collection must be suspended to ensure data consistency.
+<p>During the merge process, writes to the base Collection must be suspended to ensure data consistency.</p>
 
 </Admonition>
 
@@ -121,7 +121,7 @@ For details, refer to [Deploy BYOC on AWS](/docs/byoc/deploy-byoc-aws), [Deploy 
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    This setting only applies to newly created backups.
+    <p>This setting only applies to newly created backups.</p>
 
     </Admonition>
 

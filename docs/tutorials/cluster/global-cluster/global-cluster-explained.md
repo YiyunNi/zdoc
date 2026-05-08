@@ -36,7 +36,7 @@ This feature is designed for globally distributed, mission-critical applications
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 
@@ -102,7 +102,7 @@ For detailed list prices, see [Zilliz Cloud List Price](https://zilliz.com/prici
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Discarded clusters in the recycle bin after a [failover](./switchover-and-failover#perform-a-failover) are billed for **storage** only.
+<p>Discarded clusters in the recycle bin after a <a href="./switchover-and-failover#perform-a-failover">failover</a> are billed for <strong>storage</strong> only.</p>
 
 </Admonition>
 

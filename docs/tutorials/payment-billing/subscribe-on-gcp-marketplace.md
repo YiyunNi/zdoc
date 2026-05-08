@@ -32,7 +32,7 @@ This guide provides a step-by-step walkthrough of the subscription process and o
 
 <Admonition type="info" icon="📘" title="Note">
 
-Once subscribed, you can pay for the usage of Google Cloud clusters via Google Cloud Marketplace. If you have clusters deployed on other cloud providers, you can also use Google Cloud Marketplace to pay.
+<p>Once subscribed, you can pay for the usage of Google Cloud clusters via Google Cloud Marketplace. If you have clusters deployed on other cloud providers, you can also use Google Cloud Marketplace to pay.</p>
 
 </Admonition>
 
@@ -76,7 +76,7 @@ Visit [GCP](https://console.cloud.google.com/marketplace)[ Marketplace](https://
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    If you are unable to complete the signup process, you can retry by navigating to **[Your Orders](https://console.cloud.google.com/marketplace/orders)** page in the GCP Marketplace.
+    <p>If you are unable to complete the signup process, you can retry by navigating to <strong><a href="https://console.cloud.google.com/marketplace/orders">Your Orders</a></strong> page in the GCP Marketplace.</p>
 
     </Admonition>
 
@@ -112,7 +112,7 @@ After successfully subscribing from GCP Marketplace, you can always update your 
 
     <Admonition type="info" icon="📘" title="Note">
 
-    Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.
+    <p>Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.</p>
 
     </Admonition>
 
@@ -126,7 +126,7 @@ After successfully subscribing from GCP Marketplace, you can always update your 
 
     <Admonition type="info" icon="📘" title="Note">
 
-    When updating GCP Marketplace subscription, you must click the Manage on Provider button to link your new subscription with Zilliz Cloud organization.
+    <p>When updating GCP Marketplace subscription, you must click the Manage on Provider button to link your new subscription with Zilliz Cloud organization.</p>
 
     </Admonition>
 
@@ -138,7 +138,7 @@ After successfully subscribing from GCP Marketplace, you can always update your 
 
 <Admonition type="info" icon="📘" title="Note">
 
-We recommend completing the operations within 1 hour to avoid service interruption.
+<p>We recommend completing the operations within 1 hour to avoid service interruption.</p>
 
 </Admonition>
 
@@ -152,7 +152,7 @@ We recommend completing the operations within 1 hour to avoid service interrupti
 
     <Admonition type="info" icon="📘" title="Note">
 
-    Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.
+    <p>Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.</p>
 
     </Admonition>
 

@@ -34,7 +34,7 @@ This guide provides a step-by-step walkthrough of the subscription process and o
 
 <Admonition type="info" icon="📘" title="Note">
 
-Once subscribed, you can pay for the usage of AWS clusters via AWS Marketplace. If you have clusters deployed on other cloud providers, you can also use AWS Marketplace to pay.
+<p>Once subscribed, you can pay for the usage of AWS clusters via AWS Marketplace. If you have clusters deployed on other cloud providers, you can also use AWS Marketplace to pay.</p>
 
 </Admonition>
 
@@ -84,7 +84,7 @@ Visit [AWS Marketplace](https://aws.amazon.com/marketplace) and start subscribin
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        AWS Marketplace uses query strings in the URL to pass your identity information to Zilliz Cloud. Any sign-up failures may result in the loss of these query strings. As a result, Zilliz Cloud may fail to associate your AWS identity with your account registered with us. If this happens, simply return to AWS Marketplace and click <b>Set up your account</b> again.
+        <p>AWS Marketplace uses query strings in the URL to pass your identity information to Zilliz Cloud. Any sign-up failures may result in the loss of these query strings. As a result, Zilliz Cloud may fail to associate your AWS identity with your account registered with us. If this happens, simply return to AWS Marketplace and click <b>Set up your account</b> again.</p>
 
         </Admonition>
 
@@ -138,7 +138,7 @@ After successfully subscribing from AWS Marketplace, you can always update your 
 
     <Admonition type="info" icon="📘" title="Note">
 
-    Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.
+    <p>Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.</p>
 
     </Admonition>
 
@@ -152,7 +152,7 @@ After successfully subscribing from AWS Marketplace, you can always update your 
 
     <Admonition type="info" icon="📘" title="Note">
 
-    When updating AWS Marketplace subscription, you must click the **Set up your account** button to link your new subscription with Zilliz Cloud organization.
+    <p>When updating AWS Marketplace subscription, you must click the <strong>Set up your account</strong> button to link your new subscription with Zilliz Cloud organization.</p>
 
     </Admonition>
 
@@ -164,7 +164,7 @@ After successfully subscribing from AWS Marketplace, you can always update your 
 
 <Admonition type="info" icon="📘" title="Note">
 
-We recommend completing the operations within 1 hour to avoid service interruption.
+<p>We recommend completing the operations within 1 hour to avoid service interruption.</p>
 
 </Admonition>
 
@@ -180,7 +180,7 @@ We recommend completing the operations within 1 hour to avoid service interrupti
 
     <Admonition type="info" icon="📘" title="Note">
 
-    Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.
+    <p>Please rest assured that canceling the subscription will not delete your Zilliz Cloud data.</p>
 
     </Admonition>
 

@@ -87,7 +87,7 @@ Ensure:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    Some additional resources will be required for rolling; these resources will be released after use.
+    <p>Some additional resources will be required for rolling; these resources will be released after use.</p>
 
     </Admonition>
 

@@ -147,7 +147,7 @@ The following demo walks you through the complete offline migration process:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The migrated collections are not immediately available for search or query operations. You must manually load the collections in Zilliz Cloud to enable search and query functionalities. For details, refer to [Load & Release](./load-release-collections).
+<p>The migrated collections are not immediately available for search or query operations. You must manually load the collections in Zilliz Cloud to enable search and query functionalities. For details, refer to <a href="./load-release-collections">Load & Release</a>.</p>
 
 </Admonition>
 

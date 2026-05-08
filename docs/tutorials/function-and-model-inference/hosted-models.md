@@ -41,7 +41,7 @@ Currently, Zilliz Cloud supports the following regions, instance types, and mode
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you have specific requirements for hosted models, please [contact us](http://support.zilliz.com).
+<p>If you have specific requirements for hosted models, please <a href="http://support.zilliz.com">contact us</a>.</p>
 
 </Admonition>
 

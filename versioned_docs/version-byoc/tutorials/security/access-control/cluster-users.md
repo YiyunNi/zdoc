@@ -49,7 +49,7 @@ When creating a cluster user, you need to:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Each cluster can have up to 100 cluster users.
+<p>Each cluster can have up to 100 cluster users.</p>
 
 </Admonition>
 
@@ -61,7 +61,7 @@ Each cluster can have up to 100 cluster users.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The default user **db_admin** cannot be dropped.
+<p>The default user <strong>db_admin</strong> cannot be dropped.</p>
 
 </Admonition>
 

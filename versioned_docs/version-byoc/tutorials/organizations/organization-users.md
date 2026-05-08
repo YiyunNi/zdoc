@@ -57,7 +57,7 @@ The following table lists the corresponding UI and API privileges of this organi
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Use a colon-separated username and password of the target cluster, like `username:password`, as the authentication token when calling data-plane RESTful API endpoints.
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
 
 </Admonition>
 
@@ -119,7 +119,7 @@ Invitation recipients will receive an email invitation that must be accepted wit
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Each time, you can invite one or more users with the same role to the organization. Each organization can have up to 100 users.
+<p>Each time, you can invite one or more users with the same role to the organization. Each organization can have up to 100 users.</p>
 
 </Admonition>
 
@@ -145,7 +145,7 @@ To remove an organization user, you must be an **Organization Owner**.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Upon removing a member, the corresponding personal API key will be immediately revoked and access will be denied. To prevent service disruption, please ensure that any personal keys utilized in your environments are replaced prior to removal. This action cannot be undone.
+<p>Upon removing a member, the corresponding personal API key will be immediately revoked and access will be denied. To prevent service disruption, please ensure that any personal keys utilized in your environments are replaced prior to removal. This action cannot be undone.</p>
 
 </Admonition>
 
@@ -159,7 +159,7 @@ Each organization must have at least one organization owner. If you are the only
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-Once you leave an organization, you will no longer be able to access the organization and associated resources.
+<p>Once you leave an organization, you will no longer be able to access the organization and associated resources.</p>
 
 </Admonition>
 

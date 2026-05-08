@@ -110,7 +110,7 @@ Understanding how Qdrant data types map to Zilliz Cloud is crucial for planning 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud samples 100 rows to detect payload schema. You can manually add additional fields if needed.
+<p>Zilliz Cloud samples 100 rows to detect payload schema. You can manually add additional fields if needed.</p>
 
 </Admonition>
 

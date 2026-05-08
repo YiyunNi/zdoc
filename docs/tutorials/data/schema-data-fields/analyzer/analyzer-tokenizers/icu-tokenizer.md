@@ -34,7 +34,7 @@ The `icu` tokenizer is built on the [Internationalization Components of Unicode]
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The `icu` tokenizer preserves punctuation marks and spaces as separate tokens in the output. For example, `"Привет! Как дела?"` becomes `["Привет", "!", " ", "Как", " ", "дела", "?"]`. To remove these standalone punctuation tokens, use the [`removepunct`](./remove-punct-filter) filter.
+<p>The <code>icu</code> tokenizer preserves punctuation marks and spaces as separate tokens in the output. For example, <code>"Привет! Как дела?"</code> becomes <code>["Привет", "!", " ", "Как", " ", "дела", "?"]</code>. To remove these standalone punctuation tokens, use the <a href="./remove-punct-filter"><code>removepunct</code></a> filter.</p>
 
 </Admonition>
 

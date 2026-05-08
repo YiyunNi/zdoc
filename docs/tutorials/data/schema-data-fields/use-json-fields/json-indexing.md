@@ -44,7 +44,7 @@ JSON indexing is ideal for:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For complex JSON documents with diverse query patterns, consider [JSON Shredding](./json-shredding) as an alternative.
+<p>For complex JSON documents with diverse query patterns, consider <a href="./json-shredding">JSON Shredding</a> as an alternative.</p>
 
 </Admonition>
 
@@ -163,7 +163,7 @@ Zilliz Cloud supports the following data types for casting at index time. These 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Arrays should contain elements of the same type for optimal indexing. For more information, refer to [Array Field](./use-array-fields).
+<p>Arrays should contain elements of the same type for optimal indexing. For more information, refer to <a href="./use-array-fields">Array Field</a>.</p>
 
 </Admonition>
 
@@ -188,7 +188,7 @@ Cast functions are case-insensitive. The following functions are supported:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If conversion fails (e.g., non-numeric string), the value is skipped and not indexed.
+<p>If conversion fails (e.g., non-numeric string), the value is skipped and not indexed.</p>
 
 </Admonition>
 

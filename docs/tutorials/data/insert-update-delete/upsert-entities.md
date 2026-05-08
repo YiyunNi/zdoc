@@ -480,7 +480,7 @@ In the following example, the `issue` field of the entities specified in the ups
 
 <Admonition type="info" icon="📘" title="Notes">
 
-When performing an upsert in merge mode, ensure that the entities involved in the request have the same set of fields. Suppose there are two or more entities to be upserted, as shown in the following code snippet, it is important that they include identical fields to prevent errors and maintain data integrity.
+<p>When performing an upsert in merge mode, ensure that the entities involved in the request have the same set of fields. Suppose there are two or more entities to be upserted, as shown in the following code snippet, it is important that they include identical fields to prevent errors and maintain data integrity.</p>
 
 </Admonition>
 

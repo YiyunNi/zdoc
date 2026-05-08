@@ -637,7 +637,7 @@ Deleting data from a managed volume may take several minutes, depending on the s
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
- Deleted files and folders **cannot be recovered**. Proceed with caution.
+<p>Deleted files and folders <strong>cannot be recovered</strong>. Proceed with caution.</p>
 
 </Admonition>
 
@@ -663,7 +663,7 @@ Deleting a managed volume removes **all its files and folders** as well.
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
- Deleted volumes **cannot be recovered**. Proceed with caution.
+<p>Deleted volumes <strong>cannot be recovered</strong>. Proceed with caution.</p>
 
 </Admonition>
 

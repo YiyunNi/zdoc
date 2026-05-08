@@ -38,7 +38,7 @@ There are two TTL modes:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature applies only to managed collections.
+<p>This feature applies only to managed collections.</p>
 
 </Admonition>
 
@@ -80,7 +80,7 @@ Typical scenarios:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Expired entities will not appear in any search or query results. However, they may stay in the storage until the subsequent data compaction, which should be carried out within the next 24 hours.
+<p>Expired entities will not appear in any search or query results. However, they may stay in the storage until the subsequent data compaction, which should be carried out within the next 24 hours.</p>
 
 </Admonition>
 

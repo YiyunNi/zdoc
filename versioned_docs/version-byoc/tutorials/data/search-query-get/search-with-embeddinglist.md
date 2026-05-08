@@ -68,9 +68,8 @@ As shown in the diagram above, the query contains two tokens, namely `machine` a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-When implementing a ColBERT-like text retrieval system in Milvus, you are not limited to splitting documents into tokens. 
-
-Instead, you can divide the documents into segments of any appropriate size, embed each segment to create an embedding list, and store the document along with its embedded segments in an entity.
+<p>When implementing a ColBERT-like text retrieval system in Milvus, you are not limited to splitting documents into tokens. </p>
+<p>Instead, you can divide the documents into segments of any appropriate size, embed each segment to create an embedding list, and store the document along with its embedded segments in an entity.</p>
 
 </Admonition>
 
@@ -405,7 +404,7 @@ for index, row in df.iterrows():
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This step is relatively time-consuming due to the large amount of data that needs to be embedded.
+<p>This step is relatively time-consuming due to the large amount of data that needs to be embedded.</p>
 
 </Admonition>
 

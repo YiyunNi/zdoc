@@ -66,7 +66,7 @@ Before importing data, it's important to understand the supported cloud storage 
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        If your bucket or specific items in the bucket are encrypted with a custom KMS ID, you must provide decryption permissions for that KMS ID along with the authentication credentials.
+        <p>If your bucket or specific items in the bucket are encrypted with a custom KMS ID, you must provide decryption permissions for that KMS ID along with the authentication credentials.</p>
 
         </Admonition>
 

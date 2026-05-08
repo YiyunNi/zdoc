@@ -81,9 +81,8 @@ For scalar fields, **AUTOINDEX** provides an efficient mapping between field typ
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Cardinality (C in the above table) shows the number of unique values in a field across a whole collection. For example, the cardinality of a float field is the number of distinct float values in that field.
-
-For an array field, the cardinality is the number of **distinct element values** across all arrays in the segment. For example:
+<p>Cardinality (C in the above table) shows the number of unique values in a field across a whole collection. For example, the cardinality of a float field is the number of distinct float values in that field.</p>
+<p>For an array field, the cardinality is the number of <strong>distinct element values</strong> across all arrays in the segment. For example:</p>
 
 ```plaintext
 [1, 2, 3]
@@ -91,7 +90,7 @@ For an array field, the cardinality is the number of **distinct element values**
 [1, 4, 5]
 ```
 
-The distinct element values are `{1, 2, 3, 4, 5}` → cardinality = **5**. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.
+<p>The distinct element values are <code>\{1, 2, 3, 4, 5\}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
 
 </Admonition>
 
@@ -115,7 +114,7 @@ Choosing query parameters requires a lot of domain-specific knowledge, which gre
 
 <Admonition type="info" icon="📘" title="Notes">
 
-When migrating your Milvus codebase to Zilliz Cloud, you do not need to change the index type used manually. Zilliz Cloud automatically applies AUTOINDEX when creating indexes.
+<p>When migrating your Milvus codebase to Zilliz Cloud, you do not need to change the index type used manually. Zilliz Cloud automatically applies AUTOINDEX when creating indexes.</p>
 
 </Admonition>
 
@@ -184,7 +183,7 @@ You can also set `enable_recall_calculation` to `true`when you tweek the `level`
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The `level` and `enable_recall_calculation` parameters are still in **Public Preview**, and you might not be able to fully use them due to compatibility issues. For any assistance, please contact us at support@zilliz.com.
+<p>The <code>level</code> and <code>enable_recall_calculation</code> parameters are still in <strong>Public Preview</strong>, and you might not be able to fully use them due to compatibility issues. For any assistance, please contact us at support@zilliz.com.</p>
 
 </Admonition>
 

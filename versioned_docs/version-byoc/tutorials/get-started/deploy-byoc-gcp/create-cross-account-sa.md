@@ -37,7 +37,7 @@ This page describes how to create and configure a cross-account service account 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
+<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
 
 </Admonition>
 
@@ -169,25 +169,24 @@ The steps for creating a service account are as follows:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    You need to replace the three placeholders in the above expression with actual values:
-
-    - `PROJECT_ID`
-
-        This should be your GCP project ID.
-
-    - `REGION`
-
-        This should be the cloud region of your BYOC project.
-
-    - `CLUSTER_NAME`
-
-        This should be the name of the GKE cluster that Zilliz Cloud will create on your behalf. 
-
-        Note that Google Cloud will add a prefix `gke-` in front of your cluster name. Therefore, you should keep the `gke-` prefix in the condition, and just replace `CLUSTER_NAME` with the actual name.
-
-    - `YOUR_BUCKET_NAME` 
-
-        This should be the name of the bucket created in the previous step.
+    <p>You need to replace the three placeholders in the above expression with actual values:</p>
+    <ul>
+    <li><code>PROJECT_ID</code></li>
+    </ul>
+    <p>This should be your GCP project ID.</p>
+    <ul>
+    <li><code>REGION</code></li>
+    </ul>
+    <p>This should be the cloud region of your BYOC project.</p>
+    <ul>
+    <li><code>CLUSTER_NAME</code></li>
+    </ul>
+    <p>This should be the name of the GKE cluster that Zilliz Cloud will create on your behalf. </p>
+    <p>Note that Google Cloud will add a prefix <code>gke-</code> in front of your cluster name. Therefore, you should keep the <code>gke-</code> prefix in the condition, and just replace <code>CLUSTER_NAME</code> with the actual name.</p>
+    <ul>
+    <li><code>YOUR_BUCKET_NAME</code> </li>
+    </ul>
+    <p>This should be the name of the bucket created in the previous step.</p>
 
     </Admonition>
 
@@ -222,9 +221,8 @@ Follow the steps below to grant the cross-account service account access to thes
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    A GCP project has a project ID and a project number: A project ID is a string you have entered when you create the project on the GCP console, while a project number is a string that GCP allocates to the project upon its creation.
-
-    You need to replace `PROJECT_NUMBER` with your own GCP project number.
+    <p>A GCP project has a project ID and a project number: A project ID is a string you have entered when you create the project on the GCP console, while a project number is a string that GCP allocates to the project upon its creation.</p>
+    <p>You need to replace <code>PROJECT_NUMBER</code> with your own GCP project number.</p>
 
     </Admonition>
 

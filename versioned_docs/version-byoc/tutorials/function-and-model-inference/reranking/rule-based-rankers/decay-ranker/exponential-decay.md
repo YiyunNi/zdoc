@@ -89,7 +89,7 @@ Exponential decay creates a curve that drops quickly at first, then gradually fl
 
 <Admonition type="info" icon="📘" title="Notes">
 
-All time parameters (`origin`, `offset`, `scale`) must use the same unit as the collection data. If your collection stores timestamps in a different unit (milliseconds, microseconds), adjust all parameters accordingly.
+<p>All time parameters (<code>origin</code>, <code>offset</code>, <code>scale</code>) must use the same unit as the collection data. If your collection stores timestamps in a different unit (milliseconds, microseconds), adjust all parameters accordingly.</p>
 
 </Admonition>
 
@@ -141,7 +141,7 @@ Exponential decay can be applied to both standard vector search and hybrid searc
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to [Decay Ranker Tutorial](./tutorial-implement-time-based-ranking).
+<p>Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to <a href="./tutorial-implement-time-based-ranking">Decay Ranker Tutorial</a>.</p>
 
 </Admonition>
 
@@ -151,7 +151,7 @@ After your collection is set up with a numeric field (in this example, `publish_
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**Time unit consistency**: When using time-based decay, ensure that `origin`, `scale`, and `offset` parameters use the same time unit as your collection data. If your collection stores timestamps in seconds, use seconds for all parameters. If it uses milliseconds, use milliseconds for all parameters.
+<p><strong>Time unit consistency</strong>: When using time-based decay, ensure that <code>origin</code>, <code>scale</code>, and <code>offset</code> parameters use the same time unit as your collection data. If your collection stores timestamps in seconds, use seconds for all parameters. If it uses milliseconds, use milliseconds for all parameters.</p>
 
 </Admonition>
 

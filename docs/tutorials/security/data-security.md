@@ -130,7 +130,7 @@ Zilliz Cloud ensures secure connections:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Two-way TLS (mTLS) is currently not available. 
+<p>Two-way TLS (mTLS) is currently not available. </p>
 
 </Admonition>
 

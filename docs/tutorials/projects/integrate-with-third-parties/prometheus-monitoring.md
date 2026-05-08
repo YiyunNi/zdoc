@@ -35,7 +35,7 @@ By integrating Zilliz Cloud with Prometheus, you can collect and monitor metrics
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in an **Enterprise** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
 
 </Admonition>
 
@@ -70,7 +70,7 @@ To monitor Zilliz Cloud clusters with Prometheus, follow these steps:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    The cluster must contain no more than 10,000 collections. Clusters exceeding this limit may experience incomplete or degraded metrics export.
+    <p>The cluster must contain no more than 10,000 collections. Clusters exceeding this limit may experience incomplete or degraded metrics export.</p>
 
     </Admonition>
 

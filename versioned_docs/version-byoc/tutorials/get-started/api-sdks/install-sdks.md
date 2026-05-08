@@ -30,9 +30,10 @@ Zilliz Cloud offers a managed Milvus vector database as a service. Four SDK opti
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Zilliz Cloud consistently upgrades clusters to ensure version compatibility. For details, visit the [Manage Organization Settings](./organization-settings) page. If connection issues arise due to SDK version discrepancies, heed the provided prompts to revert to a compatible SDK version. We'll notify you post-maintenance, post which you can upgrade your SDK without concerns.
-
-- All SDKs below offer both a stable version and a beta version. The stable version is intended for common clusters, while the beta version corresponds to beta clusters. If you have upgraded your clusters to the beta version, ensure that you also upgraded your SDKs to the beta version.
+<ul>
+<li><p>Zilliz Cloud consistently upgrades clusters to ensure version compatibility. For details, visit the <a href="./organization-settings">Manage Organization Settings</a> page. If connection issues arise due to SDK version discrepancies, heed the provided prompts to revert to a compatible SDK version. We'll notify you post-maintenance, post which you can upgrade your SDK without concerns.</p></li>
+<li><p>All SDKs below offer both a stable version and a beta version. The stable version is intended for common clusters, while the beta version corresponds to beta clusters. If you have upgraded your clusters to the beta version, ensure that you also upgraded your SDKs to the beta version.</p></li>
+</ul>
 
 </Admonition>
 
@@ -70,7 +71,7 @@ PyMilvus is Milvus's Python SDK. Access its [source code on GitHub](https://gith
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Ensure your **Python** version exceeds **3.8** prior to installation.
+<p>Ensure your <strong>Python</strong> version exceeds <strong>3.8</strong> prior to installation.</p>
 
 </Admonition>
 
@@ -93,7 +94,7 @@ For Milvus's Node.js SDK, employ **npm** or **yarn**. Access its [source code on
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Ensure your **Node.js** version is **14** or above prior to installation.
+<p>Ensure your <strong>Node.js</strong> version is <strong>14</strong> or above prior to installation.</p>
 
 </Admonition>
 

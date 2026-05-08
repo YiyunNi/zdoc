@@ -36,7 +36,7 @@ This page describes how to create and configure an IAM role for Zilliz Cloud to 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC is currently available in **General Availability**. For access and implementation details, please contact [Zilliz Cloud sales](https://zilliz.com/contact-sales).
+<p>Zilliz BYOC is currently available in <strong>General Availability</strong>. For access and implementation details, please contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud sales</a>.</p>
 
 </Admonition>
 
@@ -191,7 +191,7 @@ You will find that these policies are listed in the **Permissions** policies lis
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Upon the creation of an EKS cluster, two [service-linked roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-service-linked-role) will also be automatically created along with the cluster, and they are [AmazonEKSServiceRolePolicy](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSServiceRolePolicy.html) and [AWSServiceRoleForAmazonEKSNodegroup](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSServiceRoleForAmazonEKSNodegroup.html). These two roles are required for Amazon EKS to call other AWS services on your behalf.
+<p>Upon the creation of an EKS cluster, two <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-service-linked-role">service-linked roles</a> will also be automatically created along with the cluster, and they are <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSServiceRolePolicy.html">AmazonEKSServiceRolePolicy</a> and <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSServiceRoleForAmazonEKSNodegroup.html">AWSServiceRoleForAmazonEKSNodegroup</a>. These two roles are required for Amazon EKS to call other AWS services on your behalf.</p>
 
 </Admonition>
 

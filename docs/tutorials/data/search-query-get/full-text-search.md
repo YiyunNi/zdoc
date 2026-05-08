@@ -38,7 +38,7 @@ Using the BM25 algorithm for relevance scoring, this feature is particularly val
 
 <Admonition type="info" icon="📘" title="Notes">
 
-By integrating full text search with semantic-based dense vector search, you can enhance the accuracy and relevance of search results. For more information, refer to [Hybrid Search](./hybrid-search).
+<p>By integrating full text search with semantic-based dense vector search, you can enhance the accuracy and relevance of search results. For more information, refer to <a href="./hybrid-search">Hybrid Search</a>.</p>
 
 </Admonition>
 
@@ -390,7 +390,7 @@ export schema='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If multiple `VARCHAR` fields require BM25 processing, define **one BM25 function per field**, each with a unique name and output field.
+<p>If multiple <code>VARCHAR</code> fields require BM25 processing, define <strong>one BM25 function per field</strong>, each with a unique name and output field.</p>
 
 </Admonition>
 

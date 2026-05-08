@@ -39,7 +39,7 @@ Milvus 2.4 offers many efficient capabilities for RAG and multimodal data search
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Milvus 2.4 has not reached a stable version. Be cautious when you adopt Milvus 2.4 features in your production environment.
+<p>Milvus 2.4 has not reached a stable version. Be cautious when you adopt Milvus 2.4 features in your production environment.</p>
 
 </Admonition>
 

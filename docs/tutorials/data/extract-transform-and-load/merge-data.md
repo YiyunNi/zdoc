@@ -34,7 +34,9 @@ You can merge data from an existing Zilliz Cloud collection with data from a loc
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- This feature is currently in **PRIVATE PREVIEW**. If you are interested in this feature and want to have a try, please do not hesitate to contact [Zilliz Cloud support](https://support.zilliz.com/hc/en-us).
+<ul>
+<li>This feature is currently in <strong>PRIVATE PREVIEW</strong>. If you are interested in this feature and want to have a try, please do not hesitate to contact <a href="https://support.zilliz.com/hc/en-us">Zilliz Cloud support</a>.</li>
+</ul>
 
 </Admonition>
 
@@ -116,11 +118,13 @@ Before running the above command, there are several fields that you may need to 
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - The value of the `dataPath` parameter can be an absolute path to a file relative to the volume's root, or a folder within the volume that contains multiple Parquet files. If the value points to a folder, ensure that the Parquet files in the folder have the same data structure.
-
-        For example, the value could be `path/to/your/file.parquet` (file) or `path/to/your/folder/` (folder).
-
-    - You can leave this parameter unspecified if you simply want to add fields without data.
+    <ul>
+    <li>The value of the <code>dataPath</code> parameter can be an absolute path to a file relative to the volume's root, or a folder within the volume that contains multiple Parquet files. If the value points to a folder, ensure that the Parquet files in the folder have the same data structure.</li>
+    </ul>
+    <p>For example, the value could be <code>path/to/your/file.parquet</code> (file) or <code>path/to/your/folder/</code> (folder).</p>
+    <ul>
+    <li>You can leave this parameter unspecified if you simply want to add fields without data.</li>
+    </ul>
 
     </Admonition>
 
@@ -202,11 +206,13 @@ Before running the above command, there are several fields that you may need to 
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - The value of the `dataPath` parameter can be an absolute path to a file relative to the bucket's root, or a folder within the bucket that contains multiple Parquet files. If the value points to a folder, ensure that the Parquet files in the folder have the same data structure.
-
-        For example, the value could be `s3://path/to/your/file.parquet` (file) or `s3://path/to/your/folder/` (folder).
-
-    - You can leave this parameter unspecified if you simply want to add fields without data.
+    <ul>
+    <li>The value of the <code>dataPath</code> parameter can be an absolute path to a file relative to the bucket's root, or a folder within the bucket that contains multiple Parquet files. If the value points to a folder, ensure that the Parquet files in the folder have the same data structure.</li>
+    </ul>
+    <p>For example, the value could be <code>s3://path/to/your/file.parquet</code> (file) or <code>s3://path/to/your/folder/</code> (folder).</p>
+    <ul>
+    <li>You can leave this parameter unspecified if you simply want to add fields without data.</li>
+    </ul>
 
     </Admonition>
 

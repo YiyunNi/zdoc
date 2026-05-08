@@ -31,7 +31,7 @@ Memory mapping (Mmap) enables direct memory access to large files on disk, allow
 
 <Admonition type="info" icon="📘" title="Notes">
 
-When migrating or restoring data between source and target clusters that have different plans, the mmap settings of the source collection will not be migrated to the target cluster. Please manually reconfigure the mmap settings on the target cluster.
+<p>When migrating or restoring data between source and target clusters that have different plans, the mmap settings of the source collection will not be migrated to the target cluster. Please manually reconfigure the mmap settings on the target cluster.</p>
 
 </Admonition>
 
@@ -98,11 +98,11 @@ You need to release a collection to make changes to the mmap settings and load i
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Exercise with caution when changing mmap settings. Improper mmap settings may cause the following issues:
-
-- For performance-optimized dedicated clusters, the raw data of all scalar fields and the vector indexes are loaded into memory by default to ensure fast retrieval of scalar fields during searches and queries. Changing the default mmap settings may cause performance degradation.
-
-- For capacity-optimized dedicated clusters, only the vector indexes are loaded into memory by default to ensure maximum storage capacity. Changing the default mmap settings may cause load failures due to out-of-memory (OOM) issues.
+<p>Exercise with caution when changing mmap settings. Improper mmap settings may cause the following issues:</p>
+<ul>
+<li><p>For performance-optimized dedicated clusters, the raw data of all scalar fields and the vector indexes are loaded into memory by default to ensure fast retrieval of scalar fields during searches and queries. Changing the default mmap settings may cause performance degradation.</p></li>
+<li><p>For capacity-optimized dedicated clusters, only the vector indexes are loaded into memory by default to ensure maximum storage capacity. Changing the default mmap settings may cause load failures due to out-of-memory (OOM) issues.</p></li>
+</ul>
 
 </Admonition>
 

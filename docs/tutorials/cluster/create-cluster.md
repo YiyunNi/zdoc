@@ -55,7 +55,7 @@ Ensure:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Each organization can only have 1 free cluster. For additional clusters, opt for the Serverless or Dedicated.
+<p>Each organization can only have 1 free cluster. For additional clusters, opt for the Serverless or Dedicated.</p>
 
 </Admonition>
 
@@ -265,7 +265,7 @@ To create an encrypted cluster, you need to add at least a customer-managed encr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 

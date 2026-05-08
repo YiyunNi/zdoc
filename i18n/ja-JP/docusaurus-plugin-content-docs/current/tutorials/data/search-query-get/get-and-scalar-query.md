@@ -5,7 +5,7 @@ sidebar_key: get-and-scalar-query
 sidebar_label: "クエリ"
 beta: FALSE
 notebook: FALSE
-description: "ANN 検索に加えて、Zilliz Cloud はクエリを通じたメタデータフィルタリングもサポートしています。このページでは、Query、Get、および QueryIterators を使用してメタデータフィルタリングを実行する方法について説明します。 | Cloud"
+description: "ANN 検索に加えて、Zilliz Cloud はクエリによるメタデータフィルタリングもサポートしています。このページでは、Query、Get、QueryIterators を使用してメタデータフィルタリングを実行する方法を紹介します。 | Cloud"
 type: origin
 token: R7F7wY8pCiJ5Q4kbntxcMsE6nLf
 sidebar_position: 8
@@ -15,8 +15,8 @@ keywords:
   - cloud
   - コレクション
   - データ
-  - ID による取得
-  - フィルター付きクエリ
+  - get by id
+  - query with filters
   - フィルタリング
 
 ---
@@ -25,13 +25,13 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Query
+# クエリ
 
-ANN検索に加えて、Zilliz Cloudはメタデータフィルタリングもクエリを通じてサポートしています。このページでは、Query、Get、およびQueryIteratorを使用してメタデータフィルタリングを実行する方法を紹介します。
+ANN検索に加えて、Zilliz Cloud はメタデータフィルタリングをクエリを通じてサポートしています。このページでは、メタデータフィルタリングを実行するために Query、Get、および QueryIterator を使用する方法を紹介します。
 
 ## 概要\{#overview}
 
-コレクションにはさまざまなタイプのスカラーフィールドを格納できます。Zilliz Cloudでは、1つまたは複数のスカラーフィールドに基づいてエンティティをフィルタリングできます。Zilliz Cloudは、Query、Get、QueryIteratorの3種類のクエリを提供しています。以下の表は、これら3つのクエリタイプを比較したものです。
+コレクションはさまざまなタイプのスカラーフィールドを保存できます。Zilliz Cloud に1つ以上のスカラーフィールドに基づいてエンティティをフィルタリングさせることができます。Zilliz Cloud は3種類のクエリを提供しています: Query、Get、および QueryIterator。下の表はこれら3つのクエリタイプを比較しています。
 
 <table>
    <tr>
@@ -42,21 +42,21 @@ ANN検索に加えて、Zilliz Cloudはメタデータフィルタリングも�
    </tr>
    <tr>
      <td><p>適用シナリオ</p></td>
-     <td><p>指定された主キーを持つエンティティを検索する。</p></td>
-     <td><p>カスタムフィルタリング条件を満たすすべてのエンティティ、または指定された数のエンティティを検索する。</p></td>
-     <td><p>カスタムフィルタリング条件を満たすすべてのエンティティをページネーション付きで検索する。</p></td>
+     <td><p>指定された主キーを持つエンティティを検索する場合。</p></td>
+     <td><p>カスタムフィルタリング条件を満たすすべてまたは指定された数のエンティティを検索する場合</p></td>
+     <td><p>ページネーションクエリでカスタムフィルタリング条件を満たすすべてのエンティティを検索する場合。</p></td>
    </tr>
    <tr>
      <td><p>フィルタリング方法</p></td>
-     <td><p>主キーによるフィルタリング</p></td>
-     <td><p>フィルタリング式によるフィルタリング。</p></td>
-     <td><p>フィルタリング式によるフィルタリング。</p></td>
+     <td><p>主キーによる</p></td>
+     <td><p>フィルタリング式による。</p></td>
+     <td><p>フィルタリング式による。</p></td>
    </tr>
    <tr>
      <td><p>必須パラメータ</p></td>
      <td><ul><li><p>コレクション名</p></li><li><p>主キー</p></li></ul></td>
      <td><ul><li><p>コレクション名</p></li><li><p>フィルタリング式</p></li></ul></td>
-     <td><ul><li><p>コレクション名</p></li><li><p>フィルタリング式</p></li><li><p>1回のクエリで返すエンティティ数</p></li></ul></td>
+     <td><ul><li><p>コレクション名</p></li><li><p>フィルタリング式</p></li><li><p>クエリごとに返すエンティティ数</p></li></ul></td>
    </tr>
    <tr>
      <td><p>オプションパラメータ</p></td>
@@ -65,18 +65,18 @@ ANN検索に加えて、Zilliz Cloudはメタデータフィルタリングも�
      <td><ul><li><p>パーティション名</p></li><li><p>合計で返すエンティティ数</p></li><li><p>出力フィールド</p></li></ul></td>
    </tr>
    <tr>
-     <td><p>戻り値</p></td>
-     <td><p>指定されたコレクションまたはパーティション内で、指定された主キーを持つエンティティを返す。</p></td>
-     <td><p>指定されたコレクションまたはパーティション内で、カスタムフィルタリング条件を満たすすべてのエンティティ、または指定された数のエンティティを返す。</p></td>
-     <td><p>指定されたコレクションまたはパーティション内で、カスタムフィルタリング条件を満たすすべてのエンティティをページネーション付きで返す。</p></td>
+     <td><p>返却値</p></td>
+     <td><p>指定されたコレクションまたはパーティション内で、指定された主キーを持つエンティティを返します。</p></td>
+     <td><p>指定されたコレクションまたはパーティション内で、カスタムフィルタリング条件を満たすすべてまたは指定された数のエンティティを返します。</p></td>
+     <td><p>ページネーションクエリを通じて、指定されたコレクションまたはパーティション内でカスタムフィルタリング条件を満たすすべてのエンティティを返します。</p></td>
    </tr>
 </table>
 
-メタデータフィルタリングの詳細については、[Filtering](./filtering) および [Filtering Explained](./filtering-overview) を参照してください。
+メタデータフィルタリングの詳細については、[フィルタリング](./filtering)[フィルタリングの解説](./filtering-overview) を参照してください。
 
-## Getの使用\{#use-get}
+## Get の使用\{#use-get}
 
-主キーを使ってエンティティを検索する必要がある場合は、**Get** メソッドを使用できます。以下のコード例では、コレクション内に `id`、`vector`、`color` という3つのフィールドが存在していることを前提としています。
+主キーでエンティティを検索する必要がある場合、**Get** メソッドを使用できます。以下のコード例では、コレクションに `id`、`vector`、`color` という3つのフィールドがあることを前提としています。
 
 ```python
 [
@@ -836,11 +836,11 @@ curl --request POST \
 
 ## クエリによるランダムサンプリング\{#random-sampling-with-query}
 
-データ探索や開発テストのためにコレクションから代表的なデータのサブセットを抽出するには、`RANDOM_SAMPLE(sampling_factor)` 式を使用します。ここで `sampling_factor` は 0 から 1 の間の浮動小数点数で、サンプリングするデータの割合を表します。
+データ探索や開発テストのためにコレクションから代表的なデータのサブセットを抽出するには、`RANDOM_SAMPLE(sampling_factor)` 式を使用します。ここで `sampling_factor` は、サンプリングするデータの割合を表す 0 から 1 の間の浮動小数点数です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>詳細な使用方法、高度な例、およびベストプラクティスについては、<a href="./ramdom-sampling">ランダムサンプリング</a>を参照してください。</p>
+詳細な使用方法、高度な例、およびベストプラクティスについては、[ランダムサンプリング](./ramdom-sampling) を参照してください。
 
 </Admonition>
 
@@ -954,13 +954,13 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-## 一時的にクエリのタイムゾーンを設定する\{#temporarily-set-a-timezone-for-a-query}
+## クエリのタイムゾーンを一時的に設定する\{#temporarily-set-a-timezone-for-a-query}
 
-コレクションに `TIMESTAMPTZ` フィールドがある場合、クエリ呼び出しで `timezone` パラメータを設定することで、単一の操作に対してデータベースまたはコレクションのデフォルトタイムゾーンを一時的に上書きできます。これにより、操作中の `TIMESTAMPTZ` 値の表示方法と比較方法を制御できます。
+コレクションに `TIMESTAMPTZ` フィールドがある場合、クエリ呼び出しで `timezone` パラメータを設定することで、単一の操作に対してデータベースまたはコレクションのデフォルトタイムゾーンを一時的に上書きできます。これにより、操作中の `TIMESTAMPTZ` 値の表示方法と比較方法が制御されます。
 
-`timezone` の値は、有効な [IANA タイムゾーン識別子](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)（例：**Asia/Shanghai**、**America/Chicago**、または **UTC**）である必要があります。`TIMESTAMPTZ` フィールドの使用方法の詳細については、[TIMESTAMPTZ フィールド](./use-timestamptz-field) を参照してください。
+`timezone` の値は、有効な [IANA タイムゾーン識別子](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)（例: **Asia/Shanghai**、**America/Chicago**、**UTC**）である必要があります。`TIMESTAMPTZ` フィールドの使用方法の詳細については、[TIMESTAMPTZ フィールド](./use-timestamptz-field) を参照してください。
 
-以下の例は、クエリ操作に対してタイムゾーンを一時的に設定する方法を示しています：
+以下の例は、クエリ操作のタイムゾーンを一時的に設定する方法を示しています:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

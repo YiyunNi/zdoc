@@ -5,14 +5,14 @@ sidebar_key: import-data-via-sdks
 sidebar_label: "SDK"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、bulk-writer および bulk-import API を使用して SDK でコレクションにデータをインポートする方法を説明します。| BYOC"
+description: "このガイドでは、bulk-writer および bulk-import API を使用して SDK でコレクションにデータをインポートする方法を説明します。 | BYOC"
 type: origin
 token: MvgAwL4HIiuRRJkH0FwcJhxSnld
 sidebar_position: 3
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - データインポート
   - sdk
 
@@ -24,9 +24,9 @@ import TabItem from '@theme/TabItem';
 
 # データのインポート (SDK)
 
-このガイドでは、SDK を使用してバルクライターおよびバルクインポート API でコレクションにデータをインポートする方法を学ぶことができます。
+このガイドでは、bulk-writer および bulk-import API を使用して SDK でコレクションにデータをインポートする方法を説明します。
 
-また、[エンドツーエンドの高速トラック コース](./data-import-zero-to-hero)も参照できます。このコースでは、Zilliz Cloud のコレクションへのデータ準備とデータインポートの両方をカバーしています。
+または、[クイックスタートのエンドツーエンドコース](./data-import-zero-to-hero) を参照することもできます。このコースでは、Zilliz Cloud コレクションへのデータ準備とデータインポートの両方をカバーしています。
 
 ## 依存関係のインストール\{#install-dependencies}
 
@@ -34,7 +34,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value='python'>
 
-ターミナルで次のコマンドを実行し、**pymilvus** および **minio** をインストールするか、最新バージョンにアップグレードしてください。
+ターミナルで以下のコマンドを実行して、**pymilvus** および **minio** をインストールするか、最新バージョンにアップグレードしてください。
 
 ```shell
 python3 -m pip install --upgrade pymilvus minio
@@ -73,7 +73,7 @@ compile 'io.minio:minio:8.5.9'
 
 ## 準備済みデータの確認\{#check-prepared-data}
 
-[ BulkWriter ツール](./use-bulkwriter) を使用してデータを準備し、準備済みファイルへのパスを取得したら、Zilliz Cloud のコレクションにインポートする準備が整います。準備が完了しているかを確認するには、以下の手順に従ってください。
+[BulkWriter ツール](./use-bulkwriter) を使用してデータを準備し、準備済みファイルのパスを取得したら、Zilliz Cloud コレクションへのインポート準備が整います。準備が完了しているかどうかを確認するには、以下の手順を実行します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -244,13 +244,13 @@ public static void main(String[] args) throws Exception {
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>データのインポートを成功させるには、対象のコレクションに実行中または保留中のインポートジョブが10,000件未満であることを確認してください。</p>
+データのインポートを成功させるには、対象のコレクションの実行中または保留中のインポートジョブが 10,000 件未満であることを確認してください。
 
 </Admonition>
 
-### インポートの進行状況を確認する\{#check-import-progress}
+### インポートの進捗状況を確認する\{#check-import-progress}
 
-指定した一括インポートジョブの進行状況を確認できます。
+指定したバルクインポートジョブの進捗状況を確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -359,13 +359,13 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-## 関連トピック\{#related-topics}
+## Related topics\{#related-topics}
 
 - [ストレージオプション](./data-import-storage-options)
 
 - [フォーマットオプション](./data-import-format-options)
 
-- [RESTful API によるデータインポート](./import-data-via-restful-api)
+- [RESTful API を使用したデータのインポート](./import-data-via-restful-api)
 
-- [ゼロから始めるデータインポート](./data-import-zero-to-hero) 
+- [データインポート ゼロからヒーローへ](./data-import-zero-to-hero) 
 

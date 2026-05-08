@@ -101,9 +101,10 @@ To prepare migration data for Milvus 2.x,
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - For a Milvus instance installed using Docker Compose, `minio.bucketName` defaults to `a-bucket` and `rootPath` defaults to `files`.
-
-    - For a Milvus instance installed on Kubernetes, `minio.bucketName` defaults to `milvus-bucket` and `rootPath` defaults to `file`.
+    <ul>
+    <li><p>For a Milvus instance installed using Docker Compose, <code>minio.bucketName</code> defaults to <code>a-bucket</code> and <code>rootPath</code> defaults to <code>files</code>.</p></li>
+    <li><p>For a Milvus instance installed on Kubernetes, <code>minio.bucketName</code> defaults to <code>milvus-bucket</code> and <code>rootPath</code> defaults to <code>file</code>.</p></li>
+    </ul>
 
     </Admonition>
 
@@ -152,7 +153,7 @@ With backup files ready, you can migrate the data from local files, an object st
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If full text search is already enabled for the source collection, Zilliz Cloud will preserve its Function settings in the target collection after migration. These inherited settings cannot be modified.
+<p>If full text search is already enabled for the source collection, Zilliz Cloud will preserve its Function settings in the target collection after migration. These inherited settings cannot be modified.</p>
 
 </Admonition>
 
@@ -164,7 +165,7 @@ Once you click **Migrate**, a migration job will be generated. You can check the
 
 <Admonition type="info" icon="📘" title="Notes">
 
-After migration, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.
+<p>After migration, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.</p>
 
 </Admonition>
 

@@ -35,11 +35,11 @@ This guide covers the full lifecycle of access logs on Zilliz Cloud: enabling, a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- This release logs search- or query-class actions only: Search, HybridSearch, and Query. Support for the full action list is planned for a future release.
-
-- Audit log and access log are mutually exclusive in this release — only one can be enabled at a time.
-
-- Access logs are available only for **Dedicated** clusters on **Enterprise** projects. If your cluster is on a different plan or cluster type, consider upgrading it.
+<ul>
+<li><p>This release logs search- or query-class actions only: Search, HybridSearch, and Query. Support for the full action list is planned for a future release.</p></li>
+<li><p>Audit log and access log are mutually exclusive in this release — only one can be enabled at a time.</p></li>
+<li><p>Access logs are available only for <strong>Dedicated</strong> clusters on <strong>Enterprise</strong> projects. If your cluster is on a different plan or cluster type, consider upgrading it.</p></li>
+</ul>
 
 </Admonition>
 

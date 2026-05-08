@@ -33,7 +33,7 @@ Based on an index file recording the sorted order of vector embeddings, the Appr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you dynamically add new fields after the collection has been created, searches that include these fields will return the defined default values or NULL for entities that have not explicitly set values. For details, refer to [Add Fields to an Existing Collection](./add-fields-to-an-existing-collection).
+<p>If you dynamically add new fields after the collection has been created, searches that include these fields will return the defined default values or NULL for entities that have not explicitly set values. For details, refer to <a href="./add-fields-to-an-existing-collection">Add Fields to an Existing Collection</a>.</p>
 
 </Admonition>
 
@@ -73,7 +73,7 @@ In this section, you will learn how to conduct a single-vector search. The searc
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Use a colon-separated username and password of the target cluster, like `username:password`, as the authentication token when calling data-plane RESTful API endpoints.
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
 
 </Admonition>
 
@@ -1268,7 +1268,7 @@ This parameter ranges from `1` to `10` and defaults to `1`. Increasing the value
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The `level`  parameter is still in **Public Preview**. If you cannot set it to a value greater than `5`, your cluster may not fully support this feature. As a workaround, you can set it to a value within the range from `1` to `5` instead, or contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
+<p>The <code>level</code>  parameter is still in <strong>Public Preview</strong>. If you cannot set it to a value greater than <code>5</code>, your cluster may not fully support this feature. As a workaround, you can set it to a value within the range from <code>1</code> to <code>5</code> instead, or contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud support</a>.</p>
 
 </Admonition>
 
@@ -1411,7 +1411,7 @@ You can set `enable_recall_calculation` to `true`when you tweek the `level` para
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The `enable_recall_calculation`  parameter is still in **Public Preview**, and you might not be able to use it due to compatibility issues. For any assistance, please contact us at [Zilliz Cloud support](https://zilliz.com/contact-sales).
+<p>The <code>enable_recall_calculation</code>  parameter is still in <strong>Public Preview</strong>, and you might not be able to use it due to compatibility issues. For any assistance, please contact us at <a href="https://zilliz.com/contact-sales">Zilliz Cloud support</a>.</p>
 
 </Admonition>
 

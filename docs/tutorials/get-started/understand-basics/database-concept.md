@@ -157,7 +157,7 @@ The following table compares the 2 types of databases.
 
 <Admonition type="info" icon="📘" title="Note">
 
-Use different connection endpoints for the two types of databases. For details, see Connection Endpoints.
+<p>Use different connection endpoints for the two types of databases. For details, see Connection Endpoints.</p>
 
 </Admonition>
 

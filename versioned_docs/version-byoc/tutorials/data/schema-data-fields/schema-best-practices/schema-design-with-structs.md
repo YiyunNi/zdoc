@@ -305,7 +305,7 @@ To start, we need to initialize the schema for a caption Struct, a front_cars St
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    Although a front car does not involve vector embeddings, you still need to include it as an array of Struct because the data size exceeds the maximum for a JSON field.
+    <p>Although a front car does not involve vector embeddings, you still need to include it as an array of Struct because the data size exceeds the maximum for a JSON field.</p>
 
     </Admonition>
 

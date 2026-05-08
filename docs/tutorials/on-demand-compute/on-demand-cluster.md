@@ -8,7 +8,7 @@ last_modified: FALSE
 deprecate_since: FALSE
 beta: PUBLIC
 notebook: FALSE
-description: "A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types serving clusters, which run continuously for production workloads requiring always-on, low-latency access, and on-demand clusters, which spin up only when requests arrive and scale to zero when idle.  For details, see Compute: Realtime Serving & On-demand Compute. | Cloud"
+description: "A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types serving clusters, which run continuously for production workloads requiring always-on, low-latency access, and on-demand clusters, which spin up only when requests arrive and scale to zero when idle. | Cloud"
 type: origin
 token: XFoiwC15Jiu5LAkUeuVcvbconDR
 sidebar_position: 1
@@ -30,15 +30,14 @@ import Procedures from '@site/src/components/Procedures';
 
 # Cluster
 
-A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types: **serving clusters**, which run continuously for production workloads requiring always-on, low-latency access, and **on-demand clusters**, which spin up only when requests arrive and scale to zero when idle.  For details, see Compute: Realtime Serving & On-demand Compute.
+A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types: **serving clusters**, which run continuously for production workloads requiring always-on, low-latency access, and **on-demand clusters**, which spin up only when requests arrive and scale to zero when idle.  
 
 This topic describes how to create an **on-demand** cluster.
 
 <Admonition type="info" icon="📘" title="Note">
 
-This feature is only available to **Enterprise** projects.
-
-Currently, you can only create an on-demand cluster in AWS us-west-2. For other regions, [contact us](http://zilliz.com/contact-sales).
+<p>This feature is only available to <strong>Enterprise</strong> projects.</p>
+<p>Currently, you can only create an on-demand cluster in AWS us-west-2. For other regions, <a href="http://zilliz.com/contact-sales">contact us</a>.</p>
 
 </Admonition>
 
@@ -236,7 +235,7 @@ Currently, you can only create an on-demand cluster in AWS us-west-2. For other 
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-Once you drop a cluster, it is removed immediately and cannot be recovered. This action cannot be undone.
+<p>Once you drop a cluster, it is removed immediately and cannot be recovered. This action cannot be undone.</p>
 
 </Admonition>
 

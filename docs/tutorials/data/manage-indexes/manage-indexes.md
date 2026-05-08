@@ -30,17 +30,14 @@ Learn how to manipulate indexes on vector and scalar fields via SDKs.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Whether a collection is automatically indexed and loaded depends on how you create the collection. A collection is automatically loaded upon creation in the following scenarios:
-
-- On the console.
-
-- [Using RESTful API](/reference/create-collection).
-
-- [Using applicable SDKs with index parameters specified.](./manage-collections-sdks)
-
-You can also create a collection that is not loaded automatically and start managing indexes on your own.
-
-For collections and external collections in a database created using the project endpoint, you cannot drop indexes after they are created. This applies to both vector and scalar fields.
+<p>Whether a collection is automatically indexed and loaded depends on how you create the collection. A collection is automatically loaded upon creation in the following scenarios:</p>
+<ul>
+<li><p>On the console.</p></li>
+<li><p><a href="/reference/create-collection">Using RESTful API</a>.</p></li>
+<li><p><a href="./manage-collections-sdks">Using applicable SDKs with index parameters specified.</a></p></li>
+</ul>
+<p>You can also create a collection that is not loaded automatically and start managing indexes on your own.</p>
+<p>For collections and external collections in a database created using the project endpoint, you cannot drop indexes after they are created. This applies to both vector and scalar fields.</p>
 
 </Admonition>
 

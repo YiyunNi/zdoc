@@ -307,7 +307,7 @@ The [`build_level`](./tune-index-build-level)[ parameter ](./tune-index-build-le
 
 <Admonition type="info" icon="📘" title="**Note**">
 
-The `build_level` parameter cannot be modified once set. Changing it requires dropping and recreating the index. We recommend evaluating your requirements before creating a collection. This parameter only supports floating-point vector types (FLOAT_VECTOR, FLOAT16_VECTOR, and BFLOAT16_VECTOR).
+<p>The <code>build_level</code> parameter cannot be modified once set. Changing it requires dropping and recreating the index. We recommend evaluating your requirements before creating a collection. This parameter only supports floating-point vector types (FLOAT<em>VECTOR, FLOAT16</em>VECTOR, and BFLOAT16_VECTOR).</p>
 
 </Admonition>
 
@@ -358,7 +358,7 @@ The [`level`](./tune-recall-rate)[ parameter](./tune-recall-rate) (1–10) contr
 
 <Admonition type="info" icon="📘" title="**Note**">
 
-The Collection must be released before modifying mmap settings, then reloaded afterward. Misconfiguration may cause performance degradation or OOM errors — validate in a test environment first.
+<p>The Collection must be released before modifying mmap settings, then reloaded afterward. Misconfiguration may cause performance degradation or OOM errors — validate in a test environment first.</p>
 
 </Admonition>
 

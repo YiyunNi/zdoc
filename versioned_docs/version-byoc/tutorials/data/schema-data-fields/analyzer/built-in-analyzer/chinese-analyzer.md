@@ -155,7 +155,7 @@ analyzerParams='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The `chinese` analyzer does not accept any optional parameters.
+<p>The <code>chinese</code> analyzer does not accept any optional parameters.</p>
 
 </Admonition>
 

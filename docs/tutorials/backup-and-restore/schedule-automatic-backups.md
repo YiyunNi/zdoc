@@ -36,7 +36,7 @@ This guide walks you through how to schedule automatic backups on Zilliz Cloud. 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters.
+<p>This feature is available only to <strong>Dedicated</strong> clusters.</p>
 
 </Admonition>
 

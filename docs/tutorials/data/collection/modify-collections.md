@@ -157,7 +157,7 @@ You can modify collection-level properties after a collection is created.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-All the properties listed in this section apply only to managed collections.
+<p>All the properties listed in this section apply only to managed collections.</p>
 
 </Admonition>
 

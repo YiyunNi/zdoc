@@ -33,7 +33,7 @@ You can drop a collection if it is no longer needed.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Unlike dropping a managed collection, which removes both the collection and the data, dropping an external collection only removes the collection and keeps the data intact.
+<p>Unlike dropping a managed collection, which removes both the collection and the data, dropping an external collection only removes the collection and keeps the data intact.</p>
 
 </Admonition>
 

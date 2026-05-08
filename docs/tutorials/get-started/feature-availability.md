@@ -83,7 +83,7 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Contact [Zilliz Support](http://support.zilliz.com) to request access to these features. 
+<p>Contact <a href="http://support.zilliz.com">Zilliz Support</a> to request access to these features. </p>
 
 </Admonition>
 
@@ -93,7 +93,7 @@ Contact [Zilliz Support](http://support.zilliz.com) to request access to these f
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Upgrade your cluster Milvus version to access these features.
+<p>Upgrade your cluster Milvus version to access these features.</p>
 
 </Admonition>
 
@@ -103,7 +103,7 @@ Upgrade your cluster Milvus version to access these features.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If your region does support this feature, [contact us](http://support.zilliz.com) to request more regions
+<p>If your region does support this feature, <a href="http://support.zilliz.com">contact us</a> to request more regions</p>
 
 </Admonition>
 

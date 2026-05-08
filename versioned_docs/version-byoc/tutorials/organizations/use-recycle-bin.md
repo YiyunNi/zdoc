@@ -51,7 +51,7 @@ To use recycle bin, you must be an **Organization Owner**.
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    The load status of the collections in the cluster will be retained.
+    <p>The load status of the collections in the cluster will be retained.</p>
 
     </Admonition>
 

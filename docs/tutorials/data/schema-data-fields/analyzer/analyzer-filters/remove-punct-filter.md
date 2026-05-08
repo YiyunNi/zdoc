@@ -34,7 +34,7 @@ The `removepunct` filter removes standalone punctuation tokens from the token st
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This filter is most effective with `jieba`, `lindera`, and `icu` tokenizers, which preserve punctuation as separate tokens (e.g., `"Hello!"` → `["Hello", "!"]`). Other tokenizers like `standard` and `whitespace` discard punctuation during tokenization, so `removepunct` has no effect on them.
+<p>This filter is most effective with <code>jieba</code>, <code>lindera</code>, and <code>icu</code> tokenizers, which preserve punctuation as separate tokens (e.g., <code>"Hello!"</code> → <code>["Hello", "!"]</code>). Other tokenizers like <code>standard</code> and <code>whitespace</code> discard punctuation during tokenization, so <code>removepunct</code> has no effect on them.</p>
 
 </Admonition>
 

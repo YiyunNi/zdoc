@@ -30,7 +30,7 @@ Learn how to configure auditing for your Zilliz Cloud cluster.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In BYOC deployments, VDB audit logs are written directly to the log bucket configured in your data plane's local object storage (S3/Azure Blob Storage/GCS), ensuring no data leaves your infrastructure. To enable and configure audit logging, please [contact us](https://support.zilliz.com/hc/en-us).
+<p>In BYOC deployments, VDB audit logs are written directly to the log bucket configured in your data plane's local object storage (S3/Azure Blob Storage/GCS), ensuring no data leaves your infrastructure. To enable and configure audit logging, please <a href="https://support.zilliz.com/hc/en-us">contact us</a>.</p>
 
 </Admonition>
 

@@ -36,11 +36,11 @@ In Zilliz Cloud, analyzers are configured during collection creation when you ad
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The use of analyzers may impact performance:
-
-- **Full text search:** For full text search, **DataNode** and **QueryNode** channels consume data more slowly because they must wait for tokenization to complete. As a result, newly ingested data takes longer to become available for search.
-
-- **Keyword match:** For keyword matching, index creation is also slower since tokenization needs to finish before an index can be built.
+<p>The use of analyzers may impact performance:</p>
+<ul>
+<li><p><strong>Full text search:</strong> For full text search, <strong>DataNode</strong> and <strong>QueryNode</strong> channels consume data more slowly because they must wait for tokenization to complete. As a result, newly ingested data takes longer to become available for search.</p></li>
+<li><p><strong>Keyword match:</strong> For keyword matching, index creation is also slower since tokenization needs to finish before an index can be built.</p></li>
+</ul>
 
 </Admonition>
 
@@ -54,7 +54,7 @@ An analyzer in Zilliz Cloud consists of exactly one **tokenizer** and **zero or 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Tokenizers support only UTF-8 format. Support for other formats will be added in future releases.
+<p>Tokenizers support only UTF-8 format. Support for other formats will be added in future releases.</p>
 
 </Admonition>
 
@@ -72,9 +72,10 @@ Zilliz Cloud provides two types of analyzers to meet different text processing n
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- If you omit analyzer configurations during collection creation, Zilliz Cloud uses the `standard` analyzer for all text processing by default. For details, refer to [Standard](./standard-analyzer).
-
-- For optimal search and query performance, choose an analyzer that matches the language of your text data. For instance, while the `standard` analyzer is versatile, it may not be the best choice for languages with unique grammatical structures, such as Chinese, Japanese, or Korean. In such cases, using a language-specific analyzer like [`chinese`](./chinese-analyzer) or custom analyzers with specialized tokenizers (such as [`lindera`](./lindera-tokenizer), [`icu`](./icu-tokenizer)) and filters is highly recommended to ensure accurate tokenization and better search results.
+<ul>
+<li><p>If you omit analyzer configurations during collection creation, Zilliz Cloud uses the <code>standard</code> analyzer for all text processing by default. For details, refer to <a href="./standard-analyzer">Standard</a>.</p></li>
+<li><p>For optimal search and query performance, choose an analyzer that matches the language of your text data. For instance, while the <code>standard</code> analyzer is versatile, it may not be the best choice for languages with unique grammatical structures, such as Chinese, Japanese, or Korean. In such cases, using a language-specific analyzer like <a href="./chinese-analyzer"><code>chinese</code></a> or custom analyzers with specialized tokenizers (such as <a href="./lindera-tokenizer"><code>lindera</code></a>, <a href="./icu-tokenizer"><code>icu</code></a>) and filters is highly recommended to ensure accurate tokenization and better search results.</p></li>
+</ul>
 
 </Admonition>
 
@@ -1232,7 +1233,7 @@ You can also use the Zilliz Cloud console to perform the above operations. For d
 
 <Admonition type="info" icon="📘" title="**Note**">
 
-Analyzer configurations are immutable after collection creation. To change the analyzer configuration, create a new collection with the desired settings and [migrate](./migrate-between-clusters) your data.
+<p>Analyzer configurations are immutable after collection creation. To change the analyzer configuration, create a new collection with the desired settings and <a href="./migrate-between-clusters">migrate</a> your data.</p>
 
 </Admonition>
 

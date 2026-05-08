@@ -842,9 +842,8 @@ Specifically, you should concatenate the name of the StructArray field and those
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud provides `EmbeddingList` to help you organize query vectors for searches against an embedding list in a StructArray more neatly. Each `EmbeddingList` contains at least a vector embedding and expects a number of topK entities in return.
-
-However, `EmbeddingList` can be used only in `search()` requests without range search or grouping search parameters, let alone `search_iterator()` requests.
+<p>Zilliz Cloud provides <code>EmbeddingList</code> to help you organize query vectors for searches against an embedding list in a StructArray more neatly. Each <code>EmbeddingList</code> contains at least a vector embedding and expects a number of topK entities in return.</p>
+<p>However, <code>EmbeddingList</code> can be used only in <code>search()</code> requests without range search or grouping search parameters, let alone <code>search_iterator()</code> requests.</p>
 
 </Admonition>
 

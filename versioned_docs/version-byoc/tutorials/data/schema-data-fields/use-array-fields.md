@@ -63,7 +63,7 @@ Here’s how to define a collection schema that includes ARRAY fields:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you set `enable_dynamic_fields=True` when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to [Dynamic Field](./enable-dynamic-field).
+<p>If you set <code>enable_dynamic_fields=True</code> when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to <a href="./enable-dynamic-field">Dynamic Field</a>.</p>
 
 </Admonition>
 

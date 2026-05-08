@@ -1,11 +1,11 @@
 ---
-title: "関数とモデル推論の概要 | Cloud"
+title: "Function & Model Inference の概要 | Cloud"
 slug: /function-and-model-inference-overview
 sidebar_key: function-and-model-inference-overview
 sidebar_label: "概要"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、セマンティック検索、語彙検索、ハイブリッド検索、インテリジェントな再ランキングを含む、現代的な検索システムを構築するための統一された検索アーキテクチャを提供します。これらの機能を個別の機能として公開するのではなく、Zilliz Cloud は「関数」という単一のコア抽象概念を中心にそれらを整理しています。| Cloud"
+description: "Zilliz Cloud は、セマンティック検索、語彙検索、ハイブリッド検索、およびインテリジェントなリランキングを含む、現代的な検索システムを構築するための統合検索アーキテクチャを提供します。これらの機能を独立した機能として提供するのではなく、Zilliz Cloud は単一の中核的な抽象概念である Function を中心に整理しています。"
 type: origin
 token: BanBwAm53iaLimkfLm3cFh0Fncb
 sidebar_position: 1
@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - 関数
-  - モデル
-  - 推論
+  - function
+  - model
+  - inference
   - 概要
 
 ---
@@ -23,55 +23,55 @@ keywords:
 import Admonition from '@theme/Admonition';
 
 
-# Function & Model Inference Overview
+# 関数とモデル推論の概要
 
-Zilliz Cloud は、セマンティック検索、レキシカル検索、ハイブリッド検索、インテリジェントなリランキングを含むモダンな検索システムを構築するための統合された検索アーキテクチャを提供します。これらの機能を個別の機能として公開するのではなく、Zilliz Cloud はそれらを単一のコア抽象化である **Function**（関数）を中心に整理しています。
+Zilliz Cloud は、セマンティック検索、語彙検索、ハイブリッド検索、インテリジェントな再ランキングを含む、モダンな検索システムの構築のための統合検索アーキテクチャを提供します。これらの機能を独立した機能として公開するのではなく、Zilliz Cloud は単一の中核的な抽象概念である **Function** を中心にそれらを整理しています。
 
-## What is a Function?\{#what-is-a-function}
+## Function とは何か？\{#what-is-a-function}
 
-Zilliz Cloud において、**Function** とは検索ワークフローの特定の段階で特定の操作を適用する、設定可能な実行ユニットです。
+Zilliz Cloud において、**Function** は検索ワークフローの定義された段階で特定の操作を適用する、設定可能な実行単位です。
 
-Function は以下の3つの実用的な質問に答えます。
+Function は 3 つの実用的な質問に答えます：
 
 - **この操作はいつ実行されるか？** 検索前または検索後。
 
-- **どのような入力に対して動作するか？** 生のテキスト、ベクトル表現、または取得された候補結果。
+- **どの入力に対して操作するか？** 生テキスト、ベクトル表現、または取得された候補結果。
 
-- **どのような出力を生成するか？** 検索に使用されるベクトル埋め込み、またはユーザーに返される並べ替え済みの結果。
+- **どのような出力を生成するか？** 検索に使用されるベクトル埋め込み、またはユーザーに返される再順序付けされた結果。
 
-ワークフローの観点から見ると、Function は検索において次の2つの異なる段階に参加します。
+ワークフローの観点から、Function は 2 つの異なる段階で検索に参加します：
 
-- **検索前**（検索前）: テキストをベクトル表現に変換するために検索前に実行されます。これらのベクトルがどの候補が取得されるかを決定します。
+- **検索前**: Function は検索前に実行され、テキストをベクトル表現に変換します。これらのベクトルは、どの候補が取得されるかを決定します。
 
-- **検索後**（検索後）: 候補取得後に実行され、候補セットを変更せずに結果の順序を洗練します。
+- **検索後**: Function は候補取得後に実行され、結果の順序を洗練させますが、候補セットは変更しません。
 
-以下の図は、検索ワークフローにおける Function の動作を抽象化したものです。
+以下の図は、検索ワークフローにおける Function の動作の抽象化を示しています。
 
 ![HF6JwTJVfhXMmdb3qx3cm2YdnMe](https://zdoc-images.s3.us-west-2.amazonaws.com/HF6JwTJVfhXMmdb3qx3cm2YdnMe.png)
 
-すべての検索リクエストは、同じ高レベルのフローに従います。
+すべての検索リクエストは、同じ高レベルのフローに従います：
 
-1. **検索前 Function** が入力テキストからベクトル表現を生成します。
+1. **検索前関数** が入力テキストからベクトル表現を生成します
 
-1. 検索エンジンがこれらのベクトルに基づいて候補結果を取得します。
+1. 検索エンジンがそれらのベクトルに基づいて候補結果を取得します
 
-1. （オプション）**検索後 Function** が取得された候補をリランキングします。
+1. （オプション）**検索後関数** が取得された候補を再ランキングします
 
-## Function categories\{#function-categories}
+## Function のカテゴリ\{#function-categories}
 
-Zilliz Cloud の Functions は、**検索ワークフローにおける実行タイミング**と**それらが果たす役割**に基づいて分類されます。高レベルでは、Functions は次の2つのグループに分かれます。
+Zilliz Cloud の Function は、**検索ワークフロー内でいつ実行されるか**、および **それらが果たす役割** に基づいて分類されます。高レベルでは、Function は 2 つのグループに分かれます：
 
-- **検索前 Functions**: テキストをベクトル埋め込みに変換し、候補取得を決定します。
+- **検索前関数** — テキストをベクトル埋め込みに変換し、候補取得を決定する
 
-- **検索後 Functions**: 取得された候補の順序を洗練します。
+- **検索後関数** — 取得された候補の順序を洗練させる
 
-### 検索前 Functions: Convert text to vector embeddings\{#pre-search-functions-convert-text-to-vector-embeddings}
+### 検索前関数：テキストをベクトル埋め込みに変換する\{#pre-search-functions-convert-text-to-vector-embeddings}
 
-**検索前 Functions** は候補取得**前**に実行されます。その役割は、保存されたドキュメントおよび着信クエリの両方の生テキストを、検索エンジンが関連候補を特定するために使用するベクトル表現に変換することです。
+**検索前関数** は候補取得前に実行されます。その役割は、保存されたドキュメントと入力クエリの両方の生テキストを、検索エンジンが関連候補を特定するために使用するベクトル表現に変換することです。
 
-異なる 検索前 Functions は異なるタイプの埋め込みを生成し、それが直接検索の実行方法に影響を与えます。
+異なる検索前関数は異なるタイプの埋め込みを生成し、これが取得の実行方法に直接影響します。
 
-以下の表は、利用可能な 検索前 Functions をまとめたものです。
+以下の表は、利用可能な検索前関数をまとめたものです：
 
 <table>
    <tr>
@@ -94,15 +94,15 @@ Zilliz Cloud の Functions は、**検索ワークフローにおける実行タ
    </tr>
 </table>
 
-すべての 検索前 Functions は、ドキュメントデータとクエリテキストの両方に一貫して適用され、検索が同じ表現空間内で実行されることを保証します。
+すべての検索前関数は、ドキュメントデータとクエリテキストの両方に一貫して適用され、同じ表現空間内で検索が実行されることを保証します。
 
-### 検索後 Functions: Rerank candidate results\{#post-search-functions-rerank-candidate-results}
+### 検索後関数：候補結果を再ランキングする\{#post-search-functions-rerank-candidate-results}
 
-検索後 Functions は**候補取得後**に適用されます。その目的は、候補セットからアイテムを追加または削除せずに、**取得された候補のランキングを洗練すること**です。
+検索後関数は **候補取得後** に適用されます。その目的は、候補セットから項目を追加または削除することなく、**取得された候補のランキングを洗練させる** ことです。
 
-これらの関数は検索ステージによって返された結果に対してのみ動作し、結果品質を向上させるために追加のランキングロジックや関連性シグナルを適用します。これらはインデックス作成、検索、フィルタリング動作には**影響せず**、結果の最終的な順序にのみ影響を与えます。
+これらの関数は、検索段階によって返された結果のみを対象とし、結果の品質を向上させるための追加のランキングロジックまたは関連性シグナルを適用します。これらはインデックス作成、取得、またはフィルタリングの動作には影響しません — 結果の最終的な順序のみに影響します。
 
-以下の表は、利用可能な 検索後 Functions をまとめたものです。
+以下の表は、利用可能な検索後関数をまとめたものです：
 
 <table>
    <tr>
@@ -131,31 +131,31 @@ Zilliz Cloud の Functions は、**検索ワークフローにおける実行タ
    </tr>
 </table>
 
-検索後 Functions は取得された候補に対してのみ動作するため、これらは結果の順序に影響を与える洗練ステップであり、検索範囲には影響しません。
+検索後関数は取得された候補のみを対象とするため、これらは結果の順序に影響するが取得範囲には影響しない洗練ステップです。
 
-## Understand model inference\{#understand-model-inference}
+## モデル推論を理解する\{#understand-model-inference}
 
-Zilliz Cloud の Function ベースのアーキテクチャにおいて、**モデル推論（model inference）は独立した概念や実行ステージではありません**。代わりに、機械学習ベースのシグナルが必要な特定の Function タイプによって使用される実装上の詳細です。
+Zilliz Cloud の Function ベースのアーキテクチャにおいて、**モデル推論は独立した概念または実行段階ではありません**。代わりに、機械学習ベースのシグナルが必要な特定の Function タイプによって使用される実装の詳細です。
 
-### Where model inference fits in\{#where-model-inference-fits-in}
+### モデル推論の位置づけ\{#where-model-inference-fits-in}
 
-モデル推論とは、以下のようなセマンティックシグナルを生成するために機械学習モデルを実行時（runtime）に実行することを指します。
+モデル推論とは、セマンティックシグナルを生成するために機械学習モデルを実行時に実行することを指します。例えば：
 
-- テキストから導出された密なベクトル埋め込み（dense vector embeddings）
+- テキストから派生した密なベクトル埋め込み
 
-- 検索結果のリランキングに使用される関連性スコア
+- 検索結果を再ランキングするために使用される関連性スコア
 
-Zilliz Cloud 内では、モデル推論は**モデルベースの関数**によってのみ使用されます。これには以下が含まれます。
+Zilliz Cloud 内では、モデル推論は **モデルベースの関数** によってのみ使用されます。これには以下が含まれます：
 
-- [Model-based 検索前 Functions](./function-and-model-inference-overview#pre-search-functions-convert-text-to-vector-embeddings): 生テキストを密なベクトル埋め込みに変換します。
+- [モデルベースの検索前関数](./function-and-model-inference-overview#pre-search-functions-convert-text-to-vector-embeddings) — 生テキストを密なベクトル埋め込みに変換する
 
-- [モデルベースのランカー](./function-and-model-inference-overview#post-search-functions-rerank-candidate-results): 関連性を評価し、取得された候補を並べ替えます。
+- [モデルベースのランカー](./function-and-model-inference-overview#post-search-functions-rerank-candidate-results) — 関連性を評価し、取得された候補を再順序付けする
 
-BM25 Function やルールベースのランカーなどの他の Functions はデータベースエンジン内で完全に実行され、**モデル推論を必要としません**。
+BM25 Function やルールベースのランカーなどの他の Function は、データベースエンジン内で完全に実行され、**モデル推論を必要としません**。
 
-### Sources of model inference\{#sources-of-model-inference}
+### モデル推論のソース\{#sources-of-model-inference}
 
-Zilliz Cloud はモデル推論のための2つのソースをサポートしています。どちらもモデルベースの機能を提供しますが、モデルのプロビジョニングおよび管理方法が異なります。
+Zilliz Cloud は、2 つのモデル推論のソースをサポートしています。両方ともモデルベースの機能を提供しますが、モデルのプロビジョニングと管理方法が異なります：
 
 <table>
    <tr>
@@ -195,31 +195,31 @@ Zilliz Cloud はモデル推論のための2つのソースをサポートして
    </tr>
 </table>
 
-**Hosted Models を選択すべき場合**:
+**Hosted Models を選択する場合**：
 
-- Zilliz Cloud との緊密な統合（単一ベンダー、統合サポート）
+- Zilliz Cloud との緊密な統合が必要な場合（単一ベンダー、統合サポート）
 
-- カスタムモデルのファインチューニングや特殊なモデルが必要
+- カスタムモデルのファインチューニングや専用モデルが必要な場合
 
-- 予測可能なパフォーマンスとレイテンシーが必要
+- 予測可能なパフォーマンスとレイテンシが必要な場合
 
-- 認証情報管理を簡素化したい
+- クレデンシャル管理の簡素化が必要な場合
 
-**Third-Party Model Services を選択すべき場合**:
+**Third-Party Model Services を選択する場合**：
 
-- すでにモデルプロバイダーとの関係がある
+- すでにモデルプロバイダーとの既存の関係がある場合
 
-- OpenAI などのプロバイダーが提供する最新のモデルを利用したい
+- OpenAI などのプロバイダーの最新モデルを活用したい場合
 
-- プロバイダーを柔軟に切り替えたい
+- プロバイダーの切り替えの柔軟性を好む場合
 
-### Supported model providers\{#supported-model-providers}
+### サポートされているモデルプロバイダー\{#supported-model-providers}
 
-Zilliz Cloud は、さまざまな機能を提供する主要なモデルプロバイダーと連携しています。以下の表は、どのプロバイダーがテキスト埋め込みとリランキングをサポートしているかを示しています。
+Zilliz Cloud は、異なる機能を提供する主要なモデルプロバイダーと連携しています。以下の表は、どのプロバイダーがテキスト埋め込みと再ランキングをサポートしているかを示しています：
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Provider availability and supported capabilities may vary by region and release. Refer to provider-specific documentation for the most up-to-date information.</p>
+プロバイダーの利用可能性とサポートされる機能は、リージョンやリリースによって異なる場合があります。最新情報については、プロバイダー固有のドキュメントを参照してください。
 
 </Admonition>
 

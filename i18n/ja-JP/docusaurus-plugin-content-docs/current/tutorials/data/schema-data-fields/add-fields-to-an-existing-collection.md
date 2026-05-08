@@ -2,10 +2,10 @@
 title: "既存のコレクションへのフィールド追加 | Cloud"
 slug: /add-fields-to-an-existing-collection
 sidebar_key: add-fields-to-an-existing-collection
-sidebar_label: "フィールドの追加"
+sidebar_label: "フィールドを追加"
 beta: FALSE
 notebook: FALSE
-description: "Milvus では、既存のコレクションに動的に新しいフィールドを追加できるため、アプリケーションの要件の変化に合わせてデータスキーマを容易に進化させることができます。このガイドでは、実用的な例を用いて、さまざまなシナリオでフィールドを追加する方法を示します。 | Cloud"
+description: "Milvus を使用すると、既存のコレクションに新しいフィールドを動的に追加でき、アプリケーションのニーズの変化に応じてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を用いて、さまざまなシナリオでフィールドを追加する方法を説明します。"
 type: origin
 token: UR9SwucAIiQ2TYkc9EucsgvSnng
 sidebar_position: 18
@@ -16,7 +16,7 @@ keywords:
   - コレクション
   - スキーマ
   - フィールドプロパティ
-  - コレクションフィールドの追加
+  - add collection fields
 
 ---
 
@@ -24,21 +24,21 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 既存のコレクションへのフィールドの追加
+# 既存のコレクションへのフィールド追加
 
-Milvus を使用すると、既存のコレクションに動的に新しいフィールドを追加できるため、アプリケーションのニーズの変化に合わせてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を使用して、さまざまなシナリオでフィールドを追加する方法を示します。
+Milvus を使用すると、既存のコレクションに新しいフィールドを動的に追加でき、アプリケーションのニーズの変化に応じてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を使用して、さまざまなシナリオでフィールドを追加する方法を説明します。
 
 ## 考慮事項\{#considerations}
 
-コレクションにフィールドを追加する前に、以下の重要な点に留意してください：
+コレクションにフィールドを追加する前に、以下の重要なポイントを確認してください。
 
-- スカラーフィールド（`INT64`、`VARCHAR`、`FLOAT`、`DOUBLE` など）を追加できます。ベクトルフィールドは既存のコレクションに追加できません。
+- スカラーフィールド（`INT64`、`VARCHAR`、`FLOAT`、`DOUBLE` など）を追加できます。既存のコレクションにベクターフィールドを追加することはできません。
 
-- 新しいフィールドは、新しいフィールドの値を持たない既存のエンティティに対応するために、null 許容（nullable=True）である必要があります。
+- 新しいフィールドは null 許容（nullable=True）である必要があります。これにより、新しいフィールドの値を持たない既存のエンティティに対応できます。
 
-- ロードされたコレクションにフィールドを追加すると、メモリ使用量が増加します。
+- ロード済みのコレクションにフィールドを追加すると、メモリ使用量が増加します。
 
-- コレクションあたりのフィールド総数には最大制限があります。詳細については、[Milvus の制限](https://milvus.io/docs/limitations.md#Number-of-resources-in-a-collection) を参照してください。
+- コレクションあたりのフィールド総数には最大制限があります。詳細については、[Milvus 制限s](https://milvus.io/docs/limitations.md#Number-of-resources-in-a-collection) を参照してください。
 
 - フィールド名は、静的フィールド間で一意である必要があります。
 
@@ -46,17 +46,17 @@ Milvus を使用すると、既存のコレクションに動的に新しいフ�
 
 ## 前提条件\{#prerequisites}
 
-このガイドでは、以下が準備されていることを前提としています：
+このガイドでは、以下を前提としています。
 
 - 実行中の Milvus インスタンス
 
-- インストール済みの Milvus SDK
+- Milvus SDK のインストール
 
 - 既存のコレクション
 
 <Admonition type="info" icon="📘" title="**Need help setting up?**">
 
-<p>コレクションの作成と基本操作については、<a href="./manage-collections-sdks">コレクションの作成</a> を参照してください。</p>
+コレクションの作成と基本操作については、[コレクションの作成](./manage-collections-sdks) を参照してください。
 
 </Admonition>
 
@@ -495,19 +495,19 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/fields/add" \
 </TabItem>
 </Tabs>
 
-動的スキーマ機能を有効にするには：
+ダイナミックスキーマ機能を有効にするには:
 
 - **新しいコレクション**: コレクション作成時に `enable_dynamic_field` を True に設定します。詳細については、[コレクションの作成](./manage-collections-sdks#create-schema) を参照してください。
 
 - **既存のコレクション**: コレクションレベルのプロパティ `dynamicfield.enabled` を True に設定します。詳細については、[コレクションの変更](./modify-collections#example-5-enable-dynamic-field) を参照してください。
 
-### 動的フィールドキーと同じ名前のフィールドを追加するとどうなりますか？\{#what-happens-when-i-add-a-field-with-the-same-name-as-a-dynamic-field-key}
+### ダイナミックフィールドのキーと同じ名前のフィールドを追加するとどうなりますか？\{#what-happens-when-i-add-a-field-with-the-same-name-as-a-dynamic-field-key}
 
-コレクションで動的フィールドが有効になっている場合（`$meta` が存在する場合）、既存の動的フィールドキーと同じ名前の静的フィールドを追加できます。新しい静的フィールドは動的フィールドキーをマスクしますが、元の動的データは保持されます。
+コレクションでダイナミックフィールドが有効になっている場合（`$meta` が存在する場合）、既存のダイナミックフィールドのキーと同じ名前を持つ静的フィールドを追加できます。新しい静的フィールドはダイナミックフィールドのキーをマスクしますが、元のダイナミックデータは保持されます。
 
-フィールド名の競合を避けるためには、実際に追加する前に既存のフィールドと動的フィールドキーを参照して、追加するフィールドの名前を検討してください。
+フィールド名の競合を避けるため、実際に追加する前に既存のフィールドとダイナミックフィールドのキーを参照して、追加するフィールドの名前を検討してください。
 
-**例シナリオ：**
+**例:**
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

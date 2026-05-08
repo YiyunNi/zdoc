@@ -48,7 +48,7 @@ Sparse vectors and the original text can be stored in Zilliz Cloud for efficient
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In addition to sparse vectors, Zilliz Cloud also supports dense vectors and binary vectors. Dense vectors are ideal for capturing deep semantic relationships, while binary vectors excel in scenarios like quick similarity comparisons and content deduplication. For more information, refer to [Dense Vector](./use-dense-vector) and [Binary Vector](./use-binary-vector).
+<p>In addition to sparse vectors, Zilliz Cloud also supports dense vectors and binary vectors. Dense vectors are ideal for capturing deep semantic relationships, while binary vectors excel in scenarios like quick similarity comparisons and content deduplication. For more information, refer to <a href="./use-dense-vector">Dense Vector</a> and <a href="./use-binary-vector">Binary Vector</a>.</p>
 
 </Admonition>
 
@@ -283,7 +283,7 @@ In this example, three fields are added:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-To enable  or Zilliz Cloud to generate sparse vector embeddings from a specified text field during data insertion, an additional step involving a function must be taken. For more information, please refer to  [Full Text Search](./full-text-search).
+<p>To enable  or Zilliz Cloud to generate sparse vector embeddings from a specified text field during data insertion, an additional step involving a function must be taken. For more information, please refer to  <a href="./full-text-search">Full Text Search</a>.</p>
 
 </Admonition>
 

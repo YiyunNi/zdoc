@@ -36,7 +36,7 @@ This page explains how to add and delete secondary clusters, convert a global cl
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in a **Business Critical** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
 
 </Admonition>
 
@@ -52,7 +52,7 @@ To improve regional coverage, you can add additional secondary clusters in diffe
 
 <Admonition type="info" icon="📘" title="Notes">
 
-A global cluster can only have up to 5 secondary clusters.
+<p>A global cluster can only have up to 5 secondary clusters.</p>
 
 </Admonition>
 

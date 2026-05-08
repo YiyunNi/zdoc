@@ -33,9 +33,10 @@ You can alter the properties of a collection field to change column constraints 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Each collection consists of only one primary field. Once set during collection creation, you cannot change the primary field or alter its properties.
-
-- Each collection can have only one partition key. Once set during collection creation, you cannot change the partition key.
+<ul>
+<li><p>Each collection consists of only one primary field. Once set during collection creation, you cannot change the primary field or alter its properties.</p></li>
+<li><p>Each collection can have only one partition key. Once set during collection creation, you cannot change the partition key.</p></li>
+</ul>
 
 </Admonition>
 

@@ -60,7 +60,7 @@ For more information about using session tokens, refer to [this FAQ](/docs/faq-d
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.
+<p>For successful data import, ensure the target collection has less than 10,000 running or pending import jobs.</p>
 
 </Admonition>
 

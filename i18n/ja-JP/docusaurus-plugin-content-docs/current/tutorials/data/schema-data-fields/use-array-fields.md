@@ -5,7 +5,7 @@ sidebar_key: use-array-fields
 sidebar_label: "配列"
 beta: FALSE
 notebook: FALSE
-description: "ARRAY フィールドは、同じデータ型の要素からなる順序付きのセットを格納します。| Cloud"
+description: "ARRAY フィールドは、同じデータ型の要素を順序付けて格納するフィールドです。"
 type: origin
 token: N0RmwUtmqinQvokWdYLc3yV5nJh
 sidebar_position: 9
@@ -13,8 +13,8 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
+  - コレクション
+  - スキーマ
   - 配列フィールド
 
 ---
@@ -36,31 +36,31 @@ ARRAYフィールドは、同じデータ型の要素の順序付きセットを
 }
 ```
 
-## 制限s\{#limits}
+## 制限\{#limits}
 
-- **デフォルト値**: ARRAYフィールドはデフォルト値をサポートしていません。ただし、`nullable`属性を`True`に設定することで、NULL値を許容できます。詳細については、[NULL許容 & Default](./nullable-fields)を参照してください。
+- **デフォルト値**: ARRAY フィールドはデフォルト値をサポートしません。ただし、`nullable` 属性を `True` に設定して NULL 値を許容することは可能です。詳細については、[NULL許容 & デフォルト値](./nullable-fields) を参照してください。
 
-- **データ Type:** ARRAYフィールド内のすべての要素は同じデータ型を持つ必要があり、これは`element_type`パラメータで定義されます。`element_type`が`VARCHAR`に設定されている場合、配列要素の`max_length`も指定する必要があります。`element_type`には、任意のスカラーデータ型、`JSON`、および`STRUCT`を指定できます。
+- **データ型:** ARRAY フィールド内のすべての要素は、同じデータ型を共有する必要があります。これは `element_type` パラメーターで定義されます。`element_type` が `VARCHAR` に設定されている場合、配列要素の `max_length` も指定する必要があります。`element_type` は、任意のスカラーデータ型、`JSON`、および `STRUCT` を受け入れます。
 
-- **配列容量**: ARRAYフィールド内の要素数は、作成時に`max_capacity`で定義された最大容量以下である必要があります。この値は**1**から**4096**の範囲内の整数でなければなりません。
+- **配列容量**: ARRAY フィールド内の要素数は、配列作成時に `max_capacity` で指定された最大容量以下である必要があります。値は **1** から **4096** の範囲内の整数である必要があります。
 
-- **文字列処理**: 配列フィールド内の文字列値は、セマンティックなエスケープや変換を行わずにそのまま格納されます。たとえば、`'a"b'`、`"a'b"`、`'a\'b'`、および`"a\"b"`は入力された通りに格納されますが、`'a'b'`および`"a"b"`は無効な値とみなされます。
+- **文字列処理**: 配列 フィールド内の文字列値は、セマンティックなエスケープや変換なしに、そのまま保存されます。例えば、`'a"b'`、`"a'b"`、`'a\'b'`、`"a\"b"` は入力されたとおりに保存されますが、`'a'b'` および `"a"b"` は無効な値と見なされます。
 
-## Add ARRAY field\{#add-array-field}
+## ARRAY フィールドの追加\{#add-array-field}
 
-Zilliz CloudクラスターでARRAYフィールドを使用するには、コレクションスキーマを作成する際に関連するフィールドタイプを定義します。このプロセスには以下の操作が含まれます：
+Zilliz Cloud クラスターで ARRAY フィールドを使用するには、コレクションスキーマの作成時に関連するフィールド型を定義します。このプロセスには以下が含まれます：
 
-1. `datatype`をサポートされている配列データ型である`ARRAY`に設定します。
+1. `datatype` をサポートされている配列データ型である `ARRAY` に設定します。
 
-1. `element_type`パラメータを使用して、配列内の要素のデータ型を指定します。同一の配列内にあるすべての要素は同じデータ型でなければなりません。
+1. `element_type` パラメーターを使用して、配列内の要素のデータ型を指定します。同じ配列内のすべての要素は、同じデータ型である必要があります。
 
-1. `max_capacity`パラメータを使用して、配列の最大容量（つまり、格納可能な最大要素数）を定義します。
+1. `max_capacity` パラメーターを使用して、配列の最大容量、つまり含めることができる要素の最大数を定義します。
 
-以下は、ARRAYフィールドを含むコレクションスキーマを定義する方法の例です：
+ARRAY フィールドを含むコレクションスキーマを定義する方法は以下の通りです：
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>スキーマ定義時に<code>enable_dynamic_fields=True</code>を設定すると、Zilliz Cloudでは事前に定義されていないスカラーフィールドの挿入が可能になります。ただし、これによりクエリや管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">Dynamic Field</a>を参照してください。</p>
+スキーマの定義時に `enable_dynamic_fields=True` を設定した場合、Zilliz Cloud では事前に定義されていないスカラーフィールドの挿入が許可されます。ただし、これによりクエリと管理の複雑性が増し、パフォーマンスに影響を与える可能性があります。詳細については、[ダイナミックフィールド](./enable-dynamic-field) を参照してください。
 
 </Admonition>
 
@@ -933,4 +933,4 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-さらに、Zilliz Cloud は高度な配列フィルタリング演算子（`ARRAY_CONTAINS`、`ARRAY_CONTAINS_ALL`、`ARRAY_CONTAINS_ANY`、および `ARRAY_LENGTH`）をサポートしており、クエリ機能をさらに強化します。詳細については、[ARRAY Operators](./array-filtering-operators) を参照してください。
+さらに、Zilliz Cloud は高度な配列フィルタリング演算子として `ARRAY_CONTAINS`、`ARRAY_CONTAINS_ALL`、`ARRAY_CONTAINS_ANY`、および `ARRAY_LENGTH` をサポートしており、クエリ機能をさらに強化します。詳細については、[配列演算子](./array-filtering-operators) を参照してください。

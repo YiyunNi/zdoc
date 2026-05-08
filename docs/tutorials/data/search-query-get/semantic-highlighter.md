@@ -50,7 +50,7 @@ Instead of sending the entire 75-word document to your LLM, you get just the 16-
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature relies on a hosted highlight model on Zilliz Cloud. For more information, see [Hosted Models](./hosted-models#supported-models).
+<p>This feature relies on a hosted highlight model on Zilliz Cloud. For more information, see <a href="./hosted-models#supported-models">Hosted Models</a>.</p>
 
 </Admonition>
 
@@ -346,7 +346,7 @@ Before using Semantic Highlighter, ensure you have the following configured:
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    All code examples in this document use the model-based embedding function approach (**Option 1**) for simplicity.
+    <p>All code examples in this document use the model-based embedding function approach (<strong>Option 1</strong>) for simplicity.</p>
 
     </Admonition>
 
@@ -553,7 +553,7 @@ This example shows how to add semantic highlighting to a search query. The highl
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Replace `YOUR_MODEL_ID` in the code below with the deployment ID of your hosted highlight model.
+<p>Replace <code>YOUR_MODEL_ID</code> in the code below with the deployment ID of your hosted highlight model.</p>
 
 </Admonition>
 
@@ -692,7 +692,7 @@ Highlight Confidence: [0.7206]
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The Search Score (`distance`) reflects vector similarity from the semantic search, while Highlight Confidence (`scores`) reflects how well the text answers the specific query.
+<p>The Search Score (<code>distance</code>) reflects vector similarity from the semantic search, while Highlight Confidence (<code>scores</code>) reflects how well the text answers the specific query.</p>
 
 </Admonition>
 
@@ -704,7 +704,7 @@ Use the `threshold` parameter to filter highlights by confidence score. This ret
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Replace `YOUR_MODEL_ID` in the code below with the deployment ID of your hosted highlight model.
+<p>Replace <code>YOUR_MODEL_ID</code> in the code below with the deployment ID of your hosted highlight model.</p>
 
 </Admonition>
 

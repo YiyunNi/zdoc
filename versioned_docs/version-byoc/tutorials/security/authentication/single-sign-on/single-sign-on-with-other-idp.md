@@ -35,7 +35,7 @@ This topic describes how to configure single sign-on (SSO) in Zilliz Cloud with 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud provides dedicated integration guides for [Okta](./single-sign-on-with-okta), [Google Workspace](./single-sign-on-with-google-workspace), and [Microsoft Entra](./single-sign-on-with-microsoft-entra), but any standards-compliant SAML 2.0 IdP can be used with the **Other IdP (SAML 2.0)** option.
+<p>Zilliz Cloud provides dedicated integration guides for <a href="./single-sign-on-with-okta">Okta</a>, <a href="./single-sign-on-with-google-workspace">Google Workspace</a>, and <a href="./single-sign-on-with-microsoft-entra">Microsoft Entra</a>, but any standards-compliant SAML 2.0 IdP can be used with the <strong>Other IdP (SAML 2.0)</strong> option.</p>
 
 </Admonition>
 
@@ -157,7 +157,7 @@ After your SSO connection is fully configured and tested, you can optionally ena
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-Enabling this feature will immediately log out all members who are currently signed in with a password and block non-SSO login methods.
+<p>Enabling this feature will immediately log out all members who are currently signed in with a password and block non-SSO login methods.</p>
 
 </Admonition>
 

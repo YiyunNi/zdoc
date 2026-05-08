@@ -170,11 +170,11 @@ The diagram above illustrates the traffic flow from your client application to B
 
 1. On the **Cluster Details** page, locate the **Connect** card.
 
-1. Copy the **Cluster Endpoint** — it is in the format `https://${cluster-id}-internal.${region}.byoc.vectordb.zillizcloud.com:19530`.
+1. Copy the **Cluster Endpoint** — it is in the format `<i>http</i>s://${cluster-id}-internal.${region}.byoc.vectordb.zillizcloud.com:19530`.
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    For those BYOC clusters deployed using Terraform, you can also retrieve their endpoints from the Terraform output.
+    <p>For those BYOC clusters deployed using Terraform, you can also retrieve their endpoints from the Terraform output.</p>
 
     </Admonition>
 
@@ -198,7 +198,7 @@ The cluster endpoint (`*.${region}.byoc.vectordb.zillizcloud.com`) resolves to a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you deselect the private endpoint option during the data plane deployment and require private endpoint access, [contact us](https://support.zilliz.com/hc/en-us/requests/new) so that we can enable the gateway deployment in your data plane. 
+<p>If you deselect the private endpoint option during the data plane deployment and require private endpoint access, <a href="https://support.zilliz.com/hc/en-us/requests/new">contact us</a> so that we can enable the gateway deployment in your data plane. </p>
 
 </Admonition>
 

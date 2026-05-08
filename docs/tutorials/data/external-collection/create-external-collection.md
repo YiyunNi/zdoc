@@ -97,7 +97,7 @@ Once you have an external volume containing the target data files, create the sc
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The external source should end with a forward slash (/) to indicate this is a folder.
+<p>The external source should end with a forward slash (/) to indicate this is a folder.</p>
 
 </Admonition>
 
@@ -303,7 +303,7 @@ After adding all the fields to the schema, you can create the external collectio
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You can create external collections in a database at the project level, which is usually associated with an on-demand cluster.
+<p>You can create external collections in a database at the project level, which is usually associated with an on-demand cluster.</p>
 
 </Admonition>
 
@@ -648,15 +648,13 @@ The refresh operation is asynchronous, so you need to set up an iteration to mon
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- The refresh operation scans the metadata of the data files and generates the manifest files accordingly. It usually takes 150-250 ms.
-
-- The manifest files record the mapping between the metadata in Milvus and the rows in external files.
-
-- If there is an update to your source data, you need to manually call refresh again to keep Zilliz Cloud up to date.
-
-- A refresh that requires removing all active metadata without any insertions results in a denial.
-
-- For external collections in a database for on-demand computing, you do not need to load and release them manually.
+<ul>
+<li><p>The refresh operation scans the metadata of the data files and generates the manifest files accordingly. It usually takes 150-250 ms.</p></li>
+<li><p>The manifest files record the mapping between the metadata in Milvus and the rows in external files.</p></li>
+<li><p>If there is an update to your source data, you need to manually call refresh again to keep Zilliz Cloud up to date.</p></li>
+<li><p>A refresh that requires removing all active metadata without any insertions results in a denial.</p></li>
+<li><p>For external collections in a database for on-demand computing, you do not need to load and release them manually.</p></li>
+</ul>
 
 </Admonition>
 

@@ -216,7 +216,7 @@ schema.add_field(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For detailed usage, refer to [Full Text Search](./full-text-search), [Text Match](./text-match), or [Phrase Match](./phrase-match).
+<p>For detailed usage, refer to <a href="./full-text-search">Full Text Search</a>, <a href="./text-match">Text Match</a>, or <a href="./phrase-match">Phrase Match</a>.</p>
 
 </Admonition>
 
@@ -372,7 +372,7 @@ These filters are essential for most space-separated language configurations (En
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For East Asian languages (Chinese, Japanese, Korean, etc.), focus on [language-specific filters](./choose-the-right-analyzer-for-your-use-case#language-specific-filters) instead. These languages typically use different approaches for text processing and may not benefit significantly from stemming.
+<p>For East Asian languages (Chinese, Japanese, Korean, etc.), focus on <a href="./choose-the-right-analyzer-for-your-use-case#language-specific-filters">language-specific filters</a> instead. These languages typically use different approaches for text processing and may not benefit significantly from stemming.</p>
 
 </Admonition>
 
@@ -514,7 +514,7 @@ This section provides recommended tokenizer and filter configurations for common
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Before applying an analyzer to your collection, we recommend you use [`run_analyzer`](https://milvus.io/api-reference/pymilvus/v2.6.x/MilvusClient/CollectionSchema/run_analyzer.md) to test and validate text analysis performance.
+<p>Before applying an analyzer to your collection, we recommend you use <a href="https://milvus.io/api-reference/pymilvus/v2.6.x/MilvusClient/CollectionSchema/run_analyzer.md"><code>run_analyzer</code></a> to test and validate text analysis performance.</p>
 
 </Admonition>
 

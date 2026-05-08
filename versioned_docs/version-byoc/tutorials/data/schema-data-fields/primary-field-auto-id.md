@@ -89,9 +89,10 @@ Zilliz Cloud supports two modes for assigning primary key values.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- If you are unsure which mode to choose, [start with AutoID](./primary-field-auto-id#quickstart-use-autoid) for simpler ingestion and guaranteed uniqueness.
-
-- You are advised to rely on `autoId` in all cases unless manually setting primary keys is beneficial.
+<ul>
+<li><p>If you are unsure which mode to choose, <a href="./primary-field-auto-id#quickstart-use-autoid">start with AutoID</a> for simpler ingestion and guaranteed uniqueness.</p></li>
+<li><p>You are advised to rely on <code>autoId</code> in all cases unless manually setting primary keys is beneficial.</p></li>
+</ul>
 
 </Admonition>
 
@@ -377,7 +378,7 @@ curl -X POST 'YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/insert' \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Use `upsert()` instead of `insert()` when working with existing entities to avoid duplicate ID errors.
+<p>Use <code>upsert()</code> instead of <code>insert()</code> when working with existing entities to avoid duplicate ID errors.</p>
 
 </Admonition>
 

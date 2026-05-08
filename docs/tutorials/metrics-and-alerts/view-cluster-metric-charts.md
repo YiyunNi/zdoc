@@ -39,7 +39,7 @@ Zilliz Cloud's metric charts provide performance data on resource usage, queries
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For free clusters, only read & write vCUs are available. To unlock a range of advanced metrics, [upgrade your plan tier](./manage-cluster#upgrade-deployment-option).
+<p>For free clusters, only read &amp; write vCUs are available. To unlock a range of advanced metrics, <a href="./manage-cluster#upgrade-deployment-option">upgrade your plan tier</a>.</p>
 
 </Admonition>
 

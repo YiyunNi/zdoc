@@ -74,7 +74,7 @@ Before finalizing the results, Milvus processes these candidates with the Boost 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Boost Ranker cannot be used in multi-vector hybrid search.
+<p>Boost Ranker cannot be used in multi-vector hybrid search.</p>
 
 </Admonition>
 
@@ -347,7 +347,7 @@ The following example illustrates the use of a Boost Ranker in a single-vector s
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    The weight must be a floating-point number that you choose. In cases like the above example, where a smaller score indicates greater relevance, use a weight less than **1**. Otherwise, use a weight greater than **1**.
+    <p>The weight must be a floating-point number that you choose. In cases like the above example, where a smaller score indicates greater relevance, use a weight less than <strong>1</strong>. Otherwise, use a weight greater than <strong>1</strong>.</p>
 
     </Admonition>
 

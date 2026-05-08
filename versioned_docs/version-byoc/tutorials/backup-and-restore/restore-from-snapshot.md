@@ -44,7 +44,7 @@ During restoration, you may choose whether to include RBAC settings.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-RBAC restoration is currently supported only via the web console; the RESTful API does not support it yet.
+<p>RBAC restoration is currently supported only via the web console; the RESTful API does not support it yet.</p>
 
 </Admonition>
 

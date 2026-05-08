@@ -5,7 +5,7 @@ sidebar_key: text-match
 sidebar_label: "テキストマッチ"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud のテキストマッチ機能により、特定の用語に基づいてドキュメントを正確に検索できます。この機能は主に、特定の条件を満たすフィルタリング検索に使用され、スカラーフィルタリングを組み合わせてクエリ結果を絞り込むことで、スカラー基準を満たすベクトル内での類似度検索を実現します。| Cloud"
+description: "Zilliz Cloud のテキストマッチは、特定の用語に基づいてドキュメントを正確に取得する機能です。この機能は主に、特定の条件を満たすフィルタリング検索に使用され、スカラー条件を満たすベクトル内で類似性検索を行うためにスカラーフィルタリングを組み合わせることができます。"
 type: origin
 token: RQQKwqhZUiubFzkHo4WcR62Gnvh
 sidebar_position: 11
@@ -13,7 +13,7 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - フィルタ
   - フィルタリング式
@@ -28,35 +28,35 @@ import TabItem from '@theme/TabItem';
 
 # テキスト一致
 
-Zilliz Cloud のテキスト一致機能は、特定の用語に基づいて正確なドキュメントを検索できるようにします。この機能は主に特定の条件を満たすフィルタリング検索に使用され、スカラー値によるフィルタリングを組み合わせてクエリ結果を絞り込むことができ、スカラー条件を満たすベクトル内での類似性検索を可能にします。
+Zilliz Cloud のテキスト一致は、特定の用語に基づいてドキュメントを正確に取得する機能です。この機能は主に、特定の条件を満たすフィルタリング検索に使用され、スカラー フィルタリングを組み込むことでクエリ結果を絞り込むことができます。これにより、スカラー条件を満たすベクトル内での類似性検索が可能になります。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>テキスト一致はクエリ用語の完全一致のみを対象とし、マッチしたドキュメントの関連性スコアは計算しません。クエリ用語の意味的関連性や重要度に基づいて最も関連性の高いドキュメントを取得したい場合は、<a href="./full-text-search">全文検索（Full Text Search）</a>の利用を推奨します。</p>
+テキスト一致は、クエリ用語の完全一致を見つけることに焦点を当てており、一致したドキュメントの関連性をスコアリングしません。クエリ用語のセマンティックな意味や重要度に基づいて最も関連性の高いドキュメントを取得したい場合は、[フルテキスト検索](./full-text-search) の使用をお勧めします。
 
 </Admonition>
 
-Zilliz Cloud では、テキスト一致をプログラムから有効化することも、ウェブコンソールから有効化することもできます。このページでは、プログラムによる有効化方法について説明します。ウェブコンソールでの操作の詳細については、[コレクションの管理（コンソール）](./manage-collections-console#text-match)を参照してください。
+Zilliz Cloud では、プログラムによる方法または Web コンソールを使用してテキスト一致を有効化できます。このページでは、プログラムによる方法でのテキスト一致の有効化について説明します。Web コンソールでの操作の詳細については、[コレクションの管理（コンソール）](./manage-collections-console#text-match) を参照してください。
 
 ## 概要\{#overview}
 
-Zilliz Cloud は、基盤となる転置インデックスおよび用語ベースのテキスト検索を実現するために [Tantivy](https://github.com/quickwit-oss/tantivy) を統合しています。各テキストエントリに対して、Zilliz Cloud は以下の手順でインデックスを作成します。
+Zilliz Cloud は [Tantivy](https://github.com/quickwit-oss/tantivy) を統合し、基盤となる転置インデックスと用語ベースのテキスト検索を実現しています。各テキストエントリに対して、Zilliz Cloud は以下の手順でインデックスを作成します。
 
-1. [アナライザー](./analyzer-overview): アナライザーは入力テキストを個々の単語（トークン）に分割（トークン化）し、必要に応じてフィルターを適用します。これにより、Zilliz Cloud はこれらのトークンに基づいたインデックスを構築できます。
+1. [Analyzer](./analyzer-overview): アナライザーは、入力テキストを個別の単語（トークン）にトークン化し、必要に応じてフィルターを適用することで処理します。これにより、Zilliz Cloud はこれらのトークンに基づいてインデックスを構築できます。
 
-1. [インデックス作成](./manage-indexes): テキスト分析後、Zilliz Cloud は各一意なトークンをそのトークンを含むドキュメントにマッピングする転置インデックスを作成します。
+1. [インデックス作成](./manage-indexes): テキスト分析後、Zilliz Cloud は各一意のトークンをそれを含むドキュメントにマッピングする転置インデックスを作成します。
 
-ユーザーがテキスト一致を実行すると、この転置インデックスを使用して該当する用語を含むすべてのドキュメントを高速に取得できます。これは個々のドキュメントを逐一スキャンするよりもはるかに高速です。
+ユーザーがテキスト一致を実行すると、転置インデックスを使用して、用語を含むすべてのドキュメントを迅速に取得できます。これは、各ドキュメントを個別にスキャンするよりもはるかに高速です。
 
 ![N43zw7HuGhmCHRbYDDmctO1bnkd](https://zdoc-images.s3.us-west-2.amazonaws.com/N43zw7HuGhmCHRbYDDmctO1bnkd.png)
 
 ## テキスト一致の有効化\{#enable-text-match}
 
-テキスト一致は [`VARCHAR`](./use-string-field) フィールドタイプ（Zilliz Cloud における文字列データ型）に対して機能します。テキスト一致を有効にするには、コレクションスキーマを定義する際に `enable_analyzer` および `enable_match` を `True` に設定し、オプションでテキスト分析用の[アナライザー](./analyzer-overview)を設定します。
+テキスト一致は、Zilliz Cloud で基本的に文字列データ型である [`VARCHAR`](./use-string-field) フィールド型で動作します。テキスト一致を有効にするには、コレクション スキーマの定義時に `enable_analyzer` と `enable_match` の両方を `True` に設定し、オプションでテキスト分析用の [アナライザー](./analyzer-overview) を構成します。
 
-### `enable_analyzer` および `enable_match` の設定\{#set-enableanalyzer-and-enablematch}
+### `enable_analyzer` と `enable_match` の設定\{#set-enableanalyzer-and-enablematch}
 
-特定の `VARCHAR` フィールドに対してテキスト一致を有効にするには、フィールドスキーマを定義する際に `enable_analyzer` および `enable_match` パラメータを両方とも `True` に設定します。これにより、Zilliz Cloud は指定されたフィールドのテキストをトークン化し、転置インデックスを作成して、高速かつ効率的なテキスト一致を可能にします。
+特定の `VARCHAR` フィールドでテキスト一致を有効にするには、フィールド スキーマの定義時に `enable_analyzer` パラメーターと `enable_match` パラメーターの両方を `True` に設定します。これにより、Zilliz Cloud はテキストをトークン化し、指定されたフィールドの転置インデックスを作成するよう指示され、高速で効率的なテキスト一致が可能になります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -206,13 +206,13 @@ export schema='{
 </TabItem>
 </Tabs>
 
-### （オプション）アナライザーの設定\{#optional-configure-an-analyzer}
+### オプション: アナライザーの設定\{#optional-configure-an-analyzer}
 
-キーワードマッチングのパフォーマンスと精度は、選択したアナライザーに依存します。さまざまな言語やテキスト構造に合わせて異なるアナライザーが用意されているため、ユースケースに最適なアナライザーを選択することで検索結果が大きく改善される可能性があります。
+キーワードマッチングのパフォーマンスと精度は、選択したアナライザーに依存します。異なるアナライザーは、さまざまな言語やテキスト構造に最適化されているため、ユースケースに適したアナライザーを選択することで、検索結果に大きな影響を与えることができます。
 
-デフォルトでは、Zilliz Cloud は `standard` アナライザーを使用します。このアナライザーは、空白や句読点に基づいてテキストをトークン化し、40文字を超えるトークンを削除して小文字に変換します。このデフォルト設定を適用するには、追加のパラメータは不要です。詳細については、[Standard](./standard-analyzer) を参照してください。
+デフォルトでは、Zilliz Cloud は `standard` アナライザーを使用します。このアナライザーは、空白と句読点に基づいてテキストをトークン化し、40文字を超えるトークンを削除し、テキストを小文字に変換します。このデフォルト設定を適用するために追加のパラメーターは必要ありません。詳細については、[Standard](./standard-analyzer) を参照してください。
 
-別のアナライザーが必要な場合は、`analyzer_params` パラメータを使用して設定できます。たとえば、英語テキストを処理するために `english` アナライザーを適用するには、次のようになります：
+別のアナライザーが必要な場合は、`analyzer_params` パラメーターを使用してアナライザーを設定できます。たとえば、英語テキストの処理に `english` アナライザーを適用する場合:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -329,15 +329,15 @@ export schema='{
 </TabItem>
 </Tabs>
 
-Zilliz Cloud は、さまざまな言語やシナリオに適した他のアナライザーも提供しています。詳細については、[Analyzer Overview](./analyzer-overview) を参照してください。
+Zilliz Cloud では、さまざまな言語やシナリオに適したその他の分析器も提供しています。詳細については、[Analyzer Overview](./analyzer-overview) を参照してください。
 
-## テキスト一致の使用\{#use-text-match}
+## テキスト一致を使用する\{#use-text-match}
 
-コレクションスキーマ内の VARCHAR フィールドでテキスト一致を有効化すると、`TEXT_MATCH` 式を使用してテキスト一致検索を実行できます。
+コレクションスキーマで VARCHAR フィールドのテキスト一致を有効にすると、`TEXT_MATCH` 式を使用してテキスト一致を実行できます。
 
 ### TEXT_MATCH 式の構文\{#textmatch-expression-syntax}
 
-`TEXT_MATCH` 式は、検索対象のフィールドと検索語句を指定するために使用されます。その構文は次のとおりです：
+`TEXT_MATCH` 式は、検索対象のフィールドと用語を指定するために使用されます。その構文は以下のとおりです。
 
 ```python
 TEXT_MATCH(field_name, text)

@@ -64,11 +64,11 @@ The nullable attribute is supported for both **scalar and vector fields** in a c
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Nullability determines whether a field value may be missing; it does not define what value is used when a field is missing.
-
-- If a nullable field is configured without a default value, omitting the field results in a stored NULL value.
-
-- If a default value is configured, Zilliz Cloud may store the default value instead. For details, see [Default Values](./default-fields).
+<p>Nullability determines whether a field value may be missing; it does not define what value is used when a field is missing.</p>
+<ul>
+<li><p>If a nullable field is configured without a default value, omitting the field results in a stored NULL value.</p></li>
+<li><p>If a default value is configured, Zilliz Cloud may store the default value instead. For details, see <a href="./default-fields">Default Values</a>.</p></li>
+</ul>
 
 </Admonition>
 

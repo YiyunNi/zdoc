@@ -47,7 +47,7 @@ Zilliz Cloud offers a total of 9 built-in privilege groups on the collection, da
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The three levels of built-in privilege groups do not have a cascading relationship. Setting a privilege group at the cluster level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.
+<p>The three levels of built-in privilege groups do not have a cascading relationship. Setting a privilege group at the cluster level does not automatically set permissions for all databases and collections under that instance. Privileges at the database and collection levels need to be set manually.</p>
 
 </Admonition>
 
@@ -456,7 +456,7 @@ If the built-in privileges do not meet your needs, you can create custom privile
 
 <Admonition type="info" icon="📘" title="Notes">
 
-To create and manage custom privilege groups, please [create a support ticket](http://support.zilliz.com) so that we can enable this feature for you.
+<p>To create and manage custom privilege groups, please <a href="http://support.zilliz.com">create a support ticket</a> so that we can enable this feature for you.</p>
 
 </Admonition>
 

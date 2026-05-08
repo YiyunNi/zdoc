@@ -34,7 +34,7 @@ The `lindera` tokenizer performs dictionary-based morphological analysis. It is 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**For Chinese text**: While `lindera` supports Chinese via the `cc-cedict` dictionary, we recommend using the [`jieba`](./jieba-tokenizer) tokenizer instead. Jieba is specifically designed for Chinese word segmentation and provides better results.
+<p><strong>For Chinese text</strong>: While <code>lindera</code> supports Chinese via the <code>cc-cedict</code> dictionary, we recommend using the <a href="./jieba-tokenizer"><code>jieba</code></a> tokenizer instead. Jieba is specifically designed for Chinese word segmentation and provides better results.</p>
 
 </Admonition>
 

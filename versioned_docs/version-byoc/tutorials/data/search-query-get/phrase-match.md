@@ -597,7 +597,7 @@ Once you've enabled match for a `VARCHAR` field in your collection schema, you c
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The `PHRASE_MATCH` expression is case-insensitive. You can use either `PHRASE_MATCH` or `phrase_match`.
+<p>The <code>PHRASE_MATCH</code> expression is case-insensitive. You can use either <code>PHRASE_MATCH</code> or <code>phrase_match</code>.</p>
 
 </Admonition>
 

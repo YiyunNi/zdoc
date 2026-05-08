@@ -39,7 +39,7 @@ Use it when you need fast prefix, suffix, infix, or wildcard filtering such as:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For details on filter expression syntax, refer to [Basic Operators](./basic-filtering-operators#range-operators).
+<p>For details on filter expression syntax, refer to <a href="./basic-filtering-operators#range-operators">Basic Operators</a>.</p>
 
 </Admonition>
 
@@ -71,19 +71,15 @@ During data ingestion, Zilliz Cloud builds the NGRAM index by performing two mai
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - For a range `[min_gram, max_gram]`, Zilliz Cloud generates all n-grams for every length between the two values (inclusive). For example, with `[2,4]` and the word `"text"`, Zilliz Cloud generates:
-
-        - **2-grams:** `te`, `ex`, `xt`
-
-        - **3-grams:** `tex`, `ext`
-
-        - **4-grams:** `text`
-
-    - N-gram decomposition is character-based and language-agnostic. For example, in Chinese, `"向量数据库"` with `min_gram = 2` is decomposed into: `"向量"`, `"量数"`, `"数据"`, `"据库"`.
-
-    - Spaces and punctuation are treated as characters during decomposition.
-
-    - Decomposition preserves original case, and matching is case-sensitive. For example, `"Database"` and `"database"` will generate different n-grams and require exact case matching during queries.
+    <ul>
+    <li><p>For a range <code>[min_gram, max_gram]</code>, Zilliz Cloud generates all n-grams for every length between the two values (inclusive). For example, with <code>[2,4]</code> and the word <code>"text"</code>, Zilliz Cloud generates:</p></li>
+    <li><p><strong>2-grams:</strong> <code>te</code>, <code>ex</code>, <code>xt</code></p></li>
+    <li><p><strong>3-grams:</strong> <code>tex</code>, <code>ext</code></p></li>
+    <li><p><strong>4-grams:</strong> <code>text</code></p></li>
+    <li><p>N-gram decomposition is character-based and language-agnostic. For example, in Chinese, <code>"向量数据库"</code> with <code>min_gram = 2</code> is decomposed into: <code>"向量"</code>, <code>"量数"</code>, <code>"数据"</code>, <code>"据库"</code>.</p></li>
+    <li><p>Spaces and punctuation are treated as characters during decomposition.</p></li>
+    <li><p>Decomposition preserves original case, and matching is case-sensitive. For example, <code>"Database"</code> and <code>"database"</code> will generate different n-grams and require exact case matching during queries.</p></li>
+    </ul>
 
     </Admonition>
 
@@ -95,7 +91,7 @@ During data ingestion, Zilliz Cloud builds the NGRAM index by performing two mai
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    A wider `[min_gram, max_gram]` range creates more grams and larger mapping lists. If memory is tight, consider mmap mode for very large posting lists. For details, refer to [Use mmap](./use-mmap).
+    <p>A wider <code>[min_gram, max_gram]</code> range creates more grams and larger mapping lists. If memory is tight, consider mmap mode for very large posting lists. For details, refer to <a href="./use-mmap">Use mmap</a>.</p>
 
     </Admonition>
 
@@ -260,7 +256,7 @@ Use the `drop_index()` method to remove an existing index from a collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-In your cluster compatible with **Milvus v2.6.x**, you can drop a scalar index directly once it’s no longer needed—no need to release the collection first.
+<p>In your cluster compatible with <strong>Milvus v2.6.x</strong>, you can drop a scalar index directly once it’s no longer needed—no need to release the collection first.</p>
 
 </Admonition>
 

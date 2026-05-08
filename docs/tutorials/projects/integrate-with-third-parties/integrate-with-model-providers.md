@@ -118,7 +118,7 @@ After an integration is created, you can manage it from the **Integrations** pag
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If an integration is removed or becomes invalid, collections or rankers that reference it may fail during insert or search operations until the integration is updated or replaced.
+<p>If an integration is removed or becomes invalid, collections or rankers that reference it may fail during insert or search operations until the integration is updated or replaced.</p>
 
 </Admonition>
 

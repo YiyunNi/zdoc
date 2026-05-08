@@ -33,13 +33,12 @@ Zilliz Cloud introduces a parameter called `build_level`, which allows users to 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is currently in **PUBLIC REVIEW** and applies to dedicated clusters only if:
-
-- The clusters are **Performance-optimized**, **Capacity-optimized**, and **Tiered-storage** type, and
-
-- The clusters are compatible with **Milvus v2.6.x**.
-
-You can upgrade your clusters to test this feature, and contact us if you encounter anything that needs further clarification.
+<p>This feature is currently in <strong>PUBLIC REVIEW</strong> and applies to dedicated clusters only if:</p>
+<ul>
+<li><p>The clusters are <strong>Performance-optimized</strong>, <strong>Capacity-optimized</strong>, and <strong>Tiered-storage</strong> type, and</p></li>
+<li><p>The clusters are compatible with <strong>Milvus v2.6.x</strong>.</p></li>
+</ul>
+<p>You can upgrade your clusters to test this feature, and contact us if you encounter anything that needs further clarification.</p>
 
 </Admonition>
 

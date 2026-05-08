@@ -40,7 +40,7 @@ The content on this page applies to serving clusters only.  On-demand clusters s
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This feature is available only to **Dedicated** clusters in an **Enterprise** project.
+<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
 
 </Admonition>
 
@@ -54,7 +54,7 @@ You can configure replicas for an existing Dedicated cluster as long as the foll
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-Updating the replica configurations may lead to slight service jitter. Please exercise caution.
+<p>Updating the replica configurations may lead to slight service jitter. Please exercise caution.</p>
 
 </Admonition>
 
@@ -131,9 +131,10 @@ When setting up dynamic scaling, you can configure the following bounds:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Selecting a maximum replica below the current value triggers an immediate scale-in.
-
-- Selecting a minimum replica above the current value triggers an immediate scale-out.
+<ul>
+<li><p>Selecting a maximum replica below the current value triggers an immediate scale-in.</p></li>
+<li><p>Selecting a minimum replica above the current value triggers an immediate scale-out.</p></li>
+</ul>
 
 </Admonition>
 

@@ -60,7 +60,7 @@ Zilliz Cloud provides two ways for you to count entities in a collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Both methods mentioned above count entities with the same primary key as separate entities. 
+<p>Both methods mentioned above count entities with the same primary key as separate entities. </p>
 
 </Admonition>
 

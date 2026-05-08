@@ -36,17 +36,18 @@ You are advised to use [the BulkWriter tool](./use-bulkwriter) to prepare your r
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- **Whether to enable AutoID**
-
-    The **id** field serves as the primary field of the collection. To make the primary field automatically increment, you can enable **AutoID** in the schema. In this case, you should exclude the **id** field from each row in the source data.
-
-- **Whether to enable dynamic fields**
-
-    When the target collection enables dynamic fields, if you need to store fields that are not included in the pre-defined schema, you can specify the **&#36;meta** column during the write operation and provide the corresponding key-value data.
-
-- **Case-sensitive**
-
-    Dictionary keys and collection field names are case-sensitive. Ensure that the dictionary keys in your data exactly match the field names in the target collection. If there is a field named **id** in the target collection, each entity dictionary should have a key named **id.** Using **ID** or **Id** results in errors. 
+<ul>
+<li><strong>Whether to enable AutoID</strong></li>
+</ul>
+<p>The <strong>id</strong> field serves as the primary field of the collection. To make the primary field automatically increment, you can enable <strong>AutoID</strong> in the schema. In this case, you should exclude the <strong>id</strong> field from each row in the source data.</p>
+<ul>
+<li><strong>Whether to enable dynamic fields</strong></li>
+</ul>
+<p>When the target collection enables dynamic fields, if you need to store fields that are not included in the pre-defined schema, you can specify the <strong>&#36;meta</strong> column during the write operation and provide the corresponding key-value data.</p>
+<ul>
+<li><strong>Case-sensitive</strong></li>
+</ul>
+<p>Dictionary keys and collection field names are case-sensitive. Ensure that the dictionary keys in your data exactly match the field names in the target collection. If there is a field named <strong>id</strong> in the target collection, each entity dictionary should have a key named <strong>id.</strong> Using <strong>ID</strong> or <strong>Id</strong> results in errors. </p>
 
 </Admonition>
 
@@ -72,7 +73,7 @@ Once your data is ready, you can use either of the following methods to import t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If your files are relatively small, it is recommended to use the folder or multiple-path method to import them all at once. This approach allows for internal optimizations during the import process, which helps reduce resource consumption later.
+<p>If your files are relatively small, it is recommended to use the folder or multiple-path method to import them all at once. This approach allows for internal optimizations during the import process, which helps reduce resource consumption later.</p>
 
 </Admonition>
 
@@ -126,7 +127,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If the folder contains multiple formats of files, the request will fail.
+<p>If the folder contains multiple formats of files, the request will fail.</p>
 
 </Admonition>
 

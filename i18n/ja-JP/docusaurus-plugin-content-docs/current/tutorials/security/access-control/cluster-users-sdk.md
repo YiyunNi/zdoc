@@ -1,11 +1,11 @@
 ---
-title: "クラスターユーザーの管理 (SDK) | Cloud"
+title: "クラスターユーザーの管理（SDK） | Cloud"
 slug: /cluster-users-sdk
 sidebar_key: cluster-users-sdk
-sidebar_label: "クラスターユーザーの管理 (SDK)"
+sidebar_label: "クラスターユーザーの管理（SDK）"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てることで権限を定義し、データセキュリティを実現できます。| Cloud"
+description: "Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てて権限を定義することで、データセキュリティを実現できます。"
 type: origin
 token: I2CHwfDHKilTMukoZ13cR2M4nzb
 sidebar_position: 3
@@ -13,10 +13,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - クラスター
+  - cluster
   - アクセス制御
   - rbac
-  - ユーザー
+  - users
 
 ---
 
@@ -28,15 +28,15 @@ import TabItem from '@theme/TabItem';
 
 Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てることで権限を定義し、データセキュリティを実現できます。
 
-このガイドでは、クラスターユーザーの作成、ユーザーへのロールの付与、ユーザーからのロールの剥奪、そして最終的にユーザーの削除を行う方法について説明します。クラスターロールの詳細については、[クラスターロールの管理 (コンソール)](./cluster-roles) を参照してください。
+このガイドでは、クラスターユーザーの作成、ユーザーへのロール付与、ユーザーからのロール剥奪、および最後にユーザーの削除について説明します。クラスターロールの詳細については、[クラスターロールの管理 (コンソール)](./cluster-roles) を参照してください。
 
 ## ユーザーの作成\{#create-a-user}
 
-以下の例は、ユーザー名 `user_1` とパスワード `P@ssw0rd` でユーザーを作成する方法を示しています。ユーザーのユーザー名とパスワードは、以下のルールに従う必要があります。
+以下の例は、ユーザー名 `user_1` とパスワード `P@ssw0rd` でユーザーを作成する方法を示しています。ユーザーのユーザー名とパスワードは、以下のルールに従う必要があります:
 
-- ユーザー名: 文字で始まる必要があり、大文字・小文字のアルファベット、数字、アンダースコアのみを含めることができます。
+- ユーザー名: 文字で始まる必要があり、大文字または小文字の英字、数字、アンダースコアのみを含めることができます。
 
-- パスワード: 8〜64 文字である必要があり、大文字、小文字、数字、特殊文字のうち 3 つ以上を含む必要があります。
+- パスワード: 8〜64文字の長さが必要であり、以下のうち3つを含める必要があります: 大文字、小文字、数字、および特殊文字。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -370,13 +370,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Drop user\{#drop-user}
+## ユーザーの削除\{#drop-user}
 
-次の例では、ユーザー `user_1` を削除する方法を示します。
+以下の例は、ユーザー `user_1` を削除する方法を示しています。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>root</code> ユーザーは削除できません。</p>
+`root` ユーザーは削除できません。
 
 </Admonition>
 

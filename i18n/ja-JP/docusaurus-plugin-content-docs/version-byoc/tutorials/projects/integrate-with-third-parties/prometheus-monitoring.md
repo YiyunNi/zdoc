@@ -5,7 +5,7 @@ sidebar_key: prometheus-monitoring
 sidebar_label: "Prometheus"
 beta: FALSE
 notebook: FALSE
-description: "Prometheus は、設定されたターゲットから指定された間隔でメトリクスを収集し、ルール式を評価して結果を表示し、特定の条件に基づいてアラートをトリガーできる監視システムです。| BYOC"
+description: "Prometheus は、設定されたターゲットから指定された間隔でメトリクスを収集し、ルール式を評価して結果を表示し、特定の条件に基づいてアラートを発生させることができる監視システムです。 | BYOC"
 type: origin
 token: Ex99woZlsico4FkfwxGckjRRnqf
 sidebar_position: 5
@@ -13,8 +13,8 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - third-party
-  - services
+  - サードパーティ
+  - サービス
   - prometheus
 
 ---
@@ -28,21 +28,21 @@ import Procedures from '@site/src/components/Procedures';
 
 [Prometheus](https://prometheus.io/) は、設定されたターゲットから指定された間隔でメトリクスを収集し、ルール式を評価して結果を表示し、特定の条件に基づいてアラートをトリガーできる監視システムです。
 
-Zilliz Cloud を Prometheus と統合することで、Zilliz Cloud デプロイメントに関連するメトリクスを収集および監視できます。
+Zilliz Cloud と Prometheus を統合することで、Zilliz Cloud デプロイメントに関連するメトリクスを収集・監視できます。
 
-## Zilliz Cloud メトリクスをスクレイプするための Prometheus の設定\{#configure-prometheus-to-scrape-zilliz-cloud-metrics}
+## Prometheus で Zilliz Cloud メトリクスをスクレイピングするように設定する\{#configure-prometheus-to-scrape-zilliz-cloud-metrics}
 
-Prometheus で Zilliz Cloud クラスターを監視するには、次の手順に従ってください。
+Prometheus で Zilliz Cloud クラスターを監視するには、以下の手順に従ってください。
 
 <Procedures>
 
 1. Prometheus サーバー上の `Prometheus.yml` 設定ファイルにアクセスします。詳細については、[設定](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#configuration) を参照してください。
 
-1. `Prometheus.yml` ファイルの `scrape_configs` セクションに以下のスニペットを追加します。プレースホルダーを適切な値に置き換えてください。
+1. 以下のスニペットを `Prometheus.yml` ファイルの `scrape_configs` セクションに追加します。プレースホルダーは適切な値に置き換えてください。
 
-    - `{{apiキー}}`: クラスターメトリクスにアクセスするための Zilliz Cloud API キー。
+    - `{{apiキー}}`: クラスターメトリクスへのアクセスに使用する Zilliz Cloud API キー。
 
-    - `{{clusterId}}`: 監視対象の Zilliz Cloud クラスターの ID。
+    - `{{clusterId}}`: 監視したい Zilliz Cloud クラスターの ID。
 
     ```yaml
     scrape_configs:
@@ -61,7 +61,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、次の手順�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>クラスター内のコレクション数は 10,000 以下である必要があります。この制限を超えたクラスターでは、メトリクスのエクスポートが不完全になったり、性能が低下したりする可能性があります。</p>
+    クラスターに含まれるコレクションは 10,000 個以下である必要があります。この制限を超えるクラスターでは、メトリクスのエクスポートが不完全になったり、品質が低下したりする可能性があります。
 
     </Admonition>
 
@@ -72,11 +72,11 @@ Prometheus で Zilliz Cloud クラスターを監視するには、次の手順�
        </tr>
        <tr>
          <td><p><code>job_name</code></p></td>
-         <td><p>スクレイプされたメトリクスに割り当てられる人間が読めるラベル。</p></td>
+         <td><p>スクレイピングされたメトリクスに割り当てられる人間が読めるラベル。</p></td>
        </tr>
        <tr>
          <td><p><code>scheme</code></p></td>
-         <td><p>Zilliz Cloud エンドポイントからメトリクスをスクレイプするために使用されるプロトコルスキームで、<code>https</code> に設定されます。</p></td>
+         <td><p>Zilliz Cloud エンドポイントからメトリクスをスクレイピングするために使用されるプロトコルスキーム。これは <code>https</code> に設定されます。</p></td>
        </tr>
        <tr>
          <td><p><code>metrics_path</code></p></td>
@@ -84,7 +84,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、次の手順�
        </tr>
        <tr>
          <td><p><code>scrape_interval</code></p></td>
-         <td><p>ターゲットをスクレイプする頻度。サポートされる最小値は <code>60s</code> です。これより小さい値はエンドポイントで受け付けられません。</p></td>
+         <td><p>ターゲットをスクレイピングする頻度。サポートされる最小値は <code>60s</code> です。これより低い値はエンドポイントで受け付けられません。</p></td>
        </tr>
        <tr>
          <td><p><code>authorization.type</code></p></td>
@@ -92,23 +92,23 @@ Prometheus で Zilliz Cloud クラスターを監視するには、次の手順�
        </tr>
        <tr>
          <td><p><code>authorization.credentials</code></p></td>
-         <td><p>Zilliz Cloud メトリクスエンドポイントへのアクセス権限付与に使用される API キー。</p></td>
+         <td><p>Zilliz Cloud メトリクスエンドポイントへのアクセスを承認するために使用される API キー。</p></td>
        </tr>
        <tr>
          <td><p><code>static_configs.targets</code></p></td>
-         <td><p>Prometheus がスクレイプする静的ターゲットであり、リクエストに応じて Zilliz Cloud によって設定されます。詳細については、<a href="https://support.zilliz.com/hc/en-us">Zilliz テクニカルサポート</a>にお問い合わせください。</p></td>
+         <td><p>Prometheus がスクレイピングする静的ターゲット。これはリクエスト時に Zilliz Cloud 側で設定される必要があります。詳細については、<a href="https://support.zilliz.com/hc/en-us">Zilliz テクニカルサポート</a>にお問い合わせください。</p></td>
        </tr>
     </table>
 
-1. `Prometheus.yml` ファイルへの変更内容を保存します。
+1. 変更内容を `Prometheus.yml` ファイルに保存します。
 
 </Procedures>
 
 詳細については、[Prometheus 公式ドキュメント](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config) を参照してください。
 
-## スクレイプされたメトリクスの例\{#example-scraped-metrics}
+## スクレイピングされるメトリクスの例\{#example-scraped-metrics}
 
-以下は、Zilliz Cloud の `/metrics/export` エンドポイントからスクレイプされた Prometheus メトリクスの例です。コレクションごとのメトリクスには `collection_name` および `db_name` ラベルが含まれますが、クラスター全体のメトリクスは変更されません。
+以下は、Zilliz Cloud の `/metrics/export` エンドポイントからスクレイピングされる Prometheus メトリクスの例です。コレクション単位のメトリクスには `collection_name` および `db_name` ラベルが含まれますが、クラスター専用のメトリクスは変更されません。
 
 ```yaml
 # HELP zilliz_entities Total number of entities stored

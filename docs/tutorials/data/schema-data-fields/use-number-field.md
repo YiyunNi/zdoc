@@ -74,7 +74,7 @@ To declare a boolean field, simply set `datatype` to `BOOL`. To declare a number
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud supports null values and default values for boolean and number fields. To enable these features, set `nullable` to `True` and `default_value` to a numeric value. For details, refer to [Nullable & Default](./nullable-fields).
+<p>Zilliz Cloud supports null values and default values for boolean and number fields. To enable these features, set <code>nullable</code> to <code>True</code> and <code>default_value</code> to a numeric value. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 
@@ -90,7 +90,7 @@ To store boolean or numeric data, define corresponding types of fields in your c
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If you set `enable_dynamic_fields=True` when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to [Dynamic Field](./enable-dynamic-field).
+<p>If you set <code>enable_dynamic_fields=True</code> when defining the schema, Zilliz Cloud allows you to insert scalar fields that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to <a href="./enable-dynamic-field">Dynamic Field</a>.</p>
 
 </Admonition>
 

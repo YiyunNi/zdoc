@@ -34,7 +34,7 @@ Zilliz Cloud introduces a search parameter `level` to allow users to balance sea
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This applies to all searches, including basic vector searches, filtered searches, range searches, grouping searches, hybrid searches, and search iterators.
+<p>This applies to all searches, including basic vector searches, filtered searches, range searches, grouping searches, hybrid searches, and search iterators.</p>
 
 </Admonition>
 
@@ -74,7 +74,7 @@ For scenarios that require a high recall rate (**99%** or above), try setting th
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If the top-most level settings still do not suffice, contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
+<p>If the top-most level settings still do not suffice, contact <a href="https://zilliz.com/contact-sales">Zilliz Cloud support</a>.</p>
 
 </Admonition>
 
@@ -117,7 +117,7 @@ While setting `enable_recall_calculation` to `True`, you can adjust the value of
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Enabling `enable_recall_calculation` may impact search performance and is not recommended in production.
+<p>Enabling <code>enable_recall_calculation</code> may impact search performance and is not recommended in production.</p>
 
 </Admonition>
 

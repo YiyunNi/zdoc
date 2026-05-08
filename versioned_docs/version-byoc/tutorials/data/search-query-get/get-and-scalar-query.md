@@ -843,7 +843,7 @@ To extract a representative subset of data from your collection for data explora
 
 <Admonition type="info" icon="📘" title="Notes">
 
-For detailed usage, advanced examples, and best practices, refer to [Random Sampling](./ramdom-sampling).
+<p>For detailed usage, advanced examples, and best practices, refer to <a href="./ramdom-sampling">Random Sampling</a>.</p>
 
 </Admonition>
 

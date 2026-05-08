@@ -75,11 +75,11 @@ Ensure the following prerequisites are met before proceeding:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Without any entries in the allowlist, Zilliz Cloud allows access from any IP address.
-
-- Upon adding a CIDR block, cluster access is exclusively limited to the IP addresses within that block.
-
-- Adding 0.0.0.0/0 equates to having an empty allowlist.
+<ul>
+<li><p>Without any entries in the allowlist, Zilliz Cloud allows access from any IP address.</p></li>
+<li><p>Upon adding a CIDR block, cluster access is exclusively limited to the IP addresses within that block.</p></li>
+<li><p>Adding 0.0.0.0/0 equates to having an empty allowlist.</p></li>
+</ul>
 
 </Admonition>
 

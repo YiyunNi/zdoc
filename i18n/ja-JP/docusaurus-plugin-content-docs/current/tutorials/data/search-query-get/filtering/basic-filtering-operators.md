@@ -5,20 +5,20 @@ sidebar_key: basic-filtering-operators
 sidebar_label: "基本"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、データを効率的にフィルタリングおよびクエリするための豊富な基本演算子を提供します。これらの演算子を使用すると、スカラーフィールド、数値計算、論理条件などに基づいて検索条件を絞り込むことができます。これらの演算子の使用方法を理解することは、正確なクエリを構築し、検索効率を最大化するために不可欠です。 | Cloud"
+description: "Zilliz Cloud では、データを効率的にフィルタリングおよびクエリするための豊富な基本演算子を提供しています。これらの演算子を使用すると、スカラーフィールド、数値計算、論理条件などに基づいて検索条件を絞り込むことができます。これらの演算子の使用方法を理解することは、正確なクエリを構築し、検索の効率を最大化するために不可欠です。"
 type: origin
 token: LBbUwOGcwi1UMak3eE2cM1gvnUe
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - collection
-  - data
-  - filter
-  - filtering expressions
-  - filtering
-  - basic operators
+  - コレクション
+  - データ
+  - フィルタ
+  - フィルタリング式
+  - フィルタリング
+  - 基本演算子
 
 ---
 
@@ -113,21 +113,21 @@ filter = 'discount <= 10'
 filter = 'color in ["red", "green", "blue"]'
 ```
 
-これは、値のリスト内に特定の値が含まれているかをチェックしたい場合に役立ちます。
+これは、値のリストに対するメンバーシップを確認したい場合に便利です。
 
-### 例2: パターンマッチングに `LIKE` を使用する\{#example-2-using-like-for-pattern-matching}
+### 例 2: パターンマッチングに `LIKE` を使用する\{#example-2-using-like-for-pattern-matching}
 
-`LIKE` 演算子は、文字列フィールドでのパターンマッチングに使用されます。この演算子は、テキスト内の異なる位置（**プレフィックス**、**インフィックス**、または**サフィックス**）で部分文字列をマッチさせることができます。`LIKE` 演算子では、任意の文字数（ゼロ文字も含む）にマッチするワイルドカードとして `%` 記号を使用します。
+`LIKE` 演算子は、文字列フィールドでのパターンマッチングに使用されます。テキスト内の異なる位置にある部分文字列をマッチさせることができます: **プレフィックス**、**インフィックス**、または **サフィックス** として。`LIKE` 演算子は `%` 記号をワイルドカードとして使用し、任意の数の文字（ゼロを含む）にマッチします。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>多くの場合、<strong>インフィックス</strong>マッチや<strong>サフィックス</strong>マッチは、プレフィックスマッチと比べて著しく低速になります。パフォーマンスが重要な場合は、これらの使用に注意が必要です。</p>
+ほとんどの場合、**インフィックス** または **サフィックス** マッチングは、プレフィックスマッチングよりも著しく遅くなります。パフォーマンスが重要な場合は、注意して使用してください。
 
 </Admonition>
 
-### プレフィックスマッチ（前方一致）\{#prefix-match-starts-with}
+### プレフィックスマッチ（先頭一致）\{#prefix-match-starts-with}
 
-**プレフィックス**マッチ（文字列が指定されたパターンで始まる場合）を行うには、パターンを先頭に配置し、その後に続く任意の文字にマッチさせるために `%` を使用します。例えば、`name` が "Prod" で始まるすべての製品を検索するには、次のようにします：
+文字列が指定されたパターンで始まる **プレフィックス** マッチを実行するには、パターンを先頭に配置し、その後に続く任意の文字に `%` を使用してマッチさせます。例えば、`name` が "Prod" で始まるすべての製品を検索するには:
 
 ```python
 filter = 'name LIKE "Prod%"'
@@ -229,27 +229,27 @@ filter = 'NOT color == "green"'
 
 `IS NULL` および `IS NOT NULL` 演算子は、フィールドに null 値（データの欠如）が含まれているかどうかに基づいてフィルタリングするために使用されます。
 
-- `IS NULL`: 特定のフィールドに null 値（値が存在しない、または未定義）が含まれるエンティティを識別します。
+- `IS NULL`: 特定のフィールドに null 値が含まれているエンティティを識別します。つまり、値が存在しないか未定義です。
 
-- `IS NOT NULL`: 特定のフィールドに null 以外の何らかの値（有効で定義された値）が含まれるエンティティを識別します。
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>これらの演算子は大文字・小文字を区別しないため、<code>IS NULL</code> や <code>is null</code>、<code>IS NOT NULL</code> や <code>is not null</code> のいずれでも使用できます。</p>
-
-</Admonition>
-
-### Null 値を含むスカラーフィールド\{#regular-scalar-fields-with-null-values}
-
-Zilliz Cloud では、文字列や数値などのスカラーフィールドに対して、null 値を含むフィルタリングが可能です。
+- `IS NOT NULL`: 特定のフィールドに null 以外の値が含まれているエンティティを識別します。つまり、フィールドに有効で定義された値があります。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>VARCHAR</code> フィールドにおいて、空文字列 <code>""</code> は null 値とは見なされません。</p>
+これらの演算子は大文字と小文字を区別しないため、`IS NULL` または `is null`、`IS NOT NULL` または `is not null` を使用できます。
 
 </Admonition>
 
-`description` フィールドが null であるエンティティを取得するには：
+### null 値を持つ通常のスカラーフィールド\{#regular-scalar-fields-with-null-values}
+
+Zilliz Cloud では、文字列や数値などの通常のスカラーフィールドに対して null 値でのフィルタリングが可能です。
+
+<Admonition type="info" icon="📘" title="Notes">
+
+空文字列 `""` は、`VARCHAR` フィールドの null 値として扱われません。
+
+</Admonition>
+
+`description` フィールドが null のエンティティを取得するには:
 
 ```python
 filter = 'description IS NULL'
@@ -267,21 +267,21 @@ filter = 'description IS NOT NULL'
 filter = 'description IS NOT NULL AND price > 10'
 ```
 
-### Null 値を含む JSON フィールド\{#json-fields-with-null-values}
+### JSON フィールドの Null 値\{#json-fields-with-null-values}
 
-Zilliz Cloud では、Null 値を含む JSON フィールドに対してフィルタリングが可能です。JSON フィールドは以下のケースで null とみなされます。
+Zilliz Cloud では、null 値を含む JSON フィールドのフィルタリングが可能です。JSON フィールドが null とみなされるのは、以下の場合です。
 
-- JSON オブジェクト全体が明示的に `None`（null）に設定されている場合（例: `{"metadata": None}`）。
+- JSON オブジェクト全体が明示的に None (null) に設定されている場合。例: `{"metadata": None}`
 
-- エンティティから JSON フィールド自体が完全に欠落している場合。
+- JSON フィールド自体がエンティティから完全に欠落している場合
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>JSON オブジェクト内の一部の要素（個別のキーなど）が null であっても、そのフィールド自体は non-null とみなされます。例えば、<code>\{"metadata": \{"category": None, "price": 99.99}}</code> の場合、<code>category</code> キーが null であっても、このフィールドは null とはみなされません。</p>
+JSON オブジェクト内の一部の要素が null の場合（例: 個別のキー）、そのフィールドは null ではないとみなされます。例えば、`\{"metadata": \{"category": None, "price": 99.99}}` は `category` キーが null であっても、null として扱われません。
 
 </Admonition>
 
-Zilliz Cloud が null 値を含む JSON フィールドをどのように扱うかをさらに具体的に示すため、以下に JSON フィールド `metadata` を含むサンプルデータを示します。
+Zilliz Cloud が null 値を含む JSON フィールドをどのように処理するかをさらに説明するため、JSON フィールド `metadata` を含む以下のサンプルデータを考えてみましょう。
 
 ```python
 data = [
@@ -335,21 +335,21 @@ filter = 'metadata IS NOT NULL'
 # ]
 ```
 
-### null 値を含む ARRAY フィールド\{#array-fields-with-null-values}
+### Null 値を含む ARRAY フィールド\{#array-fields-with-null-values}
 
-Zilliz Cloud では、null 値を含む ARRAY フィールドに対してフィルタリングが可能です。ARRAY フィールドは以下のケースで null とみなされます。
+Zilliz Cloud では、null 値を含む ARRAY フィールドに対するフィルタリングが可能です。ARRAY フィールドは、以下の方法で null として扱われます。
 
-- ARRAY フィールド全体が明示的に `None`（null）に設定されている場合（例: `"tags": None`）。
+- ARRAY フィールド全体が明示的に None (null) に設定されている場合。例: `"tags": None`
 
-- エンティティから ARRAY フィールドが完全に省略されている場合。
+- ARRAY フィールドがエンティティから完全に欠落している場合
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>ARRAY フィールドには部分的な null 値を含めることはできません。ARRAY フィールド内のすべての要素は同じデータ型を持つ必要があります。詳細については、<a href="./use-array-fields">配列 Field</a> を参照してください。</p>
+ARRAY フィールドに部分的な null 値を含めることはできません。ARRAY フィールド内のすべての要素は同じデータ型である必要があります。詳細については、[配列フィールド](./use-array-fields) を参照してください。
 
 </Admonition>
 
-Zilliz Cloud が null 値を含む ARRAY フィールドをどのように扱うかをさらに具体的に示すため、ARRAY フィールド `tags` を持つ以下のサンプルデータを考えてみましょう。
+Zilliz Cloud が null 値を含む ARRAY フィールドをどのように処理するかをさらに説明するため、以下に ARRAY フィールド `tags` を含むサンプルデータを示します。
 
 ```python
 data = [
@@ -417,13 +417,13 @@ filter = 'product["price"] > 1000'
 filter = 'history_temperatures[0] > 30'
 ```
 
-## 結論\{#conclusion}
+## まとめ\{#conclusion}
 
-Zilliz Cloud は、データのフィルタリングおよびクエリに柔軟性をもたらすさまざまな基本演算子を提供します。比較演算子、範囲演算子、算術演算子、論理演算子を組み合わせることで、強力なフィルタ式を作成し、検索結果を絞り込んで必要なデータを効率的に取得できます。
+Zilliz Cloud は、データのフィルタリングとクエリに柔軟性を与える基本的な演算子を多数提供しています。比較演算子、範囲演算子、算術演算子、論理演算子を組み合わせることで、強力なフィルタ式を作成し、検索結果を絞り込み、必要なデータを効率的に取得できます。
 
 ## FAQ\{#faq}
 
-**フィルタ条件（例：`filter='color in ["red", "green", "blue"]'`）における一致値リストの長さに制限はありますか？リストが長すぎる場合はどうすればよいですか？**
+**フィルタ条件内のマッチ値リストの長さに制限はありますか（例: filter='color in ["red", "green", "blue"]'）？リストが長すぎる場合はどうすればよいですか？**
 
-Zilliz Cloud では、フィルタ条件における一致値リストの長さに制限を設けていません。ただし、リストが極端に長い場合、クエリのパフォーマンスに大きな影響を与える可能性があります。  
-フィルタ条件に非常に長い一致値リストや多数の要素を含む複雑な式が含まれる場合は、[フィルタテンプレート](./filtering-templating)を使用してクエリパフォーマンスを向上させることを推奨します。
+Zilliz Cloud は、フィルタ条件内のマッチ値リストの長さに制限を設けていません。ただし、過度に長いリストはクエリパフォーマンスに大きな影響を与える可能性があります。
+フィルタ条件に長いマッチ値リストや多くの要素を含む複雑な式が含まれる場合は、[Filter Templating](./filtering-templating) を使用してクエリパフォーマンスを向上させることをお勧めします。

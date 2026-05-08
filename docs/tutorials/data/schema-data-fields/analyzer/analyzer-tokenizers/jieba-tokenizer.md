@@ -34,7 +34,7 @@ The `jieba` tokenizer processes Chinese text by breaking it down into its compon
 
 <Admonition type="info" icon="📘" title="Notes">
 
-The `jieba` tokenizer preserves punctuation marks as separate tokens in the output. For example, `"你好！世界。"` becomes `["你好", "！", "世界", "。"]`. To remove these standalone punctuation tokens, use the [`removepunct`](./remove-punct-filter) filter.
+<p>The <code>jieba</code> tokenizer preserves punctuation marks as separate tokens in the output. For example, <code>"你好！世界。"</code> becomes <code>["你好", "！", "世界", "。"]</code>. To remove these standalone punctuation tokens, use the <a href="./remove-punct-filter"><code>removepunct</code></a> filter.</p>
 
 </Admonition>
 

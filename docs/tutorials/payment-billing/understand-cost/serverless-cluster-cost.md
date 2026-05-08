@@ -150,7 +150,7 @@ Vector Database Cost (Read) = vCU Unit Price x Read vCU Usage
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    Each read operation will cost a minimum of 6 vCUs.
+    <p>Each read operation will cost a minimum of 6 vCUs.</p>
 
     </Admonition>
 

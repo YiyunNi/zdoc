@@ -930,7 +930,7 @@ During insertion, Zilliz Cloud:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You don't need to provide the sparse vector directly; the BM25 function generates it automatically based on your text and the specified analyzer.
+<p>You don't need to provide the sparse vector directly; the BM25 function generates it automatically based on your text and the specified analyzer.</p>
 
 </Admonition>
 
