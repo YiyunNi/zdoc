@@ -44,12 +44,12 @@ export async function computeEmbedding(text: string): Promise<number[]> {
 }
 
 /** Call Cohere embedding models on Bedrock via InvokeModel (bypasses ai-sdk) */
-async function embedCohereBedrock(text: string, resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }, retries = 3): Promise<number[]> {
+async function embedCohereBedrock(text: string, resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string; dimensions?: number }, retries = 3): Promise<number[]> {
   const embs = await embedCohereBedrockBatch([text], resolved, retries);
   return embs[0];
 }
 
-async function embedCohereBedrockBatch(texts: string[], resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string }, retries = 6): Promise<number[][]> {
+async function embedCohereBedrockBatch(texts: string[], resolved: { model: string; region?: string; accessKeyId?: string; secretAccessKey?: string; sessionToken?: string; dimensions?: number }, retries = 6): Promise<number[][]> {
   const { BedrockRuntimeClient, InvokeModelCommand } = await import('@aws-sdk/client-bedrock-runtime');
   const region = resolved.region || process.env.AWS_REGION || 'us-east-1';
   const accessKeyId = resolved.accessKeyId || process.env.AWS_ACCESS_KEY_ID || '';
@@ -69,6 +69,7 @@ async function embedCohereBedrockBatch(texts: string[], resolved: { model: strin
     texts,
     input_type: 'search_document',
     embedding_types: ['float'],
+    ...(resolved.model.toLowerCase().includes('embed-v4') && resolved.dimensions ? { output_dimension: resolved.dimensions } : {}),
   });
 
   for (let attempt = 0; attempt <= retries; attempt++) {

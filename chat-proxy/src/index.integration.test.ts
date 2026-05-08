@@ -2,12 +2,12 @@ import {describe, it, expect, vi, beforeEach, afterEach} from 'vitest';
 
 // Mock all external dependencies
 vi.mock('ai', () => ({
-  generateText: vi.fn(),
   streamText: vi.fn(),
   stepCountIs: vi.fn((n: number) => n),
   smoothStream: vi.fn(() => ({
     transform: vi.fn(),
   })),
+  tool: vi.fn((definition: any) => definition),
 }));
 vi.mock('@ai-sdk/openai', () => ({
   createOpenAI: vi.fn(() => ({
@@ -94,7 +94,7 @@ vi.mock('./admin.js', async () => {
 });
 
 import {app, clearResponseCache} from './index.js';
-import {generateText, streamText} from 'ai';
+import {streamText} from 'ai';
 import {checkGuard} from './guard.js';
 import {llmHealth} from './health.js';
 import {logEvent} from './logger.js';
@@ -278,16 +278,19 @@ describe('HTTP Endpoints', () => {
     expect(JSON.stringify(data)).not.toContain('secret raw prompt');
   });
 
-  it('passes request ID into fallback generateText telemetry metadata', async () => {
-    vi.mocked(streamText).mockReturnValueOnce({
-      fullStream: (async function* () {
-        yield {type: 'tool-call', toolName: 'searchDocs', input: {query: 'collection'}};
-      })(),
-      text: Promise.resolve(''),
-      response: Promise.resolve({messages: [{role: 'user', content: 'question'}]}),
-      totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 1, totalTokens: 2}),
-    } as any);
-    vi.mocked(generateText).mockResolvedValueOnce({text: 'fallback answer'} as any);
+  it('passes request ID into streaming final synthesis telemetry metadata', async () => {
+    vi.mocked(streamText)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'tool-call', toolName: 'searchDocs', input: {query: 'collection'}};
+        })(),
+        totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 1, totalTokens: 2}),
+      } as any)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'text-delta', text: 'final answer'};
+        })(),
+      } as any);
 
     const res = await app.request('/chat', {
       method: 'POST',
@@ -297,7 +300,8 @@ describe('HTTP Endpoints', () => {
 
     expect(res.status).toBe(200);
     await res.text();
-    const callArgs = vi.mocked(generateText).mock.calls[0][0] as any;
+    const callArgs = vi.mocked(streamText).mock.calls[1][0] as any;
+    expect(callArgs.tools).toBeUndefined();
     expect(callArgs.experimental_telemetry).toMatchObject({
       metadata: {
         requestId: 'fallback-request-1',
@@ -308,6 +312,52 @@ describe('HTTP Endpoints', () => {
       recordInputs: false,
       recordOutputs: false,
     });
+  });
+
+  it('enforces SSE contract: tool-only responses must emit a delta or error before done', async () => {
+    vi.mocked(streamText)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'tool-call', toolName: 'searchDocs', input: {query: 'collection'}};
+        })(),
+        totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 0, totalTokens: 1}),
+      } as any)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {})(),
+      } as any);
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'tool-only-contract-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    const events = parseSSE(await res.text());
+    const doneIdx = events.findIndex(e => e.event === 'done');
+    expect(doneIdx).toBeGreaterThan(-1);
+    expect(events.slice(0, doneIdx).some(e => e.event === 'delta' || e.event === 'error')).toBe(true);
+  });
+
+  it('enforces SSE contract: stream errors must emit done after error', async () => {
+    vi.mocked(streamText).mockReturnValueOnce({
+      fullStream: (async function* () {
+        yield {type: 'error', error: 'provider failed for alice@example.com'};
+      })(),
+    } as any);
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'error-contract-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    const events = parseSSE(await res.text());
+    const errorIdx = events.findIndex(e => e.event === 'error');
+    const doneIdx = events.findIndex(e => e.event === 'done');
+    expect(errorIdx).toBeGreaterThan(-1);
+    expect(doneIdx).toBeGreaterThan(errorIdx);
   });
 
   it('POST /chat emits safe debug flow logs when enabled', async () => {
