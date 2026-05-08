@@ -7,6 +7,7 @@ vi.mock('ai', () => ({
   smoothStream: vi.fn(() => ({
     transform: vi.fn(),
   })),
+  tool: vi.fn((definition: any) => definition),
 }));
 vi.mock('@ai-sdk/openai', () => ({
   createOpenAI: vi.fn(() => ({
@@ -37,8 +38,10 @@ vi.mock('./router.js', () => ({
   routeIntent: vi.fn().mockResolvedValue({agent: 'general', reasoning: 'test'}),
 }));
 vi.mock('./logger.js', () => ({
+  logDebugFlow: vi.fn(),
   logEvent: vi.fn(),
   saveConversation: vi.fn().mockResolvedValue(undefined),
+  summarizeForDebugLog: vi.fn((value: unknown) => ({chars: String(value ?? '').length, bytes: String(value ?? '').length, sha256: '0'.repeat(64)})),
   updateUserProfile: vi.fn().mockResolvedValue(undefined),
 }));
 vi.mock('./sessions.js', () => {
@@ -167,13 +170,17 @@ describe('SSE Stream Format', () => {
     expect(agentEvent!.data.name).toBe('General Assistant');
   });
 
-  it('emits delta events with text', async () => {
-    vi.mocked(streamText).mockReturnValue({
-      fullStream: (async function* () {
-        yield {type: 'text-delta', text: 'Hello'};
-        yield {type: 'text-delta', text: ' world'};
-      })(),
-    } as any);
+  it('emits final synthesis delta events with text', async () => {
+    vi.mocked(streamText)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {})(),
+      } as any)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'text-delta', text: 'Hello'};
+          yield {type: 'text-delta', text: ' world'};
+        })(),
+      } as any);
 
     const res = await app.request('/chat', {
       method: 'POST',
@@ -266,7 +273,11 @@ describe('SSE Stream Format', () => {
     const events = parseSSE(await res.text());
     const errorEvent = events.find(e => e.event === 'error');
     expect(errorEvent).toBeDefined();
-    expect(errorEvent!.data.error).toContain('LLM provider error');
+    expect(errorEvent!.data.error).toBe('Internal server error');
+    expect(errorEvent!.data.requestId).toMatch(/^[0-9a-f-]{36}$/);
+    const doneEvent = events.find(e => e.event === 'done');
+    expect(doneEvent).toBeDefined();
+    expect(doneEvent!.data.stop_reason).toBe('error');
   });
 
   it('emits events in correct order: session → agent → delta(s) → confidence → done', async () => {

@@ -1,7 +1,7 @@
 import {randomUUID} from 'crypto';
 import {Hono, type Context, type MiddlewareHandler} from 'hono';
 import {cors} from 'hono/cors';
-import {streamText, generateText, stepCountIs} from 'ai';
+import {streamText, stepCountIs} from 'ai';
 import type {ChatRequest} from './types.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
@@ -43,6 +43,91 @@ loadPrompts();
 // ---------------------------------------------------------------------------
 
 const MAX_FALLBACK_SOURCES = 5;  // Max sources to show when grounding returns empty
+const TOOL_COLLECTION_MAX_STEPS = 2;
+const TOOL_COLLECTION_TIMEOUT_MS = 30000;
+const FINAL_SYNTHESIS_TIMEOUT_MS = 30000;
+const FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS = 1600;
+const EMBEDDING_BUDGET_MS = 1500;
+
+function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
+  let timeout: ReturnType<typeof setTimeout> | undefined;
+  const timeoutPromise = new Promise<T>(resolve => {
+    timeout = setTimeout(() => resolve(fallback), ms);
+  });
+  return Promise.race([promise, timeoutPromise]).finally(() => {
+    if (timeout) clearTimeout(timeout);
+  });
+}
+
+function truncateText(text: string, maxChars: number): string {
+  if (!text || text.length <= maxChars) return text;
+  return text.slice(0, maxChars).trimEnd() + '\n... [truncated]';
+}
+
+function formatToolResultForSynthesis(toolName: string, toolResult: Record<string, any> | undefined): string {
+  if (!toolResult) return `Tool: ${toolName}\nNo result returned.`;
+  const lines = [`Tool: ${toolName}`];
+
+  if (Array.isArray(toolResult.results)) {
+    lines.push('Search results:');
+    for (const r of toolResult.results.slice(0, 6)) {
+      lines.push(`- ${r.title || r.doc_title || 'Untitled'} (${r.url || r.doc_url || 'no-url'})${r.section ? ` [${r.section}]` : ''}`);
+      if (r.content) lines.push(truncateText(String(r.content), 1200));
+    }
+    if (toolResult.results.length === 0) lines.push('- No search results.');
+  }
+
+  if (Array.isArray(toolResult.examples)) {
+    lines.push('Code examples:');
+    for (const e of toolResult.examples.slice(0, 3)) {
+      lines.push(`- ${e.title || 'Example'} (${e.url || 'no-url'})`);
+      if (e.code) lines.push('```\n' + truncateText(String(e.code), 1200) + '\n```');
+    }
+    if (toolResult.examples.length === 0) lines.push('- No code examples.');
+  }
+
+  if (Array.isArray(toolResult.relatedDocs) && toolResult.relatedDocs.length > 0) {
+    lines.push('Related docs:');
+    for (const r of toolResult.relatedDocs.slice(0, 8)) {
+      lines.push(`- ${r.title || 'Untitled'} (${r.url || 'no-url'})`);
+    }
+  }
+
+  if (Array.isArray(toolResult.pages)) {
+    lines.push('Pages:');
+    for (const p of toolResult.pages.slice(0, 10)) {
+      lines.push(`- ${p.title || 'Untitled'} (${p.url || 'no-url'})${p.section ? ` [${p.section}]` : ''}`);
+    }
+    if (toolResult.pages.length === 0) lines.push('- No pages found.');
+  }
+
+  if (toolResult.url && toolResult.success) {
+    lines.push(`Page content: ${toolResult.title || toolResult.url} (${toolResult.url})`);
+    if (toolResult.content) lines.push(truncateText(String(toolResult.content), 3000));
+  }
+
+  if (lines.length === 1) {
+    lines.push(truncateText(JSON.stringify(toolResult), 3000));
+  }
+
+  return truncateText(lines.join('\n'), 6000);
+}
+
+function buildNoResponseFallback(
+  query: string,
+  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolSources: {title: string; url: string; score?: number; section?: string}[] = [],
+): string {
+  const sourceLines = toolChunks.length > 0
+    ? toolChunks.slice(0, 3).map((chunk, i) => `${i + 1}. ${chunk.doc_title || chunk.doc_url}${chunk.doc_url ? ` — ${chunk.doc_url}` : ''}`)
+    : toolSources.slice(0, 5).map((source, i) => `${i + 1}. ${source.title || source.url} — ${source.url}`);
+
+  if (sourceLines.length > 0) {
+    return `I found relevant documentation for your question, but couldn't generate a complete answer. Please try again or rephrase your question.\n\nRelevant docs found:\n${sourceLines.join('\n')}`;
+  }
+
+  return `I couldn't generate a complete answer for this request. Please try again or rephrase your question. (${query ? 'Question received.' : 'No question text was available.'})`;
+}
 
 // ---------------------------------------------------------------------------
 // Reasoning-model workaround: DeepSeek reasoning models require
@@ -542,6 +627,7 @@ app.post('/chat', async c => {
         debug('chat.sse.opened');
         // Emit session ID immediately so the client knows the connection is live
         send('session', JSON.stringify({sessionId: session.id, requestId}));
+        send('status', JSON.stringify({phase: 'analyzing'}));
 
         // Check response cache for identical repeated queries
         const tChatStart = Date.now();
@@ -568,9 +654,7 @@ app.post('/chat', async c => {
         }
         incCounter('chat_proxy_cache_misses_total', {type: 'response'});
 
-        // Kick off embedding and routing concurrently. They are independent until
-        // after the semantic cache check; parallelizing removes the serial wait
-        // that was the dominant first-token bottleneck.
+        // Kick off embedding and routing concurrently.
         const tEmbedStart = Date.now();
         const embeddingPromise = computeEmbedding(ragQuery).catch((err: Error) => {
           console.warn('[Embedding] Failed to compute query embedding', JSON.stringify({requestId, error: summarizeForDebugLog(err.message, 'error')}));
@@ -581,11 +665,11 @@ app.post('/chat', async c => {
           ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}),
         );
 
-        // Check semantic cache for similar queries across sessions
+        // Check semantic cache for similar queries across sessions.
         let semanticHit: SemanticCacheHit | null = null;
-        const queryEmbedding = await embeddingPromise;
+        const queryEmbedding = await withTimeout(embeddingPromise, EMBEDDING_BUDGET_MS, null);
         const tEmbed = Date.now() - tEmbedStart;
-        debug('chat.embedding.completed', {durationMs: tEmbed, hasEmbedding: Boolean(queryEmbedding)});
+        debug('chat.embedding.completed', {durationMs: tEmbed, hasEmbedding: Boolean(queryEmbedding), timedOut: !queryEmbedding && tEmbed >= EMBEDDING_BUDGET_MS});
         if (queryEmbedding) {
           try {
             semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding, requestId);
@@ -613,6 +697,7 @@ app.post('/chat', async c => {
           return;
         }
         incCounter('chat_proxy_cache_misses_total', {type: 'semantic'});
+        send('status', JSON.stringify({phase: 'routing'}));
 
         // Track events for caching on successful response
         const recordedEvents: Array<{event: string; data: string}> = [];
@@ -638,6 +723,7 @@ app.post('/chat', async c => {
             reasoning: routeResult.reasoning,
           });
 
+          sendAndRecord('status', JSON.stringify({phase: 'retrieving'}));
           const agentConfig = getAgent(routeResult.agent as any);
           currentAgent = agentConfig.type;
           debugAgent = agentConfig.type;
@@ -717,26 +803,40 @@ app.post('/chat', async c => {
 
           const tLlmStart = Date.now();
           const modelInstance = await createModelInstance(chatModelResolved);
+          const toolsCalled: string[] = [];
+          const toolSources: {title: string; url: string; score?: number; section?: string}[] = [];
+          const toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[] = [];
+          const toolResultSummaries: string[] = [];
+          let draftText = '';
+          let fullText = '';
+          let groundedSourceCount = 0;
+          let deltaCount = 0;
+          let result: ReturnType<typeof streamText> | null = null;
+          let finalResult: ReturnType<typeof streamText> | null = null;
+          let finalSynthesisFailed = false;
+
           debug('chat.provider.stream.started', {
+            phase: 'tool_collection',
             agent: agentConfig.type,
             model: activeModel,
             toolCount: Object.keys(agentTools).length,
-            maxOutputTokens: 4096,
-            timeoutMs: 120000,
+            maxOutputTokens: 1024,
+            maxSteps: TOOL_COLLECTION_MAX_STEPS,
+            timeoutMs: TOOL_COLLECTION_TIMEOUT_MS,
           });
-          const result = streamText({
+          result = streamText({
             model: modelInstance,
-            maxOutputTokens: 4096,
+            maxOutputTokens: 1024,
             temperature: 0.2,
             tools: agentTools,
-            stopWhen: stepCountIs(4),
-            abortSignal: AbortSignal.timeout(120000),
-            system: systemPrompt,
+            stopWhen: stepCountIs(TOOL_COLLECTION_MAX_STEPS),
+            abortSignal: AbortSignal.timeout(TOOL_COLLECTION_TIMEOUT_MS),
+            system: `${systemPrompt}\n\n## Tool collection phase\nUse tools only to collect the minimum documentation needed. Do not try to provide the final answer in this phase; the server will run a separate final synthesis phase without tools. Prefer at most one searchDocs call and one content/code lookup.`,
             messages: windowedMessages.map(m => ({
               role: m.role as 'user' | 'assistant',
               content: m.content,
             })),
-            experimental_telemetry: makeTelemetry('chat-stream', {
+            experimental_telemetry: makeTelemetry('chat-tool-collection', {
               agentType: agentConfig.type,
               sessionId: session.id,
               requestId,
@@ -744,21 +844,15 @@ app.post('/chat', async c => {
             }),
           });
 
-          const toolsCalled: string[] = [];
-          const toolSources: {title: string; url: string; score?: number; section?: string}[] = [];
-          const toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[] = [];
-          let fullText = '';
-          let groundedSourceCount = 0;
-          let deltaCount = 0;
-
           for await (const part of result.fullStream) {
             if (part.type === 'error') {
               throw new Error((part as any).error || 'LLM stream error');
             }
             if (part.type === 'text-delta') {
-              fullText += part.text;
-              deltaCount++;
-              sendAndRecord('delta', JSON.stringify({text: part.text}));
+              // Tool collection is not the user-visible final answer. Keep any
+              // provider text as draft context only; final synthesis streams the
+              // actual assistant answer.
+              draftText += part.text;
             } else if (part.type === 'tool-call') {
               toolsCalled.push(part.toolName);
               const toolArgs = (part as any).input ?? (part as any).args;
@@ -779,6 +873,7 @@ app.post('/chat', async c => {
               // Extract sources from any tool that returns doc URLs
               // AI SDK v6 fullStream uses .output for tool-result events
               const toolResult = (part as any).output as Record<string, any>;
+              toolResultSummaries.push(formatToolResultForSynthesis((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', toolResult));
               if (toolResult?.results) {
                 // searchDocs returns { results: [{title, url, score, content, section, ...}] }
                 for (const r of toolResult.results) {
@@ -821,80 +916,68 @@ app.post('/chat', async c => {
             }
           }
 
-          // Fallback: some providers do not emit text-delta for the final answer
-          // when tool calls consume the stream steps, so assemble from result.text.
+          sendAndRecord('status', JSON.stringify({phase: 'generating'}));
+
+          // Final synthesis phase: always run one no-tool answer pass after the
+          // bounded tool-collection phase. This prevents the request from ending
+          // on a tool call and makes final text generation mandatory by design.
+          try {
+            const contextParts = toolResultSummaries.length > 0
+              ? toolResultSummaries
+              : toolChunks.map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`);
+            const context = contextParts.join('\n\n---\n\n') || 'No tool results were returned. Use the agent instructions, page context, and general Zilliz Cloud documentation knowledge; be explicit if the collected context is weak.';
+            const draft = draftText ? `\n\nDraft text from tool collection phase (may be incomplete):\n${truncateText(draftText, 3000)}` : '';
+            debug('chat.final_synthesis.started', {
+              toolCount: toolsCalled.length,
+              toolSummaryCount: toolResultSummaries.length,
+              chunkCount: toolChunks.length,
+              hadDraftText: Boolean(draftText),
+              timeoutMs: FINAL_SYNTHESIS_TIMEOUT_MS,
+            });
+            finalResult = streamText({
+              model: modelInstance,
+              system: `${systemPrompt}\n\n## Final synthesis mode\nYou are in the final answer phase. Tool use is disabled. You MUST answer the user directly using the provided collected context, current page context, and agent instructions. If the context is weak, still provide the best safe answer and mention what to verify. Be concise by default.`,
+              messages: [
+                {role: 'user', content: `User question:\n${ragQuery}\n\nCollected context from tools:\n${context}${draft}\n\nWrite the final answer now. Include concise steps and code if relevant. Keep the answer under 700 words unless the user explicitly asks for more detail.`},
+              ],
+              maxOutputTokens: FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS,
+              temperature: 0.2,
+              abortSignal: AbortSignal.timeout(FINAL_SYNTHESIS_TIMEOUT_MS),
+              experimental_telemetry: makeTelemetry('chat-final-synthesis', {
+                agentType: agentConfig.type,
+                sessionId: session.id,
+                requestId,
+                model: activeModel,
+              }),
+            });
+            for await (const part of finalResult.fullStream) {
+              if (part.type === 'error') {
+                finalSynthesisFailed = true;
+                throw new Error((part as any).error || 'Final synthesis stream error');
+              }
+              if (part.type === 'text-delta') {
+                fullText += part.text;
+                deltaCount++;
+                sendAndRecord('delta', JSON.stringify({text: part.text}));
+              } else if (process.env.DEBUG_STREAM === 'true') {
+                console.log('[final-stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
+              }
+            }
+            console.log(`[FinalSynthesis] streamed ${fullText.length} chars from ${toolResultSummaries.length} tool summaries and ${toolChunks.length} chunks`);
+          } catch (err) {
+            finalSynthesisFailed = true;
+            console.error('[FinalSynthesis] streamText failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+          }
+
+          if (finalSynthesisFailed && fullText) {
+            throw new Error('Final synthesis failed after partial output');
+          }
+
           if (!fullText) {
-            const assembled = await result.text;
-            if (assembled) {
-              fullText = assembled;
-              deltaCount++;
-              sendAndRecord('delta', JSON.stringify({text: fullText}));
-            }
-          }
-
-          // Stronger fallback: if tools were called but no text emerged at all,
-          // re-run with generateText using the full conversation history.
-          // This works around provider bugs where the streamed final step
-          // produces no text deltas (observed with Bedrock after tool loops).
-          if (!fullText && toolsCalled.length > 0) {
-            try {
-              const response = await result.response;
-              const fallbackResult = await generateText({
-                model: modelInstance,
-                system: systemPrompt,
-                messages: response.messages,
-                maxOutputTokens: 4096,
-                temperature: 0.2,
-                experimental_telemetry: makeTelemetry('chat-fallback-generate-text', {
-                  agentType: agentConfig.type,
-                  sessionId: session.id,
-                  requestId,
-                  model: activeModel,
-                }),
-              });
-              if (fallbackResult.text) {
-                fullText = fallbackResult.text;
-                deltaCount++;
-                sendAndRecord('delta', JSON.stringify({text: fullText}));
-                console.log(`[Fallback] generateText recovered ${fullText.length} chars`);
-              }
-            } catch (err) {
-              console.error('[Fallback] generateText failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
-            }
-          }
-
-          // Nuclear fallback: Bedrock provider appears to lose text deltas entirely
-          // when messages contain tool history. Construct a plain-text prompt from
-          // the tool results and ask again without any tool definitions.
-          if (!fullText && toolsCalled.length > 0 && toolChunks.length > 0) {
-            try {
-              const context = toolChunks
-                .map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`)
-                .join('\n\n---\n\n');
-              const fallbackResult = await generateText({
-                model: modelInstance,
-                system: systemPrompt,
-                messages: [
-                  {role: 'user', content: `Question: ${ragQuery}\n\nRelevant documentation:\n\n${context}\n\nPlease answer the question based on the documentation above.`},
-                ],
-                maxOutputTokens: 4096,
-                temperature: 0.2,
-                experimental_telemetry: makeTelemetry('chat-nuclear-generate-text', {
-                  agentType: agentConfig.type,
-                  sessionId: session.id,
-                  requestId,
-                  model: activeModel,
-                }),
-              });
-              if (fallbackResult.text) {
-                fullText = fallbackResult.text;
-                deltaCount++;
-                sendAndRecord('delta', JSON.stringify({text: fullText}));
-                console.log(`[Nuclear] generateText recovered ${fullText.length} chars from ${toolChunks.length} chunks`);
-              }
-            } catch (err) {
-              console.error('[Nuclear] generateText failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
-            }
+            fullText = buildNoResponseFallback(ragQuery, toolChunks, toolSources);
+            deltaCount++;
+            sendAndRecord('delta', JSON.stringify({text: fullText}));
+            console.warn('[Fallback] emitted deterministic no-response fallback', JSON.stringify({requestId, toolsCalled: toolsCalled.length, toolChunks: toolChunks.length}));
           }
 
           // Stream completed successfully — mark LLM health as good
@@ -903,19 +986,25 @@ app.post('/chat', async c => {
           // Capture total token usage across all LLM steps (important with tool calls)
           let tokenUsage: TokenUsage | null = null;
           try {
-            const usage = await result.totalUsage;
-            if (usage.inputTokens != null && usage.outputTokens != null) {
+            const toolUsage = result ? await Promise.resolve(result.totalUsage).catch(() => null) : null;
+            const finalUsage = finalResult ? await Promise.resolve(finalResult.totalUsage).catch(() => null) : null;
+            const inputTokens = (toolUsage?.inputTokens ?? 0) + (finalUsage?.inputTokens ?? 0);
+            const outputTokens = (toolUsage?.outputTokens ?? 0) + (finalUsage?.outputTokens ?? 0);
+            const totalTokens = (toolUsage?.totalTokens ?? ((toolUsage?.inputTokens ?? 0) + (toolUsage?.outputTokens ?? 0))) +
+              (finalUsage?.totalTokens ?? ((finalUsage?.inputTokens ?? 0) + (finalUsage?.outputTokens ?? 0)));
+            const cachedInputTokens = (toolUsage?.cachedInputTokens ?? 0) + (finalUsage?.cachedInputTokens ?? 0);
+            if (inputTokens > 0 || outputTokens > 0) {
               tokenUsage = {
-                inputTokens: usage.inputTokens,
-                outputTokens: usage.outputTokens,
-                totalTokens: usage.totalTokens ?? usage.inputTokens + usage.outputTokens,
-                cachedInputTokens: usage.cachedInputTokens ?? 0,
+                inputTokens,
+                outputTokens,
+                totalTokens,
+                cachedInputTokens,
                 model: activeModel,
                 agentType: agentConfig.type,
               };
-              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'input'}, usage.inputTokens);
-              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'output'}, usage.outputTokens);
-              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'total'}, tokenUsage.totalTokens);
+              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'input'}, inputTokens);
+              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'output'}, outputTokens);
+              incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'total'}, totalTokens);
             }
           } catch (err) {
             console.warn('[Usage] Failed to read totalUsage', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
@@ -1030,9 +1119,7 @@ app.post('/chat', async c => {
             sendAndRecord('hook-append', JSON.stringify({text: '\n\n' + text.trim()}));
           }
 
-          sendAndRecord('done', JSON.stringify({stop_reason: 'end_turn'}));
-
-          // Emit token usage event (before caching, fire-and-forget)
+          // Emit token usage event before terminal done.
           if (tokenUsage) {
             sendAndRecord('usage', JSON.stringify({
               inputTokens: tokenUsage.inputTokens,
@@ -1042,6 +1129,21 @@ app.post('/chat', async c => {
               model: tokenUsage.model,
             }));
           }
+
+          // Emit structured timing event so clients can observe per-request breakdown.
+          const tGround = Date.now() - tGroundStart;
+          const tTotal = Date.now() - tChatStart;
+          sendAndRecord('timing', JSON.stringify({
+            embed: tEmbed,
+            route: tRoute,
+            llm: tLlm,
+            ground: tGround,
+            total: tTotal,
+            tools: toolsCalled.length,
+            sources: allSources.length,
+          }));
+
+          sendAndRecord('done', JSON.stringify({stop_reason: 'end_turn'}));
 
           // Cache the successful response for replay (session-scoped exact match)
           responseCacheSet(responseCacheKey, recordedEvents);
@@ -1083,8 +1185,6 @@ app.post('/chat', async c => {
             cachedInputTokens: tokenUsage?.cachedInputTokens,
           }, userMeta, source);
 
-          const tGround = Date.now() - tGroundStart;
-          const tTotal = Date.now() - tChatStart;
           console.log(`[timing] embed=${tEmbed}ms route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${tTotal}ms tools=${toolsCalled.length} sources=${allSources.length}`);
           debug('chat.response.completed', {
             status: 'success',
@@ -1100,17 +1200,6 @@ app.post('/chat', async c => {
           observeHistogram('chat_proxy_step_duration_ms', {step: 'llm', agent: agentConfig.type}, tLlm);
           observeHistogram('chat_proxy_step_duration_ms', {step: 'ground', agent: agentConfig.type}, tGround);
           observeHistogram('chat_proxy_step_duration_ms', {step: 'total', agent: agentConfig.type}, tTotal);
-
-          // Emit structured timing event so clients can observe per-request breakdown
-          sendAndRecord('timing', JSON.stringify({
-            embed: tEmbed,
-            route: tRoute,
-            llm: tLlm,
-            ground: tGround,
-            total: tTotal,
-            tools: toolsCalled.length,
-            sources: allSources.length,
-          }));
 
           // Save conversation (fire-and-forget)
           saveConversation({
@@ -1186,6 +1275,7 @@ app.post('/chat', async c => {
           console.error('[Chat] Stream error', JSON.stringify({requestId, error: summarizeForDebugLog(message, 'error')}));
           try {
             send('error', JSON.stringify({error: 'Internal server error', requestId}));
+            send('done', JSON.stringify({stop_reason: 'error'}));
           } catch {
             // Controller may already be closed; ignore secondary send errors
           }
