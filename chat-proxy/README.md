@@ -212,6 +212,11 @@ GitHub URLs: `github:owner/repo` or `https://github.com/owner/repo` (max 50 file
 | `FAST_PATH_MAX_TOOL_ROUNDS` | `2` | Maximum tool rounds before fast-path forces final text generation |
 | `FAST_PATH_CODE_MAX_TOOL_ROUNDS` | `1` | Maximum tool rounds for code-agent fast path; defaults to one search before generating code |
 | `FAST_PATH_MAX_OUTPUT_TOKENS` | `1200` | Output token cap for fast-path chat responses |
+| `TOOLLESS_RAG_ENABLED` | `true` | Runs server-side RAG for selected agents and streams a single no-tool LLM response, avoiding model tool-call planning latency |
+| `TOOLLESS_RAG_AGENTS` | `code,general` | Comma-separated agents that use server-side RAG before falling back to tool-enabled paths |
+| `TOOLLESS_RAG_TOP_K` | `4` | Number of documentation chunks injected into the toolless RAG prompt |
+| `TOOLLESS_RAG_CONTEXT_MAX_CHARS` | `4500` | Maximum retrieved-context characters sent to the toolless RAG model call |
+| `TOOLLESS_RAG_MAX_OUTPUT_TOKENS` | `1100` | Output token cap for toolless RAG responses |
 | `GROUNDING_LLM_ENABLED` | `true` | Allows LLM-based source attribution for larger candidate sets; small/simple answers use deterministic grounding |
 | `GROUNDING_LLM_MIN_SOURCES` | `8` | Minimum candidate sources before LLM grounding is used |
 | `QUERY_EMBEDDING_ENABLED` | `true` | Computes query embeddings opportunistically for hybrid RAG; set `false` for FTS-only retrieval unless semantic cache is enabled |

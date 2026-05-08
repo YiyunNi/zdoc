@@ -61,6 +61,16 @@ const FAST_PATH_MAX_TOOL_ROUNDS = Number(process.env.FAST_PATH_MAX_TOOL_ROUNDS |
 const FAST_PATH_CODE_MAX_TOOL_ROUNDS = Number(process.env.FAST_PATH_CODE_MAX_TOOL_ROUNDS || '') || 1;
 const FAST_PATH_MAX_OUTPUT_TOKENS = Number(process.env.FAST_PATH_MAX_OUTPUT_TOKENS || '') || 1200;
 const FAST_PATH_TIMEOUT_MS = Number(process.env.FAST_PATH_TIMEOUT_MS || '') || 30000;
+const TOOLLESS_RAG_ENABLED = process.env.TOOLLESS_RAG_ENABLED !== 'false';
+const TOOLLESS_RAG_AGENTS = new Set((process.env.TOOLLESS_RAG_AGENTS || 'code,general')
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean));
+const TOOLLESS_RAG_TOP_K = Number(process.env.TOOLLESS_RAG_TOP_K || '') || 4;
+const TOOLLESS_RAG_MIN_RESULTS = Number(process.env.TOOLLESS_RAG_MIN_RESULTS || '') || 1;
+const TOOLLESS_RAG_CONTEXT_MAX_CHARS = Number(process.env.TOOLLESS_RAG_CONTEXT_MAX_CHARS || '') || 4500;
+const TOOLLESS_RAG_TIMEOUT_MS = Number(process.env.TOOLLESS_RAG_TIMEOUT_MS || '') || 30000;
+const TOOLLESS_RAG_MAX_OUTPUT_TOKENS = Number(process.env.TOOLLESS_RAG_MAX_OUTPUT_TOKENS || '') || 1100;
 const GROUNDING_LLM_ENABLED = process.env.GROUNDING_LLM_ENABLED !== 'false';
 const GROUNDING_LLM_MIN_SOURCES = Number(process.env.GROUNDING_LLM_MIN_SOURCES || '') || 8;
 const GROUNDING_LLM_MIN_TEXT_CHARS = Number(process.env.GROUNDING_LLM_MIN_TEXT_CHARS || '') || 400;
@@ -82,6 +92,10 @@ function truncateText(text: string, maxChars: number): string {
 
 function shouldUseFastPath(agentType: AgentType): boolean {
   return FAST_PATH_ENABLED && agentType !== 'schema';
+}
+
+function shouldUseToollessRag(agentType: AgentType): boolean {
+  return TOOLLESS_RAG_ENABLED && TOOLLESS_RAG_AGENTS.has(agentType);
 }
 
 function getFastPathMaxToolRounds(agentType: AgentType): number {
@@ -198,6 +212,40 @@ function buildToolChoiceForStep(agentType: AgentType, stepNumber: number, active
   return 'auto' as const;
 }
 
+function ingestToolResult(
+  toolName: string,
+  rawToolResult: Record<string, any> | undefined,
+  toolSources: {title: string; url: string; score?: number; section?: string}[],
+  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolResultSummaries: string[],
+  addSummary = true,
+): Record<string, any> | undefined {
+  const toolResult = compactToolResultForModel(rawToolResult) as Record<string, any> | undefined;
+  if (addSummary) toolResultSummaries.push(formatToolResultForSynthesis(toolName, toolResult));
+
+  if (toolResult?.results) {
+    for (const r of toolResult.results) {
+      if (r.url) {
+        toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
+        if (r.content) toolChunks.push({
+          doc_url: r.url,
+          doc_title: r.title || '',
+          section: r.section || '',
+          content: r.content,
+        });
+      }
+    }
+  }
+
+  if (toolResult?.relatedDocs) {
+    for (const r of toolResult.relatedDocs) {
+      if (r.url) toolSources.push({title: r.title || '', url: r.url});
+    }
+  }
+
+  return toolResult;
+}
+
 function formatToolResultForSynthesis(toolName: string, toolResult: Record<string, any> | undefined): string {
   if (!toolResult) return `Tool: ${toolName}\nNo result returned.`;
   const lines = [`Tool: ${toolName}`];
@@ -245,6 +293,86 @@ function formatToolResultForSynthesis(toolName: string, toolResult: Record<strin
   }
 
   return truncateText(lines.join('\n'), TOOL_CONTEXT_MAX_CHARS);
+}
+
+function buildToollessRagContext(
+  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolResultSummaries: string[],
+): string {
+  const parts = toolChunks.slice(0, TOOLLESS_RAG_TOP_K).map((chunk, i) => {
+    const title = chunk.doc_title || chunk.doc_url || `Source ${i + 1}`;
+    const section = chunk.section ? ` [${chunk.section}]` : '';
+    return `Source ${i + 1}: ${title}${section}
+URL: ${chunk.doc_url}
+${truncateText(chunk.content, Math.floor(TOOLLESS_RAG_CONTEXT_MAX_CHARS / Math.max(1, Math.min(toolChunks.length, TOOLLESS_RAG_TOP_K))))}`;
+  });
+
+  const context = parts.join('\n\n---\n\n') || toolResultSummaries.join('\n\n---\n\n');
+  return truncateText(context, TOOLLESS_RAG_CONTEXT_MAX_CHARS);
+}
+
+function buildToollessRagPrompt(query: string, context: string): string {
+  return `User question:
+${query}
+
+Retrieved documentation context:
+${context || 'No documentation context was retrieved.'}
+
+Answer the user now using the retrieved context as your primary source. Keep the answer concise. Include code only when useful or requested. If the context is weak or incomplete, say what to verify instead of guessing.`;
+}
+
+function detectRequestedCodeLanguage(query: string): 'python' | 'node' | 'java' | 'go' | 'rest' | null {
+  const lower = query.toLowerCase();
+  if (/\bpython\b|pymilvus/.test(lower)) return 'python';
+  if (/\b(node|node\.js|javascript|typescript|js|ts)\b/.test(lower)) return 'node';
+  if (/\bjava\b/.test(lower)) return 'java';
+  if (/\bgo(lang)?\b/.test(lower)) return 'go';
+  if (/\b(rest|curl|http)\b/.test(lower)) return 'rest';
+  return null;
+}
+
+function extractCodeTopic(query: string): string {
+  return query
+    .replace(/give\s+(me\s+)?(a\s+)?concise\s+example/ig, '')
+    .replace(/with\s+(python|node\.js|node|javascript|typescript|java|go|golang|rest|curl|http)/ig, '')
+    .replace(/\b(how\s+do\s+i|how\s+to|can\s+you|please|example|code|using|in)\b/ig, ' ')
+    .replace(/[^a-zA-Z0-9_\s-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 120) || query.slice(0, 120);
+}
+
+async function runCodeExampleLookup(
+  query: string,
+  sectionFilter: string | undefined,
+  toolSources: {title: string; url: string; score?: number; section?: string}[],
+  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolResultSummaries: string[],
+): Promise<boolean> {
+  const language = detectRequestedCodeLanguage(query);
+  if (!language || !/\b(example|code|snippet|python|node|java|go|rest|curl|sdk)\b/i.test(query)) return false;
+
+  try {
+    const toolDef = getToolsForAgent(['getCodeExample'], {sectionFilter}).getCodeExample as any;
+    const rawResult = await toolDef.execute({topic: extractCodeTopic(query), language});
+    const toolResult = ingestToolResult('getCodeExample', rawResult, toolSources, toolChunks, toolResultSummaries);
+    if (Array.isArray(toolResult?.examples)) {
+      for (const example of toolResult.examples) {
+        if (example.url && example.code) {
+          toolChunks.push({
+            doc_url: example.url,
+            doc_title: example.title || 'Code example',
+            section: 'code-example',
+            content: `\`\`\`${language === 'node' ? 'typescript' : language}\n${example.code}\n\`\`\``,
+          });
+        }
+      }
+    }
+    return true;
+  } catch (err) {
+    console.warn('[ToollessRAG] code example lookup failed', JSON.stringify({error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+    return false;
+  }
 }
 
 function buildNoResponseFallback(
@@ -1022,10 +1150,109 @@ app.post('/chat', async c => {
             }
           };
 
-          const fastPath = shouldUseFastPath(agentConfig.type);
+          const toollessRag = shouldUseToollessRag(agentConfig.type);
+          let toollessRagAttempted = toollessRag;
+          let fastPath = !toollessRag && shouldUseFastPath(agentConfig.type);
           const fastPathMaxToolRounds = getFastPathMaxToolRounds(agentConfig.type);
 
-          if (fastPath) {
+          if (toollessRag) {
+            const tRagStart = Date.now();
+            toolsCalled.push('searchDocs');
+            incCounter('chat_proxy_tool_calls_total', {tool: 'searchDocs', mode: 'server_rag'});
+            debug('chat.server_rag.started', {
+              agent: agentConfig.type,
+              topK: TOOLLESS_RAG_TOP_K,
+              hasEmbedding: Boolean(queryEmbedding),
+              timeoutMs: TOOLLESS_RAG_TIMEOUT_MS,
+            });
+
+            const maybeEmbedding = queryEmbedding ?? await withTimeout(embeddingEnabled ? embeddingPromise : Promise.resolve(null), TOOL_EMBEDDING_BUDGET_MS, null);
+            const ragResults = await searchDocs(ragQuery, TOOLLESS_RAG_TOP_K, sectionFilter, undefined, undefined, maybeEmbedding);
+            for (const r of ragResults) {
+              toolSources.push({title: r.doc_title || '', url: r.doc_url, score: r.score, section: r.section});
+              toolChunks.push({
+                doc_url: r.doc_url,
+                doc_title: r.doc_title || '',
+                section: r.section || '',
+                content: truncateText(r.content, TOOL_MODEL_OUTPUT_MAX_CHARS),
+              });
+            }
+            toolResultSummaries.push(formatToolResultForSynthesis('searchDocs', {
+              results: ragResults.map(r => ({
+                title: r.doc_title,
+                url: r.doc_url,
+                section: r.section,
+                content: truncateText(r.content, TOOL_MODEL_OUTPUT_MAX_CHARS),
+                score: r.score,
+              })),
+              totalResults: ragResults.length,
+            }));
+
+            let codeExampleLookup = false;
+            if (agentConfig.type === 'code') {
+              codeExampleLookup = await runCodeExampleLookup(ragQuery, sectionFilter, toolSources, toolChunks, toolResultSummaries);
+              if (codeExampleLookup) toolsCalled.push('getCodeExample');
+            }
+
+            if (ragResults.length >= TOOLLESS_RAG_MIN_RESULTS || toolChunks.length > 0) {
+              sendAndRecord('status', JSON.stringify({phase: 'generating'}));
+              debug('chat.server_rag.completed', {
+                durationMs: Date.now() - tRagStart,
+                resultCount: ragResults.length,
+                sourceCount: toolSources.length,
+                codeExampleLookup,
+              });
+              debug('chat.provider.stream.started', {
+                phase: 'toolless_rag',
+                agent: agentConfig.type,
+                model: activeModel,
+                contextChars: buildToollessRagContext(toolChunks, toolResultSummaries).length,
+                maxOutputTokens: TOOLLESS_RAG_MAX_OUTPUT_TOKENS,
+                timeoutMs: TOOLLESS_RAG_TIMEOUT_MS,
+              });
+              result = streamText({
+                model: modelInstance,
+                maxOutputTokens: TOOLLESS_RAG_MAX_OUTPUT_TOKENS,
+                temperature: 0.2,
+                system: `${systemPrompt}\n\n## Server-side RAG mode\nThe server already retrieved relevant documentation. Do not mention tool calls. Use only the provided retrieved context plus current page context. Cite source titles/URLs naturally only when helpful; the server will attach source metadata separately.`,
+                messages: [
+                  ...windowedMessages.slice(0, -1).map(m => ({
+                    role: m.role as 'user' | 'assistant',
+                    content: m.content,
+                  })),
+                  {role: 'user' as const, content: buildToollessRagPrompt(ragQuery, buildToollessRagContext(toolChunks, toolResultSummaries))},
+                ],
+                abortSignal: AbortSignal.timeout(TOOLLESS_RAG_TIMEOUT_MS),
+                experimental_telemetry: makeTelemetry('chat-toolless-rag', {
+                  agentType: agentConfig.type,
+                  sessionId: session.id,
+                  requestId,
+                  model: activeModel,
+                }),
+              });
+
+              for await (const part of result.fullStream) {
+                if (part.type === 'error') {
+                  throw new Error((part as any).error || 'LLM stream error');
+                }
+                if (part.type === 'text-delta') {
+                  fullText += part.text;
+                  deltaCount++;
+                  sendAndRecord('delta', JSON.stringify({text: part.text}));
+                } else if (process.env.DEBUG_STREAM === 'true') {
+                  console.log('[toolless-rag-stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
+                }
+              }
+            } else {
+              toolsCalled.pop();
+              toolResultSummaries.length = 0;
+              toollessRagAttempted = false;
+              fastPath = shouldUseFastPath(agentConfig.type);
+              debug('chat.server_rag.fallback', {reason: 'insufficient_results', resultCount: ragResults.length});
+            }
+          }
+
+          if (!fullText && fastPath) {
             sendAndRecord('status', JSON.stringify({phase: 'generating'}));
             debug('chat.provider.stream.started', {
               phase: 'direct',
@@ -1097,26 +1324,7 @@ app.post('/chat', async c => {
                 }, userMeta, source);
               } else if ((part as any).type === 'tool-result') {
                 const rawToolResult = (part as any).output as Record<string, any>;
-                const toolResult = compactToolResultForModel(rawToolResult) as Record<string, any>;
-                toolResultSummaries.push(formatToolResultForSynthesis((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', toolResult));
-                if (toolResult?.results) {
-                  for (const r of toolResult.results) {
-                    if (r.url) {
-                      toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
-                      if (r.content) toolChunks.push({
-                        doc_url: r.url,
-                        doc_title: r.title || '',
-                        section: r.section || '',
-                        content: r.content,
-                      });
-                    }
-                  }
-                }
-                if (toolResult?.relatedDocs) {
-                  for (const r of toolResult.relatedDocs) {
-                    if (r.url) toolSources.push({title: r.title || '', url: r.url});
-                  }
-                }
+                const toolResult = ingestToolResult((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', rawToolResult, toolSources, toolChunks, toolResultSummaries, false);
                 if (toolResult?.url && toolResult?.success) {
                   const titleFromIndex = await getTitleByUrl(toolResult.url);
                   const pageTitle = toolResult.title || titleFromIndex || toolResult.url;
@@ -1143,7 +1351,7 @@ app.post('/chat', async c => {
             }
           }
 
-          if (!fastPath) {
+          if (!fullText && !toollessRagAttempted && !fastPath) {
           debug('chat.provider.stream.started', {
             phase: 'tool_collection',
             agent: agentConfig.type,
@@ -1211,28 +1419,7 @@ app.post('/chat', async c => {
               // Extract sources from any tool that returns doc URLs
               // AI SDK v6 fullStream uses .output for tool-result events
               const rawToolResult = (part as any).output as Record<string, any>;
-              const toolResult = compactToolResultForModel(rawToolResult) as Record<string, any>;
-              toolResultSummaries.push(formatToolResultForSynthesis((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', toolResult));
-              if (toolResult?.results) {
-                // searchDocs returns { results: [{title, url, score, content, section, ...}] }
-                for (const r of toolResult.results) {
-                  if (r.url) {
-                    toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
-                    if (r.content) toolChunks.push({
-                      doc_url: r.url,
-                      doc_title: r.title || '',
-                      section: r.section || '',
-                      content: r.content,
-                    });
-                  }
-                }
-              }
-              if (toolResult?.relatedDocs) {
-                // getCodeExample returns { relatedDocs: [{title, url}] }
-                for (const r of toolResult.relatedDocs) {
-                  if (r.url) toolSources.push({title: r.title || '', url: r.url});
-                }
-              }
+              const toolResult = ingestToolResult((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', rawToolResult, toolSources, toolChunks, toolResultSummaries, false);
               if (toolResult?.url && toolResult?.success) {
                 // getPageContent returns { url, success, content } — look up real title from index
                 const titleFromIndex = await getTitleByUrl(toolResult.url);
