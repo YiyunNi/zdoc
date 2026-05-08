@@ -1,7 +1,7 @@
 import type {Tool} from 'ai';
-import {searchDocsTool} from './searchDocs.js';
+import {searchDocsTool, createSearchDocsTool, type RagToolContext} from './searchDocs.js';
 import {getPageContentTool} from './getPageContent.js';
-import {getCodeExampleTool} from './getCodeExample.js';
+import {getCodeExampleTool, createGetCodeExampleTool} from './getCodeExample.js';
 import {validateSchemaTool} from './validateSchema.js';
 import {suggestIndexTool} from './suggestIndex.js';
 import {generateSchemaCodeTool} from './generateSchemaCode.js';
@@ -9,7 +9,7 @@ import {estimateResourcesTool} from './estimateResources.js';
 import {compareProductsTool} from './compareProducts.js';
 import {checkFeatureAvailabilityTool} from './checkFeatureAvailability.js';
 import {contactInfoTool} from './contactInfo.js';
-import {listPagesTool} from './listPages.js';
+import {listPagesTool, createListPagesTool} from './listPages.js';
 
 // All available tools
 export const allTools = {
@@ -28,11 +28,17 @@ export const allTools = {
 
 export type ToolName = keyof typeof allTools;
 
+const contextAwareToolFactories: Partial<Record<ToolName, (context: RagToolContext) => Tool>> = {
+  searchDocs: createSearchDocsTool,
+  listPages: createListPagesTool,
+  getCodeExample: createGetCodeExampleTool,
+};
+
 // Tool subsets for each agent
-export function getToolsForAgent(toolNames: ToolName[]): Record<string, Tool> {
+export function getToolsForAgent(toolNames: ToolName[], context: RagToolContext = {}): Record<string, Tool> {
   const tools: Record<string, Tool> = {};
   for (const name of toolNames) {
-    tools[name] = allTools[name];
+    tools[name] = contextAwareToolFactories[name]?.(context) ?? allTools[name];
   }
   return tools;
 }
@@ -44,9 +50,9 @@ export function truncateForModel(text: string, maxChars = 800): string {
 }
 
 // Re-export individual tools
-export {searchDocsTool} from './searchDocs.js';
+export {searchDocsTool, createSearchDocsTool, type RagToolContext} from './searchDocs.js';
 export {getPageContentTool} from './getPageContent.js';
-export {getCodeExampleTool} from './getCodeExample.js';
+export {getCodeExampleTool, createGetCodeExampleTool} from './getCodeExample.js';
 export {validateSchemaTool} from './validateSchema.js';
 export {suggestIndexTool} from './suggestIndex.js';
 export {generateSchemaCodeTool} from './generateSchemaCode.js';
@@ -54,4 +60,4 @@ export {estimateResourcesTool} from './estimateResources.js';
 export {compareProductsTool} from './compareProducts.js';
 export {checkFeatureAvailabilityTool} from './checkFeatureAvailability.js';
 export {contactInfoTool} from './contactInfo.js';
-export {listPagesTool} from './listPages.js';
+export {listPagesTool, createListPagesTool} from './listPages.js';

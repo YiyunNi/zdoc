@@ -6,7 +6,7 @@ import type {ChatRequest} from './types.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
 import {checkGuard} from './guard.js';
-import {setActiveSectionFilter, setQueryEmbedding, searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
+import {searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
 import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';
 import {getAgent} from './agents/index.js';
@@ -710,8 +710,6 @@ app.post('/chat', async c => {
         let currentModel = 'unknown';
 
         try {
-          setActiveSectionFilter(sectionFilter);
-          setQueryEmbedding(queryEmbedding);
           console.log(`[Section] pageUrl=${pagePathForLog(body.pageUrl) || 'none'} filter=${sectionFilter || 'none'}`);
           const tRouteStart = Date.now();
           const routeResult = await routePromise;
@@ -727,7 +725,7 @@ app.post('/chat', async c => {
           const agentConfig = getAgent(routeResult.agent as any);
           currentAgent = agentConfig.type;
           debugAgent = agentConfig.type;
-          const agentTools = getToolsForAgent(agentConfig.toolNames);
+          const agentTools = getToolsForAgent(agentConfig.toolNames, {sectionFilter, queryEmbedding});
 
           // Resolve model from runtime config (DB override → env var → default)
           const resolvedModel = await resolveModel(`agent:${agentConfig.type}`);
