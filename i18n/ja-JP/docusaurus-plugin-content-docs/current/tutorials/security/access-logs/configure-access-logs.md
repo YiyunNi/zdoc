@@ -5,7 +5,7 @@ sidebar_key: configure-access-logs
 sidebar_label: "アクセスログを設定"
 beta: PUBLIC
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloud でのアクセスログの有効化、設定の調整、無効化を含む、ライフサイクル全体について説明します。"
+description: "このガイドでは、Zilliz Cloud でのアクセスログの有効化、設定の調整、無効化のライフサイクル全体について説明します。"
 type: origin
 token: QPgEwd4qziOa5RkgJR2c9gpnn3b
 sidebar_position: 2
@@ -28,15 +28,15 @@ import Procedures from '@site/src/components/Procedures';
 
 # アクセスログの設定
 
-このガイドでは、Zilliz Cloud 上のアクセスログの有効化、設定の調整、および無効化を含む、ライフサイクル全体について説明します。
+このガイドでは、Zilliz Cloud でのアクセスログのライフサイクル全体（有効化、設定の調整、無効化）について説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- このリリースでは、検索またはクエリクラスのアクションのみをログに記録します：Search、HybridSearch、および Query。完全なアクションリストのサポートは、将来のリリースで予定されています。
-
-- このリリースでは、監査ログとアクセスログは相互に排他的です — 一度に有効にできるのはどちらか一方のみです。
-
-- アクセスログは、**Enterprise** プロジェクトの **Dedicated** クラスタでのみ利用可能です。クラスタが異なるプランまたはクラスタタイプの場合は、アップグレードを検討してください。
+<ul>
+<li><p>このリリースでは、Search、HybridSearch、Query のような search または query クラスのアクションのみをログに記録します。完全なアクションリストのサポートは、将来のリリースで予定されています。</p></li>
+<li><p>このリリースでは、監査ログとアクセスログは相互に排他的です — 一度に有効にできるのはどちらか一方のみです。</p></li>
+<li><p>アクセスログは、<strong>Enterprise</strong> プロジェクトの <strong>Dedicated</strong> クラスタでのみ利用可能です。クラスタが異なるプランまたはクラスタタイプの場合は、アップグレードを検討してください。</p></li>
+</ul>
 
 </Admonition>
 
@@ -46,7 +46,7 @@ import Procedures from '@site/src/components/Procedures';
 
 - プロジェクトの **組織オーナー**、**プロジェクト管理者**、または **Cluster Admin** の権限。必要な権限がない場合は、Zilliz Cloud 管理者に連絡してください。
 
-## アクセスログの有効化\{#enable-access-logs}
+## アクセスログを有効化する\{#enable-access-logs}
 
 <Supademo id="cmn5r1yif3u0fz3qmiev350yz" title=""  />
 
@@ -56,15 +56,15 @@ import Procedures from '@site/src/components/Procedures';
 
 1. クラスタ設定ページで、**Access Log** タブをクリックし、**Enable** をクリックします。
 
-1. **Access Log Settings** ダイアログボックスで、以下の設定を構成します：
+1. **Access Log Settings** ダイアログボックスで、以下の設定を構成します。
 
     - **ストレージ統合**: ログファイルが配信される統合ストレージバケットを選択します。
 
     - **Directory**: アクセスログを保存するバケット内のディレクトリを指定します。
 
-    - **Sampling Rate**: ログに記録するクエリの割合を設定します。100% のレートではすべての操作をキャプチャします。高ボリュームのワークロードでは、低いレート（例：1%）を設定することで、統計的な有意性を保ちながらストレージコストを削減できます。
+    - **Sampling Rate**: ログに記録するクエリの割合を設定します。100% のレートではすべての操作をキャプチャします。高ボリュームのワークロードでは、低いレート（例: 1%）を設定することで、統計的有意性を保ちながらストレージコストを削減できます。
 
-    - **Actions**: アクセスログエントリとして記録する操作タイプ（例：Search または HybridSearch）を指定します。
+    - **Actions**: アクセスログエントリとして記録する操作タイプ（例: Search または HybridSearch）を指定します。
 
     - **Output Fields**: オブジェクトストレージに書き込まれる各アクセスログエントリに含めるメタデータフィールドを指定します。**Always included** とマークされたフィールドはすべてのエントリに記録され、選択したフィールドは追加でキャプチャされます。
 
@@ -72,7 +72,7 @@ import Procedures from '@site/src/components/Procedures';
 
 </Procedures>
 
-## アクセスログ設定の編集\{#edit-access-log-settings}
+## アクセスログの設定を編集する\{#edit-access-log-settings}
 
 アクセスログを無効化せずに、サンプリングレートと出力フィールドをいつでも調整できます。
 
@@ -90,7 +90,7 @@ import Procedures from '@site/src/components/Procedures';
 
 </Procedures>
 
-## アクセスログの無効化\{#disable-access-logs}
+## アクセスログを無効化する\{#disable-access-logs}
 
 <Procedures>
 
@@ -98,6 +98,6 @@ import Procedures from '@site/src/components/Procedures';
 
 1. クラスタ設定ページで、**Access Log** タブをクリックします。
 
-1. **Disable** をクリックします。新しいログエントリは即座に停止します。既存のログファイルはバケットに残ります。アクセスログの請求は無効化後に停止します。
+1. **Disable** をクリックします。新しいログエントリは即座に停止します。既存のログファイルはバケットに残ります。アクセスログの請求は無効化されると停止します。
 
 </Procedures>

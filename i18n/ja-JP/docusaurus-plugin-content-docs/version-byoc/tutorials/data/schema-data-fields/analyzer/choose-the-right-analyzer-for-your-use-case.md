@@ -5,7 +5,7 @@ sidebar_key: choose-the-right-analyzer-for-your-use-case
 sidebar_label: "ベストプラクティス"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloud でテキストコンテンツに最適なアナライザーを選択・設定する方法を説明します。 | BYOC"
+description: "このガイドでは、Zilliz Cloud でテキストコンテンツに最適なアナライザーを選択・構成する方法を説明します。 | BYOC"
 type: origin
 token: Pulhw06e5iXJTFkidFXcGbylnod
 sidebar_position: 6
@@ -213,13 +213,13 @@ schema.add_field(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-詳細な使用方法については、[全文検索](./full-text-search)、[テキストマッチ](./text-match)、または[フレーズマッチ](./phrase-match)を参照してください。
+<p>詳細な使用方法については、<a href="./full-text-search">全文検索</a>、<a href="./text-match">テキストマッチ</a>、または<a href="./phrase-match">フレーズマッチ</a>を参照してください。</p>
 
 </Admonition>
 
 ### Path B: カスタムアナライザーの作成\{#path-b-create-a-custom-analyzer}
 
-[ビルトイン](./choose-the-right-analyzer-for-your-use-case#available-built-in-analyzers)[オプション](./choose-the-right-analyzer-for-your-use-case#available-built-in-analyzers)でニーズが満たされない場合は、トークナイザーとフィルターのセットを組み合わせてカスタムアナライザーを作成できます。これにより、テキスト処理パイプラインを完全に制御できます。
+[ビルトイン](./choose-the-right-analyzer-for-your-use-case#available-built-in-analyzers)[オプション](./choose-the-right-analyzer-for-your-use-case#available-built-in-analyzers)でニーズが満たされない場合は、トークナイザーと一連のフィルターを組み合わせてカスタムアナライザーを作成できます。これにより、テキスト処理パイプラインを完全に制御できます。
 
 #### Step 1: 言語に基づいてトークナイザーを選択する\{#step-1-select-the-tokenizer-based-on-language}
 
@@ -245,7 +245,7 @@ schema.add_field(
    <tr>
      <td><p><a href="./whitespace-tokenizer"><code>whitespace</code></a></p></td>
      <td><p>空白文字のみで分割</p></td>
-     <td><p>前処理済みコンテンツ、ユーザーがフォーマットしたテキスト</p></td>
+     <td><p>前処理済みコンテンツ、ユーザー書式設定テキスト</p></td>
      <td><ul><li><p>Input: <code>"user_id = get_user_data()"</code></p></li><li><p>Output: <code>['user_id', '=', 'get_user_data()']</code></p></li></ul></td>
    </tr>
 </table>
@@ -291,7 +291,7 @@ schema.add_field(
      <td><p>Japanese</p></td>
      <td><p><a href="./lindera-tokenizer"><code>lindera</code></a></p></td>
      <td><p><a href="https://taku910.github.io/mecab/">ipadic</a>（汎用）、<a href="https://github.com/neologd/mecab-ipadic-neologd">ipadic-neologd</a>（現代用語）、<a href="https://clrd.ninjal.ac.jp/unidic/">unidic</a>（学術）</p></td>
-     <td><p>固有名詞処理を伴う形態素解析</p></td>
+     <td><p>固有名詞処理を含む形態素解析</p></td>
      <td><ul><li><p>Input: <code>"東京都渋谷区"</code></p></li><li><p>Output: <code>["東京", "都", "渋谷", "区"]</code></p></li></ul></td>
    </tr>
    <tr>
@@ -305,7 +305,7 @@ schema.add_field(
 
 ##### 多言語または不明な言語\{#multilingual-or-unknown-languages}
 
-言語が予測不可能であるか、ドキュメント内で混在しているコンテンツの場合：
+言語が予測不可能であったり、ドキュメント内で混在しているコンテンツの場合：
 
 <table>
    <tr>
@@ -316,25 +316,25 @@ schema.add_field(
    </tr>
    <tr>
      <td><p><a href="./icu-tokenizer"><code>icu</code></a></p></td>
-     <td><p>Unicode対応のトークン化（International Components for Unicode）</p></td>
+     <td><p>Unicode対応トークン化（International Components for Unicode）</p></td>
      <td><p>混在するスクリプト、不明な言語、または単純なトークン化で十分な場合</p></td>
      <td><ul><li><p>Input: <code>"Hello 世界 مرحبا"</code></p></li><li><p>Output: <code>['Hello', ' ', '世界', ' ', 'مرحبا']</code></p></li></ul></td>
    </tr>
 </table>
 
-**icuを使用する場合**：
+**icuを使用する場合**:
 
-- 言語識別が実用的でない混在言語。
+- 言語識別が実用的でない混在言語の場合。
 
-- [多言語アナライザー](./multi-language-analyzers)や[言語識別子](./language-identifier-tokenizer)のオーバーヘッドを避けたい場合。
+- [多言語アナライザーs](./multi-language-analyzers)や[言語識別子](./language-identifier-tokenizer)のオーバーヘッドを避けたい場合。
 
-- 主要な言語があり、全体の意味にほとんど寄与しない外国語の単語が散発的に含まれるコンテンツ（例：日本語やフランス語のブランド名や技術用語が散発的に含まれる英語テキスト）。
+- 主要な言語があり、全体の意味にほとんど寄与しない外国語の単語が断続的に含まれるコンテンツの場合（例：日本語やフランス語のブランド名や技術用語が断続的に含まれる英語テキスト）。
 
-**代替アプローチ**：多言語コンテンツをより正確に処理するには、多言語アナライザーまたは言語識別子の使用を検討してください。詳細については、[多言語アナライザー](./multi-language-analyzers)または[言語識別子](./language-identifier-tokenizer)を参照してください。
+**代替アプローチ**: 多言語コンテンツをより正確に処理するには、多言語アナライザーsまたは言語識別子の使用を検討してください。詳細については、[Multi-language Analyzers](./multi-language-analyzers)または[言語 Identifier](./language-identifier-tokenizer)を参照してください。
 
 #### Step 2: 精度のためのフィルターを追加する\{#step-2-add-filters-for-precision}
 
-[トークナイザーの選択](./choose-the-right-analyzer-for-your-use-case#step-1-select-the-tokenizer-based-on-language)後、特定の検索要件とコンテンツの特性に基づいてフィルターを適用します。
+[トークナイザーの選択](./choose-the-right-analyzer-for-your-use-case#step-1-select-the-tokenizer-based-on-language)後は、特定の検索要件とコンテンツの特性に基づいてフィルターを適用します。
 
 ##### 一般的に使用されるフィルター\{#commonly-used-filters}
 
@@ -369,7 +369,7 @@ schema.add_field(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-東アジア言語（中国語、日本語、韓国語など）では、代わりに[言語固有のフィルター](./choose-the-right-analyzer-for-your-use-case#language-specific-filters)に焦点を当ててください。これらの言語では、通常、テキスト処理に異なるアプローチを使用し、ステミングから大きな利益を得られない場合があります。
+<p>東アジア言語（中国語、日本語、韓国語など）の場合は、代わりに<a href="./choose-the-right-analyzer-for-your-use-case#language-specific-filters">言語固有のフィルター</a>に焦点を当ててください。これらの言語では、通常、テキスト処理に異なるアプローチを使用し、ステミングから大きな利益を得られない場合があります。</p>
 
 </Admonition>
 
@@ -386,7 +386,7 @@ schema.add_field(
    </tr>
    <tr>
      <td><p><a href="./ascii-folding-filter"><code>asciifolding</code></a></p></td>
-     <td><p>アクセント付き文字をASCII相当の文字に変換</p></td>
+     <td><p>アクセント付き文字をASCII相当に変換</p></td>
      <td><p>国際的なコンテンツ、ユーザー生成コンテンツ</p></td>
      <td><ul><li><p>Input: <code>["café", "naïve", "résumé"]</code></p></li><li><p>Output: <code>[['cafe'], ['naive'], ['resume']]</code></p></li></ul></td>
    </tr>
@@ -405,19 +405,19 @@ schema.add_field(
    </tr>
    <tr>
      <td><p><a href="./remove-punct-filter"><code>removepunct</code></a></p></td>
-     <td><p>単独の句読点トークンを削除</p></td>
-     <td><p><code>jieba</code>、<code>lindera</code>、<code>icu</code>トークナイザーからの出力をクリーンアップ。これらは句読点を単一トークンとして返します</p></td>
+     <td><p>スタンドアロンの句読点トークンを削除</p></td>
+     <td><p><code>jieba</code>、<code>lindera</code>、<code>icu</code>トークナイザーからの出力をクリーンアップする場合（これらは句読点を単一トークンとして返します）</p></td>
      <td><ul><li><p>Input: <code>["Hello", "!", "world"]</code></p></li><li><p>Output: <code>[['Hello'], ['world']]</code></p></li></ul></td>
    </tr>
    <tr>
      <td><p><a href="./alphanumonly-filter"><code>alphanumonly</code></a></p></td>
      <td><p>文字と数字のみを保持</p></td>
-     <td><p>技術的なコンテンツ、クリーンなテキスト処理</p></td>
+     <td><p>技術コンテンツ、クリーンなテキスト処理</p></td>
      <td><ul><li><p>Input: <code>["user123", "test@email.com"]</code></p></li><li><p>Output: <code>[['user123'], ['test', 'email', 'com']]</code></p></li></ul></td>
    </tr>
    <tr>
      <td><p><a href="./length-filter"><code>length</code></a></p></td>
-     <td><p>指定された長さの範囲外のトークンを削除</p></td>
+     <td><p>指定された長さ範囲外のトークンを削除</p></td>
      <td><p>ノイズの除去（過度に長いトークン）</p></td>
      <td><ul><li><p>Input: <code>["a", "very", "extraordinarily"]</code></p></li><li><p>Output: <code>[['a'], ['very'], []]</code>（<strong>max=10</strong>の場合）</p></li></ul></td>
    </tr>
@@ -495,23 +495,23 @@ result = client.run_analyzer(sample_text, analyzer_params)
 print("Analyzer output:", result)
 ```
 
-確認すべき一般的な問題:
+Common issues to check:
 
-- **過剰なトークン化**: 技術用語が誤って分割される
+- **過剰なトークン化**: Technical terms being split incorrectly
 
-- **不十分なトークン化**: フレーズが適切に分離されない
+- **不十分なトークン化**: Phrases not being separated properly
 
-- **欠落しているトークン**: 重要な用語がフィルタリングされる
+- **欠落しているトークン**: Important terms being filtered out
 
-詳細な使用方法については、[run_analyzer](https://milvus.io/api-reference/pymilvus/v2.6.x/MilvusClient/CollectionSchema/run_analyzer.md) を参照してください。
+For detailed usage, refer to [run_analyzer](https://milvus.io/api-reference/pymilvus/v2.6.x/MilvusClient/CollectionSchema/run_analyzer.md).
 
 ## ユースケース別のクイックレシピ\{#quick-recipes-by-use-case}
 
-このセクションでは、Zilliz Cloud でアナライザーを使用する際の一般的なユースケースに対する、推奨されるトークナイザーとフィルターの構成を提供します。コンテンツの種類と検索要件に最も適合する組み合わせを選択してください。
+This section provides recommended tokenizer and filter configurations for common use cases when working with analyzers in Zilliz Cloud. Choose the combination that best matches your content type and search requirements.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-コレクションにアナライザーを適用する前に、テキスト分析のパフォーマンスをテストおよび検証するために [`run_analyzer`](https://milvus.io/api-reference/pymilvus/v2.6.x/MilvusClient/CollectionSchema/run_analyzer.md) を使用することをお勧めします。
+<p>Before applying an analyzer to your collection, we recommend you use <a href="https://milvus.io/api-reference/pymilvus/v2.6.x/MilvusClient/CollectionSchema/run_analyzer.md"><code>run_analyzer</code></a> to test and validate text analysis performance.</p>
 
 </Admonition>
 

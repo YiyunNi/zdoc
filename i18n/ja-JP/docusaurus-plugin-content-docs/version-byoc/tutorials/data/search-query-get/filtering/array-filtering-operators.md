@@ -31,29 +31,29 @@ Zilliz Cloud では、配列フィールドをクエリするための強力な�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-配列内のすべての要素は同じ型である必要があり、配列内のネストされた構造はプレーン文字列として扱われます。そのため、ARRAY フィールドを使用する際には、過度に深いネストを避け、データ構造をできるだけフラットにして最適なパフォーマンスを確保することが推奨されます。
+<p>配列内のすべての要素は同じ型である必要があり、配列内のネストされた構造はプレーン文字列として扱われます。そのため、ARRAY フィールドを使用する際には、過度に深いネストを避け、データ構造をできるだけフラットにして最適なパフォーマンスを確保することをお勧めします。</p>
 
 </Admonition>
 
 ## 利用可能な ARRAY 演算子\{#available-array-operators}
 
-ARRAY 演算子を使用すると、Zilliz Cloud クラスタ内の配列フィールドを細かくクエリできます。これらの演算子は以下の通りです。
+ARRAY 演算子を使用すると、Zilliz Cloud クラスタ内の配列フィールドを細かくクエリできます。これらの演算子は以下の通りです：
 
 - [`ARRAY_CONTAINS(identifier, expr)`](./array-filtering-operators#arraycontains): 配列フィールドに特定の要素が存在するかどうかを確認します。
 
 - [`ARRAY_CONTAINS_ALL(identifier, expr)`](./array-filtering-operators#arraycontainsall): 指定されたリストのすべての要素が配列フィールドに存在することを確認します。
 
-- [`ARRAY_CONTAINS_ANY(identifier, expr)`](./array-filtering-operators#arraycontainsany): 指定されたリストの要素のいずれかが配列フィールドに存在するかどうかを確認します。
+- [`ARRAY_CONTAINS_ANY(identifier, expr)`](./array-filtering-operators#arraycontainsany): 指定されたリストのいずれかの要素が配列フィールドに存在するかどうかを確認します。
 
 - [`ARRAY_LENGTH(identifier)`](./array-filtering-operators#arraylength): 配列フィールド内の要素数を返し、比較演算子と組み合わせてフィルタリングに使用できます。
 
 ## ARRAY_CONTAINS\{#arraycontains}
 
-`ARRAY_CONTAINS` 演算子は、配列フィールドに特定の要素が存在するかどうかを確認します。指定した要素が配列に存在するエンティティを検索したい場合に便利です。
+`ARRAY_CONTAINS` 演算子は、配列フィールドに特定の要素が存在するかどうかを確認します。指定された要素が配列内に存在するエンティティを検索したい場合に便利です。
 
 **例**
 
-`history_temperatures` という配列フィールドがあり、これには異なる年の記録された最低気温が含まれているとします。配列に値 `23` が含まれるすべてのエンティティを検索するには、以下のフィルタ式を使用できます。
+`history_temperatures` という配列フィールドがあり、これには異なる年の記録された最低気温が含まれているとします。配列に値 `23` が含まれるすべてのエンティティを検索するには、以下のフィルタ式を使用できます：
 
 ```python
 filter = 'ARRAY_CONTAINS(history_temperatures, 23)'

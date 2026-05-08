@@ -5,7 +5,7 @@ sidebar_key: setup-a-private-link-azure
 sidebar_label: "Private Link（Azure）を設定"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloud クラスターから異なる Microsoft Azure VPC にホストされているサービスへのプライベートリンクを設定する手順を説明します。"
+description: "このガイドでは、Zilliz Cloud クラスターから異なる Microsoft Azure VPC にホストされたサービスへのプライベートリンクを設定する手順を説明します。"
 type: origin
 token: W2fZwrrhVibvpGkd0MbcQGJQnib
 sidebar_position: 3
@@ -28,13 +28,13 @@ import Admonition from '@theme/Admonition';
 
 import Procedures from '@site/src/components/Procedures';
 
-# プライベート Link（Azure）の設定
+# Azure プライベート Link の設定
 
-このガイドでは、Zilliz Cloud クラスターから、異なる Microsoft Azure VPC にホストされたサービスへのプライベートリンクを設定する手順を説明します。
+このガイドでは、Zilliz Cloud クラスターから、異なる Microsoft Azure VPC にホストされているサービスへのプライベートリンクの設定手順を説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は **Dedicated** クラスターでのみ利用可能です。
+<p>この機能は <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
@@ -42,19 +42,19 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud はプライベートリンクに対して料金を請求しません。ただし、クラウドプロバイダーは、Zilliz Cloud にアクセスするために作成した各エンドポイントに対して[料金を請求する場合があります](https://azure.microsoft.com/en-us/pricing/details/private-link/)。
+<p>Zilliz Cloud はプライベートリンクに対して料金を請求しません。ただし、クラウドプロバイダーは、Zilliz Cloud にアクセスするために作成した各エンドポイントに対して<a href="https://azure.microsoft.com/en-us/pricing/details/private-link/">料金を請求する場合があります</a>。</p>
 
 </Admonition>
 
-## 開始前に\{#before-you-start}
+## 開始前の準備\{#before-you-start}
 
 以下の条件が満たされていることを確認してください。
 
-- このガイドで作成されるプライベートエンドポイントはグローバルにアクセス可能であることに注意してください。ターゲットの Zilliz Cloud クラスターと異なるリージョンにあるサービスでも、クラスターに接続できます。
+- このガイドで作成するプライベートエンドポイントはグローバルにアクセス可能であることに注意してください。ターゲットの Zilliz Cloud クラスターとは異なるリージョンにあるサービスでも、クラスターに接続できます。
 
 ## プライベートエンドポイントの作成\{#create-private-endpoint}
 
-Zilliz Cloud は、プライベートエンドポイントを追加するための直感的な Web コンソールを提供しています。ターゲットのプロジェクトに移動し、左側のナビゲーションから **ネットワーク > プライベートエンドポイント** をクリックします。**+ プライベートエンドポイント** をクリックします。
+Zilliz Cloud では、直感的な Web コンソールでプライベートエンドポイントを追加できます。ターゲットのプロジェクトに移動し、左側のナビゲーションから **ネットワーク > プライベートエンドポイント** をクリックします。**+ プライベートエンドポイント** をクリックします。
 
 ![PYylbfopjoFkiZxFlbucIFHkn8g](https://zdoc-images.s3.us-west-2.amazonaws.com/pyylbfopjofkizxflbucifhkn8g.png "PYylbfopjoFkiZxFlbucIFHkn8g")
 
@@ -88,7 +88,7 @@ Azure リージョンにデプロイされたクラスターのプライベー�
 
     ![ECcPbN4Kaog5bdxyed3cyP3HnHe](https://zdoc-images.s3.us-west-2.amazonaws.com/eccpbn4kaog5bdxyed3cyp3hnhe.png "ECcPbN4Kaog5bdxyed3cyP3HnHe")
 
-1. **次へ: リソース >** をクリックし、**リソースIDまたはエイリアスを使用して Azure リソースに接続する** を選択します。次に、Zilliz Cloud コンソールからコピーしたものを **リソースIDまたはエイリアス** に貼り付けます。
+1. **次へ: リソース >** をクリックし、**リソースIDまたはエイリアスで Azure リソースに接続する** を選択します。次に、Zilliz Cloud コンソールからコピーしたものを **リソースIDまたはエイリアス** に貼り付けます。
 
     ![TDJVb0pkWoxVPIxCThvct9Hpnae](https://zdoc-images.s3.us-west-2.amazonaws.com/tdjvb0pkwoxvpixcthvct9hpnae.png "TDJVb0pkWoxVPIxCThvct9Hpnae")
 
@@ -96,7 +96,7 @@ Azure リージョンにデプロイされたクラスターのプライベー�
 
     ![SNdZbzo0EoP7PYxg1z4clUijnQg](https://zdoc-images.s3.us-west-2.amazonaws.com/sndzbzo0eop7pyxg1z4cluijnqg.png "SNdZbzo0EoP7PYxg1z4clUijnQg")
 
-1. **レビュー + 作成** タブに到達するまで **次へ** をクリックします。検証に合格したら、**作成** をクリックしてプライベートエンドポイントを作成します。
+1. **確認および作成** タブに到達するまで **次へ** をクリックします。検証に合格したら、**作成** をクリックしてプライベートエンドポイントを作成します。
 
     ![FJ95b4S4voMavqxFWEac3JdinAc](https://zdoc-images.s3.us-west-2.amazonaws.com/fj95b4s4vomavqxfweac3jdinac.png "FJ95b4S4voMavqxFWEac3JdinAc")
 
@@ -104,7 +104,7 @@ Azure リージョンにデプロイされたクラスターのプライベー�
 
     ![QNHubedZWoJFe7xkX5ac5TOInzg](https://zdoc-images.s3.us-west-2.amazonaws.com/qnhubedzwojfe7xkx5ac5toinzg.png "QNHubedZWoJFe7xkX5ac5TOInzg")
 
-1. **リソースに移動** をクリックし、作成されたプライベートエンドポイントの概要ページを確認します。
+1. **リソースに移動** をクリックし、作成したプライベートエンドポイントの概要ページを表示します。
 
 1. **概要** ページの右上隅にある **JSONビュー** をクリックします。**接続ステータス** が **保留中** と表示されていることに注意してください。
 
@@ -124,19 +124,19 @@ Azure コンソールから取得したエンドポイントIDを、Zilliz Cloud
 
 ## プライベートリンクの取得\{#obtain-a-private-link}
 
-送信された上記の属性を確認して承認すると、Zilliz Cloud はこのエンドポイントにプライベートリンクを割り当てます。このプロセスには約5分かかります。
+送信した属性を確認して承認後、Zilliz Cloud はこのエンドポイントにプライベートリンクを割り当てます。このプロセスには約5分かかります。
 
 プライベートリンクの準備ができたら、Zilliz Cloud の **プライベートリンク** ページで確認できます。
 
 ## DNS の設定\{#set-up-dns}
 
-Zilliz Cloud が割り当てたプライベートリンク経由でクラスターにアクセスする前に、DNS を設定する必要があります。
+Zilliz Cloud が割り当てたプライベートリンク経由でクラスターにアクセスする前に、DNS の設定が必要です。
 
 ### ステップ 1: Azure ポータルでプライベート DNS ゾーンを作成する\{#step-1-create-a-private-dns-zone-on-the-azure-portal}
 
 <Procedures>
 
-1. 作成されたプライベートエンドポイントの **概要** ページで、**設定** > **DNS設定** を選択し、プライベートエンドポイントとともに作成されたネットワークインターフェイスの **IPアドレス** をコピーします。
+1. 作成したプライベートエンドポイントの **概要** ページで、**設定** > **DNS設定** を選択し、プライベートエンドポイントと一緒に作成されたネットワークインターフェイスの **IPアドレス** をコピーします。
 
     ![GC9jbsUp2oXgCZxkojbcrmJanJb](https://zdoc-images.s3.us-west-2.amazonaws.com/gc9jbsup2oxgczxkojbcrmjanjb.png "GC9jbsUp2oXgCZxkojbcrmJanJb")
 
@@ -156,7 +156,7 @@ Zilliz Cloud が割り当てたプライベートリンク経由でクラスタ�
 
     ![LGB3bC80FoQnXIxx527cVkTMnAe](https://zdoc-images.s3.us-west-2.amazonaws.com/lgb3bc80foqnxixx527cvktmnae.png "LGB3bC80FoQnXIxx527cVkTMnAe")
 
-1. **リソースに移動** をクリックし、作成されたプライベート DNS ゾーンの **概要** ページを確認します。
+1. **リソースに移動** をクリックし、作成したプライベート DNS ゾーンの **概要** ページを表示します。
 
     ![M401b0RiNoauaHxbBH6crLXlnXc](https://zdoc-images.s3.us-west-2.amazonaws.com/m401b0rinoauahxbbh6crlxlnxc.png "M401b0RiNoauaHxbBH6crLXlnXc")
 
@@ -166,7 +166,7 @@ Zilliz Cloud が割り当てたプライベートリンク経由でクラスタ�
 
 <Procedures>
 
-1. 作成されたプライベート DNS ゾーンの概要ページで、左側のナビゲーションペインから **設定** > **DNS管理** を選択します。
+1. 作成したプライベート DNS ゾーンの概要ページで、左側のナビゲーションペインから **設定** > **DNS管理** を選択します。
 
 1. **+ 追加** をクリックします。**仮想ネットワークリンクの追加** ダイアログボックスで、**リンク名** を入力し、上記で使用した **サブスクリプション** と **仮想ネットワーク** を選択します。**設定** セクションでは、**自動登録を有効にする** も選択します。
 
@@ -180,7 +180,7 @@ Zilliz Cloud が割り当てたプライベートリンク経由でクラスタ�
 
     ![S4bTb3ICwoWnlgxqSFrcYwEInvh](https://zdoc-images.s3.us-west-2.amazonaws.com/s4btb3icwownlgxqsfrcyweinvh.png "S4bTb3ICwoWnlgxqSFrcYwEInvh")
 
-1. **+ レコードセット** をクリックします。**レコードセットの追加** ダイアログボックスで、**名前** にクラスターIDに `-privatelink` を付加したものを入力し、**種類** で **A - アドレスレコード** を選択し、**TTL** を **10 分** に設定します。表示されている IP アドレスがメモしたものであることを確認します。
+1. **+ レコードセット** をクリックします。**レコードセットの追加** ダイアログボックスで、**名前** にクラスターIDの末尾に `-privatelink` を付加したものを入力し、**タイプ** で **A - アドレスレコード** を選択し、**TTL** を **10 分** に設定します。表示されている IPアドレス がメモしたものであるか確認します。
 
     ![DtFQb18jloG9JDxYg0AcSlRsn75](https://zdoc-images.s3.us-west-2.amazonaws.com/dtfqb18jlog9jdxyg0acslrsn75.png "DtFQb18jloG9JDxYg0AcSlRsn75")
 
@@ -188,7 +188,7 @@ Zilliz Cloud が割り当てたプライベートリンク経由でクラスタ�
 
     ![YWSZbd4qEoAW64xf9gHcamC8nyd](https://zdoc-images.s3.us-west-2.amazonaws.com/ywszbd4qeoaw64xf9ghcamc8nyd.png "YWSZbd4qEoAW64xf9gHcamC8nyd")
 
-1. Azure ポータルの作成されたプライベートエンドポイントの概要ページに戻ると、プライベートエンドポイントの **接続ステータス** が **保留中** から **承認済み** に変わっていることが確認できます。
+1. Azure ポータルの作成したプライベートエンドポイントの概要ページに戻ると、プライベートエンドポイントの **接続ステータス** が **保留中** から **承認済み** に変わっていることが確認できます。
 
     ![CqAEbOjDUogQGdxl3gjclaPAn1e](https://zdoc-images.s3.us-west-2.amazonaws.com/cqaebojduogqgdxl3gjclapan1e.png "CqAEbOjDUogQGdxl3gjclaPAn1e")
 
@@ -216,16 +216,17 @@ Zilliz Cloud が割り当てたプライベートリンク経由でクラスタ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- プライベートエンドポイントは [データプレーン](/reference/restful/data-plane-v2) アクセスにのみ影響します。[コントロールプレーン](/reference/restful/control-plane-v2) は引き続きパブリックインターネット経由でアクセスできます。
-
-- パブリックエンドポイントを再度有効にした後、パブリックエンドポイントにアクセスできるようになるまで、ローカルの DNS キャッシュが期限切れになるのを待つ必要がある場合があります。
+<ul>
+<li><p>プライベートエンドポイントは<a href="/reference/restful/data-plane-v2">データプレーン</a>へのアクセスにのみ影響します。<a href="/reference/restful/control-plane-v2">コントロールプレーン</a>は引き続きパブリックインターネット経由でアクセスできます。</p></li>
+<li><p>パブリックエンドポイントを再度有効にした後、パブリックエンドポイントにアクセスできるようになるまで、ローカルの DNS キャッシュが期限切れになるのを待つ必要がある場合があります。</p></li>
+</ul>
 
 </Admonition>
 
 ![disable_public_endpoint](https://zdoc-images.s3.us-west-2.amazonaws.com/disable_public_endpoint.png "disable_public_endpoint")
 
-## FAQ\{#faq}
+## よくある質問\{#faq}
 
 ### 既存のクラスターにプライベートエンドポイントを作成できますか？\{#can-i-create-a-private-endpoint-for-an-existing-cluster}
 
-はい。プライベートエンドポイントを作成すると、同じリージョンとプロジェクト内にあるすべての既存および将来の Dedicated（Enterprise）クラスターに有効になります。必要なのは、異なるクラスターに対して異なる DNS レコードを追加することだけです。
+はい。プライベートエンドポイントを作成すると、同じリージョンとプロジェクト内にあるすべての既存および将来の Dedicated (Enterprise) クラスターに有効になります。必要なのは、異なるクラスターに対して異なる DNS レコードを追加することだけです。

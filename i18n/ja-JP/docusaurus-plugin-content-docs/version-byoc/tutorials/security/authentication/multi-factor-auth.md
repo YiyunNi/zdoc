@@ -24,103 +24,102 @@ import Supademo from '@site/src/components/Supademo';
 
 # MFA
 
-認証は、Zilliz Cloud にサインインする際にあなたの身元を確認するプロセスです。このプロセスを強化するため、Zilliz Cloud は多要素認証（MFA）をサポートしています。
+Authentication verifies your identity when you sign in to Zilliz Cloud. To strengthen this process, Zilliz Cloud supports multi-factor authentication (MFA).
 
-MFA を有効にすると、ログイン時に 2 つの要素を提供する必要があります。
+With MFA enabled, you must provide two factors at login:
 
-- アカウントのパスワード
+- Your account password
 
-- 認証アプリからの TOTP（時刻ベースのワンタイムパスワード）（例：Google Authenticator、Microsoft Authenticator など）
+- A TOTP (time-based one-time password) from an authenticator app (Eg. Google Authenticator, Microsoft Authenticator, etc.)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud は、アカウントセキュリティの強化のため MFA をアップグレードしました。**2025 年 11 月 25 日**より、メールベースの MFA は非推奨となります。これまでメールベースの MFA を使用していたユーザーは、TOTP 認証アプリに切り替える必要があります。
+<p>Zilliz Cloud has upgraded MFA for enhanced account security. Starting <strong>November 25, 2025</strong>, email-based MFA is deprecated. Users who previously used email-based MFA must switch to a TOTP authenticator app.</p>
 
 </Admonition>
 
-## 考慮事項\{#considerations}
+## Considerations\{#considerations}
 
-- **SSO互換性**: 組織で [SSO](./single-sign-on) を有効にしている場合、MFA はアイデンティティプロバイダー（IdP）によって管理されます。この場合、IdP アカウントで MFA を設定するか、組織オーナーに問い合わせてください。
+- **SSO互換性**: If your organization has enabled [SSO](./single-sign-on), MFA is managed by your identity provider (IdP). In this case, configure MFA in your IdP account or contact your 組織オーナー for assistance.
 
-- **ログイン方法の互換性**: Zilliz Cloud の組み込み MFA 機能は、[メールアドレスとパスワードで登録](./register-with-zilliz-cloud#registration-options)したユーザーのみが利用できます。
+- **ログイン方法の互換性**: The built-in Zilliz Cloud MFA feature is only available to users who [register](./register-with-zilliz-cloud#registration-options) with an email address and a password.
 
-    - アカウントが Google と連携している場合、MFA は Google によって管理されます。詳細については、[2 段階認証プロセスを有効にする](https://support.google.com/accounts/answer/185839?hl=en&ref_topic=7189195&sjid=2449417013251062800-AP) を参照してください。
+    - If your account is linked to Google, MFA is controlled by Google. For more information, see [Turn on 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&ref_topic=7189195&sjid=2449417013251062800-AP).
 
-    - アカウントが GitHub と連携している場合、MFA は GitHub によって管理されます。詳細については、[2 要素認証の設定](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication) を参照してください。
+    - If your account is linked to GitHub, MFA is controlled by GitHub. For more information, see [Configuring two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
 
-## MFA を有効にする\{#enable-mfa}
+## Enable MFA\{#enable-mfa}
 
-以下のデモでは、自分のアカウントで MFA を有効にする方法を示します。このデモでは Microsoft Authenticator を例として使用していますが、TOTP 互換の認証アプリであればどれでも使用できます。
+The following demo shows how to enable MFA for your own account. The demo uses Microsoft Authenticator as an example, but you can use any TOTP-compatible authenticator app.
 
 <Supademo id="cmi72ns5s4jwob7b4ul2t1zz5?utm_source=link" title=""  />
 
-## MFA を無効にする\{#disable-mfa}
+## Disable MFA\{#disable-mfa}
 
 <Admonition type="info" icon="📘" title="Notes">
 
-組織で [MFA 強制適用](./multi-factor-auth#enforce-mfa-for-all-organization-users) が有効になっている場合、アカウントの MFA を無効にすることはできません。
+<p>If your organization has <a href="./multi-factor-auth#enforce-mfa-for-all-organization-users">MFA enforcement</a> enabled, you cannot disable MFA for your account.</p>
 
 </Admonition>
 
-以下のデモでは、自分のアカウントで MFA を無効にする方法を示します。
+The following demo shows how to disable MFA for your own account.
 
 <Supademo id="cmi7297fo4jq8b7b448ydxlhk?utm_source=link" title=""  />
 
-## 組織のすべてのユーザーに MFA を強制適用する\{#enforce-mfa-for-all-organization-users}
+## Enforce MFA for all organization users\{#enforce-mfa-for-all-organization-users}
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能にアクセスするには、組織オーナーである必要があります。
-
-この機能を使用するには、有効な支払い方法、**Enterprise** プロジェクト、および **Dedicated** クラスタが必要です。
+<p>You must be an 組織オーナー to access this feature.</p>
+<p>You must have a valid payment method, an <strong>Enterprise</strong> project and a <strong>Dedicated</strong> cluster to use this feature.</p>
 
 </Admonition>
 
-組織レベルの MFA 強制適用が有効になっている場合：
+When organization-level MFA enforcement is enabled:
 
-- 組織内のすべてのユーザーは、サインインするために [MFA を設定](./multi-factor-auth#enable-mfa) する必要があります。
+- All users in the organization are required to [set up MFA](./multi-factor-auth#enable-mfa) to sign in.
 
-- まだ MFA を有効にしていないユーザーは、次回ログイン時に設定を求められます。
+- Users who have not yet enabled MFA are prompted to set it up the next time they log in.
 
-- MFA の設定を完了しないユーザーは、組織にアクセスできません。
+- Users who ～しない complete MFA setup will not be able to access the organization.
 
-以下のデモでは、組織に MFA を強制適用する方法を示します。
+The following demo shows how to enforce MFA for an organization.
 
 <Supademo id="cmi71danb4is0b7b4eogo3s07?utm_source=link" title=""  />
 
-## 組織の MFA 強制適用を無効にする\{#disable-mfa-enforcement-for-organization}
+## Disable MFA enforcement for organization\{#disable-mfa-enforcement-for-organization}
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能にアクセスするには、組織オーナーである必要があります。
+<p>You must be an 組織オーナー to access this feature.</p>
 
 </Admonition>
 
-組織レベルの MFA 強制適用が無効になっている場合：
+When organization-level MFA enforcement is disabled:
 
-- ユーザーは、組織にアクセスするために MFA を設定する必要がなくなります。
+- Users are no longer required to set up MFA to access the organization.
 
-- すでに MFA を有効にしているユーザーは、既存の設定を保持し、自分のアカウントで [MFA をオフにする](./multi-factor-auth#disable-mfa) ことを選択できます。
+- Users who have already enabled MFA keep their existing settings and may choose to [turn MFA off](./multi-factor-auth#disable-mfa) for their own accounts.
 
-以下のデモでは、組織の MFA 強制適用を無効にする方法を示します。
+The following demo shows how to disable MFA enforcement for an organization.
 
 <Supademo id="cmi71q0gk4j6hb7b4xiywity3?utm_source=link" title=""  />
 
-## トラブルシューティング\{#troubleshooting}
+## Troubleshooting\{#troubleshooting}
 
-1. **認証アプリにアクセスできなくなった場合、どうすればよいですか？**
+1. **What can I do if I lose access to my authenticator app?**
 
-    認証アプリへのアクセスを失い、MFA を完了できない、またはログインできない場合は、組織オーナーに問い合わせるか、[Zilliz Cloud サポートに問い合わせ](http://support.zilliz.com) てください。
+    If you cannot complete MFA or log in because you lost access to your authenticator app, contact your 組織オーナー or [contact Zilliz Cloud support](http://support.zilliz.com) for assistance.
 
-1. **自分のアカウントは SSO を使用しています。MFA はどのように処理されますか？**
+1. **My account uses SSO. How is MFA handled?**
 
-    組織で SSO を有効にしている場合、MFA は Zilliz Cloud ではなくアイデンティティプロバイダー（IdP）によって管理されます。IdP アカウントで MFA を設定するか、組織オーナーに問い合わせてください。
+    If your organization has enabled SSO, MFA is managed by your identity provider (IdP), not by Zilliz Cloud. Configure MFA in your IdP account or contact your 組織オーナー.
 
-1. **MFA を無効にできないのはなぜですか？**
+1. **Why can't I disable MFA?**
 
-    組織で MFA 強制適用が有効になっている場合、自分のアカウントの MFA をオフにすることはできません。
+    If your organization has enabled MFA enforcement, you cannot turn off MFA for your own account. 
 
-1. **自分は組織オーナーで、MFA 強制適用後に一部のユーザーがロックアウトされました。どうすればよいですか？**
+1.  **I'm an 組織オーナー and some users are locked out after MFA enforcement. What should I do?**
 
-    ロックアウトされたユーザーに、ログイン時のプロンプトに従って MFA の設定を完了するよう依頼してください。それでも組織にアクセスできない場合は、[Zilliz Cloud サポートに問い合わせ](http://support.zilliz.com) てください。
+    Ask those users to complete MFA setup when prompted at login. If they still cannot access the organization, [contact Zilliz Cloud support](http://support.zilliz.com) for assistance.
 

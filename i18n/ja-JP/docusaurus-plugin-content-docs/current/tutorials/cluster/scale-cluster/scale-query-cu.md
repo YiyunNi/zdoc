@@ -5,7 +5,7 @@ sidebar_key: scale-query-cu
 sidebar_label: "クエリCUをスケーリング"
 beta: FALSE
 notebook: FALSE
-description: "ワークロードの増加やデータの書き込みが進むと、サービングクラスターが容量上限に達する可能性があります。このような場合、読み取り操作は引き続き機能しますが、新しい書き込み操作が失敗する可能性があります。"
+description: "ワークロードの増加やデータの書き込み量が多くなると、サービングクラスターが容量上限に達する可能性があります。このような場合、読み取り操作は引き続き機能しますが、新しい書き込み操作が失敗する可能性があります。"
 type: origin
 token: ExUFwDY1siCa2Bkp4incCvxFnlh
 sidebar_position: 1
@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - クラスター
-  - スケール
-  - 管理
+  - cluster
+  - scale
+  - manage
   - query cu
 
 ---
@@ -27,7 +27,7 @@ import Supademo from '@site/src/components/Supademo';
 
 # クエリCUのスケーリング
 
-ワークロードの増加とデータの書き込みが進むにつれ、サービングクラスターは容量の限界に達する可能性があります。このような場合、読み取り操作は引き続き機能しますが、新しい書き込み操作は失敗する可能性があります。
+ワークロードの増加とデータの書き込みが進むにつれて、サービングクラスターは容量の限界に達する可能性があります。このような場合、読み取り操作は引き続き機能しますが、新しい書き込み操作は失敗する可能性があります。
 
 これを事前に管理するため、[メトリクス](./metrics-alerts-reference) ページで **Query** **CU容量** を監視し、クエリCUのスケーリングが必要なタイミングを判断できます。ビジネスニーズとパターンに基づいて、クラスター容量を拡張するためにクエリCU数を増やしたり、需要が減少した際にコストを削減するために減らしたりすることができます。
 
@@ -39,7 +39,7 @@ import Supademo from '@site/src/components/Supademo';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は **Dedicated** クラスターのみで利用可能です。
+<p>この機能は <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
@@ -55,13 +55,13 @@ import Supademo from '@site/src/components/Supademo';
 
         - **クエリCU数** × **レプリカ数** の積は10,240を超えてはいけません
 
-        より大きなクエリCUについては、[営業部門にお問い合わせください](http://zilliz.com/contact-sales)。
+        より大きなクエリCUが必要な場合は、[営業部門にお問い合わせください](http://zilliz.com/contact-sales)。
 
     - **スケールダウン**
 
         - レプリカを持つクラスターは12 CU未満にスケールダウンできません
 
-        - スケールダウンのリクエストは、以下の条件を満たす場合のみ成功します:
+        - スケールダウンのリクエストは、以下の条件を満たす場合にのみ成功します:
 
             - 現在のデータ量 < 新しいCUサイズのCU容量の80%
 
@@ -71,19 +71,19 @@ import Supademo from '@site/src/components/Supademo';
 
 - **パフォーマンスへの影響**: スケーリングにより、わずかなサービスの揺らぎが発生する可能性があります。
 
-- **バックアップの制限**: 動的およびスケジュールされたスケーリング設定は、[バックアップ](./create-snapshot) に含まれません。クラスターを復元した後、これらの設定を手動で再構成してください。
+- **バックアップの制限**: 動的およびスケジュールされたスケーリング設定は、[バックアップ](./create-snapshot) に含まれません。クラスターを復元後、これらの設定を手動で再構成してください。
 
 ## 手動スケーリング\{#manual-scaling}
 
 Zilliz Cloud コンソールまたは RESTful API を使用して、クラスターを手動でスケールアップまたはスケールダウンできます。
 
-次のデモでは、Zilliz Cloud Web コンソールでクラスターを手動でスケールアップおよびスケールダウンする方法を示しています。
+以下のデモでは、Zilliz Cloud Web コンソールでクラスターを手動でスケールアップおよびスケールダウンする方法を示しています。
 
 <Supademo id="cmd2r0jc634jlc4kju69onxyh?utm_source=link" title=""  />
 
 さらに、RESTful API を使用してクエリCUを手動でスケーリングすることもできます。
 
-次の例では、既存のクラスターを2 CUにスケーリングします。詳細については、[クラスターの変更](/reference/restful/modify-cluster-v2) を参照してください。
+以下の例では、既存のクラスターを2 CUにスケーリングします。詳細については、[クラスターの変更](/reference/restful/modify-cluster-v2) を参照してください。
 
 ```bash
 export TOKEN="YOUR_API_KEY"
@@ -103,17 +103,17 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、**Enterprise** プロジェクトの **Dedicated** クラスターでのみ利用可能です。
+<p>この機能は、<strong>Enterprise</strong> プロジェクトの <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
 スケジュール間の間隔は30分以上である必要があります。
 
-高度なモードを使用して cron 式を記述する方法の詳細については、[Cron Expression](./cron-expression) を参照してください。
+詳細については、高度なモードを使用して cron 式を記述する方法について [Cron Expression](./cron-expression) を参照してください。
 
 <Supademo id="cmj8904vh05581w0jubkrtlqk" title=""  />
 
-さらに、以下の方法で スケジュールされたスケーリング を有効にすることもできます。詳細については、[クラスターの変更](/reference/restful/modify-cluster-v2) を参照してください。
+さらに、以下のように スケジュールされたスケーリング を有効にすることもできます。詳細については、[クラスターの変更](/reference/restful/modify-cluster-v2) を参照してください。
 
 ```bash
 export TOKEN="YOUR_API_KEY"
@@ -138,37 +138,38 @@ curl --request POST \
 }'
 ```
 
-## 動的スケーリング\{#dynamic-scaling}
+## Dynamic scaling\{#dynamic-scaling}
 
 https://zilliverse.feishu.cn/sync/EaQKd6kURsSBc1bD8Loc4RsjnCg
 
-Zilliz Cloud は、手動介入を不要にしながらパフォーマンスを維持するための動的スケーリングをサポートしています。有効にすると、システムはリアルタイムの **CU容量** メトリクスに基づいて **query CU** リソースを自動的に調整し、サービス中断なくワークロードを効率的に処理します。
+Zilliz Cloud は、パフォーマンスを維持しつつ手動介入を不要にするための動的スケーリングをサポートしています。有効にすると、システムはリアルタイムの CU 容量メトリクスに基づいて**クエリ CU**リソースを自動的に調整し、サービス中断なくワークロードを効率的に処理します。
 
-動的スケーリングを設定する際、以下の境界値を設定できます。
+動的スケーリングを設定する際、以下の範囲を構成できます：
 
-- **最小クエリCU**: デフォルトは現在のサイズです。
+- **最小クエリ CU**: デフォルトは現在のサイズです。
 
-- **最大クエリCU**: デフォルトは現在のCUサイズの4倍です。
+- **最大クエリ CU**: デフォルトは現在の CU サイズの 4 倍です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- 現在の値より低い最大クエリCUを選択すると、即座にスケールダウンがトリガーされます。
-
-- 現在の値より高い最小クエリCUを選択すると、即座にスケールアップがトリガーされます。
+<ul>
+<li><p>現在の値よりも低い最大クエリ CU を選択すると、即座にスケールダウンがトリガーされます。</p></li>
+<li><p>現在の値よりも高い最小クエリ CU を選択すると、即座にスケールアップがトリガーされます。</p></li>
+</ul>
 
 </Admonition>
 
-### トリガー条件\{#trigger-conditions}
+### Trigger conditions\{#trigger-conditions}
 
-- スケールアップ: CU容量が80%を超えて10分間継続した場合にトリガーされます。または、CU容量が100%に達した場合、即座にスケールアップがトリガーされます。
+- スケールアップ: CU 容量が 10 分間 80% を超えた場合にトリガーされます。または、CU 容量が 100% に達すると、即座にスケールアップがトリガーされます。
 
-- スケールダウン: CU容量が60%を下回って30分間継続した場合にトリガーされます。
+- スケールダウン: CU 容量が 30 分間 60% 未満の状態が続いた場合にトリガーされます。
 
-- スケールアップイベント間には10分間のクールダウン期間が、スケールダウンイベント間には30分間のクールダウン期間が適用されます。スケールダウンは、目標メトリクス値が達成されるまで、1サイズずつ実行されます。
+- スケールアップイベントの間には 10 分間のクールダウン期間が適用され、スケールダウンイベントの間には 30 分間のクールダウン期間が適用されます。スケールダウンは、目標メトリクス値に達するまでサイズごとに実行されます。
 
-### スケーリングサイズの計算\{#scaling-size-calculation}
+### Scaling size calculation\{#scaling-size-calculation}
 
-以下の式は、Zilliz Cloud が動的スケーリングイベントの対象となる query CU 数を計算する方法を説明しています。動的スケーリングの式は、CU容量を目標値の70%に維持することを目的としています。
+以下の数式は、動的スケーリングイベントにおける目標クエリ CU 数を Zilliz Cloud がどのように計算するかを説明しています。動的スケーリングの数式は、CU 容量を目標値である 70% に維持することを目的としています。
 
 ```plaintext
 Target Query CU Number = Current Query CU Number × (Current Metric Value / Target Metric Value) 

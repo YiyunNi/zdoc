@@ -31,7 +31,7 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Note">
 
-この機能は **Enterprise** プロジェクトでのみ利用可能です。
+<p>この機能は<strong>Enterprise</strong>プロジェクトでのみ利用可能です。</p>
 
 </Admonition>
 
@@ -103,9 +103,9 @@ import Procedures from '@site/src/components/Procedures';
 
 ## データベースの削除\{#drop-database}
 
-<Admonition type="danger" icon="🚧" title="Warning">
+<Admonition type="danger" icon="🚧" title="**Warning**">
 
-データベースを削除すると、即座に削除され、復元することはできません。この操作は元に戻せません。
+<p>データベースを削除すると、即座に削除され、復元することはできません。この操作は元に戻せません。</p>
 
 </Admonition>
 

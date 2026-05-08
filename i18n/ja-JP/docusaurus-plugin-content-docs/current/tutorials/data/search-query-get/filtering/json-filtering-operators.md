@@ -5,7 +5,7 @@ sidebar_key: json-filtering-operators
 sidebar_label: "JSON"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、JSON フィールドのクエリとフィルタリングのための高度な演算子をサポートしており、複雑な構造化データの管理に最適です。これらの演算子により、JSON ドキュメントを効果的にクエリでき、JSON フィールド内の特定の要素、値、または条件に基づいてエンティティを取得できます。このセクションでは、Zilliz Cloud で JSON 固有の演算子を使用する方法をガイドし、実用的な例を通じてその機能を説明します。"
+description: "Zilliz Cloud は、JSON フィールドのクエリとフィルタリングのための高度な演算子をサポートしており、複雑な構造化データの管理に最適です。これらの演算子により、JSON ドキュメントを効果的にクエリでき、JSON フィールド内の特定の要素、値、または条件に基づいてエンティティを取得できます。このセクションでは、Zilliz Cloud で JSON 固有の演算子を使用する方法を説明し、実用的な例を通じてその機能を紹介します。"
 type: origin
 token: Py6zwu6r4iPMqVkKAYXcUYLEnXg
 sidebar_position: 4
@@ -31,7 +31,7 @@ Zilliz Cloud は、JSON フィールドのクエリとフィルタリングの�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-JSON フィールドは複雑なネスト構造を扱うことができず、すべてのネスト構造をプレーン文字列として扱います。そのため、JSON フィールドを使用する際には、過度に深いネストを避け、データ構造をできるだけフラットにして最適なパフォーマンスを確保することをお勧めします。
+<p>JSON フィールドは複雑なネスト構造を扱うことができず、すべてのネスト構造をプレーン文字列として扱います。そのため、JSON フィールドを使用する際には、過度に深いネストを避け、データ構造をできるだけフラットにして最適なパフォーマンスを確保することをお勧めします。</p>
 
 </Admonition>
 
@@ -43,7 +43,7 @@ Zilliz Cloud は、JSON データのフィルタリングとクエリに役立�
 
 - [`JSON_CONTAINS_ALL(identifier, expr)`](./json-filtering-operators#jsoncontainsall): 指定された JSON 式のすべての要素がフィールドに存在することを保証します。
 
-- [`JSON_CONTAINS_ANY(identifier, expr)`](./json-filtering-operators#jsoncontainsany): JSON 式の少なくとも 1 つのメンバーがフィールド内に存在するエンティティをフィルターします。
+- [`JSON_CONTAINS_ANY(identifier, expr)`](./json-filtering-operators#jsoncontainsany): 指定された JSON 式の少なくとも 1 つのメンバーがフィールド内に存在するエンティティをフィルターします。
 
 これらの演算子を実際のシナリオでどのように適用できるか、例を通じて詳しく見ていきましょう。
 
@@ -53,7 +53,7 @@ Zilliz Cloud は、JSON データのフィルタリングとクエリに役立�
 
 **例**
 
-製品のコレクションがあり、各製品には文字列の JSON 配列を含む `tags` フィールドがあると想像してください（例：`["electronics", "sale", "new"]`）。`"sale"` タグを持つ製品をフィルターしたいとします。
+製品のコレクションがあり、各製品には `tags` フィールドがあり、`["electronics", "sale", "new"]` のような文字列の JSON 配列が含まれていると想像してください。タグ `"sale"` を持つ製品をフィルターしたいとします。
 
 ```python
 # JSON data: {"tags": ["electronics", "sale", "new"]}

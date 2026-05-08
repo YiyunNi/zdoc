@@ -105,9 +105,9 @@ Project
       └── External_Collection_02
 ```
 
-## 比較\{#comparison}
+## Comparison\{#comparison}
 
-次の表は、2 種類のデータベースを比較しています。
+The following table compares the 2 types of databases.
 
 <table>
    <tr>
@@ -117,50 +117,50 @@ Project
    </tr>
    <tr>
      <td><p>最適な用途</p></td>
-     <td><p>常時稼働かつ低レイテンシーのデータアクセスが必要な本番ワークロード。</p></td>
+     <td><p>常時稼働、低レイテンシーのデータアクセスが必要な本番ワークロード。</p></td>
      <td><p>バースト的な検索やクエリを行う大規模データセット。</p></td>
    </tr>
    <tr>
      <td><p>ホスト先</p></td>
-     <td><p>ユーザーが作成した serving cluster</p></td>
+     <td><p>ユーザー作成の serving cluster</p></td>
      <td><p>プラットフォーム管理</p></td>
    </tr>
    <tr>
      <td><p>コンピューティングリソース</p></td>
-     <td><p>ホストとなる serving cluster が提供</p></td>
-     <td><p>指定された on-demand cluster が提供</p></td>
+     <td><p>ホスティング serving cluster によって提供</p></td>
+     <td><p>指定された on-demand cluster によって提供</p></td>
    </tr>
    <tr>
-     <td><p>Insert/upsert/delete</p></td>
+     <td><p>挿入/アップサート/削除</p></td>
      <td><p>Yes</p></td>
      <td><p>No</p></td>
    </tr>
    <tr>
-     <td><p>Import/Truncate</p></td>
+     <td><p>インポート/切り捨て</p></td>
      <td><p>Yes</p></td>
      <td><p>Yes</p></td>
    </tr>
    <tr>
-     <td><p>Search and query</p></td>
+     <td><p>検索とクエリ</p></td>
      <td><p>Yes</p></td>
      <td><p>Yes</p></td>
    </tr>
    <tr>
      <td><p>ライフサイクル</p></td>
-     <td><p>serving cluster に紐付く</p></td>
-     <td><p>どの cluster からも独立</p></td>
+     <td><p>serving cluster に紐付け</p></td>
+     <td><p>いかなる cluster からも独立</p></td>
    </tr>
 </table>
 
 <Admonition type="info" icon="📘" title="Note">
 
-2 種類のデータベースには異なる接続エンドポイントを使用します。詳細については、接続エンドポイントを参照してください。
+<p>2 種類のデータベースには異なる接続エンドポイントを使用します。詳細については、接続エンドポイントを参照してください。</p>
 
 </Admonition>
 
-## 次のステップ\{#next-steps}
+## Next steps\{#next-steps}
 
-- External Collection の作成
+- 外部コレクションの作成
 
 - [コレクションの作成](./manage-collections-sdks)
 

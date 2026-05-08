@@ -26,7 +26,7 @@ import Supademo from '@site/src/components/Supademo';
 
 import Procedures from '@site/src/components/Procedures';
 
-# エンドポイント経由で Milvus から Zilliz Cloud へ移行する
+# エンドポイント経由で Milvus から Zilliz Cloud へ移行
 
 Zilliz Cloud は、インフラストラクチャの管理を自分で行う必要なく Milvus ベクトルデータベースを利用したいユーザー向けに、[Milvus](https://milvus.io/) をフルマネージドのクラウドホスト型ソリューションとして提供しています。このトピックでは、データベースエンドポイント経由で Milvus から移行する方法について説明します。
 
@@ -38,20 +38,20 @@ Milvus から Zilliz Cloud への移行を開始する前に、以下の要件�
 
 <table>
    <tr>
-     <th><p>Requirement</p></th>
-     <th><p>Details</p></th>
+     <th><p>要件</p></th>
+     <th><p>詳細</p></th>
    </tr>
    <tr>
-     <td><p>Version compatibility</p></td>
-     <td><p>Milvus 2.3.6 or later</p></td>
+     <td><p>バージョン互換性</p></td>
+     <td><p>Milvus 2.3.6 以降</p></td>
    </tr>
    <tr>
-     <td><p>ネットワーク access</p></td>
-     <td><p>Source Milvus instance must be accessible from the public internet</p></td>
+     <td><p>ネットワークアクセス</p></td>
+     <td><p>ソース Milvus インスタンスがパブリックインターネットからアクセス可能であること</p></td>
    </tr>
    <tr>
-     <td><p>Authentication credentials</p></td>
-     <td><p>Username and password if authentication is enabled (refer to <a href="https://milvus.io/docs/authenticate.md?tab=docker#Authenticate-User-Access">Authenticate User Access</a>)</p></td>
+     <td><p>認証情報</p></td>
+     <td><p>認証が有効な場合はユーザー名とパスワード（<a href="https://milvus.io/docs/authenticate.md?tab=docker#Authenticate-User-Access">Authenticate User Access</a> を参照）</p></td>
    </tr>
 </table>
 
@@ -59,20 +59,20 @@ Milvus から Zilliz Cloud への移行を開始する前に、以下の要件�
 
 <table>
    <tr>
-     <th><p>Requirement</p></th>
-     <th><p>Details</p></th>
+     <th><p>要件</p></th>
+     <th><p>詳細</p></th>
    </tr>
    <tr>
-     <td><p>User role</p></td>
-     <td><p>組織オーナー or プロジェクト管理者</p></td>
+     <td><p>ユーザーロール</p></td>
+     <td><p>組織オーナーまたはプロジェクト管理者</p></td>
    </tr>
    <tr>
-     <td><p>Cluster capacity</p></td>
-     <td><p>Sufficient storage and compute resources (use the <a href="https://zilliz.com/pricing#calculator">CU calculator</a> to estimate CU size)</p></td>
+     <td><p>クラスター容量</p></td>
+     <td><p>十分なストレージおよびコンピューティングリソース（CU サイズの見積もりには <a href="https://zilliz.com/pricing#calculator">CU 計算ツール</a> を使用）</p></td>
    </tr>
    <tr>
-     <td><p>ネットワーク access</p></td>
-     <td><p>Add <a href="./zilliz-cloud-ips">Zilliz Cloud IPs</a> to allowlists if using network restrictions</p></td>
+     <td><p>ネットワークアクセス</p></td>
+     <td><p>ネットワーク制限を使用している場合は、許可リストに <a href="./zilliz-cloud-ips">Zilliz Cloud IP</a> を追加してください</p></td>
    </tr>
 </table>
 
@@ -84,9 +84,10 @@ Milvus から Zilliz Cloud への移行を開始する前に、以下の要件�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- ソースコレクションで全文検索が既に有効になっている場合、Zilliz Cloud は移行後にターゲットコレクションでその Function 設定を保持します。これらの継承された設定は変更できません。
-
-- 移行中に他の VARCHAR フィールドの全文検索を有効にすることもできます。詳細については、[Full Text Search](./full-text-search) を参照してください。
+<ul>
+<li><p>ソースコレクションで全文検索が既に有効になっている場合、Zilliz Cloud は移行後にターゲットコレクションでその Function 設定を保持します。これらの継承された設定は変更できません。</p></li>
+<li><p>移行中に他の VARCHAR フィールドの全文検索を有効にすることもできます。詳細については、<a href="./full-text-search">Full Text Search</a> を参照してください。</p></li>
+</ul>
 
 </Admonition>
 
@@ -102,17 +103,17 @@ Milvus から Zilliz Cloud への移行を開始する前に、以下の要件�
 
 - **インデックス作成**: 移行プロセスでは、移行されたコレクションに対して [AUTOINDEX](./autoindex-explained) が自動的に作成されます。
 
-- **手動ロードが必要です**: 自動インデックス作成が行われても、移行されたコレクションはすぐには検索やクエリ操作に利用できません。Zilliz Cloud でコレクションを手動でロードして、検索およびクエリ機能を有効にする必要があります。詳細については、[Load & Release](./load-release-collections) を参照してください。
+- **手動ロードが必要です**: 自動インデックス作成が行われても、移行されたコレクションは検索やクエリ操作をすぐに利用できる状態にはなりません。Zilliz Cloud でコレクションを手動でロードして、検索およびクエリ機能を有効にする必要があります。詳細については、[Load & Release](./load-release-collections) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-コレクションがロードされたら、ターゲットクラスタ内のコレクション数とエンティティ数がデータソースと一致していることを確認してください。不一致が見つかった場合は、エンティティが欠落しているコレクションを削除して、再度移行してください。
+<p>コレクションがロードされたら、ターゲットクラスターのコレクション数およびエンティティ数がデータソースと一致していることを確認してください。不一致が見つかった場合は、エンティティが欠落しているコレクションを削除して、再度移行してください。</p>
 
 </Admonition>
 
 ## 移行ジョブのキャンセル\{#cancel-migration-job}
 
-移行プロセスで問題が発生した場合は、以下の手順を実行してトラブルシューティングを行い、移行を再開してください。
+移行プロセスで問題が発生した場合は、以下の手順でトラブルシューティングを行い、移行を再開できます。
 
 <Procedures>
 

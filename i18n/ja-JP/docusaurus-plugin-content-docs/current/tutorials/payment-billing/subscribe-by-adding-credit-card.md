@@ -5,7 +5,7 @@ sidebar_key: subscribe-by-adding-credit-card
 sidebar_label: "クレジットカード"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloud で組織の支払い用クレジットカードを追加する方法について包括的な手順を説明します。"
+description: "このガイドでは、Zilliz Cloud で組織の支払い用クレジットカードを追加する方法について、包括的な手順を説明します。"
 type: origin
 token: TVnkwXupUiX3zDkzYPWcxKP3nvg
 sidebar_position: 2
@@ -29,7 +29,9 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Note">
 
-- **課税:** 請求書の税金は、ご提供いただいた請求先住所に基づいて計算されます。VAT または GST ID の入力が必要な企業の場合は、[お問い合わせ](http://support.zilliz.com) ください。
+<ul>
+<li><strong>課税:</strong> 請求書の税金は、ご提供いただいた請求先住所に基づいて計算されます。VAT または GST ID の入力が必要な企業の場合は、<a href="http://support.zilliz.com">お問い合わせ</a> ください。</li>
+</ul>
 
 </Admonition>
 
@@ -37,9 +39,9 @@ import Procedures from '@site/src/components/Procedures';
 
 <Procedures>
 
-1. アカウントを登録しログイン後、左側メニューから **請求** を選択し、請求概要にアクセスします。
+1. アカウントを登録しログイン後、左側のメニューから **請求** に移動し、請求概要にアクセスします。
 
-1. 画面右下の **支払い** **方法** セクションで、**支払い方法の追加** をクリックします。開いたダイアログボックスで、**クレジットカード** を選択します。
+1. 画面の右下にある **支払い** **方法** セクションで、**支払い方法の追加** をクリックします。開いたダイアログボックスで、**クレジットカード** を選択します。
 
     ダイアログボックスが表示され、以下の入力を求められます:
 
@@ -75,7 +77,7 @@ import Procedures from '@site/src/components/Procedures';
 
 </Procedures>
 
-上記のすべての項目は必須です。入力が完了すると、**追加** ボタンが有効化され、クレジットカード情報と請求情報を保存できます。
+上記のすべての項目は必須です。入力が完了すると、**追加** ボタンが有効になり、クレジットカード情報と請求情報を保存できます。
 
 ![add-credit-card](https://zdoc-images.s3.us-west-2.amazonaws.com/add-credit-card.png "add-credit-card")
 
@@ -123,7 +125,7 @@ import Procedures from '@site/src/components/Procedures';
 
     - **郵便番号**
 
-上記のすべての項目は必須です。入力が完了すると、**更新** ボタンが有効化され、支払い方法を保存できます。
+上記のすべての項目は必須です。入力が完了すると、**更新** ボタンが有効になり、支払い方法を保存できます。
 
 ![update-payment-method](https://zdoc-images.s3.us-west-2.amazonaws.com/update-payment-method.png "update-payment-method")
 
@@ -141,13 +143,13 @@ AWS Marketplace 経由で購読が完了すると、既存のクレジットカ�
 
 <Admonition type="info" icon="📘" title="Note">
 
-請求概要に変更が反映されるまで、数分お待ちください。
+<p>請求概要に変更が反映されるまで、数分お待ちください。</p>
 
 </Admonition>
 
 ## 支払い用クレジットカードの削除\{#remove-payment-credit-card}
 
-現在、Zilliz Cloud では Web コンソールからの支払い用クレジットカードの削除はサポートされていません。リンク済みのクレジットカードを削除する必要がある場合は、お問い合わせいただき、Zilliz Cloud [サポートポータル](https://support.zilliz.com/hc/en-us) でチケットを送信してください。
+現在、Zilliz Cloud は Web コンソールでの支払い用クレジットカードの削除をサポートしていません。リンク済みのクレジットカードを削除する必要がある場合は、Zilliz Cloud [サポートポータル](https://support.zilliz.com/hc/en-us) からお問い合わせいただき、チケットを送信してください。
 
 ## 関連トピック\{#related-topics}
 
@@ -155,5 +157,5 @@ AWS Marketplace 経由で購読が完了すると、既存のクレジットカ�
 
 - [GCP Marketplace での購読](./subscribe-on-gcp-marketplace)
 
-- [請求書の表示](./view-invoice) 
+- [請求書の確認](./view-invoice) 
 

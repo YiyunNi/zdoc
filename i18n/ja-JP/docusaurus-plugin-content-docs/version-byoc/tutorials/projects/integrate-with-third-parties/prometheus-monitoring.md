@@ -5,7 +5,7 @@ sidebar_key: prometheus-monitoring
 sidebar_label: "Prometheus"
 beta: FALSE
 notebook: FALSE
-description: "Prometheus は、設定されたターゲットから指定された間隔でメトリクスを収集し、ルール式を評価して結果を表示し、特定の条件に基づいてアラートを発生させることができる監視システムです。 | BYOC"
+description: "Prometheus は、設定されたターゲットから指定された間隔でメトリクスを収集し、ルール式を評価して結果を表示し、特定の条件に基づいてアラートをトリガーできる監視システムです。 | BYOC"
 type: origin
 token: Ex99woZlsico4FkfwxGckjRRnqf
 sidebar_position: 5
@@ -61,7 +61,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    クラスターに含まれるコレクションは 10,000 個以下である必要があります。この制限を超えるクラスターでは、メトリクスのエクスポートが不完全になったり、品質が低下したりする可能性があります。
+    <p>クラスターに含まれるコレクションは 10,000 個以下である必要があります。この制限を超えるクラスターでは、メトリクスのエクスポートが不完全になったり、品質が低下したりする可能性があります。</p>
 
     </Admonition>
 
@@ -84,7 +84,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
        </tr>
        <tr>
          <td><p><code>scrape_interval</code></p></td>
-         <td><p>ターゲットをスクレイピングする頻度。サポートされる最小値は <code>60s</code> です。これより低い値はエンドポイントで受け付けられません。</p></td>
+         <td><p>ターゲットをスクレイピングする頻度。サポートされる最小値は <code>60s</code> です。これより小さい値はエンドポイントで受け付けられません。</p></td>
        </tr>
        <tr>
          <td><p><code>authorization.type</code></p></td>
@@ -96,19 +96,19 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
        </tr>
        <tr>
          <td><p><code>static_configs.targets</code></p></td>
-         <td><p>Prometheus がスクレイピングする静的ターゲット。これはリクエスト時に Zilliz Cloud 側で設定される必要があります。詳細については、<a href="https://support.zilliz.com/hc/en-us">Zilliz テクニカルサポート</a>にお問い合わせください。</p></td>
+         <td><p>Prometheus がスクレイピングする静的ターゲット。これは、リクエスト時に Zilliz Cloud 側で設定される必要があります。詳細については、<a href="https://support.zilliz.com/hc/en-us">Zilliz テクニカルサポート</a>にお問い合わせください。</p></td>
        </tr>
     </table>
 
-1. 変更内容を `Prometheus.yml` ファイルに保存します。
+1. `Prometheus.yml` ファイルに変更を保存します。
 
 </Procedures>
 
 詳細については、[Prometheus 公式ドキュメント](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config) を参照してください。
 
-## スクレイピングされるメトリクスの例\{#example-scraped-metrics}
+## スクレイピングされたメトリクスの例\{#example-scraped-metrics}
 
-以下は、Zilliz Cloud の `/metrics/export` エンドポイントからスクレイピングされる Prometheus メトリクスの例です。コレクション単位のメトリクスには `collection_name` および `db_name` ラベルが含まれますが、クラスター専用のメトリクスは変更されません。
+以下は、Zilliz Cloud の `/metrics/export` エンドポイントからスクレイピングされた Prometheus メトリクスの例です。コレクション単位のメトリクスには `collection_name` および `db_name` ラベルが含まれますが、クラスターのみのメトリクスは変更されません。
 
 ```yaml
 # HELP zilliz_entities Total number of entities stored

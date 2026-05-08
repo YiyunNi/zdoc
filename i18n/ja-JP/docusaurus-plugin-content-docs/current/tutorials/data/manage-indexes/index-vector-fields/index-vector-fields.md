@@ -1,5 +1,5 @@
 ---
-title: "ベクトルフィールドのインデックス作成 | Cloud"
+title: "ベクトルフィールドにインデックスを作成 | Cloud"
 slug: /index-vector-fields
 sidebar_key: index-vector-fields
 sidebar_label: "ベクトルインデックス"
@@ -246,11 +246,11 @@ console.log(res.error_code)
 </TabItem>
 </Tabs>
 
-提供されたコードスニペットでは、ベクトルフィールドに対してインデックスを作成し、インデックスタイプを `AUTOINDEX`、メトリックタイプを `COSINE` に設定しています。さらに、スカラーフィールドに対してもインデックスタイプ `AUTOINDEX` でインデックスを作成しています。インデックスタイプとメトリックタイプの詳細については、[AUTOINDEX の解説](./autoindex-explained) および [メトリックタイプ](./search-metrics-explained) を参照してください。
+提供されたコードスニペットでは、ベクトルフィールドに対してインデックスを作成し、インデックスタイプを `AUTOINDEX`、メトリックタイプを `COSINE` に設定しています。さらに、スカラーフィールドに対しても、インデックスタイプ `AUTOINDEX` でインデックスを作成しています。インデックスタイプとメトリックタイプの詳細については、[AUTOINDEX Explained](./autoindex-explained) および [メトリックタイプs](./search-metrics-explained) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-現在、コレクション内の各フィールドに対して作成できるインデックスファイルは1つだけです。
+<p>現在、コレクション内の各フィールドに対して作成できるインデックスファイルは1つだけです。</p>
 
 </Admonition>
 
@@ -377,15 +377,15 @@ console.log(JSON.stringify(res.index_descriptions, null, 2))
 </TabItem>
 </Tabs>
 
-特定のフィールドに作成されたインデックスファイルを確認し、そのインデックスファイルを使用してインデックス付けされた行数の統計情報を収集できます。
+特定のフィールドに作成されたインデックスファイルを確認し、そのインデックスファイルを使用してインデックスされた行数の統計情報を収集できます。
 
-## インデックスの削除\{#drop-an-index}
+## Drop an index\{#drop-an-index}
 
 インデックスが不要になった場合は、簡単に削除できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-インデックスを削除する前に、必ずリリースされていることを確認してください。
+<p>インデックスを削除する前に、事前にリリース済みであることを確認してください。</p>
 
 </Admonition>
 

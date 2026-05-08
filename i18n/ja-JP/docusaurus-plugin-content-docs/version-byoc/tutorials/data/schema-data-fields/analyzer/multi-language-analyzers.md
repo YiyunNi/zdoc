@@ -5,7 +5,7 @@ sidebar_key: multi-language-analyzers
 sidebar_label: "多言語アナライザー"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud がテキスト分析を実行する際、通常はコレクション内のテキストフィールド全体に単一のアナライザーを適用します。そのアナライザーが英語に最適化されている場合、中国語やスペイン語、フランス語などの他の言語に必要な全く異なるトークン化やステミングのルールに対応できず、再現率が低下します。たとえば、スペイン語の「teléfono」（電話を意味する）を検索する場合、英語中心のアナライザーではアクセント記号が削除され、スペイン語特有のステミングが適用されないため、関連する結果が見落とされる可能性があります。 | BYOC"
+description: "Zilliz Cloud がテキスト分析を実行する際、通常はコレクション内のテキストフィールド全体に単一のアナライザーを適用します。そのアナライザーが英語に最適化されている場合、中国語やスペイン語、フランス語などの他の言語に必要な全く異なるトークン化やステミングのルールに対応できず、再現率が低下します。たとえば、スペイン語の「teléfono」（電話の意味）を検索する場合、英語中心のアナライザーではアクセント記号が削除され、スペイン語特有のステミングが適用されないため、関連する結果が見落とされる可能性があります。 | BYOC"
 type: origin
 token: BnYLwepruiGNpwkJfBHcdrrOnOh
 sidebar_position: 5
@@ -13,10 +13,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
-  - multi-language
+  - コレクション
+  - スキーマ
+  - アナライザー
+  - 多言語
 
 ---
 
@@ -915,33 +915,33 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-挿入時、Zilliz Cloud は以下を実行します。
+挿入時、Zilliz Cloud は以下の処理を行います。
 
 1. 各ドキュメントの `language` フィールドを読み取ります
 
 1. `text` フィールドに対応するアナライザーを適用します
 
-1. BM25関数を介してスパースベクトル表現を生成します
+1. BM25関数を使用してスパースベクトル表現を生成します
 
 1. 元のテキストと生成されたスパースベクトルの両方を保存します
 
 <Admonition type="info" icon="📘" title="Notes">
 
-スパースベクトルを直接提供する必要はありません。BM25関数は、テキストと指定されたアナライザーに基づいて自動的に生成します。
+<p>スパースベクトルを直接指定する必要はありません。BM25関数は、テキストと指定されたアナライザーに基づいて自動的に生成します。</p>
 
 </Admonition>
 
-## Step 4: 検索操作を実行する\{#step-4-perform-search-operations}
+## ステップ 4: 検索操作を実行する\{#step-4-perform-search-operations}
 
-### 英語アナライザーを使用する\{#use-english-analyzer}
+### 英語アナライザーの使用\{#use-english-analyzer}
 
-多言語アナライザーで検索する場合、`search_params` には重要な設定が含まれます。
+多言語アナライザーを使用して検索する場合、`search_params` に重要な設定が含まれます。
 
 - `metric_type="BM25"` はインデックス設定と一致している必要があります。
 
 - `analyzer_name="english"` は、クエリテキストに適用するアナライザーを指定します。これは保存されたドキュメントで使用されるアナライザーとは独立しています。
 
-- `params={"drop_ratio_search": "0"}` は BM25 固有の動作を制御します。ここでは、検索内のすべての用語を保持します。詳細については、[スパースベクトル](./use-sparse-vector) を参照してください。
+- `params={"drop_ratio_search": "0"}` は BM25 固有の動作を制御します。ここでは、検索時にすべての用語を保持します。詳細については、[スパースベクトル](./use-sparse-vector) を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

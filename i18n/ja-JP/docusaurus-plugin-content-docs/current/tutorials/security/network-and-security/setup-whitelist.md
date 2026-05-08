@@ -25,7 +25,7 @@ import Procedures from '@site/src/components/Procedures';
 
 # クラスター IP 許可リストの設定
 
-Zilliz Cloud のクラスター IP 許可リストは、プロジェクトレベルで機能する堅牢なセキュリティ層であり、指定されたプロジェクト内のすべてのクラスターにその利点を拡張します。IP 許可リストを実装することで、プロジェクトのクラスターへのアクセスを選ばれた IP アドレスのグループに効果的に絞り込むことができ、悪意のある攻撃のリスクを大幅に軽減できます。
+Zilliz Cloud のクラスター IP 許可リストは、プロジェクトレベルで機能する堅牢なセキュリティ層であり、指定されたプロジェクト内のすべてのクラスターにその利点を拡張します。IP 許可リストを実装することで、プロジェクトのクラスターへのアクセスを選ばれた IP アドレスのグループに効果的に絞り込み、悪意のある攻撃のリスクを大幅に軽減できます。
 
 ## 開始前の準備\{#before-you-start}
 
@@ -58,11 +58,11 @@ Zilliz Cloud のクラスター IP 許可リストは、プロジェクトレベ
        </tr>
        <tr>
          <td><p>IP Address (CIDR)</p></td>
-         <td><p>許可リストに追加する IP アドレスまたは CIDR ブロック。最大 100 個の CIDR ブロックを指定できます。例: 192.168.1.1/20。</p></td>
+         <td><p>The IPアドレスes or CIDR block that you want to add to the allowlist. Up to 100 CIDR blocks are allowed. Example value: 192.168.1.1/20.</p></td>
        </tr>
        <tr>
          <td><p>Description</p></td>
-         <td><p>許可リストに追加する IP アドレスまたは CIDR ブロックの説明。</p></td>
+         <td><p>The description of the IPアドレスes or CIDR block to add to the allowlist.</p></td>
        </tr>
     </table>
 
@@ -72,11 +72,11 @@ Zilliz Cloud のクラスター IP 許可リストは、プロジェクトレベ
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- 許可リストにエントリがない場合、Zilliz Cloud は任意の IP アドレスからのアクセスを許可します。
-
-- CIDR ブロックを追加すると、そのブロック内の IP アドレスからのアクセスに限定されます。
-
-- 0.0.0.0/0 を追加することは、許可リストが空の状態と同等です。
+<ul>
+<li><p>Without any entries in the allowlist, Zilliz Cloud allows access from any IPアドレス.</p></li>
+<li><p>Upon adding a CIDR block, cluster access is exclusively limited to the IPアドレスes within that block.</p></li>
+<li><p>Adding 0.0.0.0/0 equates to having an empty allowlist.</p></li>
+</ul>
 
 </Admonition>
 
@@ -84,9 +84,9 @@ Zilliz Cloud のクラスター IP 許可リストは、プロジェクトレベ
 
 ## 関連トピック\{#related-topics}
 
-- [APIキーs](./manage-api-keys)
+- [API キー](./manage-api-keys)
 
-- [Cluster Credentials (Console)](./cluster-credentials)
+- [クラスター認証情報（コンソール）](./cluster-credentials)
 
-- [Set up a プライベート Link](./setup-a-private-link)
+- [プライベートリンクの設定](./setup-a-private-link)
 

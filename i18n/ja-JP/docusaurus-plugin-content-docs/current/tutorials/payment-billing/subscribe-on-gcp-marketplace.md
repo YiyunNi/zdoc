@@ -5,7 +5,7 @@ sidebar_key: subscribe-on-gcp-marketplace
 sidebar_label: "Google Cloud Marketplace"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、GCP Marketplace での Zilliz Cloud の購読プロセスをステップバイステップで説明し、料金条件についても解説します。 | Cloud"
+description: "このガイドでは、GCP Marketplace での Zilliz Cloud の購読プロセスをステップバイステップで説明し、料金体系についても解説します。 | Cloud"
 type: origin
 token: MIqTw7iJ4iQAtVkYKiEc98a7nsh
 sidebar_position: 4
@@ -29,7 +29,7 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Note">
 
-購読後、Google Cloud クラスターの使用料金を Google Cloud Marketplace で支払うことができます。他のクラウドプロバイダーにデプロイしたクラスターがある場合も、Google Cloud Marketplace を使用して支払うことができます。
+<p>購読後、Google Cloud クラスターの使用料金を Google Cloud Marketplace で支払うことができます。他のクラウドプロバイダーにデプロイしたクラスターがある場合も、Google Cloud Marketplace を使用して支払いを行うことができます。</p>
 
 </Admonition>
 
@@ -73,7 +73,7 @@ import Procedures from '@site/src/components/Procedures';
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    サインアッププロセスを完了できない場合は、GCP Marketplace の **[Your Orders](https://console.cloud.google.com/marketplace/orders)** ページに移動して再試行できます。
+    <p>サインアッププロセスを完了できない場合は、GCP Marketplace の <strong><a href="https://console.cloud.google.com/marketplace/orders">Your Orders</a></strong> ページに移動して再試行できます。</p>
 
     </Admonition>
 
@@ -81,11 +81,11 @@ import Procedures from '@site/src/components/Procedures';
 
 1. 新しいタブで、以下の手順に従って購読を完了します。
 
-    1. すでに Zilliz Cloud アカウントをお持ちの場合は、単にログインしてください。ない場合は、[サインアップオプション](./register-with-zilliz-cloud) を選択してプロセスに従ってください。
+    1. すでに Zilliz Cloud アカウントをお持ちの場合は、ログインするだけです。ない場合は、[サインアップオプション](./register-with-zilliz-cloud) を選択してプロセスに従ってください。
 
     1. 購読を既存の Zilliz Cloud 組織にリンクします。
 
-    1. 認可を完了します。
+    1. 認証を完了します。
 
     ![aws-marketplace-dialog](https://zdoc-images.s3.us-west-2.amazonaws.com/aws-marketplace-dialog.png "aws-marketplace-dialog")
 
@@ -97,7 +97,7 @@ import Procedures from '@site/src/components/Procedures';
 
 ## GCP Marketplace 購読の更新\{#update-gcp-marketplace-subscription}
 
-GCP Marketplace からの購読が成功した後、いつでも適切なタイミングで購読を更新できます。具体的には、購読に使用する GCP Marketplace アカウントを別のアカウントに変更するか、支払い方法を GCP Marketplace 購読からクレジットカードに切り替えることができます。
+GCP Marketplace からの購読が成功した後、いつでも適切なタイミングで購読を更新できます。具体的には、購読に使用する GCP Marketplace アカウントを別のアカウントに変更するか、支払い方法を GCP Marketplace の購読からクレジットカードに切り替えることができます。
 
 ### GCP Marketplace 購読アカウントの変更\{#change-gcp-marketplace-subscription-account}
 
@@ -105,15 +105,15 @@ GCP Marketplace からの購読が成功した後、いつでも適切なタイ�
 
 1. 購読に使用した元の GCP アカウントで GCP Marketplace にサインインします。
 
-1. Zilliz Cloud の購読をキャンセルします。詳細については、[プランのキャンセル](https://cloud.google.com/marketplace/docs/manage-billing#saas-products) を参照してください。
+1. Zilliz Cloud の購読をキャンセルします。詳細については [プランのキャンセル](https://cloud.google.com/marketplace/docs/manage-billing#saas-products) を参照してください。
 
     <Admonition type="info" icon="📘" title="Note">
 
-    購読をキャンセルしても、Zilliz Cloud のデータは削除されないことをご安心ください。
+    <p>購読をキャンセルしても、Zilliz Cloud のデータは削除されないのでご安心ください。</p>
 
     </Admonition>
 
-    GCP Marketplace でキャンセル処理を完了するには数分かかります。
+    GCP Marketplace でキャンセル処理が完了するまで数分かかります。
 
 1. 元の GCP アカウントからサインアウトします。
 
@@ -123,7 +123,7 @@ GCP Marketplace からの購読が成功した後、いつでも適切なタイ�
 
     <Admonition type="info" icon="📘" title="Note">
 
-    GCP Marketplace 購読を更新する際は、Manage on Provider ボタンをクリックして、新しい購読を Zilliz Cloud 組織とリンクする必要があります。
+    <p>GCP Marketplace の購読を更新する際は、Manage on Provider ボタンをクリックして、新しい購読を Zilliz Cloud 組織とリンクする必要があります。</p>
 
     </Admonition>
 
@@ -135,7 +135,7 @@ GCP Marketplace からの購読が成功した後、いつでも適切なタイ�
 
 <Admonition type="info" icon="📘" title="Note">
 
-サービス中断を避けるため、1 時間以内に操作を完了することをお勧めします。
+<p>サービス中断を避けるため、1時間以内に操作を完了することをお勧めします。</p>
 
 </Admonition>
 
@@ -145,15 +145,15 @@ GCP Marketplace からの購読が成功した後、いつでも適切なタイ�
 
 1. 購読に使用した元の GCP アカウントで GCP Marketplace にサインインします。
 
-1. Zilliz Cloud の購読をキャンセルします。詳細については、[プランのキャンセル](https://cloud.google.com/marketplace/docs/manage-billing#saas-products) を参照してください。
+1. Zilliz Cloud の購読をキャンセルします。詳細については [プランのキャンセル](https://cloud.google.com/marketplace/docs/manage-billing#saas-products) を参照してください。
 
     <Admonition type="info" icon="📘" title="Note">
 
-    購読をキャンセルしても、Zilliz Cloud のデータは削除されないことをご安心ください。
+    <p>購読をキャンセルしても、Zilliz Cloud のデータは削除されないのでご安心ください。</p>
 
     </Admonition>
 
-    GCP Marketplace でキャンセル処理を完了するには数分かかります。
+    GCP Marketplace でキャンセル処理が完了するまで数分かかります。
 
 1. [クレジットカードの追加による購読](./subscribe-by-adding-credit-card#add-a-credit-card) の手順に従って、支払い用クレジットカードを追加します。
 
@@ -167,11 +167,11 @@ GCP Marketplace の購読をキャンセルするには、GCP Marketplace コン
 
 ## GCP Marketplace の価格設定規約\{#gcp-marketplace-pricing-terms}
 
-詳細については、[支払い & 請求](./payment-billing#marketplace-pricing-terms) を参照してください。
+詳細については [支払い & 請求](./payment-billing#marketplace-pricing-terms) を参照してください。
 
 ## トラブルシューティング\{#troubleshooting}
 
-**マーケットプレイスの購読を Zilliz Cloud にリンクする際に、利用可能な組織がない場合はどうすればよいですか？**
+**Marketplace の購読を Zilliz Cloud にリンクする際に利用可能な組織がない場合はどうすればよいですか？**
 
 いくつかの理由が考えられます。
 
@@ -181,7 +181,7 @@ GCP Marketplace の購読をキャンセルするには、GCP Marketplace コン
 
     ![insufficient-permission-subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/insufficient-permission-subscription.png "insufficient-permission-subscription")
 
-    組織をマーケットプレイスの購読とリンクするには、**組織オーナー** または **組織の請求管理者** である必要があります。ただし、組織メンバー のみである場合は、必要な権限がありません。組織オーナーに連絡して支援を依頼してください。
+    Marketplace の購読を組織にリンクするには、**組織オーナー** または **組織の請求管理者** である必要があります。ただし、**組織メンバー** のみである場合は、必要な権限がありません。組織オーナーに連絡して支援を依頼してください。
 
 - **すべての組織がすでに Marketplace の購読に正常にリンクされている**
 
@@ -191,17 +191,17 @@ GCP Marketplace の購読をキャンセルするには、GCP Marketplace コン
 
     この場合、
 
-    - 既存のマーケットプレイス購読を更新する必要がある場合は、まず組織の現在の購読を [リンク解除](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) してから、新しい購読を設定してください。
+    - 既存の Marketplace の購読を更新する必要がある場合は、まず組織の現在の購読を [リンク解除](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) してから、新しい購読を設定してください。
 
-    - 異なる Marketplace 購読用に複数の組織が必要な場合は、以下の方法があります：
+    - 異なる Marketplace の購読用に複数の組織が必要な場合は、以下の方法があります：
 
-        - 新しい Zilliz Cloud アカウントを [登録](./register-with-zilliz-cloud) して新しい組織を作成します。次に、組織オーナーを新しい組織に [招待](./organization-users#invite-a-user-to-your-organization) します。この組織オーナーは複数の組織に所属し、各組織に異なるマーケットプレイス購読を設定できます。
+        - 新しい Zilliz Cloud アカウントを [登録](./register-with-zilliz-cloud) して新しい組織を作成します。次に、組織オーナーを新しい組織に [招待](./organization-users#invite-a-user-to-your-organization) します。この組織オーナーは複数の組織に所属し、各組織に異なる Marketplace の購読を設定できます。
 
         - [サポートチケットを作成](http://support.zilliz.com) してください。新しい組織を作成いたします。現在、Zilliz Cloud はユーザーによる手動での組織作成をサポートしていません。
 
 - **リストに組織がない**
 
-    - アカウントがクローズされている場合、またはすべての組織から脱退している場合に発生します。UI は以下のようになります。
+    - アカウントがクローズされた場合、またはすべての組織から脱退した場合に発生します。UI は以下のようになります。
 
     ![no-organization-during-subcription](https://zdoc-images.s3.us-west-2.amazonaws.com/no-organization-during-subcription.png "no-organization-during-subcription")
 
@@ -209,7 +209,7 @@ GCP Marketplace の購読をキャンセルするには、GCP Marketplace コン
 
     - 新しい組織を作成します。
 
-    - 他のユーザーに組織への [招待](./organization-users#invite-a-user-to-your-organization) を依頼し、組織オーナー のロールを付与してもらいます。
+    - 他のユーザーに自分を組織に [招待](./organization-users#invite-a-user-to-your-organization) してもらい、組織オーナーのロールを付与してもらいます。
 
     - [サポートチケットを作成](https://support.zilliz.com/hc/en-us) してください。新しい組織を作成いたします。
 

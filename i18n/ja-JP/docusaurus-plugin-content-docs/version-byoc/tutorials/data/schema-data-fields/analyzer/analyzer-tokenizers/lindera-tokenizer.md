@@ -5,7 +5,7 @@ sidebar_key: lindera-tokenizer
 sidebar_label: "Lindera"
 beta: FALSE
 notebook: FALSE
-description: "`lindera` トークナイザーは辞書ベースの形態素解析を実行します。日本語や韓国語など、単語がスペースで区切られず、文法的な助詞が単語に直接付く言語向けに設計されています。 | BYOC"
+description: "`lindera` トークナイザーは辞書ベースの形態素解析を実行します。日本語や韓国語など、単語がスペースで区切られず、文法マーカー（助詞）が単語に直接付く言語向けに設計されています。 | BYOC"
 type: origin
 token: PvwZwtu3FiBQNqkPa5VcqH6qnmg
 sidebar_position: 4
@@ -13,10 +13,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - コレクション
-  - スキーマ
-  - アナライザー
-  - 組み込みトークナイザー
+  - collection
+  - schema
+  - analyzer
+  - built-in tokenizer
   - lindera-tokenizer
 
 ---
@@ -27,25 +27,25 @@ import TabItem from '@theme/TabItem';
 
 # Lindera
 
-`lindera` トークナイザーは、辞書ベースの形態素解析を実行します。日本語や韓国語など、単語がスペースで区切られず、文法的なマーカー（助詞）が単語に直接付着する言語向けに設計されています。
+`lindera` トークナイザーは、辞書ベースの形態素解析を実行します。これは、単語がスペースで区切られず、助詞などの文法的要素が直接単語に付属する日本語や韓国語向けに設計されています。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**中国語テキストについて**: `lindera` は `cc-cedict` 辞書を介して中国語をサポートしていますが、代わりに [`jieba`](./jieba-tokenizer) トークナイザーの使用を推奨します。Jieba は中国語の単語分割専用に設計されており、より優れた結果を提供します。
+<p><strong>中国語テキストの場合</strong>: <code>lindera</code> は <code>cc-cedict</code> 辞書を介して中国語をサポートしていますが、代わりに<a href="./jieba-tokenizer"><code>jieba</code></a> トークナイザーの使用を推奨します。Jieba は中国語の単語分割に特化しており、より優れた結果を提供します。</p>
 
 </Admonition>
 
 ## 概要\{#overview}
 
-日本語と韓国語は膠着語です。助詞と呼ばれる文法的なマーカーが名詞に直接付着し、多数の組み合わせを形成します。例えば：
+日本語と韓国語は膠着語です。つまり、「助詞」と呼ばれる文法的要素が名詞などに直接付属し、多数の組み合わせを形成します。例えば：
 
 <table>
    <tr>
      <th><p>言語</p></th>
-     <th><p>語根</p></th>
+     <th><p>Root word</p></th>
      <th><ul><li>Particle</li></ul></th>
-     <th><p>= 結合形</p></th>
-     <th><p>意味</p></th>
+     <th><p>= Combined form</p></th>
+     <th><p>Meaning</p></th>
    </tr>
    <tr>
      <td><p>Korean</p></td>
@@ -63,15 +63,15 @@ import TabItem from '@theme/TabItem';
    </tr>
 </table>
 
-`lindera` トークナイザー：
+`lindera` トークナイザーは以下の処理を行います：
 
-1. **テキストを分割**して個別の形態素（単語と助詞）に分解します
+1. **テキストを個々の形態素**（単語や助詞）
 
-1. **各トークンにタグ付け**を行い、辞書から品詞（POS）情報を付与します
+1. **各トークンに辞書から品詞**（POS）
 
-1. **フィルターを適用**して不要なトークン（例：助詞、句読点）を削除します
+1. **不要なトークン**（例：助詞、句読点）
 
-この2段階のプロセス——分割に続くPOSベースのフィルタリング——により、検索用にインデックス化するトークンを精密に制御できます。
+この「分割 → 品詞に基づくフィルタリング」という二段階の処理により、検索用にインデックスするトークンを正確に制御できます。
 
 ## 設定\{#configuration}
 

@@ -5,7 +5,7 @@ sidebar_key: integrate-with-datadog
 sidebar_label: "Datadog"
 beta: FALSE
 notebook: FALSE
-description: "Datadog は、アプリケーションのパフォーマンス、インフラストラクチャ、ログ管理に関するリアルタイムのインサイトを提供するクラウド監視および分析プラットフォームです。Zilliz Cloud と Datadog を統合することで、Zilliz Cloud クラスターに関するメトリクス データを Datadog のダッシュボードに送信できます。"
+description: "Datadog は、アプリケーションのパフォーマンス、インフラストラクチャ、ログ管理に関するリアルタイムのインサイトを提供するクラウド監視および分析プラットフォームです。Zilliz Cloud と Datadog を統合することで、Zilliz Cloud クラスターに関するメトリクス データを Datadog ダッシュボードに送信できます。"
 type: origin
 token: JGFQwMcVmiikeOkhepGcQ8Ken0e
 sidebar_position: 4
@@ -30,7 +30,7 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、**Enterprise** プロジェクト内の **Dedicated** クラスタでのみ利用可能です。
+<p>この機能は、<strong>Enterprise</strong> プロジェクト内の <strong>Dedicated</strong> クラスタでのみ利用可能です。</p>
 
 </Admonition>
 
@@ -109,7 +109,7 @@ import Procedures from '@site/src/components/Procedures';
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        **Dedicated-Enterprise** プラン層のクラスタのみ選択できます。
+        <p><strong>Dedicated-Enterprise</strong> プラン層のクラスタのみ選択できます。</p>
 
         </Admonition>
 
@@ -119,9 +119,9 @@ import Procedures from '@site/src/components/Procedures';
 
 ## 統合の進捗を監視する\{#monitor-integration-progress}
 
-セットアップ後、**Integrations** ページに戻り、データdog 統合が指定された構成詳細とともに一覧表示されていることを確認します。ステータスが **Active** に変われば、統合は成功です。Zilliz Cloud は分単位の頻度で データdog にデータをプッシュし、ほぼリアルタイムの更新を保証します。
+セットアップ後、**Integrations** ページに戻り、データdog 統合が指定された構成詳細とともに一覧表示されていることを確認します。ステータスが **Active** に変わった場合、統合は成功です。Zilliz Cloud は分単位の頻度で データdog にデータをプッシュし、ほぼリアルタイムの更新を保証します。
 
-統合の横にある外部リンクアイコンをクリックすると、関連する データdog ダッシュボードを開き、選択した Zilliz Cloud クラスタからプッシュされたクラスタメトリックを確認できます。
+統合の横にある外部リンクアイコンをクリックすると、関連する データdog ダッシュボードを開き、選択した Zilliz Cloud クラスタからプッシュされたクラスタメトリックを表示できます。
 
 ![integrate-with-datadog-2](https://zdoc-images.s3.us-west-2.amazonaws.com/integrate-with-datadog-2.png "integrate-with-datadog-2")
 
@@ -131,7 +131,7 @@ import Procedures from '@site/src/components/Procedures';
 
 - **Edit**: 監視対象クラスタを更新するか、必要に応じて統合設定を変更します。
 
-- **Remove**: 不要になった場合は統合を削除します。
+- **Remove**: 統合が不要になった場合は削除します。
 
 ![integrate-with-datadog-3](https://zdoc-images.s3.us-west-2.amazonaws.com/integrate-with-datadog-3.png "integrate-with-datadog-3")
 
@@ -231,7 +231,7 @@ import Procedures from '@site/src/components/Procedures';
 
 ## データdog で利用可能なタグ\{#tags-available-to-datadog}
 
-データdog は、特定のメトリックに以下のタグを送信し、リソースの理解、整理、識別を支援します。
+データdog は、特定のメトリックに対して以下のタグを送信し、リソースの理解、整理、識別を支援します。
 
 <table>
    <tr>

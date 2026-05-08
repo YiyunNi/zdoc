@@ -2,10 +2,10 @@
 title: "S3 バケットと IAM ロールの作成 | BYOC"
 slug: /create-bucket-and-role
 sidebar_key: create-bucket-and-role
-sidebar_label: "S3 バケットと IAM ロールの作成"
+sidebar_label: "S3 バケットと IAM ロールを作成"
 beta: CONTACT SALES
 notebook: FALSE
-description: "このページでは、Bring-Your-Own-Cloud（BYOC）プロジェクトのルートストレージを適切な権限で作成・設定する手順について説明します。 | BYOC"
+description: "このページでは、Bring-Your-Own-Cloud (BYOC) プロジェクトのルートストレージを適切な権限で作成・設定する手順について説明します。 | BYOC"
 type: origin
 token: Lv1Pw8lORiaX44kjGL0cNnpPnub
 sidebar_position: 1
@@ -13,8 +13,8 @@ keywords:
   - zilliz
   - byoc
   - aws
-  - s3 バケット
-  - IAM ロール
+  - s3 bucket
+  - IAM role
   - milvus
   - ベクトルデータベース
 
@@ -33,13 +33,13 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOCは現在**一般提供**されています。アクセスおよび実装の詳細については、[Zilliz Cloud セールス](https://zilliz.com/contact-sales)にお問い合わせください。
+<p>Zilliz BYOCは現在<strong>一般提供</strong>されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud セールス</a>までお問い合わせください。</p>
 
 </Admonition>
 
 ## S3バケットのベストプラクティス\{#best-practices-for-the-s3-bucket}
 
-プロジェクトのデプロイ時に指定するバケットは、プロジェクト内で作成されたクラスタのルートストレージとして使用されます。S3バケットを作成する前に、以下のベストプラクティスを確認してください。
+プロジェクトのデプロイ時に指定するバケットは、そのプロジェクト内で作成されたクラスタのルートストレージとして使用されます。S3バケットを作成する前に、以下のベストプラクティスを確認してください。
 
 - S3バケットは、プロジェクトのデプロイと同じAWSリージョンに存在する必要があります。
 
@@ -47,11 +47,11 @@ Zilliz BYOCは現在**一般提供**されています。アクセスおよび�
 
 ## 手順\{#procedure}
 
-AWSコンソールを使用してバケットとロールを作成できます。または、Zilliz Cloudが提供するTerraformスクリプトを使用して、AWS上のZilliz Cloudプロジェクトのインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider)を参照してください。
+AWSコンソールを使用してバケットとロールを作成できます。または、Zilliz Cloudが提供するTerraformスクリプトを使用して、AWS上のZilliz Cloudプロジェクトのインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider) を参照してください。
 
 ### ステップ1: S3バケットの作成\{#step-1-create-the-s3-bucket}
 
-このステップでは、BYOCプロジェクトのデプロイ用にAWS上にS3バケットを作成します。既存のS3バケットを使用する場合は、バケットがBYOCプロジェクトと同じリージョンにあることを確認してください。作成後、Zilliz Cloudコンソールの**ストレージ設定**にバケット名を入力します。
+このステップでは、BYOCプロジェクトのデプロイ用にAWS上にS3バケットを作成します。既存のS3バケットを使用する場合は、そのバケットがBYOCプロジェクトと同じリージョンにあることを確認してください。作成後、Zilliz Cloudコンソールの**ストレージ設定**にバケット名を入力します。
 
 <Supademo id="cmb5xlhej39irppkpeihkx9eg" title=""  />
 
@@ -59,11 +59,11 @@ AWSコンソールを使用してバケットとロールを作成できます�
 
 1. 管理者権限を持つユーザーとしてAWSコンソールにログインし、S3サービスに移動します。
 
-1. **汎用バケット**タブで、**バケットの作成**をクリックします。
+1. **汎用バケット**タブで、**バケットを作成**をクリックします。
 
-1. **バケット名**に、バケットの名前を入力し、他の設定はデフォルト値のままにします。
+1. **バケット名**に、バケットの名前を入力し、その他の設定はデフォルト値のままにします。
 
-1. **バケットの作成**をクリックします。
+1. **バケットを作成**をクリックします。
 
 1. **Zilliz Cloud コンソール**に戻り、**ストレージ設定**の**バケット**にバケット名を貼り付けます。
 
@@ -71,7 +71,7 @@ AWSコンソールを使用してバケットとロールを作成できます�
 
 ### ステップ2: S3バケットへのアクセス用IAMロールの作成\{#step-2-create-an-iam-role-to-access-the-s3-bucket}
 
-このステップでは、Zilliz Cloudが前のステップで作成したS3バケットに代わってアクセスできるように、AWS上にIAMロールを作成します。
+このステップでは、前のステップで作成したS3バケットにZilliz Cloudが代わりにアクセスするためのIAMロールをAWS上に作成します。
 
 <Supademo id="cmb5y39ss39r5ppkplsrz1nqd" title=""  />
 
@@ -81,9 +81,9 @@ AWSコンソールを使用してバケットとロールを作成できます�
 
 1. アカウント情報を展開し、**AWS アカウントID**の前にあるコピーボタンをクリックします。
 
-1. 左側のサイドバーで**ロール**タブをクリックし、次に**ロールの作成**をクリックします。
+1. 左側のサイドバーで**ロール**タブをクリックし、次に**ロールを作成**をクリックします。
 
-1. **信頼されたエンティティの選択**で、**カスタム信頼ポリシー**タイルをクリックします。**共通信頼ポリシー**に、以下の信頼JSONを**カスタム信頼ポリシー**セクションのエディタに貼り付け、`{accountId}`を**AWS アカウントID**に置き換えます。
+1. **信頼されたエンティティを選択**で、**カスタム信頼ポリシー**タイルをクリックします。**共通信頼ポリシー**に、以下の信頼JSONを**カスタム信頼ポリシー**セクションのエディタに貼り付け、`{accountId}`をご自身の**AWS アカウントID**に置き換えます。
 
     ```json
     {

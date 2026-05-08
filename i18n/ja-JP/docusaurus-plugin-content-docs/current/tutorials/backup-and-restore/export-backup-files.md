@@ -30,7 +30,7 @@ Zilliz Cloud コンソールを使用して、バックアップファイルを�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、**Enterprise** プロジェクトの **Dedicated** クラスターで **プライベートプレビュー** として提供されています。この機能を有効にする場合や、関連するコストについては、[Zilliz Cloud サポート](https://support.zilliz.com/hc/en-us) までお問い合わせください。
+<p>この機能は、<strong>Enterprise</strong> プロジェクトの <strong>Dedicated</strong> クラスターにおいて <strong>プライベートプレビュー</strong> として提供されています。この機能を有効にする場合や、関連するコストについては、<a href="https://support.zilliz.com/hc/en-us">Zilliz Cloud サポート</a>までお問い合わせください。</p>
 
 </Admonition>
 
@@ -38,23 +38,23 @@ Zilliz Cloud コンソールを使用して、バックアップファイルを�
 
 - Zilliz Cloud とオブジェクトストレージの統合が完了していること。詳細な手順については、[AWS S3 との統合](./integrate-with-aws-s3)、[Azure Blob Storage との統合](./integrate-with-azure-blob-storage)、または [Google Cloud Storage との統合](./integrate-with-gcp) を参照してください。
 
-- プロジェクトに対して **組織オーナー** または **プロジェクト管理者** のアクセス権を持っていること。必要な権限がない場合は、Zilliz Cloud 管理者にお問い合わせください。
+- プロジェクトに対する **組織オーナー** または **プロジェクト管理者** のアクセス権限を持っていること。必要な権限がない場合は、Zilliz Cloud 管理者にお問い合わせください。
 
 ## 手順\{#procedure}
 
-バックアップファイルのエクスポートは、Zilliz Cloud コンソールまたは RESTful API を使用して行うことができます。
+Zilliz Cloud からバックアップファイルをエクスポートするには、Zilliz Cloud コンソールまたは RESTful API を使用します。
 
 ### Zilliz Cloud コンソールからのエクスポート\{#export-via-zilliz-cloud-console}
 
 1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/login) にログインします。
 
-1. 左側のナビゲーションペインで **Backups** を選択します。
+1. 左側のナビゲーションペインで、**Backups** を選択します。
 
 1. 表示されたページで、対象のバックアップファイルを見つけ、**Actions** 列の **...** をクリックし、**Export** を選択します。
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    **Available** ステータスのバックアップファイルのみエクスポートできます。
+    <p><strong>Available</strong> ステータスのバックアップファイルのみエクスポートできます。</p>
 
     </Admonition>
 
@@ -74,7 +74,7 @@ Zilliz Cloud コンソールを使用して、バックアップファイルを�
 
 ### RESTful API を使用したエクスポート\{#export-through-restful-api}
 
-[Export Backup Files](/reference/restful/export-backup-files-v2) RESTful API エンドポイントを使用して Zilliz Cloud からバックアップファイルをエクスポートする前に、AWS S3 バケットのいずれかを Zilliz Cloud と統合し、その統合ID を取得する必要があります。詳細については、[統合ID の取得](./integrate-with-aws-s3#obtain-the-integration-id) を参照してください。
+[Export Backup Files](/reference/restful/export-backup-files-v2) RESTful API エンドポイントを使用して Zilliz Cloud からバックアップファイルをエクスポートする前に、AWS S3 バケットのいずれかを Zilliz Cloud と統合し、その統合IDを取得する必要があります。詳細については、[統合IDの取得](./integrate-with-aws-s3#obtain-the-integration-id) を参照してください。
 
 ```bash
 export BASE_URL="https://api.cloud.zilliz.com"
@@ -121,11 +121,11 @@ curl --request POST \
 
 ## エクスポート ジョブをキャンセルする\{#cancel-export-job}
 
-ジョブが **IN PROGRESS** ステータスのままで、続行しないことを決定した場合は、**Actions** 列の **Cancel** をクリックしてジョブをキャンセルできます。
+ジョブが **IN PROGRESS** 状態のままとなり、続行しないことを決定した場合は、**Actions** 列の **Cancel** をクリックしてジョブをキャンセルできます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-途中でキャンセルしても、すでにバケットにアップロードされたデータは削除されません。
+<p>途中でキャンセルしても、すでにバケットにアップロードされたデータは削除されません。</p>
 
 </Admonition>
 

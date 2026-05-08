@@ -1,5 +1,5 @@
 ---
-title: "Standard Analyzer | BYOC"
+title: "Standard アナライザー | BYOC"
 slug: /standard-analyzer
 sidebar_key: standard-analyzer
 sidebar_label: "Standard"
@@ -25,17 +25,17 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 標準アナライザー
+# Standard Analyzer
 
-`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、アナライザーが指定されていない場合は自動的にテキストフィールドに適用されます。文法ベースのトークン化を使用しており、ほとんどの言語で効果的です。
+`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、特定のアナライザーが指定されていない場合にテキストフィールドに自動的に適用されます。文法ベースのトークン化を使用しており、ほとんどの言語に効果的です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`standard` アナライザーは、単語の境界に区切り文字（スペース、句読点など）を使用する言語に適しています。ただし、中国語、日本語、韓国語などの言語では辞書ベースのトークン化が必要です。このような場合、[`chinese`](./chinese-analyzer) などの言語固有のアナライザーや、[`lindera`](./lindera-tokenizer)、[`icu`](./icu-tokenizer) などの専用トークナイザーとフィルターを使用したカスタムアナライザーを使用することを強く推奨します。これにより、正確なトークン化とより良い検索結果を確保できます。
+<p><code>standard</code> アナライザーは、単語境界に区切り文字（スペース、句読点など）を使用する言語に適しています。ただし、中国語、日本語、韓国語などの言語は辞書ベースのトークン化が必要です。このような場合、<a href="./chinese-analyzer"><code>chinese</code></a> などの言語固有のアナライザーや、<a href="./lindera-tokenizer"><code>lindera</code></a>、<a href="./icu-tokenizer"><code>icu</code></a> などの専用トークナイザーを使用したカスタムアナライザーを使用することを強く推奨します。これにより、正確なトークン化とより良い検索結果を確保できます。</p>
 
 </Admonition>
 
-## 定義\{#definition}
+## Definition\{#definition}
 
 `standard` アナライザーは以下で構成されています：
 

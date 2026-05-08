@@ -13,11 +13,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - data
-  - filter
-  - filtering expressions
-  - filtering
+  - コレクション
+  - データ
+  - フィルター
+  - フィルタリング式
+  - フィルタリング
   - text-match
   - lexical
 
@@ -108,7 +108,7 @@ results = client.search(
 }
 ```
 
-返されたフラグメントの位置、長さ、および数を制御するには、[ハイライトされたテキストをフラグメントとして返す](./text-highlighter#fragment-based-highlighting-output) を参照してください。
+返されるフラグメントの位置、長さ、および数を制御するには、[ハイライトされたテキストをフラグメントとして返す](./text-highlighter#fragment-based-highlighting-output) を参照してください。
 
 ## フィルタリングにおけるクエリ用語のハイライト\{#query-term-highlighting-in-filtering}
 
@@ -116,13 +116,13 @@ results = client.search(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-現在、クエリ用語のハイライトでは `TEXT_MATCH` フィルタリング条件のみがサポートされています。詳細については、[Text Match](./text-match) を参照してください。
+<p>現在、クエリ用語のハイライトでは <code>TEXT_MATCH</code> フィルタリング条件のみがサポートされています。詳細については、<a href="./text-match">Text Match</a> を参照してください。</p>
 
 </Admonition>
 
-このシナリオでは、ハイライトされた用語はテキストベースのフィルタリング式から取得されます。フィルタリングはどのドキュメントが一致するかを決定し、ハイライターは一致したテキストスパンに注釈を付けます。
+このシナリオでは、ハイライトされた用語はテキストベースのフィルタリング式から来ます。フィルタリングがどのドキュメントが一致するかを決定し、ハイライターが一致したテキストスパンに注釈を付けます。
 
-テキストフィールドに次のコンテンツが保存されていると仮定します。
+テキストフィールドに以下のコンテンツが保存されていると仮定します。
 
 ```python
 This document explains how text filtering works in Milvus.

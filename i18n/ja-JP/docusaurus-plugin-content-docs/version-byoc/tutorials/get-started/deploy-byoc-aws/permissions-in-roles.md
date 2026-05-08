@@ -25,17 +25,17 @@ import Admonition from '@theme/Admonition';
 
 # ロールの権限
 
-このページでは、Zilliz Cloud がお客様に代わってコントロールプレーンのセットアップを実行する際に必要となるすべての IAM 権限を一覧表示します。
+このページでは、Zilliz Cloud がお客様に代わってコントロールプレーンのセットアップを実行する際に必要とするすべての IAM 権限を一覧表示します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC は現在 **一般提供** されています。アクセスおよび実装の詳細については、[Zilliz Cloud セールス](https://zilliz.com/contact-sales) までお問い合わせください。
+<p>Zilliz BYOC は現在 <strong>一般提供</strong>されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud セールス</a>までお問い合わせください。</p>
 
 </Admonition>
 
 ## ストレージロールの権限\{#storage-role-permissions}
 
-S3 バケットとストレージロールを作成しました。Zilliz Cloud は、コントロールプレーンのセットアップ時に以下の権限を持つこのロールを引き受けます。
+S3 バケットとストレージロールを作成しました。Zilliz Cloud は、コントロールプレーンのセットアップ中に以下の権限を持つこのロールを引き受けます。
 
 <table>
    <tr>
@@ -67,11 +67,11 @@ S3 バケットとストレージロールを作成しました。Zilliz Cloud �
 
 ## EKS ロールの権限\{#eks-role-permissions}
 
-Zilliz Cloud がコントロールプレーンのセットアップ時に EKS クラスターを管理できるよう、以下の権限を持つ EKS ロールを作成しました。
+Zilliz Cloud がコントロールプレーンのセットアップ中に EKS クラスターを管理できるよう、以下の権限を持つ EKS ロールを作成しました。
 
 ### AWS 管理の権限\{#aws-managed-permissions}
 
-これらの権限は AWS によって管理されており、EKS ロールにアタッチできます。各権限の詳細については、**権限** 列の項目をクリックして詳細を確認できます。
+これらの権限は AWS によって管理されており、EKS ロールにアタッチできます。これらの権限の詳細については、**権限**列の項目をクリックして詳細を確認できます。
 
 <table>
    <tr>
@@ -87,7 +87,7 @@ Zilliz Cloud がコントロールプレーンのセットアップ時に EKS �
    <tr>
      <td><p><a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKS_CNI_Policy.html">AmazonEKS_CNI_Policy</a></p></td>
      <td><p>AWS</p></td>
-     <td><p>Amazon VPC CNI プラグイン（amazon-vpc-cni-k8s）が EKS ワーカーノードの IP アドレス設定を変更するために必要な権限を提供します。</p></td>
+     <td><p>Amazon VPC CNI プラグイン（amazon-vpc-cni-k8s）に、EKS ワーカーノードの IP アドレス設定を変更するために必要な権限を提供します。</p></td>
    </tr>
    <tr>
      <td><p><a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSWorkerNodePolicy.html">AmazonEKSWorkerNodePolicy</a></p></td>
@@ -97,7 +97,7 @@ Zilliz Cloud がコントロールプレーンのセットアップ時に EKS �
    <tr>
      <td><p><a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSClusterPolicy.html">AmazonEKSClusterPolicy</a></p></td>
      <td><p>AWS</p></td>
-     <td><p>Kubernetes がお客様に代わってリソースを管理するために必要な権限を提供します。</p></td>
+     <td><p>Kubernetes に、お客様に代わってリソースを管理するために必要な権限を提供します。</p></td>
    </tr>
    <tr>
      <td><p><a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSVPCResourceController.html">AmazonEKSVPCResourceController</a></p></td>
@@ -108,9 +108,9 @@ Zilliz Cloud がコントロールプレーンのセットアップ時に EKS �
 
 ### Kubernetes SIGs の権限\{#permissions-from-kubernetes-sigs}
 
-これらの権限は [Kubernetes SIGs](https://github.com/kubernetes-sigs) リポジトリのコントリビューターによって管理されています。Zilliz Cloud は、AWS Load Balancer Controller、Amazon EBS CSI ドライバー、および Cluster AutoScaler のインストールにこれらの権限を参照します。
+これらの権限は、[Kubernetes SIGs](https://github.com/kubernetes-sigs) リポジトリのコントリビューターによって管理されています。Zilliz Cloud は、AWS Load Balancer Controller、Amazon EBS CSI ドライバー、および Cluster AutoScaler をインストールするためにこれらの権限を参照します。
 
-以下の表に具体的な権限セットを一覧表示します。各権限の詳細については、**権限** 列の項目をクリックして詳細を確認できます。
+以下の表に、特定の権限セットを一覧表示します。これらの権限の詳細については、**権限**列の項目をクリックして詳細を確認できます。
 
 <table>
    <tr>
@@ -121,10 +121,10 @@ Zilliz Cloud がコントロールプレーンのセットアップ時に EKS �
    <tr>
      <td><p><a href="https://github.com/kubernetes-sigs/aws-load-balancer-controller/blob/main/docs/install/iam_policy.json">AWS Load Balancer Controller</a></p></td>
      <td><p>Kubernetes SIGs</p></td>
-     <td><p>AWS Load Balancer Controller は、Kubernetes クラスターの Elastic Load Balancer を管理するのを支援するコントローラーです。</p><p>AWS Load Balancer Controller リポジトリの詳細については、<a href="https://github.com/kubernetes-sigs/aws-load-balancer-controller/tree/main">README</a> ファイルを参照してください。</p></td>
+     <td><p>AWS Load Balancer Controller は、Kubernetes クラスターの Elastic Load Balancer を管理するのに役立つコントローラーです。</p><p>AWS Load Balancer Controller リポジトリの詳細については、<a href="https://github.com/kubernetes-sigs/aws-load-balancer-controller/tree/main">README</a> ファイルを参照してください。</p></td>
    </tr>
    <tr>
-     <td><p><a href="https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/docs/example-iam-policy.json">Amazon EBS CSI driver</a></p></td>
+     <td><p><a href="https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/docs/example-iam-policy.json">Amazon EBS CSI ドライバー</a></p></td>
      <td><p>Kubernetes SIGs</p></td>
      <td><p>Amazon Elastic Block Store Container Storage Interface（CSI）ドライバーは、コンテナオーケストレーターが Amazon EBS ボリュームのライフサイクルを管理するために使用する CSI インターフェースを提供します。</p><p>Amazon EBS CSI ドライバーの詳細については、<a href="https://github.com/kubernetes-sigs/aws-ebs-csi-driver">README</a> ファイルを参照してください。</p></td>
    </tr>
@@ -148,7 +148,7 @@ Zilliz Cloud がお客様の EKS クラスターに BYOC コントロールプ�
    <tr>
      <td><p>iam:Getロール</p></td>
      <td><p>ロール</p></td>
-     <td><p>EKS 作成時に依存ロールを読み取ります。</p></td>
+     <td><p>EKS を作成する際に依存ロールを読み取ります。</p></td>
    </tr>
    <tr>
      <td><p>iam:ListAttachedロールポリシー</p></td>
@@ -188,7 +188,7 @@ Zilliz Cloud がお客様の EKS クラスターに BYOC コントロールプ�
    <tr>
      <td><p>ec2:Createタグ</p></td>
      <td><p>タグ</p></td>
-     <td><p>すべての zilliz byoc リソースにタグを追加します</p></td>
+     <td><p>すべての Zilliz byoc リソースにタグを追加します</p></td>
    </tr>
    <tr>
      <td><p>ec2:Describeアカウント属性</p></td>
@@ -288,7 +288,7 @@ Zilliz Cloud がお客様の EKS クラスターに BYOC コントロールプ�
    <tr>
      <td><p>eks:TagResource</p></td>
      <td><p>タグ</p></td>
-     <td><p>すべての eks リソースにタグを付けます。</p></td>
+     <td><p>すべての EKS リソースにタグを付けます。</p></td>
    </tr>
    <tr>
      <td><p>eks:DescribeCluster</p></td>
@@ -303,7 +303,7 @@ Zilliz Cloud がお客様の EKS クラスターに BYOC コントロールプ�
    <tr>
      <td><p>eks:DescribeAccessEntry</p></td>
      <td><p>EKS AccessEntry</p></td>
-     <td><p>EKS accessentry が正しく作成されたことを確認します。</p></td>
+     <td><p>EKS アクセスエントリが正しく作成されたことを確認します。</p></td>
    </tr>
    <tr>
      <td><p>eks:DescribeAddon</p></td>
@@ -327,7 +327,7 @@ Zilliz Cloud がお客様の EKS クラスターに BYOC コントロールプ�
    </tr>
    <tr>
      <td><p>eks:ListAccessEntries</p></td>
-     <td><p>EKS accessentry</p></td>
+     <td><p>EKS アクセスエントリ</p></td>
      <td><p>Zilliz が作成した EKS のアクセスエントリを取得します。</p></td>
    </tr>
    <tr>
@@ -348,21 +348,21 @@ Zilliz Cloud がお客様の EKS クラスターに BYOC コントロールプ�
    <tr>
      <td><p>eks:ListUpdates</p></td>
      <td><p>EKS</p></td>
-     <td><p>Zilliz が作成した EKS アップデートを取得します。</p></td>
+     <td><p>Zilliz が作成した EKS の更新を取得します。</p></td>
    </tr>
    <tr>
      <td><p>eks:ListPodIdentityAssociations</p></td>
      <td><p>ポッドアイデンティティ</p></td>
-     <td><p>Zilliz が作成したポッドアイデンティティ関連付けを取得します。</p></td>
+     <td><p>Zilliz が作成したポッドアイデンティティの関連付けを取得します。</p></td>
    </tr>
    <tr>
      <td><p>eks:ListタグForResource</p></td>
      <td><p>タグ</p></td>
-     <td><p>Zilliz が作成したリソースタグを取得します</p></td>
+     <td><p>Zilliz が作成したリソースのタグを取得します</p></td>
    </tr>
    <tr>
      <td><p>eks:DeleteAccessEntry</p></td>
-     <td><p>EKS Accessentry</p></td>
+     <td><p>EKS アクセスエントリ</p></td>
      <td><p>Zilliz が作成した EKS アクセスエントリを削除します。</p></td>
    </tr>
    <tr>

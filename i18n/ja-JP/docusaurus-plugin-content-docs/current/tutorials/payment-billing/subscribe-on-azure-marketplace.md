@@ -33,7 +33,7 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Note">
 
-購読後、Azure クラスターの使用料金を Azure Marketplace 経由で支払うことができます。他のクラウドプロバイダーにデプロイしたクラスターがある場合も、Azure Marketplace を使用して支払うことができます。
+<p>購読後、Azure クラスターの使用料金を Azure Marketplace 経由で支払うことができます。他のクラウドプロバイダーにデプロイしたクラスターがある場合も、Azure Marketplace を使用して支払いを行うことができます。</p>
 
 </Admonition>
 
@@ -41,7 +41,7 @@ import Procedures from '@site/src/components/Procedures';
 
 Azure Marketplace での購読に必要な [Azure Marketplace](https://learn.microsoft.com/en-us/marketplace/azure-marketplace-overview) アカウントと Azure [請求アカウント](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts) を用意してください。
 
-また、請求国または地域が対応マーケットのリストに含まれていることを確認してください。Zilliz Cloud は、税金およびコンプライアンス上の理由から、Azure Marketplace の特定のマーケットをサポートしていません。サポート対象外のマーケットから購読しようとすると、`"No plans are available for market '<market_code>'."` というエラーメッセージが表示される場合があります。この場合は、[サポートにお問い合わせ](http://support.zilliz.com/)いただき、エラーメッセージのスクリーンショットとマーケットコードをご提供ください。可能な解決策についてご相談させていただきます。
+また、請求先の国または地域が対応マーケットのリストに含まれていることを確認してください。Zilliz Cloud は、税務およびコンプライアンス上の理由から、Azure Marketplace の特定のマーケットをサポートしていません。サポート対象外のマーケットから購読しようとすると、`"No plans are available for market '<market_code>'."` というエラーメッセージが表示される場合があります。この場合は、[サポートにお問い合わせ](http://support.zilliz.com/) いただき、エラーメッセージのスクリーンショットとマーケットコードをご提供ください。可能な解決策についてご相談させていただきます。
 
 ![YaPcbHnQXovDLIxks0xcItOJnpf](https://zdoc-images.s3.us-west-2.amazonaws.com/yapcbhnqxovdlixks0xcitojnpf.png "YaPcbHnQXovDLIxks0xcItOJnpf")
 
@@ -223,7 +223,7 @@ Azure Marketplace での購読に必要な [Azure Marketplace](https://learn.mic
 
 <Procedures>
 
-1. 検索ボックスで **Zilliz Cloud** を検索するか、[Azure Marketplace にアクセス](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/zillizinc1703056661329.zilliz_cloud?tab=Overview)して Zilliz Cloud のポータルページを表示します。
+1. 検索ボックスで **Zilliz Cloud** を検索するか、[Azure Marketplace に移動](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/zillizinc1703056661329.zilliz_cloud?tab=Overview) して Zilliz Cloud のポータルページを表示します。
 
     ![search_for_zilliz_on_azure](https://zdoc-images.s3.us-west-2.amazonaws.com/search_for_zilliz_on_azure.png "search_for_zilliz_on_azure")
 
@@ -253,7 +253,7 @@ Azure Marketplace での購読に必要な [Azure Marketplace](https://learn.mic
 
             <Admonition type="info" icon="📘" title="Note">
 
-            自動更新をオンにすると、契約期間終了時に自動的に Azure Marketplace で Zilliz Cloud の購読が更新されます。自動更新をオフにすると、契約期間終了時にサブスクリプションが終了し、Zilliz Cloud の組織とアカウントがこの Azure Marketplace サブスクリプションから自動的にリンク解除されます。
+            <p>自動更新をオンにすると、契約期間終了時に自動的に Azure Marketplace で Zilliz Cloud の購読が更新されます。自動更新をオフにすると、契約期間終了時にサブスクリプションが終了し、Zilliz Cloud の組織とアカウントがこの Azure Marketplace サブスクリプションから自動的にリンク解除されます。</p>
 
             </Admonition>
 
@@ -283,7 +283,7 @@ Azure Marketplace での購読に必要な [Azure Marketplace](https://learn.mic
 
 ## Azure Marketplace サブスクリプションの更新\{#update-azure-marketplace-subscription}
 
-Azure Marketplace からの購読が成功した後、必要に応じていつでもサブスクリプションを更新できます。具体的には、サブスクリプションに使用している Azure Marketplace アカウントを別のアカウントに変更するか、支払い方法を Azure Marketplace サブスクリプションからクレジットカードに切り替えることができます。
+Azure Marketplace からの購読が完了した後は、必要に応じていつでもサブスクリプションを更新できます。具体的には、購読に使用している Azure Marketplace アカウントを別のアカウントに変更するか、支払い方法を Azure Marketplace サブスクリプションからクレジットカードに切り替えることができます。
 
 ### Azure Marketplace サブスクリプションの変更\{#change-azure-marketplace-subscription}
 
@@ -303,11 +303,11 @@ Azure Marketplace からの購読が成功した後、必要に応じていつ�
 
     <Admonition type="info" icon="📘" title="Note">
 
-    Azure Marketplace でキャンセル処理が完了するまで数分かかります。
+    <p>Azure Marketplace でキャンセル処理が完了するまでに数分かかります。</p>
 
     </Admonition>
 
-1. [クレジットカードの追加による購読](./subscribe-by-adding-credit-card#add-a-credit-card) の手順に従って、支払い用クレジットカードを追加します。
+1. [クレジットカードを追加して購読](./subscribe-by-adding-credit-card#add-a-credit-card) の手順に従って、支払い用クレジットカードを追加します。
 
 1. **請求概要** ページの **支払い方法** セクションで更新内容を確認します。
 
@@ -323,13 +323,13 @@ Azure Marketplace からの購読が成功した後、必要に応じていつ�
 
     ![azure_all_resources](https://zdoc-images.s3.us-west-2.amazonaws.com/azure_all_resources.png "azure_all_resources")
 
-1. キャンセルしたいサブスクリプションに移動します。**サブスクリプションをキャンセル** をクリックします。Azure Marketplace で処理が完了するまで数分お待ちください。
+1. キャンセルしたいサブスクリプションに移動し、**サブスクリプションをキャンセル** をクリックします。Azure Marketplace で処理が完了するまで数分お待ちください。
 
     ![cancel_azure_subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/cancel_azure_subscription.png "cancel_azure_subscription")
 
 </Procedures>
 
-Azure Marketplace でのサブスクリプションのキャンセル方法の詳細については、[こちら](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#cancel-subscription) を参照してください。
+Azure Marketplace でのサブスクリプションキャンセルについての詳細は、[こちら](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#cancel-subscription) を参照してください。
 
 ## Azure Marketplace の料金条件\{#azure-marketplace-pricing-terms}
 
@@ -339,9 +339,9 @@ Azure Marketplace でのサブスクリプションのキャンセル方法の�
 
 - **Azure Marketplace 経由で購読する際に「No plans are available for market '\<country_code>'」と表示されるのはなぜですか？**
 
-    このメッセージは、お客様の請求国または地域の Azure Marketplace で Zilliz Cloud がまだ利用できないために表示されます。詳細については、[対応マーケット](./subscribe-on-azure-marketplace#before-you-start) を参照してください。[サポートにお問い合わせ](http://support.zilliz.com)いただき、エラーメッセージのスクリーンショットとマーケットコードをご提供ください。代替の解決策をご提案するか、利用可能状況を更新できる場合があります。
+    このメッセージは、Zilliz Cloud がお客様の請求先の国または地域の Azure Marketplace ではまだ利用できないために表示されます。詳細については、[対応マーケット](./subscribe-on-azure-marketplace#before-you-start) を参照してください。[サポートにお問い合わせ](http://support.zilliz.com) いただき、エラーメッセージのスクリーンショットとマーケットコードをご提供ください。代替ソリューションのご提案や、利用可能状況の更新が可能な場合があります。
 
-- **マーケットプレイス サブスクリプションを Zilliz Cloud にリンクする際に、利用可能な組織がない場合はどうすればよいですか？**
+- **マーケットプレイスサブスクリプションを Zilliz Cloud にリンクする際に、利用可能な組織がない場合はどうすればよいですか？**
 
     いくつかの理由が考えられます。
 
@@ -351,23 +351,23 @@ Azure Marketplace でのサブスクリプションのキャンセル方法の�
 
         ![insufficient-permission-subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/insufficient-permission-subscription.png "insufficient-permission-subscription")
 
-        マーケットプレイス サブスクリプションを組織にリンクするには、**組織オーナー** または **組織の請求管理者** である必要があります。ただし、**組織メンバー** のみである場合は、必要な権限がありません。組織オーナーにご連絡いただき、支援を依頼してください。
+        マーケットプレイスサブスクリプションを組織にリンクするには、**組織オーナー** または **組織の請求管理者** である必要があります。ただし、**組織メンバー** のみである場合は、必要な権限がありません。組織オーナーにご連絡いただき、ご支援をお願いしてください。
 
-    - **すべての組織がすでにマーケットプレイス サブスクリプションに正常にリンク済み**
+    - **すべての組織がすでにマーケットプレイスサブスクリプションに正常にリンク済み**
 
-        すべての組織がすでにマーケットプレイス サブスクリプションにリンクされている場合に発生します。利用できない組織の横に **"マーケットプレイスにリンク済み"** タグが表示されます。
+        すべての組織がすでにマーケットプレイスサブスクリプションにリンクされている場合に発生します。利用できない組織の横に **"マーケットプレイスにリンク済み"** タグが表示されます。
 
         ![marketplace-already-linked-subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/marketplace-already-linked-subscription.png "marketplace-already-linked-subscription")
 
         この場合、
 
-        - 既存のマーケットプレイス サブスクリプションを更新する必要がある場合は、まず組織の現在のサブスクリプションを[リンク解除](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription)してから、新しいサブスクリプションを設定してください。
+        - 既存のマーケットプレイスサブスクリプションを更新する必要がある場合は、まず組織の現在のサブスクリプションを[リンク解除](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) してから、新しいサブスクリプションを設定してください。
 
-        - 異なるマーケットプレイス サブスクリプション用に複数の組織が必要な場合は、以下の方法があります：
+        - 異なるマーケットプレイスサブスクリプション用に複数の組織が必要な場合は、以下の方法があります：
 
-            - 新しい Zilliz Cloud アカウントを[登録](./register-with-zilliz-cloud)して新しい組織を作成します。次に、組織オーナーを新しい組織に[招待](./organization-users#invite-a-user-to-your-organization)します。この組織オーナーは複数の組織に所属することになり、各組織に異なるマーケットプレイス サブスクリプションを設定できます。
+            - 新しい Zilliz Cloud アカウントを[登録](./register-with-zilliz-cloud) して新しい組織を作成します。次に、組織オーナーを新しい組織に[招待](./organization-users#invite-a-user-to-your-organization) します。この組織オーナーは複数の組織に所属することになり、各組織に異なるマーケットプレイスサブスクリプションを設定できます。
 
-            - [サポートチケットを作成](http://support.zilliz.com)していただければ、新しい組織を作成いたします。現在、Zilliz Cloud はユーザーによる手動での組織作成をサポートしていません。
+            - [サポートチケットを作成](http://support.zilliz.com) していただければ、新しい組織を作成いたします。現在、Zilliz Cloud はユーザーによる手動での組織作成をサポートしていません。
 
     - **リストに組織がない**
 
@@ -379,13 +379,13 @@ Azure Marketplace でのサブスクリプションのキャンセル方法の�
 
         - 新しい組織を作成します。
 
-        - 他のユーザーに自分を[招待](./organization-users#invite-a-user-to-your-organization)してもらい、**組織オーナー** のロールを付与してもらいます。
+        - 他のユーザーに[招待](./organization-users#invite-a-user-to-your-organization) を依頼し、組織オーナーのロールを付与してもらいます。
 
-        - [サポートチケットを作成](https://support.zilliz.com/hc/en-us)していただければ、新しい組織を作成いたします。
+        - [サポートチケットを作成](https://support.zilliz.com/hc/en-us) していただければ、新しい組織を作成いたします。
 
 ## 関連トピック\{#related-topics}
 
-- [クレジットカードの追加による購読](./subscribe-by-adding-credit-card)
+- [クレジットカードを追加して購読](./subscribe-by-adding-credit-card)
 
 - [AWS Marketplace での購読](./subscribe-on-aws-marketplace)
 

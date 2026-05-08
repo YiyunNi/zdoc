@@ -1,5 +1,5 @@
 ---
-title: "VectorDBBench を使ったパフォーマンスベンチマーク | Cloud"
+title: "VectorDBBench を使用したパフォーマンスベンチマーク | Cloud"
 slug: /perf-benchmark-vectordb
 sidebar_key: perf-benchmark-vectordb
 sidebar_label: "VectorDBBench を使用"
@@ -139,7 +139,7 @@ $ init_bench
 
 ホームページでは、VectorDBBench が提供する事前定義されたテストデータセットを確認し、クイックパフォーマンスベンチマークに使用できます。
 
-Web ページの下部までスクロールし、**テストを実行 >** をクリックして独自のベンチマークテストを構成します。
+Web ページの下部までスクロールし、**テストを実行 >** をクリックして、独自のベンチマークテストを構成します。
 
 ![AATGbLxqwo32yexKYzPcdYVTnph](https://zdoc-images.s3.us-west-2.amazonaws.com/aatgblxqwo32yexkyzpcdyvtnph.png "AATGbLxqwo32yexKYzPcdYVTnph")
 
@@ -157,7 +157,7 @@ Web ページの下部までスクロールし、**テストを実行 >** をク
 
 <Admonition type="info" icon="📘" title="Notes">
 
-データベースは [database_name]-[db_label] 形式で命名されています。
+<p>データベースは [database<em>name]-[db</em>label] という形式で命名されています。 </p>
 
 </Admonition>
 

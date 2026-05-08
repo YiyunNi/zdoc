@@ -27,13 +27,13 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
 
 - **組織レベルのメトリクス**: すべてのプロジェクトにわたるアカウント全体のステータス（例：ライセンスクレジット、使用量）を反映します。
 
-- **クラスタレベルのメトリクス**: 個別のクラスタ内のリソース使用量、パフォーマンス、データを反映します。
+- **クラスタレベルのメトリクス**: 個別のクラスタ内のリソース、パフォーマンス、データを反映します。
 
 - **コレクションレベルのメトリクス**: クラスタメトリクスのサブセットで、コレクションごとに内訳を示し、個別のコレクションのパフォーマンス問題の特定や容量計画に役立ちます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-ほとんどのメトリクスはアラートをサポートしています。アラートは、時間枠内でメトリクスを条件（演算子＋しきい値）と照合し、条件が満たされたときに通知します。設定については、[組織アラートの管理](./manage-organization-alerts) および [プロジェクトアラートの管理](./manage-project-alerts) を参照してください。
+<p>ほとんどのメトリクスはアラートをサポートしています。アラートは、時間枠内でメトリクスを条件（演算子＋しきい値）と照合し、条件が満たされたときに通知します。設定については、<a href="./manage-organization-alerts">組織アラートの管理</a>および<a href="./manage-project-alerts">プロジェクトアラートの管理</a>を参照してください。</p>
 
 </Admonition>
 
@@ -59,17 +59,17 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
    </tr>
 </table>
 
-## Cluster and collection metrics\{#cluster-and-collection-metrics}
+## クラスタおよびコレクションメトリクス\{#cluster-and-collection-metrics}
 
-これらのメトリクスは、個別のクラスタ内のリソース使用量、パフォーマンス、データを説明します。**✦** のマークが付いているメトリクスは、コレクションレベルでも利用可能です。コレクションレベルのメトリクスには、コンソールのコレクション詳細ページ、[Prometheus エンドポイント](./prometheus-monitoring)、または RESTful API からアクセスできます。
+これらのメトリクスは、個別のクラスタ内のリソース、パフォーマンス、データを説明します。**✦** のマークが付いているメトリクスは、コレクションレベルでも利用可能です。コレクションレベルのメトリクスには、コンソールのコレクション詳細ページ、[Prometheus エンドポイント](./prometheus-monitoring)、または RESTful API からアクセスできます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-このセクションでは、**Availability** はプロジェクトプランとデプロイメントオプションを指します。詳細なプラン比較については、[Detailed Plan Comparison](./select-zilliz-cloud-service-plans) を参照してください。
+<p>このセクションでは、<strong>Availability</strong> はプロジェクトプランとデプロイメントオプションを指します。詳細なプラン比較については、<a href="./select-zilliz-cloud-service-plans">詳細なプラン比較</a>を参照してください。</p>
 
 </Admonition>
 
-### Pod & container resources\{#pod-and-container-resources}
+### Pod & コンテナリソース\{#pod-and-container-resources}
 
 <table>
    <tr>
@@ -82,13 +82,13 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
      <td><p>CPU Usage (core)</p></td>
      <td><p>Pod によって使用される CPU コア数。</p></td>
      <td><p>BYOC</p></td>
-     <td><p>トレンドを追跡し、持続的な増加やスパイクを調査してください。</p></td>
+     <td><p>トレンドを追跡してください。持続的な増加やスパイクを調査してください。</p></td>
    </tr>
    <tr>
      <td><p>CPU Usage Rate for 制限 (%)</p></td>
      <td><p>Pod の CPU 使用量が limit の値に対して占める割合。</p></td>
      <td><p>BYOC</p></td>
-     <td><p>上昇傾向の場合、ワークロードを最適化するか limit を増やしてください。</p></td>
+     <td><p>上昇傾向の場合は、ワークロードを最適化するか limit を増やしてください。</p></td>
    </tr>
    <tr>
      <td><p>Memory Usage (MB)</p></td>
@@ -100,19 +100,19 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
      <td><p>Memory Usage Rate for 制限 (%)</p></td>
      <td><p>Pod のメモリ使用量が limit の値に対して占める割合。</p></td>
      <td><p>BYOC</p></td>
-     <td><p>一貫して高い場合、メモリを最適化するか limit を上げてください。</p></td>
+     <td><p>一貫して高い場合は、メモリを最適化するか limit を引き上げてください。</p></td>
    </tr>
    <tr>
      <td><p>ネットワーク Inbound Flow (Mbps)</p></td>
      <td><p>Pod のネットワーク受信フロー。</p></td>
      <td><p>BYOC</p></td>
-     <td><p>輻輳に注意し、帯域幅のサイジングを検証してください。</p></td>
+     <td><p>輻輳に注意してください。帯域幅のサイジングを検証してください。</p></td>
    </tr>
    <tr>
      <td><p>ネットワーク Outbound Flow (Mbps)</p></td>
      <td><p>Pod のネットワーク送信フロー。</p></td>
      <td><p>BYOC</p></td>
-     <td><p>輻輳に注意し、帯域幅のサイジングを検証してください。</p></td>
+     <td><p>輻輳に注意してください。帯域幅のサイジングを検証してください。</p></td>
    </tr>
 </table>
 
@@ -127,13 +127,13 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
    </tr>
    <tr>
      <td><p>Query CU計算 (%)</p></td>
-     <td><p>CU の総計算容量に対する、使用された計算能力の指標。</p></td>
+     <td><p>CU の総計算容量に対する、使用された計算能力の割合。</p></td>
      <td><p>Dedicated / BYOC</p></td>
      <td><blockquote>  <p>60%: <a href="./manage-replica">レプリカのスケールアウト</a> を推奨</p></blockquote></td>
    </tr>
    <tr>
      <td><p>Query CU容量 %</p></td>
-     <td><p>CU の総容量に対する、使用された容量の指標。</p></td>
+     <td><p>CU の総容量に対する、使用された容量の割合。</p></td>
      <td><p>Dedicated / BYOC</p></td>
      <td><blockquote>  <p>80%:  <a href="./scale-query-cu">クエリ CU のスケールアップ</a> を推奨</p></blockquote></td>
    </tr>
@@ -153,7 +153,7 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
      <td><p>Storage (GB)</p></td>
      <td><p>データとインデックスによって消費される永続ストレージの総量。</p></td>
      <td><p>All</p></td>
-     <td><p>ストレージ使用量の監視のために <a href="./manage-project-alerts">アラートを設定</a> してください。</p></td>
+     <td><p>ストレージ使用量の監視のために<a href="./manage-project-alerts">アラートを設定</a>してください。</p></td>
    </tr>
 </table>
 
@@ -170,25 +170,25 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
      <td><p>QPS (Read) ✦</p></td>
      <td><p>1 秒あたりの読み取りリクエスト（search および query）の数。</p></td>
      <td><p>All</p></td>
-     <td><p>システムパフォーマンス監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
+     <td><p>システムパフォーマンスの監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>QPS (Write) ✦</p></td>
      <td><p>1 秒あたりの書き込みリクエスト（insert、bulk insert、upsert、および delete）の数。</p></td>
      <td><p>All</p></td>
-     <td><p>システムパフォーマンス監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
+     <td><p>システムパフォーマンスの監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>Search NQ per Second ✦</p></td>
      <td><p>1 秒あたりに各 search リクエストが含むクエリベクトルの数。</p></td>
      <td><p>All</p></td>
-     <td><p>システムパフォーマンス監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
+     <td><p>システムパフォーマンスの監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>Write Throughput (Entities/sec) ✦</p></td>
      <td><p>すべての書き込み操作（insert、upsert、bulk insert、および delete）を通じて、1 秒あたりに書き込まれたエンティティ数を測定します。</p></td>
      <td><p>All</p></td>
-     <td><p>システムパフォーマンス監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
+     <td><p>システムパフォーマンスの監視については <a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>Latency (Read) (ms) ✦</p></td>
@@ -206,13 +206,13 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
      <td><p>Request Failure Rate (Read) (%) ✦</p></td>
      <td><p>1 秒あたりのすべてのリクエストのうち、失敗した読み取りリクエストの割合。</p></td>
      <td><p>All</p></td>
-     <td><p>読み取りリクエストの失敗率を監視するために <a href="./manage-project-alerts">アラートを設定</a> してください。</p></td>
+     <td><p>読み取りリクエストの失敗率を監視するために<a href="./manage-project-alerts">アラートを設定</a>してください。</p></td>
    </tr>
    <tr>
      <td><p>Request Failure Rate (Write) (%) ✦</p></td>
      <td><p>1 秒あたりのすべてのリクエストのうち、失敗した書き込みリクエストの割合。</p></td>
      <td><p>All</p></td>
-     <td><p>書き込みリクエストの失敗率を監視するために <a href="./manage-project-alerts">アラートを設定</a> してください。</p></td>
+     <td><p>書き込みリクエストの失敗率を監視するために<a href="./manage-project-alerts">アラートを設定</a>してください。</p></td>
    </tr>
    <tr>
      <td><p>Slow Query Count (counts/min)</p></td>
@@ -235,7 +235,7 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
    <tr>
      <td><p>Cache Hit Rate (%)</p></td>
      <td><p>クラスタ内のすべてのクエリの平均キャッシュヒット率。計算式：クエリあたりのキャッシュヒット率 =（総スキャンデータ − コールドデータスキャン）/ 総スキャンデータ。</p></td>
-     <td><p>Dedicated (Tiered-storage) / BYOC</p><p><em>&ast;このメトリクスは、Milvus 2.6.x 互換の階層型ストレージクラスタでのみ利用可能です。このメトリクスにアクセスするには、<a href="http://support.zilliz.com">お問い合わせ</a> いただき、クラスタの Milvus バージョンをアップグレードしてください。</em></p></td>
+     <td><p>Dedicated (Tiered-storage) / BYOC</p><p><em>&ast;このメトリクスは、Milvus 2.6.x と互換性のある階層型ストレージクラスタでのみ利用可能です。このメトリクスにアクセスするには、<a href="http://support.zilliz.com">お問い合わせ</a>いただき、クラスタの Milvus バージョンをアップグレードしてください。</em></p></td>
      <td><p>クラスタのクエリパフォーマンスを特定するために追跡してください。</p></td>
    </tr>
 </table>
@@ -251,27 +251,27 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
    </tr>
    <tr>
      <td><p>Collection Count</p></td>
-     <td><p>クラスタ内に作成されたコレクションの数。</p></td>
+     <td><p>クラスタに作成されたコレクションの数。</p></td>
      <td><p>All</p></td>
-     <td><p>増加を監視し、必要に応じてプロジェクトごとの制限を適用してください。</p></td>
+     <td><p>増加を監視してください。必要に応じてプロジェクトごとの制限を適用してください。</p></td>
    </tr>
    <tr>
      <td><p>エンティティ数 ✦</p></td>
      <td><p>クラスタまたはコレクションに挿入されたエンティティの総数。単一挿入と一括挿入の両方を含みます。</p></td>
      <td><p>All</p></td>
-     <td><p>予期しない増加を調査し、ストレージとインデックスを計画してください。</p></td>
+     <td><p>予期しない増加を調査してください。ストレージとインデックスを計画してください。</p></td>
    </tr>
    <tr>
      <td><p>ロードされたエンティティ (Approx.) ✦</p></td>
      <td><p>ロードされた（アクティブに提供されている）エンティティの概算数。</p></td>
      <td><p>Dedicated / BYOC</p></td>
-     <td><p>より正確でリアルタイムの値については、コレクション概要ページの「ロードされたエンティティ」の値を参照するか、<a href="./single-vector-search">count(&ast;)</a> を使用してください。</p></td>
+     <td><p>より正確でリアルタイムの値については、コレクション概要ページの「ロードされたエンティティ」の値、または <a href="./single-vector-search">count(&ast;)</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>Number of Unloaded Collections</p></td>
      <td><p>クラスタ内のアンロードされたコレクションの数。</p></td>
      <td><p>Dedicated (Enterprise or  ビジネスクリティカル) / BYOC</p></td>
-     <td><p>重要なコレクションをロードし、メモリの余裕を確認してください。</p></td>
+     <td><p>重要なコレクションをロードしてください。メモリの余裕を確認してください。</p></td>
    </tr>
 </table>
 
@@ -304,7 +304,7 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
    </tr>
 </table>
 
-## Related topics\{#related-topics}
+## 関連トピック\{#related-topics}
 
 - [クラスタメトリクスチャートの表示](./view-cluster-metric-charts)
 

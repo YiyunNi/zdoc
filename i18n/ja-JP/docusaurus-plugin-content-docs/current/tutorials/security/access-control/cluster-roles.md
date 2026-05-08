@@ -29,17 +29,17 @@ import Procedures from '@site/src/components/Procedures';
 
 クラスターロールは、ユーザーがクラスター内で持つ特権を定義します。より具体的には、クラスターロールはクラスターユーザーのクラスター、データベース、およびコレクションレベルでの特権を制御します。
 
-Zilliz Cloud では、組み込みロールとカスタムロールの2種類のクラスターロールが提供されています。
+Zilliz Cloud は、組み込みロールとカスタムロールの2種類のクラスターロールを提供します。
 
 クラスターロールを管理するには、**組織オーナー**、**プロジェクト管理者**、または **Cluster_Admin** 特権を持つロールである必要があります。
 
 ## 組み込みクラスターロール\{#built-in-cluster-roles}
 
-Zilliz Cloud では、ベクトルデータベースシステムで一般的に必要とされる異なる特権を持つ3つの組み込みクラスターロールが提供されています。組み込みロールは編集または削除できません。
+Zilliz Cloud は、ベクトルデータベースシステムで一般的に必要とされる異なる特権を持つ3つの組み込みクラスターロールを提供します。組み込みロールは編集または削除できません。
 
 - **Admin**: クラスター管理者ロールは、クラスターとそのすべてのリソース（データベース、コレクション）を管理する完全な特権を持ちます。
 
-    以下の表に、このロールに対応するUIおよびAPIの特権を示します。
+    以下の表に、このロールの対応するUIおよびAPI特権を示します。
 
     <table>
        <tr>
@@ -47,14 +47,14 @@ Zilliz Cloud では、ベクトルデータベースシステムで一般的に�
          <th><p><strong>データプレーン RESTful API (V2) 特権</strong></p></th>
        </tr>
        <tr>
-         <td><ul><li><p>クラスター属性（CUサイズ、レプリカ数、自動スケーリング）の管理</p></li><li><p>コレクションとインデックスの管理</p></li><li><p>クラスターメトリクスの表示</p></li><li><p>クラスターユーザーとロールの管理</p></li><li><p>クラスターバックアップの管理</p></li></ul></td>
+         <td><ul><li><p>クラスター プロパティの管理（CU サイズ、レプリカ数、自動スケーリング）</p></li><li><p>コレクションとインデックスの管理</p></li><li><p>クラスター メトリクスの表示</p></li><li><p>クラスター ユーザーとロールの管理</p></li><li><p>クラスター バックアップの管理</p></li></ul></td>
          <td><ul><li><p><a href="/reference/restful/collection-operations-v2">すべてのコレクション操作</a></p></li><li><p><a href="/reference/restful/index-operations-v2">すべてのインデックス操作</a></p></li><li><p><a href="/reference/restful/partition-operations-v2">すべてのパーティション操作</a></p></li><li><p><a href="/reference/restful/vector-operations-v2">すべてのベクトル操作</a></p></li><li><p><a href="/reference/restful/alias-operations-v2">すべてのエイリアス操作</a></p></li><li><p><a href="/reference/restful/role-operations-v2">すべてのロール操作</a></p></li><li><p><a href="/reference/restful/user-operations-v2">すべてのユーザー操作</a></p></li></ul></td>
        </tr>
     </table>
 
 - **読み書き**: クラスター読み書きロールは、クラスターを表示し、そのすべてのリソース（データベース、コレクション）を管理する特権を持ちます。
 
-    以下の表に、このロールに対応するUIおよびAPIの特権を示します。
+    以下の表に、このロールの対応するUIおよびAPI特権を示します。
 
     <table>
        <tr>
@@ -62,14 +62,14 @@ Zilliz Cloud では、ベクトルデータベースシステムで一般的に�
          <th><p><strong>データプレーン RESTful API (V2) 特権</strong></p></th>
        </tr>
        <tr>
-         <td><ul><li><p>コレクションとインデックスの管理</p></li><li><p>クラスターメトリクスの表示</p></li><li><p>クラスターユーザーとロールの表示</p></li><li><p>クラスターバックアップの表示</p></li></ul></td>
+         <td><ul><li><p>コレクションとインデックスの管理</p></li><li><p>クラスター メトリクスの表示</p></li><li><p>クラスター ユーザーとロールの表示</p></li><li><p>クラスター バックアップの表示</p></li></ul></td>
          <td><ul><li><p><a href="/reference/restful/collection-operations-v2">すべてのコレクション操作</a></p></li><li><p><a href="/reference/restful/index-operations-v2">すべてのインデックス操作</a></p></li><li><p><a href="/reference/restful/partition-operations-v2">すべてのパーティション操作</a></p></li><li><p><a href="/reference/restful/vector-operations-v2">すべてのベクトル操作</a></p></li><li><p><a href="/reference/restful/alias-operations-v2">すべてのエイリアス操作</a></p></li></ul></td>
        </tr>
     </table>
 
 - **読み取り専用**: クラスター読み取り専用ロールは、クラスターとそのリソース（データベース、コレクション）を表示する特権を持ちます。
 
-    以下の表に、このロールに対応するUIおよびAPIの特権を示します。
+    以下の表に、このロールの対応するUIおよびAPI特権を示します。
 
     <table>
        <tr>
@@ -77,22 +77,21 @@ Zilliz Cloud では、ベクトルデータベースシステムで一般的に�
          <th><p><strong>データプレーン RESTful API (V2) 特権</strong></p></th>
        </tr>
        <tr>
-         <td><ul><li><p>コレクションとインデックスの表示</p></li><li><p>クラスターメトリクスの表示</p></li><li><p>クラスターユーザーとロールの表示</p></li><li><p>クラスターバックアップの表示</p></li></ul></td>
+         <td><ul><li><p>コレクションとインデックスの表示</p></li><li><p>クラスター メトリクスの表示</p></li><li><p>クラスター ユーザーとロールの表示</p></li><li><p>クラスター バックアップの表示</p></li></ul></td>
          <td><ul><li><p>一部のコレクション操作</p><ul><li><p><a href="/reference/restful/describe-collection-v2">Describe Collection</a></p></li><li><p><a href="/reference/restful/get-collection-load-state-v2">Get Collection Load State</a></p></li><li><p><a href="/reference/restful/get-collection-stats-v2">Get Collection Stats</a></p></li><li><p><a href="/reference/restful/has-collection-v2">Has Collection</a></p></li><li><p><a href="/reference/restful/list-collections-v2">List Collections</a></p></li></ul></li><li><p>一部のインデックス操作</p><ul><li><p><a href="/reference/restful/describe-index-v2">Describe Index</a></p></li><li><p><a href="/reference/restful/list-indexes-v2">List Indexes</a></p></li></ul></li><li><p>一部のパーティション操作</p><ul><li><p><a href="/reference/restful/get-partition-statistics-v2">Get Partition Statistics</a></p></li><li><p><a href="/reference/restful/has-partition-v2">Has Partition</a></p></li><li><p><a href="/reference/restful/list-partitions-v2">List パーティション</a></p></li></ul></li><li><p>一部のエイリアス操作</p><ul><li><p><a href="/reference/restful/describe-alias-v2">Describe エイリアス</a></p></li><li><p><a href="/reference/restful/list-aliases-v2">List エイリアスes</a></p></li></ul></li></ul></td>
        </tr>
     </table>
 
 ## カスタムクラスターロール\{#custom-cluster-roles}
 
-カスタムロールは、組み込みロールが提供する定義済みのアクセスとは異なり、クラスター、データベース、およびコレクションレベルで調整された特権を付与する柔軟性を提供します。
+カスタムロールは、組み込みロールが事前定義されたアクセスを提供するのに対し、クラスター、データベース、およびコレクションレベルで調整された特権を付与する柔軟性を提供します。
 
 コレクションレベルのアクセス制御には、カスタムロールの作成を推奨します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は Dedicated クラスターでのみ利用可能です。
-
-現在、Zilliz Cloud では、Webコンソール上で組み込み特権グループを使用したカスタムロールの作成のみをサポートしています。特定の特権またはカスタム特権グループを使用したカスタムロールを作成する必要がある場合は、まず [サポートチケットを作成](http://support.zilliz.com) して、この機能を有効化してください。機能が有効化されたら、SDK を使用して [カスタム特権グループを作成](./cluster-privileges#custom-privilege-groups) できます。
+<p>この機能は Dedicated クラスター専用です。</p>
+<p>現在、Zilliz Cloud は Web コンソール上で組み込み特権グループを持つカスタムロールの作成のみをサポートしています。特定の特権またはカスタム特権グループを持つカスタムロールを作成する必要がある場合は、まず <a href="http://support.zilliz.com">サポートチケットを作成</a> して、この機能を有効化していただく必要があります。機能が有効化されたら、SDK を使用して <a href="./cluster-privileges#custom-privilege-groups">カスタム特権グループを作成</a> できます。</p>
 
 </Admonition>
 
@@ -108,7 +107,7 @@ Zilliz Cloud では、ベクトルデータベースシステムで一般的に�
 
 1. コレクション、データベース、およびクラスターレベルで特権を設定します。組み込み特権グループを選択し、対象のリソースを選択します。
 
-    Zilliz Cloud では、合計9つの組み込み特権グループが提供されています。
+    Zilliz Cloud は合計9つの組み込み特権グループを提供します：
 
     - コレクション特権グループ: Admin (`COLL_ADMIN`)、読み書き (`COLL_RW`)、読み取り専用 (`COLL_RO`)
 
@@ -118,7 +117,7 @@ Zilliz Cloud では、ベクトルデータベースシステムで一般的に�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    3つのレベルの組み込み特権グループにはカスケード関係はありません。インスタンスレベルで組み込み特権グループを設定しても、そのインスタンス配下のすべてのデータベースとコレクションに対する権限が自動的に設定されるわけではありません。データベースおよびコレクションレベルの特権は手動で設定する必要があります。
+    <p>3つのレベルの組み込み特権グループにはカスケード関係はありません。インスタンスレベルで組み込み特権グループを設定しても、そのインスタンス配下のすべてのデータベースとコレクションに対する権限が自動的に設定されるわけではありません。データベースおよびコレクションレベルの特権は手動で設定する必要があります。</p>
 
     </Admonition>
 
@@ -132,7 +131,7 @@ Zilliz Cloud では、ベクトルデータベースシステムで一般的に�
 
 ## ユーザーへのロール付与\{#grant-a-role-to-a-user}
 
-クラスターロールが作成されたら、ユーザーに付与できます。ユーザー タブに移動し、[新しいクラスターユーザーの作成](./cluster-users#create-a-cluster-user) 時または [既存のクラスターユーザーのロール編集](./cluster-users#edit-the-role-of-a-cluster-user) 時にロールを付与します。
+クラスターロールが作成されたら、ユーザーに付与できます。ユーザー タブに移動し、[新しいクラスター ユーザーの作成](./cluster-users#create-a-cluster-user) 時または [既存のクラスター ユーザーのロール編集](./cluster-users#edit-the-role-of-a-cluster-user) 時にロールを付与します。
 
 ![grant-role-to-user](https://zdoc-images.s3.us-west-2.amazonaws.com/grant-role-to-user.png "grant-role-to-user")
 
@@ -144,7 +143,7 @@ Zilliz Cloud では、ベクトルデータベースシステムで一般的に�
 
 ## カスタムクラスターロールの編集\{#edit-a-custom-cluster-role}
 
-カスタムクラスターロールの特権を調整できます。調整内容は、このロールが付与されているすべてのユーザーに適用されます。
+カスタムクラスターロールの特権を調整できます。この調整は、このロールが付与されているすべてのユーザーに適用されます。
 
 ![edit-custom-role](https://zdoc-images.s3.us-west-2.amazonaws.com/edit-custom-role.png "edit-custom-role")
 

@@ -5,7 +5,7 @@ sidebar_key: schema-explained
 sidebar_label: "概要"
 beta: FALSE
 notebook: FALSE
-description: "スキーマはコレクションのデータ構造を定義します。コレクションを作成する前に、そのスキーマの設計を行う必要があります。このページでは、コレクションのスキーマを理解し、独自のスキーマ設計例を作成するのに役立ちます。 | BYOC"
+description: "スキーマはコレクションのデータ構造を定義します。コレクションを作成する前に、そのスキーマの設計を行う必要があります。このページでは、コレクションのスキーマを理解し、独自のスキーマの設計例を作成するのに役立ちます。 | BYOC"
 type: origin
 token: Vs4YwNnvzitoQ8kunlGcWMJInbf
 sidebar_position: 1
@@ -189,7 +189,7 @@ export schema='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-すべてのケースで `autoId` を使用することを推奨します。ただし、プライマリキーを手動で設定することが有益な場合を除きます。
+<p>手動での主キー設定にメリットがある場合を除き、すべてのケースで <code>autoId</code> の使用を推奨します。</p>
 
 </Admonition>
 

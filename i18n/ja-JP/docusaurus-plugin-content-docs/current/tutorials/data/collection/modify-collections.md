@@ -150,11 +150,11 @@ curl --request POST \
 
 ## コレクションプロパティの設定\{#set-collection-properties}
 
-コレクション作成後に、コレクションレベルのプロパティを変更できます。
+コレクション作成後、コレクションレベルのプロパティを変更できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-このセクションに記載されているすべてのプロパティは、マネージドコレクションにのみ適用されます。
+<p>このセクションに記載されているすべてのプロパティは、マネージドコレクションにのみ適用されます。</p>
 
 </Admonition>
 
@@ -167,37 +167,37 @@ curl --request POST \
    </tr>
    <tr>
      <td><p><code>collection.ttl.seconds</code></p></td>
-     <td><p>コレクションのデータを特定の期間後に削除する必要がある場合は、Time-To-Live（TTL）を秒単位で設定することを検討してください。TTLがタイムアウトすると、Zilliz Cloudはコレクションからすべてのエンティティを削除します。</p><p>削除は非同期で行われるため、削除が完了する前でも検索やクエリは引き続き実行可能です。</p><p>詳細については、<a href="./set-collection-ttl#set-collection-level-ttl">コレクションレベルTTLの設定</a>を参照してください。</p></td>
+     <td><p>コレクションのデータを特定の期間後に削除する必要がある場合は、秒単位で Time-To-Live (TTL) を設定することを検討してください。TTL が期限切れになると、Zilliz Cloud はコレクションからすべてのエンティティを削除します。</p><p>削除は非同期で行われるため、削除が完了する前でも検索やクエリを実行可能です。</p><p>詳細については、<a href="./set-collection-ttl#set-collection-level-ttl">コレクションレベルの TTL の設定</a>をご覧ください。</p></td>
    </tr>
    <tr>
      <td><p><code>ttl_field</code></p></td>
-     <td><p>各エンティティの絶対有効期限タイムスタンプ（<strong>エンティティレベルTTL</strong>）を格納する<code>TIMESTAMPTZ</code>フィールドの名前。各エンティティは、ウォールクロック時間がこのフィールドに格納された値に達した時点で正確に期限切れとなります。フィールド内の<code>NULL</code>は、エンティティが期限切れにならないことを意味します。<code>collection.ttl.seconds</code>とは相互に排他的です。</p><p>詳細については、<a href="./set-collection-ttl#set-entity-level-ttl-or-private-preview">エンティティレベルTTLの設定</a>を参照してください。</p></td>
+     <td><p>各エンティティの絶対有効期限タイムスタンプ（<strong>エンティティレベルの TTL</strong>）を格納する <code>TIMESTAMPTZ</code> フィールドの名前です。各エンティティは、壁時計時間がこのフィールドに格納された値に達した時点で正確に期限切れになります。フィールドが <code>NULL</code> の場合、そのエンティティは決して期限切れになりません。<code>collection.ttl.seconds</code> と相互に排他的です。</p><p>詳細については、<a href="./set-collection-ttl#set-entity-level-ttl-or-private-preview">エンティティレベルの TTL の設定</a>をご覧ください。</p></td>
    </tr>
    <tr>
      <td><p><code>mmap.enabled</code></p></td>
-     <td><p>メモリマッピング（Mmap）は、ディスク上の大きなファイルへの直接メモリアクセスを可能にし、Zilliz Cloudがインデックスとデータをメモリとハードドライブの両方に保存できるようにします。このアプローチにより、アクセス頻度に基づいてデータ配置ポリシーを最適化し、検索パフォーマンスに影響を与えることなくコレクションのストレージ容量を拡張できます。</p><p>Zilliz Cloudは、クラスタに対して<a href="./use-mmap#global-mmap-strategy">グローバルmmap設定</a>を実装しています。特定のフィールドまたはそのインデックスで設定を変更できます。</p><p>詳細については、Use mmapを参照してください。</p></td>
+     <td><p>メモリマッピング (Mmap) により、ディスク上の大容量ファイルへの直接メモリアクセスが可能になり、Zilliz Cloud はインデックスとデータをメモリとハードドライブの両方に保存できます。このアプローチにより、アクセス頻度に基づいてデータ配置ポリシーを最適化し、検索パフォーマンスに影響を与えることなくコレクションのストレージ容量を拡張できます。</p><p>Zilliz Cloud は、クラスターに対して<a href="./use-mmap#global-mmap-strategy">グローバル mmap 設定</a>を実装しています。特定のフィールドまたはそのインデックスの設定を変更できます。</p><p>詳細については、「mmap の使用」をご覧ください。</p></td>
    </tr>
    <tr>
      <td><p><code>partitionkey.isolation</code></p></td>
-     <td><p>パーティションキー分離を有効にすると、Zilliz Cloudはパーティションキー値に基づいてエンティティをグループ化し、これらのグループごとに個別のインデックスを作成します。検索リクエストを受信すると、Zilliz Cloudはフィルタリング条件で指定されたパーティションキー値に基づいてインデックスを特定し、検索範囲をそのインデックスに含まれるエンティティ内に制限することで、検索時に無関係なエンティティをスキャンすることを回避し、検索パフォーマンスを大幅に向上させます。</p><p>詳細については、<a href="./use-partition-key#use-partition-key-isolation">パーティションキー分離の使用</a>を参照してください。</p></td>
+     <td><p>パーティションキー分離を有効にすると、Zilliz Cloud はパーティションキーの値に基づいてエンティティをグループ化し、これらの各グループに対して個別のインデックスを作成します。検索リクエストを受信すると、Zilliz Cloud はフィルタリング条件で指定されたパーティションキーの値に基づいてインデックスを特定し、検索範囲をそのインデックスに含まれるエンティティ内に制限します。これにより、検索中に無関係なエンティティのスキャンを回避し、検索パフォーマンスを大幅に向上させます。</p><p>詳細については、<a href="./use-partition-key#use-partition-key-isolation">パーティションキー分離の使用</a>をご覧ください。</p></td>
    </tr>
    <tr>
      <td><p><code>dynamicfield.enabled</code></p></td>
-     <td><p>有効化せずに作成されたコレクションに対して、ダイナミックフィールドを有効にします。有効にすると、元のスキーマで定義されていないフィールドを持つエンティティを挿入できます。詳細については、<a href="./enable-dynamic-field">ダイナミックフィールド</a>を参照してください。</p></td>
+     <td><p>有効化せずに作成されたコレクションに対して動的フィールドを有効にします。一度有効にすると、元のスキーマで定義されていないフィールドを持つエンティティを挿入できるようになります。詳細については、<a href="./enable-dynamic-field">動的フィールド</a>をご覧ください。</p></td>
    </tr>
    <tr>
      <td><p><code>allow_insert_auto_id</code></p></td>
-     <td><p>コレクションでAutoIDが有効になっている場合に、ユーザーが提供した主キー値をコレクションが受け入れるかどうかを指定します。</p><ul><li><p><strong>"true"</strong>に設定した場合: 挿入、アップサート、一括インポートは、ユーザーが提供した主キーが存在する場合はそれを使用し、それ以外の場合は主キー値が自動生成されます。</p></li><li><p><strong>"false"</strong>に設定した場合: ユーザーが提供した主キー値は拒否または無視され、主キー値は常に自動生成されます。デフォルトは<strong>"false"</strong>です。</p></li></ul></td>
+     <td><p>コレクションに対して AutoID が有効になっている場合に、ユーザー提供の主キー値を受け入れるかどうかを指定します。</p><ul><li><p><strong>"true"</strong> に設定した場合：挿入、アップサート、およびバルクインポートでは、ユーザー提供の主キーが存在すればそれを使用し、存在しない場合は主キー値が自動生成されます。</p></li><li><p><strong>"false"</strong> に設定した場合：ユーザー提供の主キー値は拒否または無視され、主キー値は常に自動生成されます。デフォルトは <strong>"false"</strong> です。</p></li></ul></td>
    </tr>
    <tr>
      <td><p><code>timezone</code></p></td>
-     <td><p>時間に依存する操作、特に<code>TIMESTAMPTZ</code>フィールドを処理する際の、このコレクションのデフォルトタイムゾーンを指定します。タイムスタンプは内部的にUTCで保存され、Milvusはこの設定に従って表示と比較のために値を変換します。設定されている場合、コレクションのタイムゾーンはデータベースのデフォルトタイムゾーンを上書きします。クエリのタイムゾーンパラメータは、両方を一時的に上書きできます。値は有効な<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">IANAタイムゾーン識別子</a>である必要があります（例: <strong>Asia/Shanghai</strong>、<strong>America/Chicago</strong>、<strong>UTC</strong>）。<code>TIMESTAMPTZ</code>フィールドの使用方法の詳細については、<a href="./use-timestamptz-field">TIMESTAMPTZフィールド</a>を参照してください。</p></td>
+     <td><p>時間依存の操作、特に <code>TIMESTAMPTZ</code> フィールドを処理する際に、このコレクションのデフォルトのタイムゾーンを指定します。タイムスタンプは内部的に UTC で保存され、Milvus はこの設定に従って表示と比較のために値を変換します。設定されている場合、コレクションのタイムゾーンはデータベースのデフォルトのタイムゾーンを上書きします。また、クエリのタイムゾーンパラメータは一時的に両方を上書きできます。値は有効な <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">IANA タイムゾーン識別子</a>（例：<strong>Asia/Shanghai</strong>、<strong>America/Chicago</strong>、または <strong>UTC</strong>）である必要があります。<code>TIMESTAMPTZ</code> フィールドの使用方法の詳細については、<a href="./use-timestamptz-field">TIMESTAMPTZ フィールド</a>をご覧ください。</p></td>
    </tr>
 </table>
 
-### 例1: コレクションレベルTTLの設定\{#example-1-set-collection-level-ttl}
+### 例 1: コレクションレベルの TTL の設定\{#example-1-set-collection-level-ttl}
 
-以下のコードスニペットは、コレクションTTLの設定方法を示しています。
+以下のコードスニペットは、コレクションの TTL を設定する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

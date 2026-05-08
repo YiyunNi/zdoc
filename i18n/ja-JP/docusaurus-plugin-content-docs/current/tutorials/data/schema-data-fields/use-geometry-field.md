@@ -25,27 +25,27 @@ import TabItem from '@theme/TabItem';
 
 # ジオメトリ フィールド
 
-地理情報システム（GIS）、マッピングツール、位置情報サービスなどのアプリケーションを構築する際、ジオメトリ データを保存・クエリする必要がよくあります。Milvus の `GEOMETRY` データ型は、柔軟なジオメトリ データをネイティブに保存・クエリする方法を提供することで、この課題を解決します。
+地理情報システム（GIS）、マッピングツール、または位置情報サービスなどのアプリケーションを構築する際、ジオメトリ データを保存およびクエリする必要がよくあります。Milvus の `GEOMETRY` データ型は、柔軟なジオメトリ データをネイティブに保存およびクエリする方法を提供することで、この課題を解決します。
 
-ベクトル類似性と空間制約を組み合わせる必要がある場合に GEOMETRY フィールドを使用します。例えば：
+ベクトル類似性と空間的制約を組み合わせる必要がある場合に GEOMETRY フィールドを使用します。例えば：
 
-- 位置情報サービス（LBS）：「この街区 **within** 類似したPOIを見つける」
+- 位置情報サービス（LBS）：「この街区**内**にある類似のPOIを検索」
 
-- マルチモーダル検索：「この地点から **1km以内** の類似した写真を取得する」
+- マルチモーダル検索：「この地点から**1km以内**にある類似の写真を取得」
 
-- 地図・物流：「領域 **inside** の資産」または「経路 **intersecting** するルート」
+- 地図・物流：「領域**内**の資産」または「経路と**交差**するパス」
 
 <Admonition type="info" icon="📘" title="Notes">
 
-GEOMETRY フィールドを使用するには、SDK を最新バージョンにアップグレードしてください。
+<p>GEOMETRY フィールドを使用するには、SDK を最新バージョンにアップグレードしてください。</p>
 
 </Admonition>
 
 ## GEOMETRY フィールドとは？\{#what-is-a-geometry-field}
 
-GEOMETRY フィールドは、Zilliz Cloud でジオメトリ データを保存するためのスキーマ定義データ型（`データType.GEOMETRY`）です。ジオメトリ フィールドを使用する際、[Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 形式を使用してデータを操作します。WKT は、データの挿入とクエリの両方に使用される人間が読める表現形式です。内部的には、Zilliz Cloud は WKT を [Well-Known Binary (WKB)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary) に変換して効率的に保存・処理しますが、WKB を直接扱う必要はありません。
+GEOMETRY フィールドは、Zilliz Cloud でジオメトリ データを保存するためのスキーマ定義データ型（`データType.GEOMETRY`）です。ジオメトリ フィールドを使用する際、データの挿入とクエリの両方に使用される人間が読める表現形式である [Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 形式を使用してデータを操作します。内部的には、Zilliz Cloud は WKT を [Well-Known Binary (WKB)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary) に変換して効率的に保存および処理しますが、WKB を直接扱う必要はありません。
 
-`GEOMETRY` データ型は以下のジオメトリ オブジェクトをサポートします：
+`GEOMETRY` データ型は以下のジオメトリ オブジェクトをサポートしています：
 
 - **POINT**：`POINT (x y)`；例：`POINT (13.403683 52.520711)`（`x` = 経度、`y` = 緯度）
 
@@ -63,11 +63,11 @@ GEOMETRY フィールドは、Zilliz Cloud でジオメトリ データを保存
 
 ## 基本操作\{#basic-operations}
 
-`GEOMETRY` フィールドを使用するワークフローは、コレクションスキーマでの定義、ジオメトリ データの挿入、特定のフィルター式を使用したデータのクエリを含みます。
+`GEOMETRY` フィールドを使用するワークフローは、コレクション スキーマでフィールドを定義し、ジオメトリ データを挿入し、特定のフィルタ式を使用してデータをクエリすることを含みます。
 
 ### ステップ 1：GEOMETRY フィールドを定義する\{#step-1-define-a-geometry-field}
 
-`GEOMETRY` フィールドを使用するには、コレクション作成時にコレクションスキーマで明示的に定義します。以下の例は、`データType.GEOMETRY` 型の `geo` フィールドを持つコレクションの作成方法を示しています。
+`GEOMETRY` フィールドを使用するには、コレクションの作成時にコレクション スキーマで明示的に定義します。以下の例は、`データType.GEOMETRY` 型の `geo` フィールドを持つコレクションを作成する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -226,7 +226,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この例では、コレクションスキーマで定義された `GEOMETRY` フィールドは、`nullable=True` を使用して null 値を許容しています。詳細については、[NULL許容 & デフォルト](./nullable-fields) を参照してください。
+<p>この例では、コレクションスキーマで定義された <code>GEOMETRY</code> フィールドは、<code>nullable=True</code> でNULL許容となっています。詳細については、<a href="./nullable-fields">NULL許容 & デフォルト</a> を参照してください。</p>
 
 </Admonition>
 

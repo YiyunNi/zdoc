@@ -5,7 +5,7 @@ sidebar_key: tune-recall-rate
 sidebar_label: "リコール率を調整"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、検索リコールとパフォーマンスのバランスを取るために `level` という検索パラメータを導入しています。また、現在の検索の推定リコール率をユーザーに提供するための `enablerecallcalculation` という検索パラメータも提供しています。これら2つのパラメータを組み合わせて、ベクトル検索のリコール率を調整できます。 | BYOC"
+description: "Zilliz Cloud では、検索リコールとパフォーマンスのバランスを取るために `level` という検索パラメータを導入しています。また、現在の検索の推定リコール率をユーザーに提供する `enablerecallcalculation` という検索パラメータも用意されています。これら2つのパラメータを組み合わせて、ベクトル検索のリコール率を調整できます。 | BYOC"
 type: origin
 token: Fz9swr5WwixkH8kKHircWCejnye
 sidebar_position: 2
@@ -13,12 +13,12 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - コレクション
-  - データ
-  - ベクトル検索
+  - collection
+  - data
+  - vector search
   - ann
-  - リコール率
-  - リコール率の調整
+  - recall rate
+  - tune recall rate
 
 ---
 
@@ -27,17 +27,17 @@ import Admonition from '@theme/Admonition';
 
 # リコール率の調整
 
-Zilliz Cloud では、検索のリコールとパフォーマンスのバランスを取るために、検索パラメータ `level` を導入しています。また、現在の検索の推定リコール率をユーザーに提供するための検索パラメータ `enable_recall_calculation` も提供しています。これら2つのパラメータを組み合わせて、ベクトル検索のリコール率を調整できます。
+Zilliz Cloud では、検索のリコールとパフォーマンスのバランスを取るために、検索パラメータ `level` を導入しています。また、現在の検索の推定リコール率をユーザーに提供するための検索パラメータ `enable_recall_calculation` も用意されています。これら2つのパラメータを組み合わせて、ベクトル検索のリコール率を調整できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-これは、基本的なベクトル検索、フィルタリング検索、範囲検索、グループ化検索、ハイブリッド検索、および検索イテレータを含むすべての検索に適用されます。
+<p>これは、基本的なベクトル検索、フィルタリング検索、範囲検索、グループ化検索、ハイブリッド検索、および検索イテレータを含むすべての検索に適用されます。</p>
 
 </Admonition>
 
 ## 概要\{#overview}
 
-Zilliz Cloud でのリコール率は、通常、検索によって正常に取得された関連結果の割合を指します。これは、コレクションからすべての関連アイテムを回復するシステムの能力を測定します。
+Zilliz Cloud でのリコール率は、通常、検索によって正常に取得された関連結果の割合を指します。これは、コレクションからすべての関連アイテムを回収するシステムの能力を測定するものです。
 
 ![OdMnbeHYOoAEqKxNEEnc9SwNnmf](https://zdoc-images.s3.us-west-2.amazonaws.com/odmnbehyooaeqkxneenc9swnnmf.png "OdMnbeHYOoAEqKxNEEnc9SwNnmf")
 
@@ -65,19 +65,19 @@ res = client.search(
 )
 ```
 
-`level` パラメータの範囲は `1` から `10` までで、デフォルト値は `1` です。デフォルト値では再現率が 90% となり、これはほとんどのユースケースで十分です。
+`level` パラメータは `1` から `10` の範囲で設定でき、デフォルト値は `1` です。このデフォルト値ではリコール率が 90% となり、ほとんどのユースケースで十分です。
 
-高い再現率（**99%** 以上）が必要なシナリオでは、`level` パラメータを `6` から `10` の整数に設定してみてください。検索効率が問題にならない場合は、このパラメータを `10` に設定して、最も正確な結果を得ることができます。
+リコール率を高くする必要がある場合（**99%** 以上）、`level` パラメータを `6` から `10` の間の整数に設定してみてください。検索効率を考慮しないのであれば、このパラメータを `10` に設定することで最も精度の高い結果を得られます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-最上位の設定でも十分でない場合は、[Zilliz Cloud サポート](https://zilliz.com/contact-sales) にお問い合わせください。
+<p>最上位レベルの設定でも要件を満たせない場合は、<a href="https://zilliz.com/contact-sales">Zilliz Cloud サポート</a>までお問い合わせください。</p>
 
 </Admonition>
 
-## 再現率の調整\{#tune-recall-rate}
+## リコール率の調整\{#tune-recall-rate}
 
-Zilliz Cloud では、調整プロセスを容易にするために、`enable_recall_calculation` という別の検索パラメータも導入しています。このパラメータを `True` に設定すると、Zilliz Cloud は現在の検索の再現率を推定し、その推定値を検索結果とともに含めることを示します。
+Zilliz Cloud では、調整プロセスを支援するために `enable_recall_calculation` という別の検索パラメータも導入されています。このパラメータを `True` に設定すると、Zilliz Cloud は現在の検索に対するリコール率を推定し、その推定値を検索結果とともに返します。
 
 ```python
 query_vector = [0.3580376395471989, ..., 0.9029438446296592],
@@ -102,23 +102,21 @@ res = client.search(
 # data: [...], recalls: [0.98]
 ```
 
-推定プロセス中、Zilliz Cloud は以下を実行します。
+推定プロセス中に、Zilliz Cloud は以下の処理を実行します。
 
-1. `level` パラメータをユーザー定義の値に設定して検索を行い、
-
+1. ユーザーが定義した値に設定された `level` パラメータを使用して検索を実行し、
 1. 内部の高精度モードで別の検索を実行します。
+1. 2 番目の検索結果を正解（ground truth）として使用し、リコール率を推定します。
 
-1. 2回目の検索を正解（ground truth）として使用し、リコール率を推定します。
-
-`enable_recall_calculation` を `True` に設定している間、`level` パラメータの値を調整して複数のリコール率を取得できます。これらの推定値と各検索の所要時間を考慮することで、適切なレベル設定をおおまかに推定できます。
+`enable_recall_calculation` を `True` に設定すると、`level` パラメータの値を調整して複数のリコール率を取得できます。これらの推定値と各検索の所要時間を考慮することで、適切な level 設定を概算できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`enable_recall_calculation` を有効にすると検索パフォーマンスに影響を与える可能性があるため、本番環境では推奨されません。
+<p><code>enable_recall_calculation</code> を有効にすると検索パフォーマンスに影響を与える可能性があるため、本番環境での使用は推奨されません。</p>
 
 </Admonition>
 
 ## 制限\{#limits}
 
-現在、この機能は Zilliz Cloud クラスターの基本ベクトル検索、フィルタリング検索、および範囲検索でのみ利用可能です。
+現在、この機能は Zilliz Cloud クラスターにおける基本的なベクトル検索、フィルター検索、および範囲検索でのみ利用可能です。
 

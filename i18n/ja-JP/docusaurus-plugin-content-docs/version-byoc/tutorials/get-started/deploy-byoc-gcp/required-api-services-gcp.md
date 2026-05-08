@@ -5,7 +5,7 @@ sidebar_key: required-api-services-gcp
 sidebar_label: "必要な GCP API サービス"
 beta: CONTACT SALES
 notebook: FALSE
-description: "このページでは、Zilliz Cloud Terraform Provider を使用して GCP リソースを作成するために必要な Google Cloud Platform（GCP）API サービスを一覧表示し、それらを有効にするいくつかの方法を提供します。 | BYOC"
+description: "このページでは、Zilliz Cloud Terraform Provider を使用して GCP リソースを作成するために必要な Google Cloud Platform（GCP）API サービスを一覧表示し、それらを有効化するいくつかの方法を提供します。 | BYOC"
 type: origin
 token: WOQHwAlG0ibUgQkM18PcArMWnOc
 sidebar_position: 6
@@ -30,7 +30,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC は現在 **一般提供** されています。アクセスおよび実装の詳細については、[Zilliz Cloud 営業](https://zilliz.com/contact-sales) までお問い合わせください。
+<p>Zilliz BYOC は現在<strong>一般提供</strong>されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud セールス</a>までお問い合わせください。</p>
 
 </Admonition>
 
@@ -47,7 +47,7 @@ Zilliz BYOC は現在 **一般提供** されています。アクセスおよ�
    </tr>
    <tr>
      <td><p><a href="http://container.googleapis.com">container.googleapis.com</a></p></td>
-     <td><p>GKE クラスター管理</p></td>
+     <td><p>GKE クラスタ管理</p></td>
    </tr>
    <tr>
      <td><p><a href="http://storage.googleapis.com">storage.googleapis.com</a></p></td>
@@ -84,9 +84,10 @@ gcloud services enable \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- 上記のコマンドを実行する前に、これらのサービスを有効化するための十分な権限があることを確認してください。権限がない場合は、まず GCP プロジェクトのセキュリティ管理者に確認してください。
-
-- 上記のコマンド内の `PROJECT_ID` は、お使いの GCP プロジェクト ID に置き換える必要があります。
+<ul>
+<li><p>上記のコマンドを実行する前に、これらのサービスを有効化するための十分な権限があることを確認してください。権限がない場合は、まず GCP プロジェクトのセキュリティ管理者に確認してください。</p></li>
+<li><p>上記のコマンドの <code>PROJECT_ID</code> は、お使いの GCP プロジェクト ID に置き換える必要があります。</p></li>
+</ul>
 
 </Admonition>
 
@@ -96,7 +97,7 @@ gcloud services enable \
 
 ### GCP コンソールでの確認\{#on-the-gcp-console}
 
-1. [API & Services ダッシュボード](https://console.cloud.google.com/apis/dashboard) にアクセスします。
+1. [API とサービスのダッシュボード](https://console.cloud.google.com/apis/dashboard) にアクセスします。
 
 1. プロジェクトを選択します。
 
@@ -110,7 +111,7 @@ gcloud services list --enabled --project=PROJECT_ID
 
 <Admonition type="info" icon="📘" title="Notes">
 
-上記のコマンド内の `PROJECT_ID` は、お使いの GCP プロジェクト ID に置き換える必要があります。
+<p>上記のコマンドの <code>PROJECT_ID</code> を、ご自身の GCP プロジェクト ID に置き換える必要があります。</p>
 
 </Admonition>
 

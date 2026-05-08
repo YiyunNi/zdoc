@@ -489,13 +489,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## データベースを使用する\{#use-database}
+## データベースの使用\{#use-database}
 
-Zilliz Cloud から切断することなく、データベースを切り替えることができます。
+Zilliz Cloud から切断することなく、あるデータベースから別のデータベースに切り替えることができます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-RESTful API はこの操作をサポートしていません。
+<p>RESTful API はこの操作をサポートしていません。</p>
 
 </Admonition>
 

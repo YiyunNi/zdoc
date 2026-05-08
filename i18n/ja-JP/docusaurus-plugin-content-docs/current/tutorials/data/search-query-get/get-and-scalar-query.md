@@ -5,7 +5,7 @@ sidebar_key: get-and-scalar-query
 sidebar_label: "クエリ"
 beta: FALSE
 notebook: FALSE
-description: "ANN 検索に加えて、Zilliz Cloud はクエリによるメタデータフィルタリングもサポートしています。このページでは、Query、Get、QueryIterators を使用してメタデータフィルタリングを実行する方法を紹介します。 | Cloud"
+description: "Zilliz Cloud は ANN 検索に加えて、クエリによるメタデータフィルタリングもサポートしています。このページでは、Query、Get、QueryIterators を使用してメタデータフィルタリングを実行する方法を紹介します。 | Cloud"
 type: origin
 token: R7F7wY8pCiJ5Q4kbntxcMsE6nLf
 sidebar_position: 8
@@ -13,11 +13,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - コレクション
-  - データ
+  - collection
+  - data
   - get by id
   - query with filters
-  - フィルタリング
+  - filtering
 
 ---
 
@@ -836,11 +836,11 @@ curl --request POST \
 
 ## クエリによるランダムサンプリング\{#random-sampling-with-query}
 
-データ探索や開発テストのためにコレクションから代表的なデータのサブセットを抽出するには、`RANDOM_SAMPLE(sampling_factor)` 式を使用します。ここで `sampling_factor` は、サンプリングするデータの割合を表す 0 から 1 の間の浮動小数点数です。
+データ探索や開発テストのためにコレクションから代表的なデータのサブセットを抽出するには、`RANDOM_SAMPLE(sampling_factor)` 式を使用します。ここで `sampling_factor` は 0 から 1 の間の浮動小数点数で、サンプリングするデータの割合を表します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-詳細な使用方法、高度な例、およびベストプラクティスについては、[ランダムサンプリング](./ramdom-sampling) を参照してください。
+<p>詳細な使用方法、高度な例、およびベストプラクティスについては、<a href="./ramdom-sampling">ランダムサンプリング</a>を参照してください。</p>
 
 </Admonition>
 

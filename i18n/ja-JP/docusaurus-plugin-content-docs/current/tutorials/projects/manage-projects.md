@@ -5,7 +5,7 @@ sidebar_key: manage-projects
 sidebar_label: "プロジェクト"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナとして機能し、クラスター、ボリューム、および関連するリソースをグループ化します。プロジェクト内のすべてのリソースは、同じクラウドプロバイダーとリージョンを共有します。 | Cloud"
+description: "Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナとして機能し、クラスター、ボリューム、および関連リソースをグループ化します。プロジェクト内のすべてのリソースは、同じクラウドプロバイダーとリージョンを共有します。 | Cloud"
 type: origin
 token: NXypwJ2ySiv7RAkyKb5cZ9SKnvf
 sidebar_position: 1
@@ -304,13 +304,13 @@ Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナ�
 
 プロジェクトを削除するには、[組織オーナー](./organization-users) である必要があります。
 
-プロジェクトを削除する前に、プロジェクト内のすべての [クラスター](./manage-cluster#drop) と [ボリューム](./volume) を削除する必要があります。
+プロジェクトを削除する前に、プロジェクト内のすべての [クラスター](./manage-cluster#drop) と [ボリューム](null) を削除する必要があります。
 
-プロジェクトが削除されると、関連するすべてのデータとリソースも不可逆的に消去されます。
+プロジェクトが削除されると、関連するすべてのデータとリソースも不可逆的に削除されます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-デフォルトのプロジェクトは削除できません。
+<p>デフォルトのプロジェクトは削除できません。</p>
 
 </Admonition>
 

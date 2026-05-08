@@ -5,7 +5,7 @@ sidebar_key: manage-global-cluster
 sidebar_label: "グローバルクラスターを管理"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、セカンダリークラスターの追加と削除、グローバルクラスターから通常クラスターへの変換、およびグローバルクラスター全体の削除について説明します。"
+description: "このページでは、セカンダリークラスターの追加と削除、グローバルクラスターから通常クラスターへの変換、およびグローバルクラスター全体の削除について説明します。 | Cloud"
 type: origin
 token: DW9wwFlgAiwOhBk2PgucY4URnke
 sidebar_position: 7
@@ -33,11 +33,11 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、**ビジネスクリティカル** プロジェクトの **Dedicated** クラスターでのみ利用可能です。
+<p>この機能は、<strong>ビジネスクリティカル</strong> プロジェクトの <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
-## 開始前に\{#before-you-start}
+## 開始前の準備\{#before-you-start}
 
 - **プロジェクト管理者** であることを確認してください。
 
@@ -45,15 +45,15 @@ import Procedures from '@site/src/components/Procedures';
 
 ## セカンダリークラスターの追加\{#add-secondary-cluster}
 
-リージョンカバレッジを向上させるために、既存のグローバルクラスターに異なるリージョンのセカンダリークラスターを追加できます。
+リージョンカバレッジを向上させるため、既存のグローバルクラスターに異なるリージョンのセカンダリークラスターを追加できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-グローバルクラスターは最大5つのセカンダリークラスターを持つことができます。
+<p>グローバルクラスターは最大5つのセカンダリークラスターを持つことができます。</p>
 
 </Admonition>
 
-新しいセカンダリークラスターを追加すると、Zilliz Cloud はそのクラスターをプロビジョニングし、プライマリークラスターからのデータレプリケーションを開始します。新しいセカンダリークラスターは CREATING ステータスで表示され、初期データ同期が完了すると RUNNING に遷移します。
+新しいセカンダリークラスターを追加すると、Zilliz Cloud はそのクラスターをプロビジョニングし、プライマリークラスターからのデータレプリケーションを開始します。新しいセカンダリークラスターは CREATING ステータスで表示され、初期データ同期が完了すると RUNNING に移行します。
 
 以下のデモでは、1つ以上のセカンダリークラスターを追加する方法を示しています。
 
@@ -89,7 +89,7 @@ import Procedures from '@site/src/components/Procedures';
 
 </Procedures>
 
-グローバルエンドポイントが削除されると、グローバルエンドポイント経由で接続されているアプリケーションは直ちに切断されます。アプリケーションコードの接続エンドポイントを更新してください。変換後の動作は以下の表に示します。
+グローバルエンドポイントが削除されると、グローバルエンドポイント経由で接続されているアプリケーションは直ちに切断されます。アプリケーションコードの接続エンドポイントを更新してください。変換後の動作は以下の表に示す通りです。
 
 <table>
    <tr>
@@ -106,7 +106,7 @@ import Procedures from '@site/src/components/Procedures';
    </tr>
    <tr>
      <td><p>データレプリケーション</p></td>
-     <td><p>停止されます。データレプリケーションメトリクスは削除されます。</p></td>
+     <td><p>停止します。データレプリケーションのメトリクスは削除されます。</p></td>
    </tr>
    <tr>
      <td><p>グローバルクラスターのメタデータ</p></td>
@@ -114,7 +114,7 @@ import Procedures from '@site/src/components/Procedures';
    </tr>
    <tr>
      <td><p>バックアップポリシー</p></td>
-     <td><p>以前のプライマリークラスターにそのまま残り、変更されません。</p></td>
+     <td><p>以前のプライマリークラスターにそのまま残ります。変更はありません。</p></td>
    </tr>
    <tr>
      <td><p>請求</p></td>

@@ -1,11 +1,11 @@
 ---
-title: "密ベクトル | Cloud"
+title: "デンスベクトル | Cloud"
 slug: /use-dense-vector
 sidebar_key: use-dense-vector
-sidebar_label: "密ベクトル"
+sidebar_label: "デンスベクトル"
 beta: FALSE
 notebook: FALSE
-description: "密ベクトルは、機械学習やデータ分析で広く使用される数値データ表現です。実数からなる配列で構成され、ほとんどまたはすべての要素が非ゼロです。疎ベクトルと比較して、密ベクトルは同じ次元レベルでより多くの情報を含み、各次元に意味のある値が保持されます。この表現は複雑なパターンや関係性を効果的に捉えることができ、高次元空間でのデータの分析や処理を容易にします。密ベクトルの次元数は通常固定されており、数十から数百、場合によっては数千の範囲で、特定のアプリケーションや要件によって異なります。"
+description: "デンスベクトルは、機械学習やデータ分析で広く使用される数値データ表現です。実数からなる配列で、ほとんどまたはすべての要素が非ゼロです。疎ベクトルと比較して、デンスベクトルは同じ次元レベルでより多くの情報を含み、各次元に意味のある値が保持されています。この表現は複雑なパターンや関係性を効果的に捉えることができ、高次元空間でのデータの分析や処理を容易にします。デンスベクトルの次元数は通常固定されており、具体的なアプリケーションや要件に応じて数十から数百、場合によっては数千の範囲で変化します。"
 type: origin
 token: ARalwpaVDiCwDZkoSHtcPNgXnRg
 sidebar_position: 3
@@ -15,7 +15,7 @@ keywords:
   - cloud
   - コレクション
   - スキーマ
-  - 密ベクトル
+  - デンスベクトル
 
 ---
 
@@ -60,7 +60,7 @@ Below is an example of a real dense vector representing the text `"Milvus is an 
 
 ```
 
-密ベクトルは、さまざまな [埋め込み](https://en.wikipedia.org/wiki/Embedding) モデルを使用して生成できます。例えば、画像用の CNN モデル（[ResNet](https://pytorch.org/hub/pytorch_vision_resnet/)、[VGG](https://pytorch.org/vision/stable/models/vgg.html) など）や、テキスト用の言語モデル（[BERT](https://en.wikipedia.org/wiki/BERT_(language_model)、[Word2Vec](https://en.wikipedia.org/wiki/Word2vec) など）があります。これらのモデルは、生のデータを高次元空間の点に変換し、データの意味的特徴を捉えます。さらに、Zilliz Cloud では、ユーザーが密ベクトルを生成および処理するための便利な方法を提供しており、詳細は Embeddings を参照してください。
+密ベクトルは、さまざまな [埋め込み](https://en.wikipedia.org/wiki/Embedding) モデルを使用して生成できます。例えば、画像用の CNN モデル（[ResNet](https://pytorch.org/hub/pytorch_vision_resnet/)、[VGG](https://pytorch.org/vision/stable/models/vgg.html) など）や、テキスト用の言語モデル（[BERT](https://en.wikipedia.org/wiki/BERT_(language_model)、[Word2Vec](https://en.wikipedia.org/wiki/Word2vec) など）があります。これらのモデルは、生のデータを高次元空間の点に変換し、データのセマンティックな特徴を捉えます。さらに、Zilliz Cloud では、ユーザーが密ベクトルを生成および処理するための便利な方法を提供しており、詳細は Embeddings を参照してください。
 
 データがベクトル化されると、Zilliz Cloud クラスタに保存して管理およびベクトル検索を行うことができます。以下の図は、基本的なプロセスを示しています。
 
@@ -68,21 +68,21 @@ Below is an example of a real dense vector representing the text `"Milvus is an 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-密ベクトルに加えて、Zilliz Cloud は疎ベクトルとバイナリベクトルもサポートしています。疎ベクトルは、キーワード検索や用語マッチングなど、特定の用語に基づく正確な一致に適しており、バイナリベクトルは、画像パターンマッチングや特定のハッシュ処理アプリケーションなど、バイナリ化されたデータを効率的に処理するために一般的に使用されます。詳細については、[Binary Vector](./use-binary-vector) および [Sparse Vector](./use-sparse-vector) を参照してください。
+<p>密ベクトルに加えて、Zilliz Cloud は疎ベクトルとバイナリベクトルもサポートしています。疎ベクトルは、キーワード検索や用語マッチングなど、特定の用語に基づく正確な一致に適しており、バイナリベクトルは、画像パターンマッチングや特定のハッシュ処理など、バイナリ化されたデータを効率的に処理するために一般的に使用されます。詳細については、<a href="./use-binary-vector">Binary Vector</a> および <a href="./use-sparse-vector">Sparse Vector</a> を参照してください。</p>
 
 </Admonition>
 
-## Use dense vectors\{#use-dense-vectors}
+## 密ベクトルを使用する\{#use-dense-vectors}
 
-### Add vector field\{#add-vector-field}
+### ベクトルフィールドを追加する\{#add-vector-field}
 
-Zilliz Cloud クラスタで密ベクトルを使用するには、まず、コレクションの作成時に密ベクトルを保存するためのベクトルフィールドを定義します。このプロセスには以下が含まれます。
+Zilliz Cloud クラスタで密ベクトルを使用するには、コレクションの作成時に密ベクトルを保存するためのベクトルフィールドを定義する必要があります。このプロセスには以下が含まれます。
 
-1. `datatype` をサポートされている密ベクトルデータ型に設定します。サポートされている密ベクトルデータ型については、データ Types を参照してください。
+1. `datatype` をサポートされている密ベクトルのデータ型に設定します。サポートされている密ベクトルのデータ型については、データ型を参照してください。
 
 1. `dim` パラメータを使用して、密ベクトルの次元を指定します。
 
-以下の例では、密ベクトルを保存するための `dense_vector` という名前のベクトルフィールドを追加します。このフィールドのデータ型は `FLOAT_VECTOR` で、次元は `4` です。
+以下の例では、`dense_vector` という名前のベクトルフィールドを追加して密ベクトルを保存します。このフィールドのデータ型は `FLOAT_VECTOR` で、次元は `4` です。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

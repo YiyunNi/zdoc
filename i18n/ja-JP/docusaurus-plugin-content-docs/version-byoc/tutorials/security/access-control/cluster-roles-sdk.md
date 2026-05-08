@@ -14,7 +14,7 @@ keywords:
   - ベクトルデータベース
   - cloud
   - cluster
-  - アクセス制御
+  - access control
   - rbac
   - ロール
 
@@ -28,11 +28,11 @@ import TabItem from '@theme/TabItem';
 
 クラスターロールは、ユーザーがクラスター内で持つ特権を定義します。より具体的には、クラスターロールはクラスターユーザーのクラスター、データベース、およびコレクションレベルでの特権を制御します。
 
-このガイドでは、ロールの作成、ロールへの組み込み特権グループの付与、ロールからの特権グループの取り消し、および最終的にロールの削除について説明します。組み込み特権グループの詳細については、[特権](./cluster-privileges#built-in-privilege-groups) を参照してください。
+このガイドでは、ロールの作成、ロールへの組み込み特権グループの付与、ロールからの特権グループの取り消し、および最後にロールの削除について説明します。組み込み特権グループの詳細については、[特権](./cluster-privileges#built-in-privilege-groups) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は Dedicated クラスターでのみ利用可能です。
+<p>この機能は Dedicated クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
@@ -40,7 +40,7 @@ import TabItem from '@theme/TabItem';
 
 次の例は、`role_a` という名前のロールを作成する方法を示しています。
 
-ロール名は文字で始まる必要があり、大文字、小文字、数字、アンダースコアのみを含めることができます。
+ロール名は文字で始まる必要があり、大文字または小文字の文字、数字、およびアンダースコアのみを含めることができます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -156,15 +156,15 @@ Zilliz Cloud では、ロールに以下を付与できます。
 
 - **組み込み特権グループ:** Zilliz Cloud では、9 つの組み込み特権グループが提供されています。各組み込み特権グループに含まれる具体的な特権の詳細については、[組み込み特権グループ](./cluster-privileges#built-in-privilege-groups) を参照してください。
 
-- **カスタム特権グループ:** 組み込みの特権がニーズを満たさない場合は、異なる特権を組み合わせて独自のカスタム特権グループを作成できます。詳細については、[カスタム特権グループ](./cluster-privileges#custom-privilege-groups) を参照してください。
+- **カスタム特権グループ:** 組み込みの特権が要件を満たさない場合は、異なる特権を組み合わせて独自のカスタム特権グループを作成できます。詳細については、[カスタム特権グループ](./cluster-privileges#custom-privilege-groups) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-特定の特権とカスタム特権グループをロールに付与する必要がある場合は、まず [サポートチケットを作成](http://support.zilliz.com) して、この機能を有効化できるようにしてください。
+<p>特定の特権とカスタム特権グループをロールに付与する必要がある場合は、まず <a href="http://support.zilliz.com">サポートチケットを作成</a> して、この機能を有効化していただく必要があります。</p>
 
 </Admonition>
 
-以下の例では、`default` データベース配下の `collection_01` に対する `PrivilegeSearch` 特権および `privilege_group_1` という名前のカスタム特権グループをロール `role_a` に付与する方法を示しています。
+以下の例では、`default` データベース配下の `collection_01` に対する `PrivilegeSearch` 特権およびカスタム特権グループ `privilege_group_1` をロール `role_a` に付与する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -577,11 +577,11 @@ curl --request POST \
 
 ## ロールの削除\{#drop-a-role}
 
-以下の例は、ロール `role_a` を削除する方法を示しています。
+次の例では、ロール `role_a` を削除する方法を示します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-組み込みロール `admin` は削除できません。
+<p>組み込みロール <code>admin</code> は削除できません。</p>
 
 </Admonition>
 

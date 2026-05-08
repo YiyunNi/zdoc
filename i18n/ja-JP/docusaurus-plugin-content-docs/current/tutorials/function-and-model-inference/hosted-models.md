@@ -1,11 +1,11 @@
 ---
-title: "Hosted Models | Cloud"
+title: "ホストモデル | Cloud"
 slug: /hosted-models
 sidebar_key: hosted-models
-sidebar_label: "Hosted Models"
+sidebar_label: "ホストモデル"
 beta: PRIVATE
 notebook: FALSE
-description: "Zilliz Cloud は、Zilliz 管理のインフラストラクチャ上で埋め込みモデルとリランキングモデルをホストできます。専用の完全管理型モデルインスタンスをデプロイし、Zilliz Cloud から直接利用することで、安定した高性能な推論を実現します。 | Cloud"
+description: "Zilliz Cloud は、Zilliz が管理するインフラストラクチャ上で埋め込みおよびリランキングモデルをホストできます。専用の完全管理型モデルインスタンスをデプロイし、Zilliz Cloud から直接利用して、安定した高性能な推論を実現できます。 | Cloud"
 type: origin
 token: DMrCwn4LXi1uKBkbHGfcpGnsnyh
 sidebar_position: 6
@@ -22,11 +22,11 @@ keywords:
 import Admonition from '@theme/Admonition';
 
 
-# ホストモデル
+# Hosted Models
 
-Zilliz Cloud は、Zilliz 管理のインフラストラクチャ上で **embedding** および **reranking** モデルをホストできます。専用の完全管理モデルインスタンスをデプロイし、Zilliz Cloud から直接安定した高性能な推論を利用できます。
+Zilliz Cloud は、Zilliz 管理のインフラストラクチャ上で **embedding** および **reranking** モデルをホストできます。専用の完全管理型モデルインスタンスをデプロイし、Zilliz Cloud から直接、安定した高性能な推論を利用できます。
 
-管理モデルインスタンスを使用すると、生データをコレクションに挿入できます。Zilliz Cloud は、取り込み時にデプロイ済みのモデルを使用してベクトル埋め込みを自動生成します。セマンティック検索では、生のクエリテキストのみを提供します。Zilliz Cloud は同じモデルを使用してクエリベクトルを作成し、保存されているベクトルと比較して、最も関連性の高い結果を返します。
+管理型モデルインスタンスを使用すると、生データをコレクションに挿入できます。Zilliz Cloud は、取り込み時にデプロイ済みのモデルを使用してベクトル埋め込みを自動生成します。セマンティック検索では、生のクエリテキストのみを提供すればよく、Zilliz Cloud は同じモデルを使用してクエリベクトルを作成し、保存されているベクトルと比較して、最も関連性の高い結果を返します。
 
 次の図は、ホストモデルを使用する手順を示しています。
 
@@ -38,7 +38,7 @@ Zilliz Cloud は、Zilliz 管理のインフラストラクチャ上で **embedd
 
 <Admonition type="info" icon="📘" title="Notes">
 
-ホストモデルに関する特定の要件がある場合は、[お問い合わせ](http://support.zilliz.com) ください。
+<p>ホストモデルに関する特定の要件がある場合は、<a href="http://support.zilliz.com">お問い合わせ</a>ください。</p>
 
 </Admonition>
 
@@ -133,7 +133,7 @@ Zilliz Cloud は、Zilliz 管理のインフラストラクチャ上で **embedd
 
 ## デプロイメントIDの取得\{#obtain-a-deployment-id}
 
-提供いただいた情報を使用して、Zilliz がモデルをデプロイします。これには約15分かかります。デプロイメントの準備が整うと、Zilliz Cloud サポートが **デプロイメントID** を返却します。これは、embedding または reranking 関数を作成する際に使用します。
+提供いただいた情報をもとに、Zilliz がモデルをデプロイします。これには約15分かかります。デプロイメントの準備が整うと、Zilliz Cloud サポートから **デプロイメントID** が返されます。この ID は、embedding または reranking 関数を作成する際に使用します。
 
 ```bash
 "deploymentId": "68f8889be4b01215a275972a"

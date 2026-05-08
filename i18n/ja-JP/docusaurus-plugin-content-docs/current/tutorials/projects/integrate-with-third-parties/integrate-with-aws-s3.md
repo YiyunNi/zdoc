@@ -5,7 +5,7 @@ sidebar_key: integrate-with-aws-s3
 sidebar_label: "AWS S3"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合して、バックアップファイルや監査ログを指定の S3 バケットにエクスポートできます。"
+description: "Zilliz Cloud では、Amazon Simple Storage Service (Amazon S3) と統合して、バックアップファイルや監査ログを指定の S3 バケットにエクスポートできます。"
 type: origin
 token: PAViwMSb3iVMzuk56z3c1zfRnwh
 sidebar_position: 1
@@ -30,7 +30,7 @@ import Procedures from '@site/src/components/Procedures';
 
 # AWS S3 との統合
 
-Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合して、バックアップファイルや監査ログを指定の S3 バケットにエクスポートできます。
+Zilliz Cloud では、Amazon Simple Storage Service (Amazon S3) と統合して、バックアップファイルや監査ログを指定の S3 バケットにエクスポートできます。
 
 ![BUEcwkZiChJrTlbziBMc3V49nFe](https://zdoc-images.s3.us-west-2.amazonaws.com/BUEcwkZiChJrTlbziBMc3V49nFe.png)
 
@@ -58,7 +58,7 @@ Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合し�
 
     - **統合の説明** *(オプション)*: この統合の説明（例：`for export backupfile`）。
 
-    - **バケット Permission**: Zilliz Cloud が S3 バケットに対して持つアクセスレベルを選択します。次の表にオプションを説明します。
+    - **バケット Permission**: Zilliz Cloud が S3 バケットに対して持つアクセスレベルを選択します。以下の表で各オプションを説明します。
 
         <table>
            <tr>
@@ -67,11 +67,11 @@ Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合し�
            </tr>
            <tr>
              <td><p>Read only</p></td>
-             <td><p>Zilliz Cloud can only read files from the bucket. Use for <a href="./external-volume">external volumes</a> that back external collections.</p></td>
+             <td><p>Zilliz Cloud はバケットからファイルを読み取ることのみができます。外部コレクションをバックアップする<a href="./external-volume">外部ボリューム</a>に使用します。</p></td>
            </tr>
            <tr>
              <td><p>Read write</p></td>
-             <td><p>Zilliz Cloud can both read from and write to the bucket. Use for <a href="./export-backup-files">backup export</a>, <a href="./audit-logs">audit log forwarding</a>, or <a href="./configure-access-logs">access log forwarding</a>.</p></td>
+             <td><p>Zilliz Cloud はバケットへの読み取りと書き込みの両方ができます。<a href="./export-backup-files">バックアップエクスポート</a>、<a href="./audit-logs">監査ログ転送</a>、または <a href="./configure-access-logs">アクセスログ転送</a>に使用します。</p></td>
            </tr>
         </table>
 
@@ -93,9 +93,10 @@ Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合し�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - バケットを作成する AWS リージョンは、Zilliz Cloud クラスターまたは外部ボリュームが存在するリージョンと一致している必要があります。Zilliz Cloud でサポートされているリージョンについては、[クラウドプロバイダーs & Regions](./cloud-providers-and-regions) を参照してください。
-
-    - 異なるリージョンで実行されているクラスターの場合、バックアップファイルや監査ログが適切にエクスポートされるよう、各リージョンに対して個別の統合を作成してください。
+    <ul>
+    <li><p>バケットを作成する AWS リージョンは、Zilliz Cloud クラスターまたは外部ボリュームが存在するリージョンと一致している必要があります。Zilliz Cloud でサポートされているリージョンについては、<a href="./cloud-providers-and-regions">クラウドプロバイダーs & Regions</a> を参照してください。</p></li>
+    <li><p>異なるリージョンで実行されているクラスターの場合、バックアップファイルや監査ログが適切にエクスポートされるよう、各リージョンに対して個別の統合を作成してください。</p></li>
+    </ul>
 
     </Admonition>
 
@@ -103,17 +104,17 @@ Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合し�
 
 1. バケット設定を構成します：
 
-    1. **バケットタイプ** で、**汎用** を選択します。
+    1. **バケットタイプ** で **汎用** を選択します。
 
     1. **バケット名** には、バケットの名前を入力します（例：`zilliz-bucket-for-integration-0819`）。このバケット名は後のステップで必要になるため、覚えておいてください。
 
     1. その他の設定はデフォルトのままにして、**Create bucket** をクリックします。
 
-    詳細については、[Creating a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) を参照してください。
+    詳細については、[バケットの作成](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) を参照してください。
 
 </Procedures>
 
-バケットの作成が完了したら、[Zilliz Cloud コンソール](https://cloud.zilliz.com/login)に戻り、次の操作を行います：
+バケットの作成が完了したら、[Zilliz Cloud コンソール](https://cloud.zilliz.com/login)に戻り、以下を実行します：
 
 <Supademo id="cmeibwrd19d3xh3pyx4h7r3d4" title="Step 2: Create S3 bucket (2)" />
 
@@ -121,7 +122,7 @@ Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合し�
 
 1. **バケット名** フィールドに、先ほど作成したバケットの名前を入力します（この例では `zilliz-bucket-for-integration-0819`）。次に、**Next** をクリックします。
 
-1. **Create IAM Policy** ステップで、JSON ポリシーをコピーします。これは[ステップ 3](./integrate-with-aws-s3)で必要になります。
+1. **Create IAM Policy** ステップで、JSON ポリシーをコピーします。これは [ステップ 3](./integrate-with-aws-s3) で必要になります。
 
 1. 完了したら、[IAM コンソール](https://console.aws.amazon.com/iam/)を開き、[ステップ 3](./integrate-with-aws-s3) に進みます。
 
@@ -129,7 +130,7 @@ Zilliz Cloud では、Amazon Simple Storage Service（Amazon S3）と統合し�
 
 ## ステップ 3: AWS コンソールで IAM ポリシーを作成する\{#step-3-create-iam-policy-in-aws-console}
 
-Zilliz Cloud に AWS S3 へのアクセス権を付与するには、IAM ポリシーを作成します。このポリシーには、Zilliz Cloud と S3 バケット間でのバックアップファイル転送を促進するための特定のアクションとリソースを含める必要があります。
+Zilliz Cloud に AWS S3 へのアクセス権を付与するために、IAM ポリシーを作成します。このポリシーには、Zilliz Cloud と S3 バケット間でのバックアップファイル転送を実現するための特定のアクションとリソースを含める必要があります。
 
 <Supademo id="cmeibzhk09d4rh3pyaipwhqi7" title="Step 3: Create IAM policy (1)" />
 
@@ -201,19 +202,20 @@ Zilliz Cloud に AWS S3 へのアクセス権を付与するには、IAM ポリ�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - `<bucket>` は、実際の S3 バケット名に置き換える必要があります。
-
-    - `<region>`、`<account_id>`、`<key_id>` は、実際の値に置き換える必要があります。詳細については、AWS ドキュメントの [キー identifiers](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id) を参照してください。
+    <ul>
+    <li><p><code>&lt;bucket&gt;</code> は、実際の S3 バケット名に置き換える必要があります。</p></li>
+    <li><p><code>&lt;region&gt;</code>、<code>&lt;account_id&gt;</code>、および <code>&lt;key_id&gt;</code> は、実際の値に置き換える必要があります。詳細については、AWS ドキュメントの <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">キー identifiers</a> を参照してください。</p></li>
+    </ul>
 
     </Admonition>
 
-1. **Review and create** ページで、作成するポリシーの **ポリシー名**（例: `zilliz-policy-for-integration-0819`）と **Description**（オプション）を入力し、**Permissions defined in this policy** を確認します。ポリシー名は覚えておいてください。今後のステップで必要になります。
+1. **Review and create** ページで、作成するポリシーの **ポリシー名**（例: `zilliz-policy-for-integration-0819`）と **Description**（オプション）を入力し、**Permissions defined in this policy** を確認します。ポリシー名を覚えておいてください。今後の手順で必要になります。
 
 1. **Create policy** を選択して、新しいポリシーを保存します。完了したら、[ステップ 4](./integrate-with-aws-s3) に進みます。
 
 </Procedures>
 
-## Step 4: Create IAM role\{#step-4-create-iam-role}
+## ステップ 4: IAM ロールの作成\{#step-4-create-iam-role}
 
 AWS コンソールで IAM ロールを作成する前に、Zilliz Cloud コンソールで以下を実行してください。
 
@@ -263,7 +265,7 @@ AWS コンソールで IAM ロールを作成する前に、Zilliz Cloud コン�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    `965570967084` と `my-external-id` は、Zilliz Cloud コンソールの **Create IAM ロール** ステップに表示されている実際の AWS アカウント ID と外部 ID に置き換える必要があります。
+    <p><code>965570967084</code> および <code>my-external-id</code> は、Zilliz Cloud コンソールの <strong>Create IAM ロール</strong> ステップに表示される実際の AWS アカウント ID と外部 ID に置き換える必要があります。</p>
 
     </Admonition>
 
@@ -285,7 +287,7 @@ AWS コンソールで IAM ロールを作成する前に、Zilliz Cloud コン�
 
 1. 次に、**統合の検証** をクリックして、S3 バケットと IAM ロールの設定を確認します。
 
-1. ステータスが **成功** に変われば、統合は正常に動作しています。次に、**Add** をクリックします。
+1. ステータスが **成功** に変わると、統合が機能します。次に、**Add** をクリックします。
 
 </Procedures>
 
@@ -299,7 +301,7 @@ AWS コンソールで IAM ロールを作成する前に、Zilliz Cloud コン�
 
 ### 統合IDの取得\{#obtain-the-integration-id}
 
-RESTful API を使用して、Zilliz Cloud と統合された AWS S3 バケットのいずれかにバックアップファイルをエクスポートする必要がある場合は、**View Details** をクリックして統合の詳細を表示し、その統合 ID をコピーします。
+RESTful API を使用して、Zilliz Cloud と統合された AWS S3 バケットのいずれかにバックアップファイルをエクスポートする必要がある場合は、**View Details** をクリックして統合の詳細を表示し、その統合IDをコピーします。
 
 ## トラブルシューティング\{#troubleshooting}
 
@@ -307,7 +309,7 @@ RESTful API を使用して、Zilliz Cloud と統合された AWS S3 バケッ�
 
 ### バケットリージョンの不一致\{#bucket-region-mismatch}
 
-**説明**: S3 バケットのリージョンが Zilliz Cloud クラスタのリージョンと一致しない場合、以下の例のようなエラーが発生します。
+**説明**: S3 バケットのリージョンが Zilliz Cloud クラスターのリージョンと一致しない場合、以下の例のようなエラーが発生します。
 
 ```plaintext
 "bucket region not match, want[us-west-1] got[us-west-2]"

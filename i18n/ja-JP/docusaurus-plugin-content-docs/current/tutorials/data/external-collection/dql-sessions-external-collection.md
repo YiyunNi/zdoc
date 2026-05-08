@@ -1,11 +1,11 @@
 ---
-title: "オンデマンド DQL Operations | Cloud"
+title: "オンデマンド DQL 運用 | Cloud"
 slug: /dql-sessions-external-collection
 sidebar_key: dql-sessions-external-collection
 sidebar_label: "DQL セッション"
 beta: PUBLIC
 notebook: FALSE
-description: "検索、クエリ、取得、ハイブリッド検索などのオンデマンドコンピューティングのためのコレクション内 DQL 操作では、オンデマンドクラスターからコンピュートリソースをアタッチする必要があります。Zilliz Cloud では、オンデマンドのコンピュートニーズに応えるためのセッションを作成できます。"
+description: "検索、クエリ、取得、ハイブリッド検索などのオンデマンドコンピューティングのためのコレクション内 DQL 運用では、オンデマンドクラスターからコンピュートリソースをアタッチする必要があります。Zilliz Cloud では、オンデマンドのコンピュートニーズに応えるためのセッションを作成できます。"
 type: origin
 token: T23Rwd19Dixzh8kugLfc7RZSnMe
 sidebar_position: 3
@@ -77,7 +77,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-RESTful API リクエストの場合、セッションを作成する代わりに、クラスター ID を DQL 呼び出しのクエリパラメータとして渡す必要があります。
+<p>RESTful API リクエストの場合、セッションを作成する代わりに、クラスター ID を DQL 呼び出しのクエリパラメーターとして渡す必要があります。</p>
 
 </Admonition>
 
@@ -156,11 +156,11 @@ curl --request POST \
 
 ## セッションを閉じる\{#close-a-session}
 
-オンデマンドのコンピューティングタスクが完了したら、セッションを閉じることができます。閉じたセッションは、それ以降の DQL 操作には使用できません。
+オンデマンドのコンピューティングタスクが完了したら、セッションを閉じることができます。閉じたセッションは、それ以上の DQL 操作に使用できません。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-RESTful API 呼び出しではこれは不要です。
+<p>RESTful API 呼び出しではこれは不要です。</p>
 
 </Admonition>
 

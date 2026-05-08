@@ -370,13 +370,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ユーザーの削除\{#drop-user}
+## Drop user\{#drop-user}
 
-以下の例は、ユーザー `user_1` を削除する方法を示しています。
+次の例では、ユーザー `user_1` を削除する方法を示します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`root` ユーザーは削除できません。
+<p><code>root</code> ユーザーは削除できません。</p>
 
 </Admonition>
 

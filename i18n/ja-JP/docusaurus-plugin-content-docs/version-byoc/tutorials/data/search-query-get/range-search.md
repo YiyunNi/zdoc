@@ -1,11 +1,11 @@
 ---
-title: "範囲検索 | BYOC"
+title: "レンジ検索 | BYOC"
 slug: /range-search
 sidebar_key: range-search
-sidebar_label: "範囲検索"
+sidebar_label: "レンジ検索"
 beta: FALSE
 notebook: FALSE
-description: "範囲検索は、返されるエンティティの距離またはスコアを特定の範囲内に制限することで、検索結果の関連性を向上させます。このページでは、範囲検索とは何か、および範囲検索を実行する手順について説明します。 | BYOC"
+description: "レンジ検索は、返されるエンティティの距離またはスコアを特定の範囲内に制限することで、検索結果の関連性を向上させます。このページでは、レンジ検索の概要と実行手順について説明します。 | BYOC"
 type: origin
 token: GnvtwMeQWi8iRCk7dGccCBQZnOh
 sidebar_position: 4
@@ -15,7 +15,7 @@ keywords:
   - cloud
   - コレクション
   - データ
-  - 範囲検索
+  - レンジ検索
 
 ---
 
@@ -268,6 +268,6 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-クエリベクトルが対象コレクションに既に存在する場合、検索前に取得するのではなく `ids` の使用を検討してください。詳細については、[プライマリキー検索](./primary-key-search) を参照してください。
+<p>クエリベクトルがすでにターゲットコレクションに存在する場合は、検索前にそれらを取得する代わりに、<code>ids</code> を使用することを検討してください。詳細については、<a href="./primary-key-search">Primary-キー Search</a> を参照してください。</p>
 
 </Admonition>

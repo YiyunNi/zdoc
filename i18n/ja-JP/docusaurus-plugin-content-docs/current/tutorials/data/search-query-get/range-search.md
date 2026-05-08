@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - コレクション
-  - データ
-  - レンジ検索
+  - collection
+  - data
+  - range search
 
 ---
 
@@ -268,6 +268,6 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-クエリベクトルが対象コレクションに既に存在する場合、検索前に取得するのではなく `ids` の使用を検討してください。詳細については、[プライマリキー検索](./primary-key-search) を参照してください。
+<p>クエリベクトルがすでにターゲットコレクションに存在する場合は、検索前にそれらを取得する代わりに、<code>ids</code> を使用することを検討してください。詳細については、<a href="./primary-key-search">Primary-キー Search</a> を参照してください。</p>
 
 </Admonition>

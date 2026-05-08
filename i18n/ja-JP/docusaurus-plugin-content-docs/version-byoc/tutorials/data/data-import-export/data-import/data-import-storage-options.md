@@ -24,7 +24,7 @@ import Admonition from '@theme/Admonition';
 
 # ストレージオプション
 
-データをインポートする前に、サポートされているクラウドストレージオプションとそれに対応するURL形式を理解することが重要です。これにより、リクエストが検証エラーなしで適切に処理されるようになります。
+データをインポートする前に、サポートされているクラウドストレージオプションとそれに対応するURL形式を理解することが重要です。これにより、リクエストが検証エラーなく適切に処理されることが保証されます。
 
 ## Amazon Simple Storage Service (S3)\{#amazon-simple-storage-service-s3}
 
@@ -63,15 +63,15 @@ import Admonition from '@theme/Admonition';
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        バケットまたはバケット内の特定の項目がカスタムKMS IDで暗号化されている場合は、認証情報とともにそのKMS IDの復号化権限を提供する必要があります。
+        <p>バケットまたはバケット内の特定の項目がカスタムKMS IDで暗号化されている場合は、認証情報とともにそのKMS IDの復号化権限を提供する必要があります。</p>
 
         </Admonition>
 
 - **認証情報の取得**
 
-    データセキュリティ要件に応じて、データインポート時に長期認証情報またはセッショントークンのいずれかを使用できます:
+    データセキュリティ要件に基づき、データインポート時に長期認証情報またはセッショントークンのいずれかを使用できます：
 
-    - 長期認証情報で認証する場合は、[長期認証情報を使用した認証](https://docs.aws.amazon.com/sdkref/latest/guide/access-iam-users.html) で詳細を確認してください。
+    - 長期認証情報で認証する場合は、詳細について[長期認証情報を使用した認証](https://docs.aws.amazon.com/sdkref/latest/guide/access-iam-users.html) を参照してください。
 
     - 短期認証情報で認証する場合は、[このFAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service) を参照してください。
 
@@ -85,7 +85,7 @@ import Admonition from '@theme/Admonition';
          <th><p><strong>URI形式</strong></p></th>
        </tr>
        <tr>
-         <td><p><strong>GSC公開URL</strong></p></td>
+         <td><p><strong>GSCパブリックURL</strong></p></td>
          <td><ul><li><p><strong>ファイル</strong>: <i>http</i>s://storage.cloud.google.com/\<bucket_name>/\<object_name></p></li><li><p><strong>フォルダ</strong>: <i>http</i>s://storage.cloud.google.com/\<bucket_name>/\<folder_name>/</p></li></ul></td>
        </tr>
        <tr>
@@ -104,9 +104,9 @@ import Admonition from '@theme/Admonition';
 
 - **認証情報の取得**
 
-    データセキュリティ要件に応じて、データインポート時に長期認証情報またはセッショントークンのいずれかを使用できます:
+    データセキュリティ要件に基づき、データインポート時に長期認証情報またはセッショントークンのいずれかを使用できます：
 
-    - 長期認証情報で認証する場合は、[サービスアカウントのHMACキーの管理](https://cloud.google.com/storage/docs/authentication/managing-hmackeys) で詳細を確認してください。
+    - 長期認証情報で認証する場合は、詳細について[サービスアカウントのHMACキーの管理](https://cloud.google.com/storage/docs/authentication/managing-hmackeys) を参照してください。
 
     - 短期認証情報で認証する場合は、[このFAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service) を参照してください。
 
@@ -129,9 +129,9 @@ import Admonition from '@theme/Admonition';
 
 - **認証情報の取得**
 
-    データセキュリティ要件に応じて、データインポート時に長期認証情報またはセッショントークンのいずれかを使用できます:
+    データセキュリティ要件に基づき、データインポート時に長期認証情報またはセッショントークンのいずれかを使用できます：
 
-    - 長期認証情報で認証する場合は、[アカウントアクセスキーの表示](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys) で詳細を確認してください
+    - 長期認証情報で認証する場合は、詳細について[アカウントアクセスキーの表示](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys) を参照してください
 
     - 短期認証情報で認証する場合は、[このFAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service) を参照してください。
 

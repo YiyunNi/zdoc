@@ -5,7 +5,7 @@ sidebar_key: organization-settings
 sidebar_label: "組織設定"
 beta: FALSE
 notebook: FALSE
-description: "Organization Owner の場合、組織設定を管理する権限があります。"
+description: "組織オーナーの場合、組織設定を管理する権限があります。"
 type: origin
 token: AAqUwQW3qia3akkjfDNc0kwanlh
 sidebar_position: 2
@@ -29,7 +29,7 @@ import Procedures from '@site/src/components/Procedures';
 
 組織オーナーの場合、組織設定を管理する権限があります。
 
-このガイドでは、組織設定の管理手順について説明します。
+このガイドでは、組織設定を管理する手順について説明します。
 
 ## 組織の表示\{#view-organizations}
 
@@ -57,13 +57,13 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 ## タイムゾーンの管理\{#manage-timezone}
 
-システムのタイムゾーンは、初回ログイン時の地域に設定され、Zilliz Cloud に表示されるすべての時刻文字列に適用されます。
+システムのタイムゾーンは、初回ログイン時の場所に設定され、Zilliz Cloud に表示されるすべての時刻文字列に適用されます。
 
 現在のタイムゾーンを表示するには、組織オーナーまたは組織メンバーである必要があります。組織内のロールの詳細については、[組織ユーザーの管理](./organization-users) を参照してください。
 
 ![timezone-settings](https://zdoc-images.s3.us-west-2.amazonaws.com/timezone-settings.png "timezone-settings")
 
-システムのタイムゾーンを変更するには、[組織オーナー](./organization-users) である必要があります。**編集** をクリックして **タイムゾーン設定** ダイアログボックスを開き、ドロップダウンリストからタイムゾーンを選択します。タイムゾーン名を入力して、目的のタイムゾーンをすばやく絞り込むこともできます。
+システムのタイムゾーンを変更するには、[組織オーナー](./organization-users) である必要があります。**編集** をクリックして **タイムゾーン設定** ダイアログボックスを開き、ドロップダウンリストからタイムゾーンを選択します。タイムゾーンの名前を入力して、目的のタイムゾーンをすばやく絞り込むこともできます。
 
 ## 優先メンテナンスウィンドウの設定\{#set-up-preferred-maintenance-window}
 
@@ -79,7 +79,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 <Admonition type="info" icon="📘" title="Note">
 
-メンテナンスが優先ウィンドウを過ぎても実行されている場合は、完了するまで継続されます。
+<p>メンテナンスが優先ウィンドウを過ぎても実行されている場合、完了するまで継続されます。</p>
 
 </Admonition>
 
@@ -93,7 +93,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
     - メンテナンスを 7 日間延期する。延期は 1 回のみ可能です。
 
-    - 何もせず、スケジュールどおりにメンテナンスを実行させる。
+    - 何もせず、予定どおりにメンテナンスを実行する。
 
 - **組織メンバー** の場合は、[SDK 互換性](./install-sdks#sdk-compatibility) を確認してください。
 
@@ -105,7 +105,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 - 現在の組織内のすべてのボリュームが [削除](./volume) されていること。
 
-- 現在の組織のすべての [請求](./view-invoice) が支払い済みであること。
+- 組織のすべての [請求](./view-invoice) が支払い済みであること。
 
 - 対象の組織で [組織オーナー](./organization-users) ロールが付与されていること。
 
@@ -131,7 +131,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-組織の削除は元に戻せません。この操作には十分ご注意ください。
+<p>組織の削除は元に戻せません。この操作には十分注意してください。</p>
 
 </Admonition>
 

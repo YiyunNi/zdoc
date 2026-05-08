@@ -5,7 +5,7 @@ sidebar_key: ngram-index-type
 sidebar_label: "NGRAM"
 beta: FALSE
 notebook: FALSE
-description: 'Zilliz Cloud の `NGRAM` インデックスは、`VARCHAR` フィールドまたは `JSON` フィールド内の特定の JSONパス に対する `LIKE` クエリを高速化するために構築されています。インデックスを構築する前に、Zilliz Cloud はテキストを固定長 n の短い重複する部分文字列（n-gram として知られる）に分割します。例えば、n = 3 の場合、単語 "Milvus" は 3-gram の "Mil"、"ilv"、"lvu"、"vus" に分割されます。これらの n-gram は、各グラムが出現するドキュメント ID にマッピングされる転置インデックスに格納されます。クエリ時に、このインデックスにより Zilliz Cloud は検索を少数の候補に迅速に絞り込むことができ、クエリ実行が大幅に高速化されます。 | BYOC'
+description: 'Zilliz Cloud の `NGRAM` インデックスは、`VARCHAR` フィールドまたは `JSON` フィールド内の特定の JSONパス に対する `LIKE` クエリを高速化するために構築されます。インデックスを構築する前に、Zilliz Cloud はテキストを固定長 n の短い重複する部分文字列（n-gram と呼ばれる）に分割します。例えば、n = 3 の場合、単語 "Milvus" は 3-gram の "Mil"、"ilv"、"lvu"、"vus" に分割されます。これらの n-gram は、各グラムが出現するドキュメント ID にマッピングされる転置インデックスに格納されます。クエリ時に、このインデックスにより Zilliz Cloud は検索を少数の候補に迅速に絞り込むことができ、クエリ実行が大幅に高速化されます。 | BYOC'
 type: origin
 token: Q0wpw4xZiimaUsk4GvScAg2un1d
 sidebar_position: 3
@@ -24,9 +24,9 @@ import Admonition from '@theme/Admonition';
 
 # NGRAM
 
-Zilliz Cloud の `NGRAM` インデックスは、`VARCHAR` フィールドまたは `JSON` フィールド内の特定の JSONパス に対する `LIKE` クエリの高速化のために構築されます。インデックスの構築 前に、Zilliz Cloud はテキストを固定長 *n* の短い重複する部分文字列（*n-gram* として知られる）に分割します。例えば、*n = 3* の場合、単語 *"Milvus"* は 3-gram に分割されます: *"Mil"*、*"ilv"*、*"lvu"*、*"vus"*。これらの n-gram は、その n-gram が出現するドキュメント ID をマッピングする 転置インデックス に格納されます。クエリ時 に、このインデックスにより Zilliz Cloud は検索対象を少数の候補に迅速に絞り込むことができ、クエリ実行が大幅に高速化されます。
+Zilliz Cloud の `NGRAM` インデックスは、`VARCHAR` フィールドまたは `JSON` フィールド内の特定の JSONパス に対する `LIKE` クエリの高速化のために構築されます。インデックスの構築 前に、Zilliz Cloud はテキストを固定長 *n* の短い重複する部分文字列（*n-gram* と呼ばれる）に分割します。例えば、*n = 3* の場合、単語 *"Milvus"* は 3-gram に分割されます: *"Mil"*、*"ilv"*、*"lvu"*、*"vus"*。これらの n-gram は、各 gram を出現するドキュメント ID にマッピングする 転置インデックス に格納されます。クエリ時 に、このインデックスにより Zilliz Cloud は検索範囲を少数の候補に迅速に絞り込むことができ、クエリ実行が大幅に高速化されます。
 
-以下のような高速なプレフィックス、サフィックス、インフィックス、またはワイルドカードフィルタリングが必要な場合に使用してください:
+以下のような高速なプレフィックス、サフィックス、インフィックス、またはワイルドカードフィルタリングが必要な場合に使用します:
 
 - `name LIKE "data%"`
 
@@ -36,7 +36,7 @@ Zilliz Cloud の `NGRAM` インデックスは、`VARCHAR` フィールドまた
 
 <Admonition type="info" icon="📘" title="Notes">
 
-フィルタ式の構文の詳細については、[基本演算子](./basic-filtering-operators#range-operators) を参照してください。
+<p>フィルタ式の構文の詳細については、<a href="./basic-filtering-operators#range-operators">基本演算子</a>を参照してください。</p>
 
 </Admonition>
 
@@ -52,7 +52,7 @@ Zilliz Cloud は `NGRAM` インデックスを2段階のプロセスで実装し
 
 データ取り込み中、Zilliz Cloud は2つの主要なステップを実行して NGRAM インデックスを構築します:
 
-1. **テキストをn-gramに分解する**: Zilliz Cloud は対象フィールドの各文字列に対して *n* のウィンドウをスライドさせ、重複する部分文字列（*n-gram*）を抽出します。これらの部分文字列の長さは、設定可能な範囲 `[min_gram, max_gram]` 内に収まります。
+1. **テキストをn-gramに分解する**: Zilliz Cloud は対象フィールドの各文字列に対して長さ *n* のウィンドウをスライドさせ、重複する部分文字列（*n-gram*）を抽出します。これらの部分文字列の長さは、設定可能な範囲 `[min_gram, max_gram]` 内に収まります。
 
     - `min_gram`: 生成する最短の n-gram。これは、インデックスの恩恵を受けることができる最小のクエリ部分文字列長も定義します。
 
@@ -68,37 +68,33 @@ Zilliz Cloud は `NGRAM` インデックスを2段階のプロセスで実装し
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - 範囲 `[min_gram, max_gram]` に対して、Zilliz Cloud は2つの値の間（両端を含む）のすべての長さの n-gram を生成します。例えば、`[2,4]` と単語 `"text"` の場合、Zilliz Cloud は以下を生成します:
-
-        - **2-grams:** `te`, `ex`, `xt`
-
-        - **3-grams:** `tex`, `ext`
-
-        - **4-grams:** `text`
-
-    - n-gram の分解は文字ベースであり、言語に依存しません。例えば、中国語では、`min_gram = 2` の `"向量数据库"` は `"向量"`、`"量数"`、`"数据"`、`"据库"` に分解されます。
-
-    - スペースと句読点は、分解時に文字として扱われます。
-
-    - 分解は元の大文字小文字を保持し、マッチングは大文字小文字を区別します。例えば、`"データベース"` と `"database"` は異なる n-gram を生成し、クエリ時に正確な大文字小文字の一致が必要です。
+    <ul>
+    <li><p>範囲 <code>[min_gram, max_gram]</code> に対して、Zilliz Cloud は2つの値の間（両端を含む）のすべての長さの n-gram を生成します。例えば、<code>[2,4]</code> と単語 <code>"text"</code> の場合、Zilliz Cloud は以下を生成します:</p></li>
+    <li><p><strong>2-grams:</strong> <code>te</code>, <code>ex</code>, <code>xt</code></p></li>
+    <li><p><strong>3-grams:</strong> <code>tex</code>, <code>ext</code></p></li>
+    <li><p><strong>4-grams:</strong> <code>text</code></p></li>
+    <li><p>N-gram 分解は文字ベースであり、言語に依存しません。例えば、中国語では <code>"向量数据库"</code> を <code>min_gram = 2</code> で分解すると: <code>"向量"</code>, <code>"量数"</code>, <code>"数据"</code>, <code>"据库"</code> となります。</p></li>
+    <li><p>分解時、スペースと句読点は文字として扱われます。</p></li>
+    <li><p>分解は元の大文字小文字を保持し、マッチングは大文字小文字を区別します。例えば、<code>"データベース"</code> と <code>"database"</code> は異なる n-gram を生成し、クエリ時に正確な大文字小文字の一致が必要です。</p></li>
+    </ul>
 
     </Admonition>
 
 1. **転置インデックスを構築する**: 各生成された n-gram をそれを含むドキュメント ID のリストにマッピングする **転置インデックス** が作成されます。
 
-    例えば、2-gram `"AI"` が ID 1、5、6、8、9 のドキュメントに出現する場合、インデックスは `{"AI": [1, 5, 6, 8, 9]}` を記録します。このインデックスは、クエリ時 に検索範囲を迅速に絞り込むために使用されます。
+    例えば、2-gram `"AI"` が ID 1、5、6、8、9 のドキュメントに出現する場合、インデックスは `{"AI": [1, 5, 6, 8, 9]}` と記録します。このインデックスは クエリ時 に検索範囲を迅速に絞り込むために使用されます。
 
     ![BVPlwaN7Lh7UZibGopwcAcYQn1d](https://zdoc-images.s3.us-west-2.amazonaws.com/BVPlwaN7Lh7UZibGopwcAcYQn1d.png)
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    `[min_gram, max_gram]` の範囲が広いほど、より多くの gram とより大きなマッピングリストが作成されます。メモリが不足している場合、非常に大きなポスティングリストに対して mmap モードを検討してください。詳細については、[mmap の使用](./use-mmap) を参照してください。
+    <p>より広い <code>[min_gram, max_gram]</code> 範囲は、より多くの gram とより大きなマッピングリストを作成します。メモリが不足している場合は、非常に大きなポスティングリストに対して mmap モードを検討してください。詳細については、<a href="./use-mmap">mmap の使用</a>を参照してください。</p>
 
     </Admonition>
 
 ### Phase 2: クエリの高速化\{#phase-2-accelerate-queries}
 
-`LIKE` フィルタが実行されると、Zilliz Cloud は NGRAM インデックスを使用して以下のステップでクエリを高速化します:
+`LIKE` フィルタが実行されると、Zilliz Cloud は以下のステップで NGRAM インデックスを使用して クエリを高速化 します:
 
 ![XKwRwOPv6hqzpTb3ue8cbM8WnGe](https://zdoc-images.s3.us-west-2.amazonaws.com/XKwRwOPv6hqzpTb3ue8cbM8WnGe.png)
 
@@ -112,15 +108,15 @@ Zilliz Cloud は `NGRAM` インデックスを2段階のプロセスで実装し
 
     - `L > max_gram` の場合、クエリ用語は `max_gram` と等しいウィンドウサイズを使用して重複する gram に分解されます。
 
-    例えば、`max_gram` が `3` に設定され、クエリ用語が `"database"`（長さは **8**）の場合、これは `"dat"`、`"ata"`、`"tab"` などの 3-gram 部分文字列に分解されます。
+    例えば、`max_gram` が `3` に設定され、クエリ用語が長さ **8** の `"database"` の場合、それは `"dat"`、`"ata"`、`"tab"` などの 3-gram 部分文字列に分解されます。
 
-1. **各 gram の検索と積集合**: Zilliz Cloud は、クエリの各 gram を 転置インデックス で検索し、結果のドキュメント ID リストの積集合を取って、少数の候補ドキュメントを見つけます。これらの候補は、クエリのすべての gram を含んでいます。
+1. **各 gram の検索と積集合**: Zilliz Cloud はクエリの各 gram を 転置インデックス で検索し、結果のドキュメント ID リストの積集合を取って、少数の候補ドキュメントを見つけます。これらの候補は、クエリのすべての gram を含んでいます。
 
-1. **検証と結果の返却:** 元の `LIKE` フィルタは、少数の候補セットに対してのみ最終チェックとして適用され、完全一致を見つけます。
+1. **検証と結果の返却:** 元の `LIKE` フィルタが、少数の候補セットに対してのみ最終チェックとして適用され、完全一致を見つけます。
 
 ## NGRAM インデックスの作成\{#create-an-ngram-index}
 
-`VARCHAR` フィールドまたは `JSON` フィールド内の特定のパスに NGRAM インデックスを作成できます。
+NGRAM インデックスは、`VARCHAR` フィールドまたは `JSON` フィールド内の特定のパスに作成できます。
 
 ### 例 1: VARCHAR フィールドへの作成\{#example-1-create-on-a-varchar-field}
 
@@ -257,7 +253,7 @@ NGRAM インデックスが適用されるためには:
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**Milvus v2.6.x** と互換性のあるクラスタでは、不要になったスカラーインデックスを直接削除できます。事前にコレクションをリリースする必要はありません。
+<p><strong>Milvus v2.6.x</strong> 互換のクラスタでは、不要になったスカラーインデックスを直接削除できます。事前にコレクションをリリースする必要はありません。</p>
 
 </Admonition>
 

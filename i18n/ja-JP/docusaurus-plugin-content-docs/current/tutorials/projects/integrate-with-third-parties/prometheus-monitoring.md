@@ -32,19 +32,19 @@ Zilliz Cloud と Prometheus を統合することで、Zilliz Cloud デプロイ
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、**Enterprise** プロジェクトの **Dedicated** クラスターでのみ利用可能です。
+<p>この機能は、<strong>Enterprise</strong> プロジェクトの <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
-## Prometheus で Zilliz Cloud メトリクスをスクレイピングするように設定する\{#configure-prometheus-to-scrape-zilliz-cloud-metrics}
+## Prometheus を設定して Zilliz Cloud メトリクスをスクレイプする\{#configure-prometheus-to-scrape-zilliz-cloud-metrics}
 
-Prometheus で Zilliz Cloud クラスターを監視するには、以下の手順に従ってください。
+Prometheus で Zilliz Cloud クラスターを監視するには、以下の手順に従ってください：
 
 <Procedures>
 
 1. Prometheus サーバー上の `Prometheus.yml` 設定ファイルにアクセスします。詳細については、[設定](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#configuration) を参照してください。
 
-1. `Prometheus.yml` ファイルの `scrape_configs` セクションに以下のスニペットを追加します。プレースホルダーは適切な値に置き換えてください。
+1. 以下のスニペットを `Prometheus.yml` ファイルの `scrape_configs` セクションに追加します。プレースホルダーは適切な値に置き換えてください：
 
     - `{{apiキー}}`: クラスターメトリクスへのアクセスに使用する Zilliz Cloud API キー。
 
@@ -67,7 +67,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    クラスターに含まれるコレクションは 10,000 個以下である必要があります。この制限を超えるクラスターでは、メトリクスのエクスポートが不完全になったり、品質が低下したりする可能性があります。
+    <p>クラスターに含まれるコレクションは10,000個以下である必要があります。この制限を超えるクラスターでは、メトリクスのエクスポートが不完全になったり、品質が低下したりする可能性があります。</p>
 
     </Admonition>
 
@@ -82,7 +82,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
        </tr>
        <tr>
          <td><p><code>scheme</code></p></td>
-         <td><p>Zilliz Cloud エンドポイントからメトリクスをスクレイピングするために使用されるプロトコルスキーム。<code>https</code> に設定されます。</p></td>
+         <td><p>Zilliz Cloud エンドポイントからメトリクスをスクレイピングするために使用されるプロトコルスキーム。これは <code>https</code> に設定されます。</p></td>
        </tr>
        <tr>
          <td><p><code>metrics_path</code></p></td>
@@ -90,7 +90,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
        </tr>
        <tr>
          <td><p><code>scrape_interval</code></p></td>
-         <td><p>ターゲットをスクレイピングする頻度。サポートされる最小値は <code>60s</code> です。これより小さい値はエンドポイントで受け付けられません。</p></td>
+         <td><p>ターゲットをスクレイピングする頻度。サポートされる最小値は <code>60s</code> です。これより低い値はエンドポイントで受け付けられません。</p></td>
        </tr>
        <tr>
          <td><p><code>authorization.type</code></p></td>
@@ -102,7 +102,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
        </tr>
        <tr>
          <td><p><code>static_configs.targets</code></p></td>
-         <td><p>Prometheus がスクレイピングする静的ターゲット。<code>api.cloud.zilliz.com</code>（Zilliz Cloud RESTful API のホストアドレス）である必要があります。</p></td>
+         <td><p>Prometheus がスクレイピングする静的ターゲット。これは Zilliz Cloud RESTful API のホストアドレスである <code>api.cloud.zilliz.com</code> とする必要があります。</p></td>
        </tr>
     </table>
 
@@ -114,7 +114,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
 
 ## Example scraped metrics\{#example-scraped-metrics}
 
-以下は、Zilliz Cloud の `/metrics/export` エンドポイントからスクレイピングされた Prometheus メトリクスの例です。コレクションごとのメトリクスには `collection_name` および `db_name` ラベルが含まれますが、クラスターのみのメトリクスは変更されません。
+以下は、Zilliz Cloud の `/metrics/export` エンドポイントからスクレイピングされた Prometheus メトリクスの例です。コレクションごとのメトリクスには `collection_name` と `db_name` のラベルが含まれますが、クラスターのみのメトリクスは変更されません。
 
 ```yaml
 # HELP zilliz_entities Total number of entities stored

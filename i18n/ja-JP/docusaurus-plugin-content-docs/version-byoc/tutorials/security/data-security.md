@@ -5,7 +5,7 @@ sidebar_key: data-security
 sidebar_label: "データセキュリティ"
 beta: FALSE
 notebook: FALSE
-description: "データセキュリティは Zilliz Cloud において不可欠な要素です。本ドキュメントでは、Zilliz Cloud がお客様のデータを包括的に保護するために実施している主な対策とポリシーについてまとめています。 | BYOC"
+description: "データセキュリティは Zilliz Cloud にとって不可欠な要素です。このドキュメントでは、Zilliz Cloud がお客様のデータを包括的に保護するために実施している主な対策とポリシーをまとめています。 | BYOC"
 type: origin
 token: SIhBwKFJri4u2CkyD3ucnO7an3g
 sidebar_position: 1
@@ -23,11 +23,11 @@ import Admonition from '@theme/Admonition';
 
 # データセキュリティ
 
-データセキュリティは Zilliz Cloud にとって不可欠な要素です。本ドキュメントでは、Zilliz Cloud がお客様のデータを包括的に保護するために実施している主な対策とポリシーについて概要を説明します。
+データセキュリティは Zilliz Cloud にとって不可欠な要素です。このドキュメントでは、Zilliz Cloud がお客様のデータを包括的に保護するために実施している主な対策とポリシーについて概要を説明します。
 
-## アカウントとプライバシーの保護\{#account-and-privacy-protection}
+## アカウントとプライバシー保護\{#account-and-privacy-protection}
 
-Zilliz Cloud は、登録時からユーザーデータを保護します：
+Zilliz Cloud は、登録時からユーザーデータを保護します。
 
 - 高度な暗号化アルゴリズム（SHA-256、bcrypt）の使用。
 
@@ -37,9 +37,9 @@ Zilliz Cloud は、登録時からユーザーデータを保護します：
 
 Zilliz は、お客様の VPC と当社の VPC 間の分離を実装し、BYOC ソリューションでのデータセキュリティを確保しています。詳細については、[BYOC 概要](/docs/byoc/byoc-intro) の [セキュリティ保証](/docs/byoc/byoc-intro#security-assurance) を参照してください。
 
-## データの分離とレジデンシー\{#data-isolation-and-residency}
+## データ分離とレジデンシー\{#data-isolation-and-residency}
 
-Zilliz Cloud は、クラスターに対して堅牢な分離と保護を提供します：
+Zilliz Cloud は、クラスターに対して堅牢な分離と保護を提供します。
 
 - **複数のデータレジデンシーオプション**: お好みのクラウドプロバイダーとリージョンにクラスターを作成できます。
 
@@ -51,7 +51,7 @@ Zilliz Cloud は、クラスターに対して堅牢な分離と保護を提供�
 
 ## 認証\{#authentication}
 
-Zilliz Cloud は、安全なユーザー認証のために OAuth0 を利用します：
+Zilliz Cloud は、安全なユーザー認証のために OAuth0 を利用します。
 
 - シングルサインオン（SSO）のサポート。
 
@@ -67,15 +67,15 @@ Zilliz Cloud は、安全なユーザー認証のために OAuth0 を利用し�
 
 - 階層的な権限（組織、プロジェクト、クラスター）。
 
-- 権限割り当てを簡素化する事前定義されたロール。
+- 権限割り当てを簡素化する事前定義ロール。
 
-- コンソールでの直感的な操作と、アプリケーションからのプログラマティックなアクセスの両方が利用可能。
+- コンソールでの直感的な操作と、アプリケーションからのプログラムによるアクセスの両方が利用可能。
 
 詳細については、[アクセス制御](./access-control) を参照してください。
 
 ## 安全なネットワークアクセス\{#secure-network-access}
 
-Zilliz Cloud は、以下を通じてネットワークのやり取りを保護します：
+Zilliz Cloud は、以下を通じてネットワークのやり取りを保護します。
 
 - **コンソール IP 許可リスト:** 許可された IP 範囲（CIDR ブロック）によるコンソールアクセスの制限。
 
@@ -105,7 +105,7 @@ Zilliz Cloud は、以下を通じてネットワークのやり取りを保護�
 
 詳細については、[監査](./auditing) を参照してください。
 
-## データの整合性とバックアップ\{#data-integrity-and-backup}
+## データ整合性とバックアップ\{#data-integrity-and-backup}
 
 データの可用性と復旧を確保：
 
@@ -117,7 +117,7 @@ Zilliz Cloud は、以下を通じてネットワークのやり取りを保護�
 
 ## 証明書と TLS\{#certificates-and-tls}
 
-Zilliz Cloud は、安全な接続を確保します：
+Zilliz Cloud は、安全な接続を確保します。
 
 - SSL 証明書に Let's Encrypt と AWS Certificate Manager を使用。
 
@@ -127,10 +127,10 @@ Zilliz Cloud は、安全な接続を確保します：
 
 <Admonition type="info" icon="📘" title="Notes">
 
-双方向 TLS（mTLS）は現在利用できません。
+<p>双方向 TLS（mTLS）は現在利用できません。 </p>
 
 </Admonition>
 
 ## 概要\{#summary}
 
-Zilliz Cloud は常にデータセキュリティを最優先事項として位置づけています。包括的な暗号化、厳格な認証、堅牢なアクセス制御、プライベートネットワーク、そして一貫した監査の実践を通じて、データの機密性、整合性、可用性を維持し、データセキュリティを重視しています。
+Zilliz Cloud は常にデータセキュリティを最優先事項としています。包括的な暗号化、厳格な認証、堅牢なアクセス制御、プライベートネットワーク、そして一貫した監査の実践を通じて、データの機密性、整合性、可用性を維持し、データセキュリティを重視しています。

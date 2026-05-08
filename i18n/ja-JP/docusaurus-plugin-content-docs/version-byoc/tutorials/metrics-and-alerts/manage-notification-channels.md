@@ -5,7 +5,7 @@ sidebar_key: manage-notification-channels
 sidebar_label: "通知チャネルを管理"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud のアラート通知により、クラスター内で発生するイベントに関する情報を受け取ることができます。デフォルトでは、これらの通知は指定されたユーザーのメールアドレスに送信されますが、Webhook を使用してカスタム通知チャネルを設定することで、より統合されたイベント駆動型の通知を実現することもできます。このガイドでは、アラート通知チャネルの設定手順について説明します。 | BYOC"
+description: "Zilliz Cloud のアラート通知により、クラスター内で発生するイベントに関する情報を受け取ることができます。デフォルトでは、これらの通知は指定されたユーザーのメールアドレスに送信されますが、Webhook を使用してカスタム通知チャネルを設定し、より統合されたイベント駆動型の通知を実現することも可能です。このガイドでは、アラート通知チャネルの設定手順について説明します。 | BYOC"
 type: origin
 token: ARpTwYXlIi7ZLtkEHx5ciUK6nuc
 sidebar_position: 5
@@ -33,7 +33,7 @@ Zilliz Cloud のアラート通知により、クラスター内で発生する�
 
 ## 通知チャネルの設定\{#set-up-notification-channels}
 
-Zilliz Cloud コンソールの **アラートの編集** または **アラートの作成** ダイアログボックスで、通知チャネルの管理ページにアクセスできます。
+Zilliz Cloud コンソールの **アラートの編集** または **アラートの作成** ダイアログボックスから、通知チャネルの管理ページにアクセスできます。
 
 ![manage-alert-channel](https://zdoc-images.s3.us-west-2.amazonaws.com/manage-alert-channel.png "manage-alert-channel")
 
@@ -49,7 +49,7 @@ Eメール 通知を設定するには、
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成は サポートされていません。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
+    <p>組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">組織アラートの管理</a>を参照してください。</p>
 
     </Admonition>
 
@@ -79,13 +79,13 @@ PagerDuty サービスと統合するには、
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成は サポートされていません。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
+        <p>組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">組織アラートの管理</a>を参照してください。</p>
 
         </Admonition>
 
     1. 表示されたダイアログボックスで、**送信先** フィールドの **+ チャネル** をクリックし、ドロップダウンリストから **PagerDuty** を選択します。
 
-    1. 取得した PagerDuty 統合キーを入力し、PagerDuty アカウントをホストしているサービスリージョンを選択します。PagerDuty サービスリージョンの詳細については、[サービスリージョン](https://support.pagerduty.com/docs/service-regions) を参照してください。
+    1. 取得した PagerDuty 統合キーを入力し、PagerDuty アカウントをホストするサービスリージョンを選択します。PagerDuty サービスリージョンの詳細については、[サービスリージョン](https://support.pagerduty.com/docs/service-regions) を参照してください。
 
     1. **アラート解決通知** と **アラートを有効にする** で、アラートが解決またはトリガーされたときに実行する適切なアクションを設定します。
 
@@ -109,7 +109,7 @@ Slack 統合を設定するには、
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成は サポートされていません。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
+        <p>組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">組織アラートの管理</a>を参照してください。</p>
 
         </Admonition>
 
@@ -133,7 +133,7 @@ Opsgenie 統合を設定するには、
 
     1. **API** を検索して選択します。この API 統合の名前を入力し、**続行** をクリックします。
 
-    1. API 設定ページで **編集** をクリックします。デフォルトですべての権限が選択されており、**読み取りアクセスを許可**、**作成と更新のアクセスを許可**、**設定へのアクセスを許可** が選択されていることを確認してください。
+    1. API 設定ページで **編集** をクリックします。デフォルトですべての権限が選択されていますが、**読み取りアクセスを許可**、**作成と更新のアクセスを許可**、および **設定アクセスを許可** が選択されていることを確認してください。
 
     1. 生成された API キーをコピーし、**保存** を押します。**受信ルール** を確認し、**統合を有効にする** を押して API の設定を完了します。
 
@@ -145,7 +145,7 @@ Opsgenie 統合を設定するには、
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成は サポートされていません。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
+        <p>組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">組織アラートの管理</a>を参照してください。</p>
 
         </Admonition>
 
@@ -173,7 +173,7 @@ Lark 統合を設定するには、
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成は サポートされていません。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
+        <p>組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">組織アラートの管理</a>を参照してください。</p>
 
         </Admonition>
 
@@ -191,7 +191,7 @@ Zilliz Cloud が提供する **Webhook** オプションを使用すると、カ
 
 <Procedures>
 
-1. サービスの Webhook URL を取得します。
+1. ご利用のサービスの Webhook URL を取得します。
 
 1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/signup)で、Webhook 通知チャネルを設定します。
 
@@ -201,13 +201,13 @@ Zilliz Cloud が提供する **Webhook** オプションを使用すると、カ
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成は サポートされていません。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
+        <p>組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">組織アラートの管理</a>を参照してください。</p>
 
         </Admonition>
 
     1. 表示されたダイアログボックスで、**送信先** フィールドの **+ チャネル** をクリックし、ドロップダウンリストから **Webhook** を選択します。
 
-    1. サービスの Webhook URL を入力します。
+    1. ご利用のサービスの Webhook URL を入力します。
 
     1. **アラート解決通知** と **アラートを有効にする** で、アラートが解決またはトリガーされたときに実行する適切なアクションを設定します。
 
@@ -235,11 +235,11 @@ WeCom アラート通知を設定するには、以下の手順に従ってく�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    WeCom の設定により、一部のグループではグループボットを追加できない場合があります。
+    <p>WeCom の設定により、一部のグループではグループボットを追加できない場合があります。</p>
 
     </Admonition>
 
-1. 作成したボットの情報を表示し、対応するボットの Webhook URL を取得します。詳細な手順については、[グループボットの Webhook アドレスの取得](https://open.work.weixin.qq.com/help2/pc/14931?person_id=1&searchデータ=#%E4%BA%94%E3%80%81%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BAWebhook%E5%9C%B0%E5%9D%80) を参照してください。
+1. 作成したボットの情報を表示し、対応するボットの webhook URL を取得します。詳細な手順については、[グループボットの webhook アドレスの取得](https://open.work.weixin.qq.com/help2/pc/14931?person_id=1&searchデータ=#%E4%BA%94%E3%80%81%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BAWebhook%E5%9C%B0%E5%9D%80) を参照してください。
 
 1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/signup) にログインして、WeCom アラートチャネルを設定します。
 
@@ -249,13 +249,13 @@ WeCom アラート通知を設定するには、以下の手順に従ってく�
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、[Manage 組織アラート](./manage-organization-alerts) を参照してください。
+        <p>組織アラート の場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">Manage 組織アラート</a> を参照してください。</p>
 
         </Admonition>
 
     1. 表示されたダイアログボックスで、**送信先** フィールドの **+ Channel** をクリックし、ドロップダウンリストから **WeCom** を選択します。
 
-    1. 取得した Webhook URL を入力します。
+    1. 取得した webhook URL を入力します。
 
     1. **アラート解決通知** と **Enable Alert** で、アラートが解決またはトリガーされたときに実行する適切なアクションを設定します。
 
@@ -271,15 +271,15 @@ DingTalk アラート通知を設定するには、以下の手順に従って�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    カスタムボットを設定する際、**Security Setting** で **Custom キーwords** を指定します。
-
-    - **Test**: 接続テスト用のアラート通知を受信します。
-
-    - **Alert**: 実際のイベント用のアラート通知を受信します。
+    <p>カスタムボットを設定する際、<strong>Security Setting</strong> で <strong>Custom キーwords</strong> を指定してください：</p>
+    <ul>
+    <li><p><strong>Test</strong>: 接続テスト用のアラート通知を受信します。</p></li>
+    <li><p><strong>Alert</strong>: 実際のイベントのアラート通知を受信します。</p></li>
+    </ul>
 
     </Admonition>
 
-1. 作成したボットの情報を表示し、対応するボットの Webhook URL を取得します。詳細な手順については、[カスタムボットの Webhook アドレスの取得](https://open.dingtalk.com/document/orgapp/obtain-the-webhook-address-of-a-custom-robot) を参照してください。
+1. 作成したボットの情報を表示し、対応するボットの webhook URL を取得します。詳細な手順については、[カスタムボットの webhook アドレスの取得](https://open.dingtalk.com/document/orgapp/obtain-the-webhook-address-of-a-custom-robot) を参照してください。
 
 1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/signup) にログインして、DingTalk アラートチャネルを設定します。
 
@@ -289,19 +289,19 @@ DingTalk アラート通知を設定するには、以下の手順に従って�
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        組織アラートの場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、[Manage 組織アラート](./manage-organization-alerts) を参照してください。
+        <p>組織アラート の場合、既存のアラートターゲットの編集のみが可能で、新規作成はサポートされていません。詳細については、<a href="./manage-organization-alerts">Manage 組織アラート</a> を参照してください。</p>
 
         </Admonition>
 
     1. 表示されたダイアログボックスで、**送信先** フィールドの **+ Channel** をクリックし、ドロップダウンリストから **DingTalk** を選択します。
 
-    1. 取得した Webhook URL を入力します。
+    1. 取得した webhook URL を入力します。
 
     1. **アラート解決通知** と **Enable Alert** で、アラートが解決またはトリガーされたときに実行する適切なアクションを設定します。
 
 </Procedures>
 
-## Test connectivity\{#test-connectivity}
+## 接続テスト\{#test-connectivity}
 
 通知チャネルの設定後、テストメッセージ送信アイコンをクリックして、正しく設定されているか確認します。
 

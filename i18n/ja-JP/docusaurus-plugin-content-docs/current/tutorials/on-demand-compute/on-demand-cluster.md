@@ -5,7 +5,7 @@ sidebar_key: on-demand-cluster
 sidebar_label: "クラスター"
 beta: PUBLIC
 notebook: FALSE
-description: "クラスターは、ベクトルデータベースのワークロードを実行するコンピューティングリソースのセットです。Zilliz Cloud では、常時稼働で低レイテンシーアクセスが必要な本番ワークロード向けに継続的に実行される serving cluster と、リクエストが到着したときにのみ起動し、アイドル時にゼロにスケールする on-demand cluster の2種類のクラスターを提供しています。詳細については、Compute: Realtime Serving & On-demand Compute を参照してください。 | Cloud"
+description: "クラスターは、ベクトルデータベースのワークロードを実行するコンピューティングリソースのセットです。Zilliz Cloud には、常時稼働で低レイテンシーアクセスが必要な本番ワークロード向けに継続的に実行されるサーバークラスターと、リクエストが到着したときにのみ起動し、アイドル時にゼロにスケールするオンデマンドクラスターの2種類があります。 | Cloud"
 type: origin
 token: XFoiwC15Jiu5LAkUeuVcvbconDR
 sidebar_position: 1
@@ -13,7 +13,7 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - on-demand compute
+  - オンデマンドコンピューティング
   - クラスター
 
 ---
@@ -25,29 +25,28 @@ import Supademo from '@site/src/components/Supademo';
 
 import Procedures from '@site/src/components/Procedures';
 
-# クラスター
+# クラスタ
 
-クラスターは、ベクトルデータベースのワークロードを実行するコンピューティングリソースのセットです。Zilliz Cloud では2つのタイプを提供しています。常時稼働で低レイテンシーアクセスが必要な本番ワークロード向けに継続的に実行される **serving clusters** と、リクエストが到着したときにのみ起動し、アイドル時にゼロにスケールする **on-demand clusters** です。詳細については、Compute: Realtime Serving & On-demand Compute を参照してください。
+クラスタは、ベクトルデータベースのワークロードを実行するコンピューティングリソースのセットです。Zilliz Cloud では2つのタイプを提供しています。**serving cluster** は、常時稼働かつ低レイテンシーアクセスが必要な本番ワークロード向けに継続的に実行され、**on-demand cluster** はリクエストが到着したときにのみ起動し、アイドル時にはゼロにスケールします。
 
-このトピックでは、**on-demand** クラスターの作成方法について説明します。
+このトピックでは、**on-demand** クラスタの作成方法について説明します。
 
 <Admonition type="info" icon="📘" title="Note">
 
-この機能は **Enterprise** プロジェクトでのみ利用可能です。
-
-現在、on-demand クラスターの作成は AWS us-west-2 でのみ可能です。その他のリージョンについては、[お問い合わせ](http://zilliz.com/contact-sales) ください。
+<p>この機能は <strong>Enterprise</strong> プロジェクトでのみ利用可能です。</p>
+<p>現在、on-demand クラスタは AWS us-west-2 でのみ作成できます。その他のリージョンについては、<a href="http://zilliz.com/contact-sales">お問い合わせ</a>ください。</p>
 
 </Admonition>
 
-## 制限ations\{#limitations}
+## 制限\{#limitations}
 
-- on-demand クラスターを管理するには、**プロジェクト管理者** である必要があります。
+- on-demand クラスタを管理するには、**プロジェクト管理者**である必要があります。
 
-- 各プロジェクトで作成できる on-demand クラスターは最大20個までです。
+- 各プロジェクトで作成できる on-demand クラスタは最大20個までです。
 
-- on-demand クラスターは、8 CU あたり最大3 TB の生データをクエリできます。この制限を超えるクエリはエラーを返します。
+- on-demand クラスタは、8 CU あたり最大3 TB の生データをクエリできます。この制限を超えるクエリはエラーを返します。
 
-## Create an on-demand cluster\{#create-an-on-demand-cluster}
+## on-demand クラスタの作成\{#create-an-on-demand-cluster}
 
 - **RESTful API経由**
 
@@ -233,7 +232,7 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-クラスタを削除すると、即座に削除され、復元することはできません。この操作は元に戻せません。
+<p>クラスタを削除すると、即座に削除され、復元することはできません。この操作は元に戻せません。</p>
 
 </Admonition>
 

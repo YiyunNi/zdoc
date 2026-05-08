@@ -5,7 +5,7 @@ sidebar_key: inverted-index-type
 sidebar_label: "転置インデックス"
 beta: FALSE
 notebook: FALSE
-description: "データに対して頻繁にフィルタークエリを実行する必要がある場合、転置インデックスを使用することでクエリパフォーマンスを大幅に向上させることができます。すべてのドキュメントをスキャンするのではなく、Zilliz Cloud は転置インデックスを使用して、フィルター条件に一致する正確なレコードを迅速に特定します。"
+description: "データに対して頻繁にフィルタークエリを実行する必要がある場合、転置インデックスを使用することでクエリパフォーマンスを大幅に向上させることができます。すべてのドキュメントをスキャンする代わりに、Zilliz Cloud は転置インデックスを使用して、フィルター条件に一致する正確なレコードを迅速に特定します。"
 type: origin
 token: YNczwtWpFiN0CckMvDVcn0pvnEb
 sidebar_position: 2
@@ -130,7 +130,7 @@ JSON フィールドのインデックス作成に関する詳細情報（サポ
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**Milvus v2.6.x** 互換のクラスタでは、不要になったスカラーインデックスを直接削除できます — 事前にコレクションをリリースする必要はありません。
+<p><strong>Milvus v2.6.x</strong> 互換のクラスタでは、不要になったスカラーインデックスを直接削除できます。事前にコレクションをリリースする必要はありません。</p>
 
 </Admonition>
 

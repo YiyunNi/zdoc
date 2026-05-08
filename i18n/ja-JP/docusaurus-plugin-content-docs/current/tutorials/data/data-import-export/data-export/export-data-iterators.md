@@ -1,11 +1,11 @@
 ---
-title: "イテレータを使用したデータのエクスポート | Cloud"
+title: "イテレータを使用してデータをエクスポート | Cloud"
 slug: /export-data-iterators
 sidebar_key: export-data-iterators
 sidebar_label: "イテレータの使用"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloud のコレクションからデータをエクスポートする方法の例を紹介します。"
+description: "このガイドでは、Zilliz Cloud のコレクションからデータをエクスポートする方法の例を示します。"
 type: origin
 token: N6fZwCUXqiqoJEkFiVNcvDJEnnc
 sidebar_position: 1
@@ -28,11 +28,11 @@ import TabItem from '@theme/TabItem';
 
 ## 概要\{#overview}
 
-Milvus の Python および Java SDK の両方が、コレクション内のエンティティをメモリ効率の良い方法で反復処理するためのイテレータ API セットを提供しています。詳細については、[Search Iterator](./with-iterators) を参照してください。
+Milvus の Python SDK と Java SDK の両方が、コレクション内のエンティティをメモリ効率的に反復処理するためのイテレータ API セットを提供しています。詳細については、[Search Iterator](./with-iterators) を参照してください。
 
 イテレータの使用には以下の利点があります。
 
-- **シンプルさ**: 複雑な **offset** および **limit** の設定を不要にします。
+- **シンプルさ**: 複雑な **offset** と **limit** の設定を不要にします。
 
 - **効率性**: 必要なデータのみを取得することで、スケーラブルなデータ取得を実現します。
 
@@ -42,13 +42,13 @@ Milvus の Python および Java SDK の両方が、コレクション内のエ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、Milvus 2.3.x 以降と互換性のある Zilliz Cloud クラスタで利用できます。
+<p>この機能は、Milvus 2.3.x 以降と互換性のある Zilliz Cloud クラスターで利用できます。</p>
 
 </Admonition>
 
 ## 準備\{#preparations}
 
-以下の手順では、Zilliz Cloud クラスタに接続し、コレクションを迅速にセットアップし、10,000 以上のランダムに生成されたエンティティをコレクションに挿入するコードを再利用します。
+以下の手順では、Zilliz Cloud クラスターに接続し、コレクションを迅速にセットアップし、10,000 以上のランダムに生成されたエンティティをコレクションに挿入するコードを再利用します。
 
 ### ステップ 1: コレクションの作成\{#step-1-create-a-collection}
 

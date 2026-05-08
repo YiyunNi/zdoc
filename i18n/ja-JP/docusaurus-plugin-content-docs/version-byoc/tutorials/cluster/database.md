@@ -5,7 +5,7 @@ sidebar_key: database
 sidebar_label: "データベース"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、クラスタとコレクションの間にデータベース層を導入し、データをより効率的に管理・整理できるようにするとともに、マルチテナンシーをサポートします。 | BYOC"
+description: "Zilliz Cloud は、クラスターとコレクションの間にデータベース層を導入し、データをより効率的に管理・整理できるようにするとともに、マルチテナンシーをサポートします。 | BYOC"
 type: origin
 token: Z0oiwVpsliiW1zksnlFc3ZsVnxf
 sidebar_position: 5
@@ -487,13 +487,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## データベースを使用する\{#use-database}
+## データベースの使用\{#use-database}
 
-Zilliz Cloud から切断することなく、データベースを切り替えることができます。
+Zilliz Cloud から切断することなく、あるデータベースから別のデータベースに切り替えることができます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-RESTful API はこの操作をサポートしていません。
+<p>RESTful API はこの操作をサポートしていません。</p>
 
 </Admonition>
 

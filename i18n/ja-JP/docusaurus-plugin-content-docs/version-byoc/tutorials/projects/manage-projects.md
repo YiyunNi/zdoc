@@ -5,7 +5,7 @@ sidebar_key: manage-projects
 sidebar_label: "プロジェクト"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナとして機能し、クラスター、ボリューム、および関連リソースをグループ化します。プロジェクト内のすべてのリソースは、同じクラウドプロバイダーとリージョンを共有します。 | BYOC"
+description: "Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナとして機能し、クラスター、ボリューム、および関連するリソースをグループ化します。プロジェクト内のすべてのリソースは、同じクラウドプロバイダーとリージョンを共有します。 | BYOC"
 type: origin
 token: NXypwJ2ySiv7RAkyKb5cZ9SKnvf
 sidebar_position: 1
@@ -120,7 +120,7 @@ BYOC デプロイメントでは、各プロジェクトは1つのリージョ�
 
 - **ウェブコンソール経由**
 
-    **プロジェクト** ページでは、プロジェクト名、プラン、作成時間、およびプロジェクト内のクラスター数を確認できます。さらに、特定のプロジェクトをクリックしてそのクラスターを表示できます。
+    **プロジェクト** ページでは、プロジェクト名、プラン、作成時間、およびプロジェクト内のクラスター数を確認できます。さらに、特定のプロジェクトをクリックして、そのクラスターを表示できます。
 
     ![KgjvbAvUkopKWsxnGXycOZEynZd](https://zdoc-images.s3.us-west-2.amazonaws.com/kgjvbavukopkwsxngxycozeynzd.png "KgjvbAvUkopKWsxnGXycOZEynZd")
 
@@ -140,7 +140,7 @@ BYOC デプロイメントでは、各プロジェクトは1つのリージョ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-デフォルトのプロジェクトは削除できません。
+<p>デフォルトのプロジェクトは削除できません。</p>
 
 </Admonition>
 

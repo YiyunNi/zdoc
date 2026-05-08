@@ -5,7 +5,7 @@ sidebar_key: import-data-on-web-ui
 sidebar_label: "コンソール"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、Zilliz Cloud コンソールで準備したデータをインポートする方法を説明します。"
+description: "このページでは、Zilliz Cloud コンソールで準備したデータをインポートする方法を紹介します。"
 type: origin
 token: KkdswLx2bi4bgCkY6bEc7Do9neh
 sidebar_position: 1
@@ -25,37 +25,38 @@ import Supademo from '@site/src/components/Supademo';
 
 # データインポート（コンソール）
 
-このページでは、Zilliz Cloud コンソール上で準備済みのデータをインポートする方法を紹介します。
+このページでは、Zilliz Cloud コンソールで準備したデータをインポートする方法を紹介します。
 
 ## Web UI でデータをインポートする\{#import-data-on-the-web-ui}
 
-データファイルの準備ができたら、ローカルドライブから直接インポートするか、オブジェクトストレージバケット（AWS S3 や Google Cloud GCS、Azure Blob Storage など）にアップロードしてデータインポートを行うことができます。
+データファイルの準備ができたら、ローカルドライブから直接インポートするか、AWS S3 や Google Cloud GCS、Azure Blob Storage などのオブジェクトストレージバケットにアップロートしてデータインポートを行うことができます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- コレクションあたり、実行中または保留中のインポートジョブは最大 10,000 件まで作成できます。
-
-- Web コンソールでは、最大 1 GB のローカル JSON または Parquet ファイルのアップロードをサポートしています。それより大きいファイルの場合は、[オブジェクトストレージからのアップロード](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket) を推奨します。データインポートで問題が発生した場合は、[サポートチケットを作成](https://support.zilliz.com/hc/en-us) してください。
+<ul>
+<li><p>コレクション内で実行中または保留中のインポートジョブは最大 10,000 件まで作成できます。</p></li>
+<li><p>Web コンソールでは、最大 1 GB のローカル JSON または Parquet ファイルのアップロードをサポートしています。より大きなファイルの場合は、代わりに<a href="./import-data-on-web-ui#remote-files-from-an-object-storage-bucket">オブジェクトストレージからのアップロード</a>を推奨します。データインポートで問題が発生した場合は、<a href="https://support.zilliz.com/hc/en-us">サポートチケットを作成</a>してください。</p></li>
+</ul>
 
 </Admonition>
 
 ### ローカルファイル\{#local-file}
 
-Zilliz Cloud では、ローカルの JSON または Parquet ファイルからのデータインポートをサポートしています。データが NumPy 形式で準備されている場合は、[オブジェクトストレージバケット](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket) からインポートしてください。
+Zilliz Cloud は、ローカルの JSON または Parquet ファイルからのデータインポートをサポートしています。データが NumPy 形式で準備されている場合は、[オブジェクトストレージバケット](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket)からインポートしてください。
 
-ローカルファイルからデータをインポートするには、ファイルをアップロードエリアにドラッグ＆ドロップし、**Import** をクリックします。
+ローカルファイルからデータをインポートするには、ファイルをアップロードエリアにドラッグまたはドロップし、**Import** をクリックします。
 
 <Supademo id="cme7x3fgv388ch3pyymi6ek0q?utm_source=link" title=""  />
 
 ### オブジェクトストレージバケットからのリモートファイル\{#remote-files-from-an-object-storage-bucket}
 
-リモートファイルをインポートするには、まずリモートバケットにアップロードする必要があります。生データをサポートされている形式に変換し、[BulkWriter ツールを使用](./use-bulkwriter) して結果ファイルをアップロードできます。
+リモートファイルをインポートするには、まずリモートバケットにアップロードする必要があります。生データをサポートされている形式に簡単に変換し、[BulkWriter ツールを使用して](./use-bulkwriter)結果ファイルをアップロードできます。
 
-準備済みのファイルをリモートバケットにアップロードしたら、オブジェクトストレージサービスを選択し、リモートバケット内のファイルパスと、Zilliz Cloud がバケットからデータを取得するためのバケット認証情報を入力します。
+準備したファイルをリモートバケットにアップロードしたら、オブジェクトストレージサービスを選択し、リモートバケット内のファイルパスと、Zilliz Cloud がバケットからデータを取得するためのバケット認証情報を入力します。
 
 データセキュリティ要件に応じて、データインポート時に長期認証情報または短期トークンのいずれかを使用できます。
 
-認証情報の取得について詳しくは、以下を参照してください。
+認証情報の取得についての詳細は、以下を参照してください：
 
 - Amazon S3: [長期認証情報を使用した認証](https://docs.aws.amazon.com/sdkref/latest/guide/access-iam-users.html)
 
@@ -63,11 +64,11 @@ Zilliz Cloud では、ローカルの JSON または Parquet ファイルから�
 
 - Azure Blob Storage: [アカウントアクセスキーの表示](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)
 
-短期トークンの使用について詳しくは、[この FAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service) を参照してください。
+短期トークンの使用についての詳細は、[この FAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud では、クラスタをホストしているクラウドプロバイダーに関係なく、任意のオブジェクトストレージサービスから任意の Zilliz Cloud クラスタにデータをインポートできるようになりました。たとえば、AWS S3 バケットから GCP 上にデプロイされた Zilliz Cloud クラスタにデータをインポートできます。
+<p>Zilliz Cloud では、クラスタをホストしているクラウドプロバイダに関係なく、任意のオブジェクトストレージサービスから任意の Zilliz Cloud クラスタにデータをインポートできるようになりました。たとえば、AWS S3 バケットから GCP にデプロイされた Zilliz Cloud クラスタにデータをインポートできます。</p>
 
 </Admonition>
 
@@ -75,9 +76,9 @@ Zilliz Cloud では、クラスタをホストしているクラウドプロバ�
 
 ### ボリュームから\{#from-a-volume}
 
-- **マネージドボリューム**: ローカルファイルが非常に大きい場合（> 1GB）、まず[ファイルをマネージドボリュームにアップロード](./managed-volume) し、ボリュームからインポートできます。準備済みのファイルをボリュームにアップロードしたら、ファイルパスをコピーして、コレクションにファイルをインポートし続けます。
+- **マネージドボリューム**: ローカルファイルが非常に大きい場合（> 1GB）、[ファイルをマネージドボリュームにアップロード](./managed-volume)してからボリュームからインポートできます。準備したファイルをボリュームにアップロードしたら、ファイルパスをコピーして、コレクションにファイルをインポートし続けます。
 
-- **外部ボリューム**: データファイルがクラウドオブジェクトストレージバケットにある場合、そのバケットにマッピングする[外部ボリューム](./external-volume) を作成できます。その後、外部ボリュームから直接データをインポートでき、毎回認証情報を提供する必要はありません。
+- **外部ボリューム**: データファイルがクラウドオブジェクトストレージバケットにある場合は、そのバケットにマッピングする[外部ボリューム](./external-volume)を作成できます。その後、外部ボリュームから直接データをインポートでき、毎回認証情報を提供する必要はありません。
 
 以下のデモでは、マネージドボリュームからデータをインポートする方法を示しています。
 
@@ -85,21 +86,21 @@ Zilliz Cloud では、クラスタをホストしているクラウドプロバ�
 
 ## 結果の確認\{#verify-results}
 
-インポートジョブの進捗とステータスは、[ジョブ](./job-center) ページで確認できます。
+インポートジョブの進捗とステータスは、[ジョブ](./job-center)ページで確認できます。
 
 ## サポートされているオブジェクトパス\{#supported-object-paths}
 
-該当するオブジェクトパスについては、[ストレージオプション](./data-import-storage-options) および [フォーマットオプション](./data-import-format-options) を参照してください。
+適用可能なオブジェクトパスについては、[ストレージオプション](./data-import-storage-options)および[フォーマットオプション](./data-import-format-options)を参照してください。
 
 ## FAQ\{#faq}
 
 **外部ボリュームと外部ストレージからの直接インポートの違いは何ですか？**
 
-いずれも独自の S3 または GCS バケットからデータをインポートできます。主な違いは以下の通りです。
+どちらも独自の S3 または GCS バケットからデータをインポートできます。主な違いは以下の通りです：
 
-- 外部ボリュームでは、[AWS S3 バケット](./integrate-with-aws-s3)、[Google Cloud Storage バケット](./integrate-with-gcp)、または [Microsoft Azure Blob Storage コンテナ](./integrate-with-azure-blob-storage) を Zilliz Cloud と統合して認証情報を管理する必要があります。認証情報は一度設定すれば、複数のボリュームや操作で再利用できます。データエンジニアはクラウドストレージキーに直接アクセスする必要はありません。
+- 外部ボリュームでは、[AWS S3 バケット](./integrate-with-aws-s3)、[Google Cloud Storage バケット](./integrate-with-gcp)、または [Microsoft Azure BLOB ストレージコンテナ](./integrate-with-azure-blob-storage)を Zilliz Cloud と統合して認証情報を管理する必要があります。認証情報は一度設定され、複数のボリュームや操作で再利用されます。データエンジニアはクラウドストレージキーに直接アクセスする必要はありません。
 
-- [外部ストレージからの直接インポート](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket) では、各インポートリクエストごとに認証情報（アクセスキー、シークレットキー）をインラインで提供する必要があります。これは一度きりのインポートにはシンプルですが、認証情報の分離や再利用性は提供しません。
+- 直接の[外部ストレージインポート](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket)では、各インポートリクエストで認証情報（アクセスキー、シークレットキー）をインラインで提供する必要があります。これは一度きりのインポートにはシンプルですが、認証情報の分離や再利用性は提供しません。
 
 ## 関連トピック\{#related-topics}
 
@@ -107,9 +108,9 @@ Zilliz Cloud では、クラスタをホストしているクラウドプロバ�
 
 - [フォーマットオプション](./data-import-format-options)
 
-- [RESTful API 経由でデータをインポート](./import-data-via-restful-api)
+- [RESTful API でデータをインポート](./import-data-via-restful-api)
 
-- [SDK 経由でデータをインポート](./import-data-via-sdks)
+- [SDK でデータをインポート](./import-data-via-sdks)
 
 - [データインポート実践ガイド](./data-import-zero-to-hero)
 

@@ -5,7 +5,7 @@ sidebar_key: rtree-index-type
 sidebar_label: "RTREE"
 beta: FALSE
 notebook: FALSE
-description: "`RTREE` インデックスは、Zilliz Cloud の `GEOMETRY` フィールドに対するクエリを高速化するツリー構造のデータ構造です。コレクションにポイント、ライン、ポリゴンなどの幾何オブジェクトを Well-known text (WKT) 形式で格納しており、空間フィルタリングを高速化したい場合、`RTREE` は最適な選択です。"
+description: "`RTREE` インデックスは、Zilliz Cloud の `GEOMETRY` フィールドに対するクエリを高速化するツリー構造のデータ構造です。コレクションにポイント、ライン、ポリゴンなどの幾何オブジェクトを Well-known text (WKT) 形式で格納しており、空間フィルタリングを高速化したい場合、`RTREE` が最適な選択です。"
 type: origin
 token: RlY2wylVQiZswikT0G2cBHVznTf
 sidebar_position: 4
@@ -124,13 +124,13 @@ print(hits)  # Expected: top-k by vector similarity among rows whose geo interse
 
 `GEOMETRY` フィールドの使用方法の詳細については、[ジオメトリ フィールド](./use-geometry-field) を参照してください。
 
-## インデックスの削除\{#drop-an-index}
+## インデックスを削除する\{#drop-an-index}
 
 `drop_index()` メソッドを使用して、コレクションから既存のインデックスを削除します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**Milvus v2.6.x** 互換のクラスタでは、不要になったスカラーインデックスを直接削除できます。事前にコレクションをリリースする必要はありません。
+<p><strong>Milvus v2.6.x</strong> 互換のクラスタでは、不要になったスカラー インデックスを直接削除できます。事前にコレクションをリリースする必要はありません。</p>
 
 </Admonition>
 

@@ -5,7 +5,7 @@ sidebar_key: manage-project-alerts
 sidebar_label: "プロジェクトアラートを管理"
 beta: FALSE
 notebook: FALSE
-description: "プロジェクトアラートは、指定された条件が満たされたときに通知を送信することで、Zilliz Cloud クラスターのプロアクティブな監視を可能にします。CU容量やクエリパフォーマンスなどのクラスターメトリクスを監視するようプロジェクトアラートを設定でき、注意が必要な潜在的な問題が発生した際に即座に通知を受け取ることができます。 | BYOC"
+description: "プロジェクトアラートは、指定した条件が満たされたときに通知を送信することで、Zilliz Cloud クラスターのプロアクティブな監視を可能にします。CU容量やクエリパフォーマンスなどのクラスターメトリクスを監視するようプロジェクトアラートを設定でき、注意が必要な潜在的な問題が発生した際に即座に通知を受け取ることができます。 | BYOC"
 type: origin
 token: NvDLw4kFji0xeWkc4Hpc9wUfnRh
 sidebar_position: 4
@@ -176,7 +176,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-プロジェクトアラートは RESTful API を使用して管理することもできます。詳細については、[アラートルールの更新](/reference/restful/update-alert-rule-v2) および [アラートルールの削除](/reference/restful/delete-alert-rule-v2) を参照してください。
+<p>プロジェクトアラートは RESTful API を使用して管理することもできます。詳細については、<a href="/reference/restful/update-alert-rule-v2">アラートルールの更新</a>および<a href="/reference/restful/delete-alert-rule-v2">アラートルールの削除</a>を参照してください。</p>
 
 </Admonition>
 
@@ -184,7 +184,7 @@ curl --request POST \
 
 設定を失うことなく、アクティブな監視を制御します。
 
-- **無効化されたアラート:** 通知の送信を停止しますが、すべての設定は保持されます
+- **無効化されたアラート:** 通知の送信を停止しますが、すべての設定を保持します
 
 - **有効化されたアラート:** クラスターをアクティブに監視し、しきい値を超えた場合に通知を送信します
 
@@ -208,7 +208,7 @@ curl --request POST \
 
 - 異なるクラスター環境用のバリアントを作成する
 
-- 他のパラメータを保持しながらしきい値を調整する
+- 他のパラメータを保持したまましきい値を調整する
 
 - 複数のプロジェクトにわたって監視をスケールする
 
@@ -218,13 +218,13 @@ curl --request POST \
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-アラートの削除は永久であり、元に戻すことはできません。続行する前に、アラートが不要であることを確認してください。
+<p>アラートの削除は永久であり、元に戻すことはできません。進める前に、アラートが不要であることを確認してください。</p>
 
 </Admonition>
 
 ## アラート受信設定の構成\{#configure-alert-receiver-settings}
 
-プロジェクト全体のデフォルト通知設定を行い、チーム全体で一貫した監視プラクティスを確保します。
+プロジェクト全体のデフォルト通知設定を構成し、チーム全体で一貫した監視プラクティスを確保します。
 
 <Supademo id="cmb5zptc03acdppkpy0vk18f9" title="Zilliz Cloud - Configure Alert Receiver Settings Demo" />
 
@@ -232,17 +232,17 @@ curl --request POST \
 
 - **送信先**: 新しいアラートに自動的に選択されるデフォルトの通知チャネル（メール、Slack、Webhook）。最もよく使用するチャネルを構成して、アラート作成を効率化します。
 
-- **アラート解決通知**: 有効にすると、アラートが解決された際に通知を受信します。
+- **アラート解決通知**: 有効にすると、アラートが解決されたときに通知を受け取ります。
 
 - **既存のアラートに設定を適用**: 新しいデフォルト設定ですべての既存アラートを更新するかどうかを選択します。
 
 ## FAQ\{#faq}
 
-### アラートがトリガーされた場合、アラート通知はどのくらいの頻度で受信しますか？\{#how-often-will-i-receive-alert-notifications-when-an-alert-is-triggered}
+### アラートがトリガーされたとき、アラート通知はどのくらいの頻度で受け取りますか？\{#how-often-will-i-receive-alert-notifications-when-an-alert-is-triggered}
 
 アラート通知は自動的な頻度パターンに従います：
 
-- **最初の通知**: アラートしきい値を超えた直後に送信されます
+- **最初の通知**: アラートしきい値を超えたときに即座に送信されます
 
 - **2番目の通知**: 状態が継続する場合、1時間後に送信されます
 
@@ -250,7 +250,7 @@ curl --request POST \
 
 通知が頻繁すぎると感じた場合、以下が可能です：
 
-- [アラートを編集](./manage-project-alerts#edit-an-alert) して、条件のしきい値または継続時間要件を調整する
+- [アラートを編集](./manage-project-alerts#edit-an-alert)して、条件のしきい値または継続時間要件を調整する
 
-- [アラートを無効化](./manage-project-alerts#disable-or-enable-an-alert) して、設定を保持しながら一時的にすべての通知を停止する
+- [アラートを無効化](./manage-project-alerts#disable-or-enable-an-alert)して、設定を保持したまま一時的にすべての通知を停止する
 

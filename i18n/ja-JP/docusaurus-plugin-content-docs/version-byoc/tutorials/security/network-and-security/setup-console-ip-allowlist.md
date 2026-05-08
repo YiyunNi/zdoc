@@ -1,11 +1,11 @@
 ---
-title: "コンソール IP アローリストの設定 | BYOC"
+title: "コンソール IP アドレス許可リストの設定 | BYOC"
 slug: /setup-console-ip-allowlist
 sidebar_key: setup-console-ip-allowlist
-sidebar_label: "コンソール IP アローリストを設定"
+sidebar_label: "コンソール IP アドレス許可リストの設定"
 beta: FALSE
 notebook: FALSE
-description: "デフォルトでは、組織の Web コンソールは任意の IP アドレスからアクセス可能です。アクセスを制限してセキュリティを強化するには、コンソール IP アローリストを構成し、オフィスネットワークの IP など、指定されたアドレスからのみ Web コンソールにアクセスできるようにします。 | BYOC"
+description: "デフォルトでは、組織の Web コンソールは任意の IP アドレスからアクセス可能です。アクセスを制限してセキュリティを強化するには、コンソールの IP アドレス許可リストを構成し、オフィスネットワークの IP など、指定されたアドレスからのみ Web コンソールにアクセスできるようにします。 | BYOC"
 type: origin
 token: E1BCwXVouiDrtpkWp5ecvdXHnAb
 sidebar_position: 1
@@ -27,11 +27,11 @@ import Supademo from '@site/src/components/Supademo';
 
 デフォルトでは、組織の Web コンソールは任意の IP アドレスからアクセス可能です。アクセスを制限してセキュリティを強化するには、コンソール IP 許可リストを構成し、ユーザーがオフィスネットワークの IP など、指定されたアドレスからのみ Web コンソールにアクセスできるようにします。
 
-コンソール IP 許可リストは、組織の Web コンソールにのみ適用されます。プロジェクトクラスターへのアクセスは制御しません。
+コンソール IP 許可リストは、組織の Web コンソールにのみ適用されます。プロジェクトクラスタへのアクセスは制御しません。
 
 ## 制限\{#limits}
 
-- 組織オーナーであること。
+- 組織オーナーである必要があります。
 
 - コンソール許可リストに追加できる IP は最大 100 個までです。
 
@@ -43,9 +43,8 @@ import Supademo from '@site/src/components/Supademo';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`0.0.0.0/0` は任意の IP からのアクセスを許可します。
-
-コンソール IP 許可リストの更新は 30 秒以内に有効になります。
+<p><code>0.0.0.0/0</code> は任意の IP からのアクセスを許可します。</p>
+<p>コンソール IP 許可リストの更新は 30 秒以内に有効になります。</p>
 
 </Admonition>
 
@@ -53,11 +52,11 @@ import Supademo from '@site/src/components/Supademo';
 
 <Supademo id="cmi79l9ih4slqb7b4yi1x32r1?utm_source=link" title=""  />
 
-## IP アドレスの確認\{#view-ip-address}
+## IP アドレスの表示\{#view-ip-address}
 
 許可リストを構成した後、いつでも IP を確認できます。
 
-以下のデモでは、許可リスト内の IP アドレスを確認する方法を示しています。
+以下のデモでは、許可リスト内の IP アドレスを表示する方法を示しています。
 
 <Supademo id="cmi79trxa4tbsb7b44fnxlgik?utm_source=link" title=""  />
 
@@ -67,7 +66,7 @@ IP または CIDR エントリを削除して、そのソースからのコン�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-コンソール IP 許可リストの更新は 30 秒以内に有効になります。
+<p>コンソール IP 許可リストの更新は 30 秒以内に有効になります。</p>
 
 </Admonition>
 
@@ -95,11 +94,11 @@ IP または CIDR エントリを削除して、そのソースからのコン�
 
     更新は新規サインインに適用されます。既存のセッションは通常、期限切れになるかユーザーがサインアウトするまで継続します。許可リストを即座に適用するには、組織のユーザーにサインアウトしてから再度サインインするよう依頼してください。
 
-1. **SSO または MFA はコンソール IP 許可リストをバイパスしますか？**
+1. **SSO や MFA はコンソール IP 許可リストをバイパスしますか？**
 
-    いいえ。[SSO](./single-sign-on)、[MFA](./multi-factor-auth)、および組織コンソール IP 許可リストは、それぞれ独立した制御です。
+    いいえ。[SSO](./single-sign-on)、[MFA](./multi-factor-auth)、および組織のコンソール IP 許可リストは、それぞれ独立した制御です。
 
-1. **組織コンソール IP 許可リストはクラスターアクセスに影響しますか？**
+1. **組織のコンソール IP 許可リストはクラスタアクセスに影響しますか？**
 
     いいえ。コンソール IP 許可リストは Web コンソールへのアクセスのみを制限します。
 

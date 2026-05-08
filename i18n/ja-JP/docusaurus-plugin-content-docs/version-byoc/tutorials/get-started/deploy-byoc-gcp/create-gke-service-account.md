@@ -5,7 +5,7 @@ sidebar_key: create-gke-service-account
 sidebar_label: "GKE サービスアカウントを作成"
 beta: CONTACT SALES
 notebook: FALSE
-description: "このページでは、Zilliz Cloud プロジェクト用に Google Kubernetes Engine（GKE）クラスタをデプロイするためのサービスアカウントを作成・設定する方法について説明します。 | BYOC"
+description: "このページでは、Zilliz Cloud プロジェクト用に Google Kubernetes Engine（GKE）クラスターをデプロイするためのサービスアカウントを作成・設定する方法について説明します。 | BYOC"
 type: origin
 token: JkXDwmB2QijMfvkLoWEclz9Nnbe
 sidebar_position: 2
@@ -30,25 +30,25 @@ import Procedures from '@site/src/components/Procedures';
 
 # GKE サービスアカウントの作成
 
-このページでは、Zilliz Cloud プロジェクト用に Google Kubernetes Engine (GKE) クラスタをデプロイするための Zilliz Cloud のサービスアカウントを作成および構成する方法について説明します。
+このページでは、Zilliz Cloud プロジェクト用に Google Kubernetes Engine (GKE) クラスタをデプロイするために、Zilliz Cloud で使用するサービスアカウントの作成と設定方法について説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC は現在 **一般提供** されています。アクセスおよび実装の詳細については、[Zilliz Cloud セールス](https://zilliz.com/contact-sales) までお問い合わせください。
+<p>Zilliz BYOC は現在 <strong>一般提供</strong> されています。アクセスと実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud セールス</a>にお問い合わせください。</p>
 
 </Admonition>
 
 ## 手順\{#procedure}
 
-GCP ダッシュボードを使用して EKS ロールを作成することもできます。または、Zilliz Cloud が提供する Terraform スクリプトを使用して、GCP 上の Zilliz Cloud プロジェクト用のインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider) を参照してください。
+GCP ダッシュボードを使用して EKS ロールを作成できます。または、Zilliz Cloud が提供する Terraform スクリプトを使用して、GCP 上の Zilliz Cloud プロジェクト用のインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider) を参照してください。
 
 <Supademo id="cmc1oadayjm7fsn1rqyu2h33u" title=""  />
 
-サービスアカウントを作成する手順は以下の通りです：
+サービスアカウントの作成手順は以下の通りです：
 
 <Procedures>
 
-1. GCP コンソールで **IAMと管理** を探して をクリック します。
+1. GCP コンソールで **IAMと管理** を検索してクリックします。
 
 1. 左側のナビゲーションペインで **サービスアカウント** を選択します。
 
@@ -70,24 +70,24 @@ GCP ダッシュボードを使用して EKS ロールを作成することも�
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    上記の式内の 3 つのプレースホルダーを実際の値に置き換える必要があります:
-
-    - `PROJECT_ID`
-
-        GCP プロジェクト ID を指定してください。
-
-    - `REGION`
-
-        BYOC プロジェクトのクラウドリージョンを指定してください。
-
-    - `CLUSTER_NAME`
-
-        Zilliz Cloud がお客様に代わって作成する GKE クラスターの名前を指定してください。
+    <p>上記の式にある 3 つのプレースホルダーを実際の値に置き換える必要があります。</p>
+    <ul>
+    <li><code>PROJECT_ID</code></li>
+    </ul>
+    <p>これはあなたの GCP プロジェクト ID である必要があります。</p>
+    <ul>
+    <li><code>REGION</code></li>
+    </ul>
+    <p>これはあなたの BYOC プロジェクトのクラウドリージョンである必要があります。</p>
+    <ul>
+    <li><code>CLUSTER_NAME</code></li>
+    </ul>
+    <p>これは Zilliz Cloud があなたに代わって作成する GKE クラスターの名前である必要があります。</p>
 
     </Admonition>
 
 1. **Save** をクリックします。
 
-1. 設定した権限を付与するために、再度 **Save** をクリックします。
+1. 設定した権限を付与するには、**Save** を再度クリックします。
 
 </Procedures>

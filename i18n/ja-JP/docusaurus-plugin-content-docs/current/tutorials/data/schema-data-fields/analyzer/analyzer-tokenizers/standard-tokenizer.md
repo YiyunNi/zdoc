@@ -143,11 +143,11 @@ analyzerParams='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-よりシンプルなセットアップを行う場合、[`standard`](./standard-analyzer) [アナライザー](./standard-analyzer)を使用することを選択できます。これは `standard` トークナイザーと [`lowercase`](./lowercase-filter)[ フィルター](./lowercase-filter)を組み合わせたものです。
+<p>よりシンプルなセットアップを希望する場合は、<a href="./standard-analyzer"><code>standard</code></a> <a href="./standard-analyzer">アナライザー</a>を使用することをお勧めします。これは <code>standard</code> トークナイザーと <a href="./lowercase-filter"><code>lowercase</code></a><a href="./lowercase-filter"> フィルター</a>を組み合わせたものです。</p>
 
 </Admonition>
 
-`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールド内のテキストを処理し、効率的なトークナイゼーションとフィルタリングを行うことができます。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークナイゼーションとフィルタリングを実現します。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
 ## Examples\{#examples}
 

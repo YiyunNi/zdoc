@@ -5,7 +5,7 @@ sidebar_key: use-timestamptz-field
 sidebar_label: "TIMSTAMPTZ"
 beta: FALSE
 notebook: FALSE
-description: "地域をまたいで時間を追跡するアプリケーション（例：eコマースシステム、コラボレーションツール、分散ログ）では、タイムゾーン付きタイムスタンプを正確に扱う必要があります。Zilliz Cloud の `TIMESTAMPTZ` データ型は、タイムゾーン情報とともにタイムスタンプを保存することで、この機能を提供します。 | BYOC"
+description: "越境ECシステム、コラボレーションツール、分散ログなど、地域をまたがる時間を追跡するアプリケーションでは、タイムゾーン付きタイムスタンプの正確な処理が必要です。Zilliz Cloud の `TIMESTAMPTZ` データ型は、タイムスタンプとそれに関連付けられたタイムゾーンを一緒に保存することで、この機能を提供します。 | BYOC"
 type: origin
 token: RxUiwJ77WiFKZGkC8rEcLeopnTf
 sidebar_position: 12
@@ -13,10 +13,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - コレクション
-  - スキーマ
-  - タイムスタンプフィールド
-  - タイムゾーン
+  - collection
+  - schema
+  - timestamp field
+  - time zone
 
 ---
 
@@ -28,11 +28,11 @@ import TabItem from '@theme/TabItem';
 
 地域をまたがる時間を追跡するアプリケーション（例：eコマースシステム、コラボレーションツール、分散ログ）では、タイムゾーン付きタイムスタンプの正確な処理が必要です。Zilliz Cloud の `TIMESTAMPTZ` データ型は、タイムゾーンに関連付けられたタイムスタンプを保存することで、この機能を提供します。
 
-## TIMESTAMPTZ フィールドとは\{#what-is-a-timestamptz-field}
+## TIMESTAMPTZ フィールドとは何ですか？\{#what-is-a-timestamptz-field}
 
-`TIMESTAMPTZ` フィールドは、Zilliz Cloud でスキーマ定義されたデータ型（`データType.TIMESTAMPTZ`）であり、タイムゾーン対応の入力を処理し、すべての時点を内部的に UTC 絶対時間として保存します：
+`TIMESTAMPTZ` フィールドは、Zilliz Cloud でのスキーマ定義データ型（`データType.TIMESTAMPTZ`）であり、タイムゾーン対応の入力を処理し、すべての時点を内部的に UTC 絶対時間として保存します：
 
-- **許容される入力形式**: `TIMESTAMPTZ` フィールドは [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 互換のタイムスタンプ文字列を受け付けます。以下を含みます：
+- **許容される入力形式**: `TIMESTAMPTZ` フィールドは [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 互換のタイムスタンプ文字列を受け入れます。以下を含みます：
 
     - `"2024-12-31 22:00:00"`
 
@@ -44,9 +44,9 @@ import TabItem from '@theme/TabItem';
 
 - **タイムスタンプのパースルール**: タイムスタンプの解釈方法は、入力文字列がタイムゾーンを明示的に指定しているかどうかによって異なります：
 
-    - 入力にタイムゾーンオフセット（例：**+08:00** または **Z**）が含まれている場合、絶対時点として扱われます。
+    - 入力にタイムゾーンオフセットが含まれている場合（例：**+08:00** または **Z**）、絶対時点として扱われます。
 
-    - 入力にタイムゾーンオフセットが含まれていない場合、コレクションに設定されたタイムゾーンを使用して解釈されます。例えば、コレクションのタイムゾーンが **Asia/Shanghai** の場合：
+    - 入力にタイムゾーンオフセットが含まれていない場合、コレクションの設定されたタイムゾーンを使用して解釈されます。例えば、コレクションのタイムゾーンが **Asia/Shanghai** の場合：
 
         - `"2024-12-31 22:00:00"` は **2024-12-31T22:00:00+08:00** として解釈されます
 
@@ -58,11 +58,11 @@ import TabItem from '@theme/TabItem';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- `TIMESTAMPTZ` フィールドに対して `nullable=True` を設定し、欠損値を許容することができます。
-
-- `default_value` 属性を使用して、[ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 形式でデフォルトのタイムスタンプ値を指定できます。
-
-詳細については、[NULL許容 & デフォルト](./nullable-fields) を参照してください。
+<ul>
+<li><p><code>TIMESTAMPTZ</code> フィールドに対して <code>nullable=True</code> を設定することで、欠損値を許容できます。</p></li>
+<li><p><code>default_value</code> 属性を使用して、<a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> 形式でデフォルトのタイムスタンプ値を指定できます。</p></li>
+</ul>
+<p>詳細については、<a href="./nullable-fields">NULL許容 & デフォルト</a> を参照してください。</p>
 
 </Admonition>
 
@@ -477,13 +477,12 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/l
 
 <Admonition type="info" icon="📘" title="Notes">
 
-連鎖した範囲式（例：`lower_bound < tsz < upper_bound`）はサポートされていません。
-
-代わりに論理積を使用してください：`tsz > lower_bound AND tsz < upper_bound`。
+<p>連鎖した範囲式（例: <code>lower_bound &lt; tsz &lt; upper_bound</code>）はサポートされていません。</p>
+<p>代わりに論理積を使用してください: <code>tsz &gt; lower_bound AND tsz &lt; upper_bound</code>。</p>
 
 </Admonition>
 
-以下の例では、タイムスタンプ（`tsz`）が **2025-01-03T00:00:00+08:00** と等しくないエンティティをフィルタリングします：
+以下の例では、タイムスタンプ（`tsz`）が **2025-01-03T00:00:00+08:00** と等しくないエンティティをフィルタリングします:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -662,23 +661,21 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/quer
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`INTERVAL` の値は [ISO 8601 期間構文](https://www.w3.org/TR/xmlschema-2/#duration) に従います。例:
-
-- `P1D` → 1 日
-
-- `PT3H` → 3 時間
-
-- `P2DT6H` → 2 日と 6 時間
-
-`INTERVAL` の演算は、フィルター式で直接使用できます。例:
-
-- `tsz + INTERVAL 'P3D'` → 3 日を加算
-
-- `tsz - INTERVAL 'PT2H'` → 2 時間を減算
+<p><code>INTERVAL</code> 値は <a href="https://www.w3.org/TR/xmlschema-2/#duration">ISO 8601 duration 構文</a> に従います。例:</p>
+<ul>
+<li><p><code>P1D</code> → 1 日</p></li>
+<li><p><code>PT3H</code> → 3 時間</p></li>
+<li><p><code>P2DT6H</code> → 2 日と 6 時間</p></li>
+</ul>
+<p>フィルター式内で直接 <code>INTERVAL</code> 演算を使用できます。例:</p>
+<ul>
+<li><p><code>tsz + INTERVAL 'P3D'</code> → 3 日を加算</p></li>
+<li><p><code>tsz - INTERVAL 'PT2H'</code> → 2 時間を減算</p></li>
+</ul>
 
 </Admonition>
 
-#### タイムスタンプフィルタリングを使用した検索\{#search-with-timestamp-filtering}
+#### タイムスタンプによるフィルタリングを伴う検索\{#search-with-timestamp-filtering}
 
 `TIMESTAMPTZ` フィルタリングとベクトル類似性検索を組み合わせて、時間と類似性の両方で結果を絞り込むことができます。
 
@@ -766,17 +763,17 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/sear
 
 <Admonition type="info" icon="📘" title="Notes">
 
-コレクションに2つ以上のベクトルフィールドがある場合、タイムスタンプフィルタリングを使用したハイブリッド検索操作を実行できます。詳細については、[マルチベクトルハイブリッド検索](./hybrid-search) を参照してください。
+<p>コレクションに2つ以上のベクトルフィールドがある場合、タイムスタンプフィルタリングを使用したハイブリッド検索操作を実行できます。詳細については、<a href="./hybrid-search">マルチベクトルハイブリッド検索</a>を参照してください。</p>
 
 </Admonition>
 
-## 高度な使い方\{#advanced-usage}
+## 高度な使用方法\{#advanced-usage}
 
-高度な使い方として、異なるレベル（データベース、コレクション、クエリなど）でタイムゾーンを管理したり、`TIMESTAMPTZ` フィールドにインデックスを作成して クエリの高速化 を行うことができます。
+高度な使用方法として、異なるレベル（データベース、コレクション、クエリなど）でタイムゾーンを管理したり、`TIMESTAMPTZ` フィールドにインデックスを作成してクエリの高速化を行うことができます。
 
 ### 異なるレベルでのタイムゾーン管理\{#manage-time-zones-at-different-levels}
 
-**コレクション** レベルまたは **クエリ/検索** レベルで `TIMESTAMPTZ` フィールドのタイムゾーンを制御できます。
+**コレクション**レベルまたは**クエリ/検索**レベルで `TIMESTAMPTZ` フィールドのタイムゾーンを制御できます。
 
 <table>
    <tr>
@@ -794,12 +791,12 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/sear
    <tr>
      <td><p>クエリ/検索/ハイブリッド検索</p></td>
      <td><p><code>timezone</code></p></td>
-     <td><p>特定の操作に対する一時的な上書き</p></td>
+     <td><p>1回の特定の操作に対する一時的な上書き</p></td>
      <td><p>最高</p></td>
    </tr>
 </table>
 
-ステップバイステップの手順とコードサンプルについては、以下の専用ページを参照してください。
+ステップバイステップの手順とコードサンプルについては、専用のページを参照してください：
 
 - [コレクションの変更](./modify-collections#example-7-set-collection-time-zone)
 
@@ -813,4 +810,4 @@ curl --request POST \      --url YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/sear
 
 デフォルトでは、インデックスのない `TIMESTAMPTZ` フィールドに対するクエリは、すべての行をフルスキャンして実行されるため、大規模なデータセットでは遅くなる可能性があります。タイムスタンプクエリを高速化するには、`TIMESTAMPTZ` フィールドに AUTOINDEX インデックスを作成してください。
 
-詳細については、[スカラーフィールドのインデックス作成](./index-scalar-fields) を参照してください。
+詳細については、[スカラーフィールドのインデックス作成](./index-scalar-fields)を参照してください。

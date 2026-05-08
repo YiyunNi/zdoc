@@ -5,7 +5,7 @@ sidebar_key: migrate-from-tencent-cloud
 sidebar_label: "Tencent Cloud VectorDB"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Tencent Cloud VectorDB からの移行時に、Zilliz Cloud がデータ型のマッピング、JSON フィールドの変換、コレクションの命名規則をどのように処理するかを説明します。"
+description: "本トピックでは、Tencent Cloud VectorDB からの移行時における Zilliz Cloud のデータ型マッピング、JSON フィールド変換、およびコレクション命名規則について説明します。"
 type: origin
 token: SwgXwdHG6iqpbUknXrHcOPd7nRe
 sidebar_position: 6
@@ -23,7 +23,7 @@ import Admonition from '@theme/Admonition';
 
 # Tencent Cloud から Zilliz Cloud への移行
 
-このトピックでは、[Tencent Cloud VectorDB](https://www.tencentcloud.com/products/vdb) からの移行時に、Zilliz Cloud がデータ型のマッピング、JSON フィールドの変換、およびコレクションの命名規則をどのように処理するかについて説明します。
+このトピックでは、Zilliz Cloud が [Tencent Cloud VectorDB](https://www.tencentcloud.com/products/vdb) からの移行時に、データ型のマッピング、JSON フィールドの変換、およびコレクションの命名規則をどのように処理するかについて説明します。
 
 ## 前提条件\{#prerequisites}
 
@@ -63,7 +63,7 @@ Tencent Cloud VectorDB から Zilliz Cloud への移行を開始する前に、�
    </tr>
    <tr>
      <td><p>クラスター容量</p></td>
-     <td><p>十分なストレージおよびコンピューティングリソース（<a href="https://zilliz.com/pricing#calculator">CU 計算ツール</a>を使用して CU サイズを見積もってください）</p></td>
+     <td><p>十分なストレージとコンピューティングリソース（<a href="https://zilliz.com/pricing#calculator">CU 計算ツール</a>を使用して CU サイズを見積もってください）</p></td>
    </tr>
    <tr>
      <td><p>ネットワークアクセス</p></td>
@@ -94,7 +94,7 @@ Tencent Cloud VectorDB のデータ型が Zilliz Cloud にどのようにマッ�
    <tr>
      <td><p>JSON</p></td>
      <td><p>JSON (動的フィールド)</p></td>
-     <td><p>デフォルトで動的スキーマとしてマッピングされます。固定フィールドに変換することも可能です。</p><p>詳細については、<a href="./enable-dynamic-field">動的フィールド</a>を参照してください。</p></td>
+     <td><p>デフォルトで動的スキーマとしてマッピングされます。固定フィールドに変換することもできます。</p><p>詳細については、<a href="./enable-dynamic-field">動的フィールド</a>を参照してください。</p></td>
    </tr>
 </table>
 
@@ -102,7 +102,7 @@ Tencent Cloud VectorDB のデータ型が Zilliz Cloud にどのようにマッ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud は JSON スキーマを検出するために 100 行をサンプリングします。必要に応じて、手動で追加のフィールドを追加できます。
+<p>Zilliz Cloud は JSON スキーマを検出するために 100 行をサンプリングします。必要に応じて、手動で追加のフィールドを追加できます。</p>
 
 </Admonition>
 
@@ -135,7 +135,7 @@ Tencent Cloud VectorDB の JSON フィールドは、最大限の柔軟性を得
    <tr>
      <td><p>double</p></td>
      <td><p>DOUBLE</p></td>
-     <td><p>直接の型変換</p></td>
+     <td><p>直接的な型変換</p></td>
    </tr>
    <tr>
      <td><p>array</p></td>
@@ -171,8 +171,8 @@ Tencent Cloud VectorDB のコレクション名は、以下の考慮事項に従
    </tr>
    <tr>
      <td><p>名前の競合</p></td>
-     <td><p>同じ名前のコレクションがデータベースに既に存在する場合、移行ジョブを送信できません</p></td>
-     <td><p>既存のコレクションを削除する、別のターゲットデータベースを選択する、または移行設定時に名前を変更してください</p></td>
+     <td><p>データベースに同じ名前のコレクションが既に存在する場合、移行ジョブを送信できません</p></td>
+     <td><p>既存のコレクションを削除する、別のターゲットデータベースを選択する、または移行設定時に名前を変更する</p></td>
    </tr>
    <tr>
      <td><p>特殊文字</p></td>

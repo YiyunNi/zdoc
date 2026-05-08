@@ -5,7 +5,7 @@ sidebar_key: add-fields-to-an-existing-collection
 sidebar_label: "フィールドを追加"
 beta: FALSE
 notebook: FALSE
-description: "Milvus を使用すると、既存のコレクションに新しいフィールドを動的に追加でき、アプリケーションのニーズの変化に応じてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を使用して、さまざまなシナリオでフィールドを追加する方法を説明します。 | BYOC"
+description: "Milvus を使用すると、既存のコレクションに新しいフィールドを動的に追加できます。これにより、アプリケーションのニーズの変化に応じてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を使用して、さまざまなシナリオでフィールドを追加する方法を説明します。 | BYOC"
 type: origin
 token: UR9SwucAIiQ2TYkc9EucsgvSnng
 sidebar_position: 18
@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - field properties
+  - コレクション
+  - スキーマ
+  - フィールドプロパティ
   - add collection fields
 
 ---
@@ -24,9 +24,9 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 既存のコレクションへのフィールド追加
+# 既存コレクションへのフィールド追加
 
-Milvus を使用すると、既存のコレクションに新しいフィールドを動的に追加でき、アプリケーションのニーズの変化に応じてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を使用して、さまざまなシナリオでフィールドを追加する方法を説明します。
+Milvus では、既存のコレクションに新しいフィールドを動的に追加できます。これにより、アプリケーションのニーズの変化に応じてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を使用して、さまざまなシナリオでフィールドを追加する方法を説明します。
 
 ## 考慮事項\{#considerations}
 
@@ -42,7 +42,7 @@ Milvus を使用すると、既存のコレクションに新しいフィール�
 
 - フィールド名は、静的フィールド間で一意である必要があります。
 
-- 元々 `enable_dynamic_field=True` で作成されていないコレクションに対して、動的フィールド機能を有効にするために `$meta` フィールドを追加することはできません。
+- 元々 `enable_dynamic_field=True` で作成されていないコレクションに対して、動的フィールド機能を有効にするための `$meta` フィールドを追加することはできません。
 
 ## 前提条件\{#prerequisites}
 
@@ -56,11 +56,11 @@ Milvus を使用すると、既存のコレクションに新しいフィール�
 
 <Admonition type="info" icon="📘" title="**Need help setting up?**">
 
-コレクションの作成と基本操作については、[コレクションの作成](./manage-collections-sdks) を参照してください。
+<p>コレクションの作成と基本操作については、<a href="./manage-collections-sdks">コレクションの作成</a> を参照してください。</p>
 
 </Admonition>
 
-## 基本的な使用方法\{#basic-usage}
+## 基本的な使い方\{#basic-usage}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

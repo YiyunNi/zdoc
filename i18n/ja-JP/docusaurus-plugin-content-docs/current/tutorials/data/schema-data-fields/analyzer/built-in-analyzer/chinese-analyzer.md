@@ -152,13 +152,13 @@ analyzerParams='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`chinese` アナライザーはオプションのパラメーターを受け付けません。
+<p><code>chinese</code> アナライザーはオプションのパラメータを受け付けません。</p>
 
 </Admonition>
 
 ## 例\{#examples}
 
-アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
+コレクションスキーマにアナライザー設定を適用する前に、`run_analyzer` メソッドを使用してその動作を検証してください。
 
 ### アナライザー設定\{#analyzer-configuration}
 

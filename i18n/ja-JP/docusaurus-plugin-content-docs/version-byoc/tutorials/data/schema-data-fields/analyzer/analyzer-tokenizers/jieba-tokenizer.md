@@ -27,21 +27,21 @@ import TabItem from '@theme/TabItem';
 
 # Jieba
 
-`jieba` トークナイザーは、中国語テキストを構成単語に分解して処理します。
+`jieba` トークナイザーは、中国語テキストを構成単語に分割して処理します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`jieba` トークナイザーは、出力で句読点を個別のトークンとして保持します。例えば、`"你好！世界。"` は `["你好", "！", "世界", "。"]` になります。これらの独立した句読点トークンを削除するには、[`removepunct`](./remove-punct-filter) フィルターを使用してください。
+<p><code>jieba</code> トークナイザーは、句読点を個別のトークンとして出力に保持します。たとえば、<code>"你好！世界。"</code> は <code>["你好", "！", "世界", "。"]</code> になります。これらの独立した句読点トークンを削除するには、<a href="./remove-punct-filter"><code>removepunct</code></a> フィルターを使用してください。</p>
 
 </Admonition>
 
 ## 設定\{#configuration}
 
-Milvus は、`jieba` トークナイザーの設定として、シンプルな設定とカスタム設定の 2 つのアプローチをサポートしています。
+Milvus では、`jieba` トークナイザーに対してシンプル設定とカスタム設定の 2 種類の設定方法がサポートされています。
 
-### Simple configuration\{#simple-configuration}
+### シンプル設定\{#simple-configuration}
 
-シンプルな設定では、トークナイザーを `"jieba"` に設定するだけです。例えば:
+シンプル設定では、トークナイザーを `"jieba"` に設定するだけで済みます。例:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

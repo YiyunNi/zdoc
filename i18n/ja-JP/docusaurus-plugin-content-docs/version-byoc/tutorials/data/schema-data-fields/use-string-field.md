@@ -1,11 +1,11 @@
 ---
-title: "String Field | BYOC"
+title: "文字列フィールド | BYOC"
 slug: /use-string-field
 sidebar_key: use-string-field
-sidebar_label: "String"
+sidebar_label: "文字列"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud クラスタでは、`VARCHAR` は文字列データを保存するために使用されるデータ型です。 | BYOC"
+description: "Zilliz Cloud クラスタでは、`VARCHAR` は文字列データを格納するために使用されるデータ型です。 | BYOC"
 type: origin
 token: QBXVwP7oiiuEovkprDnckJlEnoK
 sidebar_position: 6
@@ -24,33 +24,33 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# String Field
+# 文字列フィールド
 
-Zilliz Cloud クラスタでは、`VARCHAR` は文字列データを格納するために使用されるデータ型です。
+Zilliz Cloud クラスターでは、文字列データの保存に `VARCHAR` データ型が使用されます。
 
-`VARCHAR` フィールドを定義する際、2つのパラメータが必須です：
+`VARCHAR` フィールドを定義する際、以下の 2 つのパラメータが必須です：
 
-- `datatype` を `データType.VARCHAR` に設定する。
+- `datatype` を `データType.VARCHAR` に設定します。
 
-- `max_length` を指定する。これは `VARCHAR` フィールドが格納できる最大バイト数を定義します。`max_length` の有効な範囲は 1 から 65,535 です。
+- `max_length` を指定します。これは `VARCHAR` フィールドが格納できる最大バイト数を定義します。`max_length` の有効範囲は 1 から 65,535 です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud は `VARCHAR` フィールドの NULL 値とデフォルト値をサポートしています。これらの機能を有効にするには、`nullable` を `True` に設定し、`default_value` を文字列値に設定します。詳細については、[NULL許容 & Default](./nullable-fields) を参照してください。
+<p>Zilliz Cloud は <code>VARCHAR</code> フィールドに対して null 値とデフォルト値をサポートしています。これらの機能を有効にするには、<code>nullable</code> を <code>True</code> に設定し、<code>default_value</code> に文字列値を設定します。詳細については、<a href="./nullable-fields">NULL許容 & Default</a> を参照してください。</p>
 
 </Admonition>
 
-## Add VARCHAR field\{#add-varchar-field}
+## VARCHAR フィールドの追加\{#add-varchar-field}
 
-Zilliz Cloud クラスタに文字列データを格納するには、コレクションスキーマに `VARCHAR` フィールドを定義します。以下は、2つの `VARCHAR` フィールドを持つコレクションスキーマを定義する例です：
+Zilliz Cloud クラスターで文字列データを保存するには、コレクションスキーマ内で `VARCHAR` フィールドを定義します。以下は、2 つの `VARCHAR` フィールドを含むコレクションスキーマを定義する例です：
 
-- `varchar_field1`: 最大100バイトを格納し、NULL 値を許容し、デフォルト値が `"Unknown"` です。
+- `varchar_field1`: 最大 100 バイトまで保存可能で、null 値を許可し、デフォルト値は `"Unknown"` です。
 
-- `varchar_field2`: 最大200バイトを格納し、NULL 値を許容しますが、デフォルト値はありません。
+- `varchar_field2`: 最大 200 バイトまで保存可能で、null 値を許可しますが、デフォルト値は設定されていません。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-スキーマを定義する際に `enable_dynamic_fields=True` を設定すると、Zilliz Cloud は事前に定義されていないスカラーフィールドの挿入を許可します。ただし、これによりクエリと管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、[Dynamic Field](./enable-dynamic-field) を参照してください。
+<p>スキーマ定義時に <code>enable_dynamic_fields=True</code> を設定すると、Zilliz Cloud では事前に定義されていないスカラーフィールドの挿入が可能になります。ただし、これによりクエリや管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">Dynamic Field</a> を参照してください。</p>
 
 </Admonition>
 

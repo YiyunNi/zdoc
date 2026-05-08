@@ -5,7 +5,7 @@ sidebar_key: prepare-for-cluster-connection
 sidebar_label: "クラスター接続の準備"
 beta: CONTACT SALES
 notebook: FALSE
-description: "すべての BYOC クラスターは、お客様の仮想ネットワーク（AWS VPC、GCP VPC、または Microsoft Azure VNet）上に完全にホストされ、パブリックエンドポイントを持ちません。このガイドでは、これらの BYOC クラスターに接続する2つのアプローチについて説明します。 | BYOC"
+description: "すべての BYOC クラスターは、お客様の仮想ネットワーク（AWS VPC、GCP VPC、または Microsoft Azure VNet）上に完全にホストされており、パブリックエンドポイントを持ちません。このガイドでは、これらの BYOC クラスターに接続する 2 つのアプローチについて説明します。 | BYOC"
 type: origin
 token: Ah0DwMIWsilLa4kVbYocJGCMnlh
 sidebar_position: 7
@@ -30,13 +30,13 @@ import Procedures from '@site/src/components/Procedures';
 
 # クラスター接続の準備
 
-すべての BYOC クラスターは、お客様の仮想ネットワーク（AWS VPC、GCP VPC、または Microsoft Azure VNet）上に完全にホストされており、パブリックエンドポイントを持ちません。このガイドでは、これらの BYOC クラスターに接続するための 2 つのアプローチについて説明します。
+すべての BYOC クラスターは、独自の仮想ネットワーク（AWS VPC、GCP VPC、または Microsoft Azure VNet）上に完全にホストされており、パブリックエンドポイントを持ちません。このガイドでは、これらの BYOC クラスターに接続するための 2 つのアプローチについて説明します。
 
 <details>
 
-<summary>クラウドプロバイダーが使用する規約とその対応表</summary>
+<summary>クラウドプロバイダーが使用する規約とその対応関係</summary>
 
-このガイドは、クラウドプロバイダーに関係なく、すべての BYOC クラスターに適用されます。用語の違いに対処し、説明を簡潔にするため、ガイドで使用する用語と、各プロバイダーが使用する用語との対応を以下に示します。
+このガイドは、クラウドプロバイダーに関係なく、すべての BYOC クラスターに適用されます。用語の違いに対処し、説明を簡潔にするため、ガイドで使用する規約と、各プロバイダーが使用する規約との対応関係を以下に示します。
 
 <table>
    <tr>
@@ -64,19 +64,19 @@ import Procedures from '@site/src/components/Procedures';
      <td><p>Load Balancer</p></td>
    </tr>
    <tr>
-     <td><p><strong>プライベートエンドポイント</strong></p></td>
+     <td><p><strong>プライベート endpoint</strong></p></td>
      <td><p>プライベートLink</p></td>
      <td><p>プライベート Service Connect (PSC)</p></td>
      <td><p>プライベート Link</p></td>
    </tr>
    <tr>
-     <td><p><strong>仮想ネットワークエンドポイント</strong></p></td>
+     <td><p><strong>仮想ネットワーク endpoint</strong></p></td>
      <td><p>VPC Endpoint</p></td>
      <td><p>PSC Endpoint</p></td>
      <td><p>プライベート Endpoint</p></td>
    </tr>
    <tr>
-     <td><p><strong>仮想ネットワークエンドポイントサービス</strong></p></td>
+     <td><p><strong>仮想ネットワーク endpoint service</strong></p></td>
      <td><p>VPC Endpoint Service</p></td>
      <td><p>PSC Publishing</p></td>
      <td><p>プライベート Link Service</p></td>
@@ -91,11 +91,11 @@ BYOC クラスターには、以下のいずれかのモードで接続できま
 
 - **[Direct VPC access](./prepare-for-cluster-connection#direct-vpc-access)**
 
-    このモードでは、クライアント（通常は BYOC クラスターと連携するアプリケーション）は、BYOC クラスターと同じ仮想ネットワークに存在します。このモードはデフォルトの選択肢であり、追加のネットワーク設定は必要ありません。
+    このモードでは、クライアント（通常は BYOC クラスターと連携するアプリケーション）は、BYOC クラスターと同じ仮想ネットワークに存在します。このモードはデフォルトの選択であり、追加のネットワーク設定は必要ありません。
 
     これを使用するには、**データプレーンのデプロイ時にプライベートエンドポイントを選択しないでください。**
 
-- **[プライベートエンドポイントアクセス](./prepare-for-cluster-connection#private-endpoint-access)**
+- **[プライベート endpoint access](./prepare-for-cluster-connection#private-endpoint-access)**
 
     このモードでは、クライアントは複数の仮想ネットワークや異なるアカウントに存在する可能性があります。これには一度限りのセットアップが必要ですが、プライベートエンドポイントが整えば、新しいクラスターの追加や追加のクライアント仮想ネットワークの接続が簡単になります。
 
@@ -106,72 +106,72 @@ BYOC クラスターには、以下のいずれかのモードで接続できま
 <table>
    <tr>
      <th></th>
-     <th><p><strong>モード 1: Direct VPC Access</strong></p></th>
-     <th><p><strong>モード 2: プライベートLink Access</strong></p></th>
+     <th><p><strong>Mode 1: Direct VPC Access</strong></p></th>
+     <th><p><strong>Mode 2: プライベートLink Access</strong></p></th>
    </tr>
    <tr>
-     <td><p><strong>最適な用途</strong></p></td>
-     <td><p>データプレーンと同じ VPC にあるクライアント</p></td>
-     <td><p>複数の VPC や異なるアカウントにあるクライアント</p></td>
+     <td><p><strong>Best for</strong></p></td>
+     <td><p>Clients in the same VPC as the data plane</p></td>
+     <td><p>Clients in multiple VPCs or different accounts</p></td>
    </tr>
    <tr>
-     <td><p><strong>セットアップの複雑さ</strong></p></td>
-     <td><p>低 — デプロイ後はデフォルトで動作</p></td>
-     <td><p>一度限りのセットアップ；新しいクラスターの追加に伴いスケールが容易で、ワイルドカード DNS で自動的にアクセス可能</p></td>
+     <td><p><strong>Setup complexity</strong></p></td>
+     <td><p>Low — works by default after deployment</p></td>
+     <td><p>One-time setup; simpler to scale as 新しいクラスターs are added, automatically accessible via wildcard DNS</p></td>
    </tr>
    <tr>
-     <td><p><strong>可用性</strong></p></td>
-     <td><p>すべての BYOC デプロイメントのデフォルト</p></td>
-     <td><p>現在は Zilliz サポートへの連絡が必要（セルフサービスは近日公開予定）</p></td>
+     <td><p><strong>Availability</strong></p></td>
+     <td><p>Default for all BYOC deployments</p></td>
+     <td><p>Currently requires contacting Zilliz Support to enable (self-service coming soon)</p></td>
    </tr>
    <tr>
-     <td><p><strong>クラスターごとのアクセス制御</strong></p></td>
-     <td><p>クラスターロードバランサーごとの Security Group</p></td>
+     <td><p><strong>Per-cluster access control</strong></p></td>
+     <td><p>Security Group per cluster load balancer</p></td>
      <td><p>Kubernetes Envoy Gateway SecurityPolicy</p></td>
    </tr>
    <tr>
-     <td><p><strong>クロスアカウント対応</strong></p></td>
-     <td><p>不可</p></td>
-     <td><p>可</p></td>
+     <td><p><strong>Cross-account support</strong></p></td>
+     <td><p>No</p></td>
+     <td><p>Yes</p></td>
    </tr>
    <tr>
-     <td><p><strong>マルチ仮想ネットワークのスケーラビリティ</strong></p></td>
-     <td><p>低 — 新しいクライアント VPC ごとに別々の VPC Peering とルーティング設定が必要</p></td>
-     <td><p>高 — 新しいクライアント VPC は単一の Endpoint Service 経由で接続；新しいクラスターは即座に到達可能</p></td>
+     <td><p><strong>Multi-virtual-network scalability</strong></p></td>
+     <td><p>Low — each new client VPC requires a separate VPC Peering and routing configurations.</p></td>
+     <td><p>High — new client VPCs connect via a single Endpoint Service; 新しいクラスターs are reachable immediately.</p></td>
    </tr>
 </table>
 
 ## Direct VPC access\{#direct-vpc-access}
 
-各 BYOC クラスターは実際には Kubernetes クラスターであり、エントリーポイントとしてロードバランサーを公開しています。ロードバランサーは、ポート 19530 での着信トラフィックをクラスターに転送します。Zilliz はパブリックホストゾーンを介してクラスターエンドポイントを管理しているため、クライアントがロードバランサーとのレイヤー 3 接続を確立していれば、任意のネットワークからトラフィックを解決できます。
+各 BYOC クラスターは実際には Kubernetes クラスターであり、エントリーポイントとしてロードバランサーを公開しています。ロードバランサーは、ポート 19530 でクラスターへの着信トラフィックを転送します。Zilliz はパブリックホストゾーンを介してクラスターエンドポイントを管理しているため、クライアントがロードバランサーとのレイヤー 3 接続を確立していれば、任意のネットワークからトラフィックを解決できます。
 
 ![WXXlwsQOfhAw5NbizaFcvEYJnBh](https://zdoc-images.s3.us-west-2.amazonaws.com/WXXlwsQOfhAw5NbizaFcvEYJnBh.png)
 
-上記の図は、クライアントアプリケーションから BYOC クラスターへのトラフィックフローを示しています。ここでは、クラスター固有のロードバランサーが各クラスター内の Milvus プロキシにトラフィックを転送します。各クラスターには独自のロードバランサーがあり、クラスターレベルのアクセス制御を実装できます。
+上図は、クライアントアプリケーションから BYOC クラスターへのトラフィックフローを示しています。ここでは、クラスター固有のロードバランサーが各クラスターの Milvus プロキシ にトラフィックを転送します。各クラスターには独自のロードバランサーがあり、クラスターレベルのアクセス制御を実装できます。
 
 ### 前提条件\{#prerequisites}
 
-- クライアントアプリケーションが BYOC プロジェクトのデータプレーンと同じ仮想ネットワークで実行されているか、クライアントの仮想ネットワークとデータプレーンの仮想ネットワークが、適切なルートテーブルエントリを持つ仮想ネットワークピアリングで接続されていること。
+- クライアントアプリケーションが BYOC プロジェクトのデータプレーンと同じ仮想ネットワークで実行されているか、クライアントの仮想ネットワークとデータプレーンの仮想ネットワークが、適切なルートテーブルエントリを持つ仮想ネットワークピアリングを介して接続されていること。
 
-- クライアントに関連付けられたセキュリティグループが、データプレーンの仮想ネットワークセグメントへの**ポート 19530 でのアウトバウンドトラフィックを許可**していること。
+- クライアントに関連付けられたセキュリティグループが、データプレーンの仮想ネットワークセグメントへの**ポート 19530 でのアウトバウンドトラフィック**を許可していること。
 
-- データプレーンのセキュリティグループが、クライアントのネットワークセグメントまたはセキュリティグループからの**ポート 19530 でのインバウンドトラフィックを許可**していること。
+- データプレーンのセキュリティグループが、クライアントのネットワークセグメントまたはセキュリティグループからの**ポート 19530 でのインバウンドトラフィック**を許可していること。
 
 ### ステップ 1: クラスターエンドポイントを取得する\{#step-1-get-your-cluster-endpoint}
 
 <Procedures>
 
-1. [Zilliz Cloud コンソール](https://cloud.zilliz.com) を開きます。
+1. [Zilliz Cloud コンソール](https://cloud.zilliz.com)を開きます。
 
 1. BYOC プロジェクトに移動し、クラスターを選択します。
 
-1. **クラスターの詳細** ページで、**接続** カードを確認します。
+1. **クラスターの詳細**ページで、**接続**カードを見つけます。
 
-1. **クラスターエンドポイント** をコピーします — 形式は `https://${cluster-id}-internal.${region}.byoc.vectordb.zillizcloud.com:19530` です。
+1. **クラスターエンドポイント**をコピーします。形式は `<i>http</i>s://${cluster-id}-internal.${region}.byoc.vectordb.zillizcloud.com:19530` です。
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    Terraform を使用してデプロイされた BYOC クラスターの場合、Terraform の出力からエンドポイントを取得することもできます。
+    <p>Terraform を使用してデプロイされた BYOC クラスターの場合、Terraform の出力からエンドポイントを取得することもできます。</p>
 
     </Admonition>
 
@@ -179,31 +179,31 @@ BYOC クラスターには、以下のいずれかのモードで接続できま
 
 ### ステップ 2: クラスターに接続する\{#step-2-connect-to-the-cluster}
 
-次に、コピーしたクラスターエンドポイントと認証情報を使用してクラスターに接続できます。詳細については、[クラスターへの接続](./connect-to-cluster) を参照してください。
+次に、コピーしたクラスターエンドポイントと認証情報を使用してクラスターに接続できます。詳細については、[クラスターへの接続](./connect-to-cluster)を参照してください。
 
-## プライベートエンドポイントアクセス\{#private-endpoint-access}
+## プライベート endpoint access\{#private-endpoint-access}
 
-BYOC プロジェクトのデータプレーンのデプロイ時にプライベートエンドポイントを有効にした場合、データプレーンの仮想ネットワークに共有ゲートウェイがデプロイされ、エントリーポイントとして単一のロードバランサーが設置されます。ゲートウェイは TLS を終端し、リクエストのホスト名に基づいてトラフィックを正しいクラスターにルーティングします。
+BYOC プロジェクトのデータプレーンのデプロイ時にプライベートエンドポイントを有効にした場合、データプレーンの仮想ネットワークに共有ゲートウェイがデプロイされ、エントリーポイントとして単一のロードバランサーが配置されます。ゲートウェイは TLS を終端し、リクエストのホスト名に基づいて正しいクラスターにトラフィックをルーティングします。
 
-この場合、ロードバランサーを仮想ネットワークエンドポイントとして公開する必要があり、これにより、他のクラウドプロバイダーアカウントのものも含め、任意の数のクライアント仮想ネットワークがそのエンドポイント経由で BYOC クラスターに接続できるようになります。
+この場合、ロードバランサーを仮想ネットワークエンドポイントとして公開する必要があり、これにより、他のクラウドプロバイダーアカウントのものも含め、任意の数のクライアント仮想ネットワークがそのエンドポイントを介して BYOC クラスターに接続できるようになります。
 
 ![L0zPwoEePhJF9Bbgln3cQXFMn8e](https://zdoc-images.s3.us-west-2.amazonaws.com/L0zPwoEePhJF9Bbgln3cQXFMn8e.png)
 
-上記の図に示すように、クライアントアプリケーションと BYOC クラスター間のトラフィックは、クライアントの仮想ネットワーク内の仮想ネットワークエンドポイント、仮想ネットワークエンドポイントサービス、Zilliz Gateway として機能するデータプレーンの仮想ネットワーク内の共有ロードバランサー、クラスター固有の TLS 終端ゲートウェイ、および各クラスター内の Milvus プロキシを経由します。
+上図に示すように、クライアントアプリケーションと BYOC クラスター間のトラフィックは、クライアントの仮想ネットワーク内の仮想ネットワークエンドポイント、仮想ネットワークエンドポイントサービス、Zilliz Gateway として機能するデータプレーンの仮想ネットワーク内の共有ロードバランサー、クラスター固有の TLS 終端ゲートウェイ、および各クラスターの Milvus プロキシ を経由します。
 
-クラスターエンドポイント（`*.${region}.byoc.vectordb.zillizcloud.com`）は、Zilliz Cloud が管理するパブリックアドレスに解決されます。したがって、各クライアントの仮想ネットワークは、ワイルドカードドメインを仮想ネットワークのプライベート IP アドレスに向ける DNS レコードを追加することで、DNS 解決を上書きする必要があります。
+クラスターエンドポイント（`*.${region}.byoc.vectordb.zillizcloud.com`）は、Zilliz Cloud が管理するパブリックアドレスに解決されます。したがって、各クライアントの仮想ネットワークは、ワイルドカードドメインを仮想ネットワークのプライベート IP アドレスに向ける DNS レコードを追加することで、DNS 解決をオーバーライドする必要があります。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-データプレーンのデプロイ時にプライベートエンドポイントオプションの選択を解除し、プライベートエンドポイントアクセスが必要な場合は、[お問い合わせ](https://support.zilliz.com/hc/en-us/requests/new) いただき、データプレーンでのゲートウェイデプロイメントを有効にできるようお知らせください。
+<p>データプレーンのデプロイ時にプライベートエンドポイントオプションを選択解除し、プライベートエンドポイントアクセスが必要な場合は、<a href="https://support.zilliz.com/hc/en-us/requests/new">お問い合わせ</a>いただき、データプレーンでのゲートウェイデプロイメントを有効にできるようお手伝いさせていただきます。</p>
 
 </Admonition>
 
 ### 前提条件\{#prerequisites}
 
-- BYOC プロジェクトを持っており、Zilliz テクニカルサポートがゲートウェイのデプロイメントを確認していること。
+- BYOC プロジェクトがあり、Zilliz テクニカルサポートがゲートウェイのデプロイメントを確認していること。
 
-- 仮想ネットワークエンドポイント、仮想ネットワークエンドポイントサービス、および DNS レコードを管理する権限を持っていること。
+- 仮想ネットワークエンドポイント、仮想ネットワークエンドポイントサービス、および DNS レコードを管理する権限があること。
 
 - クライアントの仮想ネットワークが、BYOC プロジェクトのデータプレーンと同じリージョンにあること。
 
@@ -217,7 +217,7 @@ BYOC プロジェクトのデータプレーンのデプロイ時にプライベ
 
 3 つのオプションが利用可能です。AWS コンソール、AWS CloudShell、または Zilliz が提供する Terraform スクリプトを使用して、仮想ネットワークエンドポイントを作成できます。
 
-#### AWS コンソールで\{#on-aws-console}
+#### AWS コンソールでの操作\{#on-aws-console}
 
 <Procedures>
 
@@ -233,11 +233,11 @@ BYOC プロジェクトのデータプレーンのデプロイ時にプライベ
 
 1. **Create endpoint service** をクリックします。
 
-1. **サービス名**（例: `com.amazonaws.vpce.${region}.vpce-svc-xxxxxxxxxxxxxxxxx`）をメモします — これをすべてのクライアント VPC 所有者と共有します。
+1. **サービス名**（例: `com.amazonaws.vpce.${region}.vpce-svc-xxxxxxxxxxxxxxxxx`）をメモします。これをすべてのクライアント VPC オーナーと共有します。
 
 </Procedures>
 
-#### AWS CloudShell で\{#in-aws-cloudshell}
+#### AWS CloudShell での操作\{#in-aws-cloudshell}
 
 以下のコマンドを実行して、仮想ネットワークエンドポイントを作成します。
 

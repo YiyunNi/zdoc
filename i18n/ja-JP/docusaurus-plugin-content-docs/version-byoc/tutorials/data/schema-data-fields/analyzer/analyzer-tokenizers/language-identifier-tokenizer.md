@@ -5,7 +5,7 @@ sidebar_key: language-identifier-tokenizer
 sidebar_label: "言語識別子"
 beta: FALSE
 notebook: FALSE
-description: "`languageidentifier` は、言語分析プロセスを自動化することで Zilliz Cloud のテキスト検索機能を強化するよう設計された専用のトークナイザーです。その主な機能は、テキストフィールドの言語を検出し、その言語に最も適した事前設定されたアナライザーを動的に適用することです。これは、複数の言語を扱うアプリケーションに特に価値があり、入力ごとに手動で言語を割り当てる必要をなくします。 | BYOC"
+description: "`languageidentifier` は、言語分析プロセスを自動化することで Zilliz Cloud のテキスト検索機能を強化するよう設計された専用のトークナイザーです。その主な機能は、テキストフィールドの言語を検出し、その言語に最も適した事前設定されたアナライザーを動的に適用することです。これは、複数の言語を扱うアプリケーションに特に価値があり、入力ごとに手動で言語を割り当てる必要がなくなります。 | BYOC"
 type: origin
 token: X6wiwFkuFiF8nekse05cnBIPnic
 sidebar_position: 6
@@ -26,7 +26,7 @@ import Admonition from '@theme/Admonition';
 
 # 言語 Identifier
 
-`language_identifier` は、言語分析プロセスを自動化することで Zilliz Cloud のテキスト検索機能を強化するために設計された専用トークナイザーです。その主な機能は、テキストフィールドの言語を検出し、その言語に最も適した事前設定されたアナライザーを動的に適用することです。これは、さまざまな言語を扱うアプリケーションにとって特に価値があり、入力ごとに手動で言語を割り当てる必要をなくします。
+`language_identifier` は、Zilliz Cloud のテキスト検索機能を強化するために設計された専用トークナイザーであり、言語分析プロセスを自動化します。その主な機能は、テキストフィールドの言語を検出し、その言語に最も適した事前設定されたアナライザーを動的に適用することです。これは、複数の言語を扱うアプリケーションにとって特に価値があり、入力ごとに手動で言語を割り当てる必要がなくなります。
 
 テキストデータを適切な処理パイプラインにインテリジェントにルーティングすることで、`language_identifier` は多言語データの取り込みを効率化し、後続の検索および取得操作のための正確なトークン化を保証します。
 
@@ -38,7 +38,7 @@ import Admonition from '@theme/Admonition';
 
 1. **Input:** ワークフローはテキスト文字列を入力として開始します。
 
-1. **言語 detection:** この文字列はまず言語検出エンジンに渡され、言語の識別を試みます。Zilliz Cloud は **whatlang** と **lingua** の2つのエンジンをサポートしています。
+1. **言語 detection:** この文字列はまず言語検出エンジンに渡され、言語の識別を試みます。Zilliz Cloud は 2 つのエンジンをサポートしています: **whatlang** と **lingua** です。
 
 1. **Analyzer selection:**
 
@@ -50,7 +50,7 @@ import Admonition from '@theme/Admonition';
 
 ## Available language detection engines\{#available-language-detection-engines}
 
-Zilliz Cloud は2つの言語検出エンジンから選択できます：
+Zilliz Cloud は 2 つの言語検出エンジンから選択できます:
 
 - [whatlang](https://github.com/greyblake/whatlang-rs)
 
@@ -82,7 +82,7 @@ Zilliz Cloud は2つの言語検出エンジンから選択できます：
    </tr>
 </table>
 
-重要な考慮事項はエンジンの命名規則です。両方のエンジンが英語で言語名を返しますが、一部の言語に対して異なる用語を使用します（例：`whatlang` は `Mandarin` を返しますが、`lingua` は `Chinese` を返します）。アナライザーのキーは、選択した検出エンジンが返す名前と完全に一致する必要があります。
+重要な考慮事項はエンジンの命名規則です。両方のエンジンが英語で言語名を返しますが、一部の言語に対して異なる用語を使用します（例: `whatlang` は `Mandarin` を返しますが、`lingua` は `Chinese` を返します）。アナライザーのキーは、選択した検出エンジンが返す名前と完全に一致する必要があります。
 
 ## 設定\{#configuration}
 
@@ -92,7 +92,7 @@ Zilliz Cloud は2つの言語検出エンジンから選択できます：
 
 `language_identifier` の設定の核心は、サポートする予定の特定の言語にアナライザーを調整することです。システムは検出された言語と正しいアナライザーを一致させて動作するため、このステップは正確なテキスト処理にとって重要です。
 
-以下は、言語に適した Zilliz Cloud アナライザーへの推奨マッピングです。このテーブルは、言語検出エンジンの出力と最適なツールの間の架け橋として機能します。
+以下は、言語と適切な Zilliz Cloud アナライザーの推奨マッピングです。この表は、言語検出エンジンの出力と最適なツールの間の架け橋として機能します。
 
 <table>
    <tr>
@@ -124,33 +124,33 @@ Zilliz Cloud は2つの言語検出エンジンから選択できます：
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- **Matching is キー:** アナライザーの名前は、検出エンジンの言語出力と**完全に一致する必要があります**。例えば、`whatlang` を使用している場合、中国語テキストのキーは `Mandarin` である必要があります。
-
-- **Best practices:** 上記のテーブルは、いくつかの一般的な言語に対する推奨設定を提供しますが、網羅的なリストではありません。アナライザーの選択に関するより包括的なガイドについては、[Choose the Right Analyzer for Your Use Case](./choose-the-right-analyzer-for-your-use-case) を参照してください。
-
-- **Detector output**: 検出エンジンが返す言語名の完全なリストについては、[Whatlang supported languages table](https://github.com/greyblake/whatlang-rs) および [Lingua supported languages list](https://github.com/pemistahl/lingua-rs) を参照してください。
+<ul>
+<li><p><strong>Matching is キー:</strong> The name of your analyzer <strong>must exactly match</strong> the language output of the detection engine. For instance, if you're using <code>whatlang</code>, the key for Chinese text must be <code>Mandarin</code>.</p></li>
+<li><p><strong>Best practices:</strong> The table above provides recommended configurations for a few common languages, but it is not an exhaustive list. For a more comprehensive guide on choosing analyzers, refer to <a href="./choose-the-right-analyzer-for-your-use-case">Choose the Right Analyzer for Your Use Case</a>.</p></li>
+<li><p><strong>Detector output</strong>: For a complete list of language names returned by the detection engines, refer to <a href="https://github.com/greyblake/whatlang-rs">Whatlang supported languages table</a> and the <a href="https://github.com/pemistahl/lingua-rs">Lingua supported languages list</a>.</p></li>
+</ul>
 
 </Admonition>
 
 ### Step 2: Define analyzer_params\{#step-2-define-analyzerparams}
 
-Zilliz Cloud で `language_identifier` トークナイザーを使用するには、以下の主要コンポーネントを含む辞書を作成します：
+Zilliz Cloud で `language_identifier` トークナイザーを使用するには、以下の主要コンポーネントを含む辞書を作成します:
 
 **Required components:**
 
-- `analyzers` config set – すべてのアナライザー設定を含む辞書で、以下を含む必要があります：
+- `analyzers` config set – すべてのアナライザー設定を含む辞書で、以下を含む必要があります:
 
-    - `default` – 言語検出が失敗した場合、または一致するアナライザーが見つからない場合に使用されるフォールバック アナライザー
+    - `default` – 言語検出が失敗した場合、または一致するアナライザーが見つからない場合に使用されるフォールバックアナライザー
 
-    - **言語固有のアナライザー** – それぞれ `<analyzer_name>: <analyzer_config>` として定義され、ここで：
+    - **言語固有のアナライザー** – それぞれ `<analyzer_name>: <analyzer_config>` として定義され、以下の条件を満たします:
 
-        - `analyzer_name` は選択した検出エンジンの出力と一致します（例：`"English"`、`"Japanese"`）
+        - `analyzer_name` は選択した検出エンジンの出力と一致します（例: `"English"`、`"Japanese"`）
 
-        - `analyzer_config` は標準のアナライザー パラメーター形式に従います（[Analyzer Overview](./analyzer-overview#analyzer-types) を参照）
+        - `analyzer_config` は標準的なアナライザーパラメーター形式に従います（[Analyzer Overview](./analyzer-overview#analyzer-types) を参照）
 
 **Optional components:**
 
-- `identifier` – 使用する言語検出エンジンを指定します（`whatlang` または `lingua`）。指定されていない場合、デフォルトは `whatlang` です
+- `identifier` – 使用する言語検出エンジンを指定します（`whatlang` または `lingua`）。指定されていない場合、デフォルトで `whatlang` になります
 
 - `mapping` – アナライザーのカスタムエイリアスを作成し、検出エンジンの正確な出力形式の代わりに説明的な名前を使用できるようにします
 
@@ -158,9 +158,9 @@ Zilliz Cloud で `language_identifier` トークナイザーを使用するに�
 
 #### Recommended: Direct name matching\{#recommended-direct-name-matching}
 
-アナライザー名は、選択した言語検出エンジンの出力と完全に一致する必要があります。このアプローチはよりシンプルで、潜在的な混乱を回避できます。
+アナライザー名は、選択した言語検出エンジンの出力と完全に一致させる必要があります。このアプローチはよりシンプルで、潜在的な混乱を回避できます。
 
-`whatlang` と `lingua` の両方について、それぞれのドキュメントに示されている言語名を使用します：
+`whatlang` と `lingua` の両方について、それぞれのドキュメントに示されている言語名を使用します:
 
 - [whatlang supported languages](https://github.com/greyblake/whatlang-rs/blob/master/SUPPORTED_LANGUAGES.md)（「**言語**」列を使用）
 

@@ -1,11 +1,11 @@
 ---
-title: "マネージド ボリューム | Cloud"
+title: "Managed ボリューム | Cloud"
 slug: /managed-volume
 sidebar_key: managed-volume
-sidebar_label: "マネージド ボリューム"
+sidebar_label: "Managed ボリューム"
 beta: FALSE
 notebook: FALSE
-description: "マネージド ボリュームは、インポートや移行に使用されるデータファイルを保持するための、Zilliz Cloud がホストするオブジェクトストアです。このページでは、Web コンソールや SDK を使用してマネージド ボリュームを作成、管理、削除する方法を説明します。 | Cloud"
+description: "managed ボリュームは、インポートおよび移行で使用されるデータファイルを保持するための Zilliz Cloud ホスト型オブジェクトストアです。このページでは、Web コンソールおよび SDK を使用して managed ボリュームを作成、管理、削除する方法を説明します。 | Cloud"
 type: origin
 token: A33MwQX84iXyQNkzopece3oenye
 sidebar_position: 1
@@ -630,43 +630,43 @@ Web コンソールまたは SDK を使用してボリュームを作成でき�
 
 ## マネージドボリュームからデータを削除する\{#delete-data-from-a-managed-volume}
 
-マネージドボリュームからデータを削除するには、ファイルやフォルダのサイズによって数分かかる場合があります。
+マネージドボリュームからデータを削除するには、ファイルまたはフォルダーのサイズに応じて数分かかる場合があります。
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
- 削除したファイルとフォルダは**復元できません**。慎重に進めてください。
+<p>削除されたファイルとフォルダーは<strong>復元できません</strong>。慎重に進めてください。</p>
 
 </Admonition>
 
-現在、マネージドボリュームからデータを削除できるのはWebコンソールのみです。
+現在、マネージドボリュームからデータを削除できるのは Web コンソールのみです。
 
 <Supademo id="cmidzfkoqad9sb7b44vnbfzyd" title=""  />
 
 <Procedures>
 
-1. 左側のナビゲーションで、**ボリューム**をクリックします。
+1. 左側のナビゲーションで、**ボリュームs** をクリックします。
 
-1. **ファイル**タブに切り替えます。
+1. **Files** タブに切り替えます。
 
-1. **アクション**列で、**...** をクリックし、次に**削除**をクリックします。
+1. **Actions** 列で **...** をクリックし、次に **Delete** をクリックします。
 
 </Procedures>
 
 ## マネージドボリュームを削除する\{#delete-a-managed-volume}
 
-不要になった場合は、いつでもマネージドボリュームを削除できます。無料トライアルボリュームは組織ごとに1回しか作成できないことに注意してください。一度削除すると、無料トライアルボリュームを作成することはできなくなります。
+不要になったマネージドボリュームはいつでも削除できます。なお、無料トライアルボリュームは組織ごとに 1 回のみ作成可能です。一度削除すると、二度と無料トライアルボリュームを作成することはできません。
 
-マネージドボリュームを削除すると、**すべてのファイルとフォルダ**も削除されます。
+マネージドボリュームを削除すると、その中の**すべてのファイルとフォルダー**も同時に削除されます。
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
- 削除したボリュームは**復元できません**。慎重に進めてください。
+<p>削除されたボリュームは<strong>復元できません</strong>。慎重に進めてください。</p>
 
 </Admonition>
 
-- **SDKを使用する場合**
+- **SDK を使用する場合**
 
-    マネージドボリュームは以下のように削除できます:
+    マネージドボリュームは以下の方法で削除できます。
 
     <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"cURL","value":"bash"}]}>
     <TabItem value='python'>

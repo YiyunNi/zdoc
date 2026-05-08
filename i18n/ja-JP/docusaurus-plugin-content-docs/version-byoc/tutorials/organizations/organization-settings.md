@@ -27,7 +27,7 @@ import Procedures from '@site/src/components/Procedures';
 
 # 組織設定の管理
 
-組織オーナー の場合、組織設定を管理する権限があります。
+組織オーナーの場合、組織設定を管理する権限があります。
 
 このガイドでは、組織設定を管理する手順について説明します。
 
@@ -51,7 +51,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 システムのタイムゾーンは、初回ログイン時の場所に設定され、Zilliz Cloud に表示されるすべての時刻文字列に適用されます。
 
-現在のタイムゾーンを表示するには、組織オーナー または 組織メンバー のいずれかである必要があります。組織内のロールの詳細については、[組織ユーザーの管理](./organization-users) を参照してください。
+現在のタイムゾーンを表示するには、組織オーナー または 組織メンバー のいずれかである必要があります。組織内のロールの詳細については、[Manage Organization Users](./organization-users) を参照してください。
 
 ![byoc-timezone-settings](https://zdoc-images.s3.us-west-2.amazonaws.com/byoc-timezone-settings.png "byoc-timezone-settings")
 
@@ -59,7 +59,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 ## 優先メンテナンスウィンドウの設定\{#set-up-preferred-maintenance-window}
 
-優先メンテナンスウィンドウは、Zilliz Cloud が Dedicated クラスターの Milvus バージョンのアップグレードなど、スケジュールされたメンテナンスを自動的に実行する **4 時間** の期間です。
+優先メンテナンスウィンドウは、Zilliz Cloud が自動的にスケジュールされたメンテナンス（Dedicated クラスターの Milvus バージョンのアップグレードなど）を実行する **4 時間** の期間です。
 
 優先ウィンドウを設定することで、ピーク時のトラフィック時間帯を避けてメンテナンスをスケジュールし、ワークロードへの影響を最小限に抑えることができます。
 
@@ -71,7 +71,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 <Admonition type="info" icon="📘" title="Note">
 
-メンテナンスが優先ウィンドウを過ぎても実行されている場合は、完了するまで継続されます。
+<p>メンテナンスが優先ウィンドウを過ぎても実行される場合は、完了するまで継続されます。</p>
 
 </Admonition>
 
@@ -87,13 +87,13 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
     - 何もせず、スケジュールされた通りにメンテナンスを実行させる。
 
-- **組織メンバーs** の場合は、[SDK 互換性](./install-sdks#sdk-compatibility) を確認してください。
+- **組織メンバーs** の場合は、[SDK compatibility](./install-sdks#sdk-compatibility) を確認してください。
 
 ## 組織の削除\{#delete-organization}
 
 開始する前に、以下の条件が満たされていることを確認してください:
 
-- 現在の組織内のすべてのクラスターが [削除](./manage-cluster) されていること。
+- 現在の組織内のすべてのクラスターが [deleted](./manage-cluster) されていること。
 
 - 対象の組織で [組織オーナー](./organization-users) ロールが付与されていること。
 
@@ -117,7 +117,7 @@ Zilliz Cloud にサインアップすると、デフォルトの組織が自動�
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-組織の削除は元に戻せません。この操作には十分注意してください。
+<p>組織の削除は元に戻すことができません。この操作には十分注意してください。</p>
 
 </Admonition>
 

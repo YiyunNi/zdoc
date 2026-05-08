@@ -27,15 +27,15 @@ import Procedures from '@site/src/components/Procedures';
 
 AWS キー Management Service (KMS) は、データの暗号化と署名に使用するキーの作成と管理を簡単に行える、AWS が管理するサービスです。
 
-## Overview\{#overview}
+## 概要\{#overview}
 
-通常のケースでは、Zilliz Cloud クラスター内のデータを暗号化するために KMS キーを直接使用することはありません。代わりに、KMS キーを使用して暗号化ゾーンキー（EZK）を暗号化し、EZK を使用してデータ暗号化キー（DEK）を暗号化し、DEK を使用してデータを暗号化します。
+通常、Zilliz Cloud クラスター内のデータを暗号化するために KMS キーを直接使用することはありません。代わりに、KMS キーを使用して暗号化ゾーンキー（EZK）を暗号化し、EZK を使用してデータ暗号化キー（DEK）を暗号化し、DEK を使用してデータを暗号化します。
 
 ![YJRcwu5BLhm8Hub1eiZcDiIdnDh](https://zdoc-images.s3.us-west-2.amazonaws.com/YJRcwu5BLhm8Hub1eiZcDiIdnDh.png)
 
 暗号化の仕組みとその範囲の詳細については、[このセクション](./cmek#how-encryption-works) を参照してください。CMEK 機能の制限事項の詳細については、[このセクション](./cmek#limitations) を参照してください。CMEK 機能を使用するには、このページの手順に従ってください。
 
-## Before you start\{#before-you-start}
+## 開始前の準備\{#before-you-start}
 
 - AWS CLI をインストールしているか、AWS CloudShell にアクセスできること。
 
@@ -43,7 +43,7 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
 - KMS 関連のコマンドを実行するための十分な権限を持っていること。
 
-## Add a KMS key\{#add-a-kms-key}
+## KMS キーの追加\{#add-a-kms-key}
 
 各プロジェクトでは、KMS プロバイダーに関係なく、最大 **20** 個のキーを許可しています。既存の KMS キーを追加するか、Zilliz Cloud コンソールの指示に従って KMS キーを作成し、Zilliz Cloud に追加することができます。
 
@@ -51,7 +51,7 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
 <Procedures>
 
-1. **Select AWS IAM ロール** ステップのドロップダウンをクリックし、IAM ロールを選択して、**Next** をクリック。
+1. **Select AWS IAM ロール** ステップのドロップダウンをクリックし、IAM ロールを選択して、**Next** をクリックします。
 
     ![FbqvwpUuahSvMyb02IUcT1iNn6f](https://zdoc-images.s3.us-west-2.amazonaws.com/FbqvwpUuahSvMyb02IUcT1iNn6f.png)
 
@@ -67,11 +67,9 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        暗号化された Zilliz Cloud クラスターをあるクラウドリージョンから別のリージョンにバックアップした後、元のクラスターを暗号化したのと同じキーを使用して、ターゲットリージョンでバックアップを復号する必要があります。
-
-        この場合、キーをバックアップをホストするリージョンにレプリケートし、既存の IAM ロールを使用して Zilliz Cloud に送信することができます。
-
-        マルチリージョンレプリカキーの作成の詳細については、AWS ドキュメントの [このページ](https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-replicate.html) をお読みください。
+        <p>暗号化された Zilliz Cloud クラスターをあるクラウドリージョンから別のリージョンにバックアップした後、元のクラスターを暗号化したのと同じキーを使用して、ターゲットリージョンでバックアップを復号化する必要があります。</p>
+        <p>この場合、キーをバックアップをホストするリージョンにレプリケートし、既存の IAM ロールを使用して Zilliz Cloud に送信できます。</p>
+        <p>マルチリージョンレプリカキーの作成の詳細については、AWS ドキュメントの<a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-replicate.html">このページ</a>をお読みください。</p>
 
         </Admonition>
 
@@ -103,7 +101,7 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
             }
             ```
 
-        - Zilliz Cloud の上記ダイアログボックスのステップ 3。
+        - 上記の Zilliz Cloud のダイアログボックスのステップ 3。
 
     1. ダイアログボックスの下部にある **Validate KMS キー** をクリックします。
 
@@ -113,7 +111,7 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性を確認します。キーが利用可能であることを検出した後にのみ、利用可能になります。
+<p>KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性を確認します。キーが利用可能であることを検出した後にのみ、利用可能になります。</p>
 
 </Admonition>
 
@@ -127,15 +125,15 @@ KMS キーが不要になった場合、それを使用しているクラスタ�
 
 ## Use AWS KMS keys\{#use-aws-kms-keys}
 
-KMS キーを Zilliz Cloud に追加したら、それを使用して暗号化クラスターを作成したり、バックアップと復元を行ったりできます。
+KMS キーを Zilliz Cloud に追加すると、それを使用して暗号化クラスターを作成したり、バックアップと復元を行ったりできます。
 
 ### Create an encrypted cluster\{#create-an-encrypted-cluster}
 
-クラスターを作成したいリージョンで利用可能な KMS キーを選択して暗号化できます。
+クラスターを作成したいリージョンで利用可能な KMS キーを選択して、暗号化することができます。
 
 ![RGUrbElsSoc61JxikfWcoTCrnHe](https://zdoc-images.s3.us-west-2.amazonaws.com/rgurbelssoc61jxikfwcotcrnhe.png "RGUrbElsSoc61JxikfWcoTCrnHe")
 
-KMS キーを追加したら、以下の手順で暗号化クラスターを作成できます：
+KMS キーを追加したら、以下の手順で暗号化クラスターを作成できます。
 
 <Procedures>
 
@@ -143,7 +141,7 @@ KMS キーを追加したら、以下の手順で暗号化クラスターを作�
 
 1. クラスターのクラウドプロバイダーとリージョンを選択します。
 
-1. **Encryption at Rest with CMEK** を有効にし、既存の KMS キーを選択します。選択できるのは、作成するクラスターと同じリージョンの KMS キーのみです。
+1. **Encryption at Rest with CMEK** を有効にし、既存の KMS キーを選択します。作成するクラスターと同じリージョンの KMS キーのみ選択できます。
 
 1. サマリーを確認し、**Create Cluster** をクリックします。
 
@@ -159,7 +157,7 @@ KMS キーを追加したら、以下の手順で暗号化クラスターを作�
 
 ![WaApbDlaYoywaMxxUMxcQLAOnDe](https://zdoc-images.s3.us-west-2.amazonaws.com/waapbdlayoywamxxumxcqlaonde.png "WaApbDlaYoywaMxxUMxcQLAOnDe")
 
-暗号化バックアップからの復元手順は、**Encryption at Rest with CMEK** を有効にするかどうかを除き、通常の復元とほぼ同じです。
+暗号化されたバックアップからの復元手順は、**Encryption at Rest with CMEK** を有効にするかどうかを除き、通常の復元とほぼ同じです。
 
 ![V1QJb3SK1oGa11xLljhcxKQEnkc](https://zdoc-images.s3.us-west-2.amazonaws.com/v1qjb3sk1oga11xlljhcxkqenkc.png "V1QJb3SK1oGa11xLljhcxKQEnkc")
 

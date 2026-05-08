@@ -27,37 +27,37 @@ import Admonition from '@theme/Admonition';
 
 # ジオメトリ演算子
 
-Zilliz Cloud は、`GEOMETRY` フィールドに対する空間フィルタリングのための一連の演算子をサポートしています。これらは、ジオメトリデータの管理と分析に不可欠です。これらの演算子を使用すると、オブジェクト間のジオメトリ関係に基づいてエンティティを取得できます。
+Zilliz Cloud は、`GEOMETRY` フィールドに対する空間フィルタリングのための一連の演算子をサポートしています。これらはジオメトリデータの管理と分析に不可欠です。これらの演算子を使用すると、オブジェクト間のジオメトリ関係に基づいてエンティティを取得できます。
 
 すべてのジオメトリ演算子は、2 つのジオメトリ引数を取って機能します。コレクションスキーマで定義された `GEOMETRY` フィールドの名前と、[Well-Known Text](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) (WKT) 形式で表現されたターゲットジオメトリオブジェクトです。
 
-## 使用構文\{#use-syntax}
+## 構文の使用\{#use-syntax}
 
-`GEOMETRY` フィールドをフィルタリングするには、式の中でジオメトリ演算子を使用します。
+`GEOMETRY` フィールドでフィルタリングするには、式の中でジオメトリ演算子を使用します。
 
 - 一般: `{operator}(geo_field, '{wkt}')`
 
 - 距離ベース: `ST_DWITHIN(geo_field, '{wkt}', distance)`
 
-ここで:
+ここで：
 
-- `operator` は、サポートされているジオメトリ演算子のいずれかです（例: `ST_CONTAINS`、`ST_INTERSECTS`）。演算子名はすべて大文字またはすべて小文字である必要があります。サポートされている演算子の一覧については、[サポートされているジオメトリ演算子](./geometry-operators#supported-geometry-operators) を参照してください。
+- `operator` は、サポートされているジオメトリ演算子のいずれかです（例：`ST_CONTAINS`、`ST_INTERSECTS`）。演算子名はすべて大文字またはすべて小文字である必要があります。サポートされている演算子の一覧については、[サポートされているジオメトリ演算子](./geometry-operators#supported-geometry-operators) を参照してください。
 
 - `geo_field` は、`GEOMETRY` フィールドの名前です。
 
 - `'{wkt}'` は、クエリ対象のジオメトリの WKT 表現です。
 
-- `distance` は、`ST_DWITHIN` 専用の閾値です。
+- `distance` は、`ST_DWITHIN` 専用のしきい値です。
 
 Zilliz Cloud の `GEOMETRY` フィールドの詳細については、[ジオメトリフィールド](./use-geometry-field) を参照してください。
 
 ## サポートされているジオメトリ演算子\{#supported-geometry-operators}
 
-次の表に、Zilliz Cloud で利用可能なジオメトリ演算子を示します。
+次の表に、Zilliz Cloud で使用可能なジオメトリ演算子を示します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-演算子名は **すべて大文字** または **すべて小文字** である必要があります。同じ演算子名内で大文字と小文字を混在させないでください。
+<p>演算子名は<strong>すべて大文字</strong>または<strong>すべて小文字</strong>である必要があります。同じ演算子名内で大文字と小文字を混在させないでください。</p>
 
 </Admonition>
 
@@ -75,7 +75,7 @@ Zilliz Cloud の `GEOMETRY` フィールドの詳細については、[ジオメ
    <tr>
      <td><p><code>ST_CONTAINS(A, B)</code> / <code>st_contains(A, B)</code></p></td>
      <td><p>ジオメトリ A がジオメトリ B を完全に含み、それらの内部が少なくとも 1 つの共通点を持つ場合に TRUE を返します。</p></td>
-     <td><p>市の境界（A）が特定の公園（B）を含んでいますか？</p></td>
+     <td><p>都市の境界（A）が特定の公園（B）を含んでいますか？</p></td>
    </tr>
    <tr>
      <td><p><code>ST_CROSSES(A, B)</code> / <code>st_crosses(A, B)</code></p></td>
@@ -104,18 +104,18 @@ Zilliz Cloud の `GEOMETRY` フィールドの詳細については、[ジオメ
    </tr>
    <tr>
      <td><p><code>ST_DWITHIN(A, B, distance)</code> / <code>st_dwithin(A, B, distance)</code></p></td>
-     <td><p>ジオメトリ A とジオメトリ B の間の距離が指定された距離以下の場合に TRUE を返します。</p><p><strong>注</strong>: ジオメトリ B は現在、ポイントのみをサポートしています。距離の単位はメートルです。</p></td>
+     <td><p>ジオメトリ A とジオメトリ B の間の距離が指定された距離以下の場合に TRUE を返します。</p><p><strong>注</strong>：ジオメトリ B は現在ポイントのみをサポートしています。距離の単位はメートルです。</p></td>
      <td><p>特定のポイント（B）から 5000 メートル以内のすべてのポイントを検索します。</p></td>
    </tr>
 </table>
 
 ## ST_EQUALS / st_equals\{#stequals-stequals}
 
-`ST_EQUALS` 演算子は、2 つのジオメトリが空間的に同一である場合、つまり同じ点の集合と次元を持つ場合に TRUE を返します。これは、2 つの保存されたジオメトリオブジェクトがまったく同じ位置と形状を表しているかどうかを確認する際に役立ちます。
+`ST_EQUALS` 演算子は、2 つのジオメトリが空間的に同一である場合、つまり同じ点の集合と次元を持つ場合に TRUE を返します。これは、2 つの保存されたジオメトリオブジェクトが完全に同じ位置と形状を表しているかどうかを確認する際に役立ちます。
 
 **例**
 
-保存されたジオメトリ（ポイントやポリゴンなど）がターゲットジオメトリと完全に同じかどうかを確認したいとします。たとえば、保存されたポイントを特定の関心点と比較できます。
+保存されたジオメトリ（ポイントやポリゴンなど）がターゲットジオメトリと完全に同じかどうかを確認したいとします。例えば、保存されたポイントを特定の関心点と比較できます。
 
 ```python
 # The filter expression to check if a geometry matches a specific point

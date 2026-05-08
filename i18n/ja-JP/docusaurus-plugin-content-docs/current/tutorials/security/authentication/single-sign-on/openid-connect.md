@@ -42,7 +42,7 @@ import Procedures from '@site/src/components/Procedures';
 
 ## 設定手順\{#configuration-steps}
 
-### 手順 1: Zilliz Cloud コンソールで SP の詳細にアクセスする\{#step-1-access-sp-details-in-zilliz-cloud-console}
+### ステップ 1: Zilliz Cloud コンソールで SP の詳細にアクセスする\{#step-1-access-sp-details-in-zilliz-cloud-console}
 
 SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必要な **シングルサインオンURL** を提供します。
 
@@ -56,17 +56,17 @@ SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必�
 
 1. **Settings** ページで、**Single Sign-On (SSO)** セクションを見つけ、**Configure** をクリックします。
 
-1. 表示されるダイアログボックスで、IdP およびプロトコルとして **Okta (OIDC)** を選択します。
+1. 表示されたダイアログボックスで、IdP およびプロトコルとして **Okta (OIDC)** を選択します。
 
-1. **サービスプロバイダーの詳細** カードで、**シングルサインオンURL** をコピーします。これは、Okta コンソールで OIDC アプリを作成する [手順 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で必要になります。
+1. **サービスプロバイダーの詳細** カードで、**シングルサインオンURL** をコピーします。これは、Okta コンソールで OIDC アプリを作成する [ステップ 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で必要になります。
 
-1. 完了したら、[手順 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) に進みます。
+1. 完了したら、[ステップ 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) に進みます。
 
 </Procedures>
 
-### 手順 2: Okta コンソールで OIDC アプリを設定する\{#step-2-set-up-an-oidc-app-in-okta-console}
+### ステップ 2: Okta コンソールで OIDC アプリを設定する\{#step-2-set-up-an-oidc-app-in-okta-console}
 
-この手順では、Zilliz Cloud から取得した SP の詳細を使用して Okta (IdP) を設定します。
+このステップでは、Zilliz Cloud から取得した SP の詳細を使用して Okta (IdP) を設定します。
 
 <Supademo id="cme8abl5c3ei3h3pywbc9z740" title="Step 1: Create SAML App in Okta Console" />
 
@@ -80,11 +80,11 @@ SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必�
 
 1. **Create a new app integration** ダイアログボックスで、サインイン方法として **OIDC - OpenID Connect** を選択し、アプリケーションタイプとして **Webアプリケーション** を選択します。**Next** をクリックします。
 
-1. 新しい Web アプリ統合を次の設定で構成します：
+1. 新しい Web アプリ連携を次の設定で構成します：
 
     - **アプリ連携名**: アプリ連携名をカスタマイズします（例: **zilliz**）。
 
-    - **サインインリダイレクトURI**: [手順 1](./openid-connect#step-1-access-sp-details-in-zilliz-cloud-console) で Zilliz Cloud コンソールからコピーした **シングルサインオンURL** をここに貼り付けます。
+    - **サインインリダイレクトURI**: [ステップ 1](./openid-connect#step-1-access-sp-details-in-zilliz-cloud-console) で Zilliz Cloud コンソールからコピーした **シングルサインオンURL** をここに貼り付けます。
 
     - **制御されたアクセス**: 特定のグループアクセスを設定しない場合は、**Skip group assignment for now** を選択します。
 
@@ -98,13 +98,13 @@ SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必�
 
     - **Oktaドメイン**
 
-    これらの値は、[手順 3](./openid-connect#step-3-configure-idp-settings-in-zilliz-cloud-console) で Zilliz Cloud コンソールで必要になります。
+    これらの値は、[ステップ 3](./openid-connect#step-3-configure-idp-settings-in-zilliz-cloud-console) で Zilliz Cloud コンソールで必要になります。
 
 </Procedures>
 
-### 手順 3: Zilliz Cloud コンソールで IdP 設定を構成する\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
+### ステップ 3: Zilliz Cloud コンソールで IdP 設定を構成する\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
 
-この手順では、Okta の IdP の詳細を Zilliz Cloud に提供して、OIDC の信頼関係を完了します。
+このステップでは、Okta の IdP の詳細を Zilliz Cloud に提供して、OIDC の信頼関係を完了します。
 
 <Supademo id="cme8af32q3elth3pyaygkdnmo" title="Step 3: Configure Okta settings in Zilliz Cloud console" />
 
@@ -114,11 +114,11 @@ SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必�
 
 1. **Configure Single Sign-On (SSO)** ダイアログボックスの **IDプロバイダーの詳細** カードで、次の項目を設定します：
 
-    - **Okta Domain**: [手順 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で Okta コンソールからコピーした **Oktaドメイン** を貼り付けます。
+    - **Okta Domain**: [ステップ 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で Okta コンソールからコピーした **Oktaドメイン** を貼り付けます。
 
-    - **クライアントID**: [手順 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で Okta コンソールからコピーした **クライアントID** を貼り付けます。
+    - **クライアントID**: [ステップ 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で Okta コンソールからコピーした **クライアントID** を貼り付けます。
 
-    - **クライアントシークレット**: [手順 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で Okta コンソールからコピーした **クライアントシークレット** を貼り付けます。
+    - **クライアントシークレット**: [ステップ 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console) で Okta コンソールからコピーした **クライアントシークレット** を貼り付けます。
 
 1. 完了したら、**Save** をクリックします。次に、**OK** をクリックします。
 
@@ -130,11 +130,11 @@ SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必�
 
 <Supademo id="cme8ahjdm3epjh3pyg6a3k93k" title="Task 1: Assign OIDC app to users" />
 
-ユーザーが SSO を介して Zilliz Cloud にアクセスできるようにするには、OIDC アプリをユーザーに割り当てる必要があります：
+ユーザーが SSO を介して Zilliz Cloud にアクセスできるようにする前に、OIDC アプリをユーザーに割り当てる必要があります：
 
 <Procedures>
 
-1. [Okta Admin コンソール](https://login.okta.com/) のアプリの詳細ページで、**割り当て** をクリックします。
+1. [Okta Admin コンソール](https://login.okta.com/) のアプリ詳細ページで、**割り当て** をクリックします。
 
 1. **Assign** > **Assign to People** を選択します。
 
@@ -152,13 +152,13 @@ SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必�
 
 - **組織オーナー** が適切なプロジェクトに招待する必要があります。
 
-- プロジェクトにユーザーを招待する手順については、[プロジェクトユーザーの管理](./project-users#invite-a-user-to-a-project) を参照してください。
+- プロジェクトにユーザーを招待する手順については、[Manage Project Users](./project-users#invite-a-user-to-a-project) を参照してください。
 
 プロジェクトに招待された後、**組織オーナー** は Zilliz Cloud のログイン URL をエンタープライズユーザーと共有し、SSO を介してサインインできるようにします。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-組織で SSO 強制が有効になっている場合、組織レベルでの直接メンバー招待は無効になります。代わりに IdP を介してユーザーをプロビジョニングする必要があります。プロジェクトレベルでメンバーを招待する場合、既存の組織メンバーのみを招待できます。
+<p>組織で SSO 強制が有効になっている場合、組織レベルでの直接メンバー招待は無効になります。代わりに IdP を通じてユーザーをプロビジョニングする必要があります。プロジェクトレベルでメンバーを招待する場合、既存の組織メンバーのみを招待できます。</p>
 
 </Admonition>
 
@@ -166,27 +166,27 @@ SP として、Zilliz Cloud は Okta で OIDC アプリを設定する際に必�
 
 ### タスク 3: (オプション) SSO 強制を有効にする\{#task-3-optional-enable-sso-enforcement}
 
-SSO 接続が完全に設定され、テストされた後、オプションで **SSO 強制** を有効にして、すべての組織メンバーに SSO を介してのみログインすることを要求できます。有効にすると、メンバーはメール/パスワードまたはサードパーティアカウント（Google、GitHub）を使用してサインインできなくなります。
+SSO 接続が完全に設定され、テストされた後、オプションで **SSO 強制** を有効にして、すべての組織メンバーが SSO を介してのみログインするように要求できます。有効にすると、メンバーはメール/パスワードまたはサードパーティアカウント（Google、GitHub）を使用してサインインできなくなります。
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-この機能を有効にすると、現在パスワードでサインインしているすべてのメンバーが直ちにログアウトされ、SSO 以外のログイン方法がブロックされます。
+<p>この機能を有効にすると、パスワードで現在サインインしているすべてのメンバーが直ちにログアウトされ、SSO 以外のログイン方法がブロックされます。</p>
 
 </Admonition>
 
 <Supademo id="cml4tlban34cozsadvi68n666" title=""  />
 
-詳細については、[組織で SSO を強制する](./enforce-sso-in-your-organization) を参照してください。
+詳細については、[Enforce SSO in Your Organization](./enforce-sso-in-your-organization) を参照してください。
 
 ## FAQ\{#faq}
 
 ### SSO で初めてログインするユーザーに割り当てられるロールは何ですか？\{#what-role-is-assigned-to-users-who-log-in-via-sso-for-the-first-time}
 
-Zilliz Cloud アカウントをまだ持っていない新規ユーザーは、初回の SSO ログイン時に自動的に作成されます。これらのユーザーには、デフォルトで **組織メンバー** ロールが割り当てられます。後で Zilliz Cloud コンソールでロールを変更できます。詳細な手順については、[プロジェクトユーザーの管理](./project-users#edit-a-collaborators-role) を参照してください。
+Zilliz Cloud アカウントをまだ持っていない新規ユーザーは、初回の SSO ログイン時に自動的に作成されます。これらのユーザーには、デフォルトで **組織メンバー** ロールが割り当てられます。後で Zilliz Cloud コンソールでロールを変更できます。詳細な手順については、[Manage Project Users](./project-users#edit-a-collaborators-role) を参照してください。
 
 ### SSO ログイン後、ユーザーはどのようにプロジェクトにアクセスしますか？\{#how-do-users-access-projects-after-sso-login}
 
-SSO でログインした後、ユーザーにはデフォルトで **組織メンバー** ロールが付与されます。特定のプロジェクトにアクセスするには、**組織オーナー** または **プロジェクト管理者** がプロジェクトに招待する必要があります。詳細な手順については、[プロジェクトユーザーの管理](./project-users) を参照してください。
+SSO でログインした後、ユーザーにはデフォルトで **組織メンバー** ロールが割り当てられます。特定のプロジェクトにアクセスするには、**組織オーナー** または **プロジェクト管理者** がプロジェクトに招待する必要があります。詳細な手順については、[Manage Project Users](./project-users) を参照してください。
 
 ### SSO でログインする前に既に Zilliz Cloud アカウントを持っているユーザーはどうなりますか？\{#what-happens-if-a-user-already-has-a-zilliz-cloud-account-before-logging-in-with-sso}
 
@@ -194,4 +194,4 @@ SSO でログインした後、ユーザーにはデフォルトで **組織メ�
 
 ### 同じ組織に複数の SSO プロバイダーを設定できますか？\{#can-i-configure-multiple-sso-providers-for-the-same-organization}
 
-現在、各 Zilliz Cloud 組織では、同時に **1 つのアクティブな SAML SSO 設定** のみをサポートしています。
+現在、各 Zilliz Cloud 組織では、一度にアクティブな SAML SSO 設定は **1 つ** のみサポートされています。

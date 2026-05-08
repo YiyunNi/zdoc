@@ -31,41 +31,41 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、**ビジネスクリティカル** プロジェクトの **Dedicated** クラスタでのみ利用可能です。
+<p>この機能は、<strong>ビジネスクリティカル</strong>プロジェクトの<strong>Dedicated</strong>クラスタでのみ利用可能です。</p>
 
 </Admonition>
 
-## 概要\{#overview}
+## Overview\{#overview}
 
 通常のケースでは、Zilliz Cloud クラスタ内のデータを暗号化するために KMS キーを直接使用することはありません。代わりに、KMS キーを使用して暗号化ゾーンキー（EZK）を暗号化し、EZK を使用してデータ暗号化キー（DEK）を暗号化し、DEK を使用してデータを暗号化します。
 
 ![YJRcwu5BLhm8Hub1eiZcDiIdnDh](https://zdoc-images.s3.us-west-2.amazonaws.com/YJRcwu5BLhm8Hub1eiZcDiIdnDh.png)
 
-暗号化の仕組みとそのスコープの詳細については、[このセクション](./cmek#how-encryption-works) を参照してください。CMEK 機能の制限事項の詳細については、[このセクション](./cmek#limitations) を参照してください。CMEK 機能を使用するには、このページの手順に従ってください。
+暗号化の仕組みとそのスコープの詳細については、[このセクション](./cmek#how-encryption-works)を参照してください。CMEK 機能の制限事項の詳細については、[このセクション](./cmek#limitations)を参照してください。CMEK 機能を使用するには、このページの手順に従ってください。
 
-## 開始前の準備\{#before-you-start}
+## Before you start\{#before-you-start}
 
 - AWS CLI をインストールしているか、AWS CloudShell へのアクセス権を持っていること。
 
-    詳細については、[このページ](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) を参照してください。
+    詳細については、[このページ](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)を参照してください。
 
 - KMS 関連のコマンドを実行するための十分な権限を持っていること。
 
-## KMS キーの追加\{#add-a-kms-key}
+## Add a KMS key\{#add-a-kms-key}
 
 各プロジェクトでは、KMS プロバイダに関係なく、最大 **20** 個のキーを許可しています。既存の KMS キーを追加するか、Zilliz Cloud コンソールの指示に従って KMS キーを作成し、Zilliz Cloud に追加することができます。
 
-## 手順\{#procedures}
+## Procedures\{#procedures}
 
-[Zilliz Cloud コンソール](https://cloud.zilliz.com/login) にログインし、いずれかの **ビジネスクリティカル** プロジェクトに移動し、左側のナビゲーションペインから **ネットワーク** > **CMEK** を選択し、**+ CMEK** をクリックし、**Add CMEK (AWS KMS)** ダイアログボックスの手順に従ってプロセスを完了します。
+[Zilliz Cloud コンソール](https://cloud.zilliz.com/login)にログインし、いずれかの**ビジネスクリティカル**プロジェクトに入り、左側のナビゲーションペインから**ネットワーク** > **CMEK** を選択し、**+ CMEK** をクリックして、**Add CMEK (AWS KMS)** ダイアログボックスの手順に従ってプロセスを完了します。
 
-開始する前に、手順中に使用する IAM ロールを決定する必要があります。IAM ロールは、KMS キーの追加に使用すると Zilliz Cloud に一覧表示されます。**Existing IAM ロール** タブの **Select AWS IAM ロール** ステップのドロップダウンリストを確認し、必要な IAM ロールが一覧表示されているかどうかを確認します。
+開始する前に、手順中に使用する IAM ロールを決定する必要があります。IAM ロールは、KMS キーの追加に使用すると Zilliz Cloud に一覧表示されます。**Existing IAM ロール** タブの **Select AWS IAM ロール** ステップのドロップダウンリストを確認し、必要な IAM ロールが一覧に含まれているかどうかを確認します。
 
-- 表示されている場合は、[既存のロールを使用した KMS キーの追加](./aws-kms#add-a-kms-key-using-an-existing-role) に進みます。
+- 含まれている場合は、[既存のロールを使用して KMS キーを追加](./aws-kms#add-a-kms-key-using-an-existing-role)に進みます。
 
-- 表示されていない場合は、[新しいロールを使用した KMS キーの追加](./aws-kms#add-a-kms-key-using-a-new-role) に進みます。
+- 含まれていない場合は、[新しいロールを使用して KMS キーを追加](./aws-kms#add-a-kms-key-using-a-new-role)に進みます。
 
-### 既存のロールを使用した KMS キーの追加\{#add-a-kms-key-using-an-existing-role}
+### Add a KMS key using an existing role\{#add-a-kms-key-using-an-existing-role}
 
 **Existing IAM ロール** タブの **Select AWS IAM ロール** のドロップダウンリストに必要な IAM ロールが含まれている場合は、このセクションの手順に従ってください。
 
@@ -87,19 +87,17 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        暗号化された Zilliz Cloud クラスタをあるクラウドリージョンから別のリージョンにバックアップした後、元のクラスタを暗号化したのと同じキーを使用して、ターゲットリージョンでバックアップを復号化する必要があります。
-
-        この場合、キーをバックアップをホストするリージョンにレプリケートし、既存の IAM ロールを使用して Zilliz Cloud に送信することができます。
-
-        マルチリージョンレプリカキーの作成の詳細については、AWS ドキュメントの [このページ](https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-replicate.html) をお読みください。
+        <p>暗号化された Zilliz Cloud クラスタをあるクラウドリージョンから別のリージョンにバックアップした後、元のクラスタを暗号化したのと同じキーを使用して、ターゲットリージョンでバックアップを復号化する必要があります。</p>
+        <p>この場合、キーをバックアップをホストするリージョンにレプリケートし、既存の IAM ロールを使用して Zilliz Cloud に送信できます。</p>
+        <p>マルチリージョンレプリカキーの作成の詳細については、AWS ドキュメントの<a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-replicate.html">このページ</a>をお読みください。</p>
 
         </Admonition>
 
-    1. 次の場所に KMS キー ARN をコピーして貼り付けます。
+    1. 次の場所に KMS キー ARN をコピーして貼り付けます：
 
-        - [AWS コンソール上で](https://console.aws.amazon.com/iam/home#/roles) あなたの IAM ロールのポリシー。
+        - [AWS コンソール上](https://console.aws.amazon.com/iam/home#/roles)の IAM ロールのポリシー。
 
-            ロールリストでロールの名前をクリックし、**Permissions** タブでロールポリシーを見つけ、コピーした KMS キーを `Resource` ノードに追加します。
+            ロールリストでロール名をクリックし、**Permissions** タブでロールポリシーを見つけ、コピーした KMS キーを `Resource` ノードに追加します。
 
             ```json
             {
@@ -167,7 +165,7 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
     1. **次へ** をクリックします。
 
-1. KMS キーを作成します
+1. KMS キーを作成する
 
     <Supademo id="cmkxdwufl000isl0i5nfkxzvy" title=""  />
 
@@ -199,7 +197,7 @@ AWS キー Management Service (KMS) は、データの暗号化と署名に使�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性を確認します。キーが利用可能であることを検出してから、利用可能になります。
+<p>KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性を確認します。キーが利用可能であることを検出してから、利用可能になります。</p>
 
 </Admonition>
 
@@ -211,19 +209,19 @@ KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合�
 
 Zilliz Cloud は、リストされたキーの可用性を 10 分ごとにスキャンします。また、リストされた KMS キーのステータスに関するプロジェクトアラートを作成することもできます。詳細については、[プロジェクトアラートの管理](./manage-project-alerts#create-a-project-alert) を参照してください。
 
-KMS キーが不要になった場合、それを使用しているクラスターがなければ削除できます。
+KMS キーが不要になった場合、いずれのクラスターも使用していなければ削除できます。
 
 ## AWS KMS キーの使用\{#use-aws-kms-keys}
 
-KMS キーを Zilliz Cloud に追加したら、それを使用して暗号化クラスターを作成したり、バックアップと復元を行ったりできます。
+KMS キーを Zilliz Cloud に追加したら、それを使用して暗号化されたクラスターを作成したり、バックアップと復元を行ったりできます。
 
-### 暗号化クラスターの作成\{#create-an-encrypted-cluster}
+### 暗号化されたクラスターの作成\{#create-an-encrypted-cluster}
 
 クラスターを作成したいリージョンで利用可能な KMS キーを選択して暗号化できます。
 
 ![RGUrbElsSoc61JxikfWcoTCrnHe](https://zdoc-images.s3.us-west-2.amazonaws.com/rgurbelssoc61jxikfwcotcrnhe.png "RGUrbElsSoc61JxikfWcoTCrnHe")
 
-KMS キーを追加したら、以下のように暗号化クラスターを作成できます：
+KMS キーを追加したら、以下のように暗号化されたクラスターを作成できます。
 
 <Procedures>
 
@@ -237,17 +235,17 @@ KMS キーを追加したら、以下のように暗号化クラスターを作�
 
     ![Iy8JbR19eoBQ4YxV1PjcLfUinl7](https://zdoc-images.s3.us-west-2.amazonaws.com/iy8jbr19eobq4yxv1pjclfuinl7.png "Iy8JbR19eoBQ4YxV1PjcLfUinl7")
 
-    暗号化クラスターの **概要** ページには、上図のようにクラスター名の右側にキーアイコンが表示されます。暗号化クラスターに作成されたすべてのコレクションは、デフォルトで暗号化されます。
+    暗号化されたクラスターの **概要** ページには、クラスター名の右側にキーアイコンが表示されます（上図参照）。暗号化されたクラスターに作成されたすべてのコレクションは、デフォルトで暗号化されます。
 
 </Procedures>
 
-### 暗号化バックアップファイルからの復元\{#restore-from-an-encrypted-backup-file}
+### 暗号化されたバックアップファイルからの復元\{#restore-from-an-encrypted-backup-file}
 
-暗号化バックアップを新しいクラスターに復元する場合、Zilliz Cloud はバックアップファイルに関連付けられた KMS キーを使用して、復元前にデータを復号します。そのため、バックアップを暗号化ありまたはなしの新しいクラスターに復元できます。
+暗号化されたバックアップを新しいクラスターに復元する場合、Zilliz Cloud はバックアップファイルに関連付けられた KMS キーを使用して、復元前にデータを復号します。したがって、バックアップを暗号化ありまたは暗号化なしの新しいクラスターに復元できます。
 
 ![WaApbDlaYoywaMxxUMxcQLAOnDe](https://zdoc-images.s3.us-west-2.amazonaws.com/waapbdlayoywamxxumxcqlaonde.png "WaApbDlaYoywaMxxUMxcQLAOnDe")
 
-暗号化バックアップからの復元手順は、通常の復元とほぼ同じですが、**CMEK を使用した保存時の暗号化** を有効にするかどうかが異なります。
+暗号化されたバックアップからの復元手順は、通常の復元とほぼ同じですが、**CMEK を使用した保存時の暗号化** を有効にするかどうかが異なります。
 
 ![V1QJb3SK1oGa11xLljhcxKQEnkc](https://zdoc-images.s3.us-west-2.amazonaws.com/v1qjb3sk1oga11xlljhcxkqenkc.png "V1QJb3SK1oGa11xLljhcxKQEnkc")
 

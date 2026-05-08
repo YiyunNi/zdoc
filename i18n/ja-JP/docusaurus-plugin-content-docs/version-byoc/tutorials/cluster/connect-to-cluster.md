@@ -5,7 +5,7 @@ sidebar_key: connect-to-cluster
 sidebar_label: "クラスターに接続"
 beta: FALSE
 notebook: FALSE
-description: "この記事では、クラスターへの接続方法について体系的に解説します。 | BYOC"
+description: "この記事では、クラスターへの接続方法について体系的なガイドを提供します。 | BYOC"
 type: origin
 token: IVFfws0lJi8gIVkRvrvc9aXvnNe
 sidebar_position: 2
@@ -32,13 +32,13 @@ import TabItem from '@theme/TabItem';
 
 - BYOC プロジェクトをデプロイしていること。詳細については、以下を参照してください。
 
-    - [AWS への BYOC デプロイ](./deploy-byoc-aws)
+    - [AWS への BYOC のデプロイ](./deploy-byoc-aws)
 
-    - [AWS への BYOC-I デプロイ](./deploy-byoc-i-aws)
+    - [AWS への BYOC-I のデプロイ](./deploy-byoc-i-aws)
 
-    - [GCP への BYOC デプロイ](./deploy-byoc-gcp)
+    - [GCP への BYOC のデプロイ](./deploy-byoc-gcp)
 
-    - [Microsoft Azure への BYOC-I デプロイ](./deploy-byoc-i-azure)
+    - [Microsoft Azure への BYOC-I のデプロイ](./deploy-byoc-i-azure)
 
 - アプリケーションと BYOC プロジェクト内のクラスター間のネットワーク設定が完了していること。詳細については、[BYOC クラスターへの接続](./prepare-for-cluster-connection) を参照してください。
 
@@ -48,9 +48,10 @@ import TabItem from '@theme/TabItem';
 
 <Admonition type="info" icon="📘" title="Note">
 
-SDK ではなく RESTful API を使用する場合、継続的な接続を確立することはできません。これは、HTTP プロトコルの一方向通信モードによるものです。
-
-BYOC デプロイメントでは、クラスター認証情報（`username:password`）を使用してクラスターに接続します。API キーは Platform API 操作用のみであり、データプレーン（Milvus SDK/クライアント）接続には使用できません。
+<p>SDK ではなく RESTful API を使用する場合、継続的な接続を確立することはできません。これは、HTTP プロトコルの一方向通信モードによるものです。</p>
+<p></p>
+<p>BYOC デプロイメントでは、クラスター認証情報（<code>username:password</code>）を使用してクラスターに接続します。API キーは Platform API 操作用のみであり、データプレーン（Milvus SDK/クライアント）接続には使用できません。</p>
+<p></p>
 
 </Admonition>
 

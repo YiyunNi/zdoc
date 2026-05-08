@@ -84,7 +84,7 @@ client.create_index(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**Milvus v2.6.x** 互換のクラスタでは、不要になったスカラーインデックスを直接削除できます — 事前にコレクションをリリースする必要はありません。
+<p><strong>Milvus v2.6.x</strong> 互換のクラスタでは、スカラーインデックスが不要になったら、コレクションを解放する必要なく、直接削除できます。</p>
 
 </Admonition>
 

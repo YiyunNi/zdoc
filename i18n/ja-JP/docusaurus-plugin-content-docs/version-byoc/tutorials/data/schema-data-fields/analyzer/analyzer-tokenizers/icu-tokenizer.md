@@ -5,7 +5,7 @@ sidebar_key: icu-tokenizer
 sidebar_label: "ICU"
 beta: FALSE
 notebook: FALSE
-description: "`icu` トークナイザーは、ソフトウェアの国際化に必要な主要なツールを提供するオープンソースプロジェクトである Internationalization Components of Unicode（ICU）をベースに構築されています。ICU の単語分割アルゴリズムを使用することで、このトークナイザーは世界のほとんどの言語において、テキストを正確に単語に分割できます。 | BYOC"
+description: "`icu` トークナイザーは、ソフトウェアの国際化に不可欠なツールを提供するオープンソースプロジェクトである Internationalization Components of Unicode（ICU）をベースに構築されています。ICU の単語分割アルゴリズムを使用することで、このトークナイザーは世界のほとんどの言語において、テキストを正確に単語に分割できます。 | BYOC"
 type: origin
 token: Q3gKwc5lkilAbKkalCWcW2AbnLe
 sidebar_position: 5
@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`icu` トークナイザーは、出力において句読点とスペースを個別のトークンとして保持します。例えば、`"Привет! Как дела?"` は `["Привет", "!", " ", "Как", " ", "дела", "?"]` となります。これらの独立した句読点トークンを削除するには、[`removepunct`](./remove-punct-filter) フィルターを使用してください。
+<p><code>icu</code> トークナイザーは、出力において句読点とスペースを個別のトークンとして保持します。例えば、<code>"Привет! Как дела?"</code> は <code>["Привет", "!", " ", "Как", " ", "дела", "?"]</code> となります。これらの独立した句読点トークンを削除するには、<a href="./remove-punct-filter"><code>removepunct</code></a> フィルターを使用してください。</p>
 
 </Admonition>
 

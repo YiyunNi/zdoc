@@ -29,7 +29,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は、**ビジネスクリティカル** プロジェクトの **Dedicated** クラスターでのみ利用可能です。
+<p>この機能は、<strong>ビジネスクリティカル</strong> プロジェクトの <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
@@ -47,7 +47,7 @@ import Admonition from '@theme/Admonition';
 
 - プライマリと各セカンダリ間の同期状態と遅延
 
-このビューを使用して、スイッチオーバーなどの操作を実行する前に、すべてのセカンダリークラスターが同期されており健全であることを確認してください。
+このビューを使用して、スイッチオーバーなどの操作を実行する前に、すべてのセカンダリークラスターが同期されて健全であることを確認してください。
 
 ## クラスター状態\{#cluster-status}
 
@@ -76,7 +76,7 @@ import Admonition from '@theme/Admonition';
    </tr>
    <tr>
      <td><p>SWITCHING</p></td>
-     <td><p>スイッチオーバーまたはフェイルオーバーが進行中です。プライマリの役割が移行されています。</p></td>
+     <td><p>スイッチオーバーまたはフェイルオーバーが進行中です。プライマリロールが移行されています。</p></td>
      <td><p>操作が完了するまで待ちます。追加のスイッチオーバーを開始しないでください。</p></td>
    </tr>
 </table>
@@ -94,23 +94,23 @@ import Admonition from '@theme/Admonition';
 <table>
    <tr>
      <th><p><strong>同期遅延</strong></p></th>
-     <th><p><strong>影響</strong></p></th>
+     <th><p><strong>意味</strong></p></th>
    </tr>
    <tr>
-     <td><p>&lt; 5 seconds</p></td>
+     <td><p>&lt; 5 秒</p></td>
      <td><p>正常。セカンダリークラスターはほぼ最新の状態です。</p></td>
    </tr>
    <tr>
-     <td><p>5–30 seconds</p></td>
-     <td><p>上昇。<a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> はまだ許可されています。持続的な増加を監視してください。</p></td>
+     <td><p>5～30 秒</p></td>
+     <td><p>上昇。<a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> はまだ実行可能です。持続的な増加を監視してください。</p></td>
    </tr>
    <tr>
-     <td><blockquote>  <p>30 seconds</p></blockquote></td>
-     <td><p><a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> はブロックされています。書き込み負荷またはセカンダリークラスターの健全性を調査してください。スイッチオーバーを試みる前に根本原因を解決してください。</p></td>
+     <td><blockquote>  <p>30 秒</p></blockquote></td>
+     <td><p><a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> はブロックされます。書き込み負荷またはセカンダリークラスターの健全性を調査してください。スイッチオーバーを試みる前に根本原因を解決してください。</p></td>
    </tr>
    <tr>
-     <td><blockquote>  <p>180 seconds</p></blockquote></td>
-     <td><p>重大。<a href="./switchover-and-failover#perform-a-failover">フェイルオーバー</a> のRPOリスクが大きいです。直ちに調査が必要です。</p></td>
+     <td><blockquote>  <p>180 秒</p></blockquote></td>
+     <td><p>重大。<a href="./switchover-and-failover#perform-a-failover">フェイルオーバー</a> の RPO リスクが大きいです。直ちに調査が必要です。</p></td>
    </tr>
 </table>
 
@@ -118,5 +118,5 @@ import Admonition from '@theme/Admonition';
 
 ## クラスターメトリクスとアラート\{#cluster-metrics-and-alerts}
 
-グローバルクラスター内の各クラスター（プライマリおよびセカンダリの両方）は、通常の Dedicated クラスターと同じメトリクスを公開します。これらのメトリクスはクラスター詳細ページで確認したり、これらのメトリクスのアラートを作成したり、外部の監視システムにエクスポートしたりすることができます。詳細については、[メトリクスとアラート](./metrics-and-alerts) を参照してください。
+グローバルクラスター内の各クラスター（プライマリおよびセカンダリの両方）は、通常の Dedicated クラスターと同じメトリクスを公開します。これらのメトリクスはクラスター詳細ページで確認したり、これらのメトリクスのアラートを作成したり、外部監視システムにエクスポートしたりすることができます。詳細については、[メトリクスとアラート](./metrics-and-alerts) を参照してください。
 

@@ -5,7 +5,7 @@ sidebar_key: remove-punct-filter
 sidebar_label: "Remove Punct"
 beta: FALSE
 notebook: FALSE
-description: "`removepunct` フィルターは、トークンストリームから単独の句読点トークンを削除します。句読点記号ではなく意味のある内容語に焦点を当てた、よりクリーンなテキスト処理を行いたい場合に使用します。"
+description: "`removepunct` フィルターは、トークンストリームから単独の句読点トークンを削除します。句読点記号ではなく意味のある内容語に焦点を当てた、よりクリーンなテキスト処理を行いたい場合に使用してください。 | Cloud"
 type: origin
 token: TVfnwtCEQico7Bk9bngcnV1cnGb
 sidebar_position: 10
@@ -13,10 +13,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - コレクション
-  - スキーマ
-  - アナライザー
-  - 組み込みフィルター
+  - collection
+  - schema
+  - analyzer
+  - built-in filters
   - remove punct
 
 ---
@@ -27,17 +27,17 @@ import TabItem from '@theme/TabItem';
 
 # Remove Punct
 
-`removepunct` フィルターは、トークンストリームから単独の句読点トークンを削除します。句読点記号ではなく、意味のある内容語に焦点を当てた、よりクリーンなテキスト処理を行いたい場合に使用します。
+`removepunct` フィルターは、トークンストリームから独立した句読点トークンを削除します。句読点ではなく意味のあるコンテンツ語に焦点を当てた、よりクリーンなテキスト処理を行いたい場合に使用します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-このフィルターは、`jieba`、`lindera`、および `icu` トークナイザーと最も効果的に機能します。これらのトークナイザーは句読点を個別のトークンとして保持します（例：`"Hello!"` → `["Hello", "!"]`）。`standard` や `whitespace` などの他のトークナイザーは、トークン化時に句読点を破棄するため、`removepunct` はこれらに対して効果がありません。
+<p>このフィルターは、句読点を個別のトークンとして保持する <code>jieba</code>、<code>lindera</code>、および <code>icu</code> トークナイザーと組み合わせて使用すると最も効果的です（例: <code>"Hello!"</code> → <code>["Hello", "!"]</code>）。一方、<code>standard</code> や <code>whitespace</code> のような他のトークナイザーはトークン化の段階で句読点を破棄するため、それらに対して <code>removepunct</code> を適用しても効果はありません。</p>
 
 </Admonition>
 
 ## 設定\{#configuration}
 
-`removepunct` フィルターは Zilliz Cloud に組み込まれています。使用するには、`analyzer_params` 内の `filter` セクションにその名前を指定するだけです。
+`removepunct` フィルターは Zilliz Cloud に組み込まれています。使用するには、`analyzer_params` 内の `filter` セクションでその名前を指定するだけです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

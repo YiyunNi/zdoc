@@ -1,8 +1,8 @@
 ---
-title: "フィルタリング検索 | BYOC"
+title: "フィルタリング付き検索 | BYOC"
 slug: /filtered-search
 sidebar_key: filtered-search
-sidebar_label: "フィルタリング検索"
+sidebar_label: "フィルタリング付き検索"
 beta: FALSE
 notebook: FALSE
 description: "ANN 検索は、指定されたベクトル埋め込みと最も類似したベクトル埋め込みを見つけます。ただし、検索結果が常に正しいとは限りません。検索リクエストにフィルタリング条件を含めることで、Zilliz Cloud は ANN 検索を実行する前にメタデータのフィルタリングを行い、検索範囲をコレクション全体から指定されたフィルタリング条件に一致するエンティティのみに絞り込むことができます。 | BYOC"
@@ -79,13 +79,13 @@ Zilliz Cloud では、フィルタリングが適用される段階に応じて�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-クエリベクトルが対象コレクションに既に存在する場合、検索前に取得するのではなく `ids` の使用を検討してください。詳細については、[プライマリキー検索](./primary-key-search) を参照してください。
+<p>クエリベクトルがすでにターゲットコレクションに存在する場合は、検索前にそれらを取得する代わりに <code>ids</code> を使用することを検討してください。詳細については、<a href="./primary-key-search">Primary-キー Search</a> を参照してください。</p>
 
 </Admonition>
 
 ### 標準フィルタリングを使用した検索\{#search-with-standard-filtering}
 
-以下のコードスニペットは、標準フィルタリングを使用した検索を示しており、次のコードスニペットのリクエストにはフィルタリング条件と複数の出力フィールドが含まれています。
+以下のコードスニペットは、標準フィルタリングを使用した検索を示しており、次のコードスニペットのリクエストにはフィルタリング条件といくつかの出力フィールドが含まれています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

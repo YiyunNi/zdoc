@@ -5,7 +5,7 @@ sidebar_key: json-field-overview
 sidebar_label: "概要"
 beta: FALSE
 notebook: FALSE
-description: "製品カタログ、コンテンツ管理システム、ユーザーの嗜好エンジンなどのアプリケーションを構築する際、ベクトル埋め込みとともに柔軟なメタデータを保存する必要があることがよくあります。製品属性はカテゴリごとに異なり、ユーザーの嗜好は時間とともに変化し、ドキュメントのプロパティは複雑な入れ子構造を持っています。Zilliz Cloud の JSON フィールドは、この課題を解決するために、パフォーマンスを犠牲にすることなく柔軟な構造化データの保存とクエリを可能にします。 | BYOC"
+description: "製品カタログ、コンテンツ管理システム、ユーザーの嗜好エンジンなどのアプリケーションを構築する際、ベクトル埋め込みとともに柔軟なメタデータを保存する必要があることがよくあります。製品属性はカテゴリごとに異なり、ユーザーの嗜好は時間とともに変化し、ドキュメントのプロパティは複雑な入れ子構造を持っています。Zilliz Cloud の JSON フィールドは、この課題を解決するために、パフォーマンスを犠牲にすることなく柔軟な構造化データを保存・クエリできるようにします。 | BYOC"
 type: origin
 token: Neq4wR0EdiXokRkhXwbcMPfanCd
 sidebar_position: 1
@@ -59,7 +59,7 @@ JSON フィールドの構造例：
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**命名規則:** JSON キーには文字、数字、アンダースコアのみを使用してください。特殊文字、スペース、ドットはクエリでの解析問題を引き起こす可能性があるため、使用を避けてください。
+<p><strong>命名規則:</strong> JSON キーには文字、数字、アンダースコアのみを使用してください。特殊文字、スペース、ドットはクエリでの解析問題を引き起こす可能性があるため、避けてください。</p>
 
 </Admonition>
 
@@ -77,7 +77,7 @@ JSON フィールドの構造例：
    </tr>
    <tr>
      <td><p>スキーマ定義</p></td>
-     <td><p><code>データType.JSON</code> 型でコレクションのスキーマに明示的に宣言する必要があるスカラーフィールド。</p></td>
+     <td><p>コレクションスキーマで <code>データType.JSON</code> 型として明示的に宣言する必要があるスカラーフィールド。</p></td>
      <td><p>宣言されていないフィールドを自動的に格納する隠し JSON フィールド（<code>$meta</code> という名前）。</p></td>
    </tr>
    <tr>
@@ -87,7 +87,7 @@ JSON フィールドの構造例：
    </tr>
    <tr>
      <td><p>制御</p></td>
-     <td><p>フィールド名と構造を制御できる。</p></td>
+     <td><p>フィールド名と構造を自分で制御する。</p></td>
      <td><p>未定義のフィールドはシステムが管理する。</p></td>
    </tr>
    <tr>
@@ -99,11 +99,11 @@ JSON フィールドの構造例：
 
 ## 基本操作\{#basic-operations}
 
-JSON フィールドを使用するための基本的なワークフローは、スキーマで定義し、データを挿入し、特定のフィルター式を使用してデータをクエリすることです。
+JSON フィールドを使用するための基本的なワークフローは、スキーマで定義し、データを挿入し、特定のフィルタ式を使用してデータをクエリすることです。
 
 ### JSON フィールドの定義\{#define-a-json-field}
 
-JSON フィールドを使用するには、コレクション作成時にコレクションのスキーマで明示的に定義します。以下の例は、`データType.JSON` 型の `metadata` フィールドを持つコレクションを作成する方法を示しています。
+JSON フィールドを使用するには、コレクション作成時にコレクションスキーマで明示的に定義します。以下の例は、`データType.JSON` 型の `metadata` フィールドを持つコレクションを作成する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -172,11 +172,11 @@ client.create_collection(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この例では、コレクションスキーマで定義されたJSONフィールドは、`nullable=True` を指定することでNULL値を許容しています。詳細については、[NULL許容 & デフォルト](./nullable-fields) を参照してください。
+<p>この例では、コレクションスキーマで定義されたJSONフィールドが <code>nullable=True</code> により NULL許容 値を許可しています。詳細については、<a href="./nullable-fields">NULL許容 & デフォルト</a> を参照してください。</p>
 
 </Admonition>
 
-### データの挿入\{#insert-data}
+### Insert data\{#insert-data}
 
 コレクションが作成されたら、指定したJSONフィールドに構造化されたJSONオブジェクトを含むエンティティを挿入します。データは辞書のリストとしてフォーマットする必要があります。
 

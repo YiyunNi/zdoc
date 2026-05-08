@@ -29,21 +29,21 @@ import Procedures from '@site/src/components/Procedures';
 
 # EKS IAM ロールの作成
 
-このページでは、Zilliz Cloud プロジェクト用に EKS クラスターをデプロイするための IAM ロールを Zilliz Cloud 用に作成および構成する方法について説明します。
+このページでは、Zilliz Cloud プロジェクト用に EKS クラスターをデプロイするための IAM ロールを Zilliz Cloud に作成・設定する方法について説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOC は現在 **一般提供** されています。アクセスおよび実装の詳細については、[Zilliz Cloud セールス](https://zilliz.com/contact-sales) までお問い合わせください。
+<p>Zilliz BYOC は現在 <strong>一般提供</strong>されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud セールス</a>にお問い合わせください。</p>
 
 </Admonition>
 
 ## 手順\{#procedure}
 
-EKS ロールを作成するには AWS コンソールを使用できます。または、Zilliz Cloud が提供する Terraform スクリプトを使用して、AWS 上の Zilliz Cloud プロジェクト用のインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider) を参照してください。
+EKS ロールを作成するには、AWS コンソールを使用できます。または、Zilliz Cloud が提供する Terraform スクリプトを使用して、AWS 上の Zilliz Cloud プロジェクト用のインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider) を参照してください。
 
 ### ステップ 1: IAM ロールの作成\{#step-1-create-an-iam-role}
 
-このステップでは、Zilliz Cloud がお客様に代わって EKS クラスターを管理できるように、AWS 上に IAM ロールを作成し、そのロールの ARN を Zilliz Cloud コンソールに貼り付けます。
+このステップでは、Zilliz Cloud が代わりに EKS クラスターを管理できるよう、AWS 上に IAM ロールを作成し、そのロールの ARN を Zilliz Cloud コンソールに貼り付けます。
 
 <Supademo id="cmb7llk244s2yppkpeo4oz85z" title=""  />
 
@@ -53,9 +53,9 @@ EKS ロールを作成するには AWS コンソールを使用できます。�
 
 1. アカウント情報を展開し、AWS アカウントID の先頭にあるコピーボタンをクリックします。
 
-1. 左側のサイドバーで **ロール** タブをクリックし、次に **ロールの作成** をクリックします。
+1. 左側のサイドバーで **ロールs** タブをクリックし、次に **Create ロール** をクリックします。
 
-1. **信頼できるエンティティの選択** で、**カスタム信頼ポリシー** タイルをクリックします。**共通信頼ポリシー** に、以下の信頼 JSON を **カスタム信頼ポリシー** セクションのエディタに貼り付け、`{accountId}` を **AWS アカウントID** に置き換えます。
+1. **Select trusted entity** で、**カスタム信頼ポリシー** タイルをクリックします。**共通信頼ポリシー** で、以下の信頼 JSON を **カスタム信頼ポリシー** セクションのエディタに貼り付け、`{accountId}` を **AWS アカウントID** に置き換えます。
 
     ```json
     {
@@ -127,27 +127,27 @@ EKS ロールを作成するには AWS コンソールを使用できます。�
       }
     ```
 
-1. **次へ** をクリックし、権限の追加をスキップします。
+1. **Next** をクリックし、権限の追加をスキップします。
 
-1. **名前を付けて確認し、作成** ステップで、ロールに名前を付け、信頼できるエンティティを確認し、**Create role** をクリックします。
+1. **名前を付けて確認し、作成** ステップで、ロールに名前を付け、信頼されたエンティティを確認して、**Create role** をクリックします。
 
-1. ロールが作成されたら、緑色のバーに表示される **View role** をクリックして、ロールの詳細に移動します。
+1. ロールが作成されたら、緑色のバーにある **View role** をクリックしてロールの詳細ページへ移動します。
 
 1. ロールの **ARN** の前にあるコピーアイコンをクリックします。
 
-1. Zilliz Cloud コンソールに戻り、**EKS設定** の **IAM ロール ARN** にロール ARN を貼り付けます。
+1. Zilliz Cloud コンソールに戻り、**EKS 設定** の下の **IAM ロール ARN** にロールの ARN を貼り付けます。
 
 </Procedures>
 
-### ステップ 2: 権限の追加\{#step-2-add-permissions}
+### Step 2: Add permissions\{#step-2-add-permissions}
 
 このステップでは、EKS ロールにいくつかの権限を追加します。ロールの詳細ページで、**Permissions** タブをクリックします。**権限ポリシー** セクションで、**Add permissions** をクリックします。このステップでは、**ポリシーのアタッチ** を選択し、次に **Create inline policy** を選択して、異なるソースから複数のポリシーを追加する必要があります。
 
 <Supademo id="cmb7nj2tb4u69ppkptf3is7bo" title=""  />
 
-#### AWS マネージドポリシーのアタッチ\{#attach-aws-managed-policies}
+#### Attach AWS-managed policies\{#attach-aws-managed-policies}
 
-次の表は、アタッチされたポリシーとして追加する権限を一覧表示しています。表の **Permissions** 列の項目をクリックして、必要な権限を表示します。
+以下の表は、アタッチ済みポリシーとして追加する権限の一覧です。必要な権限を表示するには、表の **Permissions** 列の項目をクリックしてください。
 
 <table>
    <tr>
@@ -182,19 +182,19 @@ EKS ロールを作成するには AWS コンソールを使用できます。�
    </tr>
 </table>
 
-**ポリシーのアタッチ** を選択した後、開いたページの **その他の権限ポリシー** セクションで、上記に一覧表示されている各 AWS マネージドポリシーの名前を検索ボックスに入力し、その前にあるラジオボックスを選択します。必要なすべてのポリシーを選択したら、**Add permissions** をクリックします。
+**ポリシーのアタッチ** を選択した後、表示されるページの **その他の権限ポリシー** セクションで、上記に記載されている各 AWS マネージドポリシーの名前を検索ボックスに入力し、その前のラジオボタンを選択します。必要なすべてのポリシーを選択したら、**Add permissions** をクリックします。
 
-これらのポリシーが **Permissions** ポリシーリストに表示されていることが確認できます。
+これらのポリシーが **Permissions** ポリシーリストに表示されていることを確認できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-EKS クラスターの作成時に、2 つの [サービスリンクロール](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-service-linked-role) もクラスターとともに自動的に作成されます。これらは [AmazonEKSServiceロールPolicy](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSServiceロールPolicy.html) と [AWSServiceロールForAmazonEKSNodegroup](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSServiceロールForAmazonEKSNodegroup.html) です。これら 2 つのロールは、Amazon EKS がお客様に代わって他の AWS サービスを呼び出すために必要です。
+<p>EKS クラスターの作成時に、クラスターと共に 2 つの <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-service-linked-role">service-linked roles</a> も自動的に作成されます。それらは <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSServiceロールPolicy.html">AmazonEKSServiceロールPolicy</a> と <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSServiceロールForAmazonEKSNodegroup.html">AWSServiceロールForAmazonEKSNodegroup</a> です。これら 2 つのロールは、Amazon EKS がお客様に代わって他の AWS サービスを呼び出すために必要です。</p>
 
 </Admonition>
 
-#### インラインポリシーの作成\{#create-inline-policies}
+#### Create inline policies\{#create-inline-policies}
 
-次の表は、カスタマーインラインポリシーとして追加する必要があるポリシーを一覧表示しています。表の **Permissions** 列の項目をクリックして、必要な権限を表示します。
+以下の表は、カスタマーインラインポリシーとして追加する必要があるポリシーの一覧です。必要な権限を表示するには、表の **Permissions** 列の項目をクリックしてください。
 
 <table>
    <tr>
@@ -219,7 +219,7 @@ EKS クラスターの作成時に、2 つの [サービスリンクロール](h
    </tr>
 </table>
 
-**Create inline policy** を選択した後、**権限の指定** ページで、**ポリシーエディター** セクションの **JSON** をクリックしてポリシーエディターを開きます。次に、上記の権限のいずれかをコピーして、ポリシーエディターに貼り付けます。
+**Create inline policy** を選択した後、**権限の指定** ページで、**ポリシーエディター** セクションの **JSON** をクリックしてポリシーエディターを開きます。次に、上記の権限のいずれかをコピーしてポリシーエディターに貼り付けます。
 
-**次へ** をクリックし、**ポリシーの詳細** で **ポリシー名** を設定します。一覧表示されているすべてのインラインポリシーを追加したら、**Create policy** をクリックします。これらのポリシーが **Permissions** ポリシーリストに表示されていることが確認できます。
+**Next** をクリックし、**ポリシーの詳細** で **ポリシー名** を設定します。記載されているすべてのインラインポリシーを追加したら、**Create policy** をクリックします。これらのポリシーが **Permissions** ポリシーリストに表示されていることを確認できます。
 

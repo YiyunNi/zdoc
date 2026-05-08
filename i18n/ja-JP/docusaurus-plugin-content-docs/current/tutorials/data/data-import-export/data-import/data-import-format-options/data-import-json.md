@@ -5,7 +5,7 @@ sidebar_key: data-import-json
 sidebar_label: "JSON/JSON Line"
 beta: FALSE
 notebook: FALSE
-description: "JSON は軽量で人間が読みやすいデータ形式であり、マシンが簡単に解析および生成できます。言語に依存せず、C 言語系のプログラマーに馴染みのある規約に従っているため、理想的なデータ交換形式です。"
+description: "JSON は軽量で人間が読みやすいデータ形式であり、マシンによる解析と生成が容易です。言語に依存せず、C 言語系のプログラマーに馴染みのある規約に従うため、理想的なデータ交換形式となっています。"
 type: origin
 token: EHmOwLz5qi3tPDkb0gZcb5ExnJb
 sidebar_position: 2
@@ -15,7 +15,7 @@ keywords:
   - cloud
   - データインポート
   - milvus
-  - 形式オプション
+  - フォーマットオプション
   - json
 
 ---
@@ -25,7 +25,7 @@ import Admonition from '@theme/Admonition';
 
 # JSON/JSON Lines ファイルからのインポート
 
-[JSON](https://www.json.org/json-en.html) (JavaScript Object Notation) は、軽量で人間が読みやすいデータ形式であり、マシンが簡単に解析および生成できます。言語に依存せず、C 系言語のプログラマーに馴染みのある規約に従っているため、理想的なデータ交換形式となっています。
+[JSON](https://www.json.org/json-en.html) (JavaScript Object Notation) は、軽量で人間が読みやすいデータ形式であり、マシンが簡単に解析および生成できます。言語に依存せず、C 系言語のプログラマーに馴染みのある規約に従うため、理想的なデータ交換形式となっています。
 
 JSON Line は、各行が完全で有効な JSON オブジェクトとなるテキスト形式であり、標準的なテキストツールを使用してデータストリームを段階的に処理しやすくなっています。
 
@@ -55,23 +55,24 @@ JSON Line は、各行が完全で有効な JSON オブジェクトとなるテ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- **AutoID を有効にするかどうか**
-
-    **id** フィールドはコレクションのプライマリフィールドとして機能します。プライマリフィールドを自動的にインクリメントするには、スキーマで **AutoID** を有効にできます。この場合、ソースデータ内の各行から **id** フィールドを除外する必要があります。
-
-- **動的フィールドを有効にするかどうか**
-
-    ターゲットコレクションで動的フィールドが有効になっている場合、事前定義されたスキーマに含まれていないフィールドを保存する必要がある場合、書き込み操作時に **&#36;meta** 列を指定し、対応するキーと値のデータを提供できます。
-
-- **大文字と小文字の区別**
-
-    ディクショナリのキーとコレクションのフィールド名は大文字と小文字が区別されます。データ内のディクショナリキーが、ターゲットコレクション内のフィールド名と完全に一致していることを確認してください。ターゲットコレクションに **id** という名前のフィールドがある場合、各エンティティディクショナリには **id** という名前のキーが必要です。**ID** や **Id** を使用するとエラーが発生します。
+<ul>
+<li><strong>AutoID を有効にするかどうか</strong></li>
+</ul>
+<p><strong>id</strong> フィールドはコレクションのプライマリフィールドとして機能します。プライマリフィールドを自動的にインクリメントするには、スキーマで <strong>AutoID</strong> を有効にできます。この場合、ソースデータ内の各行から <strong>id</strong> フィールドを除外する必要があります。</p>
+<ul>
+<li><strong>動的フィールドを有効にするかどうか</strong></li>
+</ul>
+<p>ターゲットコレクションで動的フィールドが有効になっている場合、事前定義されたスキーマに含まれていないフィールドを保存する必要がある場合、書き込み操作時に <strong>&#36;meta</strong> 列を指定し、対応するキーと値のデータを提供できます。</p>
+<ul>
+<li><strong>大文字と小文字の区別</strong></li>
+</ul>
+<p>辞書のキーとコレクションのフィールド名は大文字と小文字が区別されます。データ内の辞書のキーが、ターゲットコレクション内のフィールド名と完全に一致することを確認してください。ターゲットコレクションに <strong>id</strong> という名前のフィールドがある場合、各エンティティ辞書には <strong>id</strong> という名前のキーが必要です。<strong>ID</strong> や <strong>Id</strong> を使用するとエラーが発生します。</p>
 
 </Admonition>
 
 ## ディレクトリ構造\{#directory-structure}
 
-データを JSON または JSON Lines ファイルに準備する場合は、以下のツリー図に示すように、すべてのファイルをソースデータフォルダに直接配置してください。
+データを JSON または JSON Lines ファイルに準備する場合は、以下のツリーダイアグラムに示すように、すべてのファイルをソースデータフォルダに直接配置してください。
 
 ```plaintext
 ├── json-folder
@@ -81,7 +82,7 @@ JSON Line は、各行が完全で有効な JSON オブジェクトとなるテ�
 
 ## データのインポート\{#import-data}
 
-データの準備ができたら、以下のいずれかの方法を使用して、Zilliz Cloud コレクションにデータをインポートできます。
+データの準備ができたら、以下のいずれかの方法を使用して、Zilliz Cloud コレクションにインポートできます。
 
 - [複数のパスからファイルをインポート（推奨）](./data-import-json#import-files-from-multiple-paths-recommended)
 
@@ -91,11 +92,11 @@ JSON Line は、各行が完全で有効な JSON オブジェクトとなるテ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-ファイルが比較的小さい場合は、フォルダまたは複数パス方式を使用して一度にインポートすることをお勧めします。このアプローチでは、インポートプロセス中に内部最適化が行われ、後のリソース消費を削減するのに役立ちます。
+<p>ファイルが比較的小さい場合は、フォルダまたは複数パス方式を使用して一度にすべてインポートすることをお勧めします。このアプローチにより、インポートプロセス中に内部最適化が行われ、後のリソース消費を削減するのに役立ちます。</p>
 
 </Admonition>
 
-Zilliz Cloud コンソールで Milvus SDK を使用してデータをインポートすることもできます。詳細については、[データのインポート（コンソール）](./import-data-on-web-ui) および [データのインポート（SDK）](./import-data-via-sdks) を参照してください。
+また、Milvus SDK を使用して Zilliz Cloud コンソール上でデータをインポートすることもできます。詳細については、[データのインポート（コンソール）](./import-data-on-web-ui) および [データのインポート（SDK）](./import-data-via-sdks) を参照してください。
 
 ### 複数のパスからファイルをインポート（推奨）\{#import-files-from-multiple-paths-recommended}
 
@@ -145,13 +146,13 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-フォルダに複数の形式のファイルが含まれている場合、リクエストは失敗します。
+<p>フォルダーに複数の形式のファイルが含まれている場合、リクエストは失敗します。</p>
 
 </Admonition>
 
 ### 単一ファイルのインポート\{#import-a-single-file}
 
-準備したデータファイルが単一の JSON ファイルの場合、次のコード例に示すようにインポートします。
+準備したデータファイルが単一の JSON ファイルである場合は、以下のコード例に示すようにインポートします。
 
 ```bash
 curl --request POST \
@@ -182,15 +183,15 @@ Zilliz Cloud は、クラウドストレージからのデータインポート�
    </tr>
    <tr>
      <td><p><strong>AWS S3</strong></p></td>
-     <td><p>s3://<em>bucket-name</em>/<em>json-folder</em>/</p><p>s3://<em>bucket-name</em>/<em>json-folder</em>/<em>data.json</em></p></td>
+     <td><p>s3://<em>バケット名</em>/<em>jsonフォルダ</em>/</p><p>s3://<em>バケット名</em>/<em>jsonフォルダ</em>/<em>data.json</em></p></td>
    </tr>
    <tr>
      <td><p><strong>Google Cloud Storage</strong></p></td>
-     <td><p>gs://<em>bucket-name</em>/<em>json-folder</em>/</p><p>gs://<em>bucket-name</em>/<em>json-folder</em>/<em>data.json</em></p></td>
+     <td><p>gs://<em>バケット名</em>/<em>jsonフォルダ</em>/</p><p>gs://<em>バケット名</em>/<em>jsonフォルダ</em>/<em>data.json</em></p></td>
    </tr>
    <tr>
      <td><p><strong>Azure Blob</strong></p></td>
-     <td><p><em>https:</em>//myaccount.blob.core.windows.net/bucket-name/json-folder/</p><p><em>https:</em>//myaccount.blob.core.windows.net/bucket-name/json-folder/data.json</p></td>
+     <td><p><em>https:</em>//myaccount.blob.core.windows.net/バケット名/jsonフォルダ/</p><p><em>https:</em>//myaccount.blob.core.windows.net/バケット名/jsonフォルダ/data.json</p></td>
    </tr>
 </table>
 
@@ -200,7 +201,7 @@ Zilliz Cloud は、クラウドストレージからのデータインポート�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-有効な JSON ファイルには、**rows** という名前のルートキーがあり、その対応する値は辞書のリストで、各辞書はターゲットコレクションのスキーマに一致するエンティティを表します。
+<p>有効な JSON ファイルには、<strong>rows</strong> という名前のルートキーがあり、その対応する値は辞書のリストで、各辞書はターゲットコレクションのスキーマと一致するエンティティを表します。</p>
 
 </Admonition>
 

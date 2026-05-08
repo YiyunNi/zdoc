@@ -5,7 +5,7 @@ sidebar_key: install-sdks
 sidebar_label: "SDK をインストール"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、マネージド Milvus ベクトルデータベースをサービスとして提供します。クラスター接続を容易にするために、Python](./install-sdks#install-pymilvus-python-sdk)、[Java](./install-sdks#install-java-sdk)、[Go](./install-sdks#install-go-sdk)、[Node.js](./install-sdks#install-nodejs-sdk) の 4 つの SDK オプションがあります。"
+description: "Zilliz Cloud は、マネージド Milvus ベクトルデータベースをサービスとして提供します。クラスター接続を容易にするために、Python](./install-sdks#install-pymilvus-python-sdk)、[Java](./install-sdks#install-java-sdk)、[Go](./install-sdks#install-go-sdk)、[Node.js](./install-sdks#install-nodejs-sdk) の 4 つの SDK オプションが用意されています。"
 type: origin
 token: J274wT61xiEM4fkYeL8cMb4Pnbd
 sidebar_position: 1
@@ -27,9 +27,10 @@ Zilliz Cloud は、マネージド Milvus ベクトルデータベースをサ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Zilliz Cloud は、バージョン互換性を確保するためにクラスターを継続的にアップグレードしています。詳細については、[組織設定の管理](./organization-settings) ページをご覧ください。SDK のバージョン不一致による接続問題が発生した場合は、互換性のある SDK バージョンに戻すよう表示されたプロンプトに従ってください。メンテナンス完了後に通知いたしますので、その後に SDK を問題なくアップグレードできます。
-
-- 以下のすべての SDK には、安定版とベータ版の両方が用意されています。安定版は一般的なクラスター向け、ベータ版はベータクラスター向けです。クラスターをベータ版にアップグレードした場合は、SDK もベータ版にアップグレードしていることを確認してください。
+<ul>
+<li><p>Zilliz Cloud は、バージョンの互換性を確保するためにクラスターを継続的にアップグレードしています。詳細については、<a href="./organization-settings">組織設定の管理</a> ページをご覧ください。SDK のバージョン不一致による接続問題が発生した場合は、互換性のある SDK バージョンに戻すよう、表示されたプロンプトに従ってください。メンテナンス完了後に通知いたしますので、その後は安心して SDK をアップグレードできます。</p></li>
+<li><p>以下のすべての SDK には、安定版とベータ版の両方が用意されています。安定版は一般的なクラスター向け、ベータ版はベータクラスター向けです。クラスターをベータ版にアップグレードした場合は、SDK もベータ版にアップグレードしていることを確認してください。</p></li>
+</ul>
 
 </Admonition>
 
@@ -67,7 +68,7 @@ PyMilvus は Milvus の Python SDK です。[GitHub のソースコード](https
 
 <Admonition type="info" icon="📘" title="Notes">
 
-インストール前に、**Python** のバージョンが **3.8** を超えていることを確認してください。
+<p>インストール前に、<strong>Python</strong> のバージョンが <strong>3.8</strong> よりも新しいことを確認してください。</p>
 
 </Admonition>
 
@@ -82,15 +83,15 @@ python -m pip install --upgrade pymilvus
 python -m pip list | grep pymilvus
 ```
 
-クラスターが **Milvus v2.6.x (パブリックプレビュー)** と互換性がある場合は、上記のコマンド内の `2.5.18` を `2.6.9` に変更してください。
+クラスターが **Milvus v2.6.x (パブリックプレビュー)** に対応している場合は、上記のコマンド内の `2.5.18` を `2.6.9` に変更してください。
 
 ## Install Node.js SDK\{#install-nodejs-sdk}
 
-Milvus の Node.js SDK については、**npm** または **yarn** を使用してください。[GitHub のソースコード](https://github.com/milvus-io/milvus-sdk-node) にアクセスしてください。
+Milvus の Node.js SDK は、**npm** または **yarn** を使用してインストールします。[GitHub のソースコード](https://github.com/milvus-io/milvus-sdk-node) にアクセスしてください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-インストール前に、**Node.js** のバージョンが **14** 以上であることを確認してください。
+<p>インストール前に、<strong>Node.js</strong> のバージョンが <strong>14</strong> 以上であることを確認してください。</p>
 
 </Admonition>
 

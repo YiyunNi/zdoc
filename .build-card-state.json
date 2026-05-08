@@ -1,23 +1,20 @@
 {
-  "title": "Global Docs Build",
+  "title": "Japanese Translation",
   "stages": [
-    "Fetch EN docs",
-    "Build EN docs",
-    "Check EN links",
-    "Fetch SDK refs",
-    "Build SDK docs",
-    "Check SDK links"
+    "Translate JA",
+    "Agent Repair",
+    "Commit"
   ],
   "statuses": [
     "done",
     "done",
-    "done",
-    "done",
-    "done",
-    "done"
+    "running"
   ],
-  "currentIndex": 5,
-  "notes": [],
-  "startedAt": "2026-05-08T03:15:31.574Z",
-  "messageId": "om_x100b50e11bf2a0acc387ec25bcaa0cf"
+  "currentIndex": 2,
+  "notes": [
+    "329 translated this run / 611 total\n⚠️ 22 failed MDX validation:\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/data/data-import-export/data-import/data-import-zero-to-hero.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/data/data-import-export/data-import/prepare-data-import/use-bulkwriter.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/data/manage-indexes/index-vector-fields/minhash-lsh.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/data/schema-data-fields/analyzer/analyzer-tokenizers/jieba-tokenizer.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/data/schema-data-fields/use-array-of-structs.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/data/search-query-get/search-metrics-explained.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/data/search-query-get/search-with-embeddinglist.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/function-and-model-inference/reranking/rule-based-rankers/decay-ranker/exponential-decay.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/function-and-model-inference/reranking/rule-based-rankers/decay-ranker/gaussian-decay.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/function-and-model-inference/reranking/rule-based-rankers/decay-ranker/linear-decay.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/migrations/migrate-from-milvus/via-backup-files.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials/migrations/migrate-from-milvus/via-stage.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/data/data-import-export/data-import/data-import-zero-to-hero.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/data/data-import-export/data-import/prepare-data-import/use-bulkwriter.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/data/manage-indexes/index-vector-fields/minhash-lsh.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/data/schema-data-fields/use-array-of-structs.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/data/search-query-get/search-metrics-explained.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/data/search-query-get/search-with-embeddinglist.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/function-and-model-inference/reranking/rule-based-rankers/decay-ranker/exponential-decay.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/function-and-model-inference/reranking/rule-based-rankers/decay-ranker/gaussian-decay.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/function-and-model-inference/reranking/rule-based-rankers/decay-ranker/linear-decay.md\n• i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials/migrations/migrate-from-milvus/via-backup-files.md",
+    "🔧 All 22 file(s) repaired"
+  ],
+  "startedAt": "2026-05-08T04:24:10.994Z",
+  "messageId": "om_x100b50e2187948b0b29fa266406d150"
 }

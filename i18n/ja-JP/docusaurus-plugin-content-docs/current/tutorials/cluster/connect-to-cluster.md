@@ -5,7 +5,7 @@ sidebar_key: connect-to-cluster
 sidebar_label: "クラスターに接続"
 beta: FALSE
 notebook: FALSE
-description: "この記事では、クラスターに接続するための体系的なガイドを提供します。"
+description: "この記事では、クラスターへの接続方法について体系的なガイドを提供します。"
 type: origin
 token: IVFfws0lJi8gIVkRvrvc9aXvnNe
 sidebar_position: 2
@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
 
 作業を進める前に、以下の前提条件が満たされていることを確認してください。
 
-- Zilliz Cloud でアカウントを登録していること。詳細については、[Zilliz Cloud への登録](./register-with-zilliz-cloud) を参照してください。
+- Zilliz Cloud のアカウントを登録していること。詳細については、[Zilliz Cloud への登録](./register-with-zilliz-cloud) を参照してください。
 
 - クラスターを作成していること。詳細については、[クラスターの作成](./create-cluster) を参照してください。
 
@@ -38,7 +38,8 @@ import TabItem from '@theme/TabItem';
 
 <Admonition type="info" icon="📘" title="Note">
 
-SDK ではなく RESTful API を使用する場合、継続的な接続を確立することはできません。これは HTTP プロトコルの一方向通信モードによるものです。
+<p>SDK ではなく RESTful API を使用する場合、継続的な接続を確立することはできません。これは、HTTP プロトコルの一方向通信モードによるものです。</p>
+<p></p>
 
 </Admonition>
 

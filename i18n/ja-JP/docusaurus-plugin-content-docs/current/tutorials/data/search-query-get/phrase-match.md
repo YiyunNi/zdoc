@@ -5,7 +5,7 @@ sidebar_key: phrase-match
 sidebar_label: "フレーズ一致"
 beta: FALSE
 notebook: FALSE
-description: "フレーズ一致を使用すると、クエリ用語を完全一致のフレーズとして含むドキュメントを検索できます。デフォルトでは、単語は同じ順序で、互いに直接隣接して出現する必要があります。たとえば、「robotics machine learning」のクエリは「…typical robotics machine learning models…」のようなテキストに一致します。ここでは「robotics」「machine」「learning」という単語が順序どおりに、間に他の単語がない状態で出現しています。 | Cloud"
+description: "フレーズ一致を使用すると、クエリ用語を完全一致フレーズとして含むドキュメントを検索できます。デフォルトでは、単語は同じ順序で、互いに直接隣接して出現する必要があります。たとえば、「robotics machine learning」のクエリは「…typical robotics machine learning models…」のようなテキストに一致します。ここでは「robotics」「machine」「learning」の各単語が順序どおりに、間に他の単語がない状態で出現しています。 | Cloud"
 type: origin
 token: O2YiwLai5iSjT1k1WEsc06E8nEe
 sidebar_position: 14
@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - data
-  - filter
+  - コレクション
+  - データ
+  - フィルター
   - フィルタリング式
   - フィルタリング
   - phrase-match
@@ -590,17 +590,17 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/load" \
 
 ## フレーズ一致を使用する\{#use-phrase-match}
 
-コレクションスキーマで `VARCHAR` フィールドの一致を有効にすると、`PHRASE_MATCH` 式を使用してフレーズ一致を実行できます。
+コレクションスキーマ内の `VARCHAR` フィールドに対してフレーズ一致を有効化した後、`PHRASE_MATCH` 式を使用してフレーズ一致検索を実行できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`PHRASE_MATCH` 式は大文字と小文字を区別しません。`PHRASE_MATCH` または `phrase_match` のいずれかを使用できます。
+<p><code>PHRASE_MATCH</code> 式は大文字・小文字を区別しません。<code>PHRASE_MATCH</code> または <code>phrase_match</code> のどちらを使用しても構いません。</p>
 
 </Admonition>
 
 ### PHRASE_MATCH 式の構文\{#phrasematch-expression-syntax}
 
-`PHRASE_MATCH` 式を使用して、検索時にフィールド、フレーズ、およびオプションの柔軟性（`slop`）を指定します。構文は以下のとおりです。
+検索時にフィールド、フレーズ、およびオプションの柔軟性（`slop`）を指定するために `PHRASE_MATCH` 式を使用します。構文は次のとおりです：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

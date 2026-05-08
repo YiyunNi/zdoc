@@ -15,7 +15,7 @@ keywords:
   - cloud
   - データインポート
   - milvus
-  - 形式オプション
+  - フォーマットオプション
   - parquet
 
 ---
@@ -25,31 +25,32 @@ import Admonition from '@theme/Admonition';
 
 # Parquet ファイルからのインポート
 
-[Apache Parquet](https://parquet.apache.org/docs/overview/) は、効率的なデータストレージと取得のために設計された、オープンソースのカラム指向データファイル形式です。高パフォーマンスの圧縮とエンコーディングスキームを提供し、大量の複雑なデータを管理でき、さまざまなプログラミング言語や分析ツールでサポートされています。
+[Apache Parquet](https://parquet.apache.org/docs/overview/) は、効率的なデータストレージと取得のために設計された、オープンソースの列指向データファイル形式です。高パフォーマンスの圧縮とエンコーディングスキームを提供し、大量の複雑なデータを管理でき、さまざまなプログラミング言語や分析ツールでサポートされています。
 
-生データを Parquet ファイルに準備するには、[BulkWriter ツール](./use-bulkwriter) の使用を推奨します。以下の図は、生データを Parquet ファイルにマッピングする方法を示しています。
+生データを Parquet ファイルに準備するには、[BulkWriter ツール](./use-bulkwriter) の使用を推奨します。以下の図は、生データを Parquet ファイルにどのようにマッピングできるかを示しています。
 
 ![parquet_file_structure_en](https://zdoc-images.s3.us-west-2.amazonaws.com/parquet_file_structure_en.png "parquet_file_structure_en")
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- **AutoID を有効にするかどうか**
-
-    **id** フィールドはコレクションのプライマリフィールドとして機能します。プライマリフィールドを自動的にインクリメントするには、スキーマで **AutoID** を有効にできます。この場合、ソースデータの各行から **id** フィールドを除外する必要があります。
-
-- **動的フィールドを有効にするかどうか**
-
-    ターゲットコレクションで動的フィールドが有効になっている場合、事前定義されたスキーマに含まれていないフィールドを保存する必要がある場合は、書き込み操作時に **&#36;meta** カラムを指定し、対応するキーと値のデータを提供できます。
-
-- **大文字小文字の区別**
-
-    ディクショナリキーとコレクションフィールド名は大文字小文字を区別します。データ内のディクショナリキーが、ターゲットコレクションのフィールド名と完全に一致していることを確認してください。ターゲットコレクションに **id** という名前のフィールドがある場合、各エンティティディクショナリには **id** という名前のキーが必要です。**ID** や **Id** を使用するとエラーが発生します。
+<ul>
+<li><strong>AutoID を有効にするかどうか</strong></li>
+</ul>
+<p><strong>id</strong> フィールドはコレクションのプライマリフィールドとして機能します。プライマリフィールドを自動的にインクリメントするには、スキーマで <strong>AutoID</strong> を有効にできます。この場合、ソースデータの各行から <strong>id</strong> フィールドを除外する必要があります。</p>
+<ul>
+<li><strong>動的フィールドを有効にするかどうか</strong></li>
+</ul>
+<p>ターゲットコレクションで動的フィールドが有効になっている場合、事前定義されたスキーマに含まれていないフィールドを保存する必要がある場合、書き込み操作時に <strong>&#36;meta</strong> カラムを指定し、対応するキーと値のデータを提供できます。</p>
+<ul>
+<li><strong>大文字小文字の区別</strong></li>
+</ul>
+<p>辞書キーとコレクションフィールド名は大文字小文字を区別します。データ内の辞書キーがターゲットコレクションのフィールド名と完全に一致することを確認してください。ターゲットコレクションに <strong>id</strong> という名前のフィールドがある場合、各エンティティ辞書には <strong>id</strong> という名前のキーが必要です。<strong>ID</strong> や <strong>Id</strong> を使用するとエラーが発生します。</p>
 
 </Admonition>
 
 ## ディレクトリ構造\{#directory-structure}
 
-データを Parquet ファイルに準備する場合は、以下のツリーダイアグラムに示すように、すべての Parquet ファイルをソースデータフォルダに直接配置してください。
+データを Parquet ファイルに準備する場合は、以下のツリー図に示すように、すべての Parquet ファイルをソースデータフォルダに直接配置してください。
 
 ```plaintext
 ├── parquet-folder
@@ -61,23 +62,23 @@ import Admonition from '@theme/Admonition';
 
 データの準備ができたら、以下のいずれかの方法を使用して、Zilliz Cloud コレクションにインポートできます。
 
-- [複数のパスからファイルをインポートする（推奨）](./data-import-parquet#import-files-from-multiple-paths-recommended)
+- [複数のパスからファイルをインポート（推奨）](./data-import-parquet#import-files-from-multiple-paths-recommended)
 
-- [ソースフォルダからファイルをインポートする](./data-import-parquet#import-files-from-a-folder)
+- [ソースフォルダからファイルをインポート](./data-import-parquet#import-files-from-a-folder)
 
-- [単一ファイルをインポートする](./data-import-parquet#import-a-single-file)
+- [単一ファイルをインポート](./data-import-parquet#import-a-single-file)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-ファイルが比較的小さい場合は、フォルダまたは複数パス方式を使用して一度にすべてインポートすることをお勧めします。このアプローチでは、インポートプロセス中に内部最適化が行われ、後のリソース消費を削減するのに役立ちます。
+<p>ファイルが比較的小さい場合は、フォルダまたは複数パス方式を使用して一度にすべてインポートすることをお勧めします。このアプローチでは、インポートプロセス中に内部最適化が行われ、後のリソース消費を削減するのに役立ちます。</p>
 
 </Admonition>
 
-データのインポートは、Zilliz Cloud コンソールで Milvus SDK を使用して行うこともできます。詳細については、[データのインポート（コンソール）](./import-data-on-web-ui) および [データのインポート（SDK）](./import-data-via-sdks) を参照してください。
+データは Zilliz Cloud コンソール上で Milvus SDK を使用してインポートすることもできます。詳細については、[データのインポート（コンソール）](./import-data-on-web-ui) および [データのインポート（SDK）](./import-data-via-sdks) を参照してください。
 
-### 複数のパスからファイルをインポートする（推奨）\{#import-files-from-multiple-paths-recommended}
+### 複数のパスからファイルをインポート（推奨）\{#import-files-from-multiple-paths-recommended}
 
-複数のパスからファイルをインポートする場合は、各 Parquet ファイルのパスを個別のリストに含め、次にすべてのリストを以下のコード例のように上位レベルのリストにグループ化します。
+複数のパスからファイルをインポートする場合は、各 Parquet ファイルのパスを個別のリストに含め、次に以下のコード例のようにすべてのリストを上位レベルのリストにグループ化します。
 
 ```python
 curl --request POST \
@@ -123,13 +124,13 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-フォルダに複数の形式のファイルが含まれている場合、リクエストは失敗します。
+<p>フォルダに複数の形式のファイルが含まれている場合、リクエストは失敗します。</p>
 
 </Admonition>
 
 ### 単一ファイルのインポート\{#import-a-single-file}
 
-準備したデータファイルが単一の Parquet ファイルの場合、以下のコード例に示すようにインポートします。
+準備したデータファイルが単一のParquetファイルである場合は、以下のコード例に示すようにインポートします。
 
 ```python
 curl --request POST \

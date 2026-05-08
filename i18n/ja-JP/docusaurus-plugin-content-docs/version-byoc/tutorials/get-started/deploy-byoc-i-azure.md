@@ -1,8 +1,8 @@
 ---
-title: "Microsoft Azure への BYOC-I のデプロイ | BYOC"
+title: "BYOC-I を Microsoft Azure にデプロイ | BYOC"
 slug: /deploy-byoc-i-azure
 sidebar_key: deploy-byoc-i-azure
-sidebar_label: "Microsoft Azure への BYOC-I のデプロイ"
+sidebar_label: "BYOC-I を Microsoft Azure にデプロイ"
 beta: CONTACT SALES
 notebook: FALSE
 description: "このページでは、Microsoft Azure Virtual Network に BYOC エージェントを持つ Bring-Your-Own-Cloud (BYOC) データプレーンをデプロイする方法を説明します。 | BYOC"
@@ -32,9 +32,10 @@ import Procedures from '@site/src/components/Procedures';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- Zilliz BYOC は現在 **一般提供** で利用可能です。アクセスおよび実装の詳細については、[Zilliz Cloud サポート](https://zilliz.com/contact-sales) までお問い合わせください。
-
-- このガイドでは、Microsoft Azure コンソール上で必要なリソースを段階的に作成する方法を説明します。インフラストラクチャのプロビジョニングに Terraform スクリプトを使用する場合は、[Terraform Provider](./terraform-provider) を参照してください。
+<ul>
+<li><p>Zilliz BYOC は現在 <strong>一般提供</strong> されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud サポート</a>までお問い合わせください。</p></li>
+<li><p>このガイドでは、Microsoft Azure コンソール上で必要なリソースを段階的に作成する方法を説明します。Terraform スクリプトを使用してインフラストラクチャをプロビジョニングする場合は、<a href="./terraform-provider">Terraform Provider</a> を参照してください。</p></li>
+</ul>
 
 </Admonition>
 
@@ -50,7 +51,7 @@ import Procedures from '@site/src/components/Procedures';
 
 ### ステップ 1: デプロイ環境の準備\{#step-1-prepare-the-deployment-environment}
 
-デプロイ環境とは、Terraform 構成ファイルを実行し、BYOC-I プロジェクトのデータプレーンをデプロイするように構成されたローカルマシン、仮想マシン (VM)、または CI/CD パイプラインです。このステップでは、以下が必要です。
+デプロイ環境とは、Terraform 構成ファイルを実行し、BYOC-I プロジェクトのデータプレーンをデプロイするために構成されたローカルマシン、仮想マシン (VM)、または CI/CD パイプラインです。このステップでは、以下が必要です。
 
 - **Microsoft Azure 認証情報の構成**
 
@@ -82,15 +83,15 @@ import Procedures from '@site/src/components/Procedures';
 
         1. 左側のメニューから **リソースグループ** に移動します。
 
-        1. 名前は **Name** 列に表示されます。
+        1. **Name** 列に名前が表示されます。
 
-            何も表示されていない場合は、リソースグループを作成して Zilliz Cloud に提供する必要があります。後で Terraform スクリプトを実行すると、仮想マシン (VM)、仮想ネットワーク (VNet)、Azure Kubernetes Service (AKS) クラスターを含むすべての必要なリソースがリソースグループに追加されます。
+            表示されていない場合は、新規作成して Zilliz Cloud に提供する必要があります。後で Terraform スクリプトを実行すると、仮想マシン (VM)、仮想ネットワーク (VNet)、Azure Kubernetes Service (AKS) クラスターを含むすべての必要なリソースがリソースグループに追加されます。
 
         </Procedures>
 
 - **アクセス制御 (IAM) 権限の追加**
 
-    Terraform スクリプトを実行するロールに **Contributor** および **User Access Administrator** 権限を割り当てます。
+    Terraform スクリプトを実行するロールに **Contributor** および **User Access Administrator** の権限を割り当てます。
 
     ![P0NbbtVyTofpGmxtk1jcpQYsnTe](https://zdoc-images.s3.us-west-2.amazonaws.com/p0nbbtvytofpgmxtk1jcpqysnte.png "P0NbbtVyTofpGmxtk1jcpQYsnTe")
 
@@ -104,7 +105,7 @@ import Procedures from '@site/src/components/Procedures';
 
     1. **メンバー** タブで、**アクセスの割り当て先** で **User, group, or service principal** または **Managed entity** を選択し、**+ メンバーの選択** をクリックします。
 
-        Terraform スクリプトを実行するためにユーザー、グループ、またはサービスプリンシパルを使用する場合は **User, group, or service principal** を選択します。それ以外の場合は **Managed entity** を選択します。
+        ユーザー、グループ、またはサービスプリンシパルが Terraform スクリプトの実行に使用される場合は **User, group, or service principal** を選択します。それ以外の場合は **Managed entity** を選択します。
 
     1. **Next** をクリックし、設定を確認して **Review + assign** をクリックして保存します。
 
@@ -152,7 +153,7 @@ BYOC-I 組織内で、**Create Project and Deploy データプレーン** ボタ
 
         BYOC プロジェクトでは、クエリノード、インデックスサービス、Milvus コンポーネント、および依存関係が異なるタイプの VM インスタンスを使用します。これらのサービスとコンポーネントのインスタンスタイプと数を個別に設定できます。
 
-        **オートスケーリング** が無効の場合は、各プロジェクトコンポーネントに必要な VM インスタンス数を対応する **Count** フィールドに指定するだけです。
+        **オートスケーリング** が無効の場合は、各プロジェクトコンポーネントに必要な VM インスタンスの数を対応する **Count** フィールドに指定するだけです。
 
         ![Ut9fbvTUDoXYxOxfp99cZIAGnMd](https://zdoc-images.s3.us-west-2.amazonaws.com/ut9fbvtudoxyxoxfp99cziagnmd.png "Ut9fbvTUDoXYxOxfp99cZIAGnMd")
 
@@ -160,7 +161,7 @@ BYOC-I 組織内で、**Create Project and Deploy データプレーン** ボタ
 
         ![VS2UbJ1cDoIqj0x3fiKc4vhMnLg](https://zdoc-images.s3.us-west-2.amazonaws.com/vs2ubj1cdoiqj0x3fikc4vhmnlg.png "VS2UbJ1cDoIqj0x3fiKc4vhMnLg")
 
-        リソース設定を容易にするために、4 つの定義済みプロジェクトサイズオプションがあります。次の表は、これらのプロジェクトサイズオプションとプロジェクト内で作成できるクラスターの数、および各クラスターが含めることができるエンティティの数との対応関係を示しています。
+        リソース設定を容易にするため、4 つの定義済みプロジェクトサイズオプションがあります。次の表は、これらのプロジェクトサイズオプションとプロジェクト内で作成できるクラスターの数、および各クラスターが含めることができるエンティティの数の対応関係を示しています。
 
         <table>
            <tr>
@@ -174,25 +175,25 @@ BYOC-I 組織内で、**Create Project and Deploy データプレーン** ボタ
            </tr>
            <tr>
              <td><p>小</p></td>
-             <td><p>8 ～ 16 CU のクラスター 3 個</p></td>
+             <td><p>8 ～ 16 CU のクラスター 3 つ</p></td>
              <td><p>1,000 万 ～ 2,500 万</p></td>
              <td><p>4,000 万 ～ 8,000 万</p></td>
            </tr>
            <tr>
              <td><p>中</p></td>
-             <td><p>16 ～ 64 CU のクラスター 7 個</p></td>
+             <td><p>16 ～ 64 CU のクラスター 7 つ</p></td>
              <td><p>2,500 万 ～ 1 億</p></td>
-             <td><p>8,000 万 ～ 3 億 5,000 万</p></td>
+             <td><p>8,000 万 ～ 3.5 億</p></td>
            </tr>
            <tr>
              <td><p>大</p></td>
-             <td><p>64 ～ 192 CU のクラスター 12 個</p></td>
+             <td><p>64 ～ 192 CU のクラスター 12 つ</p></td>
              <td><p>1 億 ～ 3 億</p></td>
-             <td><p>3 億 5,000 万 ～ 10 億</p></td>
+             <td><p>3.5 億 ～ 10 億</p></td>
            </tr>
            <tr>
              <td><p>特大</p></td>
-             <td><p>192 ～ 576 CU のクラスター 17 個</p></td>
+             <td><p>192 ～ 576 CU のクラスター 17 つ</p></td>
              <td><p>3 億 ～ 9 億</p></td>
              <td><p>10 億 ～ 30 億</p></td>
            </tr>
@@ -224,7 +225,7 @@ BYOC-I 組織内で、**Create Project and Deploy データプレーン** ボタ
 
 ### デプロイ中タグの付いたプロジェクト\{#projects-with-a-deploying-tag}
 
-デプロイ環境の準備が完了し、表示されたコマンドを実行したら、BYOC エージェントがアクティブ化されるまで待つ必要があります。プロジェクトカードのステータスタグが **デプロイ中** と表示され、進行状況のパーセンテージが表示されている場合、データプレーンが整うまでプロジェクトの名前を変更または削除することはできません。
+デプロイ環境の準備が完了し、表示されたコマンドを実行したら、BYOC エージェントがアクティブ化するのを待つ必要があります。プロジェクトカードのステータスタグが **デプロイ中** と表示され、進行状況のパーセンテージが表示されている場合は、データプレーンが準備できるまでプロジェクトの名前を変更または削除することはできません。
 
 ### 実行中タグの付いたプロジェクト\{#projects-with-a-running-tag}
 
@@ -232,11 +233,11 @@ BYOC-I 組織内で、**Create Project and Deploy データプレーン** ボタ
 
 ## テクニカルサポートアクセス\{#technical-support-access}
 
-トラブルシューティングおよびメンテナンス操作を支援するために、Zilliz Cloud はデフォルトでテクニカルサポートがプロジェクトのデータプレーンにアクセスできるようにしています。
+トラブルシューティングおよびメンテナンス操作を支援するため、Zilliz Cloud はデフォルトでテクニカルサポートがプロジェクトのデータプレーンにアクセスできるようにしています。
 
 ![LozAb735eoX00UxLYAKcWqY2nkG](https://zdoc-images.s3.us-west-2.amazonaws.com/lozab735eox00uxlyakcwqy2nkg.png "LozAb735eoX00UxLYAKcWqY2nkG")
 
-対象プロジェクトのドロップダウンメニューから **テクニカルサポートアクセス** をクリックして、現在の設定を表示します。
+対象プロジェクトのドロップダウンメニューから **テクニカルサポートアクセス** をクリックして、現在の設定を確認します。
 
 ![NdnSbwFbkokOPpxaW1ocGwklnab](https://zdoc-images.s3.us-west-2.amazonaws.com/ndnsbwfbkokoppxaw1ocgwklnab.png "NdnSbwFbkokOPpxaW1ocGwklnab")
 

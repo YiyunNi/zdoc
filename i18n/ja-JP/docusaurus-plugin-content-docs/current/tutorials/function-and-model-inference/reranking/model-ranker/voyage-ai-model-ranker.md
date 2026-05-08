@@ -166,11 +166,11 @@ voyage_ranker = Function(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`queries` 内の文字列の数は、検索リクエストで発行されたクエリの数と一致している必要があります。
+<p><code>queries</code> 内の文字列の数は、検索リクエストで発行されたクエリの数と一致している必要があります。</p>
 
 </Admonition>
 
-### rerank 関数を使用した検索\{#search-with-the-rerank-function}
+### rerank 機能を使用した検索\{#search-with-the-rerank-function}
 
 ```python
 query_vector = [0.12, 0.21, 0.29, 0.41]

@@ -5,7 +5,7 @@ sidebar_key: use-number-field
 sidebar_label: "ブール値と数値"
 beta: FALSE
 notebook: FALSE
-description: "ブール値または数値フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数と小数（浮動小数点数）です。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。 | BYOC"
+description: "ブール値または数値フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（整数）と小数（浮動小数点数）です。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。 | BYOC"
 type: origin
 token: EwArwXCOPip15hkSvvpciAMJnSe
 sidebar_position: 7
@@ -28,66 +28,66 @@ import TabItem from '@theme/TabItem';
 
 # Boolean & Number
 
-ブール値または数値フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（**integers**）と小数（**浮動小数点数**）です。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。
+ブールフィールドまたは数値フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（**integers**）および小数（**浮動小数点数**）のいずれかになります。通常、数量や測定値、または論理的・数学的に処理する必要のあるデータを表現するために使用されます。
 
-以下の表は、Zilliz Cloud クラスタで利用可能な数値フィールドのデータ型を説明しています。
+以下の表は、Zilliz Cloud クラスターで利用可能な数値フィールドのデータ型を示しています。
 
 <table>
    <tr>
-     <th><p>フィールド型</p></th>
-     <th><p>説明</p></th>
+     <th><p>Field Type</p></th>
+     <th><p>Description</p></th>
    </tr>
    <tr>
      <td><p><code>BOOL</code></p></td>
-     <td><p>ブール型で、<code>true</code> または <code>false</code> を格納します。2値状態の記述に適しています。</p></td>
+     <td><p>Boolean type for storing <code>true</code> or <code>false</code>, suitable for describing binary states.</p></td>
    </tr>
    <tr>
      <td><p><code>INT8</code></p></td>
-     <td><p>8ビット整数で、小さな範囲の整数データの格納に適しています。</p></td>
+     <td><p>8-bit integer, suitable for storing small-range integer data.</p></td>
    </tr>
    <tr>
      <td><p><code>INT16</code></p></td>
-     <td><p>16ビット整数で、中程度の範囲の整数データに適しています。</p></td>
+     <td><p>16-bit integer, for medium-range integer data.</p></td>
    </tr>
    <tr>
      <td><p><code>INT32</code></p></td>
-     <td><p>32ビット整数で、商品数量やユーザーIDなどの一般的な整数データの格納に最適です。</p></td>
+     <td><p>32-bit integer, ideal for general integer data storage like product quantities or user IDs.</p></td>
    </tr>
    <tr>
      <td><p><code>INT64</code></p></td>
-     <td><p>64ビット整数で、タイムスタンプや識別子などの大きな範囲のデータの格納に適しています。</p></td>
+     <td><p>64-bit integer, suitable for storing large-range data like timestamps or identifiers.</p></td>
    </tr>
    <tr>
      <td><p><code>FLOAT</code></p></td>
-     <td><p>32ビット浮動小数点数で、評価や温度などの一般的な精度を必要とするデータに適しています。</p></td>
+     <td><p>32-bit floating-point number, for data requiring general precision, such as ratings or temperature.</p></td>
    </tr>
    <tr>
      <td><p><code>DOUBLE</code></p></td>
-     <td><p>64ビット倍精度浮動小数点数で、財務情報や科学計算などの高精度データに適しています。</p></td>
+     <td><p>64-bit double-precision floating-point number, for high-precision data like financial information or scientific calculations.</p></td>
    </tr>
 </table>
 
-ブールフィールドを宣言するには、`datatype` を `BOOL` に設定するだけです。数値フィールドを宣言するには、利用可能な数値データ型のいずれかに設定するだけです。例えば、整数フィールドの場合は `データType.INT64`、浮動小数点フィールドの場合は `データType.FLOAT` です。
+ブールフィールドを宣言するには、`datatype` を `BOOL` に設定します。数値フィールドを宣言するには、利用可能な数値データ型のいずれかに設定します。たとえば、整数フィールドの場合は `データType.INT64`、浮動小数点数フィールドの場合は `データType.FLOAT` を使用します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud は、ブール値および数値フィールドに対して NULL 値とデフォルト値をサポートしています。これらの機能を有効にするには、`nullable` を `True` に設定し、`default_value` を数値に設定します。詳細については、[NULL許容 & Default](./nullable-fields) を参照してください。
+<p>Zilliz Cloud supports null values and default values for boolean and number fields. To enable these features, set <code>nullable</code> to <code>True</code> and <code>default_value</code> to a numeric value. For details, refer to <a href="./nullable-fields">NULL許容 & Default</a>.</p>
 
 </Admonition>
 
-## ブール値および数値フィールドの追加\{#add-boolean-and-number-fields}
+## Add boolean and number fields\{#add-boolean-and-number-fields}
 
-ブール値または数値データを格納するには、コレクションスキーマに対応する型のフィールドを定義します。以下は、2つの数値フィールドを持つコレクションスキーマの例です：
+ブール値または数値データを格納するには、コレクションスキーマ内で対応するタイプのフィールドを定義します。以下は、2つの数値フィールドを持つコレクションスキーマの例です：
 
-- `age`: 整数データを格納し、NULL 値を許可し、デフォルト値は `18` です。
+- `age`: 整数データを格納し、NULL許容で、デフォルト値は `18` です。
 
-- `broken`: ブールデータを格納し、NULL 値を許可しますが、デフォルト値はありません。
+- `broken`: ブールデータを格納し、NULL許容ですが、デフォルト値はありません。
 
-- `price`: 浮動小数点データを格納し、NULL 値を許可しますが、デフォルト値はありません。
+- `price`: 浮動小数点数データを格納し、NULL許容ですが、デフォルト値はありません。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-スキーマを定義する際に `enable_dynamic_fields=True` を設定すると、Zilliz Cloud は事前に定義されていないスカラーフィールドの挿入を許可します。ただし、これによりクエリや管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、[Dynamic Field](./enable-dynamic-field) を参照してください。
+<p>If you set <code>enable_dynamic_fields=True</code> when defining the schema, Zilliz Cloud allows you to insert スカラーフィールド that were not defined in advance. However, this may increase the complexity of queries and management, potentially impacting performance. For more information, refer to <a href="./enable-dynamic-field">Dynamic Field</a>.</p>
 
 </Admonition>
 

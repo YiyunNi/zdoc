@@ -5,7 +5,7 @@ sidebar_key: index-scalar-fields
 sidebar_label: "スカラーインデックス"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、スカラーフィールド（非ベクトルフィールド）に対してインデックスを作成でき、特に大規模データセットにおいてフィルタリングと検索のパフォーマンスを大幅に高速化できます。 | Cloud"
+description: "Zilliz Cloud は、スカラーフィールド（非ベクトルフィールド）のインデックス作成をサポートしており、特に大規模データセットにおいてフィルタリングと検索のパフォーマンスを大幅に高速化します。"
 type: origin
 token: XCCwwOLqKi2nYGkfy5Gc0Vnfnpb
 sidebar_position: 2
@@ -24,62 +24,61 @@ import TabItem from '@theme/TabItem';
 
 # スカラーフィールドのインデックス作成
 
-Zilliz Cloud は、スカラーフィールド（非ベクトルフィールド）のインデックス作成をサポートしており、特に大規模データセットにおいてフィルタリングと検索のパフォーマンスを大幅に高速化します。
+Zilliz Cloud は、スカラーフィールド（非ベクトルフィールド）に対するインデックス作成をサポートしており、特に大規模なデータセットにおいてフィルタリングと検索のパフォーマンスを大幅に向上させます。
 
 ## 概要\{#overview}
 
-スカラーフィールドのインデックス作成はオプションですが、特定のスカラーフィールドをフィルタ条件で頻繁に使用する場合は推奨されます。
+スカラーフィールドのインデックス作成は任意ですが、フィルタ条件で特定のスカラフィールドに頻繁にアクセスする場合は推奨されます。
 
 Zilliz Cloud は、以下のフィールドタイプに対して `AUTOINDEX` をサポートしています：
 
 <table>
    <tr>
      <th><p>フィールドタイプ</p></th>
-     <th><p>AUTOINDEX の解決結果</p></th>
+     <th><p>AUTOINDEX の解決先</p></th>
      <th><p>説明</p></th>
    </tr>
    <tr>
      <td><p><code>VARCHAR</code></p></td>
      <td><p><strong>BITMAP</strong> (C&ast; &lt; 100) / <strong>INVERTED</strong> ( C ≥ 100)</p></td>
-     <td><p>文字列データ型。詳細については、<a href="./use-string-field">文字列フィールド</a> を参照してください。</p></td>
+     <td><p>文字列データタイプ。詳細については、<a href="./use-string-field">String Field</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p><code>INT8</code>, <code>INT16</code>, <code>INT32</code>, <code>INT64</code></p></td>
      <td><p><strong>BITMAP</strong> (C &lt; 100) / <strong>STL_SORT</strong> (C ≥ 100)</p></td>
-     <td><p>整数。詳細については、<a href="./use-number-field">ブール値と数値</a> を参照してください。</p></td>
+     <td><p>整数。詳細については、<a href="./use-number-field">Boolean & Number</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p><code>FLOAT</code>, <code>DOUBLE</code></p></td>
      <td><p><strong>BITMAP</strong> (C&ast; &lt; 100) / <strong>INVERTED</strong> ( C ≥ 100)</p></td>
-     <td><p>浮動小数点。詳細については、<a href="./use-number-field">ブール値と数値</a> を参照してください。</p></td>
+     <td><p>浮動小数点数。詳細については、<a href="./use-number-field">Boolean & Number</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p><code>BOOL</code></p></td>
      <td><p><strong>BITMAP</strong></p></td>
-     <td><p>ブール値。詳細については、<a href="./use-number-field">ブール値と数値</a> を参照してください。</p></td>
+     <td><p>ブール値。詳細については、<a href="./use-number-field">Boolean & Number</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p><code>ARRAY</code></p></td>
      <td><p><strong>BITMAP</strong> (C&ast; &lt; 100) / <strong>INVERTED</strong> ( C ≥ 100)</p></td>
-     <td><p>スカラー値の同種配列。詳細については、<a href="./use-array-fields">配列フィールド</a> を参照してください。</p></td>
+     <td><p>スカラー値の同種配列。詳細については、<a href="./use-array-fields">配列 Field</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p><code>GEOMETRY</code></p></td>
      <td><p><strong>RTREE</strong></p></td>
-     <td><p>空間情報を格納するジオメトリデータ。詳細については、<a href="./use-geometry-field">ジオメトリフィールド</a> を参照してください。</p></td>
+     <td><p>空間情報を格納する幾何学データ。詳細については、<a href="./use-geometry-field">ジオメトリ Field</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p><code>TIMESTAMPTZ</code></p></td>
      <td><p><strong>STL_SORT</strong></p></td>
-     <td><p>タイムゾーン対応の ISO 8601 入力、タイムゾーンをまたいで一貫したフィルタリングと並べ替えを行うために UTC として格納されます。詳細については、<a href="./use-timestamptz-field">TIMESTAMPTZ フィールド</a> を参照してください。</p></td>
+     <td><p>タイムゾーン対応の ISO 8601 入力。UTC として保存され、タイムゾーン間で一貫したフィルタリングと順序付けが可能になります。詳細については、<a href="./use-timestamptz-field">TIMESTAMPTZ Field</a> を参照してください。</p></td>
    </tr>
 </table>
 
 <Admonition type="info" icon="📘" title="Notes">
 
-カーディナリティ（上記の表の C）は、コレクション全体のフィールドにおける一意な値の数を示します。例えば、float フィールドのカーディナリティは、そのフィールドに含まれる異なる float 値の数です。
-
-配列フィールドの場合、カーディナリティはセグメント内のすべての配列における**異なる要素値**の数です。例えば：
+<p>基数（上記表の C）は、コレクション全体におけるフィールド内の一意の値の数を示します。例えば、浮動小数点フィールドの基数は、そのフィールド内の異なる浮動小数点値の数です。</p>
+<p>配列フィールドの場合、基数はセグメント内のすべての配列にわたる<strong>固有の要素値</strong>の数です。例えば：</p>
 
 ```plaintext
 [1, 2, 3]
@@ -87,7 +86,7 @@ Zilliz Cloud は、以下のフィールドタイプに対して `AUTOINDEX` を
 [1, 4, 5]
 ```
 
-異なる要素値は `{1, 2, 3, 4, 5}` → カーディナリティ = **5** です。すべての配列からすべての要素をフラット化し、一意の値をカウントします — 異なる配列の数や配列の長さではありません。
+<p>個別の要素値は <code>\{1, 2, 3, 4, 5\}</code> → カーディナリティ = <strong>5</strong> です。すべての配列からすべての要素をフラット化し、一意の値をカウントします — 個別の配列の数や配列の長さではありません。</p>
 
 </Admonition>
 
@@ -95,7 +94,7 @@ Zilliz Cloud は、以下のフィールドタイプに対して `AUTOINDEX` を
 
 インデックスを作成する前に、ベクトルフィールドとスカラーフィールドの両方を含むコレクションを定義します。Zilliz Cloud では、すべてのコレクションにベクトルフィールドが必要です。
 
-この例では、商品カタログのスキーマを定義します。必須のベクトルフィールド（`vector`）と `DOUBLE` 型のスカラーフィールド（`price`）を含みます：
+この例では、製品カタログのスキーマを定義します。必須のベクトルフィールド（`vector`）と `DOUBLE` 型のスカラーフィールド（`price`）を含めます：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -531,7 +530,7 @@ console.log(JSON.stringify(res.index_descriptions, null, 2))
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**Milvus v2.6.x** 互換のクラスタでは、不要になったスカラーインデックスを直接削除できます。事前にコレクションをリリースする必要はありません。
+<p><strong>Milvus v2.6.x</strong> と互換性のあるクラスターでは、スカラーインデックスが不要になった時点で直接削除できます。コレクションを事前にリリースする必要はありません。</p>
 
 </Admonition>
 

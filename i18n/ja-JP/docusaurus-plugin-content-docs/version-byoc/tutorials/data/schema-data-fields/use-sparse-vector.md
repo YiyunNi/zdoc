@@ -5,7 +5,7 @@ sidebar_key: use-sparse-vector
 sidebar_label: "疎ベクトル"
 beta: FALSE
 notebook: FALSE
-description: "疎ベクトルは、情報検索や自然言語処理において表層的な用語の一致を捉える重要な手法です。密ベクトルが意味的理解に優れる一方、疎ベクトルは特別な用語やテキスト識別子を検索する際に、より予測可能な一致結果を提供することが多いです。 | BYOC"
+description: "疎ベクトルは、情報検索や自然言語処理において表層的な用語の一致を捉える重要な手法です。密ベクトルが意味的理解に優れている一方で、疎ベクトルは特別な用語やテキスト識別子を検索する際に、より予測可能な一致結果を提供することが多いです。 | BYOC"
 type: origin
 token: JbPDwHqd0iZZSuk5tYicGqKbn9c
 sidebar_position: 5
@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 # 疎ベクトル
 
-疎ベクトルは、情報検索および自然言語処理において、表層的な用語の一致を捉える重要な手法です。密ベクトルはセマンティック理解に優れていますが、疎ベクトルは特別な用語やテキスト識別子を検索する際に、より予測可能な一致結果を提供することが多いです。
+疎ベクトルは、情報検索および自然言語処理において、表層レベルの用語マッチングを捉える重要な手法です。密ベクトルはセマンティック理解に優れていますが、疎ベクトルは特別な用語やテキスト識別子を検索する際に、より予測可能なマッチング結果を提供することが多いです。
 
 ## 概要\{#overview}
 
@@ -33,29 +33,29 @@ import TabItem from '@theme/TabItem';
 
 ![VPhswBhHmhJrh3byaVnc3onYnPc](https://zdoc-images.s3.us-west-2.amazonaws.com/VPhswBhHmhJrh3byaVnc3onYnPc.png)
 
-トークン化とスコアリングにより、文書は単語の袋ベクトルとして表現できます。ここで各次元は語彙内の特定の単語に対応します。文書に存在する単語のみが非ゼロの値を持ち、疎ベクトル表現が作成されます。疎ベクトルは、2つのアプローチで生成できます。
+トークン化とスコアリングにより、文書は単語の袋ベクトルとして表現できます。ここで各次元は語彙内の特定の単語に対応します。文書内に存在する単語のみが非ゼロの値を持ち、疎ベクトル表現が作成されます。疎ベクトルは2つのアプローチで生成できます：
 
-- **従来の統計手法**では、[TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)（Term Frequency-Inverse Document Frequency）や [BM25](https://en.wikipedia.org/wiki/Okapi_BM25)（Best Matching 25）などが、コーパス全体での単語の頻度と重要度に基づいて重みを割り当てます。これらの方法は、各次元（トークンを表す）のスコアとして単純な統計量を計算します。Zilliz Cloud は BM25 方式の組み込み **全文検索** を提供しており、テキストを自動的に疎ベクトルに変換し、手動での前処理を不要にします。このアプローチは、精度と完全一致が重要なキーワードベースの検索に最適です。詳細については、[全文検索](./full-text-search) を参照してください。
+- **従来の統計手法**、例えば [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)（Term Frequency-Inverse Document Frequency）や [BM25](https://en.wikipedia.org/wiki/Okapi_BM25)（Best Matching 25）は、コーパス全体での単語の頻度と重要度に基づいて重みを割り当てます。これらの方法は、各次元（トークンを表す）のスコアとして単純な統計量を計算します。Zilliz Cloud は BM25 方式の組み込み **全文検索** を提供しており、テキストを自動的に疎ベクトルに変換し、手動での前処理を不要にします。このアプローチは、精度と完全一致が重要なキーワードベースの検索に最適です。詳細については、[全文検索](./full-text-search) を参照してください。
 
-- **ニューラル疎埋め込みモデル**は、大規模データセットでの学習により疎表現を生成する学習済み手法です。これらは通常、Transformer アーキテクチャを持つ深層学習モデルであり、セマンティックな文脈に基づいて単語を拡張・重み付けすることができます。Zilliz Cloud は [SPLADE](https://arxiv.org/abs/2109.10086) などのモデルから外部生成されたスパース埋め込みもサポートしています。詳細については、[埋め込み](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照してください。
+- **ニューラル疎埋め込みモデル** は、大規模データセットでの学習により疎表現を生成する学習済み手法です。これらは通常、Transformer アーキテクチャを持つ深層学習モデルであり、セマンティックコンテキストに基づいて単語を拡張・重み付けできます。Zilliz Cloud は [SPLADE](https://arxiv.org/abs/2109.10086) などのモデルから外部生成されたスパース埋め込みもサポートしています。詳細については、[Embeddings](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照してください。
 
-疎ベクトルと元のテキストは、効率的な検索のために Zilliz Cloud に格納できます。以下の図は、全体的なプロセスの概要を示しています。
+疎ベクトルと元のテキストは、Zilliz Cloud に効率的な検索のために格納できます。以下の図は、全体的なプロセスの概要を示しています。
 
 ![A7FvwnB5bhpBlKbgrzYcQijbnxg](https://zdoc-images.s3.us-west-2.amazonaws.com/A7FvwnB5bhpBlKbgrzYcQijbnxg.png)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-疎ベクトルに加えて、Zilliz Cloud は密ベクトルとバイナリベクトルもサポートしています。密ベクトルは深いセマンティック関係の捉え方に最適であり、バイナリベクトルは高速な類似性比較やコンテンツの重複排除などのシナリオで優れています。詳細については、[密ベクトル](./use-dense-vector) と [バイナリベクトル](./use-binary-vector) を参照してください。
+<p>疎ベクトルに加えて、Zilliz Cloud は密ベクトルとバイナリベクトルもサポートしています。密ベクトルは深いセマンティック関係の捉え方に最適であり、バイナリベクトルは高速な類似性比較やコンテンツの重複排除などのシナリオで優れています。詳細については、<a href="./use-dense-vector">Dense Vector</a> および <a href="./use-binary-vector">Binary Vector</a> を参照してください。</p>
 
 </Admonition>
 
 ## データ形式\{#data-formats}
 
-以下のセクションでは、SPLADE などの学習済み疎埋め込みモデルからのベクトルの格納方法を説明します。密ベクトルベースのセマンティック検索を補完するものをお探しの場合、シンプルさのため SPLADE よりも BM25 を使用した [全文検索](./full-text-search) を推奨します。品質評価を実施し、SPLADE の使用を決定した場合は、SPLADE で疎ベクトルを生成する方法について [埋め込み](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照してください。
+以下のセクションでは、SPLADE などの学習済み疎埋め込みモデルからのベクトルの格納方法を示します。密ベクトルベースのセマンティック検索を補完するものをお探しの場合、シンプルさのため SPLADE よりも BM25 を使用した [全文検索](./full-text-search) を推奨します。品質評価を実施し、SPLADE の使用を決定した場合は、SPLADE で疎ベクトルを生成する方法について [Embeddings](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照してください。
 
-Zilliz Cloud は、以下の形式での疎ベクトル入力をサポートしています。
+Zilliz Cloud は、以下の形式で疎ベクトル入力をサポートしています：
 
-- **辞書のリスト（**`{dimension_index: value, ...}` **形式）**
+- **辞書のリスト（** `{dimension_index: value, ...}` **の形式でフォーマット）**
 
     ```python
     # Represent each sparse vector using a dictionary
@@ -272,21 +272,21 @@ export schema="{
 
 この例では、3つのフィールドが追加されています。
 
-- `pk`: このフィールドは、プライマリキーを `VARCHAR` データ型で格納します。これは最大100バイトの長さで自動生成されます。
+- `pk`: このフィールドは、最大長100バイトで自動生成される `VARCHAR` データ型を使用して主キーを格納します。
 
-- `sparse_vector`: このフィールドは、疎ベクトルを `SPARSE_FLOAT_VECTOR` データ型で格納します。
+- `sparse_vector`: このフィールドは、`SPARSE_FLOAT_VECTOR` データ型を使用して疎ベクトルを格納します。
 
-- `text`: このフィールドは、テキスト文字列を `VARCHAR` データ型で格納します。最大長は65535バイトです。
+- `text`: このフィールドは、最大長65535バイトの `VARCHAR` データ型を使用してテキスト文字列を格納します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-データ挿入時に指定したテキストフィールドから疎ベクトルの埋め込みを生成するために、 または Zilliz Cloud を有効にするには、関数を使用する追加のステップが必要です。詳細については、[フルテキスト検索](./full-text-search) を参照してください。
+<p>データ挿入時に指定されたテキストフィールドから疎ベクトルの埋め込みを または Zilliz Cloud に生成させるには、関数を使用する追加のステップが必要です。詳細については、<a href="./full-text-search">全文検索</a> を参照してください。</p>
 
 </Admonition>
 
 ## インデックスパラメータの設定\{#set-index-parameters}
 
-疎ベクトルのインデックス作成プロセスは、[密ベクトル](./use-dense-vector) の場合と似ていますが、指定するインデックス型（`index_type`）、距離メトリック（`metric_type`）、およびインデックスパラメータ（`params`）が異なります。
+疎ベクトルのインデックス作成プロセスは、[密ベクトル](./use-dense-vector) の場合と似ていますが、指定するインデックスタイプ（`index_type`）、距離メトリック（`metric_type`）、およびインデックスパラメータ（`params`）が異なります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

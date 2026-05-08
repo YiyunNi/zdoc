@@ -5,7 +5,7 @@ sidebar_key: manage-cluster
 sidebar_label: "クラスターを管理"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloud コンソールを最大限に活用して目標を達成するためのクラスターのライフサイクルについて説明します。 | BYOC"
+description: "このガイドでは、クラスターのライフサイクルについて説明し、Zilliz Cloud コンソールを最大限に活用して目標を達成する方法を紹介します。 | BYOC"
 type: origin
 token: PharwAysCiBzvgkuqqecmNzunQf
 sidebar_position: 3
@@ -76,7 +76,7 @@ curl --request POST \
 
 上記のコマンドでは、
 
-- `{API_KEY}`: API リクエストの認証に使用される認証情報です。値はご自身のものに置き換えてください。API キーは Platform API（コントロールプレーン）リクエストの認証に使用されることに注意してください。データプラン接続には、代わりにクラスター認証情報（`username:password`）を使用してください。
+- `{API_KEY}`: API リクエストの認証に使用される認証情報です。値はご自身のものに置き換えてください。API キーは Platform API（コントロールプレーン）リクエストの認証に使用されることに注意してください。データプランへの接続には、代わりにクラスター認証情報（`username:password`）を使用してください。
 
 - `{CLUSTER_ID}`: 一時停止する Dedicated クラスターの ID です。
 
@@ -92,7 +92,7 @@ curl --request POST \
 
 再開中は、クラスターに対して他のアクションを実行できないことに注意してください。
 
-クラスターは、Web コンソールまたはプログラムで再開できます。
+クラスターの再開は、Web コンソールまたはプログラムで行うことができます。
 
 <Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"cURL","value":"Bash"}]}>
 
@@ -104,13 +104,12 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-**クラスターの再開** ダイアログボックスで **再開** をクリックすると、プロジェクトのリソースクォータを確認するよう求められます。リソースが十分であれば、確認完了後にダイアログボックスが閉じます。そうでない場合は、
-
-- **プロジェクトのリソース設定に移動** をクリックしてプロジェクトのリソース設定を編集するか、
-
-- **前のステップに戻る** をクリックしてクラスター設定を変更してください。
-
-このプロセス中、ローリングに追加のリソースが必要になります。これらのリソースは使用後に解放されます。
+<p><strong>クラスターの再開</strong> ダイアログボックスで <strong>再開</strong> をクリックすると、プロジェクトのリソースクォータを確認するよう求められます。リソースが十分であれば、確認が完了後にダイアログボックスが消えます。そうでない場合は、</p>
+<ul>
+<li><p><strong>プロジェクトのリソース設定に移動</strong> をクリックしてプロジェクトのリソース設定を編集するか、</p></li>
+<li><p><strong>前のステップに戻る</strong> をクリックしてクラスター設定を変更してください。</p></li>
+</ul>
+<p>このプロセス中、ローリングに追加のリソースが必要になります。これらのリソースは使用後に解放されます。</p>
 
 </Admonition>
 

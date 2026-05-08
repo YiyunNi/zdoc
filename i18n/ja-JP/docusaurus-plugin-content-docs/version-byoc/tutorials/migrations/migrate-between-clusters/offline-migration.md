@@ -24,47 +24,47 @@ import Admonition from '@theme/Admonition';
 
 import Supademo from '@site/src/components/Supademo';
 
-# オフラインマイグレーション
+# オフライン移行
 
-オフラインマイグレーションは、ソースの Zilliz Cloud クラスタからターゲットの Zilliz Cloud クラスタへ、既存のすべてのデータを転送します。この方法は、同じ組織内でのマイグレーションと、異なる組織間でのマイグレーションの両方をサポートしています。計画的なメンテナンス時や小規模なデータベース移行など、一時的な書き込み中断が許容されるシナリオに最適です。
+オフライン移行は、既存のすべてのデータをソース Zilliz Cloud クラスターからターゲット Zilliz Cloud クラスターへ転送します。この方法は、同一組織内および異なる組織間での移行をサポートしています。計画されたメンテナンスや小規模なデータベース移行など、一時的な書き込み中断が許容されるシナリオに最適です。
 
-## マイグレーション機能\{#migration-capabilities}
+## 移行機能\{#migration-capabilities}
 
-### マイグレーション範囲のオプション\{#migration-scope-options}
+### 移行スコープのオプション\{#migration-scope-options}
 
 <table>
    <tr>
-     <th><p>マイグレーションタイプ</p></th>
+     <th><p>移行タイプ</p></th>
      <th><p>説明</p></th>
      <th><p>ユースケース</p></th>
    </tr>
    <tr>
-     <td><p>同じプロジェクト内</p></td>
-     <td><p>同じ Zilliz Cloud プロジェクト内の既存クラスタ間でのマイグレーション</p></td>
-     <td><p>クラスタのアップグレード、パフォーマンス最適化、データ統合</p></td>
+     <td><p>同一プロジェクト内</p></td>
+     <td><p>同一 Zilliz Cloud プロジェクト内の既存クラスター間で移行</p></td>
+     <td><p>クラスターのアップグレード、パフォーマンス最適化、データの統合</p></td>
    </tr>
    <tr>
-     <td><p>プロジェクトまたは組織をまたぐ</p></td>
-     <td><p>異なる Zilliz Cloud プロジェクトまたは組織内の既存クラスタ間でのマイグレーション</p></td>
-     <td><p>企業の合併、部門間の移管、マルチテナントシナリオ</p></td>
+     <td><p>プロジェクト間または組織間</p></td>
+     <td><p>異なる Zilliz Cloud プロジェクトまたは組織内の既存クラスター間で移行</p></td>
+     <td><p>企業の合併、部門の移管、マルチテナントシナリオ</p></td>
    </tr>
 </table>
 
 ### 直接データ転送\{#direct-data-transfer}
 
-オフラインマイグレーションは、Zilliz Cloud クラスタ間で直接データレプリケーションを実行し、以下の特性を持ちます：
+オフライン移行は、Zilliz Cloud クラスター間で直接的なデータレプリケーションを実行し、以下の特徴があります：
 
-- **スキーマの保持**: ソースのスキーマが変更されずにターゲットクラスタに転送されます
+- **スキーマの保持**: ソーススキーマが変更されずにターゲットクラスターへ転送されます
 
-- **フィールドの変更なし**: マイグレーション中にフィールド名の変更、データ型の変更、フィールド属性の変更はできません
+- **フィールドの変更なし**: 移行中にフィールドの名前変更、データ型の変更、またはフィールド属性の変更はできません
 
-- **自動インデックス作成**: ベクトルフィールドに対して AUTOINDEX がターゲットクラスタに自動的に作成されます
+- **自動インデックス作成**: AUTOINDEX がターゲットクラスターの ベクトルフィールド に対して自動的に作成されます
 
 ## 前提条件\{#prerequisites}
 
-オフラインマイグレーションを開始する前に、以下の要件を満たしていることを確認してください：
+オフライン移行を開始する前に、以下の要件を満たしていることを確認してください：
 
-### 一般要件\{#general-requirements}
+### 一般 要件\{#general-requirements}
 
 <table>
    <tr>
@@ -72,20 +72,20 @@ import Supademo from '@site/src/components/Supademo';
      <th><p>詳細</p></th>
    </tr>
    <tr>
-     <td><p>ユーザーの権限</p></td>
+     <td><p>ユーザー権限</p></td>
      <td><p>組織オーナーまたはプロジェクト管理者のロール</p></td>
    </tr>
    <tr>
-     <td><p>ソースクラスタへのアクセス</p></td>
-     <td><p>ソースクラスタはパブリックインターネットからアクセス可能である必要があります</p></td>
+     <td><p>ソースクラスターへのアクセス</p></td>
+     <td><p>ソースクラスターはパブリックインターネットからアクセス可能である必要があります</p></td>
    </tr>
    <tr>
-     <td><p>ターゲットクラスタの容量</p></td>
-     <td><p>ソースデータを収容するのに十分な CU サイズ（<a href="https://zilliz.com/pricing#calculator">CU 計算ツール</a>を使用）</p></td>
+     <td><p>ターゲットクラスターの容量</p></td>
+     <td><p>ソースデータを格納するのに十分な CU サイズ（<a href="https://zilliz.com/pricing#calculator">CU 計算ツール</a>を使用）</p></td>
    </tr>
 </table>
 
-### プロジェクトまたは組織をまたぐマイグレーションの要件\{#cross-project-or-organization-migration-requirements}
+### プロジェクト間または組織間の移行要件\{#cross-project-or-organization-migration-requirements}
 
 <table>
    <tr>
@@ -93,24 +93,24 @@ import Supademo from '@site/src/components/Supademo';
      <th><p>詳細</p></th>
    </tr>
    <tr>
-     <td><p>接続資格情報</p></td>
-     <td><p>ソースクラスタのパブリックエンドポイント、API キー、またはクラスタのユーザー名とパスワード</p></td>
+     <td><p>接続 認証情報</p></td>
+     <td><p>ソースクラスターのパブリックエンドポイント、API キー、またはクラスターのユーザー名とパスワード</p></td>
    </tr>
    <tr>
-     <td><p>ネットワークアクセス</p></td>
-     <td><p>ターゲット組織からソースクラスタへの接続が可能であること</p></td>
+     <td><p>ネットワーク アクセス</p></td>
+     <td><p>ターゲット組織からソースクラスターに接続できること</p></td>
    </tr>
 </table>
 
-## はじめに\{#getting-started}
+## 始め方\{#getting-started}
 
-以下のデモでは、オフラインマイグレーションの完全なプロセスを順を追って説明します：
+以下のデモでは、オフライン移行の完全なプロセスを段階的に説明します：
 
-<Supademo id="cmb91ow5v0me4sn1rzlbzqi8x" title=""  />
+<Supademo id="cmb91ow5v0me4sn1rzlbzqi8x" title="Zilliz Cloud - Offline Migration Demo" />
 
 <Admonition type="info" icon="📘" title="Notes">
 
-マイグレーションされたコレクションは、検索やクエリ操作をすぐに利用できる状態にはなりません。Zilliz Cloud でコレクションを手動でロードし、検索およびクエリ機能を有効にする必要があります。詳細については、[ロードとリリース](./load-release-collections) を参照してください。
+<p>移行されたコレクションは、検索またはクエリ操作のためにすぐに利用可能になるわけではありません。検索およびクエリ機能を有効にするには、Zilliz Cloud でコレクションを手動でロードする必要があります。詳細については、<a href="./load-release-collections">ロードとリリース</a> を参照してください。</p>
 
 </Admonition>
 

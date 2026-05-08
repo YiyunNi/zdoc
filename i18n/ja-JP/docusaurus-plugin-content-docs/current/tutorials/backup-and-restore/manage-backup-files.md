@@ -29,7 +29,7 @@ import Supademo from '@site/src/components/Supademo';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-この機能は **Dedicated** クラスタでのみ利用可能です。
+<p>この機能は <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
@@ -51,7 +51,7 @@ Zilliz Cloud ウェブコンソールですべてのバックアップファイ�
 
 - すべてのバックアップファイルを表示
 
-    次の例では、プロジェクト ID もクラスタ ID も指定されていないため、現在の組織内のすべてのバックアップファイルを一覧表示します。特定のプロジェクトまたはクラスタのバックアップを表示するには、リクエストに対応するプロジェクト ID またはクラスタ ID を含めてください。RESTful API の詳細については、[List Backups](/reference/restful/list-backups-v2) を参照してください。
+    次の例では、プロジェクト ID もクラスター ID も指定されていないため、現在の組織内のすべてのバックアップファイルを一覧表示します。特定のプロジェクトまたはクラスターのバックアップを表示するには、リクエストに対応するプロジェクト ID またはクラスター ID を含めてください。RESTful API の詳細については、[List Backups](/reference/restful/list-backups-v2) を参照してください。
 
     ```bash
     curl --request GET \
