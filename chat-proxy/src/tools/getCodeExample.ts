@@ -12,7 +12,10 @@ export function createGetCodeExampleTool(context: RagToolContext = {}) {
       language: z.enum(['python', 'node', 'java', 'go', 'rest']).describe('The programming language'),
     }),
     execute: async ({topic, language}) => {
-      const query = `${topic} ${language} code example`;
+      const normalizedTopic = topic.toLowerCase();
+      const apiHints: string[] = [];
+      if (/create\s+collection|collection\s+create|create_collection/.test(normalizedTopic)) apiHints.push('create_collection');
+      const query = `${apiHints.join(' ')} ${language}`.trim() || `${topic} ${language} code example`;
       const results = await searchDocsFTS5(query, 4, context.sectionFilter);
 
       // Extract code blocks from results

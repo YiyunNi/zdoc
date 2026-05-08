@@ -47,7 +47,11 @@ const TOOL_COLLECTION_MAX_STEPS = 2;
 const TOOL_COLLECTION_TIMEOUT_MS = 30000;
 const FINAL_SYNTHESIS_TIMEOUT_MS = 30000;
 const FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS = 1600;
-const EMBEDDING_BUDGET_MS = 1500;
+const EMBEDDING_BUDGET_MS = Number(process.env.EMBEDDING_BUDGET_MS || '') || 1500;
+const SEMANTIC_CACHE_LOOKUP_BUDGET_MS = Number(process.env.SEMANTIC_CACHE_LOOKUP_BUDGET_MS || '') || 250;
+const PAGE_CONTEXT_MAX_CHARS = Number(process.env.PAGE_CONTEXT_MAX_CHARS || '') || 3000;
+const TOOL_CONTEXT_MAX_CHARS = Number(process.env.TOOL_CONTEXT_MAX_CHARS || '') || 2500;
+const TOOL_MODEL_OUTPUT_MAX_CHARS = Number(process.env.TOOL_MODEL_OUTPUT_MAX_CHARS || '') || 1200;
 
 function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
   let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -64,38 +68,108 @@ function truncateText(text: string, maxChars: number): string {
   return text.slice(0, maxChars).trimEnd() + '\n... [truncated]';
 }
 
+function compactToolResultForModel(toolResult: Record<string, any> | undefined): Record<string, any> | undefined {
+  if (!toolResult || typeof toolResult !== 'object') return toolResult;
+  const compact: Record<string, any> = {...toolResult};
+
+  if (Array.isArray(toolResult.results)) {
+    compact.results = toolResult.results.slice(0, 3).map((r: any) => ({
+      title: r.title || r.doc_title || '',
+      url: r.url || r.doc_url || '',
+      section: r.section,
+      content: r.content ? truncateText(String(r.content), TOOL_MODEL_OUTPUT_MAX_CHARS) : undefined,
+      score: r.score,
+    }));
+    compact.totalResults = toolResult.totalResults ?? toolResult.results.length;
+  }
+
+  if (Array.isArray(toolResult.examples)) {
+    compact.examples = toolResult.examples.slice(0, 2).map((e: any) => ({
+      title: e.title || 'Example',
+      url: e.url,
+      code: e.code ? truncateText(String(e.code), TOOL_MODEL_OUTPUT_MAX_CHARS) : undefined,
+    }));
+  }
+
+  if (Array.isArray(toolResult.relatedDocs)) {
+    compact.relatedDocs = toolResult.relatedDocs.slice(0, 4).map((r: any) => ({
+      title: r.title || 'Untitled',
+      url: r.url,
+    }));
+  }
+
+  if (Array.isArray(toolResult.pages)) {
+    compact.pages = toolResult.pages.slice(0, 5).map((p: any) => ({
+      title: p.title || 'Untitled',
+      url: p.url,
+      section: p.section,
+    }));
+    compact.totalResults = toolResult.totalResults ?? toolResult.pages.length;
+  }
+
+  if (toolResult.content) {
+    compact.content = truncateText(String(toolResult.content), TOOL_CONTEXT_MAX_CHARS);
+  }
+
+  return compact;
+}
+
+function buildActiveToolsForStep(agentType: AgentType, stepNumber: number, allToolNames: ToolName[]): ToolName[] {
+  if (agentType === 'code' && stepNumber === 0 && allToolNames.includes('searchDocs')) {
+    return ['searchDocs'];
+  }
+
+  if (agentType === 'general' && stepNumber === 0) {
+    return allToolNames.filter(name => name !== 'getPageContent');
+  }
+
+  return allToolNames;
+}
+
+function buildToolChoiceForStep(agentType: AgentType, stepNumber: number, activeToolNames: ToolName[]) {
+  if (agentType === 'code' && stepNumber === 0 && activeToolNames.includes('searchDocs')) {
+    return {type: 'tool' as const, toolName: 'searchDocs' as const};
+  }
+
+  if (stepNumber === 0 && activeToolNames.length > 0) {
+    return 'required' as const;
+  }
+
+  return 'auto' as const;
+}
+
 function formatToolResultForSynthesis(toolName: string, toolResult: Record<string, any> | undefined): string {
   if (!toolResult) return `Tool: ${toolName}\nNo result returned.`;
   const lines = [`Tool: ${toolName}`];
 
   if (Array.isArray(toolResult.results)) {
     lines.push('Search results:');
-    for (const r of toolResult.results.slice(0, 6)) {
+    for (const r of toolResult.results.slice(0, 3)) {
       lines.push(`- ${r.title || r.doc_title || 'Untitled'} (${r.url || r.doc_url || 'no-url'})${r.section ? ` [${r.section}]` : ''}`);
-      if (r.content) lines.push(truncateText(String(r.content), 1200));
+      if (r.content) lines.push(truncateText(String(r.content), TOOL_MODEL_OUTPUT_MAX_CHARS));
     }
     if (toolResult.results.length === 0) lines.push('- No search results.');
   }
 
   if (Array.isArray(toolResult.examples)) {
     lines.push('Code examples:');
-    for (const e of toolResult.examples.slice(0, 3)) {
+    for (const e of toolResult.examples.slice(0, 2)) {
       lines.push(`- ${e.title || 'Example'} (${e.url || 'no-url'})`);
-      if (e.code) lines.push('```\n' + truncateText(String(e.code), 1200) + '\n```');
+      if (e.code) lines.push('```\n' + truncateText(String(e.code), TOOL_MODEL_OUTPUT_MAX_CHARS) + '\n```');
     }
     if (toolResult.examples.length === 0) lines.push('- No code examples.');
   }
 
   if (Array.isArray(toolResult.relatedDocs) && toolResult.relatedDocs.length > 0) {
     lines.push('Related docs:');
-    for (const r of toolResult.relatedDocs.slice(0, 8)) {
+    for (const r of toolResult.relatedDocs.slice(0, 4)) {
       lines.push(`- ${r.title || 'Untitled'} (${r.url || 'no-url'})`);
     }
   }
 
   if (Array.isArray(toolResult.pages)) {
     lines.push('Pages:');
-    for (const p of toolResult.pages.slice(0, 10)) {
+    for (const p of toolResult.pages.slice(0, 5)) {
       lines.push(`- ${p.title || 'Untitled'} (${p.url || 'no-url'})${p.section ? ` [${p.section}]` : ''}`);
     }
     if (toolResult.pages.length === 0) lines.push('- No pages found.');
@@ -103,14 +177,14 @@ function formatToolResultForSynthesis(toolName: string, toolResult: Record<strin
 
   if (toolResult.url && toolResult.success) {
     lines.push(`Page content: ${toolResult.title || toolResult.url} (${toolResult.url})`);
-    if (toolResult.content) lines.push(truncateText(String(toolResult.content), 3000));
+    if (toolResult.content) lines.push(truncateText(String(toolResult.content), TOOL_CONTEXT_MAX_CHARS));
   }
 
   if (lines.length === 1) {
-    lines.push(truncateText(JSON.stringify(toolResult), 3000));
+    lines.push(truncateText(JSON.stringify(toolResult), TOOL_CONTEXT_MAX_CHARS));
   }
 
-  return truncateText(lines.join('\n'), 6000);
+  return truncateText(lines.join('\n'), TOOL_CONTEXT_MAX_CHARS);
 }
 
 function buildNoResponseFallback(
@@ -665,18 +739,27 @@ app.post('/chat', async c => {
           ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}),
         );
 
-        // Check semantic cache for similar queries across sessions.
+        // Check semantic cache for similar queries across sessions. Keep this
+        // best-effort so cache lookup never blocks routing/model generation.
         let semanticHit: SemanticCacheHit | null = null;
-        const queryEmbedding = await withTimeout(embeddingPromise, EMBEDDING_BUDGET_MS, null);
-        const tEmbed = Date.now() - tEmbedStart;
-        debug('chat.embedding.completed', {durationMs: tEmbed, hasEmbedding: Boolean(queryEmbedding), timedOut: !queryEmbedding && tEmbed >= EMBEDDING_BUDGET_MS});
-        if (queryEmbedding) {
-          try {
-            semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding, requestId);
-          } catch (err) {
-            console.warn('[SemanticCache] Lookup failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
-          }
+        let queryEmbedding: number[] | null = null;
+        let tEmbed = 0;
+        const maybeEmbedding = await withTimeout(embeddingPromise, EMBEDDING_BUDGET_MS, null);
+        tEmbed = Date.now() - tEmbedStart;
+        if (maybeEmbedding) {
+          queryEmbedding = maybeEmbedding;
+          const lookupStart = Date.now();
+          semanticHit = await withTimeout(
+            semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding, requestId).catch((err) => {
+              console.warn('[SemanticCache] Lookup failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+              return null;
+            }),
+            SEMANTIC_CACHE_LOOKUP_BUDGET_MS,
+            null,
+          );
+          debug('chat.cache.lookup.completed', {layer: 'semantic', durationMs: Date.now() - lookupStart, hit: Boolean(semanticHit)});
         }
+        debug('chat.embedding.completed', {durationMs: tEmbed, hasEmbedding: Boolean(queryEmbedding), timedOut: !queryEmbedding && tEmbed >= EMBEDDING_BUDGET_MS});
         debug('chat.cache.checked', {layer: 'semantic', hit: Boolean(semanticHit), similarity: semanticHit?.similarity});
         if (semanticHit) {
           console.log('[SemanticCache] Replay cached response', JSON.stringify({requestId, query: summarizeForDebugLog(ragQuery, 'query')}));
@@ -782,7 +865,7 @@ app.post('/chat', async c => {
 
           const pageContextIncluded = Boolean(body.pageContext && shouldInjectPageContext(session, body.pageUrl));
           if (pageContextIncluded) {
-            systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext!.slice(0, 8000)}`;
+            systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext!.slice(0, PAGE_CONTEXT_MAX_CHARS)}`;
           }
 
           // Evaluate pre-prompt hooks (confidence not yet known)
@@ -827,8 +910,17 @@ app.post('/chat', async c => {
             maxOutputTokens: 1024,
             temperature: 0.2,
             tools: agentTools,
+            toolChoice: buildToolChoiceForStep(agentConfig.type, 0, agentConfig.toolNames),
+            activeTools: buildActiveToolsForStep(agentConfig.type, 0, agentConfig.toolNames),
             stopWhen: stepCountIs(TOOL_COLLECTION_MAX_STEPS),
             abortSignal: AbortSignal.timeout(TOOL_COLLECTION_TIMEOUT_MS),
+            prepareStep: ({stepNumber}) => {
+              const activeTools = buildActiveToolsForStep(agentConfig.type, stepNumber, agentConfig.toolNames);
+              return {
+                activeTools,
+                toolChoice: buildToolChoiceForStep(agentConfig.type, stepNumber, activeTools),
+              };
+            },
             system: `${systemPrompt}\n\n## Tool collection phase\nUse tools only to collect the minimum documentation needed. Do not try to provide the final answer in this phase; the server will run a separate final synthesis phase without tools. Prefer at most one searchDocs call and one content/code lookup.`,
             messages: windowedMessages.map(m => ({
               role: m.role as 'user' | 'assistant',
@@ -870,7 +962,8 @@ app.post('/chat', async c => {
             } else if ((part as any).type === 'tool-result') {
               // Extract sources from any tool that returns doc URLs
               // AI SDK v6 fullStream uses .output for tool-result events
-              const toolResult = (part as any).output as Record<string, any>;
+              const rawToolResult = (part as any).output as Record<string, any>;
+              const toolResult = compactToolResultForModel(rawToolResult) as Record<string, any>;
               toolResultSummaries.push(formatToolResultForSynthesis((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', toolResult));
               if (toolResult?.results) {
                 // searchDocs returns { results: [{title, url, score, content, section, ...}] }

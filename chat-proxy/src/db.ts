@@ -1254,7 +1254,7 @@ export async function setRuntimeConfigValue(key: string, provider: string, model
      ON CONFLICT (key) DO UPDATE SET
        provider = EXCLUDED.provider,
        model = EXCLUDED.model,
-       dimensions = COALESCE(EXCLUDED.dimensions, runtime_config.dimensions),
+       dimensions = EXCLUDED.dimensions,
        profile_name = EXCLUDED.profile_name,
        updated_at = NOW()`,
     [key, provider, model, dimensions ?? null, profileName ?? null],
