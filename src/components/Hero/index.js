@@ -277,7 +277,7 @@ export default function Hero({ children }) {
 
   const INSTALL_COMMANDS = {
     humans: 'pip install pymilvus',
-    agents: 'npx skills add zilliztech/zilliz-skill',
+    agents: 'curl -fsSL https://zilliz.com/cli/install.sh | bash',
   };
 
   // Highlight code when slide or tab changes
