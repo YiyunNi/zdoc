@@ -13,10 +13,10 @@ type: docx
 token: V05sd0bGjo33Cux0j9DcrNKTndh
 sidebar_position: 4
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This function retrieves detailed progress for a single bulk import job via the R
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`GetImportProgress()` is a package-level function in `github.com/milvus-io/milvus/client/v2/bulkwriter`. It calls the REST `/v2/vectordb/jobs/import/describe` endpoint and works with both Milvus open-source clusters (use `NewGetImportProgressOption`) and Zilliz Cloud (use `NewCloudGetImportProgressOption`).
+<p><code>GetImportProgress()</code> is a package-level function in <code>github.com/milvus-io/milvus/client/v2/bulkwriter</code>. It calls the REST <code>/v2/vectordb/jobs/import/describe</code> endpoint and works with both Milvus open-source clusters (use <code>NewGetImportProgressOption</code>) and Zilliz Cloud (use <code>NewCloudGetImportProgressOption</code>).</p>
 
 </Admonition>
 

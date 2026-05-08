@@ -13,10 +13,10 @@ type: docx
 token: QWlfd7SO1ojpdHxM968coTYQnYg
 sidebar_position: 21
 keywords: 
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # list_loaded_segments()
 
 This operation lists all currently loaded segments for a collection, including information about row count, sort status, storage level, and memory size.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

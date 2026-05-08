@@ -13,10 +13,10 @@ type: docx
 token: Dxgqdvlk5o2VScxqmL1ctc1Inqb
 sidebar_position: 5
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # list_partitions()
 
 This operation lists the partitions in a specified collection.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

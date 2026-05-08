@@ -12,10 +12,10 @@ token: W5gwfoADilawLFd64CWcpuFMn0g
 sidebar_position: 11
 sidebar_label: "File Resources"
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud

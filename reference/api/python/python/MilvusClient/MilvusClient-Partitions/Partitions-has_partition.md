@@ -13,10 +13,10 @@ type: docx
 token: MxTAd0haboKnRrxQvoOckGghn1T
 sidebar_position: 4
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # has_partition()
 
 This operation checks whether the specified partition exists in the specified collection.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

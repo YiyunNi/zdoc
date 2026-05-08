@@ -13,10 +13,10 @@ type: docx
 token: YtiQdxTYzoCaYDxEMZcc8TEenQb
 sidebar_position: 10
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # load_collection()
 
 This operation loads the data of a specific collection into memory.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

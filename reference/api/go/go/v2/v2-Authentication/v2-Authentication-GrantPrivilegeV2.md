@@ -13,10 +13,10 @@ type: docx
 token: ZO8adFZzAotVzfxEko2cKjHvnfb
 sidebar_position: 12
 keywords: 
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud

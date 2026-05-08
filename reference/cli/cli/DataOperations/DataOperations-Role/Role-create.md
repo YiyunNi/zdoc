@@ -13,10 +13,10 @@ type: docx
 token: V9xIdjMEMowIh2xVJUUcvir6nUf
 sidebar_position: 1
 keywords: 
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,7 +39,7 @@ Zilliz Cloud offers cluster roles for you to implement access control at the clu
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This command is available for Dedicated clusters only. You can run `zilliz context set` to switch among clusters.
+<p>This command is available for Dedicated clusters only. You can run <code>zilliz context set</code> to switch among clusters.</p>
 
 </Admonition>
 

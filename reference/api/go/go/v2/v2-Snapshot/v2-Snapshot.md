@@ -12,10 +12,10 @@ token: G4vvf4YHtlwg02d1ZyXcsRCCnud
 sidebar_position: 10
 sidebar_label: "Snapshot"
 keywords: 
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud

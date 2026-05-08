@@ -12,10 +12,10 @@ token: IxaefGzWtlPFlTd617bcYS4cn4d
 sidebar_position: 10
 sidebar_label: "Snapshot"
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud

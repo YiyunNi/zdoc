@@ -13,10 +13,10 @@ type: docx
 token: U9w7dQeEBom2UBxJZM1cJAIYniL
 sidebar_position: 21
 keywords: 
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud

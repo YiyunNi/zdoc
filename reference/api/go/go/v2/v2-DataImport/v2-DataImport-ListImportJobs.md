@@ -13,10 +13,10 @@ type: docx
 token: YmqKdQyDDo2Yyjx5rkMcQBGvnEg
 sidebar_position: 7
 keywords: 
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This function lists bulk import jobs for a given collection via the RESTful API.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`ListImportJobs()` is a package-level function in `github.com/milvus-io/milvus/client/v2/bulkwriter`. It calls the REST `/v2/vectordb/jobs/import/list` endpoint and works with both Milvus open-source clusters and Zilliz Cloud.
+<p><code>ListImportJobs()</code> is a package-level function in <code>github.com/milvus-io/milvus/client/v2/bulkwriter</code>. It calls the REST <code>/v2/vectordb/jobs/import/list</code> endpoint and works with both Milvus open-source clusters and Zilliz Cloud.</p>
 
 </Admonition>
 

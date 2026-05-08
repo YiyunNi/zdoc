@@ -13,10 +13,10 @@ type: docx
 token: W7NedO3aXoF3UdxWp51cPe0kn2b
 sidebar_position: 6
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation revokes a role from a user.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This command is available for Dedicated clusters only. You can run `zilliz context set` to switch among clusters.
+<p>This command is available for Dedicated clusters only. You can run <code>zilliz context set</code> to switch among clusters.</p>
 
 </Admonition>
 

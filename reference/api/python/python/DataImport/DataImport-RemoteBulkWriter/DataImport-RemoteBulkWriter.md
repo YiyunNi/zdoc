@@ -13,10 +13,10 @@ type: docx
 token: BDP4dew9to9tQoxNEMPcBR5xnZb
 sidebar_position: 4
 keywords: 
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,7 +43,7 @@ Constructs a **RemoteBulkWriter** object with a set of parameters, such as **sch
 
 <Admonition type="info" icon="📘" title="Notes">
 
-A **RemoteBulkWriter** object intends to rewrite your raw data in a format that Zilliz Cloud understands into an AWS-S3-compatible bucket.
+<p>A <strong>RemoteBulkWriter</strong> object intends to rewrite your raw data in a format that Zilliz Cloud understands into an AWS-S3-compatible bucket.</p>
 
 </Admonition>
 
@@ -88,9 +88,8 @@ writer = RemoteBulkWriter(
 
     <Admonition type="info" icon="📘" title="How does BulkWriter segment my data?">
 
-    The way **BulkWriter** segments your data varies with the target file type.
-
-    If the generated file exceeds the specified segment size, **BulkWriter** creates multiple files and names them in sequence numbers, each no larger than the segment size.
+    <p>The way <strong>BulkWriter</strong> segments your data varies with the target file type.</p>
+    <p>If the generated file exceeds the specified segment size, <strong>BulkWriter</strong> creates multiple files and names them in sequence numbers, each no larger than the segment size.</p>
 
     </Admonition>
 

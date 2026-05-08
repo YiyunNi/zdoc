@@ -13,10 +13,10 @@ type: docx
 token: KiwWdLJ8houEeRxGECEcc3glnoh
 sidebar_position: 4
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation lists all databases.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This command applies to Dedicated clusters.
+<p>This command applies to Dedicated clusters.</p>
 
 </Admonition>
 

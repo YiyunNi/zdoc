@@ -13,10 +13,10 @@ type: docx
 token: I6hvdlYUuoUaw3xWqSnce4Fin9g
 sidebar_position: 1
 keywords: 
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # create_partition()
 
 This operation creates a partition in the target collection.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

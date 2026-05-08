@@ -13,10 +13,10 @@ type: docx
 token: KX8pd5PnGoo8UAx8QhhcI5YpnHg
 sidebar_position: 3
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: X3NXdtC2koiAxyxhcUBcv38Wnsh
 sidebar_position: 12
 keywords: 
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # refresh_load()
 
 This operation loads the unloaded data of a loaded collection into memory.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

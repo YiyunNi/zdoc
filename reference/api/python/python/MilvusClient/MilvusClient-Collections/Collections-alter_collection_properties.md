@@ -13,10 +13,10 @@ type: docx
 token: SJ1FdUQQnohtObxhNgpcHalMnUc
 sidebar_position: 3
 keywords: 
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation alters the specified collection properties.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This does not apply to external collections.
+<p>This does not apply to external collections.</p>
 
 </Admonition>
 

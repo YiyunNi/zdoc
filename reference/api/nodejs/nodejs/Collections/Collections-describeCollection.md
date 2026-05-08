@@ -13,10 +13,10 @@ type: docx
 token: Z4Kfd0zFkoQCI8xZiRZc1D8anpc
 sidebar_position: 8
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud

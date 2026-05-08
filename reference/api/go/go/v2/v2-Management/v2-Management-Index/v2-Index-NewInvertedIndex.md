@@ -13,10 +13,10 @@ type: docx
 token: TxKwd5bEqoHUuLxqENic3Uv6nhg
 sidebar_position: 14
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

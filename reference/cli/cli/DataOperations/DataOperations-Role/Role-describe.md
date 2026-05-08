@@ -13,10 +13,10 @@ type: docx
 token: Fj9Yd4SOPoppxTx7K8WcyMd7ncd
 sidebar_position: 2
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation gets details and privileges of a role.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This command is available for Dedicated clusters only. You can run `zilliz context set` to switch among clusters.
+<p>This command is available for Dedicated clusters only. You can run <code>zilliz context set</code> to switch among clusters.</p>
 
 </Admonition>
 

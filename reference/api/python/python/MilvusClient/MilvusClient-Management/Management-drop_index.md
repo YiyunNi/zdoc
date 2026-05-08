@@ -13,10 +13,10 @@ type: docx
 token: NPnQdZCJ7oF002xTntecdI2ini8
 sidebar_position: 5
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation drops an index from a specific collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Collections for on-demand compute do not support this operation.
+<p>Collections for on-demand compute do not support this operation.</p>
 
 </Admonition>
 

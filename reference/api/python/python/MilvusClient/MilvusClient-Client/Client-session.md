@@ -13,10 +13,10 @@ type: docx
 token: UASmdlcqvojCe4xNY94cz9Wznyh
 sidebar_position: 4
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # session()
 
 This operation creates a lightweight DQL session bound to a specific on-demand cluster. All operations performed through the session automatically include the target `cluster_id`, ensuring requests are routed to the correct cluster in a multi-cluster deployment.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method applies only to on-demand compute. Create <code>MilvusClient</code> with the project endpoint, for example <code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code>, and pass the target on-demand cluster ID to <code>session()</code>.</p>
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 

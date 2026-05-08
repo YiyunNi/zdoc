@@ -13,10 +13,10 @@ type: docx
 token: Er8vdVepxoqhPFxVyZUcxSHMnqe
 sidebar_position: 6
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud
@@ -41,7 +41,7 @@ MilvusClient.create_schema(**kwargs) -> CollectionSchema
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This is a class method. You should call this method like this: `MilvusClient.create_schema()`.
+<p>This is a class method. You should call this method like this: <code>MilvusClient.create_schema()</code>.</p>
 
 </Admonition>
 
@@ -63,7 +63,7 @@ This is a class method. You should call this method like this: `MilvusClient.cre
 
         <Admonition type="info" icon="📘" title="What is a dynamic field?">
 
-        If the data being inserted into the target collection includes fields that are not defined in the collection's schema, those fields will be saved in a reserved dynamic field named **&#36;meta** as key-value pairs.
+        <p>If the data being inserted into the target collection includes fields that are not defined in the collection's schema, those fields will be saved in a reserved dynamic field named <strong>&#36;meta</strong> as key-value pairs.</p>
 
         </Admonition>
 
@@ -79,25 +79,28 @@ This is a class method. You should call this method like this: `MilvusClient.cre
 
         <Admonition type="info" icon="📘" title="What is a partition key?">
 
-        Once a field is designated as the partition key, Zilliz Cloud calculates a hash based on the partition key value of each inserted entity and saves entities in the partitions of the target collection accordingly.
-
-        This is particularly useful when implementing data separation based on a specific key, such as partition-oriented multi-tenancy.
+        <p>Once a field is designated as the partition key, Zilliz Cloud calculates a hash based on the partition key value of each inserted entity and saves entities in the partitions of the target collection accordingly.</p>
+        <p>This is particularly useful when implementing data separation based on a specific key, such as partition-oriented multi-tenancy.</p>
 
         </Admonition>
 
-- **external_source** (*string*) -
+- **external_source** (*str*) -
 
-    The external source URI, which should be the name of an accessible external volume..
+    The external source URI, which should be a `volume://` URI that points to an accessible external volume. For example, `volume://<volume-name>/path/to/folder/`..
 
-- **external_spec** (*string*) -
+- **external_spec** (*str*) -
 
     The external source specifications, which are a set of secondary parameters:
 
-    - **format** (*string*) - 
+    - **format** (*str*) - 
 
         The format of the target source data files.
 
         Possible values are `parquet`, `vortex`, `lance-table`, and `iceberg-table`.
+
+    - **snapshot_id** (*str*) -
+
+        The ID of an Iceberg table. This applies only when `format` is `iceberg-table`.
 
 **RETURN TYPE:**
 

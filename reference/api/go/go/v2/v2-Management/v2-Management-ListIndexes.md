@@ -13,10 +13,10 @@ type: docx
 token: S8NxdJc1gom2SVxxNYkc5lHxnMg
 sidebar_position: 17
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: MIKkdpGuuoEaGWx1m7Fcw52inKg
 sidebar_position: 3
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,9 +43,10 @@ Constructs a client for common use cases.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- This interface is still in its early stage and may change significantly in future releases. You are advised not to use it in production.
-
-- To call **AsyncMilvusClient**, you need to get an event loop from asyncio to manage request handling. For details, refer to [Tutorial: Use AsyncMilvusClient with asyncio](https://milvus.io/docs/use-async-milvus-client-with-asyncio.md#Tutorial-Use-AsyncMilvusClient-with-asyncio).
+<ul>
+<li><p>This interface is still in its early stage and may change significantly in future releases. You are advised not to use it in production.</p></li>
+<li><p>To call <strong>AsyncMilvusClient</strong>, you need to get an event loop from asyncio to manage request handling. For details, refer to <a href="https://milvus.io/docs/use-async-milvus-client-with-asyncio.md#Tutorial-Use-AsyncMilvusClient-with-asyncio">Tutorial: Use AsyncMilvusClient with asyncio</a>.</p></li>
+</ul>
 
 </Admonition>
 
@@ -71,15 +72,15 @@ AsyncMilvusClient(
 
         - **Free & Serverless**
 
-            `https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com`
+            `<i>http</i>s://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com`
 
         - **Dedicated**
 
-            `https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
+            `<i>http</i>s://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
 
     - **Project Endpoint (On-Demand)**
 
-        `https://{project-id}.{region}.api.zillizcloud.com`
+        `<i>http</i>s://{project-id}.{region}.api.zillizcloud.com`
 
 - **user** (*string*) -
 
@@ -136,7 +137,7 @@ client = AsyncMilvusClient(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Set **uri** to your cluster endpoint. The **token** parameter can be a Zilliz Cloud API key with sufficient permissions or the credentials of a cluster user in the format of `username:p@ssw0rd`.
+<p>Set <strong>uri</strong> to your cluster endpoint. The <strong>token</strong> parameter can be a Zilliz Cloud API key with sufficient permissions or the credentials of a cluster user in the format of <code>username:p@ssw0rd</code>.</p>
 
 </Admonition>
 

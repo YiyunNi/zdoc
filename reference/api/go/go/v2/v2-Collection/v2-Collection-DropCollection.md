@@ -13,10 +13,10 @@ type: docx
 token: LBTLd1W4UoAbUHxvv6xce1gHnqf
 sidebar_position: 13
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud

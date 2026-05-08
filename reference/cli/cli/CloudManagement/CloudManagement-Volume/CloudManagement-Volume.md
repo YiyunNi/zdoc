@@ -12,10 +12,10 @@ token: YJ0WfaSiClY9p5d6Jykcba2anbc
 sidebar_position: 8
 sidebar_label: "Volume"
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud

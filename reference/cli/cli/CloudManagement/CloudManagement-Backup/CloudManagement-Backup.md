@@ -12,10 +12,10 @@ token: QTM7fqREelEFXhdTaMqc18IxnVb
 sidebar_position: 1
 sidebar_label: "Backup"
 keywords: 
+  - AI Hallucination
+  - AI Agent
+  - semantic search
   - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

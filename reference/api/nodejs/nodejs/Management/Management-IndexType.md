@@ -13,10 +13,10 @@ type: docx
 token: SI3Td00AroRtx8xXQcUce8i2nrb
 sidebar_position: 15
 keywords: 
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
   - zilliz
   - zilliz cloud
   - cloud

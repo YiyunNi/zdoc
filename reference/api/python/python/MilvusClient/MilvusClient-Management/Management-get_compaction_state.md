@@ -13,10 +13,10 @@ type: docx
 token: MSDVdu103obklexX8GvcW5cWnCf
 sidebar_position: 18
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,13 @@ This operation returns the current state of a compaction job. Use this after cal
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method was previously named `get_compact_state()`. The behavior is identical.
+<p>This method was previously named <code>get_compact_state()</code>. The behavior is identical.</p>
+
+</Admonition>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
 
 </Admonition>
 

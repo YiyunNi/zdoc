@@ -13,10 +13,10 @@ type: docx
 token: KrkGdWfDqoZjS1xmQM5cA3xGnbE
 sidebar_position: 1
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This function submits a bulk import job to a Milvus or Zilliz Cloud cluster via 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-`BulkImport()` is a package-level function in `github.com/milvus-io/milvus/client/v2/bulkwriter`, not a method on `*milvusclient.Client`. It speaks the REST `/v2/vectordb/jobs/import/create` endpoint directly, so it works with both Milvus open-source clusters (use `NewBulkImportOption`) and Zilliz Cloud (use `NewCloudBulkImportOption`).
+<p><code>BulkImport()</code> is a package-level function in <code>github.com/milvus-io/milvus/client/v2/bulkwriter</code>, not a method on <code>*milvusclient.Client</code>. It speaks the REST <code>/v2/vectordb/jobs/import/create</code> endpoint directly, so it works with both Milvus open-source clusters (use <code>NewBulkImportOption</code>) and Zilliz Cloud (use <code>NewCloudBulkImportOption</code>).</p>
 
 </Admonition>
 

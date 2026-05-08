@@ -13,10 +13,10 @@ type: docx
 token: ShzCdNgEGozKi3xa3lUcHpxQnaf
 sidebar_position: 4
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,21 +35,20 @@ This operation conducts a scalar filtering with a specified boolean expression.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated serving clusters and on-demand compute. 
-
-- For this operation in a collection of a serving cluster, please create **MilvusClient** with the cluster endpoint.
-
-    - **Free & Serverless**
-
-        `https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com`
-
-    - **Dedicated**
-
-        `https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
-
-- For this operation in a collection for on-demand compute, create **MilvusClient** with the project endpoints, and then create a session to attach to an on-demand cluster for searches.
-
-    `https://{project-id}.{region}.api.zillizcloud.com`
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
+<ul>
+<li><p>For this operation in a collection of a serving cluster, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p><strong>Free & Serverless</strong></p></li>
+</ul>
+<p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
+<ul>
+<li><strong>Dedicated</strong></li>
+</ul>
+<p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
+<ul>
+<li>For this operation in a collection for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints, and then create a session to attach to an on-demand cluster for searches.</li>
+</ul>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
 
 </Admonition>
 
@@ -90,9 +89,10 @@ query(
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - Setting this as `output_fields=["\*"]` outputs all fields.
-
-    - Setting this as `output_fields=["count(\*)"]` outputs the loaded entities that match the conditions specified in the **filter** argument. 
+    <ul>
+    <li><p>Setting this as <code>output_fields=["\*"]</code> outputs all fields.</p></li>
+    <li><p>Setting this as <code>output_fields=["count(\*)"]</code> outputs the loaded entities that match the conditions specified in the <strong>filter</strong> argument. </p></li>
+    </ul>
 
     </Admonition>
 
@@ -116,11 +116,9 @@ query(
 
         <Admonition type="info" icon="📘" title="What is the consistency level?">
 
-        Consistency in a distributed database specifically refers to the property that ensures every node or replica has the same view of data when writing or reading data at a given time.
-
-        Zilliz Cloud provides three consistency levels: **Strong**, **Bounded Staleness**, and **Eventually**, with **Bounded Staleness** set as the default.
-
-        You can easily tune the consistency level when conducting a vector similarity search or query to make it best suit your application.
+        <p>Consistency in a distributed database specifically refers to the property that ensures every node or replica has the same view of data when writing or reading data at a given time.</p>
+        <p>Zilliz Cloud provides three consistency levels: <strong>Strong</strong>, <strong>Bounded Staleness</strong>, and <strong>Eventually</strong>, with <strong>Bounded Staleness</strong> set as the default.</p>
+        <p>You can easily tune the consistency level when conducting a vector similarity search or query to make it best suit your application.</p>
 
         </Admonition>
 
@@ -132,7 +130,7 @@ query(
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        This parameter is valid when the default consistency level applies.
+        <p>This parameter is valid when the default consistency level applies.</p>
 
         </Admonition>
 
@@ -144,7 +142,7 @@ query(
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        This parameter is valid when a consistency level other than the default one applies.
+        <p>This parameter is valid when a consistency level other than the default one applies.</p>
 
         </Admonition>
 
@@ -174,7 +172,7 @@ A list of dictionaries with each dictionary representing a queried entity.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-If the number of returned entities is less than expected, duplicate entities may exist in your collection.
+<p>If the number of returned entities is less than expected, duplicate entities may exist in your collection.</p>
 
 </Admonition>
 

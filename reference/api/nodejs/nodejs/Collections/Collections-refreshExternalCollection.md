@@ -13,10 +13,10 @@ type: docx
 token: JoiWdRIFcojRI4xVXnCclEoVnh2
 sidebar_position: 31
 keywords: 
+  - Faiss vector database
+  - Chroma vector database
   - nlp search
   - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
   - zilliz
   - zilliz cloud
   - cloud

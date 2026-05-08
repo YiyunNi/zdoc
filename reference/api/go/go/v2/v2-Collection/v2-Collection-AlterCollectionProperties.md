@@ -13,10 +13,10 @@ type: docx
 token: DumcdeKcuoSJybxv0V5ckFrFnyg
 sidebar_position: 5
 keywords: 
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

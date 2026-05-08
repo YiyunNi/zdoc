@@ -13,10 +13,10 @@ type: docx
 token: WjbrdMFuXoR2etxfpMdcmIebnCh
 sidebar_position: 3
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation drops a database. (Dedicated only)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This command applies to Dedicated clusters.
+<p>This command applies to Dedicated clusters.</p>
 
 </Admonition>
 

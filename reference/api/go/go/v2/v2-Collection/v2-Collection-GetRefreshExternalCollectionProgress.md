@@ -13,10 +13,10 @@ type: docx
 token: OTM3db7aroAXAYxrTy4cyVbwnGG
 sidebar_position: 25
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud

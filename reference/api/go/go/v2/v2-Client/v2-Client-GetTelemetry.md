@@ -13,10 +13,10 @@ type: docx
 token: DfoBdvU6SoC16Yx8zuEcwgw0nHh
 sidebar_position: 5
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud

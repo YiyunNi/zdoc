@@ -13,10 +13,10 @@ type: docx
 token: C2YSddNqZoDNmNxWqqEcuzhKn4f
 sidebar_position: 2
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,9 +43,8 @@ Constructs an **AzureConnectParam** object by a set of parameters, such as **con
 
 <Admonition type="info" icon="📘" title="Notes">
 
-An **AzureConnectParam** object defines the parameters necessary for Zilliz Cloud to connect to an Azure blob storage bucket.
-
-You need to create this object before initializing a **[RemoteBulkWriter](./DataImport-RemoteBulkWriter)** object.
+<p>An <strong>AzureConnectParam</strong> object defines the parameters necessary for Zilliz Cloud to connect to an Azure blob storage bucket.</p>
+<p>You need to create this object before initializing a <strong><a href="./DataImport-RemoteBulkWriter">RemoteBulkWriter</a></strong> object.</p>
 
 </Admonition>
 
@@ -74,7 +73,7 @@ connect_param = RemoteBulkWriter.AzureConnectParam(
 
 - **account_url** (*str*)
 
-    A string in format like `https://<storage-account>.blob.core.windows.net`.
+    A string in format like `<i>http</i>s://<storage-account>.blob.core.windows.net`.
 
     Read [this link](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) for more info.
 

@@ -13,10 +13,10 @@ type: docx
 token: Ja99dnnaOoncwbx2zIPc4PjunXx
 sidebar_position: 3
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,7 +39,7 @@ await milvusClient.dropDatabase(data?)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated clusters.
+<p>This method applies only to dedicated clusters.</p>
 
 </Admonition>
 

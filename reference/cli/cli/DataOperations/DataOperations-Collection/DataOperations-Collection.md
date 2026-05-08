@@ -12,10 +12,10 @@ token: VXxdfhu8ZlORxZdXc1gcFwgtnb7
 sidebar_position: 2
 sidebar_label: "Collection"
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud

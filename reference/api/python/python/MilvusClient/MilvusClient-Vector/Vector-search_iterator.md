@@ -13,10 +13,10 @@ type: docx
 token: T9KhdDJQColJEuxZ7YOcV2zdnlb
 sidebar_position: 7
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation conducts a vector similarity search with an optional scalar filte
 
 <Admonition type="info" icon="📘" title="Notes">
 
-External collections do not support this operation.
+<p>External collections do not support this operation.</p>
 
 </Admonition>
 

@@ -13,10 +13,10 @@ type: docx
 token: DCLUdOpVjohl8HxPUx1cGjokngf
 sidebar_position: 1
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,9 +43,8 @@ construct_from_dict(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This is a class method. You should call it from the class instead of an instance of the class as follows:
-
-`FieldSchema.construct_from_dict()`
+<p>This is a class method. You should call it from the class instead of an instance of the class as follows:</p>
+<p><code>FieldSchema.construct_from_dict()</code></p>
 
 </Admonition>
 

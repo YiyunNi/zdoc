@@ -13,10 +13,10 @@ type: docx
 token: J0IBdbw3Voyqw9xnInUcn9EonTe
 sidebar_position: 28
 keywords: 
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,13 +39,14 @@ await milvusClient.truncateCollection(data: TruncateCollectionRequest)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-- **Irreversible operation**
-
-    Truncating a collection permanently removes all data.
-
-- **Schema preserved**
-
-    The collection structure, fields, indexes, and properties remain intact.
+<ul>
+<li><strong>Irreversible operation</strong></li>
+</ul>
+<p>Truncating a collection permanently removes all data.</p>
+<ul>
+<li><strong>Schema preserved</strong></li>
+</ul>
+<p>The collection structure, fields, indexes, and properties remain intact.</p>
 
 </Admonition>
 

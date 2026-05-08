@@ -13,10 +13,10 @@ type: docx
 token: XWSAdFkdDoaDPnxOtkEcuFETngL
 sidebar_position: 20
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

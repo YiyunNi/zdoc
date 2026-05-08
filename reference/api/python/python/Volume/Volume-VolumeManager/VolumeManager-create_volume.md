@@ -13,10 +13,10 @@ type: docx
 token: HWYXdlaGIoTNVUx34GycfwjAnrb
 sidebar_position: 1
 keywords: 
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # create_volume()
 
 This operation creates a volume.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method is available on Zilliz Cloud's control-plane Volume service. Create <code>VolumeManager</code> with <code>cloud_endpoint="https://api.cloud.zilliz.com"</code> and a Zilliz Cloud API key that has access to the target project.</p>
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 

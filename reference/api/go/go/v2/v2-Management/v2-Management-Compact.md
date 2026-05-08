@@ -13,10 +13,10 @@ type: docx
 token: VJKcdlljXofguixcGe5c2CwwnEf
 sidebar_position: 2
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud

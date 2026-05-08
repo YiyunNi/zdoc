@@ -13,10 +13,10 @@ type: docx
 token: H9IFdpWWUouzXOxKlx9cImP8nnd
 sidebar_position: 1
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -99,9 +99,10 @@ add_field(
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    - Each collection has only one primary field.
-
-    - A primary field should be of either the **DataType.INT64** type or the **DataType.VARCHAR** type.
+    <ul>
+    <li><p>Each collection has only one primary field.</p></li>
+    <li><p>A primary field should be of either the <strong>DataType.INT64</strong> type or the <strong>DataType.VARCHAR</strong> type.</p></li>
+    </ul>
 
     </Admonition>
 
@@ -135,11 +136,9 @@ add_field(
 
     <Admonition type="info" icon="📘" title="What is the partition key?">
 
-    To facilitate partition-oriented multi-tenancy, you can set a field as the partition key field so that Zilliz Cloud hashes the field values and distributes entities among the specified number of partitions accordingly.
-
-    When retrieving entities, ensure that the partition key field is used in the boolean expression to filter out entities of a specific field value.
-
-    For details, refer to [Use Partition Key](/docs/use-partition-key) and [Multi-tenancy](https://milvus.io/docs/multi_tenancy.md).
+    <p>To facilitate partition-oriented multi-tenancy, you can set a field as the partition key field so that Zilliz Cloud hashes the field values and distributes entities among the specified number of partitions accordingly.</p>
+    <p>When retrieving entities, ensure that the partition key field is used in the boolean expression to filter out entities of a specific field value.</p>
+    <p>For details, refer to <a href="/docs/use-partition-key">Use Partition Key</a> and <a href="https://milvus.io/docs/multi_tenancy.md">Multi-tenancy</a>.</p>
 
     </Admonition>
 

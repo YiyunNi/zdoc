@@ -13,10 +13,10 @@ type: docx
 token: CSpOd0XgWoVAhzx5xbVcpCVfnPg
 sidebar_position: 5
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,9 +43,8 @@ Constructs an **S3ConnectParam** object by a set of parameters, such as **bucket
 
 <Admonition type="info" icon="📘" title="Notes">
 
-An **S3ConnectParam** object defines the parameters necessary for Zilliz Cloud to connect to an AWS-S3-compatible bucket.
-
-You need to create this object before initializing a **[RemoteBulkWriter](./DataImport-RemoteBulkWriter)** object.
+<p>An <strong>S3ConnectParam</strong> object defines the parameters necessary for Zilliz Cloud to connect to an AWS-S3-compatible bucket.</p>
+<p>You need to create this object before initializing a <strong><a href="./DataImport-RemoteBulkWriter">RemoteBulkWriter</a></strong> object.</p>
 
 </Admonition>
 

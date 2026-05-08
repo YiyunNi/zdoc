@@ -13,10 +13,10 @@ type: docx
 token: E5uudOLJ3o1BIhx4LLoctf8TnLf
 sidebar_position: 4
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # list_volumes()
 
 This operation lists all volumes within a specific project in a paginated manner.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method is available on Zilliz Cloud's control-plane Volume service. Create <code>VolumeManager</code> with <code>cloud_endpoint="https://api.cloud.zilliz.com"</code> and a Zilliz Cloud API key that has access to the target project.</p>
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 

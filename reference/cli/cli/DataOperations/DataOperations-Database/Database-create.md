@@ -13,10 +13,10 @@ type: docx
 token: DaK3dvUJpoKOLTxy1iRc4YZAnjf
 sidebar_position: 1
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
   - zilliz
   - zilliz cloud
   - cloud
@@ -39,7 +39,7 @@ In Zilliz Cloud, a database serves as a logical unit for organizing and managing
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This command applies to Dedicated clusters.
+<p>This command applies to Dedicated clusters.</p>
 
 </Admonition>
 

@@ -13,10 +13,10 @@ type: docx
 token: BcAVdlDIioMUXTxqyZkcXfqznKd
 sidebar_position: 25
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
   - zilliz
   - zilliz cloud
   - cloud

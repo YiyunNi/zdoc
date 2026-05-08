@@ -13,10 +13,10 @@ type: docx
 token: OSehdj15Ao3AUvxOIJucXzU8nWW
 sidebar_position: 1
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
   - zilliz
   - zilliz cloud
   - cloud
@@ -65,7 +65,7 @@ Collection(
 
     <Admonition type="info" icon="📘" title="What is a schema?">
 
-    The schema is responsible for organizing data in the target collection. A valid schema should have multiple fields, which must include a primary key, a vector field, and several scalar fields.
+    <p>The schema is responsible for organizing data in the target collection. A valid schema should have multiple fields, which must include a primary key, a vector field, and several scalar fields.</p>
 
     </Admonition>
 
@@ -83,9 +83,8 @@ Collection(
 
     <Admonition type="info" icon="📘" title="What is sharding?">
 
-    Sharding refers to distributing write operations to different nodes to make the most of the parallel computing potential of a Milvus cluster for writing data.
-
-    By default, a collection contains one shard.
+    <p>Sharding refers to distributing write operations to different nodes to make the most of the parallel computing potential of a Milvus cluster for writing data.</p>
+    <p>By default, a collection contains one shard.</p>
 
     </Admonition>
 
@@ -97,11 +96,9 @@ Collection(
 
     <Admonition type="info" icon="📘" title="What is the consistency level?">
 
-    Consistency in a distributed database specifically refers to the property that ensures every node or replica has the same view of data when writing or reading data at a given time.
-
-    Zilliz Cloud provides three consistency levels: **Strong**, **Bounded Staleness**, and **Eventually**, with **Bounded Staleness** set as the default.
-
-    You can easily tune the consistency level when conducting a vector similarity search or query to make it best suit your application.
+    <p>Consistency in a distributed database specifically refers to the property that ensures every node or replica has the same view of data when writing or reading data at a given time.</p>
+    <p>Zilliz Cloud provides three consistency levels: <strong>Strong</strong>, <strong>Bounded Staleness</strong>, and <strong>Eventually</strong>, with <strong>Bounded Staleness</strong> set as the default.</p>
+    <p>You can easily tune the consistency level when conducting a vector similarity search or query to make it best suit your application.</p>
 
     </Admonition>
 

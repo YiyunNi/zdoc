@@ -12,10 +12,10 @@ token: E5cpfv4EPlpWJ5dV0iJcPwo4nyf
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud

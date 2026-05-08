@@ -13,10 +13,10 @@ type: docx
 token: N9d9df9IIojLZDxft1HcU0mkn0b
 sidebar_position: 22
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation alters an existing function in the collection by replacing it wit
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This does not apply to external collections.
+<p>This does not apply to external collections.</p>
 
 </Admonition>
 

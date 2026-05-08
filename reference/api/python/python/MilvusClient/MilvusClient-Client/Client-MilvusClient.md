@@ -13,10 +13,10 @@ type: docx
 token: SojTdgw1joOuA8xMzb5cMUFYnce
 sidebar_position: 2
 keywords: 
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,7 +43,7 @@ Constructs a client for common use cases.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This client serves as an easy-to-use alternative for the current set of APIs that handles Create, Read, Update, and Delete (CRUD) operations on Zilliz Cloud.
+<p>This client serves as an easy-to-use alternative for the current set of APIs that handles Create, Read, Update, and Delete (CRUD) operations on Zilliz Cloud.</p>
 
 </Admonition>
 
@@ -69,15 +69,15 @@ MilvusClient(
 
         - **Free & Serverless**
 
-            `https://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com`
+            `<i>http</i>s://{cluster-id}.serverless.{region}.vectordb.zillizcloud.com`
 
         - **Dedicated**
 
-            `https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
+            `<i>http</i>s://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
 
-    - **Project Endpoint (On-Demand)**
+    - **Project endpoint (On-demand)**
 
-        `https://{project-id}.{region}.api.zillizcloud.com`
+        `<i>http</i>s://{project-id}.{region}.api.zillizcloud.com`
 
 - **user** (*string*) -
 
@@ -130,7 +130,7 @@ client = MilvusClient(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Set **uri** to your cluster endpoint. The **token** parameter can be a Zilliz Cloud API key with sufficient permissions or the credentials of a cluster user in the format of `username:p@ssw0rd`.
+<p>Set <strong>uri</strong> to your cluster endpoint. The <strong>token</strong> parameter can be a Zilliz Cloud API key with sufficient permissions or the credentials of a cluster user in the format of <code>username:p@ssw0rd</code>.</p>
 
 </Admonition>
 

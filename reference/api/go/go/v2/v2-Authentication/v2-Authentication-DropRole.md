@@ -13,10 +13,10 @@ type: docx
 token: QKItdAf6HoDzMVxzWEbcDVL9n5r
 sidebar_position: 9
 keywords: 
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
   - zilliz
   - zilliz cloud
   - cloud

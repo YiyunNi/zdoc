@@ -13,10 +13,10 @@ type: docx
 token: BGo4dB2TuoMHeBxD8XrcuKHYnEb
 sidebar_position: 1
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,9 +35,8 @@ This operation installs shell completion.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-You need to manually run the `source` command after the install completes. 
-
-For example, if you install the complete command in zsh, you should run `source ~/.zshrc` to activate command completion.
+<p>You need to manually run the <code>source</code> command after the install completes. </p>
+<p>For example, if you install the complete command in zsh, you should run <code>source ~/.zshrc</code> to activate command completion.</p>
 
 </Admonition>
 

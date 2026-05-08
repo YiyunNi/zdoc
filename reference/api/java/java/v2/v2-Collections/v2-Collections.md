@@ -12,10 +12,10 @@ token: K6akf7IbXl5Jj1dFV8Fca62Inkd
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
   - zilliz
   - zilliz cloud
   - cloud

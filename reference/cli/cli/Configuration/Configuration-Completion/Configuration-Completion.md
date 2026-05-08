@@ -12,10 +12,10 @@ token: YMWHfEBNDlJSrddYr90cDBwenTc
 sidebar_position: 3
 sidebar_label: "Completion"
 keywords: 
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud

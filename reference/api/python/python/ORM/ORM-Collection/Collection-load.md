@@ -13,10 +13,10 @@ type: docx
 token: HQDndiGwloWKIexgPCUcEZGenOh
 sidebar_position: 20
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud
@@ -45,7 +45,7 @@ load(
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This operation is non-blocking. You can call `utility.wait_for_loading_complete()` to block the current process.
+<p>This operation is non-blocking. You can call <code>utility.wait_for_loading_complete()</code> to block the current process.</p>
 
 </Admonition>
 
@@ -75,7 +75,7 @@ This operation is non-blocking. You can call `utility.wait_for_loading_complete(
 
 <Admonition type="danger" icon="🚧" title="Warning">
 
-If you try to load a collection that is not indexed, you will receive a **MilvusException**.
+<p>If you try to load a collection that is not indexed, you will receive a <strong>MilvusException</strong>.</p>
 
 </Admonition>
 

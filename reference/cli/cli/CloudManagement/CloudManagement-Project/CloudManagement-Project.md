@@ -12,10 +12,10 @@ token: RMdtf53TElufWpdluDgc5veVnqc
 sidebar_position: 7
 sidebar_label: "Project"
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud

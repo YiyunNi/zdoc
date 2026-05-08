@@ -13,10 +13,10 @@ type: docx
 token: HCWBdorQdoONw2xaawacJWQkn1e
 sidebar_position: 1
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation modifies the properties of the specified database.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This method applies only to dedicated clusters.
+<p>This method applies only to dedicated clusters.</p>
 
 </Admonition>
 

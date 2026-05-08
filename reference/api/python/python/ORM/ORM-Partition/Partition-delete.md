@@ -13,10 +13,10 @@ type: docx
 token: V9BidASNqoWYrmxo11ecuN99neg
 sidebar_position: 1
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation deletes entities from a partition with a boolean expression.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Using the **partition_name** parameter in the **delete()** method of a **[Collection](./ORM-Collection)** object is equivalent to using the **delete()** method of a **[Partition](./ORM-Partition)** object.
+<p>Using the <strong>partition_name</strong> parameter in the <strong>delete()</strong> method of a <strong><a href="./ORM-Collection">Collection</a></strong> object is equivalent to using the <strong>delete()</strong> method of a <strong><a href="./ORM-Partition">Partition</a></strong> object.</p>
 
 </Admonition>
 

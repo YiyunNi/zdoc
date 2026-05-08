@@ -13,10 +13,10 @@ type: docx
 token: UjjpdBwaooRDdlxFHScc6dKwnTg
 sidebar_position: 8
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation inserts or updates data in a specific collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-External collections do not support this operation.
+<p>External collections do not support this operation.</p>
 
 </Admonition>
 

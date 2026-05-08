@@ -13,10 +13,10 @@ type: docx
 token: YXtHdG865oGg7IxwoZRcIJkQn8e
 sidebar_position: 6
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,7 @@ This operation revokes a privilege from a role.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-This command is available for Dedicated clusters only.
+<p>This command is available for Dedicated clusters only.</p>
 
 </Admonition>
 

@@ -13,10 +13,10 @@ type: docx
 token: SE6wdwuONoUwQ8x7fdgcKvNwnyg
 sidebar_position: 1
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - vector databases comparison
+  - Faiss
+  - Video search
+  - AI Hallucination
   - zilliz
   - zilliz cloud
   - cloud

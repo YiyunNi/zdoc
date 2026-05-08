@@ -12,10 +12,10 @@ token: RoBzflamplZFzYd1ZSWccuVfnnc
 sidebar_position: 15
 sidebar_label: "Snapshot"
 keywords: 
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud

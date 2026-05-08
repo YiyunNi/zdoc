@@ -13,10 +13,10 @@ type: docx
 token: AG5zdQCpXoy11MxWgD0ciYBRnJb
 sidebar_position: 30
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

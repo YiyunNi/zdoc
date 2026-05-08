@@ -13,10 +13,10 @@ type: docx
 token: FfZ6dqEk2o9Cn3xFAgTckLhsnS6
 sidebar_position: 5
 keywords: 
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

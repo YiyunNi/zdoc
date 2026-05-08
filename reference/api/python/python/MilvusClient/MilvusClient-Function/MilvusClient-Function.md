@@ -13,10 +13,10 @@ type: docx
 token: RrW9dOM8do7d3ixXIP9clJJUnVg
 sidebar_position: 3
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
   - zilliz
   - zilliz cloud
   - cloud
@@ -83,7 +83,7 @@ Function(
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    This applies only when you set `function_type` to `FunctionType.BM25` and `FunctionType.TEXTEMBEDDING`.
+    <p>This applies only when you set <code>function_type</code> to <code>FunctionType.BM25</code> and <code>FunctionType.TEXTEMBEDDING</code>.</p>
 
     </Admonition>
 
@@ -137,7 +137,7 @@ Function(
 
             <Admonition type="info" icon="📘" title="Notes">
 
-            If you shorten the vector dimension, ensure the `dim` value specified in the schema's `add_field` method for the vector field matches the final output dimension of your embedding function.
+            <p>If you shorten the vector dimension, ensure the <code>dim</code> value specified in the schema's <code>add_field</code> method for the vector field matches the final output dimension of your embedding function.</p>
 
             </Admonition>
 

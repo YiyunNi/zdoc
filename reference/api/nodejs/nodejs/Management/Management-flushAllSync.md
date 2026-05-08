@@ -13,10 +13,10 @@ type: docx
 token: HoRIdZtHjosja7xOdNPc8CConrb
 sidebar_position: 23
 keywords: 
+  - Multimodal search
+  - vector search algorithms
   - Question answering system
   - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud

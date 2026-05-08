@@ -12,10 +12,10 @@ token: SIN6f7FuAlseoDdllIXck663nBg
 sidebar_position: 1
 sidebar_label: "DataImport"
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
   - zilliz
   - zilliz cloud
   - cloud

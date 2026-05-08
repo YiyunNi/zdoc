@@ -13,10 +13,10 @@ type: docx
 token: LMXGdDnueontIFxuqAIcS8D6nJc
 sidebar_position: 19
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud

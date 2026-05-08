@@ -13,10 +13,10 @@ type: docx
 token: G0s2d1DVconhc5xeX02cJWbUnLf
 sidebar_position: 12
 keywords: 
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud

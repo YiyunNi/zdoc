@@ -13,10 +13,10 @@ type: docx
 token: KEPYdKup1o3nHdxKbjvcQUzwnnd
 sidebar_position: 8
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # get_load_state()
 
 This operation displays whether a specified collection or partition is loaded or not.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 
@@ -69,7 +75,7 @@ A dictionary that contains the status of the specified collection or partition.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-A collection is in the loaded state if any or all of its partitions are loaded.
+<p>A collection is in the loaded state if any or all of its partitions are loaded.</p>
 
 </Admonition>
 

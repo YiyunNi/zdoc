@@ -13,10 +13,10 @@ type: docx
 token: P9MFdEHMKoAfshxQhamcWrGknWg
 sidebar_position: 26
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

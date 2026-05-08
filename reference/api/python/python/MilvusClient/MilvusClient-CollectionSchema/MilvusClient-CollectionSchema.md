@@ -13,10 +13,10 @@ type: docx
 token: SSiodq10FoH26hx2HlccfcAgnje
 sidebar_position: 2
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud
@@ -58,7 +58,7 @@ CollectionSchema(
 
     <Admonition type="info" icon="📘" title="What is a field schema?">
 
-    A field schema represents and contains metadata for a single field, while **CollectionSchema** ties together a list of FieldSchema objects to define the full schema.
+    <p>A field schema represents and contains metadata for a single field, while <strong>CollectionSchema</strong> ties together a list of FieldSchema objects to define the full schema.</p>
 
     </Admonition>
 
@@ -68,19 +68,23 @@ CollectionSchema(
 
     If a description is not provided, it will be set to an empty string.
 
-- **external_source** (*string*) -
+- **external_source** (*str*) -
 
-    The external source URI, which should be the name of an accessible external volume..
+    The external source URI, which should be a `volume://` URI that points to an accessible external volume. For example, `volume://<volume-name>/path/to/folder/`..
 
-- **external_spec** (*string*) -
+- **external_spec** (*str*) -
 
     The external source specifications, which are a set of secondary parameters:
 
-    - **format** (*string*) - 
+    - **format** (*str*) - 
 
         The format of the target source data files.
 
         Possible values are `parquet`, `vortex`, `lance-table`, and `iceberg-table`.
+
+    - **snapshot_id** (*str*) -
+
+        The ID of an Iceberg table. This applies only when `format` is `iceberg-table`.
 
 - **kwargs** -
 
@@ -102,7 +106,7 @@ CollectionSchema(
 
         <Admonition type="info" icon="📘" title="What is a dynamic field?">
 
-        If the data being inserted into the target collection includes fields that are not defined in the collection's schema, those fields will be saved in a dynamic field as key-value pairs.
+        <p>If the data being inserted into the target collection includes fields that are not defined in the collection's schema, those fields will be saved in a dynamic field as key-value pairs.</p>
 
         </Admonition>
 
@@ -130,11 +134,9 @@ CollectionSchema(
 
         <Admonition type="info" icon="📘" title="What is a partition key?">
 
-        Once a field is designated as the partition key, Zilliz Cloud automatically creates a partition for each unique value in this field and saves entities in these partitions accordingly.
-
-        This is particularly useful when implementing data separation based on a specific key, such as partition-oriented multi-tenancy.
-
-        As an alternative, you can set **partition_key_field** when creating a **CollectionSchema** object.
+        <p>Once a field is designated as the partition key, Zilliz Cloud automatically creates a partition for each unique value in this field and saves entities in these partitions accordingly.</p>
+        <p>This is particularly useful when implementing data separation based on a specific key, such as partition-oriented multi-tenancy.</p>
+        <p>As an alternative, you can set <strong>partition<em>key</em>field</strong> when creating a <strong>CollectionSchema</strong> object.</p>
 
         </Admonition>
 

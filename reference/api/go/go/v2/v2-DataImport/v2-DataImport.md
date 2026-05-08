@@ -12,10 +12,10 @@ token: Bzpgf2nwnlirRodpt9zcacAun7d
 sidebar_position: 5
 sidebar_label: "DataImport"
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud

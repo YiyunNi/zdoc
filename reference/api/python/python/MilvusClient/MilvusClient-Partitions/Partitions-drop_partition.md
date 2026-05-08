@@ -13,10 +13,10 @@ type: docx
 token: HkOFdhgbOoz1wlxJIgWcU7EonWc
 sidebar_position: 2
 keywords: 
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,7 +35,13 @@ This operation drops a specified partition from the current collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-Before dropping a partition, you must first release it.
+<p>Before dropping a partition, you must first release it.</p>
+
+</Admonition>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This only applies to managed collections.</p>
 
 </Admonition>
 

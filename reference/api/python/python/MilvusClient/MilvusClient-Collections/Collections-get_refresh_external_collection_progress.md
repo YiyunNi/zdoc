@@ -13,10 +13,10 @@ type: docx
 token: HITBdKb0HotcK0xCKsycEeuqnXe
 sidebar_position: 26
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,13 @@ import Admonition from '@theme/Admonition';
 # get_refresh_external_collection_progress()
 
 This operation returns the progress of a specified external collection refresh job.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This requires a MilvusClient set up using the project endpoint as follows:</p>
+<p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 
@@ -64,19 +71,6 @@ def get_refresh_external_collection_progress(
 **RETURNS:**
 
 A **RefreshExternalCollectionJobInfo** object that records the details of the specified external collection refresh job.
-
-```python
-{
-    'job_id': 4325693842392,
-    'collection_name': 'test_collection',
-    'state': 'RefreshPending',
-    'progress': 67,
-    'reason': ''
-    'external_source': 's3://s3.<region-id>.amazonaws.com/<bucket>/' 
-    'start_time': 1776470400000
-    'end_time': 1776470434567    
-}
-```
 
 **PARAMETERS:**
 
@@ -131,8 +125,8 @@ from pymilvus import MilvusClient
 
 # 1. Set up a milvus client
 client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
+    uri="YOUR_PROJECT_ENDPOINT",
+    token="YOUR_API_KEY"
 )
 
 job_id = client.refresh_external_collection(
@@ -153,3 +147,4 @@ while True:
 
     time.sleep(2)
 ```
+

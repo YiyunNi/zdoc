@@ -13,10 +13,10 @@ type: docx
 token: AKpldMJPTo6MfuxxrpicBKRInCh
 sidebar_position: 27
 keywords: 
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud

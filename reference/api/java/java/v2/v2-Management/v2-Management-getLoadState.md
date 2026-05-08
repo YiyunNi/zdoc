@@ -13,10 +13,10 @@ type: docx
 token: PAs7dwIIrop4OixCUr8ctHVLnXc
 sidebar_position: 9
 keywords: 
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud
@@ -72,7 +72,7 @@ A Boolean value that indicates the status of the specified collection or partiti
 
 <Admonition type="info" icon="📘" title="Notes">
 
-A collection is in the loaded state if any or all of its partitions are loaded.
+<p>A collection is in the loaded state if any or all of its partitions are loaded.</p>
 
 </Admonition>
 
