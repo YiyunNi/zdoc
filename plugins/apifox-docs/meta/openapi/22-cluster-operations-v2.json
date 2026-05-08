@@ -476,10 +476,10 @@
                       "Capacity-optimized",
                       "Tiered-storage"
                     ],
-                    "description": "CU type of the cluster.<br/> This applies to dedicated clusters only. For free and serverless clusters, the value is empty.",
+                    "description": "CU type of the cluster.<br/> This applies to dedicated clusters only. For free and serverless clusters, the value is empty.<br/>For possible values, you can refer to the drop-down below or find them when you create cluster on Zilliz Cloud console.",
                     "x-i18n": {
                       "zh-CN": {
-                        "description": "待创建集群使用的 CU 类型。<br/>仅适用于 Dedicated 集群。对于 Free 和 Serverless 集群，该值为空。"
+                        "description": "待创建集群使用的 CU 类型。<br/>仅适用于 Dedicated 集群。对于 Free 和 Serverless 集群，该值为空。<br/>可能的值可以参考下拉选项，或在 Zilliz Cloud 控制台创建集群时查看。"
                       }
                     }
                   },

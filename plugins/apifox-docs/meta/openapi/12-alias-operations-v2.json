@@ -37,7 +37,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`.",
+            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`. If you are using a project endpoint, only a valid API key with sufficient permissions applies.",
             "required": true,
             "example": "Bearer {{TOKEN}}",
             "schema": {
@@ -213,7 +213,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`.",
+            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`. If you are using a project endpoint, only a valid API key with sufficient permissions applies.",
             "required": true,
             "example": "Bearer {{TOKEN}}",
             "schema": {
@@ -412,7 +412,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`.",
+            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`. If you are using a project endpoint, only a valid API key with sufficient permissions applies.",
             "required": true,
             "example": "Bearer {{TOKEN}}",
             "schema": {
@@ -599,7 +599,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`.",
+            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`. If you are using a project endpoint, only a valid API key with sufficient permissions applies.",
             "required": true,
             "example": "Bearer {{TOKEN}}",
             "schema": {
@@ -769,7 +769,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`.",
+            "description": "The authentication token should be <include target=\"zilliz\">an API key with appropriate privileges or </include>a pair of colon-joined username and password, like `username:password`. If you are using a project endpoint, only a valid API key with sufficient permissions applies.",
             "required": true,
             "example": "Bearer {{TOKEN}}",
             "schema": {

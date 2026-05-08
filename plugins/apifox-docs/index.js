@@ -1,58 +1,7 @@
 const RefGen = require('./refGen');
 const S3Uploader = require('./s3Uploader');
 const fs = require('node:fs')
-const path = require('node:path')
-
-function loadSpecifications(inputPath) {
-    const stat = fs.statSync(inputPath)
-    if (stat.isFile()) {
-        return JSON.parse(fs.readFileSync(inputPath, 'utf-8'))
-    }
-
-    if (!stat.isDirectory()) {
-        throw new Error(`Path "${inputPath}" is neither a file nor a directory`)
-    }
-
-    const files = fs.readdirSync(inputPath)
-        .filter(f => f.endsWith('.json'))
-        .sort()
-
-    if (files.length === 0) {
-        throw new Error(`No .json files found in directory "${inputPath}"`)
-    }
-
-    let spec = null
-
-    for (const file of files) {
-        const content = JSON.parse(fs.readFileSync(path.join(inputPath, file), 'utf-8'))
-
-        if (!spec) {
-            spec = { ...content }
-            continue
-        }
-
-        if (content.tags) {
-            spec.tags = [...(spec.tags || []), ...content.tags]
-        }
-        if (content.paths) {
-            spec.paths = { ...(spec.paths || {}), ...content.paths }
-        }
-        if (content.components) {
-            spec.components = spec.components || {}
-            for (const key of Object.keys(content.components)) {
-                spec.components[key] = {
-                    ...(spec.components[key] || {}),
-                    ...content.components[key]
-                }
-            }
-        }
-        if (content.servers) {
-            spec.servers = content.servers
-        }
-    }
-
-    return spec
-}
+const { loadSpecifications } = require('./specLoader')
 
 module.exports = function (context, options) {
     return {

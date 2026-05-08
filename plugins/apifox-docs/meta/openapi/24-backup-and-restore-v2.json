@@ -2187,10 +2187,10 @@
                 "properties": {
                   "projectId": {
                     "type": "string",
-                    "description": "The ID of the project to which the restored cluster belongs.",
+                    "description": "The ID of the project to which the restored cluster belongs. If the specified cluster in the path is not in the region bound to the project, the restoration will fail.",
                     "x-i18n": {
                       "zh-CN": {
-                        "description": "恢复后的集群所属的项目 ID。"
+                        "description": "恢复后的集群所属的项目 ID。如果路径中指定的集群不在绑定到该项目的区域内，恢复将失败。"
                       }
                     }
                   },

@@ -1,5 +1,6 @@
 const nunjucks = require("nunjucks")
 const fs = require('node:fs')
+const { resolveRefs } = require('./specLoader')
 
 const planeConfig = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/plane-config.json', 'utf-8'))
 
@@ -107,7 +108,7 @@ class refGen {
     const autoPositions = {}
     for (const page_url of Object.keys(specifications.paths)) {
       for (const method of Object.keys(specifications.paths[page_url])) {
-        const specification = this.resolveRefs(specifications.paths[page_url][method], specifications)
+        const specification = resolveRefs(specifications.paths[page_url][method], specifications)
 
         if (specification?.["x-include-target"] && !specification["x-include-target"].includes(target)) {
           continue
@@ -452,69 +453,6 @@ class refGen {
       return returns
   }
 
-  resolveRefs(obj, spec, visited = new Set(), depth = 0) {
-    if (!obj || typeof obj !== 'object') {
-      return obj
-    }
-
-    if (depth > CONFIG.maxRefDepth) {
-      console.warn(`Warning: Max $ref resolution depth (${CONFIG.maxRefDepth}) exceeded, returning as-is`)
-      return obj
-    }
-
-    if (visited.has(obj)) {
-      return obj
-    }
-    visited.add(obj)
-
-    if (Array.isArray(obj)) {
-      return obj.map(item => this.resolveRefs(item, spec, visited, depth))
-    }
-
-    if (obj.$ref) {
-      const refPath = obj.$ref
-      if (refPath.startsWith('#/')) {
-        const pathParts = refPath.substring(2).split('/').map(p => p.replace(/~1/g, '/').replace(/~0/g, '~'))
-        let resolved = spec
-
-        for (const part of pathParts) {
-          if (resolved && typeof resolved === 'object' && part in resolved) {
-            resolved = resolved[part]
-          } else {
-            console.warn(`Could not resolve reference: ${refPath}`)
-            return obj
-          }
-        }
-
-        return this.resolveRefs(resolved, spec, new Set(), depth + 1)
-      }
-      return obj
-    }
-
-    const resolved = {}
-    for (const [key, value] of Object.entries(obj)) {
-      if (key === 'description' && typeof value === 'object') {
-        // Handle description objects while preserving object structure when needed
-        if (value.type && (value.description || value.value)) {
-          // Preserve schema objects
-          resolved[key] = value
-        } else if (typeof value === 'object' && (value.description !== undefined || value.value !== undefined)) {
-          // For simple description containers, preserve the object
-          resolved[key] = value
-        } else if (typeof value === 'object') {
-          // For other objects, stringify as last resort
-          resolved[key] = JSON.stringify(value)
-        } else {
-          // For primitive values
-          resolved[key] = value
-        }
-      } else {
-        resolved[key] = this.resolveRefs(value, spec, visited, depth)
-      }
-    }
-
-    return resolved
-  }
 }
 
 module.exports = refGen

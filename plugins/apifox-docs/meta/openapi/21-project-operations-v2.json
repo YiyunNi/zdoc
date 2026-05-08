@@ -233,6 +233,7 @@
                         {
                           "projectName": "Default Project",
                           "projectId": "proj-xxxxxxxxxxxxxxxxxxxxxxx",
+                          "regionIds": ["aws-us-east-1"],
                           "instanceCount": 2,
                           "createTime": "2023-08-16T07:34:06Z",
                           "plan": "Enterprise",
@@ -665,6 +666,7 @@
                       "data": {
                         "projectId": "proj-x",
                         "projectName": "My Project",
+                        "regionIds": ["aws-us-east-1"],
                         "instanceCount": 2,
                         "createTime": "2023-08-16T07:34:06Z",
                         "plan": "Enterprise",
