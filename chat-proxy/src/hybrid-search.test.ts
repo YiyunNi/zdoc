@@ -91,21 +91,3 @@ describe('fuseWithRRF', () => {
   });
 });
 
-describe('setQueryEmbedding / getQueryEmbedding', () => {
-  it('stores and retrieves an embedding', async () => {
-    const {setQueryEmbedding, getQueryEmbedding} = await import('./rag.js');
-    const testEmbedding = [0.1, 0.2, 0.3];
-    setQueryEmbedding(testEmbedding);
-    expect(getQueryEmbedding()).toEqual(testEmbedding);
-    setQueryEmbedding(null);
-    expect(getQueryEmbedding()).toBeNull();
-  });
-
-  it('resets between calls', async () => {
-    const {setQueryEmbedding, getQueryEmbedding} = await import('./rag.js');
-    setQueryEmbedding([1, 2, 3]);
-    expect(getQueryEmbedding()).toEqual([1, 2, 3]);
-    setQueryEmbedding(null);
-    expect(getQueryEmbedding()).toBeNull();
-  });
-});

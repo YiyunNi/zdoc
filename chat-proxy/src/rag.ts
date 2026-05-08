@@ -381,8 +381,8 @@ export async function searchDocsHybrid(
   sectionFilter?: string,
   entities?: string[],
   entityFilter?: string[],
+  queryEmbedding?: number[] | null,
 ): Promise<SearchResult[]> {
-  const queryEmbedding = getQueryEmbedding();
 
   if (!queryEmbedding) {
     const results = await searchDocsFTS5(query, topK, sectionFilter, entityFilter);
@@ -415,8 +415,8 @@ export async function searchDocsHybrid(
   return fused;
 }
 
-export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, entities?: string[], entityFilter?: string[]): Promise<SearchResult[]> {
-  return searchDocsHybrid(query, topK, sectionFilter, entities, entityFilter);
+export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, entities?: string[], entityFilter?: string[], queryEmbedding?: number[] | null): Promise<SearchResult[]> {
+  return searchDocsHybrid(query, topK, sectionFilter, entities, entityFilter, queryEmbedding);
 }
 
 // ---------------------------------------------------------------------------
@@ -1173,30 +1173,3 @@ export async function fetchDocContent(url: string, maxChars = 6000): Promise<str
   }
 }
 
-// ---------------------------------------------------------------------------
-// Request-scoped section filter — set before streaming, used by tools
-// ---------------------------------------------------------------------------
-
-let activeSectionFilter: string | undefined;
-
-export function setActiveSectionFilter(filter: string | undefined): void {
-  activeSectionFilter = filter;
-}
-
-export function getActiveSectionFilter(): string | undefined {
-  return activeSectionFilter;
-}
-
-// ---------------------------------------------------------------------------
-// Request-scoped query embedding — set before search, reused across tools
-// ---------------------------------------------------------------------------
-
-let activeQueryEmbedding: number[] | null = null;
-
-export function setQueryEmbedding(embedding: number[] | null): void {
-  activeQueryEmbedding = embedding;
-}
-
-export function getQueryEmbedding(): number[] | null {
-  return activeQueryEmbedding;
-}

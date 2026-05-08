@@ -1,39 +1,48 @@
 import {z} from 'zod';
 import {tool} from 'ai';
-import {searchDocs, computeRetrievalConfidence, getActiveSectionFilter} from '../rag.js';
+import {searchDocs, computeRetrievalConfidence} from '../rag.js';
 import {rewriteQuery} from '../query-rewrite.js';
 import {extractEntities} from '../entity-extract.js';
 import {truncateForModel} from './index.js';
 
-export const searchDocsTool = tool({
-  description:
-    'Search Zilliz Cloud / Milvus documentation using hybrid (keyword + semantic) search. ' +
-    'Call this BEFORE answering any technical question — do NOT guess from training data. ' +
-    'Use focused, specific queries rather than copying the full user question. ' +
-    'Call multiple times with different queries for complex or multi-part questions.',
-  inputSchema: z.object({
-    query: z.string().describe('A focused keyword search query'),
-    topK: z.number().optional().default(6).describe('Number of results to return'),
-  }),
-  execute: async ({query, topK}) => {
-    // Rewrite query for better retrieval
-    const optimizedQuery = await rewriteQuery(query);
-    // Extract entities to boost results mentioning key technical terms
-    const entities = await extractEntities(query);
-    const results = await searchDocs(optimizedQuery, topK, getActiveSectionFilter(), entities, entities);
-    const confidence = computeRetrievalConfidence(results);
+export interface RagToolContext {
+  sectionFilter?: string;
+  queryEmbedding?: number[] | null;
+}
 
-    return {
-      results: results.map(r => ({
-        title: r.doc_title,
-        url: r.doc_url,
-        section: r.section,
-        content: truncateForModel(r.content, 800),
-        score: r.score,
-      })),
-      confidence: confidence.level,
-      avgScore: confidence.avgScore,
-      totalResults: results.length,
-    };
-  },
-});
+export function createSearchDocsTool(context: RagToolContext = {}) {
+  return tool({
+    description:
+      'Search Zilliz Cloud / Milvus documentation using hybrid (keyword + semantic) search. ' +
+      'Call this BEFORE answering any technical question — do NOT guess from training data. ' +
+      'Use focused, specific queries rather than copying the full user question. ' +
+      'Call multiple times with different queries for complex or multi-part questions.',
+    inputSchema: z.object({
+      query: z.string().describe('A focused keyword search query'),
+      topK: z.number().optional().default(6).describe('Number of results to return'),
+    }),
+    execute: async ({query, topK}) => {
+      // Rewrite query for better retrieval
+      const optimizedQuery = await rewriteQuery(query);
+      // Extract entities to boost results mentioning key technical terms
+      const entities = await extractEntities(query);
+      const results = await searchDocs(optimizedQuery, topK, context.sectionFilter, entities, entities, context.queryEmbedding);
+      const confidence = computeRetrievalConfidence(results);
+
+      return {
+        results: results.map(r => ({
+          title: r.doc_title,
+          url: r.doc_url,
+          section: r.section,
+          content: truncateForModel(r.content, 800),
+          score: r.score,
+        })),
+        confidence: confidence.level,
+        avgScore: confidence.avgScore,
+        totalResults: results.length,
+      };
+    },
+  });
+}
+
+export const searchDocsTool = createSearchDocsTool();
