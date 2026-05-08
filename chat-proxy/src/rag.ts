@@ -205,12 +205,43 @@ export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?
   const pool = getPool();
 
   let sql = `
-    SELECT c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section,
-           c.content, c.weight,
-           ts_rank_cd(c.search_vector, query) AS rank
-    FROM doc_chunks c, plainto_tsquery('english', $1) query
-    WHERE c.search_vector @@ query
-      AND c.doc_url != '/docs/home'`;
+    WITH query_terms AS (
+      SELECT array_to_string(
+        ARRAY(
+          SELECT quote_literal(lexeme)
+          FROM unnest(tsvector_to_array(to_tsvector('english', $1))) AS lexeme
+        ),
+        ' | '
+      ) AS or_query
+    ), query AS (
+      SELECT
+        websearch_to_tsquery('english', $1) AS strict_tsq,
+        CASE
+          WHEN query_terms.or_query = '' THEN NULL
+          ELSE to_tsquery('english', query_terms.or_query)
+        END AS fallback_tsq
+      FROM query_terms
+    ), matched AS (
+      SELECT c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section,
+             c.content, c.weight, c.entities,
+             ts_rank_cd(c.search_vector, query.strict_tsq) AS rank
+      FROM doc_chunks c, query
+      WHERE c.search_vector @@ query.strict_tsq
+        AND c.doc_url != '/docs/home'
+    ), fallback AS (
+      SELECT c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section,
+             c.content, c.weight, c.entities,
+             ts_rank_cd(c.search_vector, query.fallback_tsq) AS rank
+      FROM doc_chunks c, query
+      WHERE NOT EXISTS (SELECT 1 FROM matched)
+        AND query.fallback_tsq IS NOT NULL
+        AND c.doc_url != '/docs/home'
+        AND c.search_vector @@ query.fallback_tsq
+    )
+    SELECT * FROM matched
+    UNION ALL
+    SELECT * FROM fallback
+    WHERE NOT EXISTS (SELECT 1 FROM matched)`;
 
   const params: (string | number | string[])[] = [query];
   let paramIdx = 2;
@@ -218,14 +249,14 @@ export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?
   if (sectionFilter) {
     const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
     if (m) {
-      sql += m[1] === '!=' ? ` AND c.section != $${paramIdx}` : ` AND c.section = $${paramIdx}`;
+      sql = `SELECT * FROM (${sql}) AS search_results WHERE section ${m[1] === '!=' ? '!=' : '='} $${paramIdx}`;
       params.push(m[2]);
       paramIdx++;
     }
   }
 
   if (entityFilter && entityFilter.length > 0) {
-    sql += ` AND c.entities ?| $${paramIdx}::text[]`;
+    sql = `SELECT * FROM (${sql}) AS search_results WHERE entities ?| $${paramIdx}::text[]`;
     params.push(entityFilter);
     paramIdx++;
   }

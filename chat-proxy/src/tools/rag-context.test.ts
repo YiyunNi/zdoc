@@ -4,14 +4,6 @@ vi.mock('ai', () => ({
   tool: vi.fn((definition: any) => definition),
 }));
 
-vi.mock('../query-rewrite.js', () => ({
-  rewriteQuery: vi.fn(async (query: string) => `rewritten ${query}`),
-}));
-
-vi.mock('../entity-extract.js', () => ({
-  extractEntities: vi.fn(async () => ['entity']),
-}));
-
 const searchDocsMock = vi.hoisted(() => vi.fn());
 const searchDocsFTS5Mock = vi.hoisted(() => vi.fn());
 const listPagesMock = vi.hoisted(() => vi.fn());
@@ -42,11 +34,11 @@ describe('RAG tool request context', () => {
     await tool.execute({query: 'collection', topK: 5});
 
     expect(searchDocsMock).toHaveBeenCalledWith(
-      'rewritten collection',
+      'collection',
       5,
       'section == "cloud-guides"',
-      ['entity'],
-      ['entity'],
+      undefined,
+      undefined,
       queryEmbedding,
     );
   });
@@ -58,7 +50,7 @@ describe('RAG tool request context', () => {
     await tool.execute({topic: 'create collection', language: 'python'});
 
     expect(searchDocsFTS5Mock).toHaveBeenCalledWith(
-      'create collection python code example',
+      'create_collection python',
       4,
       'section == "byoc-guides"',
     );

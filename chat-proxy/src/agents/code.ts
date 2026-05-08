@@ -15,5 +15,6 @@ Call searchDocs with a query matching the user's topic (e.g., "Python SDK code e
 If the user specifies a language or SDK, use it. Otherwise default to Python. Generate complete, working code with imports and comments.
 
 ## Tools — MANDATORY
-You MUST call searchDocs or getCodeExample as your FIRST tool. Never generate code from memory alone.`,
+You MUST call searchDocs as your FIRST tool. Never call getCodeExample before searchDocs.
+Use getCodeExample only as a fallback when searchDocs snippets do not contain enough SDK/API/code detail.`,
 };

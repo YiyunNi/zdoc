@@ -307,6 +307,17 @@ describe.skipIf(!hasDb)('Runtime config with profile_name', () => {
     expect(value!.profileName).toBe('my-provider');
   });
 
+  it('clears dimensions when runtime config is updated without dimensions', async () => {
+    await cleanTables();
+
+    await setRuntimeConfigValue('embedding', 'bedrock', 'us.cohere.embed-v4:0', null, 1024);
+    await setRuntimeConfigValue('embedding', 'bedrock', 'cohere.embed-v4:0');
+
+    const value = await getRuntimeConfigValue('embedding');
+    expect(value).not.toBeNull();
+    expect(value!.dimensions).toBeNull();
+  });
+
   it('getRuntimeConfigAll returns profileName field', async () => {
     await cleanTables();
 

@@ -1,13 +1,14 @@
 import {randomUUID} from 'crypto';
 import {Hono, type Context, type MiddlewareHandler} from 'hono';
 import {cors} from 'hono/cors';
-import {streamText, stepCountIs} from 'ai';
+import {streamText, stepCountIs, type Tool} from 'ai';
 import type {ChatRequest} from './types.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
 import {checkGuard} from './guard.js';
 import {searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
 import {groundAtomically} from './grounding-agent.js';
+import {computeGrounding} from './grounding.js';
 import {routeIntent} from './router.js';
 import {getAgent} from './agents/index.js';
 import {getToolsForAgent, type ToolName} from './tools/index.js';
@@ -27,6 +28,7 @@ import {
   semanticCacheWrite,
   computeEmbedding,
   getSemanticCacheConfig,
+  isSemanticCacheEnabled,
 } from './semantic-cache.js';
 import type {SemanticCacheHit} from './semantic-cache.js';
 import type {TokenUsage} from './types.js';
@@ -47,7 +49,31 @@ const TOOL_COLLECTION_MAX_STEPS = 2;
 const TOOL_COLLECTION_TIMEOUT_MS = 30000;
 const FINAL_SYNTHESIS_TIMEOUT_MS = 30000;
 const FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS = 1600;
-const EMBEDDING_BUDGET_MS = 1500;
+const EMBEDDING_BUDGET_MS = Number(process.env.EMBEDDING_BUDGET_MS || '') || 1500;
+const SEMANTIC_CACHE_LOOKUP_BUDGET_MS = Number(process.env.SEMANTIC_CACHE_LOOKUP_BUDGET_MS || '') || 250;
+const QUERY_EMBEDDING_ENABLED = process.env.QUERY_EMBEDDING_ENABLED !== 'false';
+const TOOL_EMBEDDING_BUDGET_MS = Number(process.env.TOOL_EMBEDDING_BUDGET_MS || '') || 75;
+const PAGE_CONTEXT_MAX_CHARS = Number(process.env.PAGE_CONTEXT_MAX_CHARS || '') || 3000;
+const TOOL_CONTEXT_MAX_CHARS = Number(process.env.TOOL_CONTEXT_MAX_CHARS || '') || 2500;
+const TOOL_MODEL_OUTPUT_MAX_CHARS = Number(process.env.TOOL_MODEL_OUTPUT_MAX_CHARS || '') || 1200;
+const FAST_PATH_ENABLED = process.env.FAST_PATH_ENABLED !== 'false';
+const FAST_PATH_MAX_TOOL_ROUNDS = Number(process.env.FAST_PATH_MAX_TOOL_ROUNDS || '') || 2;
+const FAST_PATH_CODE_MAX_TOOL_ROUNDS = Number(process.env.FAST_PATH_CODE_MAX_TOOL_ROUNDS || '') || 1;
+const FAST_PATH_MAX_OUTPUT_TOKENS = Number(process.env.FAST_PATH_MAX_OUTPUT_TOKENS || '') || 1200;
+const FAST_PATH_TIMEOUT_MS = Number(process.env.FAST_PATH_TIMEOUT_MS || '') || 30000;
+const TOOLLESS_RAG_ENABLED = process.env.TOOLLESS_RAG_ENABLED !== 'false';
+const TOOLLESS_RAG_AGENTS = new Set((process.env.TOOLLESS_RAG_AGENTS || 'code,general')
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean));
+const TOOLLESS_RAG_TOP_K = Number(process.env.TOOLLESS_RAG_TOP_K || '') || 4;
+const TOOLLESS_RAG_MIN_RESULTS = Number(process.env.TOOLLESS_RAG_MIN_RESULTS || '') || 1;
+const TOOLLESS_RAG_CONTEXT_MAX_CHARS = Number(process.env.TOOLLESS_RAG_CONTEXT_MAX_CHARS || '') || 4500;
+const TOOLLESS_RAG_TIMEOUT_MS = Number(process.env.TOOLLESS_RAG_TIMEOUT_MS || '') || 30000;
+const TOOLLESS_RAG_MAX_OUTPUT_TOKENS = Number(process.env.TOOLLESS_RAG_MAX_OUTPUT_TOKENS || '') || 1100;
+const GROUNDING_LLM_ENABLED = process.env.GROUNDING_LLM_ENABLED !== 'false';
+const GROUNDING_LLM_MIN_SOURCES = Number(process.env.GROUNDING_LLM_MIN_SOURCES || '') || 8;
+const GROUNDING_LLM_MIN_TEXT_CHARS = Number(process.env.GROUNDING_LLM_MIN_TEXT_CHARS || '') || 400;
 
 function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
   let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -64,38 +90,194 @@ function truncateText(text: string, maxChars: number): string {
   return text.slice(0, maxChars).trimEnd() + '\n... [truncated]';
 }
 
+function shouldUseFastPath(agentType: AgentType): boolean {
+  return FAST_PATH_ENABLED && agentType !== 'schema';
+}
+
+function shouldUseToollessRag(agentType: AgentType): boolean {
+  return TOOLLESS_RAG_ENABLED && TOOLLESS_RAG_AGENTS.has(agentType);
+}
+
+function getFastPathMaxToolRounds(agentType: AgentType): number {
+  if (agentType === 'code') return Math.max(1, FAST_PATH_CODE_MAX_TOOL_ROUNDS);
+  return Math.max(1, FAST_PATH_MAX_TOOL_ROUNDS);
+}
+
+function shouldUseLlmGrounding(agentType: AgentType, candidateCount: number, textLength: number): boolean {
+  // Code answers often include snippets that deterministic grounding handles well.
+  // Avoid a post-answer LLM attribution call on the latency-sensitive code path.
+  if (agentType === 'code') return false;
+  return GROUNDING_LLM_ENABLED && candidateCount >= GROUNDING_LLM_MIN_SOURCES && textLength >= GROUNDING_LLM_MIN_TEXT_CHARS;
+}
+
+function compactToolResultForModel(toolResult: Record<string, any> | undefined): Record<string, any> | undefined {
+  if (!toolResult || typeof toolResult !== 'object') return toolResult;
+  const compact: Record<string, any> = {...toolResult};
+
+  if (Array.isArray(toolResult.results)) {
+    compact.results = toolResult.results.slice(0, 3).map((r: any) => ({
+      title: r.title || r.doc_title || '',
+      url: r.url || r.doc_url || '',
+      section: r.section,
+      content: r.content ? truncateText(String(r.content), TOOL_MODEL_OUTPUT_MAX_CHARS) : undefined,
+      score: r.score,
+    }));
+    compact.totalResults = toolResult.totalResults ?? toolResult.results.length;
+  }
+
+  if (Array.isArray(toolResult.examples)) {
+    compact.examples = toolResult.examples.slice(0, 2).map((e: any) => ({
+      title: e.title || 'Example',
+      url: e.url,
+      code: e.code ? truncateText(String(e.code), TOOL_MODEL_OUTPUT_MAX_CHARS) : undefined,
+    }));
+  }
+
+  if (Array.isArray(toolResult.relatedDocs)) {
+    compact.relatedDocs = toolResult.relatedDocs.slice(0, 4).map((r: any) => ({
+      title: r.title || 'Untitled',
+      url: r.url,
+    }));
+  }
+
+  if (Array.isArray(toolResult.pages)) {
+    compact.pages = toolResult.pages.slice(0, 5).map((p: any) => ({
+      title: p.title || 'Untitled',
+      url: p.url,
+      section: p.section,
+    }));
+    compact.totalResults = toolResult.totalResults ?? toolResult.pages.length;
+  }
+
+  if (toolResult.content) {
+    compact.content = truncateText(String(toolResult.content), TOOL_CONTEXT_MAX_CHARS);
+  }
+
+  return compact;
+}
+
+function createCompactToolsForModel(agentTools: Record<string, Tool>): Record<string, Tool> {
+  const compactTools: Record<string, Tool> = {};
+  for (const [name, toolDef] of Object.entries(agentTools)) {
+    compactTools[name] = {
+      ...toolDef,
+      toModelOutput: async (options: {toolCallId: string; input: unknown; output: unknown}) => {
+        const existing = (toolDef as any).toModelOutput;
+        const modelOutput = existing
+          ? await existing(options)
+          : {type: 'json' as const, value: options.output};
+
+        if (modelOutput?.type === 'json' && modelOutput.value && typeof modelOutput.value === 'object' && !Array.isArray(modelOutput.value)) {
+          return {
+            ...modelOutput,
+            value: compactToolResultForModel(modelOutput.value as Record<string, any>),
+          };
+        }
+
+        if (modelOutput?.type === 'text' && typeof modelOutput.value === 'string') {
+          return {
+            ...modelOutput,
+            value: truncateText(modelOutput.value, TOOL_CONTEXT_MAX_CHARS),
+          };
+        }
+
+        return modelOutput;
+      },
+    };
+  }
+  return compactTools;
+}
+
+function buildActiveToolsForStep(agentType: AgentType, stepNumber: number, allToolNames: ToolName[]): ToolName[] {
+  if (agentType === 'code' && stepNumber === 0 && allToolNames.includes('searchDocs')) {
+    return ['searchDocs'];
+  }
+
+  if (agentType === 'general' && stepNumber === 0) {
+    return allToolNames.filter(name => name !== 'getPageContent');
+  }
+
+  return allToolNames;
+}
+
+function buildToolChoiceForStep(agentType: AgentType, stepNumber: number, activeToolNames: ToolName[]) {
+  if (agentType === 'code' && stepNumber === 0 && activeToolNames.includes('searchDocs')) {
+    return {type: 'tool' as const, toolName: 'searchDocs' as const};
+  }
+
+  if (stepNumber === 0 && activeToolNames.length > 0) {
+    return 'required' as const;
+  }
+
+  return 'auto' as const;
+}
+
+function ingestToolResult(
+  toolName: string,
+  rawToolResult: Record<string, any> | undefined,
+  toolSources: {title: string; url: string; score?: number; section?: string}[],
+  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolResultSummaries: string[],
+  addSummary = true,
+): Record<string, any> | undefined {
+  const toolResult = compactToolResultForModel(rawToolResult) as Record<string, any> | undefined;
+  if (addSummary) toolResultSummaries.push(formatToolResultForSynthesis(toolName, toolResult));
+
+  if (toolResult?.results) {
+    for (const r of toolResult.results) {
+      if (r.url) {
+        toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
+        if (r.content) toolChunks.push({
+          doc_url: r.url,
+          doc_title: r.title || '',
+          section: r.section || '',
+          content: r.content,
+        });
+      }
+    }
+  }
+
+  if (toolResult?.relatedDocs) {
+    for (const r of toolResult.relatedDocs) {
+      if (r.url) toolSources.push({title: r.title || '', url: r.url});
+    }
+  }
+
+  return toolResult;
+}
+
 function formatToolResultForSynthesis(toolName: string, toolResult: Record<string, any> | undefined): string {
   if (!toolResult) return `Tool: ${toolName}\nNo result returned.`;
   const lines = [`Tool: ${toolName}`];
 
   if (Array.isArray(toolResult.results)) {
     lines.push('Search results:');
-    for (const r of toolResult.results.slice(0, 6)) {
+    for (const r of toolResult.results.slice(0, 3)) {
       lines.push(`- ${r.title || r.doc_title || 'Untitled'} (${r.url || r.doc_url || 'no-url'})${r.section ? ` [${r.section}]` : ''}`);
-      if (r.content) lines.push(truncateText(String(r.content), 1200));
+      if (r.content) lines.push(truncateText(String(r.content), TOOL_MODEL_OUTPUT_MAX_CHARS));
     }
     if (toolResult.results.length === 0) lines.push('- No search results.');
   }
 
   if (Array.isArray(toolResult.examples)) {
     lines.push('Code examples:');
-    for (const e of toolResult.examples.slice(0, 3)) {
+    for (const e of toolResult.examples.slice(0, 2)) {
       lines.push(`- ${e.title || 'Example'} (${e.url || 'no-url'})`);
-      if (e.code) lines.push('```\n' + truncateText(String(e.code), 1200) + '\n```');
+      if (e.code) lines.push('```\n' + truncateText(String(e.code), TOOL_MODEL_OUTPUT_MAX_CHARS) + '\n```');
     }
     if (toolResult.examples.length === 0) lines.push('- No code examples.');
   }
 
   if (Array.isArray(toolResult.relatedDocs) && toolResult.relatedDocs.length > 0) {
     lines.push('Related docs:');
-    for (const r of toolResult.relatedDocs.slice(0, 8)) {
+    for (const r of toolResult.relatedDocs.slice(0, 4)) {
       lines.push(`- ${r.title || 'Untitled'} (${r.url || 'no-url'})`);
     }
   }
 
   if (Array.isArray(toolResult.pages)) {
     lines.push('Pages:');
-    for (const p of toolResult.pages.slice(0, 10)) {
+    for (const p of toolResult.pages.slice(0, 5)) {
       lines.push(`- ${p.title || 'Untitled'} (${p.url || 'no-url'})${p.section ? ` [${p.section}]` : ''}`);
     }
     if (toolResult.pages.length === 0) lines.push('- No pages found.');
@@ -103,14 +285,94 @@ function formatToolResultForSynthesis(toolName: string, toolResult: Record<strin
 
   if (toolResult.url && toolResult.success) {
     lines.push(`Page content: ${toolResult.title || toolResult.url} (${toolResult.url})`);
-    if (toolResult.content) lines.push(truncateText(String(toolResult.content), 3000));
+    if (toolResult.content) lines.push(truncateText(String(toolResult.content), TOOL_CONTEXT_MAX_CHARS));
   }
 
   if (lines.length === 1) {
-    lines.push(truncateText(JSON.stringify(toolResult), 3000));
+    lines.push(truncateText(JSON.stringify(toolResult), TOOL_CONTEXT_MAX_CHARS));
   }
 
-  return truncateText(lines.join('\n'), 6000);
+  return truncateText(lines.join('\n'), TOOL_CONTEXT_MAX_CHARS);
+}
+
+function buildToollessRagContext(
+  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolResultSummaries: string[],
+): string {
+  const parts = toolChunks.slice(0, TOOLLESS_RAG_TOP_K).map((chunk, i) => {
+    const title = chunk.doc_title || chunk.doc_url || `Source ${i + 1}`;
+    const section = chunk.section ? ` [${chunk.section}]` : '';
+    return `Source ${i + 1}: ${title}${section}
+URL: ${chunk.doc_url}
+${truncateText(chunk.content, Math.floor(TOOLLESS_RAG_CONTEXT_MAX_CHARS / Math.max(1, Math.min(toolChunks.length, TOOLLESS_RAG_TOP_K))))}`;
+  });
+
+  const context = parts.join('\n\n---\n\n') || toolResultSummaries.join('\n\n---\n\n');
+  return truncateText(context, TOOLLESS_RAG_CONTEXT_MAX_CHARS);
+}
+
+function buildToollessRagPrompt(query: string, context: string): string {
+  return `User question:
+${query}
+
+Retrieved documentation context:
+${context || 'No documentation context was retrieved.'}
+
+Answer the user now using the retrieved context as your primary source. Keep the answer concise. Include code only when useful or requested. If the context is weak or incomplete, say what to verify instead of guessing.`;
+}
+
+function detectRequestedCodeLanguage(query: string): 'python' | 'node' | 'java' | 'go' | 'rest' | null {
+  const lower = query.toLowerCase();
+  if (/\bpython\b|pymilvus/.test(lower)) return 'python';
+  if (/\b(node|node\.js|javascript|typescript|js|ts)\b/.test(lower)) return 'node';
+  if (/\bjava\b/.test(lower)) return 'java';
+  if (/\bgo(lang)?\b/.test(lower)) return 'go';
+  if (/\b(rest|curl|http)\b/.test(lower)) return 'rest';
+  return null;
+}
+
+function extractCodeTopic(query: string): string {
+  return query
+    .replace(/give\s+(me\s+)?(a\s+)?concise\s+example/ig, '')
+    .replace(/with\s+(python|node\.js|node|javascript|typescript|java|go|golang|rest|curl|http)/ig, '')
+    .replace(/\b(how\s+do\s+i|how\s+to|can\s+you|please|example|code|using|in)\b/ig, ' ')
+    .replace(/[^a-zA-Z0-9_\s-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 120) || query.slice(0, 120);
+}
+
+async function runCodeExampleLookup(
+  query: string,
+  sectionFilter: string | undefined,
+  toolSources: {title: string; url: string; score?: number; section?: string}[],
+  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolResultSummaries: string[],
+): Promise<boolean> {
+  const language = detectRequestedCodeLanguage(query);
+  if (!language || !/\b(example|code|snippet|python|node|java|go|rest|curl|sdk)\b/i.test(query)) return false;
+
+  try {
+    const toolDef = getToolsForAgent(['getCodeExample'], {sectionFilter}).getCodeExample as any;
+    const rawResult = await toolDef.execute({topic: extractCodeTopic(query), language});
+    const toolResult = ingestToolResult('getCodeExample', rawResult, toolSources, toolChunks, toolResultSummaries);
+    if (Array.isArray(toolResult?.examples)) {
+      for (const example of toolResult.examples) {
+        if (example.url && example.code) {
+          toolChunks.push({
+            doc_url: example.url,
+            doc_title: example.title || 'Code example',
+            section: 'code-example',
+            content: `\`\`\`${language === 'node' ? 'typescript' : language}\n${example.code}\n\`\`\``,
+          });
+        }
+      }
+    }
+    return true;
+  } catch (err) {
+    console.warn('[ToollessRAG] code example lookup failed', JSON.stringify({error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+    return false;
+  }
 }
 
 function buildNoResponseFallback(
@@ -654,30 +916,49 @@ app.post('/chat', async c => {
         }
         incCounter('chat_proxy_cache_misses_total', {type: 'response'});
 
-        // Kick off embedding and routing concurrently.
+        // Kick off embedding and routing concurrently. We only block on the
+        // embedding for semantic-cache lookup; RAG tools consume it opportunistically
+        // and fall back to FTS-only if it is not ready within their small budget.
         const tEmbedStart = Date.now();
-        const embeddingPromise = computeEmbedding(ragQuery).catch((err: Error) => {
-          console.warn('[Embedding] Failed to compute query embedding', JSON.stringify({requestId, error: summarizeForDebugLog(err.message, 'error')}));
-          return null;
-        });
+        const semanticCacheEnabled = isSemanticCacheEnabled();
+        const embeddingEnabled = semanticCacheEnabled || QUERY_EMBEDDING_ENABLED;
+        const embeddingPromise = embeddingEnabled
+          ? computeEmbedding(ragQuery).catch((err: Error) => {
+            console.warn('[Embedding] Failed to compute query embedding', JSON.stringify({requestId, error: summarizeForDebugLog(err.message, 'error')}));
+            return null;
+          })
+          : Promise.resolve(null);
 
         const routePromise = routeIntent(ragQuery, body.messages, session.id, requestId).catch(() =>
           ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}),
         );
 
-        // Check semantic cache for similar queries across sessions.
+        // Check semantic cache for similar queries across sessions. Keep this
+        // best-effort so cache lookup never blocks routing/model generation.
         let semanticHit: SemanticCacheHit | null = null;
-        const queryEmbedding = await withTimeout(embeddingPromise, EMBEDDING_BUDGET_MS, null);
-        const tEmbed = Date.now() - tEmbedStart;
-        debug('chat.embedding.completed', {durationMs: tEmbed, hasEmbedding: Boolean(queryEmbedding), timedOut: !queryEmbedding && tEmbed >= EMBEDDING_BUDGET_MS});
-        if (queryEmbedding) {
-          try {
-            semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding, requestId);
-          } catch (err) {
-            console.warn('[SemanticCache] Lookup failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+        let queryEmbedding: number[] | null = null;
+        let tEmbed = 0;
+        if (semanticCacheEnabled) {
+          const maybeEmbedding = await withTimeout(embeddingPromise, EMBEDDING_BUDGET_MS, null);
+          tEmbed = Date.now() - tEmbedStart;
+          if (maybeEmbedding) {
+            queryEmbedding = maybeEmbedding;
+            const lookupStart = Date.now();
+            semanticHit = await withTimeout(
+              semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding, requestId).catch((err) => {
+                console.warn('[SemanticCache] Lookup failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+                return null;
+              }),
+              SEMANTIC_CACHE_LOOKUP_BUDGET_MS,
+              null,
+            );
+            debug('chat.cache.lookup.completed', {layer: 'semantic', durationMs: Date.now() - lookupStart, hit: Boolean(semanticHit)});
           }
+        } else {
+          tEmbed = 0;
         }
-        debug('chat.cache.checked', {layer: 'semantic', hit: Boolean(semanticHit), similarity: semanticHit?.similarity});
+        debug('chat.embedding.completed', {durationMs: tEmbed, enabled: embeddingEnabled, waitedForCache: semanticCacheEnabled, hasEmbedding: Boolean(queryEmbedding), timedOut: semanticCacheEnabled && !queryEmbedding && tEmbed >= EMBEDDING_BUDGET_MS});
+        debug('chat.cache.checked', {layer: 'semantic', enabled: semanticCacheEnabled, hit: Boolean(semanticHit), similarity: semanticHit?.similarity});
         if (semanticHit) {
           console.log('[SemanticCache] Replay cached response', JSON.stringify({requestId, query: summarizeForDebugLog(ragQuery, 'query')}));
           logEvent(session.id, userId, 'cache', 'semantic', {
@@ -725,7 +1006,12 @@ app.post('/chat', async c => {
           const agentConfig = getAgent(routeResult.agent as any);
           currentAgent = agentConfig.type;
           debugAgent = agentConfig.type;
-          const agentTools = getToolsForAgent(agentConfig.toolNames, {sectionFilter, queryEmbedding});
+          const agentTools = createCompactToolsForModel(getToolsForAgent(agentConfig.toolNames, {
+            sectionFilter,
+            queryEmbedding,
+            queryEmbeddingPromise: embeddingEnabled ? embeddingPromise : undefined,
+            queryEmbeddingBudgetMs: TOOL_EMBEDDING_BUDGET_MS,
+          }));
 
           // Resolve model from runtime config (DB override → env var → default)
           const resolvedModel = await resolveModel(`agent:${agentConfig.type}`);
@@ -782,7 +1068,7 @@ app.post('/chat', async c => {
 
           const pageContextIncluded = Boolean(body.pageContext && shouldInjectPageContext(session, body.pageUrl));
           if (pageContextIncluded) {
-            systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext!.slice(0, 8000)}`;
+            systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext!.slice(0, PAGE_CONTEXT_MAX_CHARS)}`;
           }
 
           // Evaluate pre-prompt hooks (confidence not yet known)
@@ -809,10 +1095,263 @@ app.post('/chat', async c => {
           let fullText = '';
           let groundedSourceCount = 0;
           let deltaCount = 0;
-          let result: ReturnType<typeof streamText> | null = null;
-          let finalResult: ReturnType<typeof streamText> | null = null;
+          type StreamTextCallResult = ReturnType<typeof streamText>;
+          let result: StreamTextCallResult | null = null;
+          const finalResultRef: {current: StreamTextCallResult | null} = {current: null};
           let finalSynthesisFailed = false;
 
+          const runFinalSynthesis = async () => {
+            try {
+              const contextParts = toolResultSummaries.length > 0
+                ? toolResultSummaries
+                : toolChunks.map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`);
+              const context = contextParts.join('\n\n---\n\n') || 'No tool results were returned. Use the agent instructions, page context, and general Zilliz Cloud documentation knowledge; be explicit if the collected context is weak.';
+              const draft = draftText ? `\n\nDraft text from tool collection phase (may be incomplete):\n${truncateText(draftText, 3000)}` : '';
+              debug('chat.final_synthesis.started', {
+                toolCount: toolsCalled.length,
+                toolSummaryCount: toolResultSummaries.length,
+                chunkCount: toolChunks.length,
+                hadDraftText: Boolean(draftText),
+                timeoutMs: FINAL_SYNTHESIS_TIMEOUT_MS,
+              });
+              finalResultRef.current = streamText({
+                model: modelInstance,
+                system: `${systemPrompt}\n\n## Final synthesis mode\nYou are in the final answer phase. Tool use is disabled. You MUST answer the user directly using the provided collected context, current page context, and agent instructions. If the context is weak, still provide the best safe answer and mention what to verify. Be concise by default.`,
+                messages: [
+                  {role: 'user', content: `User question:\n${ragQuery}\n\nCollected context from tools:\n${context}${draft}\n\nWrite the final answer now. Include concise steps and code if relevant. Keep the answer under 700 words unless the user explicitly asks for more detail.`},
+                ],
+                maxOutputTokens: FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS,
+                temperature: 0.2,
+                abortSignal: AbortSignal.timeout(FINAL_SYNTHESIS_TIMEOUT_MS),
+                experimental_telemetry: makeTelemetry('chat-final-synthesis', {
+                  agentType: agentConfig.type,
+                  sessionId: session.id,
+                  requestId,
+                  model: activeModel,
+                }),
+              });
+              for await (const part of finalResultRef.current.fullStream) {
+                if (part.type === 'error') {
+                  finalSynthesisFailed = true;
+                  throw new Error((part as any).error || 'Final synthesis stream error');
+                }
+                if (part.type === 'text-delta') {
+                  fullText += part.text;
+                  deltaCount++;
+                  sendAndRecord('delta', JSON.stringify({text: part.text}));
+                } else if (process.env.DEBUG_STREAM === 'true') {
+                  console.log('[final-stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
+                }
+              }
+              console.log(`[FinalSynthesis] streamed ${fullText.length} chars from ${toolResultSummaries.length} tool summaries and ${toolChunks.length} chunks`);
+            } catch (err) {
+              finalSynthesisFailed = true;
+              console.error('[FinalSynthesis] streamText failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+            }
+          };
+
+          const toollessRag = shouldUseToollessRag(agentConfig.type);
+          let toollessRagAttempted = toollessRag;
+          let fastPath = !toollessRag && shouldUseFastPath(agentConfig.type);
+          const fastPathMaxToolRounds = getFastPathMaxToolRounds(agentConfig.type);
+
+          if (toollessRag) {
+            const tRagStart = Date.now();
+            toolsCalled.push('searchDocs');
+            incCounter('chat_proxy_tool_calls_total', {tool: 'searchDocs', mode: 'server_rag'});
+            debug('chat.server_rag.started', {
+              agent: agentConfig.type,
+              topK: TOOLLESS_RAG_TOP_K,
+              hasEmbedding: Boolean(queryEmbedding),
+              timeoutMs: TOOLLESS_RAG_TIMEOUT_MS,
+            });
+
+            const maybeEmbedding = queryEmbedding ?? await withTimeout(embeddingEnabled ? embeddingPromise : Promise.resolve(null), TOOL_EMBEDDING_BUDGET_MS, null);
+            const ragResults = await searchDocs(ragQuery, TOOLLESS_RAG_TOP_K, sectionFilter, undefined, undefined, maybeEmbedding);
+            for (const r of ragResults) {
+              toolSources.push({title: r.doc_title || '', url: r.doc_url, score: r.score, section: r.section});
+              toolChunks.push({
+                doc_url: r.doc_url,
+                doc_title: r.doc_title || '',
+                section: r.section || '',
+                content: truncateText(r.content, TOOL_MODEL_OUTPUT_MAX_CHARS),
+              });
+            }
+            toolResultSummaries.push(formatToolResultForSynthesis('searchDocs', {
+              results: ragResults.map(r => ({
+                title: r.doc_title,
+                url: r.doc_url,
+                section: r.section,
+                content: truncateText(r.content, TOOL_MODEL_OUTPUT_MAX_CHARS),
+                score: r.score,
+              })),
+              totalResults: ragResults.length,
+            }));
+
+            let codeExampleLookup = false;
+            if (agentConfig.type === 'code') {
+              codeExampleLookup = await runCodeExampleLookup(ragQuery, sectionFilter, toolSources, toolChunks, toolResultSummaries);
+              if (codeExampleLookup) toolsCalled.push('getCodeExample');
+            }
+
+            if (ragResults.length >= TOOLLESS_RAG_MIN_RESULTS || toolChunks.length > 0) {
+              sendAndRecord('status', JSON.stringify({phase: 'generating'}));
+              debug('chat.server_rag.completed', {
+                durationMs: Date.now() - tRagStart,
+                resultCount: ragResults.length,
+                sourceCount: toolSources.length,
+                codeExampleLookup,
+              });
+              debug('chat.provider.stream.started', {
+                phase: 'toolless_rag',
+                agent: agentConfig.type,
+                model: activeModel,
+                contextChars: buildToollessRagContext(toolChunks, toolResultSummaries).length,
+                maxOutputTokens: TOOLLESS_RAG_MAX_OUTPUT_TOKENS,
+                timeoutMs: TOOLLESS_RAG_TIMEOUT_MS,
+              });
+              result = streamText({
+                model: modelInstance,
+                maxOutputTokens: TOOLLESS_RAG_MAX_OUTPUT_TOKENS,
+                temperature: 0.2,
+                system: `${systemPrompt}\n\n## Server-side RAG mode\nThe server already retrieved relevant documentation. Do not mention tool calls. Use only the provided retrieved context plus current page context. Cite source titles/URLs naturally only when helpful; the server will attach source metadata separately.`,
+                messages: [
+                  ...windowedMessages.slice(0, -1).map(m => ({
+                    role: m.role as 'user' | 'assistant',
+                    content: m.content,
+                  })),
+                  {role: 'user' as const, content: buildToollessRagPrompt(ragQuery, buildToollessRagContext(toolChunks, toolResultSummaries))},
+                ],
+                abortSignal: AbortSignal.timeout(TOOLLESS_RAG_TIMEOUT_MS),
+                experimental_telemetry: makeTelemetry('chat-toolless-rag', {
+                  agentType: agentConfig.type,
+                  sessionId: session.id,
+                  requestId,
+                  model: activeModel,
+                }),
+              });
+
+              for await (const part of result.fullStream) {
+                if (part.type === 'error') {
+                  throw new Error((part as any).error || 'LLM stream error');
+                }
+                if (part.type === 'text-delta') {
+                  fullText += part.text;
+                  deltaCount++;
+                  sendAndRecord('delta', JSON.stringify({text: part.text}));
+                } else if (process.env.DEBUG_STREAM === 'true') {
+                  console.log('[toolless-rag-stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
+                }
+              }
+            } else {
+              toolsCalled.pop();
+              toolResultSummaries.length = 0;
+              toollessRagAttempted = false;
+              fastPath = shouldUseFastPath(agentConfig.type);
+              debug('chat.server_rag.fallback', {reason: 'insufficient_results', resultCount: ragResults.length});
+            }
+          }
+
+          if (!fullText && fastPath) {
+            sendAndRecord('status', JSON.stringify({phase: 'generating'}));
+            debug('chat.provider.stream.started', {
+              phase: 'direct',
+              agent: agentConfig.type,
+              model: activeModel,
+              toolCount: Object.keys(agentTools).length,
+              maxOutputTokens: FAST_PATH_MAX_OUTPUT_TOKENS,
+              maxToolRounds: fastPathMaxToolRounds,
+              timeoutMs: FAST_PATH_TIMEOUT_MS,
+            });
+            result = streamText({
+              model: modelInstance,
+              maxOutputTokens: FAST_PATH_MAX_OUTPUT_TOKENS,
+              temperature: 0.2,
+              tools: agentTools,
+              toolChoice: buildToolChoiceForStep(agentConfig.type, 0, agentConfig.toolNames),
+              activeTools: buildActiveToolsForStep(agentConfig.type, 0, agentConfig.toolNames),
+              stopWhen: stepCountIs(fastPathMaxToolRounds + 1),
+              abortSignal: AbortSignal.timeout(FAST_PATH_TIMEOUT_MS),
+              prepareStep: ({stepNumber}) => {
+                if (stepNumber >= fastPathMaxToolRounds) {
+                  return {
+                    activeTools: [],
+                    toolChoice: 'none' as const,
+                  };
+                }
+                const activeTools = buildActiveToolsForStep(agentConfig.type, stepNumber, agentConfig.toolNames);
+                return {
+                  activeTools,
+                  toolChoice: buildToolChoiceForStep(agentConfig.type, stepNumber, activeTools),
+                };
+              },
+              system: `${systemPrompt}\n\n## Answering mode\nUse the required documentation tool call(s) first, then answer the user directly in this same response. Prefer one searchDocs call. Do not call getPageContent unless snippets are clearly insufficient. Keep the answer concise and grounded in the collected tool context.`,
+              messages: windowedMessages.map(m => ({
+                role: m.role as 'user' | 'assistant',
+                content: m.content,
+              })),
+              experimental_telemetry: makeTelemetry('chat-direct', {
+                agentType: agentConfig.type,
+                sessionId: session.id,
+                requestId,
+                model: activeModel,
+              }),
+            });
+
+            for await (const part of result.fullStream) {
+              if (part.type === 'error') {
+                throw new Error((part as any).error || 'LLM stream error');
+              }
+              if (part.type === 'text-delta') {
+                fullText += part.text;
+                deltaCount++;
+                sendAndRecord('delta', JSON.stringify({text: part.text}));
+              } else if (part.type === 'tool-call') {
+                toolsCalled.push(part.toolName);
+                const toolArgs = (part as any).input ?? (part as any).args;
+                debug('chat.tool.call', {
+                  tool: part.toolName,
+                  callIndex: toolsCalled.length,
+                  argKeys: toolArgs && typeof toolArgs === 'object' ? Object.keys(toolArgs) : [],
+                  args: toolArgs,
+                });
+                incCounter('chat_proxy_tool_calls_total', {tool: part.toolName});
+                sendAndRecord('tool-call', JSON.stringify({tool: part.toolName, count: toolsCalled.length}));
+                logEvent(session.id, userId, 'tool_call', agentConfig.type, {
+                  requestId,
+                  tool: part.toolName,
+                  argsSummary: summarizeForDebugLog(toolArgs),
+                }, userMeta, source);
+              } else if ((part as any).type === 'tool-result') {
+                const rawToolResult = (part as any).output as Record<string, any>;
+                const toolResult = ingestToolResult((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', rawToolResult, toolSources, toolChunks, toolResultSummaries, false);
+                if (toolResult?.url && toolResult?.success) {
+                  const titleFromIndex = await getTitleByUrl(toolResult.url);
+                  const pageTitle = toolResult.title || titleFromIndex || toolResult.url;
+                  toolSources.push({title: pageTitle, url: toolResult.url});
+                  if (toolResult.content) toolChunks.push({
+                    doc_url: toolResult.url,
+                    doc_title: pageTitle,
+                    section: '',
+                    content: toolResult.content,
+                  });
+                }
+                debug('chat.tool.result', {
+                  resultCount: Array.isArray(toolResult?.results) ? toolResult.results.length : undefined,
+                  sourceCount: toolSources.length,
+                  content: toolResult,
+                });
+              } else if (process.env.DEBUG_STREAM === 'true') {
+                console.log('[stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
+              }
+            }
+
+            if (!fullText) {
+              await runFinalSynthesis();
+            }
+          }
+
+          if (!fullText && !toollessRagAttempted && !fastPath) {
           debug('chat.provider.stream.started', {
             phase: 'tool_collection',
             agent: agentConfig.type,
@@ -827,8 +1366,17 @@ app.post('/chat', async c => {
             maxOutputTokens: 1024,
             temperature: 0.2,
             tools: agentTools,
+            toolChoice: buildToolChoiceForStep(agentConfig.type, 0, agentConfig.toolNames),
+            activeTools: buildActiveToolsForStep(agentConfig.type, 0, agentConfig.toolNames),
             stopWhen: stepCountIs(TOOL_COLLECTION_MAX_STEPS),
             abortSignal: AbortSignal.timeout(TOOL_COLLECTION_TIMEOUT_MS),
+            prepareStep: ({stepNumber}) => {
+              const activeTools = buildActiveToolsForStep(agentConfig.type, stepNumber, agentConfig.toolNames);
+              return {
+                activeTools,
+                toolChoice: buildToolChoiceForStep(agentConfig.type, stepNumber, activeTools),
+              };
+            },
             system: `${systemPrompt}\n\n## Tool collection phase\nUse tools only to collect the minimum documentation needed. Do not try to provide the final answer in this phase; the server will run a separate final synthesis phase without tools. Prefer at most one searchDocs call and one content/code lookup.`,
             messages: windowedMessages.map(m => ({
               role: m.role as 'user' | 'assistant',
@@ -870,28 +1418,8 @@ app.post('/chat', async c => {
             } else if ((part as any).type === 'tool-result') {
               // Extract sources from any tool that returns doc URLs
               // AI SDK v6 fullStream uses .output for tool-result events
-              const toolResult = (part as any).output as Record<string, any>;
-              toolResultSummaries.push(formatToolResultForSynthesis((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', toolResult));
-              if (toolResult?.results) {
-                // searchDocs returns { results: [{title, url, score, content, section, ...}] }
-                for (const r of toolResult.results) {
-                  if (r.url) {
-                    toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
-                    if (r.content) toolChunks.push({
-                      doc_url: r.url,
-                      doc_title: r.title || '',
-                      section: r.section || '',
-                      content: r.content,
-                    });
-                  }
-                }
-              }
-              if (toolResult?.relatedDocs) {
-                // getCodeExample returns { relatedDocs: [{title, url}] }
-                for (const r of toolResult.relatedDocs) {
-                  if (r.url) toolSources.push({title: r.title || '', url: r.url});
-                }
-              }
+              const rawToolResult = (part as any).output as Record<string, any>;
+              const toolResult = ingestToolResult((part as any).toolName || toolsCalled[toolsCalled.length - 1] || 'unknown', rawToolResult, toolSources, toolChunks, toolResultSummaries, false);
               if (toolResult?.url && toolResult?.success) {
                 // getPageContent returns { url, success, content } — look up real title from index
                 const titleFromIndex = await getTitleByUrl(toolResult.url);
@@ -914,57 +1442,8 @@ app.post('/chat', async c => {
             }
           }
 
-          sendAndRecord('status', JSON.stringify({phase: 'generating'}));
-
-          // Final synthesis phase: always run one no-tool answer pass after the
-          // bounded tool-collection phase. This prevents the request from ending
-          // on a tool call and makes final text generation mandatory by design.
-          try {
-            const contextParts = toolResultSummaries.length > 0
-              ? toolResultSummaries
-              : toolChunks.map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`);
-            const context = contextParts.join('\n\n---\n\n') || 'No tool results were returned. Use the agent instructions, page context, and general Zilliz Cloud documentation knowledge; be explicit if the collected context is weak.';
-            const draft = draftText ? `\n\nDraft text from tool collection phase (may be incomplete):\n${truncateText(draftText, 3000)}` : '';
-            debug('chat.final_synthesis.started', {
-              toolCount: toolsCalled.length,
-              toolSummaryCount: toolResultSummaries.length,
-              chunkCount: toolChunks.length,
-              hadDraftText: Boolean(draftText),
-              timeoutMs: FINAL_SYNTHESIS_TIMEOUT_MS,
-            });
-            finalResult = streamText({
-              model: modelInstance,
-              system: `${systemPrompt}\n\n## Final synthesis mode\nYou are in the final answer phase. Tool use is disabled. You MUST answer the user directly using the provided collected context, current page context, and agent instructions. If the context is weak, still provide the best safe answer and mention what to verify. Be concise by default.`,
-              messages: [
-                {role: 'user', content: `User question:\n${ragQuery}\n\nCollected context from tools:\n${context}${draft}\n\nWrite the final answer now. Include concise steps and code if relevant. Keep the answer under 700 words unless the user explicitly asks for more detail.`},
-              ],
-              maxOutputTokens: FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS,
-              temperature: 0.2,
-              abortSignal: AbortSignal.timeout(FINAL_SYNTHESIS_TIMEOUT_MS),
-              experimental_telemetry: makeTelemetry('chat-final-synthesis', {
-                agentType: agentConfig.type,
-                sessionId: session.id,
-                requestId,
-                model: activeModel,
-              }),
-            });
-            for await (const part of finalResult.fullStream) {
-              if (part.type === 'error') {
-                finalSynthesisFailed = true;
-                throw new Error((part as any).error || 'Final synthesis stream error');
-              }
-              if (part.type === 'text-delta') {
-                fullText += part.text;
-                deltaCount++;
-                sendAndRecord('delta', JSON.stringify({text: part.text}));
-              } else if (process.env.DEBUG_STREAM === 'true') {
-                console.log('[final-stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
-              }
-            }
-            console.log(`[FinalSynthesis] streamed ${fullText.length} chars from ${toolResultSummaries.length} tool summaries and ${toolChunks.length} chunks`);
-          } catch (err) {
-            finalSynthesisFailed = true;
-            console.error('[FinalSynthesis] streamText failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+            sendAndRecord('status', JSON.stringify({phase: 'generating'}));
+            await runFinalSynthesis();
           }
 
           if (finalSynthesisFailed && fullText) {
@@ -985,7 +1464,7 @@ app.post('/chat', async c => {
           let tokenUsage: TokenUsage | null = null;
           try {
             const toolUsage = result ? await Promise.resolve(result.totalUsage).catch(() => null) : null;
-            const finalUsage = finalResult ? await Promise.resolve(finalResult.totalUsage).catch(() => null) : null;
+            const finalUsage = finalResultRef.current ? await Promise.resolve(finalResultRef.current.totalUsage).catch(() => null) : null;
             const inputTokens = (toolUsage?.inputTokens ?? 0) + (finalUsage?.inputTokens ?? 0);
             const outputTokens = (toolUsage?.outputTokens ?? 0) + (finalUsage?.outputTokens ?? 0);
             const totalTokens = (toolUsage?.totalTokens ?? ((toolUsage?.inputTokens ?? 0) + (toolUsage?.outputTokens ?? 0))) +
@@ -1073,8 +1552,9 @@ app.post('/chat', async c => {
               }
             }
 
-            // Single-pass LLM source attribution
-            const grounding = await groundAtomically(fullText, filteredCandidates, allChunks, requestId);
+            const grounding = shouldUseLlmGrounding(agentConfig.type, filteredCandidates.length, fullText.length)
+              ? await groundAtomically(fullText, filteredCandidates, allChunks, requestId)
+              : computeGrounding(fullText, allChunks, filteredCandidates);
 
             console.log(
               `[Sources] method=${grounding.method} Tools: ${toolSources.length}, Deduped: ${allSources.length}, Filtered: ${filteredCandidates.length}, Grounded: ${grounding.sources.length}`,
