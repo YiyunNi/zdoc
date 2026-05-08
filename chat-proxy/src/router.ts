@@ -5,6 +5,7 @@ import {saveTokenUsage} from './db.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {summarizeForDebugLog} from './logger.js';
 import {makeTelemetry} from './telemetry.js';
+import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -225,6 +226,7 @@ async function routeIntentLegacy(
     const resolvedModel = await resolveModel('router');
     const result = await generateObject({
       model: await createModelInstance(resolvedModel),
+      maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
       schema: routeSchema,
       maxOutputTokens: 250,
       abortSignal: AbortSignal.timeout(30000),
@@ -335,6 +337,7 @@ async function routeIntentV2(
 
     const result = await generateObject({
       model: modelInstance,
+      maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
       schema: routeSchema,
       maxOutputTokens: 250,
       abortSignal: AbortSignal.timeout(30000),
@@ -365,6 +368,7 @@ async function routeIntentV2(
 
     const result = await generateText({
       model: modelInstance,
+      maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
       tools: {route: routeTool},
       toolChoice: 'required',
       maxOutputTokens: 250,
@@ -400,6 +404,7 @@ async function routeIntentV2(
 
     const result = await generateText({
       model: modelInstance,
+      maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
       maxOutputTokens: 250,
       temperature: 0,
       abortSignal: AbortSignal.timeout(30000),

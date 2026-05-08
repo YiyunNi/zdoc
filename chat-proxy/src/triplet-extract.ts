@@ -2,6 +2,7 @@ import {generateObject} from 'ai';
 import {z} from 'zod';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {makeTelemetry} from './telemetry.js';
+import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 
 const batchTripletSchema = z.object({
   chunks: z.array(z.object({
@@ -43,6 +44,7 @@ export async function extractTripletsBatch(
 
       const llmResult = await generateObject({
         model: await createModelInstance(resolvedModel),
+        maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
         schema: batchTripletSchema,
         maxOutputTokens: 4096,
         experimental_telemetry: makeTelemetry('triplet-extract'),

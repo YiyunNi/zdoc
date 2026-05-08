@@ -223,6 +223,13 @@ GitHub URLs: `github:owner/repo` or `https://github.com/owner/repo` (max 50 file
 | `TOOL_EMBEDDING_BUDGET_MS` | `75` | Maximum wait for an in-flight query embedding inside search tools before falling back to FTS-only |
 | `EMBEDDING_BUDGET_MS` | `1500` | Maximum wait for query embedding when semantic cache is enabled |
 | `SEMANTIC_CACHE_LOOKUP_BUDGET_MS` | `250` | Maximum wait for semantic cache lookup after embedding |
+| `BEDROCK_GUARD_ENABLED` | `true` | Enables Bedrock concurrency limiting and throttle retry guards |
+| `BEDROCK_CHAT_MAX_CONCURRENCY` | `3` | Maximum concurrent Bedrock chat/model invocations per process |
+| `BEDROCK_EMBEDDING_MAX_CONCURRENCY` | `2` | Maximum concurrent Bedrock embedding invocations per process |
+| `BEDROCK_QUEUE_TIMEOUT_MS` | `15000` | Maximum time a Bedrock call waits for a limiter slot before failing fast |
+| `BEDROCK_RETRY_MAX_ATTEMPTS` | `3` | Maximum Bedrock attempts for throttle/429 retry guard |
+| `BEDROCK_RETRY_BASE_DELAY_MS` | `500` | Initial exponential-backoff delay for Bedrock throttle retries |
+| `BEDROCK_RETRY_MAX_DELAY_MS` | `4000` | Maximum exponential-backoff delay for Bedrock throttle retries |
 
 ## Debugging Chat Data Flow
 

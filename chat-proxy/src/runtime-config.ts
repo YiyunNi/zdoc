@@ -1,6 +1,7 @@
 import { getRuntimeConfigValue, getProviderProfile, isDbReady } from './db.js';
 import { createOpenAI } from '@ai-sdk/openai';
 import type { LanguageModel, EmbeddingModel } from 'ai';
+import {guardBedrockEmbeddingModel, guardBedrockLanguageModel} from './bedrock-guard.js';
 
 // ---------------------------------------------------------------------------
 // Known embedding model dimensions
@@ -188,13 +189,13 @@ export async function createModelInstance(providerOrResolved: string | ResolvedM
           secretAccessKey: resolved.secretAccessKey,
           sessionToken: resolved.sessionToken,
         });
-        return bedrock(resolved.model);
+        return guardBedrockLanguageModel(bedrock(resolved.model), resolved.model);
       }
       // env source
       const bedrock = createAmazonBedrock({
         region: process.env.AWS_REGION || 'us-east-1',
       });
-      return bedrock(resolved.model);
+      return guardBedrockLanguageModel(bedrock(resolved.model), resolved.model);
     }
     case 'openai-compatible':
     default: {
@@ -219,7 +220,7 @@ async function createFromEnv(provider: string, modelId: string): Promise<Languag
       const bedrock = createAmazonBedrock({
         region: process.env.AWS_REGION || 'us-east-1',
       });
-      return bedrock(modelId);
+      return guardBedrockLanguageModel(bedrock(modelId), modelId);
     }
     case 'openai-compatible':
     default: {
@@ -257,12 +258,12 @@ export async function getEmbeddingModel(key: string = 'embedding'): Promise<Embe
           secretAccessKey: resolved.secretAccessKey,
           sessionToken: resolved.sessionToken,
         });
-        return bedrock.embedding(resolved.model);
+        return guardBedrockEmbeddingModel(bedrock.embedding(resolved.model), resolved.model);
       }
       const bedrock = createAmazonBedrock({
         region: process.env.AWS_REGION || 'us-east-1',
       });
-      return bedrock.embedding(resolved.model);
+      return guardBedrockEmbeddingModel(bedrock.embedding(resolved.model), resolved.model);
     }
     case 'openai-compatible':
     default: {
