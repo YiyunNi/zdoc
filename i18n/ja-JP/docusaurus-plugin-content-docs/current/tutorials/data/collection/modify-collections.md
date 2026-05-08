@@ -279,7 +279,7 @@ curl --request POST \
 
 以下のコードスニペットは、既存の `TIMESTAMPTZ` フィールド (`expire_at`) をエンティティレベル TTL の TTL フィールドとして指定します。コレクションには既にその名前の `TIMESTAMPTZ` フィールドが含まれている必要があり、`collection.ttl.seconds` は設定されていない必要があります — この 2 つの TTL モードは相互に排他的です。
 
-エンティティレベル TTL の完全なワークフロー（スキーマ設定、挿入、クエリ、更新、削除）については、[エンティティレベル TTL の設定](./modify-collections#example-2-set-entity-level-ttl-or-private) を参照してください。
+エンティティレベル TTL の完全なワークフロー（スキーマ設定、挿入、クエリ、更新、削除）については、[エンティティレベル TTL の設定](./modify-collections#example-2-set-entity-level-ttl) を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

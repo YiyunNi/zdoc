@@ -28,7 +28,7 @@ import Supademo from '@site/src/components/Supademo';
 
 ## 外部コレクションの作成\{#create-an-external-collection}
 
-開始する前に、[外部ボリューム](null) を作成していることを確認してください。
+開始する前に、[外部ボリューム](./external-volume) を作成していることを確認してください。
 
 <Supademo id="cmokttyiy05dxpimdm3d8vnxv" title=""  />
 

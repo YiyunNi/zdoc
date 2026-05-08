@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
 
 - **ストレージ統合の作成**
 
-    ストレージ統合は、データの場所とアクセス認証情報を記録するプロファイルです。ストレージ統合を設定するには、[AWS S3](null)、[Google GCS](null)、または [Azure](null) のストレージ統合を作成する手順に従い、ストレージ統合IDを取得してください。
+    ストレージ統合は、データの場所とアクセス認証情報を記録するプロファイルです。ストレージ統合を設定するには、[AWS S3](./integrate-with-aws-s3)、[Google GCS](./integrate-with-gcp)、または [Azure](integrate-with-azure-blob-storage) のストレージ統合を作成する手順に従い、ストレージ統合IDを取得してください。
 
 - **外部ボリュームの作成**
 

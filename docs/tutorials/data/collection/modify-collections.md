@@ -282,7 +282,7 @@ curl --request POST \
 
 The following code snippet designates an existing `TIMESTAMPTZ` field (`expire_at`) as the TTL field for entity-level TTL. The collection must already contain a `TIMESTAMPTZ` field with that name, and `collection.ttl.seconds` must not be set — the two TTL modes are mutually exclusive.
 
-For the full entity-level TTL workflow (schema setup, insert, query, refresh, drop), refer to [Set entity-level TTL](./modify-collections#example-2-set-entity-level-ttl-or-private).
+For the full entity-level TTL workflow (schema setup, insert, query, refresh, drop), refer to [Set entity-level TTL](./modify-collections#example-2-set-entity-level-ttl).
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

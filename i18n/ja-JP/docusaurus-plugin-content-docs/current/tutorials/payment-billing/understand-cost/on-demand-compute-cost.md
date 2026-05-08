@@ -55,7 +55,7 @@ Query CU Cost = Query CU Unit Price × Number of Query CU × Active Runtime
 
 ## インデックス作成 CU cost\{#indexing-cu-cost}
 
-インデックス作成CUコストは、オンデマンドコンピューティングで[マネージド](null)および[外部コレクション](./external-collection)の両方のデータに対してインデックスを構築する際に消費されるコンピューティングリソースを測定します。
+インデックス作成CUコストは、オンデマンドコンピューティングで[マネージド](./manage-collections)および[外部コレクション](./external-collection)の両方のデータに対してインデックスを構築する際に消費されるコンピューティングリソースを測定します。
 
 ### Sources of indexing CU cost\{#sources-of-indexing-cu-cost}
 

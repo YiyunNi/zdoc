@@ -41,7 +41,7 @@ TTL には 2 つのモードがあります:
 
 ## 制限\{#limits}
 
-- 2 つの TTL モードは相互に排他的です。コレクションに `collection.ttl.seconds` と `ttl_field` を同時に設定することはできません。切り替える方法については、[2 つのモード間の移行](./set-collection-ttl#migrate-between-the-two-modes-or-private) を参照してください。
+- 2 つの TTL モードは相互に排他的です。コレクションに `collection.ttl.seconds` と `ttl_field` を同時に設定することはできません。切り替える方法については、[2 つのモード間の移行](./set-collection-ttl#migrate-between-the-two-modes) を参照してください。
 
 - コレクション レベル TTL は、コレクション全体に 1 つのウィンドウを適用します。単一の行に異なる有効期間が必要な場合は、エンティティ レベル TTL を使用してください。
 

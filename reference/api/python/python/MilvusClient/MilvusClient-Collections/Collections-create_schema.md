@@ -104,11 +104,11 @@ MilvusClient.create_schema(**kwargs) -> CollectionSchema
 
 **RETURN TYPE:**
 
-*[CollectionSchema](null)*
+*[CollectionSchema](./MilvusClient-CollectionSchema)*
 
 **RETURNS:**
 
-A **[CollectionSchema](null)** object.
+A **[CollectionSchema](./MilvusClient-CollectionSchema)** object.
 
 **EXCEPTIONS:**
 
