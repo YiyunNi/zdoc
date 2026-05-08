@@ -149,6 +149,20 @@ describe('HTTP Endpoints', () => {
     expect(body).not.toHaveProperty('gaps');
   });
 
+  it('OPTIONS /chat allows x-traffic-source header for preflight', async () => {
+    const res = await app.request('/chat', {
+      method: 'OPTIONS',
+      headers: {
+        Origin: 'https://z2-dev.zilliz.cc',
+        'Access-Control-Request-Method': 'POST',
+        'Access-Control-Request-Headers': 'x-traffic-source,content-type',
+      },
+    });
+
+    expect(res.status).toBe(204);
+    expect(res.headers.get('Access-Control-Allow-Headers')).toContain('X-Traffic-Source');
+  });
+
   it('POST /chat with invalid JSON → 400', async () => {
     const res = await app.request('/chat', {
       method: 'POST',

@@ -622,7 +622,7 @@ app.use(
   cors({
     origin: CORS_ORIGIN,
     allowMethods: ['POST', 'OPTIONS'],
-    allowHeaders: ['Content-Type', 'X-Request-ID'],
+    allowHeaders: ['Content-Type', 'X-Request-ID', 'X-Traffic-Source'],
     exposeHeaders: ['X-Request-ID'],
   }),
 );
