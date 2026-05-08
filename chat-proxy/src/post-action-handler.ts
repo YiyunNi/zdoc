@@ -1,4 +1,5 @@
 import {insertDocGap, upsertContentQuality} from './db.js';
+import {summarizeForDebugLog} from './logger.js';
 import {clearSessionRoute} from './router.js';
 
 // ---------------------------------------------------------------------------
@@ -8,6 +9,7 @@ import {clearSessionRoute} from './router.js';
 export type FailureClass = 'IndexGap' | 'RoutingError' | 'SourceDemotion' | 'HardError' | 'None';
 
 export interface FailureContext {
+  requestId?: string;
   confidenceLevel: string;
   confidenceBreakdown?: {
     toolSuccess: number;
@@ -261,22 +263,32 @@ function expectedAgentForIntent(intent: string): string | null {
 // Action dispatcher
 // ---------------------------------------------------------------------------
 
+function safeTextForPersistence(value: string, key: string): string {
+  return JSON.stringify(summarizeForDebugLog(value, key));
+}
+
 export function handlePostAction(ctx: FailureContext): void {
   const diagnosis = classifyFailure(ctx);
 
   if (diagnosis.action === 'none') return;
 
-  console.log(`[PostAction] class=${diagnosis.failureClass} severity=${diagnosis.severity} cause=${diagnosis.rootCause.slice(0, 100)}`);
+  console.log('[PostAction]', JSON.stringify({
+    requestId: ctx.requestId,
+    class: diagnosis.failureClass,
+    severity: diagnosis.severity,
+    cause: summarizeForDebugLog(diagnosis.rootCause, 'reasoning'),
+  }));
 
   switch (diagnosis.action) {
     case 'log_gap':
       insertDocGap({
-        query: ctx.query.slice(0, 500),
+        requestId: ctx.requestId,
+        query: safeTextForPersistence(ctx.query, 'query'),
         sessionId: ctx.sessionId,
         detectedIntent: diagnosis.detectedIntent,
         toolsCalled: ctx.toolsCalled,
         confidenceLevel: ctx.confidenceLevel,
-        responseText: ctx.fullText.slice(0, 500),
+        responseText: safeTextForPersistence(ctx.fullText, 'response'),
       }).catch(() => {});
       break;
 
@@ -287,12 +299,13 @@ export function handlePostAction(ctx: FailureContext): void {
       }
       // Also log the gap for visibility
       insertDocGap({
-        query: ctx.query.slice(0, 500),
+        requestId: ctx.requestId,
+        query: safeTextForPersistence(ctx.query, 'query'),
         sessionId: ctx.sessionId,
         detectedIntent: diagnosis.detectedIntent,
         toolsCalled: ctx.toolsCalled,
         confidenceLevel: ctx.confidenceLevel,
-        responseText: ctx.fullText.slice(0, 500),
+        responseText: safeTextForPersistence(ctx.fullText, 'response'),
       }).catch(() => {});
       break;
 
@@ -307,12 +320,13 @@ export function handlePostAction(ctx: FailureContext): void {
     case 'log_error_and_alert':
       // Error already logged via logEvent — additional gap logging for visibility
       insertDocGap({
-        query: ctx.query.slice(0, 500),
+        requestId: ctx.requestId,
+        query: safeTextForPersistence(ctx.query, 'query'),
         sessionId: ctx.sessionId,
         detectedIntent: 'error',
         toolsCalled: ctx.toolsCalled,
         confidenceLevel: 'error',
-        responseText: ctx.error ? `Error: ${ctx.error}` : ctx.fullText.slice(0, 500),
+        responseText: ctx.error ? safeTextForPersistence(`Error: ${ctx.error}`, 'error') : safeTextForPersistence(ctx.fullText, 'response'),
       }).catch(() => {});
       break;
   }

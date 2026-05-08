@@ -22,5 +22,7 @@ export function makeTelemetry(functionId: string, metadata?: Record<string, Tele
     isEnabled: true as const,
     functionId,
     metadata: Object.keys(cleanMeta).length > 0 ? cleanMeta : undefined,
+    recordInputs: false,
+    recordOutputs: false,
   };
 }

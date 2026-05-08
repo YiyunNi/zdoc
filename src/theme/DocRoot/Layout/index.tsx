@@ -163,9 +163,10 @@ export default function DocRootLayout({children}: Props): ReactNode {
 
   const {siteConfig} = useDocusaurusContext();
   const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || '/api/chat';
+  const chatDebug = Boolean(siteConfig.customFields?.chatDebug);
 
   return (
-    <ChatProvider chatEndpoint={chatEndpoint}>
+    <ChatProvider chatEndpoint={chatEndpoint} debugDefault={chatDebug}>
       <div className={styles.docsWrapper}>
         <BackToTopButton />
 

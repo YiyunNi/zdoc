@@ -1,12 +1,13 @@
 import {embed, embedMany} from 'ai';
 import {getPool, invalidateCacheByChunkHashes, getCacheStats, getCacheEntriesCount, isDbReady, type CacheEntry} from './db.js';
+import {summarizeForDebugLog} from './logger.js';
 import {getEmbeddingModel, resolveModel} from './runtime-config.js';
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
 
-const SEMANTIC_CACHE_ENABLED = process.env.SEMANTIC_CACHE_ENABLED !== 'false'; // default true
+const SEMANTIC_CACHE_ENABLED = process.env.SEMANTIC_CACHE_ENABLED === 'true';
 const SEMANTIC_CACHE_TTL_MS = parseInt(process.env.SEMANTIC_CACHE_TTL_MS || '', 10) || 2 * 60 * 60 * 1000; // 2 hours
 const SEMANTIC_CACHE_THRESHOLD = parseFloat(process.env.SEMANTIC_CACHE_THRESHOLD || '0.92');
 const SEMANTIC_CACHE_MAX_ENTRIES = parseInt(process.env.SEMANTIC_CACHE_MAX_ENTRIES || '5000', 10);
@@ -29,7 +30,7 @@ export async function computeEmbedding(text: string): Promise<number[]> {
     try {
       return await embedCohereBedrock(text, resolved);
     } catch (err) {
-      console.error('[Embedding] Cohere Bedrock error:', (err as Error).message);
+      console.error('[Embedding] Cohere Bedrock error', JSON.stringify({error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
       throw err;
     }
   }
@@ -124,7 +125,7 @@ export async function computeEmbeddingsBatch(texts: string[]): Promise<number[][
     try {
       return await embedCohereBedrockBatch(texts, resolved);
     } catch (err) {
-      console.error('[Embedding] Cohere Bedrock batch error:', (err as Error).message);
+      console.error('[Embedding] Cohere Bedrock batch error', JSON.stringify({error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
       throw err;
     }
   }
@@ -169,6 +170,7 @@ export async function semanticCacheLookup(
   query: string,
   sectionFilter?: string,
   queryEmbedding?: number[],
+  requestId?: string,
 ): Promise<SemanticCacheHit | null> {
   if (!SEMANTIC_CACHE_ENABLED || !isDbReady()) return null;
 
@@ -238,16 +240,18 @@ export async function semanticCacheLookup(
 
   // Validate sources: check that all cached chunk hashes still exist in doc_chunks
   if (!await validateSources(bestHit.entry.chunk_hashes)) {
-    console.log(`[SemanticCache] Source validation failed for cached query: ${query.slice(0, 60)}`);
+    console.log('[SemanticCache] Source validation failed for cached query', JSON.stringify({requestId, query: summarizeForDebugLog(query, 'query')}));
     return null;
   }
 
   // Increment hit counter
   await pool.query('UPDATE answer_cache SET hits = hits + 1 WHERE id = $1', [bestHit.entry.id]);
 
-  console.log(
-    `[SemanticCache] HIT (similarity=${bestHit.similarity.toFixed(3)}): ${query.slice(0, 60)}`
-  );
+  console.log('[SemanticCache] HIT', JSON.stringify({
+    requestId,
+    similarity: bestHit.similarity.toFixed(3),
+    query: summarizeForDebugLog(query, 'query'),
+  }));
 
   return bestHit;
 }
@@ -320,7 +324,7 @@ export async function semanticCacheWrite(input: CacheWriteInput): Promise<void> 
     ],
   );
 
-  console.log(`[SemanticCache] Stored: ${input.queryText.slice(0, 60)}`);
+  console.log('[SemanticCache] Stored', JSON.stringify({query: summarizeForDebugLog(input.queryText, 'query')}));
 }
 
 // ---------------------------------------------------------------------------

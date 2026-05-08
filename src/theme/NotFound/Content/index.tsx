@@ -237,6 +237,7 @@ function FallbackCard() {
 export default function NotFoundContent(): React.ReactElement {
   const {siteConfig} = useDocusaurusContext();
   const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || '/api/chat';
+  const chatDebug = Boolean(siteConfig.customFields?.chatDebug);
 
   return (
     <div className={styles.pageWrapper}>
@@ -244,7 +245,7 @@ export default function NotFoundContent(): React.ReactElement {
       <BrowserOnly fallback={<FallbackCard />}>
         {() => (
           <ErrorBoundary fallback={() => <FallbackCard />}>
-            <ChatProvider chatEndpoint={chatEndpoint}>
+            <ChatProvider chatEndpoint={chatEndpoint} debugDefault={chatDebug}>
               <NotFoundChat />
             </ChatProvider>
           </ErrorBoundary>

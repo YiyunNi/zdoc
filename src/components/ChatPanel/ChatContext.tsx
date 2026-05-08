@@ -57,6 +57,45 @@ function getUserId(): string {
 }
 
 const HISTORY_KEY = 'zd-chat-history';
+const DEBUG_KEY = 'zd-chat-debug';
+
+function summarizeClientText(text: string): {chars: number; bytes: number} {
+  return {chars: text.length, bytes: new TextEncoder().encode(text).length};
+}
+
+function summarizeClientValue(value: unknown, key?: string, sensitiveContainer = false): unknown {
+  const normalized = key?.replace(/[^a-z0-9]/gi, '').toLowerCase();
+  const nextSensitiveContainer = sensitiveContainer || Boolean(normalized && /payload|data|messages|content|text|query|response|answer|context|error/.test(normalized));
+  if (typeof value === 'string') {
+    if (normalized === 'userid' || normalized === 'sessionid') return '[redacted]';
+    if (nextSensitiveContainer || value.length > 100) return summarizeClientText(value);
+    return value;
+  }
+  if (Array.isArray(value)) {
+    return {length: value.length, items: value.slice(0, 5).map(item => summarizeClientValue(item, key, nextSensitiveContainer))};
+  }
+  if (value && typeof value === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value).slice(0, 20)) {
+      out[k] = summarizeClientValue(v, k, nextSensitiveContainer);
+    }
+    return out;
+  }
+  return value;
+}
+
+function resolveChatDebugEnabled(defaultEnabled: boolean): boolean {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const param = params.get('chatDebug');
+    if (param === '1') localStorage.setItem(DEBUG_KEY, '1');
+    if (param === '0') localStorage.setItem(DEBUG_KEY, '0');
+    const stored = localStorage.getItem(DEBUG_KEY);
+    if (stored === '1') return true;
+    if (stored === '0') return false;
+  } catch {}
+  return defaultEnabled;
+}
 
 function loadHistory(): ChatHistoryEntry[] {
   try {
@@ -67,7 +106,7 @@ function loadHistory(): ChatHistoryEntry[] {
   }
 }
 
-export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; children: React.ReactNode}) {
+export function ChatProvider({chatEndpoint, debugDefault = false, children}: {chatEndpoint: string; debugDefault?: boolean; children: React.ReactNode}) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
@@ -80,6 +119,15 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
   const activeChatIdRef = useRef(activeChatId);
   activeChatIdRef.current = activeChatId;
   const location = useLocation();
+  const debugEnabledRef = useRef(resolveChatDebugEnabled(debugDefault));
+  const chatDebug = useCallback((event: string, data: Record<string, unknown> = {}) => {
+    if (!debugEnabledRef.current) return;
+    console.debug('[chat-debug]', {
+      event,
+      timestamp: new Date().toISOString(),
+      ...summarizeClientValue(data) as Record<string, unknown>,
+    });
+  }, []);
 
   // Auto-save current chat to history when first assistant message arrives
   useEffect(() => {
@@ -130,20 +178,49 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         return {role: m.role, content};
       });
 
+    const requestId = uuid();
+    const startedAt = Date.now();
+    const eventCounts: Record<string, number> = {};
+    const pageContext = getPageContext();
+    chatDebug('chat.client.send.started', {
+      requestId,
+      pagePath: location.pathname,
+      messageCount: apiMessages.length,
+      userText: text,
+      pageContext,
+    });
+
     try {
       abortRef.current = new AbortController();
+      const userId = getUserId();
+      const requestBody = {
+        messages: apiMessages,
+        pageContext,
+        pageUrl: location.pathname,
+        sessionId: sessionIdRef.current,
+        userId,
+        screenResolution: `${screen.width}x${screen.height}`,
+      };
+      chatDebug('chat.client.fetch.started', {
+        requestId,
+        endpointPath: chatEndpoint,
+        pagePath: location.pathname,
+        messageCount: apiMessages.length,
+        hasSessionId: Boolean(sessionIdRef.current),
+        hasUserId: Boolean(userId),
+        screenResolution: `${screen.width}x${screen.height}`,
+      });
       const res = await fetch(chatEndpoint, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          messages: apiMessages,
-          pageContext: getPageContext(),
-          pageUrl: location.pathname,
-          sessionId: sessionIdRef.current,
-          userId: getUserId(),
-          screenResolution: `${screen.width}x${screen.height}`,
-        }),
+        headers: {'Content-Type': 'application/json', 'X-Request-ID': requestId},
+        body: JSON.stringify(requestBody),
         signal: abortRef.current.signal,
+      });
+      chatDebug('chat.client.fetch.response', {
+        requestId,
+        status: res.status,
+        contentType: res.headers.get('content-type'),
+        serverRequestId: res.headers.get('x-request-id'),
       });
 
       if (!res.ok) {
@@ -157,6 +234,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
           }
           return updated;
         });
+        chatDebug('chat.client.error', {requestId, status: res.status, error: errorText});
         setIsStreaming(false);
         return;
       }
@@ -184,6 +262,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
           }
         } else {
           buffer += decoder.decode(value, {stream: true});
+          chatDebug('chat.client.sse.chunk', {requestId, bytes: value.byteLength, bufferChars: buffer.length});
         }
         const lines = buffer.split('\n');
         buffer = done ? '' : (lines.pop() || '');
@@ -193,6 +272,10 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
             currentEvent = line.slice(7);
           } else if (line.startsWith('data: ')) {
             const data = line.slice(6);
+            eventCounts[currentEvent] = (eventCounts[currentEvent] || 0) + 1;
+            let parsedForDebug: unknown = data;
+            try { parsedForDebug = JSON.parse(data); } catch {}
+            chatDebug('chat.client.sse.event', {requestId, sseEvent: currentEvent, payload: parsedForDebug});
             if (currentEvent === 'session') {
               try {
                 const parsed = JSON.parse(data) as {sessionId: string};
@@ -229,6 +312,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
               try {
                 const parsed = JSON.parse(data) as {text: string};
                 assistantText += parsed.text;
+                chatDebug('chat.client.delta.applied', {requestId, deltaChars: parsed.text.length, assistantChars: assistantText.length});
                 const captured = assistantText;
                 setMessages(prev => {
                   const updated = [...prev];
@@ -289,6 +373,16 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         if (done) break;
       }
 
+      chatDebug('chat.client.completed', {
+        requestId,
+        durationMs: Date.now() - startedAt,
+        eventCounts,
+        assistantText,
+        sourceCount: pendingSources?.length ?? 0,
+        confidence: pendingConfidence,
+        agentType: pendingAgent?.type,
+      });
+
       // Attach sources, confidence, and agent to the last assistant message
       setMessages(prev => {
         const updated = [...prev];
@@ -309,13 +403,14 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         // User cancelled
       } else {
         const errorMsg = err instanceof Error ? err.message : 'Something went wrong';
+        chatDebug('chat.client.error', {requestId, error: errorMsg});
         setMessages(prev => [...prev, {role: 'assistant', text: `Error: ${errorMsg}`}]);
       }
     } finally {
       setIsStreaming(false);
       abortRef.current = null;
     }
-  }, [chatEndpoint, location.pathname]);
+  }, [chatDebug, chatEndpoint, location.pathname]);
 
   const rateFeedback = useCallback((messageIndex: number, rating: 'up' | 'down') => {
     setMessages(prev => {

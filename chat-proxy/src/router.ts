@@ -3,6 +3,7 @@ import {z} from 'zod';
 import type {AgentType, ChatMessage} from './types.js';
 import {saveTokenUsage} from './db.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
+import {summarizeForDebugLog} from './logger.js';
 import {makeTelemetry} from './telemetry.js';
 
 // ---------------------------------------------------------------------------
@@ -214,6 +215,7 @@ async function routeIntentLegacy(
   latestMessage: string,
   recentMessages: ChatMessage[],
   sessionId?: string,
+  requestId?: string,
 ): Promise<{agent: AgentType; topics: TopicName[]; reasoning: string}> {
   const stickyAgent = sessionId ? sessionRoutes.get(sessionId) : undefined;
 
@@ -226,7 +228,7 @@ async function routeIntentLegacy(
       schema: routeSchema,
       maxOutputTokens: 250,
       abortSignal: AbortSignal.timeout(30000),
-      experimental_telemetry: makeTelemetry('router-legacy'),
+      experimental_telemetry: makeTelemetry('router-legacy', {sessionId, requestId}),
       prompt: `Classify the user's intent to route to the best specialized agent and identify relevant topics.
 
 Agents:
@@ -283,7 +285,7 @@ Route to the most appropriate agent and select relevant topics.`,
 
     return {agent: agentType, topics: result.object.topics || [], reasoning: result.object.reasoning};
   } catch (err) {
-    console.error('[Router] Classification error:', err);
+    console.error('[Router] Classification error', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
     const fallback = stickyAgent || 'general';
     return {agent: fallback, topics: [], reasoning: 'Fallback due to classification error'};
   }
@@ -297,6 +299,7 @@ async function routeIntentV2(
   latestMessage: string,
   recentMessages: ChatMessage[],
   sessionId?: string,
+  requestId?: string,
 ): Promise<{agent: AgentType; topics: TopicName[]; reasoning: string}> {
   const stickyAgent = sessionId ? sessionRoutes.get(sessionId) : undefined;
 
@@ -304,14 +307,14 @@ async function routeIntentV2(
   // Use the raw last message (not the enriched ragQuery) so short replies like "ok" match.
   const rawLatestMessage = recentMessages[recentMessages.length - 1]?.content || '';
   if (stickyAgent && isObviousFollowUp(rawLatestMessage)) {
-    console.log(`[Router] Follow-up fast-path → ${stickyAgent}`);
+    console.log('[Router] Follow-up fast-path', JSON.stringify({requestId, agent: stickyAgent}));
     return {agent: stickyAgent, topics: [], reasoning: 'Follow-up fast-path'};
   }
 
   // Fast-path 2: cross-session route cache
   const cached = getCachedRoute(latestMessage, stickyAgent);
   if (cached) {
-    console.log(`[Router] Cache hit for: ${latestMessage.slice(0, 60)}`);
+    console.log('[Router] Cache hit', JSON.stringify({requestId, query: summarizeForDebugLog(latestMessage, 'query')}));
     if (sessionId) sessionRoutes.set(sessionId, cached.agent);
     return cached;
   }
@@ -335,7 +338,7 @@ async function routeIntentV2(
       schema: routeSchema,
       maxOutputTokens: 250,
       abortSignal: AbortSignal.timeout(30000),
-      experimental_telemetry: makeTelemetry('router-v2-object', {providerFamily, sessionId}),
+      experimental_telemetry: makeTelemetry('router-v2-object', {providerFamily, sessionId, requestId}),
       prompt,
     });
 
@@ -351,9 +354,9 @@ async function routeIntentV2(
         reasoning: result.object.reasoning,
       };
     }
-    console.warn(`[Router] generateObject returned invalid agent: ${agentType}. Falling back to tool routing.`);
+    console.warn('[Router] generateObject returned invalid agent', JSON.stringify({requestId, agent: agentType}));
   } catch (err) {
-    console.warn('[Router] generateObject failed:', (err as Error).message);
+    console.warn('[Router] generateObject failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
   }
 
   // --- Attempt 2: generateText with route tool (better for weak JSON models) ---
@@ -366,7 +369,7 @@ async function routeIntentV2(
       toolChoice: 'required',
       maxOutputTokens: 250,
       abortSignal: AbortSignal.timeout(30000),
-      experimental_telemetry: makeTelemetry('router-v2-tool', {providerFamily, sessionId}),
+      experimental_telemetry: makeTelemetry('router-v2-tool', {providerFamily, sessionId, requestId}),
       prompt,
     });
 
@@ -386,9 +389,9 @@ async function routeIntentV2(
         };
       }
     }
-    console.warn('[Router] Tool-based routing returned no valid route tool call.');
+    console.warn('[Router] Tool-based routing returned no valid route tool call', JSON.stringify({requestId}));
   } catch (err) {
-    console.warn('[Router] generateText tool fallback failed:', (err as Error).message);
+    console.warn('[Router] generateText tool fallback failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
   }
 
   // --- Attempt 3: plain text fallback (for reasoning models that don't support tools or JSON mode) ---
@@ -400,7 +403,7 @@ async function routeIntentV2(
       maxOutputTokens: 250,
       temperature: 0,
       abortSignal: AbortSignal.timeout(30000),
-      experimental_telemetry: makeTelemetry('router-v2-text', {providerFamily, sessionId}),
+      experimental_telemetry: makeTelemetry('router-v2-text', {providerFamily, sessionId, requestId}),
       prompt: `${prompt}\n\nCRITICAL: Output ONLY a JSON object. No markdown, no explanations, no <think> tags. Example:\n{"agent": "schema", "topics": ["schema-design"], "reasoning": "User is asking about collection schema design."}`,
     });
 
@@ -416,13 +419,13 @@ async function routeIntentV2(
         reasoning: parsed.reasoning || '',
       };
     }
-    console.warn('[Router] Plain text fallback returned no valid JSON.');
+    console.warn('[Router] Plain text fallback returned no valid JSON', JSON.stringify({requestId}));
   } catch (err) {
-    console.warn('[Router] Plain text fallback failed:', (err as Error).message);
+    console.warn('[Router] Plain text fallback failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
   }
 
   // --- Attempt 4: sticky/general fallback ---
-  console.log('[Router] All routing attempts failed; falling back to sticky/general.');
+  console.log('[Router] All routing attempts failed; falling back to sticky/general.', JSON.stringify({requestId}));
   const fallback = stickyAgent || 'general';
   if (sessionId) sessionRoutes.set(sessionId, fallback);
   return {agent: fallback, topics: [], reasoning: 'Fallback after all routing attempts failed'};
@@ -509,11 +512,12 @@ export async function routeIntent(
   latestMessage: string,
   recentMessages: ChatMessage[],
   sessionId?: string,
+  requestId?: string,
 ): Promise<{agent: AgentType; topics: TopicName[]; reasoning: string}> {
   if (ROUTER_V2_ENABLED) {
-    return routeIntentV2(latestMessage, recentMessages, sessionId);
+    return routeIntentV2(latestMessage, recentMessages, sessionId, requestId);
   }
-  return routeIntentLegacy(latestMessage, recentMessages, sessionId);
+  return routeIntentLegacy(latestMessage, recentMessages, sessionId, requestId);
 }
 
 export function clearSessionRoute(sessionId: string): void {

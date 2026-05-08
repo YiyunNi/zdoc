@@ -1,3 +1,4 @@
+import {randomUUID} from 'crypto';
 import {Hono, type Context, type MiddlewareHandler} from 'hono';
 import {cors} from 'hono/cors';
 import {streamText, generateText, stepCountIs} from 'ai';
@@ -10,7 +11,7 @@ import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';
 import {getAgent} from './agents/index.js';
 import {getToolsForAgent, type ToolName} from './tools/index.js';
-import {logEvent, saveConversation, updateUserProfile} from './logger.js';
+import {logDebugFlow, logEvent, saveConversation, summarizeForDebugLog, updateUserProfile} from './logger.js';
 import {adminApp} from './admin.js';
 import {makeTelemetry} from './telemetry.js';
 import {incCounter, renderMetrics, observeHistogram} from './metrics.js';
@@ -173,6 +174,26 @@ const ALLOWED_ORIGINS = [
 const CORS_ORIGIN = ALLOWED_ORIGINS.length === 1 && ALLOWED_ORIGINS[0] === '*' ? '*' : ALLOWED_ORIGINS;
 const RATE_LIMIT_MAX = 20;
 const RATE_LIMIT_WINDOW_MS = 60_000;
+const REQUEST_ID_RE = /^[a-zA-Z0-9._:-]{1,128}$/;
+
+function getRequestId(c: Context): string {
+  const raw = c.req.header('x-request-id')?.trim();
+  return raw && REQUEST_ID_RE.test(raw) ? raw : randomUUID();
+}
+
+function requestIdHeaders(requestId: string): Record<string, string> {
+  return {'X-Request-ID': requestId};
+}
+
+function pagePathForLog(pageUrl?: string): string | undefined {
+  if (!pageUrl) return undefined;
+  try {
+    const url = new URL(pageUrl, 'http://local');
+    return url.pathname;
+  } catch {
+    return pageUrl.split(/[?#]/, 1)[0]?.slice(0, 200);
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Rate limiter (in-memory, per IP)
@@ -254,7 +275,8 @@ app.use(
   cors({
     origin: CORS_ORIGIN,
     allowMethods: ['POST', 'OPTIONS'],
-    allowHeaders: ['Content-Type'],
+    allowHeaders: ['Content-Type', 'X-Request-ID'],
+    exposeHeaders: ['X-Request-ID'],
   }),
 );
 
@@ -326,14 +348,25 @@ const MAX_BODY_SIZE_BYTES = 1024 * 1024; // 1 MB
 
 function bodySizeLimit(): MiddlewareHandler {
   return async (c, next) => {
+    const requestId = getRequestId(c);
+    const source = parseSource(c);
+    const rejectLargeBody = (size?: number) => {
+      logDebugFlow('chat.request.rejected', {requestId, source}, {
+        status: 413,
+        reason: 'body_too_large',
+        size,
+        maxSize: MAX_BODY_SIZE_BYTES,
+      });
+      return c.json({error: 'Request body too large'}, 413, requestIdHeaders(requestId));
+    };
     const contentLength = c.req.header('content-length');
     if (contentLength && parseInt(contentLength, 10) > MAX_BODY_SIZE_BYTES) {
-      return c.json({error: 'Request body too large'}, 413);
+      return rejectLargeBody(parseInt(contentLength, 10));
     }
     const cloned = c.req.raw.clone();
     const blob = await cloned.blob();
     if (blob.size > MAX_BODY_SIZE_BYTES) {
-      return c.json({error: 'Request body too large'}, 413);
+      return rejectLargeBody(blob.size);
     }
     return next();
   };
@@ -371,10 +404,25 @@ app.get('/search', async c => {
 // ---------------------------------------------------------------------------
 
 app.post('/chat', async c => {
+  const requestId = getRequestId(c);
+  const source = parseSource(c);
+  let debugSessionId: string | undefined;
+  let debugAgent: string | undefined;
+  let debugModel: string | undefined;
+  const debug = (event: string, data: Record<string, unknown> = {}) => {
+    logDebugFlow(event, {requestId, sessionId: debugSessionId, source, agent: debugAgent, model: debugModel}, data);
+  };
+  debug('chat.request.received', {
+    method: 'POST',
+    path: '/chat',
+    hasRequestIdHeader: Boolean(c.req.header('x-request-id')),
+  });
+
   // Rate limit
   const ip = getClientIp(c);
   if (!checkRateLimit(ip)) {
-    return c.json({error: 'Rate limit exceeded. Please try again in a minute.'}, 429);
+    debug('chat.request.rejected', {status: 429, reason: 'rate_limit'});
+    return c.json({error: 'Rate limit exceeded. Please try again in a minute.'}, 429, requestIdHeaders(requestId));
   }
 
   // Parse body
@@ -382,15 +430,16 @@ app.post('/chat', async c => {
   try {
     body = await c.req.json<ChatRequest>();
   } catch {
-    return c.json({error: 'Invalid JSON body'}, 400);
+    debug('chat.request.rejected', {status: 400, reason: 'invalid_json'});
+    return c.json({error: 'Invalid JSON body'}, 400, requestIdHeaders(requestId));
   }
 
   if (!body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
-    return c.json({error: 'messages array is required and must not be empty'}, 400);
+    debug('chat.request.rejected', {status: 400, reason: 'missing_messages'});
+    return c.json({error: 'messages array is required and must not be empty'}, 400, requestIdHeaders(requestId));
   }
 
   const userId = body.userId || 'anonymous';
-  const source = parseSource(c);
 
   // Extract user metadata for observability
   const userMeta: Record<string, unknown> = {};
@@ -405,26 +454,41 @@ app.post('/chat', async c => {
     } catch {}
   }
   const referer = c.req.header('referer');
-  if (referer) userMeta.referer = referer;
+  if (referer) userMeta.referer = pagePathForLog(referer);
   const acceptLanguage = c.req.header('accept-language');
   if (acceptLanguage) userMeta.language = acceptLanguage;
   if (body.screenResolution) userMeta.screen_resolution = body.screenResolution;
 
   // Session management
   const {session, isNew} = getOrCreateSession(body.sessionId);
+  debugSessionId = session.id;
   const windowedMessages = appendAndWindow(session, body.messages);
 
   // Relevance guard
   const lastUserMessage = [...body.messages].reverse().find(m => m.role === 'user');
+  debug('chat.request.accepted', {
+    messageCount: body.messages.length,
+    hasClientSessionId: Boolean(body.sessionId),
+    pagePath: pagePathForLog(body.pageUrl),
+    pageContextChars: body.pageContext?.length ?? 0,
+    lastUserMessage: lastUserMessage?.content,
+  });
+  debug('chat.session.resolved', {
+    sessionId: session.id,
+    isNew,
+    windowedMessageCount: windowedMessages.length,
+  });
   if (lastUserMessage) {
     const guardResult = checkGuard(lastUserMessage.content);
+    debug('chat.guard.checked', {allowed: guardResult.allowed, reason: guardResult.reason});
     if (!guardResult.allowed) {
-      console.log(`[Guard] Blocked (${guardResult.reason}): ${lastUserMessage.content.slice(0, 80)}`);
+      console.log('[Guard] Blocked', JSON.stringify({reason: guardResult.reason, message: summarizeForDebugLog(lastUserMessage.content, 'message')}));
       incCounter('chat_proxy_requests_total', {agent: 'guard', model: 'none', status: guardResult.reason === 'injection' ? 'blocked_injection' : 'blocked_greeting'});
       logEvent(session.id, userId, 'message', 'guard', {
+        requestId,
         blocked: true,
         reason: guardResult.reason,
-        message: lastUserMessage.content,
+        messageSummary: summarizeForDebugLog(lastUserMessage.content, 'message'),
       }, userMeta, source);
 
       return c.newResponse(
@@ -432,11 +496,14 @@ app.post('/chat', async c => {
           start(controller) {
             const encoder = new TextEncoder();
             const send = (event: string, data: string) => {
+              debug('chat.sse.event.sent', {sseEvent: event, payloadBytes: Buffer.byteLength(data, 'utf8')});
               controller.enqueue(encoder.encode(`event: ${event}\ndata: ${data}\n\n`));
             };
-            send('session', JSON.stringify({sessionId: session.id}));
+            debug('chat.sse.opened', {guard: true});
+            send('session', JSON.stringify({sessionId: session.id, requestId}));
             send('delta', JSON.stringify({text: guardResult.deflection}));
             send('done', JSON.stringify({stop_reason: 'guard'}));
+            debug('chat.response.completed', {status: 'guard', stopReason: 'guard'});
             controller.close();
           },
         }),
@@ -445,6 +512,7 @@ app.post('/chat', async c => {
             'Content-Type': 'text/event-stream',
             'Cache-Control': 'no-cache',
             Connection: 'keep-alive',
+            ...requestIdHeaders(requestId),
           },
         },
       );
@@ -467,24 +535,34 @@ app.post('/chat', async c => {
       async start(controller) {
         const encoder = new TextEncoder();
         const send = (event: string, data: string) => {
+          debug('chat.sse.event.sent', {sseEvent: event, payloadBytes: Buffer.byteLength(data, 'utf8')});
           controller.enqueue(encoder.encode(`event: ${event}\ndata: ${data}\n\n`));
         };
 
+        debug('chat.sse.opened');
         // Emit session ID immediately so the client knows the connection is live
-        send('session', JSON.stringify({sessionId: session.id}));
+        send('session', JSON.stringify({sessionId: session.id, requestId}));
 
         // Check response cache for identical repeated queries
         const tChatStart = Date.now();
         const sectionFilter = deriveSectionFilter(body.pageUrl);
         const responseCacheKey = `${session.id}:${ragQuery}:${sectionFilter || ''}`;
         const cachedEvents = responseCacheGet(responseCacheKey);
+        debug('chat.cache.checked', {layer: 'response', hit: Boolean(cachedEvents), eventCount: cachedEvents?.length ?? 0});
         if (cachedEvents) {
-          console.log(`[Cache] Response cache hit for: ${ragQuery.slice(0, 60)}`);
+          console.log('[Cache] Response cache hit', JSON.stringify({requestId, query: summarizeForDebugLog(ragQuery, 'query')}));
+          logEvent(session.id, userId, 'cache', 'response', {
+            requestId,
+            cacheType: 'response',
+            eventCount: cachedEvents.length,
+            questionSummary: summarizeForDebugLog(ragQuery, 'question'),
+          }, userMeta, source);
           incCounter('chat_proxy_cache_hits_total', {type: 'response'});
           send('cache', JSON.stringify({type: 'session'}));
           for (const evt of cachedEvents) {
             send(evt.event, evt.data);
           }
+          debug('chat.response.completed', {status: 'response_cache_hit', totalDurationMs: Date.now() - tChatStart});
           controller.close();
           return;
         }
@@ -495,11 +573,11 @@ app.post('/chat', async c => {
         // that was the dominant first-token bottleneck.
         const tEmbedStart = Date.now();
         const embeddingPromise = computeEmbedding(ragQuery).catch((err: Error) => {
-          console.warn('[Embedding] Failed to compute query embedding:', err.message);
+          console.warn('[Embedding] Failed to compute query embedding', JSON.stringify({requestId, error: summarizeForDebugLog(err.message, 'error')}));
           return null;
         });
 
-        const routePromise = routeIntent(ragQuery, body.messages, session.id).catch(() =>
+        const routePromise = routeIntent(ragQuery, body.messages, session.id, requestId).catch(() =>
           ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}),
         );
 
@@ -507,21 +585,30 @@ app.post('/chat', async c => {
         let semanticHit: SemanticCacheHit | null = null;
         const queryEmbedding = await embeddingPromise;
         const tEmbed = Date.now() - tEmbedStart;
+        debug('chat.embedding.completed', {durationMs: tEmbed, hasEmbedding: Boolean(queryEmbedding)});
         if (queryEmbedding) {
           try {
-            semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding);
+            semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding, requestId);
           } catch (err) {
-            console.warn('[SemanticCache] Lookup failed:', (err as Error).message);
+            console.warn('[SemanticCache] Lookup failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
           }
         }
+        debug('chat.cache.checked', {layer: 'semantic', hit: Boolean(semanticHit), similarity: semanticHit?.similarity});
         if (semanticHit) {
-          console.log(`[SemanticCache] Replay cached response: ${ragQuery.slice(0, 60)}`);
+          console.log('[SemanticCache] Replay cached response', JSON.stringify({requestId, query: summarizeForDebugLog(ragQuery, 'query')}));
+          logEvent(session.id, userId, 'cache', 'semantic', {
+            requestId,
+            cacheType: 'semantic',
+            similarity: semanticHit.similarity,
+            questionSummary: summarizeForDebugLog(ragQuery, 'question'),
+          }, userMeta, source);
           incCounter('chat_proxy_cache_hits_total', {type: 'semantic'});
           send('cache', JSON.stringify({type: 'semantic', similarity: semanticHit.similarity}));
           const events = JSON.parse(semanticHit.entry.sse_events) as Array<{event: string; data: string}>;
           for (const evt of events) {
             send(evt.event, evt.data);
           }
+          debug('chat.response.completed', {status: 'semantic_cache_hit', similarity: semanticHit.similarity, totalDurationMs: Date.now() - tChatStart});
           controller.close();
           return;
         }
@@ -540,13 +627,20 @@ app.post('/chat', async c => {
         try {
           setActiveSectionFilter(sectionFilter);
           setQueryEmbedding(queryEmbedding);
-          console.log(`[Section] pageUrl=${body.pageUrl} filter=${sectionFilter || 'none'}`);
+          console.log(`[Section] pageUrl=${pagePathForLog(body.pageUrl) || 'none'} filter=${sectionFilter || 'none'}`);
           const tRouteStart = Date.now();
           const routeResult = await routePromise;
           const tRoute = Date.now() - tRouteStart;
+          debug('chat.router.completed', {
+            durationMs: tRoute,
+            agent: routeResult.agent,
+            topicCount: routeResult.topics?.length ?? 0,
+            reasoning: routeResult.reasoning,
+          });
 
           const agentConfig = getAgent(routeResult.agent as any);
           currentAgent = agentConfig.type;
+          debugAgent = agentConfig.type;
           const agentTools = getToolsForAgent(agentConfig.toolNames);
 
           // Resolve model from runtime config (DB override → env var → default)
@@ -554,23 +648,32 @@ app.post('/chat', async c => {
           const chatModelResolved = getChatModelForStream(resolvedModel);
           const activeModel = chatModelResolved.model;
           currentModel = activeModel;
+          debugModel = activeModel;
+          debug('chat.model.resolved', {
+            provider: chatModelResolved.provider,
+            model: activeModel,
+            mappedFrom: resolvedModel.model,
+            mappedTo: chatModelResolved.model,
+          });
           if (chatModelResolved.model !== resolvedModel.model) {
             console.log(`[Model] Mapped reasoning model ${resolvedModel.model} → ${chatModelResolved.model} for streaming`);
           }
 
           logEvent(session.id, userId, 'routing', routeResult.agent, {
-            reasoning: routeResult.reasoning,
+            requestId,
+            reasoningSummary: summarizeForDebugLog(routeResult.reasoning, 'reasoning'),
             topics: routeResult.topics,
             model: activeModel,
-            message: rawQuery.slice(0, 200),
+            messageSummary: summarizeForDebugLog(rawQuery, 'message'),
           }, userMeta, source);
 
           // Log the user message for session reconstruction
           if (lastUserMessage) {
             logEvent(session.id, userId, 'message', agentConfig.type, {
+              requestId,
               role: 'user',
-              content: lastUserMessage.content,
-              question: ragQuery,
+              contentSummary: summarizeForDebugLog(lastUserMessage.content, 'content'),
+              questionSummary: summarizeForDebugLog(ragQuery, 'question'),
             }, userMeta, source);
           }
 
@@ -593,8 +696,9 @@ app.post('/chat', async c => {
             }
           }
 
-          if (body.pageContext && shouldInjectPageContext(session, body.pageUrl)) {
-            systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext.slice(0, 8000)}`;
+          const pageContextIncluded = Boolean(body.pageContext && shouldInjectPageContext(session, body.pageUrl));
+          if (pageContextIncluded) {
+            systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext!.slice(0, 8000)}`;
           }
 
           // Evaluate pre-prompt hooks (confidence not yet known)
@@ -603,9 +707,23 @@ app.post('/chat', async c => {
           if (injections.length > 0) {
             systemPrompt += '\n\n## Additional Instructions\n' + injections.join('\n\n');
           }
+          debug('chat.prompt.built', {
+            systemPrompt: systemPrompt,
+            topicPromptCount: topics.slice(0, 2).length,
+            pageContextIncluded,
+            preHookCount: injections.length,
+            toolNames: agentConfig.toolNames,
+          });
 
           const tLlmStart = Date.now();
           const modelInstance = await createModelInstance(chatModelResolved);
+          debug('chat.provider.stream.started', {
+            agent: agentConfig.type,
+            model: activeModel,
+            toolCount: Object.keys(agentTools).length,
+            maxOutputTokens: 4096,
+            timeoutMs: 120000,
+          });
           const result = streamText({
             model: modelInstance,
             maxOutputTokens: 4096,
@@ -621,6 +739,7 @@ app.post('/chat', async c => {
             experimental_telemetry: makeTelemetry('chat-stream', {
               agentType: agentConfig.type,
               sessionId: session.id,
+              requestId,
               model: activeModel,
             }),
           });
@@ -630,6 +749,7 @@ app.post('/chat', async c => {
           const toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[] = [];
           let fullText = '';
           let groundedSourceCount = 0;
+          let deltaCount = 0;
 
           for await (const part of result.fullStream) {
             if (part.type === 'error') {
@@ -637,14 +757,23 @@ app.post('/chat', async c => {
             }
             if (part.type === 'text-delta') {
               fullText += part.text;
+              deltaCount++;
               sendAndRecord('delta', JSON.stringify({text: part.text}));
             } else if (part.type === 'tool-call') {
               toolsCalled.push(part.toolName);
+              const toolArgs = (part as any).input ?? (part as any).args;
+              debug('chat.tool.call', {
+                tool: part.toolName,
+                callIndex: toolsCalled.length,
+                argKeys: toolArgs && typeof toolArgs === 'object' ? Object.keys(toolArgs) : [],
+                args: toolArgs,
+              });
               incCounter('chat_proxy_tool_calls_total', {tool: part.toolName});
               sendAndRecord('tool-call', JSON.stringify({tool: part.toolName, count: toolsCalled.length}));
               logEvent(session.id, userId, 'tool_call', agentConfig.type, {
+                requestId,
                 tool: part.toolName,
-                args: (part as any).input ?? (part as any).args,
+                argsSummary: summarizeForDebugLog(toolArgs),
               }, userMeta, source);
             } else if ((part as any).type === 'tool-result') {
               // Extract sources from any tool that returns doc URLs
@@ -682,8 +811,13 @@ app.post('/chat', async c => {
                   content: toolResult.content,
                 });
               }
+              debug('chat.tool.result', {
+                resultCount: Array.isArray(toolResult?.results) ? toolResult.results.length : undefined,
+                sourceCount: toolSources.length,
+                content: toolResult,
+              });
             } else if (process.env.DEBUG_STREAM === 'true') {
-              console.log('[stream] unhandled part type:', (part as any).type, part);
+              console.log('[stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
             }
           }
 
@@ -693,6 +827,7 @@ app.post('/chat', async c => {
             const assembled = await result.text;
             if (assembled) {
               fullText = assembled;
+              deltaCount++;
               sendAndRecord('delta', JSON.stringify({text: fullText}));
             }
           }
@@ -710,14 +845,21 @@ app.post('/chat', async c => {
                 messages: response.messages,
                 maxOutputTokens: 4096,
                 temperature: 0.2,
+                experimental_telemetry: makeTelemetry('chat-fallback-generate-text', {
+                  agentType: agentConfig.type,
+                  sessionId: session.id,
+                  requestId,
+                  model: activeModel,
+                }),
               });
               if (fallbackResult.text) {
                 fullText = fallbackResult.text;
+                deltaCount++;
                 sendAndRecord('delta', JSON.stringify({text: fullText}));
                 console.log(`[Fallback] generateText recovered ${fullText.length} chars`);
               }
             } catch (err) {
-              console.error('[Fallback] generateText failed:', (err as Error).message);
+              console.error('[Fallback] generateText failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
             }
           }
 
@@ -737,14 +879,21 @@ app.post('/chat', async c => {
                 ],
                 maxOutputTokens: 4096,
                 temperature: 0.2,
+                experimental_telemetry: makeTelemetry('chat-nuclear-generate-text', {
+                  agentType: agentConfig.type,
+                  sessionId: session.id,
+                  requestId,
+                  model: activeModel,
+                }),
               });
               if (fallbackResult.text) {
                 fullText = fallbackResult.text;
+                deltaCount++;
                 sendAndRecord('delta', JSON.stringify({text: fullText}));
                 console.log(`[Nuclear] generateText recovered ${fullText.length} chars from ${toolChunks.length} chunks`);
               }
             } catch (err) {
-              console.error('[Nuclear] generateText failed:', (err as Error).message);
+              console.error('[Nuclear] generateText failed', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
             }
           }
 
@@ -769,8 +918,15 @@ app.post('/chat', async c => {
               incCounter('chat_proxy_token_usage_total', {model: activeModel, agent: agentConfig.type, type: 'total'}, tokenUsage.totalTokens);
             }
           } catch (err) {
-            console.warn('[Usage] Failed to read totalUsage:', (err as Error).message);
+            console.warn('[Usage] Failed to read totalUsage', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
           }
+          debug('chat.provider.stream.completed', {
+            durationMs: Date.now() - tLlmStart,
+            deltaCount,
+            assistantText: fullText,
+            toolsCalled,
+            tokenUsage,
+          });
 
           // Deduplicate tool sources by URL
           const seenUrls = new Set<string>();
@@ -790,7 +946,7 @@ app.post('/chat', async c => {
             toolSources,
             fullText,
             pageContext: body.pageContext,
-            pageUrl: body.pageUrl,
+            pageUrl: pagePathForLog(body.pageUrl),
           });
           const confidence = confidenceResult.level;
 
@@ -831,7 +987,7 @@ app.post('/chat', async c => {
             }
 
             // Single-pass LLM source attribution
-            const grounding = await groundAtomically(fullText, filteredCandidates, allChunks);
+            const grounding = await groundAtomically(fullText, filteredCandidates, allChunks, requestId);
 
             console.log(
               `[Sources] method=${grounding.method} Tools: ${toolSources.length}, Deduped: ${allSources.length}, Filtered: ${filteredCandidates.length}, Grounded: ${grounding.sources.length}`,
@@ -859,6 +1015,13 @@ app.post('/chat', async c => {
               }));
             }
           }
+          debug('chat.grounding.completed', {
+            durationMs: Date.now() - tGroundStart,
+            candidateCount: allSources.length,
+            selectedCount: groundedSourceCount,
+            deflected,
+            selfDescribed,
+          });
 
           // Evaluate post-response hooks (confidence now known)
           const postCtx = {message: ragQuery, agentType: agentConfig.type as AgentType, confidence};
@@ -904,15 +1067,16 @@ app.post('/chat', async c => {
 
           // Log the message (fire-and-forget)
           logEvent(session.id, userId, 'message', agentConfig.type, {
+            requestId,
             role: 'assistant',
-            content: fullText,
-            question: ragQuery.slice(0, 200),
+            contentSummary: summarizeForDebugLog(fullText, 'content'),
+            questionSummary: summarizeForDebugLog(ragQuery, 'question'),
             model: activeModel,
             confidence,
             toolsCalled,
             sourceCount: allSources.length,
             sources: allSources.map(s => ({ title: s.title, url: s.url, section: s.section })),
-            pageUrl: body.pageUrl,
+            pageUrl: pagePathForLog(body.pageUrl),
             inputTokens: tokenUsage?.inputTokens,
             outputTokens: tokenUsage?.outputTokens,
             totalTokens: tokenUsage?.totalTokens,
@@ -922,6 +1086,13 @@ app.post('/chat', async c => {
           const tGround = Date.now() - tGroundStart;
           const tTotal = Date.now() - tChatStart;
           console.log(`[timing] embed=${tEmbed}ms route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${tTotal}ms tools=${toolsCalled.length} sources=${allSources.length}`);
+          debug('chat.response.completed', {
+            status: 'success',
+            totalDurationMs: tTotal,
+            sourceCount: allSources.length,
+            confidence,
+            cacheWritten: true,
+          });
 
           // Record per-step duration histograms
           observeHistogram('chat_proxy_step_duration_ms', {step: 'embed', agent: agentConfig.type}, tEmbed);
@@ -944,6 +1115,7 @@ app.post('/chat', async c => {
           // Save conversation (fire-and-forget)
           saveConversation({
             id: session.id,
+            requestId,
             userId,
             sessionId: session.id,
             messages: windowedMessages.map(m => ({role: m.role, content: m.content})),
@@ -951,7 +1123,7 @@ app.post('/chat', async c => {
             toolsCalled,
             sourcesReturned: allSources.map(s => s.url),
             confidenceLevels: [confidence],
-            pageUrls: body.pageUrl ? [body.pageUrl] : [],
+            pageUrls: body.pageUrl ? [pagePathForLog(body.pageUrl) || ''] : [],
             feedbackSummary: {up: 0, down: 0},
             tokenUsage: tokenUsage ?? undefined,
           });
@@ -972,13 +1144,15 @@ app.post('/chat', async c => {
 
           // Update user profile (fire-and-forget)
           updateUserProfile(userId, {
+            requestId,
             agentsUsed: {[agentConfig.type]: 1},
-            topicsDiscussed: [ragQuery.slice(0, 64)],
-            pagesVisited: body.pageUrl ? [body.pageUrl] : [],
+            topicsDiscussed: routeResult.topics?.slice(0, 2) ?? [],
+            pagesVisited: body.pageUrl ? [pagePathForLog(body.pageUrl) || ''] : [],
           });
 
           // Post-action handler: diagnose and act on low-confidence/error responses (fire-and-forget)
           handlePostAction({
+            requestId,
             confidenceLevel: confidence,
             confidenceBreakdown: confidenceResult.breakdown,
             toolsCalled,
@@ -1002,25 +1176,28 @@ app.post('/chat', async c => {
             message.includes('Controller is already closed');
 
           if (isClientDisconnect) {
-            console.log('[Chat] Client disconnected:', message);
+            debug('chat.response.error', {errorKind: 'client_disconnect', error: message, clientDisconnected: true});
+            console.log('[Chat] Client disconnected', JSON.stringify({requestId, error: summarizeForDebugLog(message, 'error')}));
             recordLlmDisconnect();
             return; // Let finally block close the controller
           }
 
-          console.error('[Chat] Stream error:', message);
+          debug('chat.response.error', {errorKind: 'stream_error', error: message, clientDisconnected: false});
+          console.error('[Chat] Stream error', JSON.stringify({requestId, error: summarizeForDebugLog(message, 'error')}));
           try {
-            send('error', JSON.stringify({error: message}));
+            send('error', JSON.stringify({error: 'Internal server error', requestId}));
           } catch {
             // Controller may already be closed; ignore secondary send errors
           }
           // Allow the error event to flush before the finally block closes the controller
           await new Promise(r => setTimeout(r, 100));
-          logEvent(session.id, userId, 'error', 'unknown', {error: message}, userMeta, source);
-          recordLlmError(message);
+          logEvent(session.id, userId, 'error', 'unknown', {requestId, errorSummary: summarizeForDebugLog(message, 'message')}, userMeta, source);
+          recordLlmError(`Internal server error; requestId=${requestId}`);
           incCounter('chat_proxy_requests_total', {agent: currentAgent, model: currentModel, status: 'error'});
 
           // Post-action for hard errors
           handlePostAction({
+            requestId,
             confidenceLevel: 'low',
             toolsCalled: [],
             sourceCount: 0,
@@ -1033,7 +1210,7 @@ app.post('/chat', async c => {
             sessionId: session.id,
             isDeflected: false,
             isSelfDescribed: false,
-            error: message,
+            error: 'Internal server error',
           });
         } finally {
           controller.close();
@@ -1045,6 +1222,7 @@ app.post('/chat', async c => {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
         Connection: 'keep-alive',
+        ...requestIdHeaders(requestId),
       },
     },
   );
@@ -1066,7 +1244,7 @@ app.post('/feedback', async c => {
     return c.json({error: 'sessionId, messageIndex, and rating (up|down) are required'}, 400);
   }
 
-  recordFeedback(body.sessionId, body.messageIndex, body.rating, body.pageUrl);
+  recordFeedback(body.sessionId, body.messageIndex, body.rating, pagePathForLog(body.pageUrl));
 
   const source = parseSource(c);
 
@@ -1074,7 +1252,7 @@ app.post('/feedback', async c => {
   logEvent(body.sessionId, body.userId || 'anonymous', 'feedback', '', {
     rating: body.rating,
     messageIndex: body.messageIndex,
-    pageUrl: body.pageUrl,
+    pageUrl: pagePathForLog(body.pageUrl),
   }, undefined, source);
 
   return c.json({ok: true});

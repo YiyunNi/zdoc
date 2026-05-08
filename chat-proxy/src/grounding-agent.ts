@@ -6,6 +6,7 @@ import type {Source} from './types.js';
 import {isApiRefSource} from './demotion.js';
 import {saveTokenUsage} from './db.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
+import {summarizeForDebugLog} from './logger.js';
 import {makeTelemetry} from './telemetry.js';
 
 const groundingSchema = z.object({
@@ -41,6 +42,7 @@ export async function groundAtomically(
   fullText: string,
   candidateSources: Source[],
   allChunks: SearchResult[],
+  requestId?: string,
 ): Promise<GroundingResult> {
   if (!fullText.trim() || candidateSources.length === 0) {
     return {sources: [], citations: [], method: 'fallback'};
@@ -73,7 +75,7 @@ export async function groundAtomically(
       model: await createModelInstance(resolvedModel),
       schema: groundingSchema,
       maxOutputTokens: 400,
-      experimental_telemetry: makeTelemetry('grounding'),
+      experimental_telemetry: makeTelemetry('grounding', {requestId}),
       prompt: `You are a source attribution agent for Zilliz Cloud documentation. Given a response and candidate sources, select ONLY the sources that genuinely support claims in the response.
 
 Rules:
@@ -151,7 +153,10 @@ Select genuinely relevant sources and map them to paragraphs.`,
     );
     return {sources: filteredSources, citations, method: 'llm'};
   } catch (err) {
-    console.warn('[Grounding] LLM failed, falling back to keyword overlap:', err instanceof Error ? err.message : err);
+    console.warn('[Grounding] LLM failed, falling back to keyword overlap', JSON.stringify({
+      requestId,
+      error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error'),
+    }));
     return computeGrounding(fullText, allChunks, candidateSources);
   }
 }

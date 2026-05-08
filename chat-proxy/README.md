@@ -21,7 +21,7 @@ POST /chat
   ├─ Compute confidence (5-signal weighted composite score)
   ├─ Deterministic source grounding (match response text ↔ RAG chunks)
   ├─ Deflection detection (suppress sources on off-topic responses)
-  ├─ Emit: session → agent → deltas → confidence → sources → grounding → hook-appends → done
+  ├─ Emit: session(requestId) → agent → deltas → confidence → sources → grounding → hook-appends → done
   │
   ├─ Cache successful response for replay
   └─ Fire-and-forget: log conversation + update user profile
@@ -76,7 +76,7 @@ Deterministic source attribution replaces LLM-dependent citation numbering. Afte
 - **Cached**: All SSE events (agent, deltas, confidence, sources, grounding, done) — replayed in order on hit
 - **Not cached**: Error responses, guard deflections
 
-**L2 — Semantic answer cache** (cross-session) searches the `chat_conversations` collection for a previously answered similar question when L1 misses:
+**L2 — Semantic answer cache** (cross-session, disabled unless `SEMANTIC_CACHE_ENABLED=true`) searches the `chat_conversations` collection for a previously answered similar question when L1 misses:
 
 - **Vector search**: Embeds the query and runs a COSINE similarity search against past conversation embeddings
 - **Quality gates**: similarity ≥ 0.92, confidence = `high` only, age ≤ 7 days, no negative feedback (`down > 0` → reject), section-aware (Cloud answer won't serve BYOC page)
@@ -120,7 +120,9 @@ Rules load once at startup. Changes require a server restart.
 
 ### `POST /chat`
 
-Streaming SSE endpoint. Accepts JSON body:
+Streaming SSE endpoint. Clients may send `X-Request-ID`; if it is absent or invalid, the proxy generates one. The same request ID is returned in the response `X-Request-ID` header and included in the first `session` SSE event so browser and server logs can be correlated.
+
+Accepts JSON body:
 
 ```json
 {
@@ -136,7 +138,7 @@ SSE event types:
 
 | Event | Payload | Description |
 |-------|---------|-------------|
-| `session` | `{sessionId}` | Emitted immediately on connection |
+| `session` | `{sessionId, requestId}` | Emitted immediately on connection |
 | `agent` | `{type, name}` | Selected agent |
 | `delta` | `{text}` | Streaming text chunks |
 | `confidence` | `{level, retrieval_score}` | `high`, `medium`, or `low` |
@@ -194,12 +196,79 @@ GitHub URLs: `github:owner/repo` or `https://github.com/owner/repo` (max 50 file
 | `AI_API_KEY` | — | **Required.** LLM API key |
 | `AI_BASE_URL` | `https://api.openai.com/v1` | LLM endpoint |
 | `AI_MODEL` | `gpt-4o` | Model name |
-| `SQLITE_PATH` | `./data/chat-proxy.db` | Path to the SQLite database file |
+| `DATABASE_URL` | — | PostgreSQL/pgvector connection string for conversations, profiles, feedback, and vector-backed admin features |
+| `ADMIN_SESSION_SECRET` | — | **Required.** Secret used to derive admin/session encryption keys; startup aborts if missing |
+| `ADMIN_API_KEY` | — | Protects admin routes when bearer-token auth is used |
 | `DOCS_SITE_URL` | `https://docs.zilliz.com` | Docs site for keyword fallback |
-| `ADMIN_API_KEY` | — | Protects admin routes (disabled if unset) |
 | `GITHUB_TOKEN` | — | Optional GitHub token for higher API rate limits (external source indexing) |
 | `PORT` | `8787` | Server port |
 | `ALLOWED_ORIGINS` | `http://localhost:3000` | CORS origins (comma-separated) |
+| `DEBUG_CHAT_FLOW` | `false` | Enables safe per-request server debug flow logs when set to `true` |
+| `DEBUG_CHAT_FLOW_VERBOSE` | `false` | Reserved Docker passthrough for verbose chat-flow diagnostics |
+| `DEBUG_STREAM` | `false` | Logs summarized unhandled provider stream parts when set to `true` |
+| `CHAT_DEBUG` | `false` | Docusaurus build-time flag that enables browser console `[chat-debug]` logs by default |
+| `SEMANTIC_CACHE_ENABLED` | `false` | Enables the cross-session semantic answer cache when set to `true` |
+
+## Debugging Chat Data Flow
+
+Use request IDs to follow one chat turn from browser request construction through `/chat`, routing, retrieval, model/tool streaming, SSE parsing, and UI rendering.
+
+### Correlation contract
+
+- Browser clients send `X-Request-ID` on `POST /chat`.
+- The proxy validates that header or generates a request ID if it is absent or invalid.
+- Every `/chat` response includes `X-Request-ID`.
+- The first SSE event is `session` with `{sessionId, requestId}`.
+- Safe server debug events and browser console debug events include the same `requestId`.
+
+### Safe logging policy
+
+Debug logs intentionally omit raw user prompts, assistant responses, page context, tool result content, provider stream objects, authorization headers, cookies, API keys, and secrets. Text-like values are logged as summaries such as character/byte counts and hashes; browser logs use safe summaries and redacted IDs. Server debug flow logs are stdout-only and are not persisted to the event store or PostgreSQL.
+
+### Local debug workflow
+
+1. Start PostgreSQL/pgvector and set `DATABASE_URL` to that database. For the Compose database exposed on the host, use `postgresql://zdoc:zdoc@localhost:5432/zdoc_chat`.
+2. Set required secrets and model configuration, including `ADMIN_SESSION_SECRET` and `AI_API_KEY`.
+3. Start the proxy with safe flow logs enabled:
+
+   ```bash
+   DEBUG_CHAT_FLOW=true npm --prefix chat-proxy run dev
+   ```
+
+4. Start Docusaurus with chat pointed at the local proxy and browser debug logs enabled:
+
+   ```bash
+   CHAT_ENDPOINT=http://localhost:8787/chat CHAT_DEBUG=true npm run start
+   ```
+
+5. Open `/docs/home?chatDebug=1`, ask one question, copy the `requestId` from the browser console, then search the proxy logs for the same ID.
+
+Expected first SSE event:
+
+```text
+event: session
+data: {"sessionId":"...","requestId":"..."}
+```
+
+Manual API smoke test:
+
+```bash
+curl -N \
+  -H "Content-Type: application/json" \
+  -H "X-Request-ID: manual-debug-1" \
+  --data '{"messages":[{"role":"user","content":"How do I create a collection?"}],"userId":"debug-user","pageUrl":"/docs/home"}' \
+  http://localhost:8787/chat
+```
+
+### Docker debug workflow
+
+Run the stack through Docker Compose and use nginx at `http://localhost:3000/api/chat`:
+
+```bash
+DEBUG_CHAT_FLOW=true docker compose up --build
+```
+
+The compose file passes `DEBUG_CHAT_FLOW` and `DEBUG_CHAT_FLOW_VERBOSE` into the proxy container. With the site running at `localhost:3000`, open `/docs/home?chatDebug=1` and correlate browser and proxy logs by `requestId`.
 
 ## Project Structure
 

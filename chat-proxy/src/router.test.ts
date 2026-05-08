@@ -33,6 +33,21 @@ describe('routeIntent', () => {
     clearRouteCache();
   });
 
+  it('passes request ID into router telemetry metadata', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {agent: 'schema', reasoning: 'test'},
+    } as any);
+
+    await routeIntent('design my collection', [], 'sess-1', 'request-1');
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.experimental_telemetry).toMatchObject({
+      metadata: {sessionId: 'sess-1', requestId: 'request-1'},
+      recordInputs: false,
+      recordOutputs: false,
+    });
+  });
+
   it('routes to correct agent based on LLM response', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {agent: 'schema', reasoning: 'test'},
@@ -83,6 +98,21 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('What weights should I use for Weighted Reranker in production?');
   });
 
+  it('does not log raw query text on route cache hit and includes request ID', async () => {
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {agent: 'general', topics: [], reasoning: 'ok'},
+    } as any);
+
+    await routeIntent('My email is alice@example.com', [], undefined, 'request-1');
+    await routeIntent('My email is alice@example.com', [], undefined, 'request-2');
+
+    const logs = spy.mock.calls.map(call => call.join(' ')).join('\n');
+    expect(logs).not.toContain('alice@example.com');
+    expect(logs).toContain('Cache hit');
+    expect(logs).toContain('request-2');
+  });
+
   it('includes sticky agent in prompt for same session', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {agent: 'resources', reasoning: 'first call'},
@@ -97,6 +127,21 @@ describe('routeIntent', () => {
     const secondCallArgs = mockGenerateObject.mock.calls[1][0] as any;
     expect(secondCallArgs.prompt).toContain('Current agent');
     expect(secondCallArgs.prompt).toContain('resources');
+  });
+
+  it('does not log raw provider errors from router fallbacks and includes request ID', async () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    mockGenerateObject.mockRejectedValueOnce(new Error('provider failed for alice@example.com'));
+    mockGenerateText.mockRejectedValueOnce(new Error('tool failed for alice@example.com'));
+    mockGenerateText.mockRejectedValueOnce(new Error('text failed for alice@example.com'));
+
+    const result = await routeIntent('hello', [], 'sess-provider-error', 'request-provider-error');
+
+    expect(result.agent).toBe('general');
+    const logs = [...warnSpy.mock.calls, ...logSpy.mock.calls].map(call => call.join(' ')).join('\n');
+    expect(logs).not.toContain('alice@example.com');
+    expect(logs).toContain('request-provider-error');
   });
 
   it('falls back to general on error', async () => {

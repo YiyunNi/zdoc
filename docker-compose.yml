@@ -33,6 +33,8 @@ services:
       - INDEX_BASE_URL=http://site/llms
       - DOCS_SITE_URL=http://localhost:3000
       - DATABASE_URL=postgresql://zdoc:zdoc@db:5432/zdoc_chat
+      - DEBUG_CHAT_FLOW=${DEBUG_CHAT_FLOW:-false}
+      - DEBUG_CHAT_FLOW_VERBOSE=${DEBUG_CHAT_FLOW_VERBOSE:-false}
     depends_on:
       db:
         condition: service_healthy

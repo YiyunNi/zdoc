@@ -1282,6 +1282,29 @@ input, select { font-family: var(--body); }
     return DOMPurify.sanitize(html);
   }
 
+  function safeSummaryText(value) {
+    if (!value) return '';
+    if (typeof value === 'string') {
+      try { return safeSummaryText(JSON.parse(value)); } catch { return 'legacy raw text hidden'; }
+    }
+    if (typeof value === 'object' && value.chars != null && value.sha256) {
+      return String(value.chars) + ' chars · sha256 ' + String(value.sha256).slice(0, 12);
+    }
+    if (typeof value === 'object' && value.length != null) {
+      return String(value.length) + ' item' + (value.length === 1 ? '' : 's');
+    }
+    return JSON.stringify(value);
+  }
+
+  function pickSafeText(data, keys) {
+    data = data || {};
+    for (const key of keys) {
+      const text = safeSummaryText(data[key]);
+      if (text) return text;
+    }
+    return '';
+  }
+
   function timeAgo(ts) {
     if (!ts) return '';
     const diff = (Date.now() - new Date(ts).getTime()) / 1000;
@@ -2072,7 +2095,7 @@ input, select { font-family: var(--body); }
     feed.innerHTML = entries.slice(0, 8).map(ev => {
       const agent = ev.agent || 'general';
       const ago = timeAgo(ev.timestamp);
-      const question = (ev.data && (ev.data.question || ev.data.content)) || '';
+      const question = pickSafeText(ev.data, ['questionSummary', 'messageSummary', 'contentSummary', 'question', 'content']);
       return '<div class="activity-item">' +
         '<div class="activity-dot" style="background:' + agentColor(agent) + '"></div>' +
         '<div class="activity-time">' + ago + '</div>' +
@@ -2168,7 +2191,7 @@ input, select { font-family: var(--body); }
               return (
                 '<div class="user-session-row' + active + '" data-session-idx="' + i + '" data-user-id="' + esc(u.userId) + '">' +
                   '<span class="agent-badge agent-' + esc(s.agent || 'general') + '">' + esc(s.agent || 'general') + '</span>' +
-                  '<div class="user-session-q">' + esc(s.firstQuestion || '(no question)') + '</div>' +
+                  '<div class="user-session-q">' + esc(safeSummaryText(s.firstQuestion) || '(no question)') + '</div>' +
                   '<div class="user-session-meta">' + (s.messageCount || 0) + ' msg · ' + esc(timeAgo(s.createdAt)) + '</div>' +
                 '</div>'
               );
@@ -2253,7 +2276,7 @@ input, select { font-family: var(--body); }
     $('detailBody').innerHTML =
       '<div class="msg-user">' +
         '<div class="msg-user-label">First question</div>' +
-        '<div class="msg-user-text">' + esc(session.firstQuestion || '') + '</div>' +
+        '<div class="msg-user-text">' + esc(safeSummaryText(session.firstQuestion)) + '</div>' +
       '</div>' +
       '<div class="empty-state">Loading conversation…</div>';
   }
@@ -2282,7 +2305,7 @@ input, select { font-family: var(--body); }
     const body = $('detailBody');
     const source = messages.length ? messages : events.filter(e => e.type === 'message').map(e => ({
       role: (e.data && e.data.role) || 'assistant',
-      content: (e.data && (e.data.content || e.data.answer)) || '',
+      content: pickSafeText(e.data, ['contentSummary', 'answerSummary', 'messageSummary', 'questionSummary', 'content', 'answer']),
       confidence: e.data && e.data.confidence,
       sources: e.data && e.data.sources,
       toolsCalled: e.data && e.data.toolsCalled,
@@ -2776,7 +2799,7 @@ input, select { font-family: var(--body); }
       const confChip = conf
         ? '<span class="chip chip-' + tone + '">' + esc(conf) + '</span>'
         : '<span class="chip chip-neutral">—</span>';
-      const queryFull = g.query || '';
+      const queryFull = safeSummaryText(g.query);
       const queryShort = queryFull.length > 60 ? queryFull.slice(0, 60) + '…' : queryFull;
       return '<tr>' +
         '<td class="cell-primary" title="' + esc(queryFull) + '">' + esc(queryShort) + '</td>' +

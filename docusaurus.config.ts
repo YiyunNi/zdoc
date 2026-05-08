@@ -62,6 +62,7 @@ const config: Config = {
 
   customFields: {
     chatEndpoint: process.env.CHAT_ENDPOINT || '/api/chat',
+    chatDebug: process.env.CHAT_DEBUG === 'true',
     secondaryNavbar: [
       { label: 'Cloud Guides', href: '/docs/home',            prefix: '/docs',       icon: 'cloud'  },
       { label: 'BYOC Guides',  href: '/docs/byoc/byoc-intro', prefix: '/docs/byoc',  icon: 'server' },

@@ -83,6 +83,7 @@ const SCHEMA_DDL = `
   -- doc_gaps: content gap tracking
   CREATE TABLE IF NOT EXISTS doc_gaps (
     id               SERIAL PRIMARY KEY,
+    request_id       TEXT,
     query            TEXT NOT NULL,
     session_id       TEXT,
     detected_intent  TEXT,
@@ -93,8 +94,10 @@ const SCHEMA_DDL = `
     resolved         INTEGER NOT NULL DEFAULT 0
   );
 
+  ALTER TABLE doc_gaps ADD COLUMN IF NOT EXISTS request_id TEXT;
   CREATE INDEX IF NOT EXISTS idx_gaps_resolved ON doc_gaps(resolved);
   CREATE INDEX IF NOT EXISTS idx_gaps_created ON doc_gaps(created_at);
+  CREATE INDEX IF NOT EXISTS idx_gaps_request_id ON doc_gaps(request_id);
 
   -- content_quality: source quality issues
   CREATE TABLE IF NOT EXISTS content_quality (
@@ -635,6 +638,7 @@ export async function getRecentTokenUsage(limit = 50): Promise<any[]> {
 // ---------------------------------------------------------------------------
 
 export async function insertDocGap(gap: {
+  requestId?: string;
   query: string;
   sessionId?: string;
   detectedIntent?: string;
@@ -644,9 +648,9 @@ export async function insertDocGap(gap: {
 }): Promise<void> {
   const pool = getPool();
   await pool.query(
-    `INSERT INTO doc_gaps (query, session_id, detected_intent, tools_called, confidence_level, response_text)
-     VALUES ($1, $2, $3, $4, $5, $6)`,
-    [gap.query, gap.sessionId || null, gap.detectedIntent || null,
+    `INSERT INTO doc_gaps (request_id, query, session_id, detected_intent, tools_called, confidence_level, response_text)
+     VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+    [gap.requestId || null, gap.query, gap.sessionId || null, gap.detectedIntent || null,
      gap.toolsCalled ? JSON.stringify(gap.toolsCalled) : null,
      gap.confidenceLevel, gap.responseText],
   );
@@ -655,7 +659,7 @@ export async function insertDocGap(gap: {
 export async function getDocGaps(limit = 100): Promise<any[]> {
   const pool = getPool();
   const { rows } = await pool.query(
-    `SELECT id, query, session_id, detected_intent, tools_called, confidence_level,
+    `SELECT id, request_id, query, session_id, detected_intent, tools_called, confidence_level,
        response_text, created_at, resolved
      FROM doc_gaps WHERE resolved = 0 ORDER BY created_at DESC LIMIT $1::int`,
     [limit],
@@ -1171,7 +1175,7 @@ export async function getObsUsers(options: {
       messageCount: Number(s.message_count),
       createdAt: new Date(s.created_at).toISOString(),
     })),
-    topics: (r.session_rows || []).slice(0, 5).map((s: any) => (s.first_question || '').slice(0, 80)),
+    topics: [],
   }));
 
   return {

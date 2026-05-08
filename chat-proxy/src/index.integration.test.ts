@@ -1,7 +1,8 @@
-import {describe, it, expect, vi, beforeEach} from 'vitest';
+import {describe, it, expect, vi, beforeEach, afterEach} from 'vitest';
 
 // Mock all external dependencies
 vi.mock('ai', () => ({
+  generateText: vi.fn(),
   streamText: vi.fn(),
   stepCountIs: vi.fn((n: number) => n),
   smoothStream: vi.fn(() => ({
@@ -36,11 +37,15 @@ vi.mock('./rag.js', () => ({
 vi.mock('./router.js', () => ({
   routeIntent: vi.fn().mockResolvedValue({agent: 'general', reasoning: 'test'}),
 }));
-vi.mock('./logger.js', () => ({
-  logEvent: vi.fn(),
-  saveConversation: vi.fn().mockResolvedValue(undefined),
-  updateUserProfile: vi.fn().mockResolvedValue(undefined),
-}));
+vi.mock('./logger.js', async () => {
+  const actual = await vi.importActual<typeof import('./logger.js')>('./logger.js');
+  return {
+    ...actual,
+    logEvent: vi.fn(),
+    saveConversation: vi.fn().mockResolvedValue(undefined),
+    updateUserProfile: vi.fn().mockResolvedValue(undefined),
+  };
+});
 vi.mock('./sessions.js', () => {
   const session = {id: 'test-session', messages: [], createdAt: Date.now(), lastActiveAt: Date.now()};
   return {
@@ -89,9 +94,12 @@ vi.mock('./admin.js', async () => {
 });
 
 import {app, clearResponseCache} from './index.js';
-import {streamText} from 'ai';
+import {generateText, streamText} from 'ai';
 import {checkGuard} from './guard.js';
+import {llmHealth} from './health.js';
+import {logEvent} from './logger.js';
 import {recordFeedback} from './feedback.js';
+import {routeIntent} from './router.js';
 
 function parseSSE(text: string): Array<{event: string; data: any}> {
   const events: Array<{event: string; data: any}> = [];
@@ -112,12 +120,22 @@ function parseSSE(text: string): Array<{event: string; data: any}> {
 describe('HTTP Endpoints', () => {
   beforeEach(() => {
     clearResponseCache();
+    delete process.env.DEBUG_CHAT_FLOW;
+    vi.restoreAllMocks();
+    vi.clearAllMocks();
     vi.mocked(checkGuard).mockReturnValue({allowed: true});
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
         yield {type: 'text-delta', text: 'OK'};
       })(),
     } as any);
+    llmHealth.lastError = null;
+    llmHealth.lastErrorAt = null;
+  });
+
+  afterEach(() => {
+    delete process.env.DEBUG_CHAT_FLOW;
+    vi.restoreAllMocks();
   });
 
   it('GET /health returns ok', async () => {
@@ -209,6 +227,198 @@ describe('HTTP Endpoints', () => {
     expect(events.some(e => e.event === 'done')).toBe(true);
   });
 
+  it('POST /chat propagates provided request ID in header and session SSE event', async () => {
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'test-request-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.headers.get('X-Request-ID')).toBe('test-request-1');
+    const events = parseSSE(await res.text());
+    expect(events[0]).toEqual({event: 'session', data: {sessionId: 'test-session', requestId: 'test-request-1'}});
+    const callArgs = vi.mocked(streamText).mock.calls[0][0] as any;
+    expect(callArgs.experimental_telemetry).toMatchObject({
+      metadata: {requestId: 'test-request-1'},
+      recordInputs: false,
+      recordOutputs: false,
+    });
+  });
+
+  it('POST /chat generates request ID when header is absent', async () => {
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]}),
+    });
+
+    const requestId = res.headers.get('X-Request-ID');
+    expect(requestId).toMatch(/^[0-9a-f-]{36}$/);
+    const events = parseSSE(await res.text());
+    expect(events[0].data).toEqual({sessionId: 'test-session', requestId});
+  });
+
+  it('summarizes router reasoning in persisted routing events', async () => {
+    vi.mocked(routeIntent).mockResolvedValue({agent: 'general', topics: [], reasoning: 'secret raw prompt from router'} as any);
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'routing-request-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    await res.text();
+    const routingCall = vi.mocked(logEvent).mock.calls.find(call => call[2] === 'routing');
+    expect(routingCall).toBeTruthy();
+    const data = routingCall![4] as Record<string, unknown>;
+    expect(data.reasoning).toBeUndefined();
+    expect(data.reasoningSummary).toEqual({chars: 29, bytes: 29, sha256: expect.stringMatching(/^[a-f0-9]{64}$/)});
+    expect(JSON.stringify(data)).not.toContain('secret raw prompt');
+  });
+
+  it('passes request ID into fallback generateText telemetry metadata', async () => {
+    vi.mocked(streamText).mockReturnValueOnce({
+      fullStream: (async function* () {
+        yield {type: 'tool-call', toolName: 'searchDocs', input: {query: 'collection'}};
+      })(),
+      text: Promise.resolve(''),
+      response: Promise.resolve({messages: [{role: 'user', content: 'question'}]}),
+      totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 1, totalTokens: 2}),
+    } as any);
+    vi.mocked(generateText).mockResolvedValueOnce({text: 'fallback answer'} as any);
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'fallback-request-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    await res.text();
+    const callArgs = vi.mocked(generateText).mock.calls[0][0] as any;
+    expect(callArgs.experimental_telemetry).toMatchObject({
+      metadata: {
+        requestId: 'fallback-request-1',
+        sessionId: 'test-session',
+        agentType: 'general',
+        model: 'test-model',
+      },
+      recordInputs: false,
+      recordOutputs: false,
+    });
+  });
+
+  it('POST /chat emits safe debug flow logs when enabled', async () => {
+    process.env.DEBUG_CHAT_FLOW = 'true';
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {});
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'debug-request-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'secret raw prompt'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    await res.text();
+    const logs = spy.mock.calls.map(call => call[0]).join('\n');
+    expect(logs).toContain('chat.request.received');
+    expect(logs).toContain('chat.sse.event.sent');
+    expect(logs).toContain('chat.response.completed');
+    expect(logs).toContain('debug-request-1');
+    expect(logs).not.toContain('secret raw prompt');
+    expect(logs).not.toContain('OK');
+  });
+
+  it('logs response cache hits with the request ID', async () => {
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const body = JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]});
+
+    const first = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'cache-request-1'},
+      body,
+    });
+    await first.text();
+
+    const second = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'cache-request-2'},
+      body,
+    });
+
+    expect(second.status).toBe(200);
+    const events = parseSSE(await second.text());
+    expect(events.find(e => e.event === 'cache')?.data).toEqual({type: 'session'});
+    const logs = spy.mock.calls.map(call => call.join(' ')).join('\n');
+    expect(logs).toContain('Response cache hit');
+    expect(logs).toContain('cache-request-2');
+  });
+
+  it('does not log raw page URL query strings in section logs', async () => {
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {});
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        messages: [{role: 'user', content: 'How do I create a collection?'}],
+        pageUrl: '/docs/home?email=alice@example.com#private',
+      }),
+    });
+
+    expect(res.status).toBe(200);
+    await res.text();
+    const logs = spy.mock.calls.map(call => call.join(' ')).join('\n');
+    expect(logs).toContain('pageUrl=/docs/home');
+    expect(logs).not.toContain('alice@example.com');
+    expect(logs).not.toContain('#private');
+  });
+
+  it('returns generic stream errors with request ID and does not log raw error text', async () => {
+    vi.mocked(streamText).mockReturnValueOnce({
+      fullStream: (async function* () {
+        yield {type: 'error', error: 'provider failed for alice@example.com'};
+      })(),
+    } as any);
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'error-request-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'How do I create a collection?'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    const events = parseSSE(await res.text());
+    const errorEvent = events.find(e => e.event === 'error');
+    expect(errorEvent?.data).toEqual({error: 'Internal server error', requestId: 'error-request-1'});
+    const errorLogs = errorSpy.mock.calls.map(call => call.join(' ')).join('\n');
+    const infoLogs = logSpy.mock.calls.map(call => call.join(' ')).join('\n');
+    expect(errorLogs).not.toContain('alice@example.com');
+    expect(infoLogs).toContain('error-request-1');
+    expect(llmHealth.lastError).toBe('Internal server error; requestId=error-request-1');
+  });
+
+  it('POST /feedback stores only page URL path', async () => {
+    const res = await app.request('/feedback', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        sessionId: 's1',
+        messageIndex: 0,
+        rating: 'up',
+        pageUrl: '/docs/home?email=alice@example.com#private',
+      }),
+    });
+
+    expect(res.status).toBe(200);
+    expect(recordFeedback).toHaveBeenCalledWith('s1', 0, 'up', '/docs/home');
+    expect(JSON.stringify(vi.mocked(recordFeedback).mock.calls)).not.toContain('alice@example.com');
+  });
+
   it('POST /feedback valid → ok', async () => {
     const res = await app.request('/feedback', {
       method: 'POST',
@@ -266,5 +476,6 @@ describe('HTTP Endpoints', () => {
       body: largeBody,
     });
     expect(res.status).toBe(413);
+    expect(res.headers.get('X-Request-ID')).toMatch(/^[0-9a-f-]{36}$/);
   });
 });
