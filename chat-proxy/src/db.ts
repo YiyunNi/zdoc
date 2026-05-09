@@ -161,6 +161,26 @@ const SCHEMA_DDL = `
   CREATE INDEX IF NOT EXISTS idx_obs_events_source   ON obs_events(source);
   CREATE INDEX IF NOT EXISTS idx_obs_sessions_source ON obs_sessions(source);
 
+  -- obs_session_messages: raw transcript rows for each session message
+  CREATE TABLE IF NOT EXISTS obs_session_messages (
+    id          TEXT PRIMARY KEY,
+    session_id  TEXT NOT NULL,
+    user_id     TEXT NOT NULL,
+    role        TEXT NOT NULL,
+    content_raw TEXT NOT NULL,
+    agent       TEXT,
+    model       TEXT,
+    request_id  TEXT,
+    source      TEXT,
+    geo_meta    JSONB,
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_obs_session_messages_session_created
+    ON obs_session_messages(session_id, created_at);
+  CREATE INDEX IF NOT EXISTS idx_obs_session_messages_created
+    ON obs_session_messages(created_at);
+
   -- obs_feedback: thumbs up/down ratings
   CREATE TABLE IF NOT EXISTS obs_feedback (
     id             SERIAL PRIMARY KEY,
@@ -767,6 +787,78 @@ export async function upsertObsSession(session: {
      session.pageUrl ?? null, session.firstQuestion ?? null,
      session.userMeta ? JSON.stringify(session.userMeta) : null, session.source],
   );
+}
+
+export interface ObsSessionMessageRow {
+  id: string;
+  sessionId: string;
+  userId: string;
+  role: string;
+  contentRaw: string;
+  agent?: string;
+  model?: string;
+  requestId?: string;
+  source?: string;
+  geoMeta?: Record<string, unknown>;
+  createdAt?: string;
+}
+
+export async function insertObsSessionMessage(row: ObsSessionMessageRow): Promise<void> {
+  const pool = getPool();
+  await pool.query(
+    `INSERT INTO obs_session_messages
+      (id, session_id, user_id, role, content_raw, agent, model, request_id, source, geo_meta, created_at)
+     VALUES
+      ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, COALESCE($11::timestamptz, NOW()))`,
+    [
+      row.id,
+      row.sessionId,
+      row.userId,
+      row.role,
+      row.contentRaw,
+      row.agent ?? null,
+      row.model ?? null,
+      row.requestId ?? null,
+      row.source ?? null,
+      row.geoMeta ? JSON.stringify(row.geoMeta) : null,
+      row.createdAt ?? null,
+    ],
+  );
+}
+
+export async function listObsSessionMessages(sessionId: string): Promise<ObsSessionMessageRow[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT id, session_id, user_id, role, content_raw, agent, model, request_id, source, geo_meta, created_at
+     FROM obs_session_messages
+     WHERE session_id = $1
+     ORDER BY created_at ASC, id ASC`,
+    [sessionId],
+  );
+
+  return rows.map((row: any) => ({
+    id: row.id,
+    sessionId: row.session_id,
+    userId: row.user_id,
+    role: row.role,
+    contentRaw: row.content_raw,
+    agent: row.agent ?? undefined,
+    model: row.model ?? undefined,
+    requestId: row.request_id ?? undefined,
+    source: row.source ?? undefined,
+    geoMeta: row.geo_meta ? (typeof row.geo_meta === 'string' ? JSON.parse(row.geo_meta) : row.geo_meta) : undefined,
+    createdAt: row.created_at instanceof Date ? row.created_at.toISOString() : row.created_at,
+  }));
+}
+
+export async function deleteObsSessionMessagesOlderThan(days: number): Promise<number> {
+  const pool = getPool();
+  const { rowCount } = await pool.query(
+    `DELETE FROM obs_session_messages
+     WHERE created_at < NOW() - ($1::int * INTERVAL '1 day')`,
+    [days],
+  );
+  return rowCount || 0;
 }
 
 export async function saveObsFeedback(entry: {
