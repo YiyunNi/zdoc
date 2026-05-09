@@ -22,6 +22,7 @@ const TOPIC_ENUM = [
   'schema-design', 'search', 'resources', 'cluster-connection',
   'import', 'migration', 'access-control', 'integrations', 'pricing',
   'security', 'compliance-and-privacy', 'reranking', 'on-demand-search',
+  'backfill-and-schema-iteration', 'zilliz-cli',
 ] as const;
 
 export type TopicName = (typeof TOPIC_ENUM)[number];
@@ -94,6 +95,8 @@ Topics (select 1-2 most relevant):
 - compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
 - reranking: Cohere, Voyage AI, Boost, Decay, RRF, Weighted rankers, reranker selection, limitations, tuning, cost and latency tradeoffs
 - on-demand-search: On-demand search architecture, external collections, refresh/indexing flow, session-attached compute, on-demand vs serverless tradeoffs
+- backfill-and-schema-iteration: Offline historical field backfill, schema iteration, Parquet input preparation, mode selection (coalesce/overwrite/replace), and online impact
+- zilliz-cli: Zilliz CLI install/login/context setup, cloud-management commands, data-operation commands, and CLI troubleshooting
 `;
 
 const FEW_SHOT_EXAMPLES = `
@@ -124,6 +127,12 @@ Output: {"agent": "general", "topics": ["reranking"], "reasoning": "The user is 
 
 Input: "Should I use on-demand search or serverless for bursty 20TB queries?"
 Output: {"agent": "product", "topics": ["on-demand-search", "resources"], "reasoning": "The user is choosing architecture and sizing tradeoffs for large bursty workloads."}
+
+Input: "How do I backfill a new JSON field for historical rows without re-importing everything?"
+Output: {"agent": "schema", "topics": ["backfill-and-schema-iteration"], "reasoning": "The user is asking about schema iteration and historical field backfill workflow."}
+
+Input: "How do I login and set context with zilliz CLI?"
+Output: {"agent": "general", "topics": ["zilliz-cli"], "reasoning": "The user asks for Zilliz CLI operational guidance and commands."}
 
 Input: "What is Zilliz Cloud?"
 Output: {"agent": "general", "topics": [], "reasoning": "General product overview question."}
@@ -259,6 +268,8 @@ Topics (select 1-2 most relevant):
 - compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
 - reranking: Cohere, Voyage AI, Boost, Decay, RRF, Weighted rankers, reranker selection, limitations, tuning, cost and latency tradeoffs
 - on-demand-search: On-demand search architecture, external collections, refresh/indexing flow, session-attached compute, on-demand vs serverless tradeoffs
+- backfill-and-schema-iteration: Offline historical field backfill, schema iteration, Parquet input preparation, mode selection (coalesce/overwrite/replace), and online impact
+- zilliz-cli: Zilliz CLI install/login/context setup, cloud-management commands, data-operation commands, and CLI troubleshooting
 
 ${stickyAgent ? `Current agent: ${stickyAgent}. Stay with this agent unless the topic has clearly changed.` : ''}
 

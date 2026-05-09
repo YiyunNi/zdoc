@@ -101,6 +101,40 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('on-demand-search:');
   });
 
+  it('accepts backfill-and-schema-iteration topic from the router and describes it in prompt', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {
+        agent: 'schema',
+        topics: ['backfill-and-schema-iteration'],
+        reasoning: 'schema iteration backfill question',
+      },
+    } as any);
+
+    const result = await routeIntent('How do I backfill a new scalar field for historical rows?', [], 'sess-backfill-topic');
+
+    expect(result.topics).toEqual(['backfill-and-schema-iteration']);
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.prompt).toContain('backfill-and-schema-iteration:');
+  });
+
+  it('accepts zilliz-cli topic from the router and describes it in prompt', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {
+        agent: 'general',
+        topics: ['zilliz-cli'],
+        reasoning: 'zilliz cli command question',
+      },
+    } as any);
+
+    const result = await routeIntent('How do I log in with zilliz cli?', [], 'sess-zilliz-cli-topic');
+
+    expect(result.topics).toEqual(['zilliz-cli']);
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.prompt).toContain('zilliz-cli:');
+  });
+
   it('guides conceptual reranking questions away from code routing', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {agent: 'product', topics: ['reranking', 'integrations'], reasoning: 'reranker tradeoff'},
