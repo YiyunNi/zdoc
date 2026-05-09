@@ -6,6 +6,7 @@ import {resolveModel, createModelInstance} from './runtime-config.js';
 import {summarizeForDebugLog} from './logger.js';
 import {makeTelemetry} from './telemetry.js';
 import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
+import {incCounter} from './metrics.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -171,8 +172,8 @@ setInterval(() => {
 // ---------------------------------------------------------------------------
 
 const routeCache = new Map<string, {agent: AgentType; topics: TopicName[]; reasoning: string; timestamp: number}>();
-const ROUTE_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
-const ROUTE_CACHE_MAX = 1000;
+const ROUTE_CACHE_TTL_MS = parseInt(process.env.ROUTE_CACHE_TTL_MS || '', 10) || 30 * 60 * 1000;
+const ROUTE_CACHE_MAX = parseInt(process.env.ROUTE_CACHE_MAX || '', 10) || 5000;
 
 function getRouteCacheKey(query: string, stickyAgent?: AgentType): string {
   const normalized = query.trim().toLowerCase().replace(/\s+/g, ' ');
@@ -317,9 +318,11 @@ async function routeIntentV2(
   const cached = getCachedRoute(latestMessage, stickyAgent);
   if (cached) {
     console.log('[Router] Cache hit', JSON.stringify({requestId, query: summarizeForDebugLog(latestMessage, 'query')}));
+    incCounter('chat_proxy_cache_hits_total', {type: 'route'});
     if (sessionId) sessionRoutes.set(sessionId, cached.agent);
     return cached;
   }
+  incCounter('chat_proxy_cache_misses_total', {type: 'route'});
 
   const resolvedModel = await resolveModel('router');
   const modelInstance = await createModelInstance(resolvedModel);

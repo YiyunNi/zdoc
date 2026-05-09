@@ -2,8 +2,8 @@ import {Hono} from 'hono';
 import {readFileSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
-import {loadIndex, getIndexSize, getIndexStatus} from './rag.js';
-import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
+import {loadIndex, getIndexSize, getIndexStatus, getRagSearchCacheStats, getPageContentCacheStats} from './rag.js';
+import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry, getEmbeddingCacheStats} from './semantic-cache.js';
 import {
   getPool,
   getTokenUsageByModel, getTokenUsageSummary, getTokenUsageCount, getRecentTokenUsage,
@@ -265,6 +265,11 @@ adminApp.get('/stats', requireAuth, async c => {
       ...cacheStats,
       entries: await getCacheEntriesCount(),
       config: cacheConfig,
+    },
+    node_cache: {
+      embedding: getEmbeddingCacheStats(),
+      rag_search: getRagSearchCacheStats(),
+      page_content: getPageContentCacheStats(),
     },
     token_usage: tokenSummary,
     embedding: embeddingProgress,

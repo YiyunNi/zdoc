@@ -5,6 +5,8 @@ import {computeEmbedding, computeEmbeddingsBatch} from './semantic-cache.js';
 import {resolveModel, inferEmbeddingDimension, detectEmbeddingDimension} from './runtime-config.js';
 import {extractTripletsBatch, flattenEntities} from './triplet-extract.js';
 import {createHash} from 'node:crypto';
+import {LruTtlCache, normalizeQuery, stableHash} from './cache.js';
+import {incCounter} from './metrics.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -16,6 +18,38 @@ const DOCS_SITE_URL = (process.env.DOCS_SITE_URL || 'https://docs.zilliz.com').r
 // In production, point to S3 (e.g. https://bucket.s3.region.amazonaws.com/llms-index).
 // Falls back to the docs site's /llms/ directory.
 const INDEX_BASE_URL = (process.env.INDEX_BASE_URL || `${DOCS_SITE_URL}/llms`).replace(/\/$/, '');
+const RAG_CACHE_ENABLED = process.env.RAG_CACHE_ENABLED !== 'false';
+const RAG_CACHE_TTL_MS = parseInt(process.env.RAG_CACHE_TTL_MS || '', 10) || 10 * 60 * 1000;
+const RAG_CACHE_MAX = parseInt(process.env.RAG_CACHE_MAX || '', 10) || 5000;
+const PAGE_CONTENT_CACHE_TTL_MS = parseInt(process.env.PAGE_CONTENT_CACHE_TTL_MS || '', 10) || 30 * 60 * 1000;
+const PAGE_CONTENT_NEGATIVE_CACHE_TTL_MS = parseInt(process.env.PAGE_CONTENT_NEGATIVE_CACHE_TTL_MS || '', 10) || 60 * 1000;
+const PAGE_CONTENT_CACHE_MAX = parseInt(process.env.PAGE_CONTENT_CACHE_MAX || '', 10) || 500;
+
+const searchResultCache = new LruTtlCache<SearchResult[]>({
+  name: 'rag_search',
+  maxEntries: RAG_CACHE_MAX,
+  ttlMs: RAG_CACHE_TTL_MS,
+});
+let indexVersion = 'not-ready';
+
+function getCurrentIndexVersion(): string {
+  return indexVersion;
+}
+
+function computeIndexVersion(chunks: Array<{id: string; content_hash?: string}>): string {
+  return stableHash({
+    source: INDEX_BASE_URL,
+    chunks: chunks.length,
+    hashes: chunks.map(c => `${c.id}:${c.content_hash || ''}`).sort(),
+  });
+}
+
+function setIndexVersion(nextVersion: string): void {
+  if (nextVersion && nextVersion !== indexVersion) {
+    indexVersion = nextVersion;
+    searchResultCache.clear();
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Title sanitization — strip markdown heading IDs like {#slug-text}
@@ -447,7 +481,42 @@ export async function searchDocsHybrid(
 }
 
 export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, entities?: string[], entityFilter?: string[], queryEmbedding?: number[] | null): Promise<SearchResult[]> {
-  return searchDocsHybrid(query, topK, sectionFilter, entities, entityFilter, queryEmbedding);
+  if (!RAG_CACHE_ENABLED) {
+    return searchDocsHybrid(query, topK, sectionFilter, entities, entityFilter, queryEmbedding);
+  }
+
+  const key = stableHash({
+    mode: queryEmbedding ? 'hybrid' : 'fts',
+    query: normalizeQuery(query),
+    topK,
+    sectionFilter: sectionFilter || '',
+    entities: entities || [],
+    entityFilter: entityFilter || [],
+    indexVersion: getCurrentIndexVersion(),
+  });
+
+  const cached = searchResultCache.get(key);
+  if (cached) {
+    incCounter('chat_proxy_cache_hits_total', {type: 'rag'});
+    return cached.map(r => ({...r}));
+  }
+
+  incCounter('chat_proxy_cache_misses_total', {type: 'rag'});
+  const results = await searchDocsHybrid(query, topK, sectionFilter, entities, entityFilter, queryEmbedding);
+  searchResultCache.set(key, results.map(r => ({...r})));
+  return results;
+}
+
+export function clearRagSearchCache(): void {
+  searchResultCache.clear();
+}
+
+export function getRagSearchCacheStats() {
+  return searchResultCache.stats();
+}
+
+export function getIndexVersion(): string {
+  return getCurrentIndexVersion();
 }
 
 // ---------------------------------------------------------------------------
@@ -882,6 +951,8 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
         c.content_hash = computeContentHash(c);
       }
 
+      const loadedIndexVersion = computeIndexVersion(allChunks);
+
       // Fast-path: if index is ready and all hashes match, skip rebuild
       if (!force && indexReady) {
         try {
@@ -891,6 +962,7 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
 
           if (allChunks.length === dbHashMap.size && allChunks.every(c => dbHashMap.get(c.id) === c.content_hash)) {
             console.log('[RAG] All chunk hashes match existing index — skipping rebuild');
+            setIndexVersion(loadedIndexVersion);
             lastRefreshedAt = new Date().toISOString();
             indexLoading = false;
             await updateBuildStatus({ state: 'idle', updatedAt: new Date().toISOString() }).catch(() => {});
@@ -929,6 +1001,7 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
                 } else {
                   console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source, ${dbChunks} chunks) — using existing`);
                   indexReady = true;
+                  setIndexVersion(loadedIndexVersion);
                   lastRefreshedAt = metaMap.last_build;
                   await updateBuildStatus({ state: 'idle', updatedAt: new Date().toISOString() }).catch(() => {});
                   return;
@@ -955,6 +1028,7 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
             if (dbChunks > 0) {
               console.log(`[RAG] Index already built by another pod (${dbChunks} chunks) — skipping rebuild`);
               indexReady = true;
+              setIndexVersion(loadedIndexVersion);
               lastRefreshedAt = new Date().toISOString();
               await updateBuildStatus({ state: 'idle', updatedAt: new Date().toISOString() }).catch(() => {});
               return;
@@ -1049,6 +1123,7 @@ export async function loadIndex(force = false, options?: { extractTriplets?: boo
       );
 
       indexReady = true;
+      setIndexVersion(loadedIndexVersion);
       lastRefreshedAt = new Date().toISOString();
       console.log(`[RAG] PostgreSQL index ready: ${allChunks.length} chunks`);
       await updateBuildStatus({ state: 'complete', total: allChunks.length, done: allChunks.length, failed: 0, updatedAt: new Date().toISOString() });
@@ -1164,25 +1239,45 @@ export async function keywordSearchDocs(query: string, topK = 3): Promise<DocEnt
 // Content fetch with LRU cache
 // ---------------------------------------------------------------------------
 
-const contentCache = new Map<string, string>();
-const CONTENT_CACHE_MAX = 100;
+const pageContentCache = new LruTtlCache<string>({
+  name: 'page_content',
+  maxEntries: PAGE_CONTENT_CACHE_MAX,
+  ttlMs: PAGE_CONTENT_CACHE_TTL_MS,
+});
 
-function lruSet(key: string, value: string): void {
-  if (contentCache.size >= CONTENT_CACHE_MAX) {
-    const firstKey = contentCache.keys().next().value;
-    if (firstKey) contentCache.delete(firstKey);
+function normalizeContentUrl(url: string): string {
+  try {
+    const parsed = new URL(url, DOCS_SITE_URL);
+    return parsed.origin + parsed.pathname.replace(/\.md$/, '') + parsed.search;
+  } catch {
+    return url.replace(/\.md$/, '');
   }
-  contentCache.set(key, value);
+}
+
+function toMarkdownContentUrl(url: string): string {
+  try {
+    const parsed = new URL(url, DOCS_SITE_URL);
+    parsed.pathname = parsed.pathname.endsWith('.md')
+      ? parsed.pathname
+      : parsed.pathname.replace(/\/?$/, '.md');
+    return parsed.toString();
+  } catch {
+    return url.endsWith('.md') ? url : url.replace(/\/?$/, '.md');
+  }
 }
 
 export async function fetchDocContent(url: string, maxChars = 6000): Promise<string | null> {
   if (!url) return null;
-  const cached = contentCache.get(url);
-  if (cached !== undefined) return cached;
+  const cacheKey = normalizeContentUrl(url);
+  const cached = pageContentCache.get(cacheKey);
+  if (cached !== undefined) {
+    incCounter('chat_proxy_cache_hits_total', {type: 'page_content'});
+    return cached ? cached.slice(0, maxChars) : null;
+  }
+  incCounter('chat_proxy_cache_misses_total', {type: 'page_content'});
 
   try {
-    let mdUrl = url;
-    if (!mdUrl.endsWith('.md')) mdUrl = mdUrl.replace(/\/?$/, '.md');
+    const mdUrl = toMarkdownContentUrl(url);
 
     const res = await fetch(mdUrl, {
       headers: {Accept: 'text/plain, text/markdown'},
@@ -1190,17 +1285,24 @@ export async function fetchDocContent(url: string, maxChars = 6000): Promise<str
     });
 
     if (!res.ok) {
-      lruSet(url, '');
+      pageContentCache.set(cacheKey, '', PAGE_CONTENT_NEGATIVE_CACHE_TTL_MS);
       return null;
     }
 
     const text = await res.text();
-    const truncated = text.slice(0, maxChars);
-    lruSet(url, truncated);
-    return truncated;
+    pageContentCache.set(cacheKey, text);
+    return text.slice(0, maxChars);
   } catch {
-    lruSet(url, '');
+    pageContentCache.set(cacheKey, '', PAGE_CONTENT_NEGATIVE_CACHE_TTL_MS);
     return null;
   }
+}
+
+export function clearPageContentCache(): void {
+  pageContentCache.clear();
+}
+
+export function getPageContentCacheStats() {
+  return pageContentCache.stats();
 }
 

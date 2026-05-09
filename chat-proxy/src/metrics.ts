@@ -147,8 +147,8 @@ export function renderMetrics(): string {
 const COUNTER_HELP: Record<string, string> = {
   'chat_proxy_requests_total': 'Total number of chat requests',
   'chat_proxy_token_usage_total': 'Total token usage by model and agent',
-  'chat_proxy_cache_hits_total': 'Total cache hits by type (response|semantic)',
-  'chat_proxy_cache_misses_total': 'Total cache misses by type (response|semantic)',
+  'chat_proxy_cache_hits_total': 'Total cache hits by type (response_session|answer_exact|answer_inflight|semantic|embedding|rag|page_content|route)',
+  'chat_proxy_cache_misses_total': 'Total cache misses by type (response_session|answer_exact|answer_inflight|semantic|embedding|rag|page_content|route)',
   'chat_proxy_tool_calls_total': 'Total number of tool calls by tool name',
   'chat_proxy_bedrock_retries_total': 'Total Bedrock calls retried after throttling',
   'chat_proxy_bedrock_queue_timeout_total': 'Total Bedrock calls rejected after queue timeout',
