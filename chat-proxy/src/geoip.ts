@@ -11,6 +11,10 @@ export type GeoLookup = {
   registeredCountry: string;
   registeredCountryName: string;
   timezone: string;
+  postalCode?: string;
+  latitude?: number;
+  longitude?: number;
+  accuracyRadius?: number;
   subdivisionCodes: string[];
   subdivisionNames: string[];
 };
@@ -39,6 +43,10 @@ export function mapGeoResult(result: any): GeoLookup {
     registeredCountry: result?.registered_country?.iso_code || country,
     registeredCountryName: result?.registered_country?.names?.en || '',
     timezone: result?.location?.time_zone || '',
+    postalCode: result?.postal?.code,
+    latitude: result?.location?.latitude,
+    longitude: result?.location?.longitude,
+    accuracyRadius: result?.location?.accuracy_radius,
     subdivisionCodes: Array.isArray(result?.subdivisions) ? result.subdivisions.map((s: any) => s?.iso_code).filter(Boolean) : [],
     subdivisionNames: Array.isArray(result?.subdivisions) ? result.subdivisions.map((s: any) => s?.names?.en).filter(Boolean) : [],
   };

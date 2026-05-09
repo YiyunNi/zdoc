@@ -43,6 +43,12 @@ describe('geoip helpers', () => {
       },
       location: {
         time_zone: 'America/Los_Angeles',
+        latitude: 37.7898,
+        longitude: -122.3942,
+        accuracy_radius: 20,
+      },
+      postal: {
+        code: '94105',
       },
       subdivisions: [
         {
@@ -61,6 +67,10 @@ describe('geoip helpers', () => {
       registeredCountry: 'US',
       registeredCountryName: 'United States',
       timezone: 'America/Los_Angeles',
+      postalCode: '94105',
+      latitude: 37.7898,
+      longitude: -122.3942,
+      accuracyRadius: 20,
       subdivisionCodes: ['CA'],
       subdivisionNames: ['California'],
     });
@@ -82,6 +92,10 @@ describe('geoip helpers', () => {
       registeredCountry: 'DE',
       registeredCountryName: '',
       timezone: '',
+      postalCode: undefined,
+      latitude: undefined,
+      longitude: undefined,
+      accuracyRadius: undefined,
       subdivisionCodes: [],
       subdivisionNames: [],
     });
