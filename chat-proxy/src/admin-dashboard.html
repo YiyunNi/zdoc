@@ -2317,9 +2317,7 @@ input, select { font-family: var(--body); }
         html += '<div class="timeline-dot"><div class="timeline-dot-dot"></div><span>' + esc(timeAgo(msg.timestamp)) + '</span></div>';
       }
 
-      const content = msg.fallbackType === 'legacy-summary'
-        ? formatLegacySummary(msg.content)
-        : (msg.content || '');
+      const content = msg.content || '';
 
       if (msg.role === 'user') {
         html += '<div class="msg-user">' +
