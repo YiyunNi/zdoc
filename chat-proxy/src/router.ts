@@ -21,7 +21,7 @@ const ROUTER_V2_ENABLED = process.env.ROUTER_V2_ENABLED !== 'false'; // default 
 const TOPIC_ENUM = [
   'schema-design', 'search', 'resources', 'cluster-connection',
   'import', 'migration', 'access-control', 'integrations', 'pricing',
-  'security', 'compliance-and-privacy', 'reranking',
+  'security', 'compliance-and-privacy', 'reranking', 'on-demand-search',
 ] as const;
 
 export type TopicName = (typeof TOPIC_ENUM)[number];
@@ -93,6 +93,7 @@ Topics (select 1-2 most relevant):
 - security: Authentication, SSO/MFA, API keys, cluster credentials, Private Link, IP allowlists, encryption, CMEK, data isolation, audit logs
 - compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
 - reranking: Cohere, Voyage AI, Boost, Decay, RRF, Weighted rankers, reranker selection, limitations, tuning, cost and latency tradeoffs
+- on-demand-search: On-demand search architecture, external collections, refresh/indexing flow, session-attached compute, on-demand vs serverless tradeoffs
 `;
 
 const FEW_SHOT_EXAMPLES = `
@@ -120,6 +121,9 @@ Output: {"agent": "product", "topics": ["reranking", "integrations"], "reasoning
 
 Input: "What weights should I use for Weighted Reranker in production?"
 Output: {"agent": "general", "topics": ["reranking"], "reasoning": "The user is asking for conceptual tuning guidance, not an implementation example."}
+
+Input: "Should I use on-demand search or serverless for bursty 20TB queries?"
+Output: {"agent": "product", "topics": ["on-demand-search", "resources"], "reasoning": "The user is choosing architecture and sizing tradeoffs for large bursty workloads."}
 
 Input: "What is Zilliz Cloud?"
 Output: {"agent": "general", "topics": [], "reasoning": "General product overview question."}
@@ -254,6 +258,7 @@ Topics (select 1-2 most relevant):
 - security: Authentication, SSO/MFA, API keys, cluster credentials, Private Link, IP allowlists, encryption, CMEK, data isolation, audit logs
 - compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
 - reranking: Cohere, Voyage AI, Boost, Decay, RRF, Weighted rankers, reranker selection, limitations, tuning, cost and latency tradeoffs
+- on-demand-search: On-demand search architecture, external collections, refresh/indexing flow, session-attached compute, on-demand vs serverless tradeoffs
 
 ${stickyAgent ? `Current agent: ${stickyAgent}. Stay with this agent unless the topic has clearly changed.` : ''}
 

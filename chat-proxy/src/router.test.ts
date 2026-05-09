@@ -84,6 +84,23 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('compliance-and-privacy:');
   });
 
+  it('accepts on-demand-search topic from the router and describes it in prompt', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {
+        agent: 'product',
+        topics: ['on-demand-search'],
+        reasoning: 'on-demand search architecture question',
+      },
+    } as any);
+
+    const result = await routeIntent('Should I use on-demand search or serverless?', [], 'sess-on-demand-topic');
+
+    expect(result.topics).toEqual(['on-demand-search']);
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.prompt).toContain('on-demand-search:');
+  });
+
   it('guides conceptual reranking questions away from code routing', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {agent: 'product', topics: ['reranking', 'integrations'], reasoning: 'reranker tradeoff'},
