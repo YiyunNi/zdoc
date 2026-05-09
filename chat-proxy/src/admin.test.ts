@@ -104,6 +104,53 @@ describe('adminApp', () => {
     process.env.ADMIN_API_KEY = '';
   });
 
+  it('GET /api/session/:id/messages returns transcript payload for valid session', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      getObsSessionMessagesDetail: vi.fn().mockResolvedValue({
+        sessionId: 'sess-1',
+        messages: [
+          {id: 'm1', role: 'user', content: 'hello', timestamp: '2026-05-09T00:00:00.000Z'},
+          {id: 'm2', role: 'assistant', content: 'hi'},
+        ],
+      }),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/session/sess-1/messages', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.sessionId).toBe('sess-1');
+    expect(body.messages).toBeInstanceOf(Array);
+    expect(body.messages[0]).toMatchObject({role: 'user', content: 'hello'});
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('GET /api/session/:id/messages returns 200 with empty messages for missing session', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      getObsSessionMessagesDetail: vi.fn().mockResolvedValue({
+        sessionId: 'missing-session',
+        messages: [],
+      }),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/session/missing-session/messages', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body).toEqual({sessionId: 'missing-session', messages: []});
+    process.env.ADMIN_API_KEY = '';
+  });
+
   it('PUT /api/config/:key updates config', async () => {
     process.env.ADMIN_API_KEY = 'secret-key';
     vi.doMock('./db.js', () => ({
