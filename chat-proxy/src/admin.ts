@@ -10,7 +10,7 @@ import {
   getDocGaps, resolveDocGap, getDocGapsCount, getContentQuality,
   getObsOverview, getObsTrends, getObsRecentActivity, getObsLiveSessions,
   getObsPerformance, getObsFeedback, getObsErrors, getObsLowConfidence,
-  listObsSessions, getObsSessionDetail, getObsTokenUsage,
+  listObsSessions, getObsSessionDetail, getObsSessionMessagesDetail, getObsTokenUsage,
   getObsUsers, getObsSources, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue, deleteRuntimeConfigValue,
   getEmbeddingSchemaDimension,
   getBuildStatus,
@@ -463,6 +463,12 @@ adminApp.get('/api/session/:id', async c => {
     return c.json({error: 'Session not found', sessionId}, 404);
   }
   return c.json(detail);
+});
+
+// GET /admin/api/session/:id/messages — get transcript messages for a session id
+adminApp.get('/api/session/:id/messages', async c => {
+  const sessionId = c.req.param('id');
+  return c.json(await getObsSessionMessagesDetail(sessionId));
 });
 
 // GET /admin/api/sessions — paginated session list

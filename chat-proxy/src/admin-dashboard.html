@@ -1285,7 +1285,7 @@ input, select { font-family: var(--body); }
   function safeSummaryText(value) {
     if (!value) return '';
     if (typeof value === 'string') {
-      try { return safeSummaryText(JSON.parse(value)); } catch { return 'legacy raw text hidden'; }
+      try { return safeSummaryText(JSON.parse(value)); } catch { return 'Legacy summarized record'; }
     }
     if (typeof value === 'object' && value.chars != null && value.sha256) {
       return String(value.chars) + ' chars · sha256 ' + String(value.sha256).slice(0, 12);
@@ -1294,6 +1294,20 @@ input, select { font-family: var(--body); }
       return String(value.length) + ' item' + (value.length === 1 ? '' : 's');
     }
     return JSON.stringify(value);
+  }
+
+  function formatLegacySummary(value) {
+    if (!value) return 'Legacy summarized record';
+    if (typeof value === 'string') {
+      try { return formatLegacySummary(JSON.parse(value)); } catch { return 'Legacy summarized record'; }
+    }
+    if (typeof value === 'object' && value.chars != null) {
+      return 'Legacy summarized record: ' + String(value.chars) + ' chars summarized';
+    }
+    if (typeof value === 'object' && value.length != null) {
+      return 'Legacy summarized record: ' + String(value.length) + ' item' + (value.length === 1 ? '' : 's') + ' summarized';
+    }
+    return 'Legacy summarized record: ' + JSON.stringify(value);
   }
 
   function pickSafeText(data, keys) {
@@ -2186,10 +2200,10 @@ input, select { font-family: var(--body); }
           '</div>' : '') +
           '<div class="user-sessions">' +
             sessions.map((s, i) => {
-              const sid = u.userId + '__' + i;
+              const sid = s.id || (u.userId + '__' + i);
               const active = sid === selectedSessionId ? ' active' : '';
               return (
-                '<div class="user-session-row' + active + '" data-session-idx="' + i + '" data-user-id="' + esc(u.userId) + '">' +
+                '<div class="user-session-row' + active + '" data-session-idx="' + i + '" data-user-id="' + esc(u.userId) + '" data-session-id="' + esc(sid) + '">' +
                   '<span class="agent-badge agent-' + esc(s.agent || 'general') + '">' + esc(s.agent || 'general') + '</span>' +
                   '<div class="user-session-q">' + esc(safeSummaryText(s.firstQuestion) || '(no question)') + '</div>' +
                   '<div class="user-session-meta">' + (s.messageCount || 0) + ' msg · ' + esc(timeAgo(s.createdAt)) + '</div>' +
@@ -2231,29 +2245,22 @@ input, select { font-family: var(--body); }
     if (!user) return;
     const session = (user.sessions || [])[idx];
     if (!session) return;
-    selectedSessionId = userId + '__' + idx;
+    selectedSessionId = session.id || (userId + '__' + idx);
     // Highlight
     document.querySelectorAll('.user-session-row').forEach(r => r.classList.remove('active'));
     const target = document.querySelector('.user-session-row[data-user-id="' + CSS.escape(userId) + '"][data-session-idx="' + idx + '"]');
     if (target) target.classList.add('active');
 
-    // The session list returned by /analytics/users doesn't include session IDs.
-    // We render the metadata we have, then attempt to fetch full detail from /sessions
-    // by matching first_question + agent. As a fallback, we show summary only.
     renderSessionSummary(user, session);
 
-    // Attempt to fetch detail by searching obs_sessions for matching first_question
-    // Pragmatic: list sessions for this agent, find one by firstQuestion match
+    if (!session.id) {
+      $('detailBody').innerHTML = '<div class="empty-state">Session id missing for this record</div>';
+      return;
+    }
+
     try {
-      const res = await apiFetch('/admin/api/sessions?page=1&pageSize=50&agent=' + encodeURIComponent(session.agent || ''));
-      const match = (res.sessions || []).find(s =>
-        (s.firstQuestion || '') === (session.firstQuestion || '') &&
-        Math.abs(new Date(s.createdAt).getTime() - new Date(session.createdAt).getTime()) < 5000
-      );
-      if (match) {
-        const detail = await apiFetch('/admin/api/session/' + encodeURIComponent(match.id));
-        renderSessionDetail(detail, user, session);
-      }
+      const detail = await apiFetch('/admin/api/session/' + encodeURIComponent(session.id) + '/messages');
+      renderSessionDetail(detail, user, session);
     } catch (e) {
       if (e.message !== 'Unauthorized') console.warn('Session detail lookup failed:', e.message);
     }
@@ -2282,67 +2289,49 @@ input, select { font-family: var(--body); }
   }
 
   function renderSessionDetail(data, user, session) {
-    const events = data.events || [];
     const messages = data.messages || [];
-    const agent = (events[0] && events[0].agent) || (session && session.agent) || 'general';
-    const model = (events[0] && events[0].model) || '';
+    const agent = (session && session.agent) || 'general';
 
     $('detailHeader').innerHTML =
       '<div class="detail-header-top">' +
         '<div class="detail-header-info">' +
-          '<span class="detail-id">' + esc(shortId(data.sessionId || user.userId, 8)) + '</span>' +
+          '<span class="detail-id">' + esc(shortId(data.sessionId || session.id || user.userId, 8)) + '</span>' +
           '<span class="agent-badge agent-' + esc(agent) + '">' + esc(agent) + '</span>' +
-          (model ? '<span style="font-size:10px;color:var(--text-muted);font-weight:500">' + esc(model) + '</span>' : '') +
         '</div>' +
-        '<div class="detail-time">' + (events.length ? timeAgo(events[0].timestamp) : '') + '</div>' +
+        '<div class="detail-time">' + esc(timeAgo(session.createdAt)) + '</div>' +
       '</div>' +
       '<div class="detail-stats">' +
-        '<div><strong>' + (messages.length || events.filter(e => e.type === 'message').length) + '</strong> messages</div>' +
-        '<div><strong>' + formatTokens(events.reduce((s, e) => s + (e.totalTokens || 0), 0)) + '</strong> tokens</div>' +
+        '<div><strong>' + (messages.length || 0) + '</strong> messages</div>' +
         '<div>User: <strong>' + esc(shortId(user.userId, 6)) + '</strong></div>' +
       '</div>';
 
     const body = $('detailBody');
-    const source = messages.length ? messages : events.filter(e => e.type === 'message').map(e => ({
-      role: (e.data && e.data.role) || 'assistant',
-      content: pickSafeText(e.data, ['contentSummary', 'answerSummary', 'messageSummary', 'questionSummary', 'content', 'answer']),
-      confidence: e.data && e.data.confidence,
-      sources: e.data && e.data.sources,
-      toolsCalled: e.data && e.data.toolsCalled,
-      tokens: e.totalTokens,
-      timestamp: e.timestamp,
-    }));
-
-    if (!source.length) {
+    if (!messages.length) {
       body.innerHTML = '<div class="empty-state">No messages in this session</div>';
       return;
     }
 
     let html = '';
-    source.forEach((msg, i) => {
+    messages.forEach((msg, i) => {
       if (i > 0 && msg.timestamp) {
         html += '<div class="timeline-dot"><div class="timeline-dot-dot"></div><span>' + esc(timeAgo(msg.timestamp)) + '</span></div>';
       }
+
+      const content = msg.fallbackType === 'legacy-summary'
+        ? formatLegacySummary(msg.content)
+        : (msg.content || '');
+
       if (msg.role === 'user') {
         html += '<div class="msg-user">' +
-          '<div class="msg-user-label">User</div>' +
-          '<div class="msg-user-text">' + renderMsg(msg.content) + '</div>' +
+          '<div class="msg-user-label">' + (msg.fallbackType === 'legacy-summary' ? 'Legacy summarized record' : 'User') + '</div>' +
+          '<div class="msg-user-text">' + renderMsg(content) + '</div>' +
         '</div>';
       } else {
-        const conf = msg.confidence;
-        const confColor = conf === 'high' ? 'var(--green)' : conf === 'medium' ? 'var(--amber)' : conf === 'low' ? 'var(--red)' : '';
         html += '<div class="msg-agent">' +
           '<div class="msg-agent-header">' +
-            '<div class="msg-agent-label">Agent · ' + esc(agent) + '</div>' +
-            '<div class="msg-agent-meta">' +
-              (msg.tokens ? '<span>' + formatTokens(msg.tokens) + ' tok</span><span>·</span>' : '') +
-              (conf ? '<span style="color:' + confColor + ';font-weight:600">' + esc(conf) + '</span>' : '') +
-            '</div>' +
+            '<div class="msg-agent-label">' + (msg.fallbackType === 'legacy-summary' ? 'Legacy summarized record' : 'Agent · ' + esc(agent)) + '</div>' +
           '</div>' +
-          '<div class="msg-agent-text">' + (msg.content ? renderMsg(msg.content) : '<em style="color:#999">No response text generated' + (msg.toolsCalled && msg.toolsCalled.length ? ' (tools used: ' + esc(msg.toolsCalled.join(', ')) + ')' : '') + '</em>') + '</div>' +
-          ((msg.sources && msg.sources.length) ? '<div class="msg-sources">' +
-            msg.sources.map(s => '<div class="msg-source">' + (typeof s === 'string' ? esc(s) : esc(s.title || s.url || '')) + '</div>').join('') +
-          '</div>' : '') +
+          '<div class="msg-agent-text">' + renderMsg(content) + '</div>' +
         '</div>';
       }
     });

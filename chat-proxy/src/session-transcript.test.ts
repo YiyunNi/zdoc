@@ -267,4 +267,38 @@ describe('session transcript storage', () => {
     expect(rows[0]?.role).toBe('assistant');
     expect(rows[0]?.requestId).toBe('req-assistant');
   });
+
+  it('returns ordered transcript detail messages for session id', async () => {
+    if (!hasDb) return;
+
+    await cleanSessionTranscriptRows();
+
+    await db.insertObsSessionMessage({
+      id: 'msg-detail-user',
+      sessionId: 's-detail',
+      userId: 'u1',
+      role: 'user',
+      contentRaw: 'hello',
+      createdAt: new Date(Date.now() - 1000).toISOString(),
+    });
+    await db.insertObsSessionMessage({
+      id: 'msg-detail-assistant',
+      sessionId: 's-detail',
+      userId: 'u1',
+      role: 'assistant',
+      contentRaw: 'hi there',
+      createdAt: new Date().toISOString(),
+    });
+
+    const detail = await db.getObsSessionMessagesDetail('s-detail');
+    expect(detail.sessionId).toBe('s-detail');
+    expect(detail.messages.map((m: any) => m.role)).toEqual(['user', 'assistant']);
+    expect(detail.messages[0]?.content).toBe('hello');
+  });
+
+  it('formats readable legacy summarized fallback text', () => {
+    const readable = db.formatLegacySummary('{"chars":75,"sha256":"abc"}');
+    expect(readable).toContain('75 chars');
+    expect(readable).toContain('summarized');
+  });
 });

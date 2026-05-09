@@ -1251,7 +1251,7 @@ export async function getObsUsers(options: {
        MAX(last_active_at) as last_active,
        AVG(EXTRACT(EPOCH FROM (last_active_at - created_at)))::numeric as avg_duration_seconds,
        (ARRAY_AGG(DISTINCT user_meta) FILTER (WHERE user_meta IS NOT NULL))[1] as user_meta,
-       COALESCE(JSON_AGG(JSON_BUILD_OBJECT('first_question', first_question, 'agent', agent, 'message_count', message_count, 'created_at', created_at) ORDER BY created_at DESC) FILTER (WHERE first_question IS NOT NULL), '[]'::json) as session_rows
+       COALESCE(JSON_AGG(JSON_BUILD_OBJECT('id', id, 'first_question', first_question, 'agent', agent, 'message_count', message_count, 'created_at', created_at) ORDER BY created_at DESC), '[]'::json) as session_rows
      FROM obs_sessions
      ${whereClause}
      GROUP BY user_id
@@ -1268,6 +1268,7 @@ export async function getObsUsers(options: {
     avgDurationSeconds: Math.round(Number(r.avg_duration_seconds) || 0),
     userMeta: r.user_meta ? (typeof r.user_meta === 'string' ? JSON.parse(r.user_meta) : r.user_meta) : null,
     sessions: (r.session_rows || []).slice(0, 50).map((s: any) => ({
+      id: s.id,
       firstQuestion: s.first_question,
       agent: s.agent,
       messageCount: Number(s.message_count),
@@ -1622,6 +1623,80 @@ export async function setOAuthProfileActive(name: string): Promise<void> {
 export async function deleteOAuthProfile(name: string): Promise<void> {
   const pool = getPool();
   await pool.query('DELETE FROM oauth_profiles WHERE name = $1', [name]);
+}
+
+export function formatLegacySummary(value: unknown): string {
+  if (!value) return '';
+
+  if (typeof value === 'string') {
+    try {
+      return formatLegacySummary(JSON.parse(value));
+    } catch {
+      return 'Legacy summarized record';
+    }
+  }
+
+  if (typeof value === 'object') {
+    const obj = value as Record<string, unknown>;
+    if (typeof obj.chars === 'number') {
+      return `Legacy summarized record: ${obj.chars} chars summarized`;
+    }
+    if (Array.isArray(value)) {
+      return `Legacy summarized record: ${value.length} item${value.length === 1 ? '' : 's'} summarized`;
+    }
+    return `Legacy summarized record: ${JSON.stringify(value)}`;
+  }
+
+  return `Legacy summarized record: ${String(value)}`;
+}
+
+export async function getObsSessionMessagesDetail(sessionId: string): Promise<{
+  sessionId: string;
+  messages: Array<{
+    id?: string;
+    role: 'user' | 'assistant';
+    content: string;
+    timestamp?: string;
+    fallbackType?: 'legacy-summary';
+  }>;
+}> {
+  const rawMessages = await listObsSessionMessages(sessionId);
+  if (rawMessages.length > 0) {
+    return {
+      sessionId,
+      messages: rawMessages.map((row) => ({
+        id: row.id,
+        role: row.role,
+        content: row.contentRaw,
+        timestamp: row.createdAt,
+      })),
+    };
+  }
+
+  const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT data
+     FROM obs_events
+     WHERE session_id = $1 AND event_type = 'message'
+     ORDER BY timestamp ASC`,
+    [sessionId],
+  );
+
+  const messages = rows
+    .map((row: any) => {
+      const data = typeof row.data === 'string' ? JSON.parse(row.data) : row.data;
+      const role = data?.role === 'user' ? 'user' : 'assistant';
+      const summary = data?.contentSummary ?? data?.messageSummary ?? data?.answerSummary ?? data?.questionSummary;
+      const content = formatLegacySummary(summary);
+      return {
+        role,
+        content,
+        fallbackType: 'legacy-summary' as const,
+      };
+    })
+    .filter((msg: { content: string }) => Boolean(msg.content));
+
+  return { sessionId, messages };
 }
 
 export async function getObsSessionDetail(sessionId: string): Promise<{
