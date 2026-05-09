@@ -295,7 +295,7 @@ input, select { font-family: var(--body); }
 }
 
 /* ---- Users & Sessions page ---- */
-.users-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 16px; min-height: 540px; }
+.users-layout { display: grid; grid-template-columns: 0.85fr 1.35fr; gap: 16px; min-height: 540px; }
 @media (max-width: 1100px) { .users-layout { grid-template-columns: 1fr; } }
 
 .users-list-panel {
@@ -390,7 +390,7 @@ input, select { font-family: var(--body); }
 .timeline-dot { display: flex; align-items: center; gap: 8px; font-size: 9px; color: var(--text-faint); font-weight: 500; }
 .timeline-dot-dot { width: 4px; height: 4px; background: #d8dae0; border-radius: 50%; }
 
-.msg-user { background: var(--bg); border-radius: 10px; padding: 14px 16px; max-width: 85%; }
+.msg-user { background: var(--bg); border-radius: 10px; padding: 14px 16px; max-width: 85%; align-self: flex-start; }
 .msg-user-label {
   font-size: 10px; color: var(--text-muted); font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
@@ -399,7 +399,7 @@ input, select { font-family: var(--body); }
 
 .msg-agent {
   background: var(--surface); border: 1px solid var(--border-light);
-  border-radius: 10px; padding: 14px 16px; max-width: 90%;
+  border-radius: 10px; padding: 14px 16px; max-width: 90%; align-self: flex-end;
 }
 .msg-agent-header {
   display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 10px;
@@ -2330,6 +2330,9 @@ input, select { font-family: var(--body); }
             '<div class="msg-agent-label">' + (msg.fallbackType === 'legacy-summary' ? 'Legacy summarized record' : 'Agent · ' + esc(agent)) + '</div>' +
           '</div>' +
           '<div class="msg-agent-text">' + renderMsg(content) + '</div>' +
+          ((msg.sources && msg.sources.length) ? '<div class="msg-sources">' +
+            msg.sources.map(s => '<div class="msg-source">' + (typeof s === 'string' ? esc(s) : esc(s.title || s.url || '')) + '</div>').join('') +
+          '</div>' : '') +
         '</div>';
       }
     });

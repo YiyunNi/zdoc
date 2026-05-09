@@ -1625,6 +1625,41 @@ export async function deleteOAuthProfile(name: string): Promise<void> {
   await pool.query('DELETE FROM oauth_profiles WHERE name = $1', [name]);
 }
 
+export type TranscriptSource = { title?: string; url?: string; section?: string };
+
+export function normalizeTranscriptSources(value: unknown): TranscriptSource[] {
+  const rawItems = Array.isArray(value)
+    ? value
+    : (value && typeof value === 'object' && Array.isArray((value as Record<string, unknown>).items)
+      ? (value as Record<string, unknown>).items as unknown[]
+      : []);
+
+  return rawItems
+    .map((item): TranscriptSource | null => {
+      if (typeof item === 'string') return { title: item };
+      if (!item || typeof item !== 'object') return null;
+      const obj = item as Record<string, unknown>;
+      const title = typeof obj.title === 'string' ? obj.title : undefined;
+      const url = typeof obj.url === 'string' ? obj.url : undefined;
+      const section = typeof obj.section === 'string' ? obj.section : undefined;
+      if (!title && !url && !section) return null;
+      return { title, url, section };
+    })
+    .filter((item): item is TranscriptSource => item !== null);
+}
+
+export function attachAssistantSourcesToTranscript<T extends {
+  role: 'user' | 'assistant';
+  requestId?: string;
+}>(messages: T[], eventSourceByRequestId: Map<string, TranscriptSource[]>): Array<T & { sources?: TranscriptSource[] }> {
+  return messages.map((message) => {
+    if (message.role !== 'assistant' || !message.requestId) return message;
+    const sources = eventSourceByRequestId.get(message.requestId) || [];
+    if (sources.length === 0) return message;
+    return { ...message, sources };
+  });
+}
+
 export function formatLegacySummary(value: unknown): string {
   if (!value) return '';
 
@@ -1658,19 +1693,48 @@ export async function getObsSessionMessagesDetail(sessionId: string): Promise<{
     content: string;
     timestamp?: string;
     fallbackType?: 'legacy-summary';
+    sources?: TranscriptSource[];
   }>;
 }> {
   const rawMessages = await listObsSessionMessages(sessionId);
   if (rawMessages.length > 0) {
-    return {
-      sessionId,
-      messages: rawMessages.map((row) => ({
-        id: row.id,
-        role: row.role,
-        content: row.contentRaw,
-        timestamp: row.createdAt,
-      })),
-    };
+    const assistantRequestIds = [...new Set(rawMessages.filter((row) => row.role === 'assistant' && row.requestId).map((row) => row.requestId as string))];
+    const eventSourceByRequestId = new Map<string, TranscriptSource[]>();
+
+    if (assistantRequestIds.length > 0) {
+      const pool = getPool();
+      const { rows } = await pool.query(
+        `SELECT data
+         FROM obs_events
+         WHERE session_id = $1
+           AND event_type = 'message'
+           AND data->>'role' = 'assistant'
+           AND data->>'requestId' = ANY($2::text[])
+         ORDER BY timestamp ASC`,
+        [sessionId, assistantRequestIds],
+      );
+
+      for (const row of rows) {
+        const data = typeof row.data === 'string' ? JSON.parse(row.data) : row.data;
+        const requestId = typeof data?.requestId === 'string' ? data.requestId : undefined;
+        if (!requestId) continue;
+        const sources = normalizeTranscriptSources(data?.sources);
+        if (sources.length > 0) eventSourceByRequestId.set(requestId, sources);
+      }
+    }
+
+    const rawTranscript = rawMessages.map((row) => ({
+      id: row.id,
+      role: row.role,
+      content: row.contentRaw,
+      timestamp: row.createdAt,
+      requestId: row.requestId,
+    }));
+
+    const messages = attachAssistantSourcesToTranscript(rawTranscript, eventSourceByRequestId)
+      .map(({ requestId, ...message }) => message);
+
+    return { sessionId, messages };
   }
 
   const pool = getPool();
@@ -1682,19 +1746,26 @@ export async function getObsSessionMessagesDetail(sessionId: string): Promise<{
     [sessionId],
   );
 
-  const messages = rows
+  const messages: Array<{
+    role: 'user' | 'assistant';
+    content: string;
+    fallbackType: 'legacy-summary';
+    sources?: TranscriptSource[];
+  }> = rows
     .map((row: any) => {
       const data = typeof row.data === 'string' ? JSON.parse(row.data) : row.data;
-      const role = data?.role === 'user' ? 'user' : 'assistant';
+      const role: 'user' | 'assistant' = data?.role === 'user' ? 'user' : 'assistant';
       const summary = data?.contentSummary ?? data?.messageSummary ?? data?.answerSummary ?? data?.questionSummary;
       const content = formatLegacySummary(summary);
+      const sources = role === 'assistant' ? normalizeTranscriptSources(data?.sources) : [];
       return {
         role,
         content,
         fallbackType: 'legacy-summary' as const,
+        ...(sources.length > 0 ? { sources } : {}),
       };
     })
-    .filter((msg: { content: string }) => Boolean(msg.content));
+    .filter((msg) => Boolean(msg.content));
 
   return { sessionId, messages };
 }

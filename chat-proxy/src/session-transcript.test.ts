@@ -287,18 +287,73 @@ describe('session transcript storage', () => {
       userId: 'u1',
       role: 'assistant',
       contentRaw: 'hi there',
+      requestId: 'req-detail-assistant',
       createdAt: new Date().toISOString(),
+    });
+
+    await db.saveObsEvent({
+      id: 'evt-detail-assistant',
+      timestamp: new Date().toISOString(),
+      eventType: 'message',
+      sessionId: 's-detail',
+      userId: 'u1',
+      agent: 'code',
+      data: {
+        requestId: 'req-detail-assistant',
+        role: 'assistant',
+        sources: [
+          {title: 'Vector Search Guide', url: 'https://docs.example/vector-search'},
+          {title: 'Milvus Client API', url: 'https://docs.example/milvus-client'},
+        ],
+      },
+      source: 'docs',
     });
 
     const detail = await db.getObsSessionMessagesDetail('s-detail');
     expect(detail.sessionId).toBe('s-detail');
     expect(detail.messages.map((m: any) => m.role)).toEqual(['user', 'assistant']);
     expect(detail.messages[0]?.content).toBe('hello');
+    expect(detail.messages[1]?.sources).toEqual([
+      {title: 'Vector Search Guide', url: 'https://docs.example/vector-search'},
+      {title: 'Milvus Client API', url: 'https://docs.example/milvus-client'},
+    ]);
   });
 
   it('formats readable legacy summarized fallback text', () => {
     const readable = db.formatLegacySummary('{"chars":75,"sha256":"abc"}');
     expect(readable).toContain('75 chars');
     expect(readable).toContain('summarized');
+  });
+
+  it('attaches assistant sources by request id', () => {
+    const messages = [
+      {role: 'user' as const, content: 'user question'},
+      {role: 'assistant' as const, content: 'assistant answer', requestId: 'req-assistant-1'},
+    ];
+
+    const eventSourceByRequestId = new Map<string, Array<{title: string; url: string}>>([
+      ['req-assistant-1', [{title: 'Vector Search Guide', url: 'https://docs.example/vector-search'}]],
+    ]);
+
+    const enriched = db.attachAssistantSourcesToTranscript(messages, eventSourceByRequestId);
+    expect(enriched[0]).not.toHaveProperty('sources');
+    expect(enriched[1]?.sources).toEqual([
+      {title: 'Vector Search Guide', url: 'https://docs.example/vector-search'},
+    ]);
+  });
+
+  it('normalizes summarized source objects with items', () => {
+    const normalized = db.normalizeTranscriptSources({
+      length: 2,
+      items: [
+        {title: 'Vector Search Guide', url: 'https://docs.example/vector-search'},
+        {title: 'Milvus Client API', url: 'https://docs.example/milvus-client'},
+      ],
+    });
+
+    expect(normalized).toEqual([
+      {title: 'Vector Search Guide', url: 'https://docs.example/vector-search'},
+      {title: 'Milvus Client API', url: 'https://docs.example/milvus-client'},
+    ]);
   });
 });
