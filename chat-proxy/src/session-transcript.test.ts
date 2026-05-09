@@ -20,12 +20,18 @@ async function cleanSessionTranscriptRows(): Promise<void> {
 }
 
 async function waitForTranscriptRows(sessionId: string, expectedCount: number): Promise<db.ObsSessionMessageRow[]> {
-  const maxAttempts = 20;
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+  const timeoutMs = 4000;
+  const startedAt = Date.now();
+  let delayMs = 25;
+
+  while (Date.now() - startedAt < timeoutMs) {
     const rows = await db.listObsSessionMessages(sessionId);
     if (rows.length >= expectedCount) return rows;
-    await new Promise((resolve) => setTimeout(resolve, 10));
+
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+    delayMs = Math.min(250, Math.floor(delayMs * 1.5));
   }
+
   return db.listObsSessionMessages(sessionId);
 }
 
@@ -74,6 +80,20 @@ describe('session transcript storage', () => {
       agent: 'general',
     }));
 
+    expect(saveObsEvent).toHaveBeenCalledTimes(1);
+    const saveObsEventPayload = saveObsEvent.mock.calls[0]?.[0];
+    expect(saveObsEventPayload.data).toMatchObject({
+      requestId: 'req-user',
+      role: 'user',
+      contentSummary: { chars: 5, bytes: 5, sha256: 'abc' },
+    });
+    expect(saveObsEventPayload.data.rawContent).toEqual(expect.objectContaining({
+      chars: 5,
+      bytes: 5,
+      sha256: expect.any(String),
+    }));
+    expect(saveObsEventPayload.data.rawContent).not.toBe('hello');
+
     vi.doUnmock('./db.js');
   });
 
@@ -104,6 +124,20 @@ describe('session transcript storage', () => {
     await Promise.resolve();
 
     expect(insertObsSessionMessage).not.toHaveBeenCalled();
+
+    expect(saveObsEvent).toHaveBeenCalledTimes(1);
+    const saveObsEventPayload = saveObsEvent.mock.calls[0]?.[0];
+    expect(saveObsEventPayload.eventType).toBe('cache');
+    expect(saveObsEventPayload.data).toMatchObject({
+      requestId: 'req-cache',
+      role: 'user',
+      rawContent: {
+        chars: 15,
+        bytes: 15,
+        sha256: expect.any(String),
+      },
+    });
+    expect(saveObsEventPayload.data.rawContent).not.toBe('should-not-save');
 
     vi.doUnmock('./db.js');
   });
