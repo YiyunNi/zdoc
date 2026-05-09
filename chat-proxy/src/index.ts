@@ -6,7 +6,8 @@ import type {ChatRequest} from './types.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
 import {checkGuard} from './guard.js';
-import {searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
+import {searchDocs, getIndexStatus, getTitleByUrl, type SearchResult} from './rag.js';
+import {isDemotedSource} from './demotion.js';
 import {groundAtomically} from './grounding-agent.js';
 import {computeGrounding} from './grounding.js';
 import {routeIntent} from './router.js';
@@ -68,9 +69,11 @@ const TOOLLESS_RAG_AGENTS = new Set((process.env.TOOLLESS_RAG_AGENTS || 'code,ge
   .split(',')
   .map(s => s.trim())
   .filter(Boolean));
-const TOOLLESS_RAG_TOP_K = Number(process.env.TOOLLESS_RAG_TOP_K || '') || 4;
+const TOOLLESS_RAG_TOP_K = Number(process.env.TOOLLESS_RAG_TOP_K || '') || 6;
 const TOOLLESS_RAG_MIN_RESULTS = Number(process.env.TOOLLESS_RAG_MIN_RESULTS || '') || 1;
-const TOOLLESS_RAG_CONTEXT_MAX_CHARS = Number(process.env.TOOLLESS_RAG_CONTEXT_MAX_CHARS || '') || 4500;
+const TOOLLESS_RAG_CONTEXT_MAX_CHARS = Number(process.env.TOOLLESS_RAG_CONTEXT_MAX_CHARS || '') || 7000;
+const SERVER_RAG_MAX_QUERIES = Number(process.env.SERVER_RAG_MAX_QUERIES || '') || 4;
+const SERVER_RAG_PER_QUERY_TOP_K = Number(process.env.SERVER_RAG_PER_QUERY_TOP_K || '') || Math.max(4, TOOLLESS_RAG_TOP_K);
 const TOOLLESS_RAG_TIMEOUT_MS = Number(process.env.TOOLLESS_RAG_TIMEOUT_MS || '') || 30000;
 const TOOLLESS_RAG_MAX_OUTPUT_TOKENS = Number(process.env.TOOLLESS_RAG_MAX_OUTPUT_TOKENS || '') || 1100;
 const GROUNDING_LLM_ENABLED = process.env.GROUNDING_LLM_ENABLED !== 'false';
@@ -334,6 +337,128 @@ ${truncateText(chunk.content, Math.floor(TOOLLESS_RAG_CONTEXT_MAX_CHARS / Math.m
   return truncateText(context, TOOLLESS_RAG_CONTEXT_MAX_CHARS);
 }
 
+function normalizeSearchText(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9_+#.\s-]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function isProbablyMisspelledSupportedRegexQuestion(query: string): boolean {
+  const lower = query.toLowerCase();
+  return /\b(regex|regexp|regular expression|regular expressions|svntax|syntax)\b/.test(lower) &&
+    /\b(supported|support|supoorted|suported|syntax|svntax)\b/.test(lower);
+}
+
+function expandQueryForSearch(query: string, agentType: AgentType, topics: string[] = []): string[] {
+  const normalized = normalizeSearchText(query);
+  const queries: string[] = [];
+  const add = (q: string) => {
+    const cleaned = normalizeSearchText(q);
+    if (cleaned && !queries.includes(cleaned)) queries.push(cleaned);
+  };
+
+  add(normalized || query);
+
+  if (isProbablyMisspelledSupportedRegexQuestion(query)) {
+    add('regex regular expression syntax supported filter expression pattern match wildcard full text search text_match');
+    add('filter expression string operators like match text_match regex wildcard supported syntax');
+    add('full text search text_match analyzer BM25 regex wildcard support');
+  }
+
+  if (/\bgrep\b/i.test(query)) {
+    add('grep exact string match full text search text_match scalar filter hybrid search');
+  }
+
+  if (/\b(TEXT_MATCH|text match|full[-\s]?text|bm25|analyzer)\b/i.test(query)) {
+    add('TEXT_MATCH full text search analyzer BM25 VARCHAR sparse vector function');
+  }
+
+  if (/\b(filter|expr|expression|where|metadata|scalar)\b/i.test(query)) {
+    add('filter expression scalar filtering operators string varchar json array supported syntax');
+  }
+
+  if (/\b(regex|regexp|wildcard|fuzzy)\b/i.test(query)) {
+    add('regex wildcard fuzzy matching support filter expression full text search limitations');
+  }
+
+  if (agentType === 'schema' || topics.includes('schema-design')) {
+    add(`${normalized} schema field types index collection limits`);
+  }
+
+  if (agentType === 'code' || /\b(code|example|sdk|python|node|java|go|curl|rest)\b/i.test(query)) {
+    add(`${normalized} code example sdk MilvusClient`);
+  }
+
+  if (topics.includes('search')) {
+    add(`${normalized} vector search filtered search hybrid search full text search`);
+  }
+
+  return queries.slice(0, SERVER_RAG_MAX_QUERIES);
+}
+
+function scoreServerRagResult(result: SearchResult, query: string, rank: number): number {
+  const q = normalizeSearchText(query);
+  const title = normalizeSearchText(result.doc_title || '');
+  const url = normalizeSearchText(result.doc_url || '');
+  const content = normalizeSearchText(result.content || '');
+  const terms = q.split(' ').filter(t => t.length > 2);
+
+  let score = Number(result.score || 0);
+  score += 1 / (rank + 1);
+
+  if (title && q && title.includes(q)) score += 2.0;
+  if (url && q && url.includes(q.replace(/\s+/g, '-'))) score += 1.2;
+
+  const exactTerms = ['regex', 'regexp', 'regular', 'expression', 'syntax', 'supported', 'support', 'wildcard', 'fuzzy', 'text_match', 'bm25', 'filter'];
+  for (const term of exactTerms) {
+    if (q.includes(term)) {
+      if (title.includes(term)) score += 0.8;
+      if (url.includes(term)) score += 0.5;
+      if (content.includes(term)) score += 0.25;
+    }
+  }
+
+  const matched = terms.filter(t => title.includes(t) || url.includes(t) || content.includes(t)).length;
+  if (terms.length > 0) score += matched / terms.length;
+
+  if (isDemotedSource(result.doc_title, result.doc_url)) score *= 0.35;
+  return score;
+}
+
+function mergeServerRagResults(resultSets: SearchResult[][], query: string, topK: number): SearchResult[] {
+  const merged = new Map<string, {result: SearchResult; score: number}>();
+
+  for (const results of resultSets) {
+    results.forEach((result, rank) => {
+      const key = result.id || `${result.doc_url}#${rank}`;
+      const score = scoreServerRagResult(result, query, rank);
+      const existing = merged.get(key);
+      if (!existing || score > existing.score) {
+        merged.set(key, {result: {...result, score}, score});
+      }
+    });
+  }
+
+  return [...merged.values()]
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK)
+    .map(({result}) => result);
+}
+
+async function searchDocsServerRag(
+  query: string,
+  agentType: AgentType,
+  topics: string[],
+  topK: number,
+  sectionFilter?: string,
+  queryEmbedding?: number[] | null,
+): Promise<{results: SearchResult[]; queries: string[]}> {
+  const queries = expandQueryForSearch(query, agentType, topics);
+  const perQueryTopK = Math.max(topK, SERVER_RAG_PER_QUERY_TOP_K);
+  const resultSets = await Promise.all(queries.map((q, i) =>
+    searchDocs(q, perQueryTopK, sectionFilter, undefined, undefined, i === 0 ? queryEmbedding : null),
+  ));
+  return {results: mergeServerRagResults(resultSets, query, topK), queries};
+}
+
 function buildToollessRagPrompt(query: string, context: string): string {
   return `User question:
 ${query}
@@ -341,7 +466,7 @@ ${query}
 Retrieved documentation context:
 ${context || 'No documentation context was retrieved.'}
 
-Answer the user now using the retrieved context as your primary source. Keep the answer concise. Include code only when useful or requested. If the context is weak or incomplete, say what to verify instead of guessing.`;
+Answer the user now using the retrieved context as your primary source. Keep the answer concise. Include code only when useful or requested. If the context is weak or incomplete, say what to verify instead of guessing. For questions about regex, wildcard, fuzzy matching, or exact string matching, do not claim support unless the retrieved context explicitly says it is supported; otherwise explain the documented alternatives such as scalar filters, TEXT_MATCH/full-text search, or hybrid search.`;
 }
 
 function detectRequestedCodeLanguage(query: string): 'python' | 'node' | 'java' | 'go' | 'rest' | null {
@@ -1339,7 +1464,14 @@ app.post('/chat', async c => {
             });
 
             const maybeEmbedding = queryEmbedding ?? await withTimeout(embeddingEnabled ? embeddingPromise : Promise.resolve(null), TOOL_EMBEDDING_BUDGET_MS, null);
-            const ragResults = await searchDocs(ragQuery, TOOLLESS_RAG_TOP_K, sectionFilter, undefined, undefined, maybeEmbedding);
+            const {results: ragResults, queries: ragQueries} = await searchDocsServerRag(
+              ragQuery,
+              agentConfig.type as AgentType,
+              topics,
+              TOOLLESS_RAG_TOP_K,
+              sectionFilter,
+              maybeEmbedding,
+            );
             for (const r of ragResults) {
               toolSources.push({title: r.doc_title || '', url: r.doc_url, score: r.score, section: r.section});
               toolChunks.push({
@@ -1374,6 +1506,8 @@ app.post('/chat', async c => {
                 durationMs: Date.now() - tRagStart,
                 resultCount: ragResults.length,
                 sourceCount: toolSources.length,
+                queryCount: ragQueries.length,
+                queries: ragQueries,
                 codeExampleLookup,
               });
               debug('chat.provider.stream.started', {

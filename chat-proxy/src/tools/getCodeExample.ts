@@ -15,7 +15,11 @@ export function createGetCodeExampleTool(context: RagToolContext = {}) {
       const normalizedTopic = topic.toLowerCase();
       const apiHints: string[] = [];
       if (/create\s+collection|collection\s+create|create_collection/.test(normalizedTopic)) apiHints.push('create_collection');
-      const query = `${apiHints.join(' ')} ${language}`.trim() || `${topic} ${language} code example`;
+      if (/search|query/.test(normalizedTopic)) apiHints.push('search');
+      if (/insert/.test(normalizedTopic)) apiHints.push('insert');
+      if (/upsert/.test(normalizedTopic)) apiHints.push('upsert');
+      if (/hybrid/.test(normalizedTopic)) apiHints.push('hybrid search');
+      const query = [topic, language, ...apiHints, 'code example'].filter(Boolean).join(' ');
       const results = await searchDocsFTS5(query, 4, context.sectionFilter);
 
       // Extract code blocks from results
