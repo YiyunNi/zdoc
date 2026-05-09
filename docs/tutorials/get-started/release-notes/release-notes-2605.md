@@ -63,7 +63,7 @@ import Grid from '@site/src/components/Grid';
 
         For these non-always-on workloads, both On-Demand Search and Serverless follow a pay-as-you-go model. However, as our experiment shows, for a 1B-vector workload with 10 hours of accumulated active compute per month, the total cost of On-Demand Search is only about 1/15 that of Serverless (&#36;318 vs. &#36;4,937).
 
-        For details, please refer to [On-Demand C](https://docs.cloud-uat3.zilliz.com/docs/on-demand-cluster)[luster](https://docs.cloud-uat3.zilliz.com/docs/on-demand-cluster), [database](https://docs.cloud-uat3.zilliz.com/docs/on-demand-database) and [On-Demand Compute Cost](./on-demand-compute-cost).
+        For details, please refer to [On-Demand Cluster](./on-demand-cluster), [database](./on-demand-database) and [On-Demand Compute Cost](./on-demand-compute-cost).
 
         **External Data Lake Search**
 
@@ -75,13 +75,15 @@ import Grid from '@site/src/components/Grid';
 
         Vector Lakebase is accessible through the Zilliz Cloud console, REST API, PyMilvus, and Zilliz CLI. It introduces usage-based billing across compute, storage, and storage requests — including Query CU, Indexing CU, Project Database Storage, and Storage Requests.
 
-        Learn how to index and accelerate your existing data lake, refer to [quickstart to external Colleciton.](https://docs.cloud-uat3.zilliz.com/docs/quick-start-to-on-demand-search)
+        Learn how to index and accelerate your existing data lake, refer to [Quickstart to External Collection.](./quick-start-to-on-demand-search)
 
         ## Milvus 3.0 Public Preview\{#milvus-30-public-preview}
 
         Alongside the launch of Vector Lakebase, Zilliz is also releasing the public preview of Milvus 3.0. In this version, Milvus extends its vector database capabilities into the AI data infrastructure stack through open data formats and broader integration with existing data lakes and large-scale data processing engines.
 
-        <Admonition type="info" icon="📘" title="Note">
+        <Admonition type="info" icon="📘" title="注記">
+
+        このリリースでは、Milvus 3.0 の機能はオンデマンド・クラスターでのみサポートされています。サービング・クラスターではまだサポートされていません。
 
         </Admonition>
 

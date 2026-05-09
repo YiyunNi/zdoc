@@ -63,7 +63,7 @@ import Grid from '@site/src/components/Grid';
 
         これらの常時稼働ではないワークロードに対して、On-Demand Search と Serverless はどちらも従量課金モデルです。ただし実験結果では、月間合計10時間のアクティブコンピュートを持つ10億ベクトル規模ワークロードにおいて、On-Demand Search の総コストは Serverless の約1/15（&#36;318 対 &#36;4,937）に抑えられます。
 
-        詳細は [On-Demand Cluster](https://docs.cloud-uat3.zilliz.com/docs/on-demand-cluster)、[database](https://docs.cloud-uat3.zilliz.com/docs/on-demand-database)、および [On-Demand Compute Cost](./on-demand-compute-cost) を参照してください。
+        詳細は [On-Demand Cluster](./on-demand-cluster)、[database](./on-demand-database)、および [On-Demand Compute Cost](./on-demand-compute-cost) を参照してください。
 
         **External Data Lake Search**
 
@@ -75,7 +75,7 @@ import Grid from '@site/src/components/Grid';
 
         Vector Lakebase は Zilliz Cloud コンソール、REST API、PyMilvus、Zilliz CLI から利用できます。Query CU、Indexing CU、Project Database Storage、Storage Requests を含む、コンピュート、ストレージ、ストレージリクエスト全体にわたる従量課金を導入しています。
 
-        既存データレイクのインデックス化と高速化については、[External Collection クイックスタート](https://docs.cloud-uat3.zilliz.com/docs/quick-start-to-on-demand-search) を参照してください。
+        既存データレイクのインデックス化と高速化については、[External Collection クイックスタート](./quick-start-to-on-demand-search) を参照してください。
 
         ## Milvus 3.0 パブリックプレビュー\{#milvus-30-public-preview}
 
