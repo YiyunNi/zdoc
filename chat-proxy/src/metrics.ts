@@ -150,6 +150,8 @@ const COUNTER_HELP: Record<string, string> = {
   'chat_proxy_cache_hits_total': 'Total cache hits by type (response|semantic)',
   'chat_proxy_cache_misses_total': 'Total cache misses by type (response|semantic)',
   'chat_proxy_tool_calls_total': 'Total number of tool calls by tool name',
+  'chat_proxy_bedrock_retries_total': 'Total Bedrock calls retried after throttling',
+  'chat_proxy_bedrock_queue_timeout_total': 'Total Bedrock calls rejected after queue timeout',
 };
 
 const GAUGE_HELP: Record<string, string> = {
@@ -159,6 +161,7 @@ const GAUGE_HELP: Record<string, string> = {
 
 const HISTOGRAM_HELP: Record<string, string> = {
   'chat_proxy_step_duration_ms': 'Duration of each pipeline step in milliseconds',
+  'chat_proxy_bedrock_queue_wait_ms': 'Bedrock limiter queue wait time in milliseconds',
 };
 
 export function initMetrics(): void {

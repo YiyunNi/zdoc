@@ -36,6 +36,7 @@ import {saveTokenUsage, isDbReady} from './db.js';
 import {startedAt, llmHealth, recordLlmSuccess, recordLlmError, recordLlmDisconnect} from './health.js';
 import {handlePostAction} from './post-action-handler.js';
 import type {ResolvedModel} from './runtime-config.js';
+import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 
 // Load topic prompts from disk at startup
 loadPrompts();
@@ -1116,6 +1117,7 @@ app.post('/chat', async c => {
               });
               finalResultRef.current = streamText({
                 model: modelInstance,
+                maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
                 system: `${systemPrompt}\n\n## Final synthesis mode\nYou are in the final answer phase. Tool use is disabled. You MUST answer the user directly using the provided collected context, current page context, and agent instructions. If the context is weak, still provide the best safe answer and mention what to verify. Be concise by default.`,
                 messages: [
                   {role: 'user', content: `User question:\n${ragQuery}\n\nCollected context from tools:\n${context}${draft}\n\nWrite the final answer now. Include concise steps and code if relevant. Keep the answer under 700 words unless the user explicitly asks for more detail.`},
@@ -1212,6 +1214,7 @@ app.post('/chat', async c => {
               });
               result = streamText({
                 model: modelInstance,
+                maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
                 maxOutputTokens: TOOLLESS_RAG_MAX_OUTPUT_TOKENS,
                 temperature: 0.2,
                 system: `${systemPrompt}\n\n## Server-side RAG mode\nThe server already retrieved relevant documentation. Do not mention tool calls. Use only the provided retrieved context plus current page context. Cite source titles/URLs naturally only when helpful; the server will attach source metadata separately.`,
@@ -1265,6 +1268,7 @@ app.post('/chat', async c => {
             });
             result = streamText({
               model: modelInstance,
+              maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
               maxOutputTokens: FAST_PATH_MAX_OUTPUT_TOKENS,
               temperature: 0.2,
               tools: agentTools,
@@ -1363,6 +1367,7 @@ app.post('/chat', async c => {
           });
           result = streamText({
             model: modelInstance,
+            maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
             maxOutputTokens: 1024,
             temperature: 0.2,
             tools: agentTools,

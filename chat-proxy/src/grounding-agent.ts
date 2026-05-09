@@ -8,6 +8,7 @@ import {saveTokenUsage} from './db.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {summarizeForDebugLog} from './logger.js';
 import {makeTelemetry} from './telemetry.js';
+import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 
 const groundingSchema = z.object({
   selectedSources: z.array(z.object({
@@ -73,6 +74,7 @@ export async function groundAtomically(
     const resolvedModel = await resolveModel('grounding');
     const result = await generateObject({
       model: await createModelInstance(resolvedModel),
+      maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
       schema: groundingSchema,
       maxOutputTokens: 400,
       experimental_telemetry: makeTelemetry('grounding', {requestId}),

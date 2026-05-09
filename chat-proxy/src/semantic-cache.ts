@@ -2,6 +2,7 @@ import {embed, embedMany} from 'ai';
 import {getPool, invalidateCacheByChunkHashes, getCacheStats, getCacheEntriesCount, isDbReady, type CacheEntry} from './db.js';
 import {summarizeForDebugLog} from './logger.js';
 import {getEmbeddingModel, resolveModel} from './runtime-config.js';
+import {bedrockAiSdkMaxRetries, withBedrockLimitAndRetry} from './bedrock-guard.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -14,10 +15,6 @@ const SEMANTIC_CACHE_MAX_ENTRIES = parseInt(process.env.SEMANTIC_CACHE_MAX_ENTRI
 
 export function isSemanticCacheEnabled(): boolean {
   return SEMANTIC_CACHE_ENABLED;
-}
-
-function sleep(ms: number): Promise<void> {
-  return new Promise(r => setTimeout(r, ms));
 }
 
 // ---------------------------------------------------------------------------
@@ -43,6 +40,7 @@ export async function computeEmbedding(text: string): Promise<number[]> {
   const response = await embed({
     model,
     value: text,
+    maxRetries: bedrockAiSdkMaxRetries(resolved.provider),
   });
   return response.embedding;
 }
@@ -76,47 +74,25 @@ async function embedCohereBedrockBatch(texts: string[], resolved: { model: strin
     ...(resolved.model.toLowerCase().includes('embed-v4') && resolved.dimensions ? { output_dimension: resolved.dimensions } : {}),
   });
 
-  for (let attempt = 0; attempt <= retries; attempt++) {
-    try {
-      const response = await client.send(new InvokeModelCommand({
-        modelId: resolved.model,
-        body,
-        accept: 'application/json',
-        contentType: 'application/json',
-      }));
+  const response = await withBedrockLimitAndRetry('embedding', resolved.model, () => client.send(new InvokeModelCommand({
+    modelId: resolved.model,
+    body,
+    accept: 'application/json',
+    contentType: 'application/json',
+  })), retries + 1);
 
-      const json = JSON.parse(new TextDecoder().decode(response.body));
+  const json = JSON.parse(new TextDecoder().decode(response.body));
 
-      // Cohere Embed v4 single-type response: { embeddings: [[...]], response_type: 'embeddings_floats' }
-      // Multi-type response: { embeddings: { float: [[...]] }, response_type: 'embeddings_by_type' }
-      if (json.response_type === 'embeddings_by_type' && json.embeddings?.float) {
-        return json.embeddings.float;
-      }
-      if (Array.isArray(json.embeddings) && json.embeddings.length > 0) {
-        return json.embeddings;
-      }
-
-      throw new Error(`Unexpected Cohere embedding response shape: ${JSON.stringify(json).slice(0, 200)}`);
-    } catch (err) {
-      const msg = (err as Error).message || '';
-      const isThrottled =
-        msg.includes('Too many requests') ||
-        (err as any).name === 'ThrottlingException' ||
-        msg.includes('Rate exceeded') ||
-        msg.includes('ProvisionedThroughputExceededException');
-      if (isThrottled && attempt < retries) {
-        const baseDelay = 1000 * Math.pow(2, attempt);
-        const jitter = Math.random() * 1000;
-        const delay = baseDelay + jitter;
-        console.log(`[Embedding] Rate limited, retrying in ${Math.round(delay)}ms (attempt ${attempt + 1}/${retries})`);
-        await sleep(delay);
-        continue;
-      }
-      throw err;
-    }
+  // Cohere Embed v4 single-type response: { embeddings: [[...]], response_type: 'embeddings_floats' }
+  // Multi-type response: { embeddings: { float: [[...]] }, response_type: 'embeddings_by_type' }
+  if (json.response_type === 'embeddings_by_type' && json.embeddings?.float) {
+    return json.embeddings.float;
+  }
+  if (Array.isArray(json.embeddings) && json.embeddings.length > 0) {
+    return json.embeddings;
   }
 
-  throw new Error('Max retries exceeded for Cohere embedding');
+  throw new Error(`Unexpected Cohere embedding response shape: ${JSON.stringify(json).slice(0, 200)}`);
 }
 
 /** Batch compute embeddings. Uses native Cohere batching on Bedrock when possible. */
@@ -140,6 +116,7 @@ export async function computeEmbeddingsBatch(texts: string[]): Promise<number[][
   const response = await embedMany({
     model,
     values: texts,
+    maxRetries: bedrockAiSdkMaxRetries(resolved.provider),
   });
   return response.embeddings;
 }

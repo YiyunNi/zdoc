@@ -2,6 +2,7 @@ import {generateObject} from 'ai';
 import {z} from 'zod';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {makeTelemetry} from './telemetry.js';
+import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 
 const entitySchema = z.object({
   entities: z.array(z.string()).describe('Named entities extracted from the query'),
@@ -40,6 +41,7 @@ export async function extractEntities(query: string, retries = 3): Promise<strin
       const resolvedModel = await resolveModel('rewrite');
       const result = await generateObject({
         model: await createModelInstance(resolvedModel),
+        maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
         schema: entitySchema,
         maxOutputTokens: 500,
         experimental_telemetry: makeTelemetry('entity-extract'),

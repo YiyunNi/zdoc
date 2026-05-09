@@ -2,6 +2,7 @@ import {generateObject} from 'ai';
 import {z} from 'zod';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {makeTelemetry} from './telemetry.js';
+import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 
 const rewriteSchema = z.object({
   searchQuery: z.string().describe('Rewritten query optimized for keyword search'),
@@ -50,6 +51,7 @@ export async function rewriteQuery(question: string, retries = 1): Promise<strin
   try {
     const result = await generateObject({
       model: await createModelInstance(resolvedModel),
+      maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
       schema: rewriteSchema,
       maxOutputTokens: 100,
       experimental_telemetry: makeTelemetry('query-rewrite'),
@@ -84,6 +86,7 @@ User question: ${question}`,
         const {generateText} = await import('ai');
         const textResult = await generateText({
           model: await createModelInstance(resolvedModel),
+          maxRetries: bedrockAiSdkMaxRetries(resolvedModel.provider),
           maxOutputTokens: 80,
           temperature: 0,
           experimental_telemetry: makeTelemetry('query-rewrite-retry'),

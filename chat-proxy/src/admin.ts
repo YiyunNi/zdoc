@@ -28,6 +28,7 @@ import {isOAuthEnabled} from './auth/session.js';
 import {requireAuth, requireAdmin, getAuth, setSessionCookie, setStateCookie, clearStateCookie, clearSessionCookie, verifyStateCookie} from './auth/middleware.js';
 import {listAdmins, addAdmin, removeAdmin, healAdminProfile} from './auth/admin-users.js';
 import {makeTelemetry} from './telemetry.js';
+import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 import {reloadRules, getRules} from './hooks/index.js';
 import {getMetricsData} from './metrics.js';
 
@@ -390,7 +391,7 @@ adminApp.get('/api/health/llm', async c => {
     const resolved = await resolveModel('chat');
     const model = await createModelInstance(resolved);
     const {generateText} = await import('ai');
-    await generateText({model, prompt: 'Say "ok"', maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-chat')});
+    await generateText({model, prompt: 'Say "ok"', maxRetries: bedrockAiSdkMaxRetries(resolved.provider), maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-chat')});
     recordLlmSuccess();
     return c.json({
       ok: true,
@@ -589,7 +590,7 @@ adminApp.post('/api/config/:key/test', async c => {
   try {
     const instance = await createModelInstance(resolved);
     const {generateText} = await import('ai');
-    await generateText({model: instance, prompt: 'Say "ok"', maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-model')});
+    await generateText({model: instance, prompt: 'Say "ok"', maxRetries: bedrockAiSdkMaxRetries(resolved.provider), maxOutputTokens: 5, experimental_telemetry: makeTelemetry('admin-test-model')});
     return c.json({ok: true, provider: resolvedProviderDisplay(resolved), model: resolved.model, source: resolved.source});
   } catch (err) {
     return c.json({ok: false, provider: resolvedProviderDisplay(resolved), model: resolved.model, source: resolved.source, error: String(err)}, 400);
