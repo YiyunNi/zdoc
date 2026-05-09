@@ -83,6 +83,8 @@ import Grid from '@site/src/components/Grid';
 
         <Admonition type="info" icon="📘" title="Note">
 
+        このリリースでは、Milvus 3.0 の機能はオンデマンド・クラスターでのみサポートされています。サービング・クラスターではまだサポートされていません。
+
         </Admonition>
 
         **外部データとストレージフォーマット**

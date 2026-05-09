@@ -83,7 +83,7 @@ import Grid from '@site/src/components/Grid';
 
         <Admonition type="info" icon="📘" title="注記">
 
-        このリリースでは、Milvus 3.0 の機能はオンデマンド・クラスターでのみサポートされています。サービング・クラスターではまだサポートされていません。
+        In this release, Milvus 3.0 capabilities are supported on On-demand Clusters only. Serving Clusters are not yet supported.
 
         </Admonition>
 
