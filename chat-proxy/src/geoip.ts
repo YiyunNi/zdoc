@@ -19,7 +19,7 @@ let reader: any = null;
 let initPromise: Promise<void> | null = null;
 
 export function resolveGeoIpDbPath(): string {
-  const override = process.env.GEOIP_DB_PATH?.trim();
+  const override = process.env.GEOLITE2_DB_PATH?.trim();
   if (override) return override;
 
   const __dirname = dirname(fileURLToPath(import.meta.url));

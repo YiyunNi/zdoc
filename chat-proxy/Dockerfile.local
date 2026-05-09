@@ -12,7 +12,8 @@ COPY data/GeoLite2-Country.mmdb ./data/GeoLite2-Country.mmdb
 COPY package.json ./
 
 ENV PORT=8787 \
-    ALLOWED_ORIGINS="*"
+    ALLOWED_ORIGINS="*" \
+    GEOLITE2_DB_PATH=/app/data/GeoLite2-Country.mmdb
 
 EXPOSE 8787
 

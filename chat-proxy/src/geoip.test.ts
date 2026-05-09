@@ -9,14 +9,14 @@ afterEach(() => {
 
 describe('geoip helpers', () => {
   it('resolves database path from env override', async () => {
-    process.env.GEOIP_DB_PATH = '/tmp/custom-country.mmdb';
+    process.env.GEOLITE2_DB_PATH = '/tmp/custom-country.mmdb';
     const geoip = await import('./geoip.js');
 
     expect(geoip.resolveGeoIpDbPath()).toBe('/tmp/custom-country.mmdb');
   });
 
   it('defaults to GeoLite2-Country mmdb under data directory', async () => {
-    delete process.env.GEOIP_DB_PATH;
+    delete process.env.GEOLITE2_DB_PATH;
     const geoip = await import('./geoip.js');
 
     expect(geoip.resolveGeoIpDbPath()).toMatch(/data\/GeoLite2-Country\.mmdb$/);
