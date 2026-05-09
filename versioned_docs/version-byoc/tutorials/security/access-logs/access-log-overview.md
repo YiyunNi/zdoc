@@ -65,7 +65,7 @@ Logs are written in **JSON Lines** format (one JSON object per line) and deliver
 /<Cluster ID>/<Log type>/<Date>/<HH:MM:SS>-<UUID>.log
 ```
 
-For example: `/in03-c7be749d5f403ad/access/2024-12-20/09:16:53-jz5l7D8Q.log`
+For example: `/inxx-xxxxxxxxxxxxxxx/access/2024-12-20/09:16:53-jz5l7D8Q.log`
 
 For more information on parameters, refer to [Access Log Reference](./access-log-reference).
 

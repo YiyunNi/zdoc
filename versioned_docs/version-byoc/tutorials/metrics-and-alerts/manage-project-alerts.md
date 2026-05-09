@@ -150,7 +150,7 @@ curl --request POST \
        "threshold": 80,
        "windowSize": 10,
        "comparisonMethod": "GREATER_THAN",
-       "targetClusterIds": ["in01-fbc09dde0a4bfc5"],
+       "targetClusterIds": ["inxx-xxxxxxxxxxxxxxx"],
        "enabled": true,
        "sendResolved": true,
        "actions": [

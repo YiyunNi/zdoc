@@ -110,7 +110,7 @@ The following demo shows how to restore specific databases and collections in a 
 
 ### Via RESTful API\{#via-restful-api}
 
-The following example restores a collection from backup file to an existing cluster `in01-3e5ad8adc38xxxx`. For details about the RESTful API, see [Restore Collection Backup](/reference/restful/restore-collection-backup-v2).
+The following example restores a collection from backup file to an existing cluster `inxx-xxxxxxxxxxxxxxx`. For details about the RESTful API, see [Restore Collection Backup](/reference/restful/restore-collection-backup-v2).
 
 ```bash
 curl --request POST \

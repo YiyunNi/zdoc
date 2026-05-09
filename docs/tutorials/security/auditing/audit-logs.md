@@ -73,7 +73,7 @@ Below are examples of audit log entries forwarded to a bucket:
     ```json
     {
       "action": "CreateCollection",
-      "cluster_id": "in01-0045a626277eafb",
+      "cluster_id": "inxx-xxxxxxxxxxxxxxx",
       "connection_uid": 456912553983082500,
       "database": "default",
       "interface": "Grpc",
@@ -94,7 +94,7 @@ Below are examples of audit log entries forwarded to a bucket:
     ```json
     {
       "action": "CreateIndex",
-      "cluster_id": "in01-0045a626277eafb",
+      "cluster_id": "inxx-xxxxxxxxxxxxxxx",
       "connection_uid": 456912553983082500,
       "database": "default",
       "interface": "Grpc",
@@ -114,7 +114,7 @@ Below are examples of audit log entries forwarded to a bucket:
     ```json
     {
       "action": "DropIndex",
-      "cluster_id": "in01-0045a626277eafb",
+      "cluster_id": "inxx-xxxxxxxxxxxxxxx",
       "connection_uid": 456912553983082500,
       "database": "default",
       "interface": "Grpc",

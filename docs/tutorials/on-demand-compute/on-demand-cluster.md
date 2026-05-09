@@ -73,7 +73,7 @@ This topic describes how to create an **on-demand** cluster.
     # {
     #   "code": 0,
     #   "data": {
-    #     "clusterId": "in07-7d6ac8697204a6a",
+    #     "clusterId": "inxx-xxxxxxxxxxxxxxx",
     #     "regionId": "aws-us-west-2",
     #     "projectId": "proj-09ee1f4b1151d5dd1edbc5"
     #   }
@@ -173,14 +173,14 @@ This topic describes how to create an **on-demand** cluster.
         "count": 2,
         "onDemandClusters": [
           {
-            "clusterId": "in07-7d6ac8697204a6a",
+            "clusterId": "inxx-xxxxxxxxxxxxxxx",
             "clusterName": "xxx",
             "regionId": "aws-us-west-2",
             "cuSize": 8,
             "status": "SUSPENDED",
             "endpoint": "https://proj-09ee1f4b1151d5dd1edbc5.aws-us-west-2.vectordb-uat3.zillizcloud.com",
             "privateLink": "",
-            "createdBy": "jack.tsai@zilliz.com",
+            "createdBy": "john.doe@zilliz.com",
             "createTime": 1745396115000
           }
         ]
@@ -203,7 +203,7 @@ This topic describes how to create an **on-demand** cluster.
     export TOKEN="YOUR_API_KEY"
     
     curl --request GET \
-         --url "${BASE_URL}/v2/clusters/onDemandClusters/in07-7d6ac8697204a6a" \
+         --url "${BASE_URL}/v2/clusters/onDemandClusters/inxx-xxxxxxxxxxxxxxx" \
          --header "Authorization: Bearer ${TOKEN}" \
          --header "Accept: application/json"
     ```
@@ -214,14 +214,14 @@ This topic describes how to create an **on-demand** cluster.
     {
       "code": 0,
       "data": {
-        "clusterId": "in07-7d6ac8697204a6a",
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "clusterName": "xxx",
         "regionId": "aws-us-west-2",
         "cuSize": 8,
         "status": "RUNNING",
         "endpoint": "https://proj-09ee1f4b1151d5dd1edbc5.aws-us-west-2.vectordb-uat3.zillizcloud.com",
         "privateLink": "",
-        "createdBy": "jack.tsai@zilliz.com",
+        "createdBy": "john.doe@zilliz.com",
         "createTime": 1745396115000
       }
     }
@@ -248,7 +248,7 @@ This topic describes how to create an **on-demand** cluster.
     export TOKEN="YOUR_API_KEY"
     
     curl --request DELETE \
-         --url "${BASE_URL}/v2/clusters/onDemandClusters/in07-7d6ac8697204a6a" \
+         --url "${BASE_URL}/v2/clusters/onDemandClusters/inxx-xxxxxxxxxxxxxxx" \
          --header "Authorization: Bearer ${TOKEN}" \
          --header "Accept: application/json"
     ```
@@ -259,7 +259,7 @@ This topic describes how to create an **on-demand** cluster.
     {
       "code": 0,
       "data": {
-        "clusterId": "in07-7d6ac8697204a6a",
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "status": "DELETING"
       }
     }

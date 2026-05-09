@@ -212,7 +212,7 @@ You can perform the following operations on an on-demand cluster.
 
     ```bash
     curl --request DELETE \
-         --url "https://${BASE_URL}/v2/clusters/onDemandClusters/in07-7d6ac8697204a6a" \
+         --url "https://${BASE_URL}/v2/clusters/onDemandClusters/inxx-xxxxxxxxxxxxxxx" \
          --header "Authorization: Bearer ${API_KEY}" \
          --header "Accept: application/json"
     ```
