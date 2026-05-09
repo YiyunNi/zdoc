@@ -789,11 +789,13 @@ export async function upsertObsSession(session: {
   );
 }
 
+export type ObsSessionTranscriptRole = 'user' | 'assistant';
+
 export interface ObsSessionMessageRow {
   id: string;
   sessionId: string;
   userId: string;
-  role: string;
+  role: ObsSessionTranscriptRole;
   contentRaw: string;
   agent?: string;
   model?: string;
@@ -840,7 +842,7 @@ export async function listObsSessionMessages(sessionId: string): Promise<ObsSess
     id: row.id,
     sessionId: row.session_id,
     userId: row.user_id,
-    role: row.role,
+    role: row.role as ObsSessionTranscriptRole,
     contentRaw: row.content_raw,
     agent: row.agent ?? undefined,
     model: row.model ?? undefined,
@@ -852,6 +854,10 @@ export async function listObsSessionMessages(sessionId: string): Promise<ObsSess
 }
 
 export async function deleteObsSessionMessagesOlderThan(days: number): Promise<number> {
+  if (!Number.isFinite(days) || !Number.isInteger(days) || days < 0) {
+    throw new Error(`Invalid retention days: ${days}. Expected a finite integer >= 0.`);
+  }
+
   const pool = getPool();
   const { rowCount } = await pool.query(
     `DELETE FROM obs_session_messages
