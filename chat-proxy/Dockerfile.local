@@ -8,6 +8,7 @@ RUN npm install
 COPY dist/ ./dist/
 COPY src/admin-dashboard.html ./dist/
 COPY prompts/ ./prompts/
+COPY data/GeoLite2-Country.mmdb ./data/GeoLite2-Country.mmdb
 COPY package.json ./
 
 ENV PORT=8787 \

@@ -12,6 +12,7 @@ WORKDIR /app
 COPY --from=build /app/node_modules/ ./node_modules/
 COPY --from=build /app/dist/ ./dist/
 COPY prompts/ ./prompts/
+COPY data/GeoLite2-Country.mmdb ./data/GeoLite2-Country.mmdb
 
 # Non-sensitive config — baked into image
 ARG AI_BASE_URL
