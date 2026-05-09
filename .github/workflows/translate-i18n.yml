@@ -147,7 +147,7 @@ jobs:
           ## Translation rules
 
           - Translate prose to Japanese; keep code blocks, JSX tags, and frontmatter unchanged
-          - Preserve ALL markdown syntax: ##, **, *, >, -, tables, numbered lists
+          - Preserve ALL markdown syntax: headings, emphasis, blockquotes, bullet lists, numbered lists, and tables
           - Preserve ALL markdown link URLs — only translate the visible link text
           - Preserve ALL leading whitespace exactly — indentation is structurally significant in MDX
           - Do NOT translate inline code (`backticks`) or fenced code blocks
