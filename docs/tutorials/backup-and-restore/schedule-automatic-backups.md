@@ -32,7 +32,7 @@ Zilliz Cloud allows you to enable **automatic backups** for your clusters, helpi
 
 Backup creation incurs additional [charges](./storage-cost), with pricing based on the cloud region where the backup is stored. All backup files are stored in the same cloud region as the source cluster. For example, a cluster in `AWS us-west-2` will have its backups stored in `AWS us-west-2`.
 
-This guide walks you through how to schedule automatic backups on Zilliz Cloud. To create on-demand backups, see [Create Backup](./create-snapshot).
+This guide walks you through how to schedule automatic backups on Zilliz Cloud. To create on-demand backups, see [Create Backup](./create-backup).
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -48,7 +48,7 @@ This guide walks you through how to schedule automatic backups on Zilliz Cloud. 
 
     - Collection TTL settings
 
-    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-snapshot))
+    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-backup-files))
 
     - Cluster dynamic and scheduled scaling settings
 
@@ -239,5 +239,5 @@ The default retention period for automatic backups is 7 days, and you can adjust
 
 **Will backup files be deleted if the original cluster is dropped?**
 
-This depends on the creation method of the backup file. All automatic backups are deleted along with the original cluster. But [manual cluster backups](./create-snapshot) are retained permanently and will not be deleted when the cluster is deleted. You must delete them manually if no longer needed.
+This depends on the creation method of the backup file. All automatic backups are deleted along with the original cluster. But [manual cluster backups](./create-backup) are retained permanently and will not be deleted when the cluster is deleted. You must delete them manually if no longer needed.
 

@@ -49,7 +49,7 @@ Currently, clusters on Azure do not support cross-region backup.
 
     - Collection TTL settings
 
-    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-snapshot))
+    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-backup-files))
 
     - Cluster dynamic and scheduled scaling settings
 
@@ -59,7 +59,7 @@ Currently, clusters on Azure do not support cross-region backup.
 
 ## Procedures\{#procedures}
 
-You can enable cross-region backup either when [creating a backup manually](./create-snapshot) or when [scheduling automatic backups](./schedule-automatic-backups).
+You can enable cross-region backup either when [creating a backup manually](./create-backup) or when [scheduling automatic backups](./schedule-automatic-backups).
 
 - **Manual backup:** If you choose cross-region backup during manual creation, all copied backups are permanently retained.
 

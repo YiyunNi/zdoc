@@ -12,10 +12,10 @@ token: ODiwfm3z9lpSIZdyCjtcTQXgnfb
 sidebar_position: 2
 sidebar_label: "BulkImport"
 keywords: 
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
   - zilliz
   - zilliz cloud
   - cloud

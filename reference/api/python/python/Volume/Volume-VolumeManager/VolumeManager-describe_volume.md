@@ -13,10 +13,10 @@ type: docx
 token: WuCpdRKfloXSTqxrLehcqkXfnFd
 sidebar_position: 3
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,12 +32,6 @@ import Admonition from '@theme/Admonition';
 # describe_volume()
 
 This operation describes a specific volume within a specific project in a paginated manner.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This method is available on Zilliz Cloud's control-plane Volume service. Create <code>VolumeManager</code> with <code>cloud_endpoint="https://api.cloud.zilliz.com"</code> and a Zilliz Cloud API key that has access to the target project.</p>
-
-</Admonition>
 
 ## Request Syntax\{#request-syntax}
 

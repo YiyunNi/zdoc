@@ -13,10 +13,10 @@ type: docx
 token: QsGNdp1t3oHaunxgIZGc3PdSnof
 sidebar_position: 22
 keywords: 
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,12 +32,6 @@ import Admonition from '@theme/Admonition';
 # list_persistent_segments()
 
 This operation lists all persistent (flushed) segments for a collection, including information about row count, sort status, and storage level.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This only applies to managed collections.</p>
-
-</Admonition>
 
 ## Request syntax\{#request-syntax}
 

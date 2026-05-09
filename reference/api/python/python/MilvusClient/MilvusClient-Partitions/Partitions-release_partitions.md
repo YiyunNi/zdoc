@@ -13,10 +13,10 @@ type: docx
 token: VblKdUEU4o4t31xcFiicIGtjn9g
 sidebar_position: 7
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,12 +32,6 @@ import Admonition from '@theme/Admonition';
 # release_partitions()
 
 This operation releases the partitions in a specified collection from memory.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This only applies to managed collections.</p>
-
-</Admonition>
 
 ## Request syntax\{#request-syntax}
 

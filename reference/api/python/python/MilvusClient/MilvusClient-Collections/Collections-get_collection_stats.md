@@ -13,10 +13,10 @@ type: docx
 token: VfaldXzLUocBrJxffw6cJHPinlh
 sidebar_position: 13
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
   - zilliz
   - zilliz cloud
   - cloud
@@ -35,9 +35,9 @@ This operation lists the statistics collected on a specific collection.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This method applies to dedicated serving clusters and on-demand compute. </p>
+<p>This method applies only to dedicated serving clusters and on-demand compute. </p>
 <ul>
-<li><p>For a collection in a serving cluster, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p>For a managed collection in serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
 <li><p><strong>Free & Serverless</strong></p></li>
 </ul>
 <p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
@@ -46,7 +46,7 @@ This operation lists the statistics collected on a specific collection.
 </ul>
 <p><code>https://\{cluster-id\}.\{region\}.vectordb.zillizcloud.com:19530</code></p>
 <ul>
-<li>For a collection in on-demand compute, create <strong>MilvusClient</strong> with the project endpoints.</li>
+<li>For an external collection for on-demand compute, create <strong>MilvusClient</strong> with the project endpoints.</li>
 </ul>
 <p><code>https://\{project-id\}.\{region\}.api.zillizcloud.com</code></p>
 

@@ -13,10 +13,10 @@ type: docx
 token: UUJWdoEnjoXx69xahsScdMVSnzf
 sidebar_position: 10
 keywords: 
-  - Context Window
   - Natural language search
   - Similarity Search
   - multimodal RAG
+  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud

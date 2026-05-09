@@ -337,7 +337,7 @@ import Grid from '@site/src/components/Grid';
 
         - [📅  Schedule-based cluster autoscaling](./scale-query-cu)
 
-        - [🔄  Partial restoration](./restore-from-snapshot#restore-a-partial-cluster) of a cluster
+        - [🔄  Partial restoration](./restore-from-backup-files#restore-a-partial-cluster) of a cluster
 
         - [⚙️  JSON index](./json-indexing) settings on the Zilliz Cloud console
 

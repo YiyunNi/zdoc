@@ -13,10 +13,10 @@ type: docx
 token: FZuddXocNopEufxRFGdcbvkRnnb
 sidebar_position: 6
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation lists all existing databases.
 
 <p>This method applies only to dedicated serving clusters and on-demand compute. </p>
 <ul>
-<li><p>For a database in a dedicated serving clusters, create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p>For a database in dedicated serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
 <li><p><strong>Free & Serverless</strong></p></li>
 </ul>
 <p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>

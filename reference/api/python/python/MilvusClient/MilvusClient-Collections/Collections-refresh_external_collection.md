@@ -11,12 +11,12 @@ notebook: false
 description: "This operation scans the data files in the schema-defined external storage and generates metadata files that record their mapping relationship to those data files. | Python | MilvusClient"
 type: docx
 token: ZVs4dDpvmoXI0OxOnKhc9numnJd
-sidebar_position: 28
+sidebar_position: 29
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

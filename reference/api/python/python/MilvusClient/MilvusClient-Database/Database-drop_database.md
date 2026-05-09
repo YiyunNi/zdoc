@@ -13,10 +13,10 @@ type: docx
 token: Vjd7dE5OyoGvYaxd7OCcubBWnLd
 sidebar_position: 4
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation drops the specified database.
 
 <p>This method applies only to dedicated serving clusters and on-demand compute. </p>
 <ul>
-<li><p>For a database in a dedicated serving clusters, create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p>For a database in dedicated serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
 <li><p><strong>Free & Serverless</strong></p></li>
 </ul>
 <p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>

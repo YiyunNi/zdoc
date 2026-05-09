@@ -13,10 +13,10 @@ type: docx
 token: MxTAd0haboKnRrxQvoOckGghn1T
 sidebar_position: 4
 keywords: 
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,12 +32,6 @@ import Admonition from '@theme/Admonition';
 # has_partition()
 
 This operation checks whether the specified partition exists in the specified collection.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This only applies to managed collections.</p>
-
-</Admonition>
 
 ## Request syntax\{#request-syntax}
 

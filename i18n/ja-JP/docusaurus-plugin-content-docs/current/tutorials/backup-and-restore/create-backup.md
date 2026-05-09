@@ -1,7 +1,7 @@
 ---
 title: "バックアップの作成 | Cloud"
-slug: /create-snapshot
-sidebar_key: create-snapshot
+slug: /create-backup
+sidebar_key: create-backup
 sidebar_label: "バックアップを作成"
 beta: FALSE
 notebook: FALSE
@@ -44,7 +44,7 @@ Zilliz Cloud では、バックアップはデータのコピーであり、デ�
 
     - コレクションの TTL 設定
 
-    - デフォルトユーザー `db_admin` のパスワード（[復元](./restore-from-snapshot)時に新しいパスワードが生成されます）
+    - デフォルトユーザー `db_admin` のパスワード（[復元](./restore-from-backup-files)時に新しいパスワードが生成されます）
 
     - クラスターの動的およびスケジュールされたスケーリング設定
 
@@ -167,5 +167,5 @@ curl --request POST \
 
 暗号化されたバックアップを新しいクラスターに復元する場合、Zilliz Cloud はバックアップファイルに関連付けられた KMS キーを使用して、復元前にデータを復号します。そのため、暗号化の有無にかかわらず、新しいクラスターにバックアップを復元できます。
 
-詳細については、[暗号化されたバックアップからの復元](./restore-from-snapshot#restore-from-an-encrypted-backup-file) を参照してください。
+詳細については、[暗号化されたバックアップからの復元](./restore-from-backup-files#restore-from-an-encrypted-backup-file) を参照してください。
 

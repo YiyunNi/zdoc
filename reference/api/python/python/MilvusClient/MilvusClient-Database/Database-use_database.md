@@ -13,10 +13,10 @@ type: docx
 token: AglQd68yqoEn8Ixkn9ociyqKnMx
 sidebar_position: 8
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,7 +43,7 @@ This operation switches the client to use a different database. Future operation
 
 <p>This method applies only to dedicated serving clusters and on-demand compute. </p>
 <ul>
-<li><p>For a database in a dedicated serving clusters, create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p>For a database in dedicated serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
 <li><p><strong>Free & Serverless</strong></p></li>
 </ul>
 <p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>

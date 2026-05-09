@@ -13,10 +13,10 @@ type: docx
 token: FbzLd0f5ToAPRdxa8XWcWfUwnwe
 sidebar_position: 2
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,12 +32,6 @@ import Admonition from '@theme/Admonition';
 # delete_volume()
 
 This operation deletes a volume.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This method is available on Zilliz Cloud's control-plane Volume service. Create <code>VolumeManager</code> with <code>cloud_endpoint="https://api.cloud.zilliz.com"</code> and a Zilliz Cloud API key that has access to the target project.</p>
-
-</Admonition>
 
 ## Request Syntax\{#request-syntax}
 

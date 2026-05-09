@@ -1,7 +1,7 @@
 ---
 title: "バックアップファイルからの復元 | BYOC"
-slug: /restore-from-snapshot
-sidebar_key: restore-from-snapshot
+slug: /restore-from-backup-files
+sidebar_key: restore-from-backup-files
 sidebar_label: "バックアップファイルから復元"
 beta: FALSE
 notebook: FALSE

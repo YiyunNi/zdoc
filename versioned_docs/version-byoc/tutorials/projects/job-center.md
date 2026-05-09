@@ -41,7 +41,7 @@ The following job information is displayed:
          <th><p><strong>Explanation</strong></p></th>
        </tr>
        <tr>
-         <td rowspan="3"><p><a href="./create-snapshot">Backup</a></p></td>
+         <td rowspan="3"><p><a href="./create-backup">Backup</a></p></td>
          <td><p>Create a backup file for a cluster</p></td>
        </tr>
        <tr>
@@ -51,7 +51,7 @@ The following job information is displayed:
          <td><p>Copy backups to specified cloud regions</p></td>
        </tr>
        <tr>
-         <td rowspan="2"><p><a href="./restore-from-snapshot">Restore</a></p></td>
+         <td rowspan="2"><p><a href="./restore-from-backup-files">Restore</a></p></td>
          <td><p>Restore a cluster from a backup file</p></td>
        </tr>
        <tr>

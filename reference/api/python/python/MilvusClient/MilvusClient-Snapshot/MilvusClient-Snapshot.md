@@ -12,10 +12,10 @@ token: RoBzflamplZFzYd1ZSWccuVfnnc
 sidebar_position: 15
 sidebar_label: "Snapshot"
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: EZwsd887JojFjLxbMByckhW0nxg
 sidebar_position: 7
 keywords: 
-  - llm-as-a-judge
   - hybrid vector search
   - Video deduplication
   - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud

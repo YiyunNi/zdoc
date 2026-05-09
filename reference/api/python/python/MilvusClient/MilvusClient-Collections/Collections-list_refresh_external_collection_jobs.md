@@ -11,12 +11,12 @@ notebook: false
 description: "This operation lists the external collection refresh jobs of all or specified collections. | Python | MilvusClient"
 type: docx
 token: VkBFdLHwao9hVMxzRurcBYIynFh
-sidebar_position: 27
+sidebar_position: 28
 keywords: 
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud

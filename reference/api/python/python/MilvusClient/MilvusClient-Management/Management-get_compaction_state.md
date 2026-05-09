@@ -13,10 +13,10 @@ type: docx
 token: MSDVdu103obklexX8GvcW5cWnCf
 sidebar_position: 18
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud
@@ -36,12 +36,6 @@ This operation returns the current state of a compaction job. Use this after cal
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>This method was previously named <code>get_compact_state()</code>. The behavior is identical.</p>
-
-</Admonition>
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This only applies to managed collections.</p>
 
 </Admonition>
 

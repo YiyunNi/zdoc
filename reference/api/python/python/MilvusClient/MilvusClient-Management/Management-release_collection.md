@@ -13,10 +13,10 @@ type: docx
 token: PRR7dRfi8o1s61xFRovccAdRnHe
 sidebar_position: 13
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
   - Faiss vector database
   - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,12 +32,6 @@ import Admonition from '@theme/Admonition';
 # release_collection()
 
 This operation releases the data of a specific collection from memory.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This only applies to managed collections.</p>
-
-</Admonition>
 
 ## Request syntax\{#request-syntax}
 

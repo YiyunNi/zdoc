@@ -11,12 +11,12 @@ notebook: false
 description: "This operation returns the progress of a specified external collection refresh job. | Python | MilvusClient"
 type: docx
 token: HITBdKb0HotcK0xCKsycEeuqnXe
-sidebar_position: 26
+sidebar_position: 27
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud

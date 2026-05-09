@@ -13,10 +13,10 @@ type: docx
 token: S278drWUVoRZ5fx8XkfcWaZfnwh
 sidebar_position: 2
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation creates a database.
 
 <p>This method applies only to dedicated serving clusters and on-demand compute. </p>
 <ul>
-<li><p>For a database in a dedicated serving clusters, create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
+<li><p>For a database in dedicated serving clusters, please create <strong>MilvusClient</strong> with the cluster endpoint.</p></li>
 <li><p><strong>Free & Serverless</strong></p></li>
 </ul>
 <p><code>https://\{cluster-id\}.serverless.\{region\}.vectordb.zillizcloud.com</code></p>
@@ -73,7 +73,7 @@ create_database(
 
 - **properties** (*dict* | *None*) -
 
-    <Admonition type="info" icon="📘" title="This does not apply to databases for on-demand compute.">
+    <Admonition type="info" icon="📘" title="This does not apply to database for on-demand compute.">
     
     </Admonition>
 

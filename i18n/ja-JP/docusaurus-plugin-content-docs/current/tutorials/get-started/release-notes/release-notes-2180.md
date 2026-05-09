@@ -86,7 +86,7 @@ Zilliz Cloudは、**クラスターレベル** での **スケジュールされ
 
 ![Sd5PbeR5poupNlx6nM6cCrdxnTd](https://zdoc-images.s3.us-west-2.amazonaws.com/sd5pber5poupnlx6nm6ccrdxntd.png "Sd5PbeR5poupNlx6nM6cCrdxnTd")
 
-詳細については、[クラスターの部分リストア](./restore-from-snapshot#restore-a-partial-cluster) を参照してください。
+詳細については、[クラスターの部分リストア](./restore-from-backup-files#restore-a-partial-cluster) を参照してください。
 
 ## Zilliz CloudコンソールでのJSONパスインデックスの作成\{#create-json-path-indexes-on-zilliz-cloud-console}
 

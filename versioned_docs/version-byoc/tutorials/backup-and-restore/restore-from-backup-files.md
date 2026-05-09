@@ -1,14 +1,14 @@
 ---
-title: "Restore from Backup Files | Cloud"
-slug: /restore-from-snapshot
-sidebar_key: restore-from-snapshot
+title: "Restore from Backup Files | BYOC"
+slug: /restore-from-backup-files
+sidebar_key: restore-from-backup-files
 sidebar_label: "Restore from Backup Files"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 beta: FALSE
 notebook: FALSE
-description: "The restore feature in Zilliz Cloud lets you recover data from backup files in cases of accidental loss, corruption, or system failure—ensuring business continuity. It is a reliable way to recover from incidents, revert unintended changes, or clone a cluster for testing with minimal disruption. | Cloud"
+description: "The restore feature in Zilliz Cloud lets you recover data from backup files in cases of accidental loss, corruption, or system failure—ensuring business continuity. It is a reliable way to recover from incidents, revert unintended changes, or clone a cluster for testing with minimal disruption. | BYOC"
 type: origin
 token: Dd6jwYIGiiz6HWkEPJqcpMA3n6g
 sidebar_position: 4
@@ -31,12 +31,6 @@ import Supademo from '@site/src/components/Supademo';
 The restore feature in Zilliz Cloud lets you recover data from backup files in cases of accidental loss, corruption, or system failure—ensuring business continuity. It is a reliable way to recover from incidents, revert unintended changes, or clone a cluster for testing with minimal disruption.
 
 This guide walks you through how to restore a full or partial cluster from backup files.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This feature is available only to <strong>Dedicated</strong> clusters.</p>
-
-</Admonition>
 
 ## Limits\{#limits}
 
@@ -143,26 +137,6 @@ The following is an example output. A restore job is generated and you can check
   }
 }
 ```
-
-## Restore from an encrypted backup file\{#restore-from-an-encrypted-backup-file}
-
-When you restore an encrypted backup to a new cluster, Zilliz Cloud will use the KMS key associated with the backup file to decrypt the data before restoration. Therefore, you can restore the backup to a new cluster with or without encryption. 
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
-
-</Admonition>
-
-![WaApbDlaYoywaMxxUMxcQLAOnDe](https://zdoc-images.s3.us-west-2.amazonaws.com/waapbdlayoywamxxumxcqlaonde.png "WaApbDlaYoywaMxxUMxcQLAOnDe")
-
-The restoration procedure from an encrypted backup is almost the same as a normal restoration, except for whether to enable **Encryption at Rest with CMEK**.
-
-![V1QJb3SK1oGa11xLljhcxKQEnkc](https://zdoc-images.s3.us-west-2.amazonaws.com/v1qjb3sk1oga11xlljhcxkqenkc.png "V1QJb3SK1oGa11xLljhcxKQEnkc")
-
-- When this option is enabled, the cluster created after the restoration is encrypted using the KMS key specified below.
-
-- When this option is disabled, the cluster created after the restoration is unencrypted.
 
 ## FAQ\{#faq}
 

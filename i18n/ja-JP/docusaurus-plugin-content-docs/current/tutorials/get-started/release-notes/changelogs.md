@@ -334,7 +334,7 @@ import Grid from '@site/src/components/Grid';
 
         - [📅  スケジュールベースのクラスタ自動スケーリング](./scale-query-cu)
 
-        - [🔄  クラスタの部分的な復元](./restore-from-snapshot#restore-a-partial-cluster)
+        - [🔄  クラスタの部分的な復元](./restore-from-backup-files#restore-a-partial-cluster)
 
         - [⚙️  Zilliz CloudコンソールでのJSONインデックス](./json-indexing)設定
 

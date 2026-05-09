@@ -38,7 +38,7 @@ Zilliz Cloud では、直感的なジョブページを提供しており、同�
          <th><p><strong>説明</strong></p></th>
        </tr>
        <tr>
-         <td rowspan="3"><p><a href="./create-snapshot">バックアップ</a></p></td>
+         <td rowspan="3"><p><a href="./create-backup">バックアップ</a></p></td>
          <td><p>クラスタのバックアップファイルを作成する</p></td>
        </tr>
        <tr>
@@ -48,7 +48,7 @@ Zilliz Cloud では、直感的なジョブページを提供しており、同�
          <td><p>バックアップを指定したクラウドリージョンにコピーする</p></td>
        </tr>
        <tr>
-         <td rowspan="2"><p><a href="./restore-from-snapshot">復元</a></p></td>
+         <td rowspan="2"><p><a href="./create-backup">復元</a></p></td>
          <td><p>バックアップファイルからクラスタを復元する</p></td>
        </tr>
        <tr>

@@ -1,7 +1,7 @@
 ---
 title: "バックアップの作成 | BYOC"
-slug: /create-snapshot
-sidebar_key: create-snapshot
+slug: /create-backup
+sidebar_key: create-backup
 sidebar_label: "バックアップの作成"
 beta: FALSE
 notebook: FALSE
@@ -36,7 +36,7 @@ Zilliz Cloud において、バックアップとは、データ損失やシス�
 
     - コレクションの TTL 設定
 
-    - デフォルトユーザー `db_admin` の**パスワード**（[スナップショットからの復元](./restore-from-snapshot) 中に新しいパスワードが生成されます）
+    - デフォルトユーザー `db_admin` の**パスワード**（[スナップショットからの復元](./create-backup) 中に新しいパスワードが生成されます）
 
     - クラスターの動的スケーリングおよび**スケジュールされたスケーリング**設定
 
