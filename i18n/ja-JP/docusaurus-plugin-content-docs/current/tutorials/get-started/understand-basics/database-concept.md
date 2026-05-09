@@ -154,13 +154,13 @@ The following table compares the 2 types of databases.
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>2 種類のデータベースには異なる接続エンドポイントを使用します。詳細については、接続エンドポイントを参照してください。</p>
+<p>2 種類のデータベースには異なる接続エンドポイントを使用します。詳細については、[接続エンドポイント](./access-connection-endpoints)を参照してください。</p>
 
 </Admonition>
 
 ## Next steps\{#next-steps}
 
-- 外部コレクションの作成
+- [外部コレクションの作成](./create-external-collection)
 
 - [コレクションの作成](./manage-collections-sdks)
 
