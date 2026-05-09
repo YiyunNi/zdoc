@@ -1,8 +1,8 @@
 ---
-title: "Quickstart to On-Demand Search with External Collection | Cloud"
+title: "Quickstart to External Collection | Cloud"
 slug: /quick-start-to-on-demand-search
 sidebar_key: quick-start-to-on-demand-search
-sidebar_label: "Quickstart to On-Demand Search with External Collection"
+sidebar_label: "Quickstart to External Collection"
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
@@ -11,7 +11,7 @@ notebook: FALSE
 description: "On-demand search lets you search massive datasets with zero-copy access to data in external storage or imported into Zilliz Cloud, without keeping compute resources running continuously. You can create collections from external volumes or imported files, build indexes and refresh metadata via the project data plane endpoint, and start an on-demand cluster only when you need to run search or query workloads. | Cloud"
 type: origin
 token: KdwFwQnDNisT4skHH6Hc16uInji
-sidebar_position: 9
+sidebar_position: 10
 keywords: 
   - zilliz
   - vector database

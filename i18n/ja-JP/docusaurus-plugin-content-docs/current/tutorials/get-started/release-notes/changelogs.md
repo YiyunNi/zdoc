@@ -5,7 +5,7 @@ sidebar_key: changelogs
 sidebar_label: "変更履歴"
 beta: FALSE
 notebook: FALSE
-description: "最終更新日: 2026年4月11日 | Cloud"
+description: "最終更新日: 2026年5月7日 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 1
@@ -24,7 +24,7 @@ import Grid from '@site/src/components/Grid';
 
 # 変更履歴
 
-**最終更新日:** 2026年4月11日
+**最終更新日:** 2026年5月7日
 
 <Grid columnSize="2" widthRatios="25,74">
 
@@ -36,13 +36,61 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Lakebaseが近日公開予定です。
+        - Vector Lakebase のさらなる機能が近日公開予定です。
 
     </div>
 
 </Grid>
 
 ## 2026\{#2026}
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **[2026年5月7日](./release-notes-2605)**
+
+    </div>
+
+    <div>
+
+        - 🏠 Zilliz Cloud は、ベクトルデータベース製品から Vector Lakebase プラットフォームへ進化し、以下の主要機能が追加されました。
+
+            - [オンデマンド検索](./on-demand-compute)
+
+            - [外部データレイク検索](./external-collection)
+
+        - 🐦 Milvus v3.0.x が Zilliz Cloud でパブリックレビューに入り、以下の機能が利用可能になりました。
+
+            - [External Collection と Backfill](./external-collection)
+
+            - [Nullable Vectors](./nullable-fields)
+
+            - [Embedding list の検索とフィルタリング](./use-array-of-structs)
+
+            - [MinHash Function](./minhash-function)
+
+            - [検索](./single-vector-search#sort-search-results-by-scalar-fields)および[クエリ](./get-and-scalar-query#sort-query-results)での Order by
+
+            - [Snapshots](./snapshots)
+
+            - [Entity TTL](./set-collection-ttl)
+
+            - Force merge
+
+            - Custom dictionaries and tokenizers
+
+            - Spark semantic deduplication and abnormal detection
+
+        - 💾 インポート、移行、External Collection ワークフロー向けの読み取り専用[External Volumes](./external-volume)が利用可能になりました。
+
+        - 🔍︎ コレクションレベルの[Large Top-K](./use-large-topk)が利用可能になり、有効化したコレクションで返却可能なエンティティ上限が 16,384 から 1,000,000 に拡張されました。
+
+        - 🗺️ [プロジェクトでリージョン制約が利用可能](./manage-projects#add-project-regions)になり、企業がデータレジデンシーを管理し、リージョンごとのデータプレーンアクセスを明示的に維持しやすくなりました。
+
+    </div>
+
+</Grid>
 
 <Grid columnSize="2" widthRatios="25,74">
 

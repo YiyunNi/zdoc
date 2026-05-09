@@ -11,7 +11,7 @@ notebook: FALSE
 description: "A serving cluster is a self-contained server that combines both compute and storage for real-time production serving. Once you have cleaned your data through your Extract-Transform-Load (ETL) pipelines, you can import it into a serving cluster to deliver significant performance gains. | Cloud"
 type: origin
 token: B1XTwQgNRizAMTkZQvrclGSonyc
-sidebar_position: 10
+sidebar_position: 9
 keywords: 
   - zilliz
   - vector database

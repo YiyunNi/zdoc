@@ -8,7 +8,7 @@ last_modified: FALSE
 deprecate_since: FALSE
 beta: FALSE
 notebook: FALSE
-description: "Last updated April 11, 2026 | Cloud"
+description: "Last updated May 7, 2026 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 1
@@ -27,7 +27,7 @@ import Grid from '@site/src/components/Grid';
 
 # Changelogs
 
-**Last updated:** April 11, 2026
+**Last updated:** May 7, 2026
 
 <Grid columnSize="2" widthRatios="25,74">
 
@@ -39,13 +39,61 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Lakebase is on the way.
+        - More vector lakebase features are on the way.
 
     </div>
 
 </Grid>
 
 ## 2026\{#2026}
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **[May 7, 2026](./release-notes-2605)**
+
+    </div>
+
+    <div>
+
+        - 🏠 Zilliz Cloud evolves from a vector database product into a Vector Lakebase platform with the following highlighted features:
+
+            - [On-demand search](./on-demand-compute)
+
+            - [External data lake search](./external-collection)
+
+        - 🐦 Milvus v3.0.x enters Public Review in Zilliz Cloud with the following features:
+
+            - [External collections and backfill](./external-collection)
+
+            - [Nullable vectors](./nullable-fields),
+
+            - [Embedding list searches and filtering](./use-array-of-structs),
+
+            - [MinHash function](./minhash-function)
+
+            - Order by for [searches](./single-vector-search#sort-search-results-by-scalar-fields) and [queries](./get-and-scalar-query#sort-query-results),
+
+            - [Snapshots](./snapshots),
+
+            - [Entity TTL](./set-collection-ttl),
+
+            - Force merge,
+
+            - Custom dictionaries and tokenizers, and
+
+            - Spark semantic deduplication and abnormal detection
+
+        - 💾 The read-only [external volumes](./external-volume) for import, migration, and external-collection workflows become online.
+
+        - 🔍︎ Collection-level [large top-K](./use-large-topk) becomes available, expanding the maximum number of returned entities from 16,384 to 1,000,000 for enabled collections
+
+        - 🗺️ [Regional constraints are available in projects](./manage-projects#add-project-regions), helping enterprises manage data residency and keep regional data-plane access explicit.
+
+    </div>
+
+</Grid>
 
 <Grid columnSize="2" widthRatios="25,74">
 

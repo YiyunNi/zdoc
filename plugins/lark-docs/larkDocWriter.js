@@ -2011,7 +2011,13 @@ export const method = "${method}"`
                 let newUrl = `./${slug}`;
 
                 if (header) {
-                    const headerBlock = page['blocks']['items'].filter(x => x['block_id'] === header)[0];
+                    let headerBlock;
+
+                    try {
+                        headerBlock = page['blocks']['items'].filter(x => x['block_id'] === header)[0];
+                    } catch (error) {
+                        throw new Error(`Header block ${header} not found in page ${title}, and the page token is ${token}`);
+                    }
 
                     if (headerBlock) {
                         const blockType = this.block_types[headerBlock['block_type'] - 1];
