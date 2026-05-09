@@ -1338,6 +1338,7 @@ app.post('/chat', async c => {
             logEvent(session.id, userId, 'message', agentConfig.type, {
               requestId,
               role: 'user',
+              rawContent: lastUserMessage.content,
               contentSummary: summarizeForDebugLog(lastUserMessage.content, 'content'),
               questionSummary: summarizeForDebugLog(ragQuery, 'question'),
             }, userMeta, source);
@@ -1982,6 +1983,7 @@ app.post('/chat', async c => {
           logEvent(session.id, userId, 'message', agentConfig.type, {
             requestId,
             role: 'assistant',
+            rawContent: fullText,
             contentSummary: summarizeForDebugLog(fullText, 'content'),
             questionSummary: summarizeForDebugLog(ragQuery, 'question'),
             model: activeModel,

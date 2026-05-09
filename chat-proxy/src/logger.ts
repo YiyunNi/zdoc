@@ -6,7 +6,7 @@ import {createHash, randomUUID} from 'crypto';
 import {eventStore} from './event-store.js';
 import type {StoreEvent} from './event-store.js';
 import type {TokenUsage} from './types.js';
-import {saveObsEvent, upsertObsSession} from './db.js';
+import {insertObsSessionMessage, saveObsEvent, upsertObsSession} from './db.js';
 
 function sanitizeLogValue(value: unknown): unknown {
   if (typeof value === 'string') {
@@ -289,6 +289,24 @@ export function logEvent(
       cachedInputTokens: event.cachedInputTokens,
       source,
     }).catch(() => {});
+
+    const role = data.role;
+    const rawContent = data.rawContent;
+    if (eventType === 'message' && (role === 'user' || role === 'assistant') && typeof rawContent === 'string') {
+      insertObsSessionMessage({
+        id,
+        sessionId,
+        userId,
+        role,
+        contentRaw: rawContent,
+        agent,
+        model: typeof safeData.model === 'string' ? safeData.model : undefined,
+        requestId: typeof safeData.requestId === 'string' ? safeData.requestId : undefined,
+        source,
+        geoMeta: safeUserMeta,
+        createdAt: timestamp,
+      }).catch(() => {});
+    }
 
     // Upsert session metadata on assistant message events
     if (eventType === 'message' && safeData.role === 'assistant') {
