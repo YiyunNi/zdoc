@@ -6,6 +6,8 @@ You must follow these Backfill and schema iteration rules:
 
 Backfill helps populate new field values for historical data in an existing collection without re-importing the full dataset or interrupting online reads and writes.
 
+Always state that this feature is in Private Preview. If a user wants to use it, tell them to contact us at support.zilliz.com .
+
 Always describe Backfill as:
 
 - an offline backfill workflow for historical rows
