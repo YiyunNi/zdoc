@@ -1,6 +1,38 @@
-import { join, dirname } from 'path';
+import { join, dirname, basename } from 'path';
 import { fileURLToPath } from 'url';
 import { existsSync } from 'fs';
+
+type MaxMindNames = {
+  en?: string;
+};
+
+type MaxMindSubdivision = {
+  iso_code?: string;
+  names?: MaxMindNames;
+};
+
+type MaxMindResult = {
+  country?: {iso_code?: string; names?: MaxMindNames};
+  registered_country?: {iso_code?: string; names?: MaxMindNames};
+  continent?: {code?: string; names?: MaxMindNames};
+  city?: {names?: MaxMindNames};
+  location?: {
+    time_zone?: string;
+    latitude?: number;
+    longitude?: number;
+    accuracy_radius?: number;
+  };
+  postal?: {code?: string};
+  subdivisions?: MaxMindSubdivision[];
+};
+
+type MaxMindReader = {
+  get(ip: string): MaxMindResult | null;
+};
+
+type MaxMindModule = {
+  open(dbPath: string): Promise<MaxMindReader>;
+};
 
 export type GeoLookup = {
   country: string;
@@ -19,7 +51,7 @@ export type GeoLookup = {
   subdivisionNames: string[];
 };
 
-let reader: any = null;
+let reader: MaxMindReader | null = null;
 let initPromise: Promise<void> | null = null;
 
 export function resolveGeoIpDbPath(): string {
@@ -30,7 +62,7 @@ export function resolveGeoIpDbPath(): string {
   return join(__dirname, '..', 'data', 'GeoLite2-Country.mmdb');
 }
 
-export function mapGeoResult(result: any): GeoLookup {
+export function mapGeoResult(result: MaxMindResult): GeoLookup {
   const country = result?.country?.iso_code || result?.registered_country?.iso_code || '';
   const city = result?.city?.names?.en || '';
 
@@ -47,28 +79,32 @@ export function mapGeoResult(result: any): GeoLookup {
     latitude: result?.location?.latitude,
     longitude: result?.location?.longitude,
     accuracyRadius: result?.location?.accuracy_radius,
-    subdivisionCodes: Array.isArray(result?.subdivisions) ? result.subdivisions.map((s: any) => s?.iso_code).filter(Boolean) : [],
-    subdivisionNames: Array.isArray(result?.subdivisions) ? result.subdivisions.map((s: any) => s?.names?.en).filter(Boolean) : [],
+    subdivisionCodes: Array.isArray(result?.subdivisions)
+      ? result.subdivisions.map((s) => s?.iso_code).filter((code): code is string => Boolean(code))
+      : [],
+    subdivisionNames: Array.isArray(result?.subdivisions)
+      ? result.subdivisions.map((s) => s?.names?.en).filter((name): name is string => Boolean(name))
+      : [],
   };
 }
 
 async function initGeoIP(): Promise<void> {
   if (reader) return;
   try {
-    const maxmind = await import('maxmind');
+    const maxmind = (await import('maxmind')) as MaxMindModule;
     const dbPath = resolveGeoIpDbPath();
     if (existsSync(dbPath)) {
       reader = await maxmind.open(dbPath);
-      console.log(`[GeoIP] GeoLite DB loaded from ${dbPath}`);
+      console.log(`[GeoIP] GeoLite DB loaded (${basename(dbPath)})`);
     } else {
-      console.log(`[GeoIP] GeoLite DB not found at ${dbPath} — geolocation disabled`);
+      console.log('[GeoIP] GeoLite DB not found — geolocation disabled');
     }
   } catch {
     console.log('[GeoIP] maxmind not available — geolocation disabled');
   }
 }
 
-// Init lazily on first import
+// Start async initialization at import time; first lookup awaits this once.
 initPromise = initGeoIP().catch(() => {});
 
 export async function lookupGeo(ip: string): Promise<GeoLookup | null> {

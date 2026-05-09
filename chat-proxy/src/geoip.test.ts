@@ -100,4 +100,102 @@ describe('geoip helpers', () => {
       subdivisionNames: [],
     });
   });
+
+  it('returns null for empty IP input', async () => {
+    vi.doMock('fs', () => ({
+      existsSync: vi.fn(() => true),
+    }));
+
+    const get = vi.fn();
+    vi.doMock('maxmind', () => ({
+      open: vi.fn(async () => ({get})),
+    }));
+
+    const geoip = await import('./geoip.js');
+    const result = await geoip.lookupGeo('');
+
+    expect(result).toBeNull();
+    expect(get).not.toHaveBeenCalled();
+  });
+
+  it('returns null when maxmind reader get throws', async () => {
+    vi.doMock('fs', () => ({
+      existsSync: vi.fn(() => true),
+    }));
+
+    vi.doMock('maxmind', () => ({
+      open: vi.fn(async () => ({
+        get: vi.fn(() => {
+          throw new Error('lookup failed');
+        }),
+      })),
+    }));
+
+    const geoip = await import('./geoip.js');
+
+    await expect(geoip.lookupGeo('1.1.1.1')).resolves.toBeNull();
+  });
+
+  it('returns null when DB is missing and does not open maxmind reader', async () => {
+    const open = vi.fn();
+
+    vi.doMock('fs', () => ({
+      existsSync: vi.fn(() => false),
+    }));
+
+    vi.doMock('maxmind', () => ({
+      open,
+    }));
+
+    const geoip = await import('./geoip.js');
+    const result = await geoip.lookupGeo('1.1.1.1');
+
+    expect(result).toBeNull();
+    expect(open).not.toHaveBeenCalled();
+  });
+
+  it('maps and returns geo fields when lookup succeeds', async () => {
+    vi.doMock('fs', () => ({
+      existsSync: vi.fn(() => true),
+    }));
+
+    vi.doMock('maxmind', () => ({
+      open: vi.fn(async () => ({
+        get: vi.fn(() => ({
+          country: {iso_code: 'JP', names: {en: 'Japan'}},
+          continent: {code: 'AS', names: {en: 'Asia'}},
+          city: {names: {en: 'Tokyo'}},
+          registered_country: {iso_code: 'JP', names: {en: 'Japan'}},
+          location: {
+            time_zone: 'Asia/Tokyo',
+            latitude: 35.6762,
+            longitude: 139.6503,
+            accuracy_radius: 50,
+          },
+          postal: {code: '100-0001'},
+          subdivisions: [{iso_code: '13', names: {en: 'Tokyo'}}],
+        })),
+      })),
+    }));
+
+    const geoip = await import('./geoip.js');
+    const result = await geoip.lookupGeo('8.8.8.8');
+
+    expect(result).toEqual({
+      country: 'JP',
+      city: 'Tokyo',
+      countryName: 'Japan',
+      continentCode: 'AS',
+      continentName: 'Asia',
+      registeredCountry: 'JP',
+      registeredCountryName: 'Japan',
+      timezone: 'Asia/Tokyo',
+      postalCode: '100-0001',
+      latitude: 35.6762,
+      longitude: 139.6503,
+      accuracyRadius: 50,
+      subdivisionCodes: ['13'],
+      subdivisionNames: ['Tokyo'],
+    });
+  });
 });
