@@ -37,6 +37,7 @@ import {startedAt, llmHealth, recordLlmSuccess, recordLlmError, recordLlmDisconn
 import {handlePostAction} from './post-action-handler.js';
 import type {ResolvedModel} from './runtime-config.js';
 import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
+import {createDeferred, LruTtlCache, normalizeQuery, stableHash} from './cache.js';
 
 // Load topic prompts from disk at startup
 loadPrompts();
@@ -63,7 +64,7 @@ const FAST_PATH_CODE_MAX_TOOL_ROUNDS = Number(process.env.FAST_PATH_CODE_MAX_TOO
 const FAST_PATH_MAX_OUTPUT_TOKENS = Number(process.env.FAST_PATH_MAX_OUTPUT_TOKENS || '') || 1200;
 const FAST_PATH_TIMEOUT_MS = Number(process.env.FAST_PATH_TIMEOUT_MS || '') || 30000;
 const TOOLLESS_RAG_ENABLED = process.env.TOOLLESS_RAG_ENABLED !== 'false';
-const TOOLLESS_RAG_AGENTS = new Set((process.env.TOOLLESS_RAG_AGENTS || 'code,general')
+const TOOLLESS_RAG_AGENTS = new Set((process.env.TOOLLESS_RAG_AGENTS || 'code,general,schema')
   .split(',')
   .map(s => s.trim())
   .filter(Boolean));
@@ -75,6 +76,18 @@ const TOOLLESS_RAG_MAX_OUTPUT_TOKENS = Number(process.env.TOOLLESS_RAG_MAX_OUTPU
 const GROUNDING_LLM_ENABLED = process.env.GROUNDING_LLM_ENABLED !== 'false';
 const GROUNDING_LLM_MIN_SOURCES = Number(process.env.GROUNDING_LLM_MIN_SOURCES || '') || 8;
 const GROUNDING_LLM_MIN_TEXT_CHARS = Number(process.env.GROUNDING_LLM_MIN_TEXT_CHARS || '') || 400;
+const RESPONSE_CACHE_TTL_MS = Number(process.env.RESPONSE_CACHE_TTL_MS || '') || 10 * 60 * 1000;
+const RESPONSE_CACHE_MAX = Number(process.env.RESPONSE_CACHE_MAX || '') || 1000;
+const ANSWER_EXACT_CACHE_ENABLED = process.env.ANSWER_EXACT_CACHE_ENABLED !== 'false';
+const ANSWER_EXACT_CACHE_TTL_MS = Number(process.env.ANSWER_EXACT_CACHE_TTL_MS || '') || 30 * 60 * 1000;
+const ANSWER_EXACT_CACHE_MAX = Number(process.env.ANSWER_EXACT_CACHE_MAX || '') || 2000;
+const ANSWER_EXACT_CACHE_MAX_EVENT_BYTES = Number(process.env.ANSWER_EXACT_CACHE_MAX_EVENT_BYTES || '') || 128 * 1024;
+const ANSWER_INFLIGHT_ENABLED = process.env.ANSWER_INFLIGHT_ENABLED !== 'false';
+const ANSWER_INFLIGHT_WAIT_MS = Number(process.env.ANSWER_INFLIGHT_WAIT_MS || '') || 30000;
+const CACHE_REPLAY_STREAM_ENABLED = process.env.CACHE_REPLAY_STREAM_ENABLED !== 'false';
+const CACHE_REPLAY_INITIAL_DELAY_MS = Number(process.env.CACHE_REPLAY_INITIAL_DELAY_MS || '') || 120;
+const CACHE_REPLAY_DELTA_DELAY_MS = Number(process.env.CACHE_REPLAY_DELTA_DELAY_MS || '') || 12;
+const CACHE_REPLAY_MAX_TOTAL_DELAY_MS = Number(process.env.CACHE_REPLAY_MAX_TOTAL_DELAY_MS || '') || 2500;
 
 function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
   let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -89,6 +102,11 @@ function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T
 function truncateText(text: string, maxChars: number): string {
   if (!text || text.length <= maxChars) return text;
   return text.slice(0, maxChars).trimEnd() + '\n... [truncated]';
+}
+
+function sleep(ms: number): Promise<void> {
+  if (ms <= 0) return Promise.resolve();
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function shouldUseFastPath(agentType: AgentType): boolean {
@@ -117,6 +135,7 @@ function compactToolResultForModel(toolResult: Record<string, any> | undefined):
 
   if (Array.isArray(toolResult.results)) {
     compact.results = toolResult.results.slice(0, 3).map((r: any) => ({
+      id: r.id,
       title: r.title || r.doc_title || '',
       url: r.url || r.doc_url || '',
       section: r.section,
@@ -213,11 +232,13 @@ function buildToolChoiceForStep(agentType: AgentType, stepNumber: number, active
   return 'auto' as const;
 }
 
+type ToolChunk = {id?: string; doc_url: string; doc_title: string; section: string; content: string};
+
 function ingestToolResult(
   toolName: string,
   rawToolResult: Record<string, any> | undefined,
   toolSources: {title: string; url: string; score?: number; section?: string}[],
-  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolChunks: ToolChunk[],
   toolResultSummaries: string[],
   addSummary = true,
 ): Record<string, any> | undefined {
@@ -229,6 +250,7 @@ function ingestToolResult(
       if (r.url) {
         toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
         if (r.content) toolChunks.push({
+          id: r.id,
           doc_url: r.url,
           doc_title: r.title || '',
           section: r.section || '',
@@ -297,7 +319,7 @@ function formatToolResultForSynthesis(toolName: string, toolResult: Record<strin
 }
 
 function buildToollessRagContext(
-  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolChunks: ToolChunk[],
   toolResultSummaries: string[],
 ): string {
   const parts = toolChunks.slice(0, TOOLLESS_RAG_TOP_K).map((chunk, i) => {
@@ -347,7 +369,7 @@ async function runCodeExampleLookup(
   query: string,
   sectionFilter: string | undefined,
   toolSources: {title: string; url: string; score?: number; section?: string}[],
-  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolChunks: ToolChunk[],
   toolResultSummaries: string[],
 ): Promise<boolean> {
   const language = detectRequestedCodeLanguage(query);
@@ -378,7 +400,7 @@ async function runCodeExampleLookup(
 
 function buildNoResponseFallback(
   query: string,
-  toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[],
+  toolChunks: ToolChunk[],
   toolSources: {title: string; url: string; score?: number; section?: string}[] = [],
 ): string {
   const sourceLines = toolChunks.length > 0
@@ -472,37 +494,101 @@ function deriveSectionFilter(pageUrl?: string): string | undefined {
 // Response cache: skip routing + LLM for identical repeated queries
 // ---------------------------------------------------------------------------
 
-interface CachedResponse {
-  events: Array<{event: string; data: string}>;
-  timestamp: number;
-}
+type SseEventRecord = {event: string; data: string};
 
-const responseCache = new Map<string, CachedResponse>();
-const RESPONSE_CACHE_TTL_MS = 2 * 60 * 1000; // 2 minutes
-const RESPONSE_CACHE_MAX = 200;
+const responseCache = new LruTtlCache<SseEventRecord[]>({
+  name: 'response_session',
+  maxEntries: RESPONSE_CACHE_MAX,
+  ttlMs: RESPONSE_CACHE_TTL_MS,
+});
+const exactAnswerCache = new LruTtlCache<SseEventRecord[]>({
+  name: 'answer_exact',
+  maxEntries: ANSWER_EXACT_CACHE_MAX,
+  ttlMs: ANSWER_EXACT_CACHE_TTL_MS,
+});
+const answerInflight = new Map<string, ReturnType<typeof createDeferred<SseEventRecord[]>>>();
 
-function responseCacheGet(key: string): Array<{event: string; data: string}> | null {
-  const entry = responseCache.get(key);
-  if (!entry) return null;
-  if (Date.now() - entry.timestamp > RESPONSE_CACHE_TTL_MS) {
-    responseCache.delete(key);
-    return null;
-  }
-  return entry.events;
+function responseCacheGet(key: string): SseEventRecord[] | null {
+  return responseCache.get(key) ?? null;
 }
 
 /** Clear the response cache (exposed for testing) */
 export function clearResponseCache(): void {
   responseCache.clear();
+  exactAnswerCache.clear();
+  answerInflight.clear();
 }
 
-function responseCacheSet(key: string, events: Array<{event: string; data: string}>): void {
-  // Evict oldest entries if at capacity
-  if (responseCache.size >= RESPONSE_CACHE_MAX) {
-    const oldest = responseCache.keys().next().value!;
-    responseCache.delete(oldest);
-  }
-  responseCache.set(key, {events, timestamp: Date.now()});
+function responseCacheSet(key: string, events: SseEventRecord[]): void {
+  responseCache.set(key, events);
+}
+
+function getRequestLanguage(c: Context): string {
+  return c.req.header('accept-language')?.split(',', 1)[0]?.trim().toLowerCase().slice(0, 32) || '';
+}
+
+function buildSessionResponseCacheKey(sessionId: string, query: string, sectionFilter: string | undefined, pageUrl: string | undefined, pageContext: string | undefined, language: string): string {
+  return stableHash({
+    sessionId,
+    query: normalizeQuery(query),
+    sectionFilter: sectionFilter || '',
+    pagePath: pagePathForLog(pageUrl) || '',
+    pageContextHash: pageContext ? stableHash(pageContext.slice(0, PAGE_CONTEXT_MAX_CHARS)) : '',
+    language,
+  });
+}
+
+function buildExactAnswerCacheKey(query: string, sectionFilter: string | undefined, pageUrl: string | undefined, pageContext: string | undefined, language: string): string {
+  return stableHash({
+    query: normalizeQuery(query),
+    sectionFilter: sectionFilter || '',
+    pagePath: pagePathForLog(pageUrl) || '',
+    pageContextHash: pageContext ? stableHash(pageContext.slice(0, PAGE_CONTEXT_MAX_CHARS)) : '',
+    language,
+  });
+}
+
+function eventsByteLength(events: SseEventRecord[]): number {
+  return events.reduce((sum, evt) => sum + Buffer.byteLength(evt.event, 'utf8') + Buffer.byteLength(evt.data, 'utf8'), 0);
+}
+
+function replayableEvents(events: SseEventRecord[]): SseEventRecord[] {
+  // Usage/timing/status/tool-call are request-specific or pre-answer progress UI.
+  return events.filter(evt => evt.event !== 'usage' && evt.event !== 'timing' && evt.event !== 'status' && evt.event !== 'tool-call');
+}
+
+function isLikelyUserSpecificQuery(query: string): boolean {
+  return /\b(my|our|me|i)\b.*\b(account|bill|billing|invoice|project|cluster|organization|org|credit|usage|token|api key|password|secret)\b/i.test(query) ||
+    /\b(api[_ -]?key|password|secret|token|bearer|private key|connection string)\b/i.test(query);
+}
+
+function isPublicDocsPage(pageUrl?: string): boolean {
+  const path = pagePathForLog(pageUrl) || '';
+  return path.startsWith('/docs') || path.startsWith('/reference');
+}
+
+function isCacheablePublicAnswer(input: {
+  rawQuery: string;
+  ragQuery: string;
+  messages: ChatRequest['messages'];
+  pageContext?: string;
+  pageUrl?: string;
+  confidence: string;
+  deflected: boolean;
+  selfDescribed: boolean;
+  fullText: string;
+  eventBytes: number;
+}): boolean {
+  if (!ANSWER_EXACT_CACHE_ENABLED) return false;
+  if (input.confidence === 'low') return false;
+  if (input.deflected || input.selfDescribed) return false;
+  if (!input.fullText.trim()) return false;
+  if (input.pageContext && input.pageContext.trim().length > 0 && !isPublicDocsPage(input.pageUrl)) return false;
+  if (input.eventBytes > ANSWER_EXACT_CACHE_MAX_EVENT_BYTES) return false;
+  if (isLikelyUserSpecificQuery(input.rawQuery) || isLikelyUserSpecificQuery(input.ragQuery)) return false;
+  if (input.messages.length > 1 && input.rawQuery.trim().length < 80) return false;
+  if (normalizeQuery(input.ragQuery).length < 8) return false;
+  return true;
 }
 
 export const app = new Hono();
@@ -886,6 +972,32 @@ app.post('/chat', async c => {
           debug('chat.sse.event.sent', {sseEvent: event, payloadBytes: Buffer.byteLength(data, 'utf8')});
           controller.enqueue(encoder.encode(`event: ${event}\ndata: ${data}\n\n`));
         };
+        const replayCachedEvents = async (events: SseEventRecord[], cacheType: string) => {
+          const doneEvent = [...events].reverse().find(evt => evt.event === 'done');
+          let simulatedDelayMs = 0;
+          let firstDeltaSent = false;
+          const shouldStream = CACHE_REPLAY_STREAM_ENABLED && !clientSignal?.aborted;
+
+          for (const evt of events) {
+            if (evt.event === 'done' || evt.event === 'timing' || evt.event === 'usage' || evt.event === 'status' || evt.event === 'tool-call') continue;
+
+            if (shouldStream && evt.event === 'delta') {
+              const delay = firstDeltaSent ? CACHE_REPLAY_DELTA_DELAY_MS : CACHE_REPLAY_INITIAL_DELAY_MS;
+              const remainingDelay = CACHE_REPLAY_MAX_TOTAL_DELAY_MS - simulatedDelayMs;
+              const appliedDelay = Math.max(0, Math.min(delay, remainingDelay));
+              if (appliedDelay > 0) {
+                await sleep(appliedDelay);
+                simulatedDelayMs += appliedDelay;
+              }
+              firstDeltaSent = true;
+            }
+
+            if (clientSignal?.aborted) return;
+            send(evt.event, evt.data);
+          }
+          send('timing', JSON.stringify({cache: cacheType, replay: shouldStream ? 'stream' : 'instant', simulatedDelayMs, total: Date.now() - tChatStart}));
+          send(doneEvent?.event || 'done', doneEvent?.data || JSON.stringify({stop_reason: 'cache'}));
+        };
 
         debug('chat.sse.opened');
         // Emit session ID immediately so the client knows the connection is live
@@ -895,27 +1007,85 @@ app.post('/chat', async c => {
         // Check response cache for identical repeated queries
         const tChatStart = Date.now();
         const sectionFilter = deriveSectionFilter(body.pageUrl);
-        const responseCacheKey = `${session.id}:${ragQuery}:${sectionFilter || ''}`;
+        const requestLanguage = getRequestLanguage(c);
+        const responseCacheKey = buildSessionResponseCacheKey(session.id, ragQuery, sectionFilter, body.pageUrl, body.pageContext, requestLanguage);
+        const exactAnswerCacheKey = buildExactAnswerCacheKey(ragQuery, sectionFilter, body.pageUrl, body.pageContext, requestLanguage);
         const cachedEvents = responseCacheGet(responseCacheKey);
-        debug('chat.cache.checked', {layer: 'response', hit: Boolean(cachedEvents), eventCount: cachedEvents?.length ?? 0});
+        debug('chat.cache.checked', {layer: 'response_session', hit: Boolean(cachedEvents), eventCount: cachedEvents?.length ?? 0});
         if (cachedEvents) {
           console.log('[Cache] Response cache hit', JSON.stringify({requestId, query: summarizeForDebugLog(ragQuery, 'query')}));
           logEvent(session.id, userId, 'cache', 'response', {
             requestId,
-            cacheType: 'response',
+            cacheType: 'response_session',
             eventCount: cachedEvents.length,
             questionSummary: summarizeForDebugLog(ragQuery, 'question'),
           }, userMeta, source);
-          incCounter('chat_proxy_cache_hits_total', {type: 'response'});
+          incCounter('chat_proxy_cache_hits_total', {type: 'response_session'});
           send('cache', JSON.stringify({type: 'session'}));
-          for (const evt of cachedEvents) {
-            send(evt.event, evt.data);
-          }
+          await replayCachedEvents(cachedEvents, 'session');
           debug('chat.response.completed', {status: 'response_cache_hit', totalDurationMs: Date.now() - tChatStart});
           controller.close();
           return;
         }
-        incCounter('chat_proxy_cache_misses_total', {type: 'response'});
+        incCounter('chat_proxy_cache_misses_total', {type: 'response_session'});
+
+        const exactCachedEvents = ANSWER_EXACT_CACHE_ENABLED ? exactAnswerCache.get(exactAnswerCacheKey) : undefined;
+        debug('chat.cache.checked', {layer: 'answer_exact', enabled: ANSWER_EXACT_CACHE_ENABLED, hit: Boolean(exactCachedEvents), eventCount: exactCachedEvents?.length ?? 0});
+        if (exactCachedEvents) {
+          console.log('[Cache] Exact answer cache hit', JSON.stringify({requestId, query: summarizeForDebugLog(ragQuery, 'query')}));
+          logEvent(session.id, userId, 'cache', 'answer_exact', {
+            requestId,
+            cacheType: 'answer_exact',
+            eventCount: exactCachedEvents.length,
+            questionSummary: summarizeForDebugLog(ragQuery, 'question'),
+          }, userMeta, source);
+          incCounter('chat_proxy_cache_hits_total', {type: 'answer_exact'});
+          send('cache', JSON.stringify({type: 'exact'}));
+          await replayCachedEvents(exactCachedEvents, 'exact');
+          responseCacheSet(responseCacheKey, exactCachedEvents);
+          debug('chat.response.completed', {status: 'answer_exact_cache_hit', totalDurationMs: Date.now() - tChatStart});
+          controller.close();
+          return;
+        }
+        incCounter('chat_proxy_cache_misses_total', {type: 'answer_exact'});
+
+        let inflightEntry: ReturnType<typeof createDeferred<SseEventRecord[]>> | undefined;
+        let ownsInflight = false;
+        const allowAnswerInflight = ANSWER_INFLIGHT_ENABLED && ANSWER_EXACT_CACHE_ENABLED && !body.pageContext && !isLikelyUserSpecificQuery(rawQuery) && !isLikelyUserSpecificQuery(ragQuery);
+        const resolveOwnedInflight = (events: SseEventRecord[]) => {
+          if (!ownsInflight || !inflightEntry) return;
+          inflightEntry.resolve(events);
+          if (answerInflight.get(exactAnswerCacheKey) === inflightEntry) {
+            answerInflight.delete(exactAnswerCacheKey);
+          }
+        };
+        if (allowAnswerInflight) {
+          inflightEntry = answerInflight.get(exactAnswerCacheKey);
+          if (inflightEntry) {
+            incCounter('chat_proxy_cache_hits_total', {type: 'answer_inflight'});
+            debug('chat.cache.checked', {layer: 'answer_inflight', hit: true});
+            try {
+              const events = await withTimeout(inflightEntry.promise, ANSWER_INFLIGHT_WAIT_MS, []);
+              if (events.length > 0) {
+                send('cache', JSON.stringify({type: 'inflight'}));
+                await replayCachedEvents(events, 'inflight');
+                responseCacheSet(responseCacheKey, events);
+                debug('chat.response.completed', {status: 'answer_inflight_replay', totalDurationMs: Date.now() - tChatStart});
+                controller.close();
+                return;
+              }
+              debug('chat.cache.checked', {layer: 'answer_inflight', hit: false, reason: 'empty_or_timeout'});
+            } catch { /* fall through to normal generation */ }
+            inflightEntry = createDeferred<SseEventRecord[]>();
+            answerInflight.set(exactAnswerCacheKey, inflightEntry);
+            ownsInflight = true;
+          } else {
+            incCounter('chat_proxy_cache_misses_total', {type: 'answer_inflight'});
+            inflightEntry = createDeferred<SseEventRecord[]>();
+            answerInflight.set(exactAnswerCacheKey, inflightEntry);
+            ownsInflight = true;
+          }
+        }
 
         // Kick off embedding and routing concurrently. We only block on the
         // embedding for semantic-cache lookup; RAG tools consume it opportunistically
@@ -961,6 +1131,7 @@ app.post('/chat', async c => {
         debug('chat.embedding.completed', {durationMs: tEmbed, enabled: embeddingEnabled, waitedForCache: semanticCacheEnabled, hasEmbedding: Boolean(queryEmbedding), timedOut: semanticCacheEnabled && !queryEmbedding && tEmbed >= EMBEDDING_BUDGET_MS});
         debug('chat.cache.checked', {layer: 'semantic', enabled: semanticCacheEnabled, hit: Boolean(semanticHit), similarity: semanticHit?.similarity});
         if (semanticHit) {
+          const semanticEvents = JSON.parse(semanticHit.entry.sse_events) as SseEventRecord[];
           console.log('[SemanticCache] Replay cached response', JSON.stringify({requestId, query: summarizeForDebugLog(ragQuery, 'query')}));
           logEvent(session.id, userId, 'cache', 'semantic', {
             requestId,
@@ -970,10 +1141,9 @@ app.post('/chat', async c => {
           }, userMeta, source);
           incCounter('chat_proxy_cache_hits_total', {type: 'semantic'});
           send('cache', JSON.stringify({type: 'semantic', similarity: semanticHit.similarity}));
-          const events = JSON.parse(semanticHit.entry.sse_events) as Array<{event: string; data: string}>;
-          for (const evt of events) {
-            send(evt.event, evt.data);
-          }
+          await replayCachedEvents(semanticEvents, 'semantic');
+          responseCacheSet(responseCacheKey, semanticEvents);
+          resolveOwnedInflight(semanticEvents);
           debug('chat.response.completed', {status: 'semantic_cache_hit', similarity: semanticHit.similarity, totalDurationMs: Date.now() - tChatStart});
           controller.close();
           return;
@@ -982,7 +1152,7 @@ app.post('/chat', async c => {
         send('status', JSON.stringify({phase: 'routing'}));
 
         // Track events for caching on successful response
-        const recordedEvents: Array<{event: string; data: string}> = [];
+        const recordedEvents: SseEventRecord[] = [];
         const sendAndRecord = (event: string, data: string) => {
           send(event, data);
           recordedEvents.push({event, data});
@@ -1090,7 +1260,7 @@ app.post('/chat', async c => {
           const modelInstance = await createModelInstance(chatModelResolved);
           const toolsCalled: string[] = [];
           const toolSources: {title: string; url: string; score?: number; section?: string}[] = [];
-          const toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[] = [];
+          const toolChunks: ToolChunk[] = [];
           const toolResultSummaries: string[] = [];
           let draftText = '';
           let fullText = '';
@@ -1173,6 +1343,7 @@ app.post('/chat', async c => {
             for (const r of ragResults) {
               toolSources.push({title: r.doc_title || '', url: r.doc_url, score: r.score, section: r.section});
               toolChunks.push({
+                id: r.id,
                 doc_url: r.doc_url,
                 doc_title: r.doc_title || '',
                 section: r.section || '',
@@ -1181,6 +1352,7 @@ app.post('/chat', async c => {
             }
             toolResultSummaries.push(formatToolResultForSynthesis('searchDocs', {
               results: ragResults.map(r => ({
+                id: r.id,
                 title: r.doc_title,
                 url: r.doc_url,
                 section: r.section,
@@ -1217,7 +1389,7 @@ app.post('/chat', async c => {
                 maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
                 maxOutputTokens: TOOLLESS_RAG_MAX_OUTPUT_TOKENS,
                 temperature: 0.2,
-                system: `${systemPrompt}\n\n## Server-side RAG mode\nThe server already retrieved relevant documentation. Do not mention tool calls. Use only the provided retrieved context plus current page context. Cite source titles/URLs naturally only when helpful; the server will attach source metadata separately.`,
+                system: `${systemPrompt}\n\n## Server-side RAG mode\nThe server already retrieved relevant documentation and this satisfies any mandatory searchDocs/search-first instruction. Do not mention tool calls. Use only the provided retrieved context plus current page context. Cite source titles/URLs naturally only when helpful; the server will attach source metadata separately.`,
                 messages: [
                   ...windowedMessages.slice(0, -1).map(m => ({
                     role: m.role as 'user' | 'assistant',
@@ -1628,26 +1800,48 @@ app.post('/chat', async c => {
 
           sendAndRecord('done', JSON.stringify({stop_reason: 'end_turn'}));
 
+          const answerReplayEvents = replayableEvents(recordedEvents);
+          const answerEventBytes = eventsByteLength(answerReplayEvents);
+
           // Cache the successful response for replay (session-scoped exact match)
-          responseCacheSet(responseCacheKey, recordedEvents);
+          responseCacheSet(responseCacheKey, answerReplayEvents);
+
+          if (isCacheablePublicAnswer({
+            rawQuery,
+            ragQuery,
+            messages: body.messages,
+            pageContext: body.pageContext,
+            pageUrl: body.pageUrl,
+            confidence,
+            deflected,
+            selfDescribed,
+            fullText,
+            eventBytes: answerEventBytes,
+          })) {
+            exactAnswerCache.set(exactAnswerCacheKey, answerReplayEvents);
+            debug('chat.cache.write', {layer: 'answer_exact', eventCount: answerReplayEvents.length, bytes: answerEventBytes});
+          }
+          resolveOwnedInflight(answerReplayEvents);
 
           // Store in semantic cache (cross-session, similarity-based) — fire-and-forget
           // Reuse the pre-computed embedding from the beginning of the request
           if (queryEmbedding) {
-            const sourceChunkHashes = toolChunks.map(tc => tc.doc_url + '#' + (tc.section ? tc.section + ':' : '') + tc.content.slice(0, 100));
-            const sourceEntries = allSources.map(s => ({url: s.url}));
-            const confidenceJson = JSON.stringify({level: confidence, score: 0});
+            const sourceChunkHashes = toolChunks.map(tc => tc.id).filter((id): id is string => Boolean(id));
+            if (sourceChunkHashes.length > 0) {
+              const sourceEntries = allSources.map(s => ({url: s.url}));
+              const confidenceJson = JSON.stringify({level: confidence, score: 0});
 
-            semanticCacheWrite({
-              queryText: ragQuery,
-              queryEmbedding,
-              agent: agentConfig.type,
-              sectionFilter,
-              sseEvents: recordedEvents,
-              sources: sourceEntries,
-              chunkHashes: sourceChunkHashes.slice(0, 20),
-              confidence: confidenceJson,
-            }).catch(() => {});
+              semanticCacheWrite({
+                queryText: ragQuery,
+                queryEmbedding,
+                agent: agentConfig.type,
+                sectionFilter,
+                sseEvents: answerReplayEvents,
+                sources: sourceEntries,
+                chunkHashes: sourceChunkHashes.slice(0, 20),
+                confidence: confidenceJson,
+              }).catch(() => {});
+            }
           }
 
           // Log the message (fire-and-forget)
@@ -1750,6 +1944,7 @@ app.post('/chat', async c => {
           if (isClientDisconnect) {
             debug('chat.response.error', {errorKind: 'client_disconnect', error: message, clientDisconnected: true});
             console.log('[Chat] Client disconnected', JSON.stringify({requestId, error: summarizeForDebugLog(message, 'error')}));
+            resolveOwnedInflight([]);
             recordLlmDisconnect();
             return; // Let finally block close the controller
           }
@@ -1765,6 +1960,7 @@ app.post('/chat', async c => {
           // Allow the error event to flush before the finally block closes the controller
           await new Promise(r => setTimeout(r, 100));
           logEvent(session.id, userId, 'error', 'unknown', {requestId, errorSummary: summarizeForDebugLog(message, 'message')}, userMeta, source);
+          resolveOwnedInflight([]);
           recordLlmError(`Internal server error; requestId=${requestId}`);
           incCounter('chat_proxy_requests_total', {agent: currentAgent, model: currentModel, status: 'error'});
 

@@ -10,10 +10,12 @@ POST /chat
   ├─ Rate limit (20 req/min per IP)
   ├─ Guard (injection detection + greeting redirect)
   │
-  ├─ [parallel] Route intent ──► Agent selection (sticky per session)
-  ├─ [parallel] RAG retrieval ──► Zilliz vector search or keyword fallback
+  ├─ Session exact answer cache (10min TTL) ──► replay on hit
+  ├─ Cross-session exact answer cache (safe public docs answers, 30min TTL) ──► replay on hit
+  ├─ In-flight answer coalescing ──► wait/replay identical concurrent public queries
   │
-  ├─ Response cache check (2min TTL, session-scoped) ──► replay on hit
+  ├─ [parallel] Route intent ──► Agent selection (sticky per session, cached)
+  ├─ [parallel] RAG retrieval ──► PostgreSQL FTS/vector search (cached) or fallback
   │
   ├─ Build system prompt (agent + RAG context + page context + prompt hooks)
   ├─ Stream LLM response via SSE (tool calls up to 5 steps)
@@ -55,8 +57,8 @@ An intent router classifies each message and selects an agent. Routing is **stic
 
 ### Dual-Mode RAG
 
-1. **Vector search** (primary) — Zilliz Cloud REST API with embedding similarity (COSINE). 5-minute LRU cache. Supports section filtering to exclude cross-product docs (Cloud vs BYOC).
-2. **Keyword fallback** — Parses `llms.txt` from the docs site, scores by token overlap. Activates automatically if Zilliz is unavailable. Section filter applied post-query.
+1. **Hybrid search** (primary) — PostgreSQL full-text search plus optional pgvector similarity, fused with RRF. Results are cached in-process with the doc index version in the cache key.
+2. **Keyword/FTS fallback** — If query embeddings or vector rows are unavailable, retrieval degrades to PostgreSQL full-text search with the same section filtering.
 
 ### Source Grounding
 
@@ -67,25 +69,20 @@ Deterministic source attribution replaces LLM-dependent citation numbering. Afte
 3. **Citation emission** — A `grounding` SSE event provides `{paragraphIndex, sourceIndices[]}` tuples for the frontend to render inline citation superscripts
 4. **Deflection suppression** — Regex patterns detect off-topic deflections and suppress sources entirely
 
-### Response Cache (Two Layers)
+### Response Cache (Node-first)
 
-**L1 — Session-scoped exact match** skips routing + RAG + LLM for identical repeated queries within the same session:
+The service uses in-process caches first, avoiding external dependencies on the hot path:
 
-- **Key**: `${sessionId}:${query}:${sectionFilter}` — prevents cross-session and cross-section leakage
-- **TTL**: 2 minutes, max 200 entries with FIFO eviction
-- **Cached**: All SSE events (agent, deltas, confidence, sources, grounding, done) — replayed in order on hit
-- **Not cached**: Error responses, guard deflections
-
-**L2 — Semantic answer cache** (cross-session, disabled unless `SEMANTIC_CACHE_ENABLED=true`) searches the `chat_conversations` collection for a previously answered similar question when L1 misses:
-
-- **Vector search**: Embeds the query and runs a COSINE similarity search against past conversation embeddings
-- **Quality gates**: similarity ≥ 0.92, confidence = `high` only, age ≤ 7 days, no negative feedback (`down > 0` → reject), section-aware (Cloud answer won't serve BYOC page)
-- **On hit**: Replays stored answer as a single delta event with `stop_reason: 'semantic_cache'`, backfills L1 cache
-- **Non-fatal**: Any error silently falls through to the normal routing + LLM flow
-- **Cost**: ~0.001¢ per check (1 embedding + 1 vector search) vs ~1-5¢ per avoided LLM call
+- **Session exact cache** — normalized exact-match replay within one session. Defaults: 10 minutes, max 1000 entries.
+- **Cross-session exact answer cache** — normalized exact-match replay across sessions for safe public documentation answers. Defaults: 30 minutes, max 2000 entries. It skips user-specific/private-looking queries, page-context requests, low-confidence answers, guard/error responses, and oversized SSE payloads.
+- **In-flight coalescing** — identical concurrent public queries share the first request's result instead of generating multiple LLM answers.
+- **Embedding cache** — short query embeddings are cached for 24 hours and reused by semantic cache and hybrid RAG.
+- **RAG search cache** — `searchDocs` results are cached for 10 minutes with the current doc index version in the key.
+- **Page content cache** — full fetched markdown pages are cached, then sliced per request `maxChars`; failed fetches use a short negative TTL.
+- **DB semantic answer cache** — optional (`SEMANTIC_CACHE_ENABLED=true`) pgvector-backed semantic replay after the Node exact caches miss.
 
 ```
-request → L1 exact cache → [miss] → L2 semantic cache → [miss] → route + RAG + LLM
+request → session exact → cross-session exact → in-flight → optional DB semantic → route + cached RAG + LLM
 ```
 
 ### Prompt Hooks
@@ -207,7 +204,30 @@ GitHub URLs: `github:owner/repo` or `https://github.com/owner/repo` (max 50 file
 | `DEBUG_CHAT_FLOW_VERBOSE` | `false` | Reserved Docker passthrough for verbose chat-flow diagnostics |
 | `DEBUG_STREAM` | `false` | Logs summarized unhandled provider stream parts when set to `true` |
 | `CHAT_DEBUG` | `false` | Docusaurus build-time flag that enables browser console `[chat-debug]` logs by default |
-| `SEMANTIC_CACHE_ENABLED` | `false` | Enables the cross-session semantic answer cache when set to `true` |
+| `SEMANTIC_CACHE_ENABLED` | `false` | Enables the optional DB/pgvector semantic answer cache when set to `true` |
+| `RESPONSE_CACHE_TTL_MS` | `600000` | TTL for session-scoped exact SSE replay cache |
+| `RESPONSE_CACHE_MAX` | `1000` | Max session-scoped exact response cache entries per Node process |
+| `ANSWER_EXACT_CACHE_ENABLED` | `true` | Enables cross-session exact answer replay for safe public docs answers |
+| `ANSWER_EXACT_CACHE_TTL_MS` | `1800000` | TTL for cross-session exact answer cache |
+| `ANSWER_EXACT_CACHE_MAX` | `2000` | Max cross-session exact answer cache entries per Node process |
+| `ANSWER_INFLIGHT_ENABLED` | `true` | Coalesces identical concurrent public answer generations within one Node process |
+| `ANSWER_INFLIGHT_WAIT_MS` | `30000` | Max time a duplicate request waits for an in-flight answer before falling through |
+| `CACHE_REPLAY_STREAM_ENABLED` | `true` | Replays cached deltas with small delays to preserve streaming UX instead of dumping instantly |
+| `CACHE_REPLAY_INITIAL_DELAY_MS` | `120` | Delay before the first cached delta when stream replay is enabled |
+| `CACHE_REPLAY_DELTA_DELAY_MS` | `12` | Delay between cached delta events when stream replay is enabled |
+| `CACHE_REPLAY_MAX_TOTAL_DELAY_MS` | `2500` | Maximum artificial delay budget for a cached replay |
+| `RAG_CACHE_ENABLED` | `true` | Enables in-process cached `searchDocs` results |
+| `RAG_CACHE_TTL_MS` | `600000` | TTL for cached RAG search results |
+| `RAG_CACHE_MAX` | `5000` | Max cached RAG search result entries per Node process |
+| `EMBEDDING_CACHE_ENABLED` | `true` | Enables in-process query embedding cache |
+| `EMBEDDING_CACHE_TTL_MS` | `86400000` | TTL for query embedding cache |
+| `EMBEDDING_CACHE_MAX` | `2000` | Max query embedding cache entries per Node process |
+| `EMBEDDING_CACHE_MAX_TEXT_CHARS` | `1000` | Only texts up to this length are cached as query embeddings |
+| `PAGE_CONTENT_CACHE_TTL_MS` | `1800000` | TTL for fetched docs markdown page content |
+| `PAGE_CONTENT_NEGATIVE_CACHE_TTL_MS` | `60000` | TTL for failed page-content fetch cache entries |
+| `PAGE_CONTENT_CACHE_MAX` | `500` | Max cached page-content entries per Node process |
+| `ROUTE_CACHE_TTL_MS` | `1800000` | TTL for cross-session route cache |
+| `ROUTE_CACHE_MAX` | `5000` | Max route cache entries per Node process |
 | `FAST_PATH_ENABLED` | `true` | Streams most agents in one tool-enabled LLM pass instead of tool-collection plus final-synthesis; set `false` to restore the two-pass path |
 | `FAST_PATH_MAX_TOOL_ROUNDS` | `2` | Maximum tool rounds before fast-path forces final text generation |
 | `FAST_PATH_CODE_MAX_TOOL_ROUNDS` | `1` | Maximum tool rounds for code-agent fast path; defaults to one search before generating code |
@@ -307,7 +327,7 @@ chat-proxy/
     ├── guard.ts                   # Injection detection + greeting redirect
     ├── sessions.ts                # In-memory session management (30min TTL)
     ├── router.ts                  # Intent classification → agent routing
-    ├── zilliz-client.ts            # Shared Zilliz REST API client
+    ├── cache.ts                   # In-process LRU/TTL cache helpers
     ├── rag.ts                     # Dual-mode retrieval (vector + keyword)
     ├── sources.ts                 # External source registry + indexing pipeline
     ├── confidence.ts              # Multi-signal confidence scoring (5 weighted signals)
@@ -369,4 +389,4 @@ npm start
 - **Fire-and-forget logging** — Analytics writes never block the response stream.
 - **Graceful degradation** — Vector search falls back to keyword; missing Zilliz disables logging silently; missing YAML disables hooks.
 - **Deterministic grounding** — Source attribution uses text overlap scoring instead of relying on the LLM to emit citation markers, making citations consistent and independent of model behavior.
-- **Two-layer caching** — L1 (in-memory, session-scoped, exact match, 2min TTL) handles immediate repeats. L2 (semantic vector search against `chat_conversations`) serves cross-session cache hits for paraphrased common questions, with 5 quality gates to prevent stale or bad answers from being replayed.
+- **Node-first caching** — In-process LRU/TTL caches cover session exact replay, cross-session exact public-docs answers, in-flight duplicate coalescing, query embeddings, RAG search results, and fetched page content. The optional DB semantic cache remains available for paraphrased common questions when enabled.

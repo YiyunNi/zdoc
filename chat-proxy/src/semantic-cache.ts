@@ -3,6 +3,8 @@ import {getPool, invalidateCacheByChunkHashes, getCacheStats, getCacheEntriesCou
 import {summarizeForDebugLog} from './logger.js';
 import {getEmbeddingModel, resolveModel} from './runtime-config.js';
 import {bedrockAiSdkMaxRetries, withBedrockLimitAndRetry} from './bedrock-guard.js';
+import {LruTtlCache, normalizeQuery, stableHash} from './cache.js';
+import {incCounter} from './metrics.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -12,6 +14,16 @@ const SEMANTIC_CACHE_ENABLED = process.env.SEMANTIC_CACHE_ENABLED === 'true';
 const SEMANTIC_CACHE_TTL_MS = parseInt(process.env.SEMANTIC_CACHE_TTL_MS || '', 10) || 2 * 60 * 60 * 1000; // 2 hours
 const SEMANTIC_CACHE_THRESHOLD = parseFloat(process.env.SEMANTIC_CACHE_THRESHOLD || '0.92');
 const SEMANTIC_CACHE_MAX_ENTRIES = parseInt(process.env.SEMANTIC_CACHE_MAX_ENTRIES || '5000', 10);
+const EMBEDDING_CACHE_ENABLED = process.env.EMBEDDING_CACHE_ENABLED !== 'false';
+const EMBEDDING_CACHE_TTL_MS = parseInt(process.env.EMBEDDING_CACHE_TTL_MS || '', 10) || 24 * 60 * 60 * 1000;
+const EMBEDDING_CACHE_MAX = parseInt(process.env.EMBEDDING_CACHE_MAX || '', 10) || 2000;
+const EMBEDDING_CACHE_MAX_TEXT_CHARS = parseInt(process.env.EMBEDDING_CACHE_MAX_TEXT_CHARS || '', 10) || 1000;
+
+const embeddingCache = new LruTtlCache<number[]>({
+  name: 'embedding',
+  maxEntries: EMBEDDING_CACHE_MAX,
+  ttlMs: EMBEDDING_CACHE_TTL_MS,
+});
 
 export function isSemanticCacheEnabled(): boolean {
   return SEMANTIC_CACHE_ENABLED;
@@ -23,26 +35,44 @@ export function isSemanticCacheEnabled(): boolean {
 
 export async function computeEmbedding(text: string): Promise<number[]> {
   const resolved = await resolveModel('embedding');
+  const cacheable = EMBEDDING_CACHE_ENABLED && text.length <= EMBEDDING_CACHE_MAX_TEXT_CHARS;
+  const cacheKey = cacheable
+    ? stableHash({provider: resolved.provider, model: resolved.model, dimensions: resolved.dimensions, text: normalizeQuery(text)})
+    : '';
+
+  if (cacheable) {
+    const cached = embeddingCache.get(cacheKey);
+    if (cached) {
+      incCounter('chat_proxy_cache_hits_total', {type: 'embedding'});
+      return cached;
+    }
+    incCounter('chat_proxy_cache_misses_total', {type: 'embedding'});
+  }
+
   console.log(`[Embedding] Using provider=${resolved.provider} model=${resolved.model} source=${resolved.source}`);
 
+  let embedding: number[];
   // Cohere Embed models on Bedrock require a custom request format (input_type, texts, etc.)
   // that the generic ai-sdk embed() does not send. Use Bedrock Runtime directly.
   if (resolved.provider === 'bedrock' && resolved.model.toLowerCase().includes('cohere') && resolved.model.toLowerCase().includes('embed')) {
     try {
-      return await embedCohereBedrock(text, resolved);
+      embedding = await embedCohereBedrock(text, resolved);
     } catch (err) {
       console.error('[Embedding] Cohere Bedrock error', JSON.stringify({error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
       throw err;
     }
+  } else {
+    const model = await getEmbeddingModel('embedding');
+    const response = await embed({
+      model,
+      value: text,
+      maxRetries: bedrockAiSdkMaxRetries(resolved.provider),
+    });
+    embedding = response.embedding;
   }
 
-  const model = await getEmbeddingModel('embedding');
-  const response = await embed({
-    model,
-    value: text,
-    maxRetries: bedrockAiSdkMaxRetries(resolved.provider),
-  });
-  return response.embedding;
+  if (cacheable) embeddingCache.set(cacheKey, embedding);
+  return embedding;
 }
 
 /** Call Cohere embedding models on Bedrock via InvokeModel (bypasses ai-sdk) */
@@ -355,6 +385,14 @@ export {invalidateCacheByChunkHashes};
 // ---------------------------------------------------------------------------
 
 export {getCacheStats, getCacheEntriesCount};
+
+export function clearEmbeddingCache(): void {
+  embeddingCache.clear();
+}
+
+export function getEmbeddingCacheStats() {
+  return embeddingCache.stats();
+}
 
 export async function getSemanticCacheConfig(): Promise<{
   enabled: boolean;

@@ -44,6 +44,7 @@ export function createSearchDocsTool(context: RagToolContext = {}) {
 
       return {
         results: results.map(r => ({
+          id: r.id,
           title: r.doc_title,
           url: r.doc_url,
           section: r.section,
