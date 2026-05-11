@@ -63,7 +63,7 @@ import Grid from '@site/src/components/Grid';
 
         これらの常時稼働ではないワークロードに対して、On-Demand Search と Serverless はどちらも従量課金モデルです。ただし実験結果では、月間合計10時間のアクティブコンピュートを持つ10億ベクトル規模ワークロードにおいて、On-Demand Search の総コストは Serverless の約1/15（&#36;318 対 &#36;4,937）に抑えられます。
 
-        詳細は [On-Demand Cluster](./on-demand-cluster)、[database](./on-demand-database)、および [On-Demand Compute Cost](./on-demand-compute-cost) を参照してください。
+        詳細は [オンデマンド検索のクイックスタート](./quick-start-to-on-demand-search) および [On-Demand Compute Cost](./on-demand-compute-cost) を参照してください。
 
         **External Data Lake Search**
 
@@ -73,9 +73,9 @@ import Grid from '@site/src/components/Grid';
 
         これに対し、Zilliz は External Collection モードを提供します。これは、お客様所有のレイクテーブルへのゼロコピー論理マッピングであり、その上に高性能インデックスとフルスペクトラム検索機能を提供します。
 
-        Vector Lakebase は Zilliz Cloud コンソール、REST API、PyMilvus、Zilliz CLI から利用できます。Query CU、Indexing CU、Project Database Storage、Storage Requests を含む、コンピュート、ストレージ、ストレージリクエスト全体にわたる従量課金を導入しています。
+        既存データレイクのインデックス化と高速化については、[External Data Lake Search クイックスタート](./quick-start-to-external-data-lake-search) を参照してください。
 
-        既存データレイクのインデックス化と高速化については、[External Collection クイックスタート](./quick-start-to-external-data-lake-search) を参照してください。
+        Vector Lakebase は Zilliz Cloud コンソール、REST API、PyMilvus、Zilliz CLI から利用できます。Query CU、Indexing CU、Project Database Storage、Storage Requests を含む、コンピュート、ストレージ、ストレージリクエスト全体にわたる従量課金を導入しています。
 
         ## Milvus 3.0 パブリックプレビュー\{#milvus-30-public-preview}
 
@@ -83,7 +83,7 @@ import Grid from '@site/src/components/Grid';
 
         <Admonition type="info" icon="📘" title="Note">
 
-        このリリースでは、Milvus 3.0 の機能はオンデマンド・クラスターでのみサポートされています。サービング・クラスターではまだサポートされていません。
+        <p>このリリースでは、Milvus 3.0 の機能はオンデマンド・クラスターでのみサポートされています。サービング・クラスターではまだサポートされていません。</p>
 
         </Admonition>
 
@@ -95,7 +95,7 @@ import Grid from '@site/src/components/Grid';
 
         - **External Backfill** *(Private Preview)*  — ライブコレクションの埋め込みモデルをダウンタイムなしで更新できます。`AddCollectionField` で新しいベクトルフィールドを追加し、Snapshot で一貫した開始時点を固定してから、オフラインで埋め込みジョブを実行し、通常の取り込み経路で値を書き戻します。新しい列のインデックス化完了後にアプリケーションを切り替えます。
 
-            *External Backfill の Private Preview 参加をご希望の場合は、[お問い合わせ](https://zilliz.com/contact) ください。*
+            *External Backfill の Private Preview 参加をご希望の場合は、[お問い合わせ](https://zilliz.com/contact-sales) ください。*
 
         **スキーマとデータモデリング**
 
@@ -115,7 +115,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Query / Search Order By** — 検索結果およびクエリ結果に対して、フィールドごとの ASC / DESC を指定した複数フィールド並び替えをサポートし、カーネルへプッシュダウンします。複合ランキングのための過剰フェッチやクライアント側再ソートは不要です。
 
-            詳細は [Basic Vector Search](./single-vector-search#sort-search-results-by-scalar-fields)、[Grouping Search](./grouping-search#order-groups-by-a-scalar-field)、[Query](./get-and-scalar-query#sort-query-results) を参照してください。
+            詳細は [Basic Vector Search](./single-vector-search#sort-search-results-by-scalar-fields-or-private)、[Grouping Search](./grouping-search#order-groups-by-a-scalar-field-or-private-preview)、[Query](./get-and-scalar-query#sort-query-results-or-private-preview) を参照してください。
 
         **データライフサイクルと運用**
 
@@ -137,7 +137,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Spark Abnormal Detection** *(Private Preview)* — Spark ベースのデータ処理中に異常レコードやパターンを検出します。
 
-            *上記機能の Private Preview 参加をご希望の場合は、[お問い合わせ](https://zilliz.com/contact) ください。*
+            *上記機能の Private Preview 参加をご希望の場合は、[お問い合わせ](https://zilliz.com/contact-sales) ください。*
 
         ## External Volumes\{#external-volumes}
 

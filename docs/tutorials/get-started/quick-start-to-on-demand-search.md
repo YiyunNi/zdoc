@@ -38,7 +38,10 @@ Before working on a database, connect to the project endpoint. You can obtain th
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>External collection operations require an <strong>API key</strong> for authentication. This flow does not support <code>username:password</code> authentication.</p>
+<ul>
+<li><p>Managed collection operations require an <strong>API key</strong> for authentication. This flow does not support <code>username:password</code> authentication.</p></li>
+<li><p>Managed collections in databases for on-demand compute do not require load operations.</p></li>
+</ul>
 
 </Admonition>
 
@@ -259,63 +262,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Step 5: Load the collection.\{#step-5-load-the-collection}
-
-Once indexes are ready, load the collection into memory.
-
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
-<TabItem value='python'>
-
-```python
-client.load_collection(
-    db_name="my_database",
-    collection_name="prod_collection"
-)
-```
-
-</TabItem>
-
-<TabItem value='bash'>
-
-```bash
-curl --request POST \
---url "${PROJECT_ENDPOINT}/v2/vectordb/collections/load" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "dbName": "my_database",
-    "collectionName": "prod_collection"
-}'
-```
-
-</TabItem>
-</Tabs>
-
-## Step 6: Create an on-demand cluster\{#step-6-create-an-on-demand-cluster}
-
-Once your external collection is ready, you need to attach it to an on-demand cluster for on-demand searches. The following command creates a cluster and returns its ID.
-
-```bash
-export CONTROL_PLANE_ENDPOINT="https://api.cloud.zilliz.com"
-
-curl --request POST \
---url "${CONTROL_PLANE_ENDPOINT}/v2/clusters/createOnDemandCluster" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "projectId": "proj-xxxxxxxxxxxxxxxxxxx",
-    "regionId": "aws-us-west-2",
-    "clusterName": "my-on-demand",
-    "cuSize": 8,
-    "autoSuspend": 60
-}'
-
-# inxx-xxxxxxxxxxxxx
-```
-
-By default, the cluster automatically suspends for 60 seconds after the last request, and you can set it to a value that suits your use cases. 
-
-## Step 7: Import data.\{#step-7-import-data}
+## Step 5: Import data.\{#step-5-import-data}
 
 Once everything is set up, you can import the processed data. The following example assumes that you have stored the processed data in an external storage bucket.
 
@@ -331,8 +278,7 @@ from pymilvus.bulk_writer import bulk_import
 # of a zilliz cloud volume or an external storage
 OBJECT_URLS = [[                                                                                                             
     "https://s3.us-west-2.amazonaws.com/your-bucket/path/in/external/storage.json"                                           
-]]                                                                                                                           
-                                                                                                                               
+]]                                                                                                                                                                                                                                                     
 ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"                                                                                       
 SECRET_KEY = "YOUR_STORAGE_SECRET_KEY"
 
@@ -417,7 +363,31 @@ print(json.dumps(resp.json(), indent=4))
 </TabItem>
 </Tabs>
 
-## Step 8: Conduct searches.\{#step-8-conduct-searches}
+## Step 6: Create an on-demand cluster\{#step-6-create-an-on-demand-cluster}
+
+Once your external collection is ready, you need to attach it to an on-demand cluster for on-demand searches. The following command creates a cluster and returns its ID.
+
+```bash
+export CONTROL_PLANE_ENDPOINT="https://api.cloud.zilliz.com"
+
+curl --request POST \
+--url "${CONTROL_PLANE_ENDPOINT}/v2/clusters/createOnDemandCluster" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "projectId": "proj-xxxxxxxxxxxxxxxxxxx",
+    "regionId": "aws-us-west-2",
+    "clusterName": "my-on-demand",
+    "cuSize": 8,
+    "autoSuspend": 60
+}'
+
+# inxx-xxxxxxxxxxxxx
+```
+
+By default, the cluster automatically suspends for 60 seconds after the last request, and you can set it to a value that suits your use cases. 
+
+## Step 7: Conduct searches.\{#step-7-conduct-searches}
 
 When you need to conduct searches, queries, or hybrid searches, you can attach to the on-demand cluster created in the previous step through a session.
 
@@ -435,7 +405,7 @@ client = MilvusClient(
 session = client.session(cluster_id="inxx-xxxxxxxxxxxxxxx")                                                                  
                                                                                                                                
 # Must match collection vector dimension (example: 768)                                                                      
-query_vector = [0.0] * 768                                
+query_vector = [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, ..., 0.9029438446296592]                                
                                                                                                                                
 res = session.search(                                                                                                        
     db_name="my_database",                                                                                                   
@@ -460,7 +430,16 @@ curl --request POST \
   -d '{                                                                                                                      
     "dbName": "my_database",                                                                                                 
     "collectionName": "prod_collection",                                                                                     
-    "data": [[0.0, 0.0, 0.0, 0.0, 0.0 /* ... up to schema dim */]],                                                          
+    "data": [
+        [
+            0.3580376395471989,
+            -0.6023495712049978,
+            0.18414012509913835,
+            -0.26286205330961354,
+            ...
+            0.9029438446296592
+        ]
+    ]                                                         
     "annsField": "embedding",                                                                                                
     "limit": 3,                                                                                                              
     "outputFields": ["product_id", "product_name"]                                                                           

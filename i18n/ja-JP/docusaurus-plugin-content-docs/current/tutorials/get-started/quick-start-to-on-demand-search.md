@@ -38,7 +38,10 @@ Zilliz Cloud はオンデマンドのコンピュートリソースを提供し�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>外部コレクションの操作には認証用の <strong>API キー</strong> が必要です。このフローでは <code>username:password</code> 認証はサポートされません。</p>
+<ul>
+<li><p>マネージドコレクションの操作には認証用の <strong>API キー</strong> が必要です。このフローでは <code>username:password</code> 認証はサポートされません。</p></li>
+<li><p>オンデマンドコンピュート用データベース内のマネージドコレクションでは、ロード操作は不要です。</p></li>
+</ul>
 
 </Admonition>
 
@@ -259,63 +262,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ステップ 5: コレクションをロードする。
-
-インデックスの準備ができたら、コレクションをメモリにロードします。
-
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
-<TabItem value='python'>
-
-```python
-client.load_collection(
-    db_name="my_database",
-    collection_name="prod_collection"
-)
-```
-
-</TabItem>
-
-<TabItem value='bash'>
-
-```bash
-curl --request POST \
---url "${PROJECT_ENDPOINT}/v2/vectordb/collections/load" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "dbName": "my_database",
-    "collectionName": "prod_collection"
-}'
-```
-
-</TabItem>
-</Tabs>
-
-## ステップ 6: オンデマンドクラスターを作成する
-
-コレクションの準備ができたら、オンデマンド検索用のオンデマンドクラスターをアタッチします。次のコマンドでクラスターを作成し、クラスター ID を取得できます。
-
-```bash
-export CONTROL_PLANE_ENDPOINT="https://api.cloud.zilliz.com"
-
-curl --request POST \
---url "${CONTROL_PLANE_ENDPOINT}/v2/clusters/createOnDemandCluster" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "projectId": "proj-xxxxxxxxxxxxxxxxxxx",
-    "regionId": "aws-us-west-2",
-    "clusterName": "my-on-demand",
-    "cuSize": 8,
-    "autoSuspend": 60
-}'
-
-# inxx-xxxxxxxxxxxxx
-```
-
-デフォルトでは、最後のリクエストから 60 秒後にクラスターが自動停止します。ユースケースに応じてこの値は調整できます。
-
-## ステップ 7: データをインポートする。
+## ステップ 5: データをインポートする。
 
 準備が整ったら、処理済みデータをインポートします。以下の例では、処理済みデータが外部ストレージバケットに保存されていることを前提としています。
 
@@ -327,13 +274,13 @@ curl --request POST \
 ```python
 from pymilvus.bulk_writer import bulk_import
 
-# The path should be relative to the root 
+# The path should be relative to the root
 # of a zilliz cloud volume or an external storage
-OBJECT_URLS = [[                                                                                                             
-    "https://s3.us-west-2.amazonaws.com/your-bucket/path/in/external/storage.json"                                           
-]]                                                                                                                           
-                                                                                                                              
-ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"                                                                                      
+OBJECT_URLS = [[
+    "https://s3.us-west-2.amazonaws.com/your-bucket/path/in/external/storage.json"
+]]
+
+ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"
 SECRET_KEY = "YOUR_STORAGE_SECRET_KEY"
 
 res = bulk_import(
@@ -417,7 +364,31 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ステップ 8: 検索を実行する。
+## ステップ 6: オンデマンドクラスターを作成する
+
+コレクションの準備ができたら、オンデマンド検索用のオンデマンドクラスターをアタッチします。次のコマンドでクラスターを作成し、クラスター ID を取得できます。
+
+```bash
+export CONTROL_PLANE_ENDPOINT="https://api.cloud.zilliz.com"
+
+curl --request POST \
+--url "${CONTROL_PLANE_ENDPOINT}/v2/clusters/createOnDemandCluster" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "projectId": "proj-xxxxxxxxxxxxxxxxxxx",
+    "regionId": "aws-us-west-2",
+    "clusterName": "my-on-demand",
+    "cuSize": 8,
+    "autoSuspend": 60
+}'
+
+# inxx-xxxxxxxxxxxxx
+```
+
+デフォルトでは、最後のリクエストから 60 秒後にクラスターが自動停止します。ユースケースに応じてこの値は調整できます。
+
+## ステップ 7: 検索を実行する。
 
 検索、クエリ、ハイブリッド検索を行う場合は、前の手順で作成したオンデマンドクラスターにセッション経由で接続します。
 
@@ -435,7 +406,7 @@ client = MilvusClient(
 session = client.session(cluster_id="inxx-xxxxxxxxxxxxxxx")                                                                  
                                                                                                                               
 # Must match collection vector dimension (example: 768)                                                                      
-query_vector = [0.0] * 768                                
+query_vector = [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, ..., 0.9029438446296592]                                
                                                                                                                               
 res = session.search(                                                                                                        
     db_name="my_database",                                                                                                   
@@ -460,7 +431,16 @@ curl --request POST \
   -d '{
     "dbName": "my_database",
     "collectionName": "prod_collection",
-    "data": [[0.0, 0.0, 0.0, 0.0, 0.0 /* ... up to schema dim */]],
+    "data": [
+        [
+            0.3580376395471989,
+            -0.6023495712049978,
+            0.18414012509913835,
+            -0.26286205330961354,
+            ...
+            0.9029438446296592
+        ]
+    ]
     "annsField": "embedding",
     "limit": 3,
     "outputFields": ["product_id", "product_name"]

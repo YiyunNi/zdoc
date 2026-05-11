@@ -63,7 +63,7 @@ import Grid from '@site/src/components/Grid';
 
         For these non-always-on workloads, both On-Demand Search and Serverless follow a pay-as-you-go model. However, as our experiment shows, for a 1B-vector workload with 10 hours of accumulated active compute per month, the total cost of On-Demand Search is only about 1/15 that of Serverless (&#36;318 vs. &#36;4,937).
 
-        For details, please refer to [On-Demand Cluster](./on-demand-cluster), [database](./on-demand-database) and [On-Demand Compute Cost](./on-demand-compute-cost).
+        For details, please refer to [Quickstart to On-Demand Search](./quick-start-to-on-demand-search) and [On-Demand Compute Cost](./on-demand-compute-cost).
 
         **External Data Lake Search**
 
@@ -73,9 +73,9 @@ import Grid from '@site/src/components/Grid';
 
         To address this, Zilliz provides an External Collection mode — a zero-copy logical mapping to customer-owned lake tables with high-performance indexing and full-spectrum search capabilities built on top.
 
-        Vector Lakebase is accessible through the Zilliz Cloud console, REST API, PyMilvus, and Zilliz CLI. It introduces usage-based billing across compute, storage, and storage requests — including Query CU, Indexing CU, Project Database Storage, and Storage Requests.
+        Learn how to index and accelerate your existing data lake, refer to [Quickstart to External Data Lake Search](./quick-start-to-external-data-lake-search).
 
-        Learn how to index and accelerate your existing data lake, refer to [Quickstart to External Collection.](./quick-start-to-external-data-lake-search)
+        Vector Lakebase is accessible through the Zilliz Cloud console, REST API, PyMilvus, and Zilliz CLI. It introduces usage-based billing across compute, storage, and storage requests — including Query CU, Indexing CU, Project Database Storage, and Storage Requests.
 
         ## Milvus 3.0 Public Preview\{#milvus-30-public-preview}
 
@@ -83,7 +83,7 @@ import Grid from '@site/src/components/Grid';
 
         <Admonition type="info" icon="📘" title="Notes">
 
-        In this release, Milvus 3.0 capabilities are supported on On-demand Clusters only. Serving Clusters are not yet supported.
+        <p>In this release, Milvus 3.0 capabilities are supported on On-demand Clusters only. Serving Clusters are not yet supported.</p>
 
         </Admonition>
 
@@ -95,7 +95,7 @@ import Grid from '@site/src/components/Grid';
 
         - **External Backfill** *(Private Preview)*  — Upgrade an embedding model on a live collection without downtime. Add a new vector field via `AddCollectionField`, freeze a consistent starting point with Snapshot, run the embedding job offline, and write values back through normal ingestion paths. The application switches over once the new column is indexed.
 
-            *To join the Private Preview for External Backfill, [contact us](https://zilliz.com/contact).*
+            *To join the Private Preview for External Backfill, [contact us](https://zilliz.com/contact-sales).*
 
         **Schema and data modeling**
 
@@ -115,7 +115,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Query / Search Order By** — Multi-field ordering for search and query results, with per-field ASC / DESC, pushed down into the kernel. No more over-fetching and client-side re-sorting for composite ranking.
 
-            For details, refer to [Basic Vector Search](./single-vector-search#sort-search-results-by-scalar-fields), [Grouping Search](./grouping-search#order-groups-by-a-scalar-field), and [Query](./get-and-scalar-query#sort-query-results).
+            For details, refer to [Basic Vector Search](./single-vector-search#sort-search-results-by-scalar-fields-or-private), [Grouping Search](./grouping-search#order-groups-by-a-scalar-field-or-private-preview), and [Query](./get-and-scalar-query#sort-query-results-or-private-preview).
 
         **Data lifecycle and operations**
 
@@ -137,7 +137,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Spark Abnormal Detection** *(Private Preview)* — Detect abnormal records or patterns during Spark-based data processing.
 
-            *To join the Private Preview for any of the above features, [contact us](https://zilliz.com/contact).*
+            *To join the Private Preview for any of the above features, [contact us](https://zilliz.com/contact-sales).*
 
         ## External Volumes\{#external-volumes}
 
