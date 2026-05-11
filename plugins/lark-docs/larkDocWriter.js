@@ -821,6 +821,13 @@ export const method = "${method}"`
             return codeBlocks.some(block => pos >= block.start && pos < block.end);
         }
 
+        const codeSpanRegex = /`[^`\n]+`/g;
+        while ((match = codeSpanRegex.exec(content)) !== null) {
+            if (!isInCodeBlock(match.index)) {
+                codeBlocks.push({ start: match.index, end: match.index + match[0].length });
+            }
+        }
+
         // Match URLs, including those containing <, >, [, ], {, }
         const urlRegex = /https?:\/\/[^\s'")]+/g;
         let result = '';
@@ -1334,11 +1341,12 @@ export const method = "${method}"`
                 break; 
         }               
         
-        const converter = new showdown.Converter()
-        let html = converter.makeHtml(children.slice(1).map(line => line.replace(/^\s*/g, '')).join('\n'))
-        html = this.__showdownToMdxSafe(html);
+        let body = children.slice(1)
+        while (body.length && body[0].trim() === '') body.shift()
+        while (body.length && body[body.length - 1].trim() === '') body.pop()
+        body = body.join('\n')
 
-        const raw = ' '.repeat(indent) + type + '\n\n' + ' '.repeat(indent) + html.split('\n').join('\n' + ' '.repeat(indent)) + '\n\n' + ' '.repeat(indent) + '</Admonition>';
+        const raw = ' '.repeat(indent) + type + '\n\n' + body + '\n\n' + ' '.repeat(indent) + '</Admonition>';
         return raw.replace(/(\s*\n){3,}/g, `\n${' '.repeat(indent)}\n`);
     }
 
@@ -1518,13 +1526,13 @@ export const method = "${method}"`
         }
 
         type = `<Admonition type="${type.split(' ')[0]}" icon="${type.split(' ')[1]}" title="${type.split(' ')[2]}">`;
-        res.splice(1, 0, "");
 
-        const converter = new showdown.Converter()
-        let html = converter.makeHtml(res.slice(1).map(line => line.replace(/^\s*/g, '')).join('\n'))
-        html = this.__showdownToMdxSafe(html);
+        let body = res.slice(1)
+        while (body.length && body[0].trim() === '') body.shift()
+        while (body.length && body[body.length - 1].trim() === '') body.pop()
+        body = body.join('\n')
 
-        const raw = ' '.repeat(indent) + type + '\n\n' + ' '.repeat(indent) + html.split('\n').join('\n' + ' '.repeat(indent)) + '\n\n' + ' '.repeat(indent) + '</Admonition>';
+        const raw = ' '.repeat(indent) + type + '\n\n' + body + '\n\n' + ' '.repeat(indent) + '</Admonition>';
         return raw.replace(/(\s*\n){3,}/g, '\n\n');
     }
     
