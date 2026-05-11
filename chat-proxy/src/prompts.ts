@@ -1,10 +1,9 @@
-import {readFileSync, readdirSync, existsSync} from 'fs';
+import {readFileSync, readdirSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROMPTS_DIR = join(__dirname, '..', 'prompts');
-const ZILLIZ_CLI_PROMPT_FILE = join(__dirname, '..', 'cli.md');
 
 export interface TopicPrompt {
   filename: string;
@@ -25,13 +24,6 @@ export function loadPrompts(): void {
       basePrompt = content;
     } else {
       topicPrompts.push({filename: file, topic, content});
-    }
-  }
-
-  if (existsSync(ZILLIZ_CLI_PROMPT_FILE)) {
-    const content = readFileSync(ZILLIZ_CLI_PROMPT_FILE, 'utf-8').trim();
-    if (content) {
-      topicPrompts.push({filename: 'cli.md', topic: 'zilliz-cli', content});
     }
   }
 

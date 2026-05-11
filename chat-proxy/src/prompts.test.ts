@@ -5,7 +5,7 @@ describe('prompt registration', () => {
     vi.resetModules();
   });
 
-  it('loads zilliz-cli prompt from chat-proxy/cli.md', async () => {
+  it('loads zilliz-cli prompt from chat-proxy/prompts/zilliz-cli.md', async () => {
     const prompts = await import('./prompts.js');
 
     prompts.loadPrompts();
