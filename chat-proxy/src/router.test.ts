@@ -135,6 +135,23 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('zilliz-cli:');
   });
 
+  it('accepts indexes topic from the router and describes it in prompt', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {
+        agent: 'schema',
+        topics: ['indexes'],
+        reasoning: 'index selection question',
+      },
+    } as any);
+
+    const result = await routeIntent('What index type should I use for my vector field?', [], 'sess-indexes-topic');
+
+    expect(result.topics).toEqual(['indexes']);
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.prompt).toContain('indexes:');
+  });
+
   it('guides conceptual reranking questions away from code routing', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {agent: 'product', topics: ['reranking', 'integrations'], reasoning: 'reranker tradeoff'},

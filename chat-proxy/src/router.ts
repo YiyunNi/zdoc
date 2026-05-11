@@ -19,7 +19,7 @@ const ROUTER_V2_ENABLED = process.env.ROUTER_V2_ENABLED !== 'false'; // default 
 // ---------------------------------------------------------------------------
 
 const TOPIC_ENUM = [
-  'schema-design', 'search', 'resources', 'cluster-connection',
+  'schema-design', 'indexes', 'search', 'resources', 'cluster-connection',
   'import', 'migration', 'access-control', 'integrations', 'pricing',
   'security', 'compliance-and-privacy', 'reranking', 'on-demand-search',
   'backfill-and-schema-iteration', 'zilliz-cli',
@@ -82,7 +82,8 @@ Agents:
 
 const TOPIC_DESCRIPTIONS = `
 Topics (select 1-2 most relevant):
-- schema-design: Collection schema, field types, indexes, BM25 setup, limits
+- schema-design: Collection schema, field types, BM25 setup, limits
+- indexes: Vector and scalar indexing strategy, index support/limits, index lifecycle constraints
 - search: Vector search, filtered search, BM25 full text search, hybrid search, RRF
 - resources: Plan selection (Free/Serverless/Dedicated/BYOC), CU sizing, limits
 - cluster-connection: Endpoint, auth, SDK connection, global/private endpoints
@@ -118,6 +119,9 @@ Output: {"agent": "schema", "topics": ["schema-design"], "reasoning": "Partition
 
 Input: "How do I enable BM25 full-text search?"
 Output: {"agent": "schema", "topics": ["schema-design"], "reasoning": "BM25 setup is part of collection schema and index configuration."}
+
+Input: "What index type does Zilliz Cloud support for vector and scalar fields?"
+Output: {"agent": "schema", "topics": ["indexes"], "reasoning": "The user is asking specifically about index type support and indexing constraints."}
 
 Input: "When should I use Cohere Reranker instead of Boost Reranker?"
 Output: {"agent": "product", "topics": ["reranking", "integrations"], "reasoning": "The user is asking for reranker selection and tradeoffs, not SDK code."}
@@ -255,7 +259,8 @@ Agents:
 - code: Explicit requests for SDK code, API calls, runnable examples, syntax, implementation details, or troubleshooting code errors. For schema design questions (collections, fields, indexes, partition keys, BM25), route to schema even if phrased as "how do I". Do not route conceptual product, reranking, tuning, tradeoff, limitation, cost, latency, or "when should I use..." questions to code unless the user explicitly asks for code.
 
 Topics (select 1-2 most relevant):
-- schema-design: Collection schema, field types, indexes, BM25 setup, limits
+- schema-design: Collection schema, field types, BM25 setup, limits
+- indexes: Vector and scalar indexing strategy, index support/limits, index lifecycle constraints
 - search: Vector search, filtered search, BM25 full text search, hybrid search, RRF
 - resources: Plan selection (Free/Serverless/Dedicated/BYOC), CU sizing, limits
 - cluster-connection: Endpoint, auth, SDK connection, global/private endpoints
