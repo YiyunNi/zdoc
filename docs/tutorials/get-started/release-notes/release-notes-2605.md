@@ -75,7 +75,7 @@ import Grid from '@site/src/components/Grid';
 
         Vector Lakebase is accessible through the Zilliz Cloud console, REST API, PyMilvus, and Zilliz CLI. It introduces usage-based billing across compute, storage, and storage requests — including Query CU, Indexing CU, Project Database Storage, and Storage Requests.
 
-        Learn how to index and accelerate your existing data lake, refer to [Quickstart to External Collection.](./quick-start-to-on-demand-search)
+        Learn how to index and accelerate your existing data lake, refer to [Quickstart to External Collection.](./quick-start-to-external-data-lake-search)
 
         ## Milvus 3.0 Public Preview\{#milvus-30-public-preview}
 

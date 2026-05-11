@@ -1,15 +1,18 @@
 ---
-title: "クイックスタート to Serving Cluster | Cloud"
+title: "サービングクラスターのクイックスタート | Cloud"
 slug: /quick-start
 sidebar_key: quick-start
-sidebar_label: "クイックスタート to Serving Cluster"
+sidebar_label: "サービングクラスターのクイックスタート"
+added_since: FALSE
+last_modified: FALSE
+deprecate_since: FALSE
 beta: FALSE
 notebook: FALSE
-description: "serving cluster は、リアルタイムの本番環境向けサービングのためにコンピューティングとストレージを両方組み合わせた自己完結型サーバーです。Extract-Transform-Load（ETL）パイプラインでデータをクリーニングした後、serving cluster にインポートして大幅なパフォーマンス向上を実現できます。 | Cloud"
+description: "サービングクラスターは、リアルタイムの本番サービング向けにコンピュートとストレージを統合した自己完結型サーバーです。Extract-Transform-Load（ETL）パイプラインでデータを整備した後、サービングクラスターに取り込むことで大幅な性能向上を実現できます。 | Cloud"
 type: origin
 token: B1XTwQgNRizAMTkZQvrclGSonyc
-sidebar_position: 10
-keywords: 
+sidebar_position: 8
+keywords:
   - zilliz
   - ベクトルデータベース
   - クイックスタート
@@ -23,17 +26,17 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# クイックスタート：Serving Cluster
+# サービングクラスターのクイックスタート
 
-Serving cluster は、リアルタイムの本番環境サービング向けにコンピューティングとストレージを統合した自己完結型サーバーです。Extract-Transform-Load (ETL) パイプラインでデータをクリーニングした後、それを serving cluster にインポートして、大幅なパフォーマンス向上を実現できます。
+サービングクラスターは、リアルタイムの本番サービング向けにコンピュートとストレージを統合した自己完結型サーバーです。Extract-Transform-Load（ETL）パイプラインでデータを整備した後、サービングクラスターに取り込むことで大幅な性能向上を実現できます。
 
-## 開始前の準備\{#before-you-start}
+## 開始前の準備
 
-以下の手順では、serving cluster を作成し、そのエンドポイントとアクセス認証情報を取得済みであることを前提としています。
+以下の手順では、サービングクラスターを作成済みで、エンドポイントとアクセス認証情報を取得済みであることを前提としています。
 
-## ステップ 1: 接続の設定\{#step-1-set-up-connection}
+## ステップ 1: 接続を設定する
 
-クラスターの認証情報または API キーを取得したら、それを使用してクラスターに接続できます。
+クラスター認証情報または API キーを取得したら、それを使ってクラスターに接続できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -56,7 +59,7 @@ client = MilvusClient(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 export CLOUD_PLATFORM_ENDPOINT="https://api.cloud.zilliz.com"
@@ -70,9 +73,9 @@ export TOKEN="YOUR_CLUSTER_TOKEN"
 </TabItem>
 </Tabs>
 
-## Step 2: (Optional) データベースを作成する。\{#step-2-optional-create-a-database}
+## ステップ 2: （任意）データベースを作成する。
 
-serving cluster にはデフォルトのデータベースが付属しています。デフォルトのデータベースを使用する場合は、この手順をスキップしてください。以下のようにデータベースを作成することもできます:
+サービングクラスターにはデフォルトデータベースが用意されています。デフォルトを使う場合はこの手順をスキップできます。必要に応じて以下のように作成してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -92,7 +95,7 @@ client.create_database(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 curl --request POST \
@@ -107,11 +110,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Step 3: コレクションを作成する。\{#step-3-create-a-collection}
+## ステップ 3: コレクションを作成する。
 
-データベースの準備ができたら、管理対象コレクションを作成できます。外部データファイルにコレクションのカラムをマッピングする外部コレクションとは異なり、管理対象コレクションでは、大幅なパフォーマンス向上のためにデータのインポートが必要です。
+データベースの準備ができたら、そこにマネージドコレクションを作成できます。外部データファイルにコレクションの列をマッピングする外部コレクションとは異なり、マネージドコレクションはデータをインポートすることで高いパフォーマンスを得られます。
 
-以下の例では、コレクションスキーマの設定方法とコレクションの作成方法を示しています。
+以下の例では、コレクションスキーマの設定とコレクション作成の方法を示します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -142,7 +145,7 @@ schema.add_field(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 export schema='{
@@ -173,7 +176,7 @@ export schema='{
 </TabItem>
 </Tabs>
 
-次に、上記のスキーマを使用してコレクションを作成できます。デフォルトのデータベースを使用する場合は、`db_name` パラメータを安全に省略できます。
+続いて、上記スキーマでコレクションを作成します。デフォルトデータベースを使用する場合は、`db_name` パラメータを省略できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -192,7 +195,7 @@ client.create_collection(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 curl --request POST \
@@ -209,9 +212,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ステップ 4: インデックスを作成する。\{#step-4-create-indexes}
+## ステップ 4: インデックスを作成する。
 
-すべてのベクトルフィールドと、必要に応じて選択したスカラーフィールドのインデックスを作成する必要があります。
+すべてのベクトルフィールドに対してインデックスを作成する必要があり、必要に応じてスカラーフィールドにもインデックスを作成できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -240,7 +243,7 @@ client.create_index(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 export indexParams='[
@@ -271,7 +274,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ステップ 5: コレクションをロードする。\{#step-5-load-the-collection}
+## ステップ 5: コレクションをロードする。
 
 インデックスの準備ができたら、コレクションをメモリにロードします。
 
@@ -287,7 +290,7 @@ client.load_collection(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 curl --request POST \
@@ -303,11 +306,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Step 6: データをインポートする。\{#step-6-import-data}
+## ステップ 6: データをインポートする。
 
-すべての設定が完了したら、処理済みデータをインポートできます。以下の例では、処理済みデータを外部ストレージバケットに保存していることを前提としています。
+準備が整ったら、処理済みデータをインポートできます。以下の例では、処理済みデータを外部ストレージバケットに保存していることを前提としています。
 
-バケットまたはストレージ統合のデータ形式については、[形式オプション](./data-import-format-options) を参照してください。
+バケット内データ形式やストレージ連携については、[Format Options](./data-import-format-options) を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -317,18 +320,22 @@ from pymilvus.bulk_writer import bulk_import
 
 # The path should be relative to the root 
 # of a zilliz cloud volume or an external storage
-STORAGE_PATH = "s3://your/data/path/in/external/storage"
-ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"
+OBJECT_URLS = [[                                                                                                             
+    "https://s3.us-west-2.amazonaws.com/your-bucket/path/in/external/storage.json"                                           
+]]                                                                                                                           
+                                                                                                                              
+ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"                                                                                      
 SECRET_KEY = "YOUR_STORAGE_SECRET_KEY"
 
 res = bulk_import(
     api_key="YOUR_ZILLIZ_API_KEY",
     url="https://api.cloud.zilliz.com",
-    cluster_id="inxx-xxxxxxxxxxxxxxxxxxx",
+    cluser_id="inxx-xxxxxxxxxxxxxxxxxxx",
+    db_name="my_database",
     collection_name="prod_collection",
-    object_url="s3://your/data/path/in/external/storage.json",
-    access_key="YOUR_STORAGE_ACCESS_KEY",
-    secret_key="YOUR_STORAGE_SECRET_KEY"
+    object_url=OBJECT_URLS,
+    access_key=ACCESS_KEY,
+    secret_key=SECRET_KEY
 )
 
 # job-xxxxxxxxxxxxxxxxxxxxx
@@ -336,7 +343,7 @@ res = bulk_import(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 export CLOUD_PLATFORM_ENDPOINT="https://api.cloud.zilliz.com"
@@ -350,7 +357,7 @@ curl --request POST \
      -d '{
         "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "collectionName": "prod_collection",
-        "objectUrl": "s3://your/data/path/in/external/storage.json",
+        "objectUrls": [["https://s3.{region}.amazonaws.com/{bucket}/path/in/external/storage.json"]],
         "accessKey": "YOUR_STORAGE_ACCESS_KEY",
         "secretKey": "YOUR_STORAGE_SECRET_KEY"
     }'
@@ -361,7 +368,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-返されたジョブ ID を使用して、進行状況を監視できます。
+返却された job ID を使って進捗を確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -383,7 +390,7 @@ print(json.dumps(resp.json(), indent=4))
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 curl --request POST \
@@ -400,9 +407,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Step 7: データを提供する。\{#step-7-serve-your-data}
+## ステップ 7: データを提供する。
 
-インポートが完了したら、ユーザーに検索、クエリ、ハイブリッド検索を通じてデータを利用してもらうことができます。
+インポートが完了したら、検索、クエリ、ハイブリッド検索を通じてユーザーにデータを提供できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -422,7 +429,7 @@ res = client.search(
 
 </TabItem>
 
-<TabItem value='java'>
+<TabItem value='bash'>
 
 ```bash
 curl --request POST \

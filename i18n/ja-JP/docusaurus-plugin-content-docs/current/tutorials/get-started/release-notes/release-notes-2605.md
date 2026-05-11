@@ -75,7 +75,7 @@ import Grid from '@site/src/components/Grid';
 
         Vector Lakebase は Zilliz Cloud コンソール、REST API、PyMilvus、Zilliz CLI から利用できます。Query CU、Indexing CU、Project Database Storage、Storage Requests を含む、コンピュート、ストレージ、ストレージリクエスト全体にわたる従量課金を導入しています。
 
-        既存データレイクのインデックス化と高速化については、[External Collection クイックスタート](./quick-start-to-on-demand-search) を参照してください。
+        既存データレイクのインデックス化と高速化については、[External Collection クイックスタート](./quick-start-to-external-data-lake-search) を参照してください。
 
         ## Milvus 3.0 パブリックプレビュー\{#milvus-30-public-preview}
 
