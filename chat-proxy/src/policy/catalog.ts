@@ -8,6 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const POLICY_DIR = join(__dirname, '..', '..', 'policies');
 
 const cache = new Map<string, PolicyPayload[]>();
+const TOPIC_NAME_PATTERN = /^[a-z0-9-]+$/;
 
 function isPolicyPayload(value: unknown): value is PolicyPayload {
   if (!value || typeof value !== 'object') {
@@ -50,6 +51,10 @@ function clonePolicies(policies: PolicyPayload[]): PolicyPayload[] {
 }
 
 export function loadTopicPolicies(topic: string): PolicyPayload[] {
+  if (!TOPIC_NAME_PATTERN.test(topic)) {
+    return [];
+  }
+
   const cached = cache.get(topic);
   if (cached) {
     return clonePolicies(cached);

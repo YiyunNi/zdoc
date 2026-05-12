@@ -47,6 +47,16 @@ describe('policy catalog', () => {
     expect(getPolicyByIntent('missing-topic', 'unknown_intent')).toBeNull();
   });
 
+  it('returns an empty list for invalid topic names', async () => {
+    const readFileSync = vi.fn();
+    vi.doMock('node:fs', () => ({readFileSync}));
+
+    const {loadTopicPolicies, getPolicyByIntent} = await importCatalog();
+    expect(loadTopicPolicies('../secret')).toEqual([]);
+    expect(getPolicyByIntent('../secret', 'unknown_intent')).toBeNull();
+    expect(readFileSync).not.toHaveBeenCalled();
+  });
+
   it('returns an empty list when the yaml shape is invalid', async () => {
     vi.doMock('node:fs', () => ({
       readFileSync: vi.fn(() => `policies:\n  - intent_id: bad\n    must_include: []\n`),
