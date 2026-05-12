@@ -1,0 +1,75 @@
+policies:
+  - intent_id: zcli_get_started_in_minutes
+    fixed_facts:
+      - "Use zilliz CLI command patterns from official docs."
+      - "zilliz login is the default auth entry point."
+      - "Use zilliz context set to bind cluster/database context for downstream commands."
+    must_include:
+      - "How to install"
+      - "From login, create cluster, create collection, insert, and query: provide one command set example."
+      - "Use -h commands for quick capability overview"
+      - "You can also continue by reading the documentation"
+    must_not_say:
+      - "Use SDK code instead of zilliz CLI for this CLI setup flow"
+      - "Dedicated-only commands are available on Free or Serverless"
+    response_outline:
+      - "Installation methods"
+      - "One end-to-end command set"
+      - "-h output overview + CLI reference"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
+
+  - intent_id: zcli_agent_skill_setup
+    fixed_facts:
+      - "CLI skill setup must verify login and context first."
+    must_include:
+      - "How to install the CLI skill"
+      - "A few quick examples"
+    must_not_say:
+      - "No login or context checks are needed"
+    response_outline:
+      - "Skill installation and setup"
+      - "Minimal configuration checklist"
+      - "Quick examples"
+      - "Troubleshooting"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
+
+  - intent_id: zcli_usage_patterns
+    fixed_facts:
+      - "Usage patterns should be operational and command-oriented."
+    must_include:
+      - "Day-1 quick feature exploration"
+      - "Use coding agents to quickly validate product database integration"
+      - "Automated database operations and management script integration"
+      - "Performance or effectiveness evaluation with vdbbench"
+    must_not_say:
+      - "Only marketing use cases are relevant"
+    response_outline:
+      - "Day-1 quick exploration"
+      - "Coding agent integration validation"
+      - "Automated DBA and ops scripting"
+      - "Benchmark and evaluation workflows"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
+
+  - intent_id: zcli_roadmap_feedback
+    fixed_facts:
+      - "Roadmap and feedback answers must include actionable follow-up."
+    must_include:
+      - "Usage guides and best practices: deeper and more practical than using only your own agent, incorporating broad experience from Zilliz technical product experts"
+      - "DBA assistant scenarios: issue diagnosis, scale-up/scale-down strategy suggestions, and similar operational guidance"
+      - "If you want more capabilities, share them here and we will collect feedback; users can submit a ticket directly through this chatbot (requires user information)"
+    must_not_say:
+      - "No feedback channel is available"
+    response_outline:
+      - "Roadmap themes and best-practice guidance"
+      - "DBA assistant scenarios"
+      - "How to submit feature requests"
+      - "Feedback handoff format"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
