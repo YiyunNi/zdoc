@@ -1,4 +1,5 @@
 policyMode:
   enabled: true
   topics:
+    - external-data-lake-search
     - zilliz-cli

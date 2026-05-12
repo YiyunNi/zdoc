@@ -1,0 +1,87 @@
+policies:
+  - intent_id: external_data_lake_search_best_fit_use_cases
+    fixed_facts:
+      - "External Data Lake Search is best for organizations that already have a mature data lake, S3, and data governance setup."
+      - "It is designed for users who do not want to copy, migrate, or re-import data just to enable AI retrieval."
+      - "It is a good fit for building semantic retrieval and AI search directly on existing lake data."
+      - "It works well for large-scale, multimodal search across structured and unstructured data."
+      - "It is especially suitable for AI workloads such as hybrid search, vector search, and semantic exploration."
+      - "It helps fill the gap where traditional big data engines such as Apache Spark or Ray are not optimized for low-latency, index-accelerated retrieval."
+    must_include:
+      - "Who it is best for"
+      - "Why it fits AI search workloads"
+    must_not_say:
+      - "Users must first migrate all lake data into Zilliz Cloud"
+      - "It is mainly for replacing Spark or Ray as a general-purpose data processing engine"
+    response_outline:
+      - "Best-fit users"
+      - "Best-fit workloads"
+      - "Why it is different from traditional big data engines"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
+
+  - intent_id: external_data_lake_search_how_it_works
+    fixed_facts:
+      - "Users bring their own bucket and grant Zilliz Cloud read-only access to the object storage bucket that contains the source lake data."
+      - "Users then create an external collection in Zilliz Cloud as a zero-copy logical mapping to the existing lake data."
+      - "This does not require data migration or duplication."
+      - "After that, users can build indexes and query the external collection directly."
+      - "The query and indexing experience is similar to fully managed collections."
+    must_include:
+      - "Bring Your Own Bucket"
+      - "Create an external collection"
+      - "Build indexes and query directly"
+      - "Keep the explanation simple"
+    must_not_say:
+      - "The workflow requires copying the source data into Zilliz Cloud first"
+      - "The setup is complex and requires many manual data transformation steps"
+    response_outline:
+      - "Step 1: bucket access"
+      - "Step 2: external collection"
+      - "Step 3: indexing and querying"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
+
+  - intent_id: external_data_lake_search_supported_formats
+    fixed_facts:
+      - "External Collection currently supports two data lake table formats: Lance and Iceberg."
+      - "It also supports two open data formats: Parquet and Vortex."
+    must_include:
+      - "Lance"
+      - "Iceberg"
+      - "Parquet"
+      - "Vortex"
+    must_not_say:
+      - "All lakehouse or open table formats are supported"
+      - "Delta Lake is supported"
+      - "Hudi is supported"
+    response_outline:
+      - "Supported table formats"
+      - "Supported open data formats"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
+
+  - intent_id: external_data_lake_search_sync_updates
+    fixed_facts:
+      - "Zilliz External Collection provides incremental synchronization for data lake updates."
+      - "Users can sync source data changes by calling refresh."
+      - "Users can trigger refresh anytime based on their data lake update pattern and query visibility requirements."
+      - "refresh updates Zilliz Cloud's view of the source data instead of requiring a full re-import."
+    must_include:
+      - "refresh"
+      - "Incremental synchronization"
+      - "Users can choose when to sync"
+      - "A simple explanation of what refresh does"
+    must_not_say:
+      - "Source data changes are synced automatically in real time with no refresh call"
+      - "Users must fully rebuild and re-import the dataset every time the lake data changes"
+    response_outline:
+      - "How sync works"
+      - "When to call refresh"
+      - "What refresh does"
+    style:
+      language: "same as user"
+      tone: "concise, helpful"
