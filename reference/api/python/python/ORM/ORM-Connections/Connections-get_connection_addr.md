@@ -69,7 +69,7 @@ from pymilvus import connections
 connections.get_connection_addr(alias="default")
 
 # Output
-# {'address': 'in03-**************.api.gcp-us-west1.cloud-uat3.zilliz.com:443', 'user': ''}
+# {'address': 'in03-**************.api.gcp-us-west1.cloud.zilliz.com:443', 'user': ''}
 ```
 
 ## Related operations\{#related-operations}

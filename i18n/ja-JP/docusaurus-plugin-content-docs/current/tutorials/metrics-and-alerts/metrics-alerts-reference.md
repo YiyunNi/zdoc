@@ -210,7 +210,7 @@ Zilliz Cloud はメトリクスを以下のレベルに分類しています：
      <td><p>Number of Flush 運用（counts/min）</p></td>
      <td><p>クラスタでのフラッシュ操作の数。</p></td>
      <td><p>Dedicated（Enterprise または ビジネスクリティカル）/ BYOC</p></td>
-     <td><p>フラッシュ操作を頻繁に実行しすぎると、クラスタ全体のパフォーマンスに悪影響を与える可能性があります。詳細については、<a href="https://docs.cloud-uat3.zilliz.com/docs/limits#flush">Zilliz Cloud 制限s</a> を参照してください。</p></td>
+     <td><p>フラッシュ操作を頻繁に実行しすぎると、クラスタ全体のパフォーマンスに悪影響を与える可能性があります。詳細については、<a href="./limits#flush">Zilliz Cloud 制限s</a> を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>Cache Hit Rate（%）</p></td>

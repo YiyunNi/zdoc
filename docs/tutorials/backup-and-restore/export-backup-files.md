@@ -110,7 +110,7 @@ The response to the above request would be a Job ID as follows:
 
 Once you click **Export**, an export job is generated automatically:
 
-1. Go to the [Jobs](https://docs.cloud-uat3.zilliz.com/docs/job-center) page in the left-side navigation pane.
+1. Go to the [Jobs](./job-center) page in the left-side navigation pane.
 
 1. Monitor the job's **Status**:
 

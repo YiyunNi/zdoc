@@ -147,13 +147,13 @@ import Grid from '@site/src/components/Grid';
 
         - **リージョン単位の制御されたアクセス** — アクセスは Storage Integration と Zilliz Cloud RBAC により管理され、承認済みプロジェクトユーザーのみが External Volume を作成・管理できます。
 
-        詳細は [External Volumes](https://docs.cloud-uat3.zilliz.com/docs/external-volume) を参照してください。
+        詳細は [External Volumes](./external-volume) を参照してください。
 
         ## Large TopK\{#large-topk}
 
         Large TopK がコレクションレベルでサポートされ、有効化したコレクションでは返却エンティティ数の上限が 16,384 から 1,000,000 に拡張されました。Serving Cluster と On-demand Compute の両方で利用でき、データマイニングやバッチ分析ワークロードに最適です。候補生成、モデル評価、大規模類似検索などのユースケースで、より広い候補リコールを実現します。
 
-        詳細は [Use Large TopK](https://docs.cloud-uat3.zilliz.com/docs/use-large-topk) を参照してください。
+        詳細は [Use Large TopK](./use-large-topk) を参照してください。
 
         [On-Demand Compute Cost](./on-demand-compute-cost)
 

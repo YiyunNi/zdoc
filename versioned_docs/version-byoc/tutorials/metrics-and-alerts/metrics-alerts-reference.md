@@ -233,7 +233,7 @@ These metrics describe resource usage, performance, and data within individual c
      <td><p>Number of Flush Operations (counts/min)</p></td>
      <td><p>The number of flush operations on a cluster.</p></td>
      <td><p>Dedicated (Enterprise or  Business Critical) / BYOC</p></td>
-     <td><p>Performing flush operations too frequently can negatively impact the overall performance of the cluster. For more information, refer to <a href="https://docs.cloud-uat3.zilliz.com/docs/limits#flush">Zilliz Cloud Limits</a>.</p></td>
+     <td><p>Performing flush operations too frequently can negatively impact the overall performance of the cluster. For more information, refer to <a href="./limits#flush">Zilliz Cloud Limits</a>.</p></td>
    </tr>
    <tr>
      <td><p>Cache Hit Rate (%)</p></td>

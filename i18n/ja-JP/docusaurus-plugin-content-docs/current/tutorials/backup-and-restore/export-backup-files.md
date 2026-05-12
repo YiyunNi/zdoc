@@ -107,7 +107,7 @@ curl --request POST \
 
 **Export** をクリックすると、エクスポート ジョブが自動的に生成されます。
 
-1. 左側のナビゲーション ペインで [ジョブ](https://docs.cloud-uat3.zilliz.com/docs/job-center) ページに移動します。
+1. 左側のナビゲーション ペインで [ジョブ](./job-center) ページに移動します。
 
 1. ジョブの **Status** を監視します。
 
