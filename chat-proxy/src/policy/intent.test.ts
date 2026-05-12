@@ -27,6 +27,11 @@ describe('resolvePolicyIntent', () => {
     expect(intent).toBe('zcli_roadmap_feedback');
   });
 
+  it('returns null for generic feature request wording without zilliz-cli query context', () => {
+    const intent = resolvePolicyIntent('where can I share feature requests?', ['zilliz-cli']);
+    expect(intent).toBeNull();
+  });
+
   it('returns null for ambiguous zilliz-cli messages', () => {
     const intent = resolvePolicyIntent('how does context affect vector operations?', ['zilliz-cli']);
     expect(intent).toBeNull();

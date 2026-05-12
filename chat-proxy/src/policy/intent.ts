@@ -32,9 +32,8 @@ export function resolvePolicyIntent(query: string, topics: string[]): string | n
   ])) return 'zcli_usage_patterns';
 
   if (hasAny(text, [
-    /roadmap.*zilliz cli/i,
-    /feature requests?.*zilliz cli/i,
-    /share.*feature requests?/i,
+    /(?:zilliz cli.*roadmap|roadmap.*zilliz cli)/i,
+    /(?:zilliz cli.*feature requests?|feature requests?.*zilliz cli)/i,
   ])) return 'zcli_roadmap_feedback';
 
   return null;
