@@ -10,12 +10,19 @@ policies:
     must_include:
       - "Who it is best for"
       - "Why it fits AI search workloads"
+    trigger_phrases:
+      - "best-fit use cases for external data lake search"
+      - "ideal use cases for external data lake search"
+      - "who is external data lake search best for"
     must_not_say:
       - "Users must first migrate all lake data into Zilliz Cloud"
       - "It is mainly for replacing Spark or Ray as a general-purpose data processing engine"
     response_outline:
       - "Best-fit users and workloads"
       - "Why it is different from traditional big data engines"
+    style:
+      language: "same as user"
+      tone: "concise"
 
   - intent_id: external_data_lake_search_how_it_works
     fixed_facts:
@@ -28,13 +35,23 @@ policies:
       - "Bring Your Own Bucket"
       - "Create an external collection"
       - "Build indexes and query directly"
+      - "Must organize the steps collected from docs into the above three steps."
+    trigger_phrases:
+      - "how external data lake search works"
+      - "how does external data lake search work"
+      - "external data lake search workflow"
+      - "steps for external data lake search"
     must_not_say:
       - "The workflow requires copying the source data into Zilliz Cloud first"
       - "The setup is complex and requires many manual data transformation steps"
+      - "Information unrelated to the actual workflow steps, such as best-fit use cases."
     response_outline:
       - "Step 1: Bring Your Own Bucket"
       - "Step 2: Create an external collection"
       - "Step 3: Build indexes and query directly"
+    style:
+      language: "same as user"
+      tone: "concise"
 
   - intent_id: external_data_lake_search_supported_formats
     fixed_facts:
@@ -45,12 +62,20 @@ policies:
       - "Iceberg"
       - "Parquet"
       - "Vortex"
+    trigger_phrases:
+      - "what formats are supported in external data lake search"
+      - "supported formats for external data lake search"
+      - "does external data lake search support iceberg"
     must_not_say:
       - "All lakehouse or open table formats are supported"
       - "Delta Lake is supported"
       - "Hudi is supported"
+      - "Information unrelated to the supported formats."
     response_outline:
       - "Supported table and open data formats"
+    style:
+      language: "same as user"
+      tone: "concise"
 
   - intent_id: external_data_lake_search_sync_updates
     fixed_facts:
@@ -61,10 +86,18 @@ policies:
       - "Zilliz External Collection provides incremental synchronization capabilities"
       - "Users can choose when to sync"
       - "A simple explanation of how refresh works"
+    trigger_phrases:
+      - "how to sync updates for external data lake search"
+      - "does external data lake search auto sync"
+      - "when should i call refresh for external collection"
     must_not_say:
       - "Source data changes are synced automatically in real time with no refresh call"
       - "Users must fully rebuild and re-import the dataset every time the lake data changes"
+      - "Information unrelated to the actual workflow steps."
     response_outline:
       - "For data lake updates, Zilliz External Collection provides incremental synchronization capabilities."
       - "Based on the data lake update pattern and query visibility requirements, users can sync data anytime with a refresh call."
       - "A simple explanation of how refresh() works"
+    style:
+      language: "same as user"
+      tone: "concise"
