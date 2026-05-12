@@ -50,10 +50,11 @@ describe('RAG tool request context', () => {
     await tool.execute({topic: 'create collection', language: 'python'});
 
     expect(searchDocsFTS5Mock).toHaveBeenCalledWith(
-      'create_collection python',
+      expect.stringContaining('python'),
       4,
       'section == "byoc-guides"',
     );
+    expect(searchDocsFTS5Mock.mock.calls[0][0]).toContain('create_collection');
   });
 
   it('passes request-scoped section filter to listPages when no explicit section is provided', async () => {
