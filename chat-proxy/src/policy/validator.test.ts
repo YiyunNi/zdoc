@@ -17,6 +17,15 @@ const policy: PolicyPayload = {
 };
 
 describe('validatePolicyResponse', () => {
+  const phrasePolicy: PolicyPayload = {
+    intent_id: 'phrase_boundary_test',
+    fixed_facts: [],
+    must_include: ['install'],
+    must_not_say: [],
+    response_outline: [],
+    style: {language: 'same as user', tone: 'concise, helpful'},
+  };
+
   it('passes when response satisfies include/exclude/outline rules', () => {
     const text = [
       'Installation methods',
@@ -62,5 +71,17 @@ describe('validatePolicyResponse', () => {
     const result = validatePolicyResponse(policy, text);
     expect(result.ok).toBe(false);
     expect(result.violations.some(v => v.type === 'outline_order')).toBe(true);
+  });
+
+  it('does not match required phrase inside a larger word', () => {
+    const result = validatePolicyResponse(phrasePolicy, 'Please reinstall the CLI');
+    expect(result.ok).toBe(false);
+    expect(result.violations.some(v => v.type === 'missing_must_include')).toBe(true);
+  });
+
+  it('matches required phrase with case and whitespace variance', () => {
+    const result = validatePolicyResponse(phrasePolicy, '  Please\n   INSTALL   the CLI  ');
+    expect(result.ok).toBe(true);
+    expect(result.violations).toEqual([]);
   });
 });
