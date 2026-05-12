@@ -39,6 +39,10 @@ import {handlePostAction} from './post-action-handler.js';
 import type {ResolvedModel} from './runtime-config.js';
 import {bedrockAiSdkMaxRetries} from './bedrock-guard.js';
 import {createDeferred, LruTtlCache, normalizeQuery, stableHash} from './cache.js';
+import {resolvePolicyIntent} from './policy/intent.js';
+import {getPolicyByIntent} from './policy/catalog.js';
+import {validatePolicyResponse} from './policy/validator.js';
+import {buildPolicyFallback} from './policy/fallback.js';
 
 // Load topic prompts from disk at startup
 loadPrompts();
@@ -105,6 +109,17 @@ function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T
 function truncateText(text: string, maxChars: number): string {
   if (!text || text.length <= maxChars) return text;
   return text.slice(0, maxChars).trimEnd() + '\n... [truncated]';
+}
+
+function isPolicyModeBEnabled(): boolean {
+  return process.env.POLICY_MODE_B_ENABLED === 'true';
+}
+
+function getPolicyModeBTopics(): Set<string> {
+  return new Set((process.env.POLICY_MODE_B_TOPICS || 'zilliz-cli')
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean));
 }
 
 function sleep(ms: number): Promise<void> {
@@ -1356,6 +1371,16 @@ app.post('/chat', async c => {
 
           // Inject topic-specific prompts (max 2 to stay within context limits)
           const topics = routeResult.topics || [];
+          const modeBEnabled = isPolicyModeBEnabled();
+          const modeBTopics = getPolicyModeBTopics();
+          const matchedPolicyTopic = modeBEnabled ? topics.find(topic => modeBTopics.has(topic)) : undefined;
+          const policyIntentId = matchedPolicyTopic
+            ? resolvePolicyIntent(ragQuery, topics)
+            : null;
+          const matchedPolicy = matchedPolicyTopic && policyIntentId
+            ? getPolicyByIntent(matchedPolicyTopic, policyIntentId)
+            : null;
+
           for (const topic of topics.slice(0, 2)) {
             const topicContent = getTopicPrompt(topic);
             if (topicContent) {
@@ -1404,6 +1429,16 @@ app.post('/chat', async c => {
                 : toolChunks.map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`);
               const context = contextParts.join('\n\n---\n\n') || 'No tool results were returned. Use the agent instructions, page context, and general Zilliz Cloud documentation knowledge; be explicit if the collected context is weak.';
               const draft = draftText ? `\n\nDraft text from tool collection phase (may be incomplete):\n${truncateText(draftText, 3000)}` : '';
+              const policyBlock = matchedPolicy
+                ? `\n\n## Mode B Policy Payload\n${JSON.stringify({
+                    intent_id: matchedPolicy.intent_id,
+                    fixed_facts: matchedPolicy.fixed_facts,
+                    must_include: matchedPolicy.must_include,
+                    must_not_say: matchedPolicy.must_not_say,
+                    response_outline: matchedPolicy.response_outline,
+                    style: matchedPolicy.style,
+                  }, null, 2)}\n\nAnswer naturally, but preserve all fixed facts exactly. Do not add unsupported claims.`
+                : '';
               debug('chat.final_synthesis.started', {
                 toolCount: toolsCalled.length,
                 toolSummaryCount: toolResultSummaries.length,
@@ -1414,7 +1449,7 @@ app.post('/chat', async c => {
               finalResultRef.current = streamText({
                 model: modelInstance,
                 maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
-                system: `${systemPrompt}\n\n## Final synthesis mode\nYou are in the final answer phase. Tool use is disabled. You MUST answer the user directly using the provided collected context, current page context, and agent instructions. If the context is weak, still provide the best safe answer and mention what to verify. Be concise by default.`,
+                system: `${systemPrompt}${policyBlock}\n\n## Final synthesis mode\nYou are in the final answer phase. Tool use is disabled. You MUST answer the user directly using the provided collected context, current page context, and agent instructions. If the context is weak, still provide the best safe answer and mention what to verify. Be concise by default.`,
                 messages: [
                   {role: 'user', content: `User question:\n${ragQuery}\n\nCollected context from tools:\n${context}${draft}\n\nWrite the final answer now. Include concise steps and code if relevant. Keep the answer under 700 words unless the user explicitly asks for more detail.`},
                 ],
@@ -1435,8 +1470,10 @@ app.post('/chat', async c => {
                 }
                 if (part.type === 'text-delta') {
                   fullText += part.text;
-                  deltaCount++;
-                  sendAndRecord('delta', JSON.stringify({text: part.text}));
+                  if (!matchedPolicy) {
+                    deltaCount++;
+                    sendAndRecord('delta', JSON.stringify({text: part.text}));
+                  }
                 } else if (process.env.DEBUG_STREAM === 'true') {
                   console.log('[final-stream] unhandled part', JSON.stringify({type: (part as any).type, part: summarizeForDebugLog(part)}));
                 }
@@ -1448,9 +1485,9 @@ app.post('/chat', async c => {
             }
           };
 
-          const toollessRag = shouldUseToollessRag(agentConfig.type);
+          const toollessRag = !matchedPolicy && shouldUseToollessRag(agentConfig.type);
           let toollessRagAttempted = toollessRag;
-          let fastPath = !toollessRag && shouldUseFastPath(agentConfig.type);
+          let fastPath = !matchedPolicy && !toollessRag && shouldUseFastPath(agentConfig.type);
           const fastPathMaxToolRounds = getFastPathMaxToolRounds(agentConfig.type);
 
           if (toollessRag) {
@@ -1767,6 +1804,85 @@ app.post('/chat', async c => {
             deltaCount++;
             sendAndRecord('delta', JSON.stringify({text: fullText}));
             console.warn('[Fallback] emitted deterministic no-response fallback', JSON.stringify({requestId, toolsCalled: toolsCalled.length, toolChunks: toolChunks.length}));
+          }
+
+          let policyRetryCount = 0;
+          let policyValidationPassed = true;
+          let policyFallbackUsed = false;
+
+          if (matchedPolicy) {
+            const initialValidation = validatePolicyResponse(matchedPolicy, fullText);
+            if (!initialValidation.ok) {
+              policyValidationPassed = false;
+              policyRetryCount = 1;
+              const retryPrompt = [
+                'Your previous answer violated policy.',
+                ...initialValidation.violations.map(v => `- ${v.message}`),
+                'Rewrite now and satisfy all policy requirements exactly.',
+              ].join('\n');
+
+              let retriedText = '';
+              const retryResult = streamText({
+                model: modelInstance,
+                maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
+                system: `${systemPrompt}\n\n## Mode B Policy Payload\n${JSON.stringify({
+                  intent_id: matchedPolicy.intent_id,
+                  fixed_facts: matchedPolicy.fixed_facts,
+                  must_include: matchedPolicy.must_include,
+                  must_not_say: matchedPolicy.must_not_say,
+                  response_outline: matchedPolicy.response_outline,
+                  style: matchedPolicy.style,
+                }, null, 2)}\n\nAnswer naturally, but preserve all fixed facts exactly. Do not add unsupported claims.`,
+                messages: [
+                  {role: 'user', content: `User question:\n${ragQuery}\n\n${retryPrompt}`},
+                ],
+                maxOutputTokens: FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS,
+                temperature: 0.1,
+                abortSignal: AbortSignal.timeout(FINAL_SYNTHESIS_TIMEOUT_MS),
+                experimental_telemetry: makeTelemetry('chat-final-synthesis-policy-retry', {
+                  agentType: agentConfig.type,
+                  sessionId: session.id,
+                  requestId,
+                  model: activeModel,
+                }),
+              });
+
+              for await (const part of retryResult.fullStream) {
+                if (part.type === 'error') {
+                  throw new Error((part as any).error || 'Policy retry stream error');
+                }
+                if (part.type === 'text-delta') {
+                  retriedText += part.text;
+                }
+              }
+
+              const retryValidation = validatePolicyResponse(matchedPolicy, retriedText);
+              if (retryValidation.ok) {
+                fullText = retriedText;
+                policyValidationPassed = true;
+              } else {
+                fullText = buildPolicyFallback(matchedPolicy);
+                policyFallbackUsed = true;
+              }
+            }
+
+            deltaCount++;
+            sendAndRecord('delta', JSON.stringify({text: fullText}));
+            logEvent(session.id, userId, 'policy', agentConfig.type, {
+              requestId,
+              topic: matchedPolicyTopic,
+              intentId: matchedPolicy.intent_id,
+              validationPassed: policyValidationPassed,
+              retryCount: policyRetryCount,
+              fallbackUsed: policyFallbackUsed,
+            }, userMeta, source);
+            debug('chat.policy.completed', {
+              topic: matchedPolicyTopic,
+              intentId: matchedPolicy.intent_id,
+              validationPassed: policyValidationPassed,
+              retryCount: policyRetryCount,
+              fallbackUsed: policyFallbackUsed,
+            });
           }
 
           // Stream completed successfully — mark LLM health as good
