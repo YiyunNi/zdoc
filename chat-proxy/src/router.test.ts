@@ -101,6 +101,23 @@ describe('routeIntent', () => {
     expect(callArgs.prompt).toContain('on-demand-search:');
   });
 
+  it('accepts external-data-lake-search topic from the router and describes it in prompt', async () => {
+    mockGenerateObject.mockResolvedValueOnce({
+      object: {
+        agent: 'product',
+        topics: ['external-data-lake-search'],
+        reasoning: 'external lake search question',
+      },
+    } as any);
+
+    const result = await routeIntent('How do I search Parquet data in my bucket without importing it?', [], 'sess-external-lake-topic');
+
+    expect(result.topics).toEqual(['external-data-lake-search']);
+
+    const callArgs = mockGenerateObject.mock.calls[0][0] as any;
+    expect(callArgs.prompt).toContain('external-data-lake-search:');
+  });
+
   it('accepts backfill-and-schema-iteration topic from the router and describes it in prompt', async () => {
     mockGenerateObject.mockResolvedValueOnce({
       object: {

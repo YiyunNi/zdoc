@@ -22,6 +22,7 @@ const TOPIC_ENUM = [
   'schema-design', 'indexes', 'search', 'resources', 'cluster-connection',
   'import', 'migration', 'access-control', 'integrations', 'pricing',
   'security', 'compliance-and-privacy', 'reranking', 'on-demand-search',
+  'external-data-lake-search',
   'backfill-and-schema-iteration', 'zilliz-cli',
 ] as const;
 
@@ -95,7 +96,8 @@ Topics (select 1-2 most relevant):
 - security: Authentication, SSO/MFA, API keys, cluster credentials, Private Link, IP allowlists, encryption, CMEK, data isolation, audit logs
 - compliance-and-privacy: Trust Center, SOC 2 Type II, ISO/IEC 27001, GDPR, HIPAA/BAA, privacy posture, vendor review
 - reranking: Cohere, Voyage AI, Boost, Decay, RRF, Weighted rankers, reranker selection, limitations, tuning, cost and latency tradeoffs
-- on-demand-search: On-demand search architecture, external collections, refresh/indexing flow, session-attached compute, on-demand vs serverless tradeoffs
+- on-demand-search: On-demand search compute architecture, session-attached compute, CU sizing, on-demand vs serverless vs serving-cluster tradeoffs
+- external-data-lake-search: External volumes, External Collections, supported external formats, refresh/indexing flow, and zero-copy lake search
 - backfill-and-schema-iteration: Offline historical field backfill, schema iteration, Parquet input preparation, mode selection (coalesce/overwrite/replace), and online impact
 - zilliz-cli: Zilliz CLI install/login/context setup, cloud-management commands, data-operation commands, and CLI troubleshooting
 `;
@@ -131,6 +133,9 @@ Output: {"agent": "general", "topics": ["reranking"], "reasoning": "The user is 
 
 Input: "Should I use on-demand search or serverless for bursty 20TB queries?"
 Output: {"agent": "product", "topics": ["on-demand-search", "resources"], "reasoning": "The user is choosing architecture and sizing tradeoffs for large bursty workloads."}
+
+Input: "How do I search Parquet data in my bucket without importing it?"
+Output: {"agent": "product", "topics": ["external-data-lake-search", "on-demand-search"], "reasoning": "The user is asking about zero-copy external lake search and the On-Demand compute model commonly used with it."}
 
 Input: "How do I backfill a new JSON field for historical rows without re-importing everything?"
 Output: {"agent": "schema", "topics": ["backfill-and-schema-iteration"], "reasoning": "The user is asking about schema iteration and historical field backfill workflow."}
