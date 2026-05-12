@@ -1,5 +1,7 @@
 import {describe, it, expect, vi, beforeEach, afterEach} from 'vitest';
 
+const getPolicyModeRegistrationMock = vi.hoisted(() => vi.fn(() => ({enabled: true, topics: new Set(['zilliz-cli'])})));
+
 // Mock all external dependencies
 vi.mock('ai', () => ({
   streamText: vi.fn(),
@@ -33,6 +35,10 @@ vi.mock('./rag.js', () => ({
 }));
 vi.mock('./router.js', () => ({
   routeIntent: vi.fn().mockResolvedValue({agent: 'general', reasoning: 'test'}),
+}));
+vi.mock('./policy/registration.js', () => ({
+  getPolicyModeRegistration: getPolicyModeRegistrationMock,
+  clearPolicyRegistrationCache: vi.fn(),
 }));
 vi.mock('./logger.js', async () => {
   const actual = await vi.importActual<typeof import('./logger.js')>('./logger.js');
@@ -120,10 +126,9 @@ describe('HTTP Endpoints', () => {
     clearResponseCache();
     clearPolicyCache();
     delete process.env.DEBUG_CHAT_FLOW;
-    delete process.env.POLICY_MODE_B_ENABLED;
-    delete process.env.POLICY_MODE_B_TOPICS;
     vi.restoreAllMocks();
     vi.clearAllMocks();
+    getPolicyModeRegistrationMock.mockReturnValue({enabled: true, topics: new Set(['zilliz-cli'])});
     vi.mocked(checkGuard).mockReturnValue({allowed: true});
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
@@ -136,8 +141,6 @@ describe('HTTP Endpoints', () => {
 
   afterEach(() => {
     delete process.env.DEBUG_CHAT_FLOW;
-    delete process.env.POLICY_MODE_B_ENABLED;
-    delete process.env.POLICY_MODE_B_TOPICS;
     clearPolicyCache();
     vi.restoreAllMocks();
   });
@@ -471,8 +474,6 @@ describe('HTTP Endpoints', () => {
   });
 
   it('injects mode-b policy payload into final synthesis when enabled and intent matches', async () => {
-    process.env.POLICY_MODE_B_ENABLED = 'true';
-    process.env.POLICY_MODE_B_TOPICS = 'zilliz-cli';
     loadTopicPolicies('zilliz-cli');
     vi.mocked(routeIntent).mockResolvedValue({agent: 'general', topics: ['zilliz-cli'], reasoning: 'policy test'} as any);
 
@@ -502,9 +503,61 @@ describe('HTTP Endpoints', () => {
     expect(String(synthesisCall.system || '')).toContain('zcli_get_started_in_minutes');
   });
 
-  it('retries once on policy violation then falls back deterministically on second failure', async () => {
-    process.env.POLICY_MODE_B_ENABLED = 'true';
-    process.env.POLICY_MODE_B_TOPICS = 'zilliz-cli';
+  it('retries policy once and uses compliant retry text without fallback', async () => {
+    loadTopicPolicies('zilliz-cli');
+    vi.mocked(routeIntent).mockResolvedValue({agent: 'general', topics: ['zilliz-cli'], reasoning: 'policy retry success'} as any);
+
+    vi.mocked(streamText)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'tool-call', toolName: 'searchDocs', input: {query: 'collection'}};
+        })(),
+        totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 1, totalTokens: 2}),
+      } as any)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'text-delta', text: 'bad first answer'};
+        })(),
+        totalUsage: Promise.resolve({inputTokens: 2, outputTokens: 2, totalTokens: 4}),
+      } as any)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'text-delta', text: 'Installation methods\nHow to install\nOne end-to-end command set\n-h output overview + CLI reference\nFrom login, create cluster, create collection, insert, and query: provide one command set example.\nUse -h commands for quick capability overview\nYou can also continue by reading the documentation'};
+        })(),
+        totalUsage: Promise.resolve({inputTokens: 3, outputTokens: 3, totalTokens: 6}),
+      } as any);
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Request-ID': 'policy-retry-success-1'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'get started with zilliz cli in minutes'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    const events = parseSSE(await res.text());
+    const deltaEvents = events.filter(e => e.event === 'delta');
+    const joinedDelta = deltaEvents.map(e => String(e.data.text)).join('');
+    expect(deltaEvents.length).toBeGreaterThan(1);
+    expect(joinedDelta).toContain('Installation methods');
+    expect(joinedDelta).not.toContain('Here is the safest verified guidance:');
+    const usageEvent = events.find(e => e.event === 'usage');
+    expect(usageEvent?.data).toMatchObject({inputTokens: 6, outputTokens: 6, totalTokens: 12});
+
+    const policyLogCall = vi.mocked(logEvent).mock.calls.find(call => call[2] === 'policy');
+    expect(policyLogCall?.[4]).toMatchObject({
+      intentId: 'zcli_get_started_in_minutes',
+      validationPassed: true,
+      retryCount: 1,
+      fallbackUsed: false,
+      requestId: 'policy-retry-success-1',
+    });
+
+    const retryCall = vi.mocked(streamText).mock.calls[2]?.[0] as any;
+    expect(String(retryCall.messages?.[0]?.content || '')).toContain('Collected context from tools:');
+    expect(String(retryCall.messages?.[0]?.content || '')).toContain('Violation list:');
+  });
+
+  it('retries once on policy violation then falls back deterministically on retry stream error', async () => {
     loadTopicPolicies('zilliz-cli');
     vi.mocked(routeIntent).mockResolvedValue({agent: 'general', topics: ['zilliz-cli'], reasoning: 'policy retry'} as any);
 
@@ -523,9 +576,9 @@ describe('HTTP Endpoints', () => {
       } as any)
       .mockReturnValueOnce({
         fullStream: (async function* () {
-          yield {type: 'text-delta', text: 'bad second answer'};
+          yield {type: 'error', error: 'retry stream failed'};
         })(),
-        totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 1, totalTokens: 2}),
+        totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 0, totalTokens: 1}),
       } as any);
 
     const res = await app.request('/chat', {
@@ -536,8 +589,12 @@ describe('HTTP Endpoints', () => {
 
     expect(res.status).toBe(200);
     const events = parseSSE(await res.text());
-    const joinedDelta = events.filter(e => e.event === 'delta').map(e => String(e.data.text)).join('\n');
+    const deltaEvents = events.filter(e => e.event === 'delta');
+    const joinedDelta = deltaEvents.map(e => String(e.data.text)).join('');
     expect(vi.mocked(streamText).mock.calls.length).toBe(3);
+    expect(deltaEvents.length).toBeGreaterThan(1);
+    expect(events.find(e => e.event === 'error')).toBeUndefined();
+    expect(events.find(e => e.event === 'done')?.data?.stop_reason).toBe('end_turn');
     expect(joinedDelta).toContain('Here is the safest verified guidance:');
     expect(joinedDelta).toContain('How to install');
 
@@ -552,9 +609,38 @@ describe('HTTP Endpoints', () => {
     });
   });
 
+  it('does not apply mode-b policy when policy registration is disabled', async () => {
+    getPolicyModeRegistrationMock.mockReturnValue({enabled: false, topics: new Set(['zilliz-cli'])});
+    vi.mocked(routeIntent).mockResolvedValue({agent: 'general', topics: ['zilliz-cli'], reasoning: 'policy-disabled'} as any);
+
+    vi.mocked(streamText)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'tool-call', toolName: 'searchDocs', input: {query: 'collection'}};
+        })(),
+        totalUsage: Promise.resolve({inputTokens: 1, outputTokens: 1, totalTokens: 2}),
+      } as any)
+      .mockReturnValueOnce({
+        fullStream: (async function* () {
+          yield {type: 'text-delta', text: 'regular final answer'};
+        })(),
+      } as any);
+
+    const res = await app.request('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'x-forwarded-for': '192.168.1.210'},
+      body: JSON.stringify({messages: [{role: 'user', content: 'get started with zilliz cli in minutes'}]}),
+    });
+
+    expect(res.status).toBe(200);
+    await res.text();
+    const synthesisCall = vi.mocked(streamText).mock.calls[1]?.[0] as any;
+    expect(String(synthesisCall.system || '')).not.toContain('## Mode B Policy Payload');
+    const policyLogCall = vi.mocked(logEvent).mock.calls.find(call => call[2] === 'policy');
+    expect(policyLogCall).toBeUndefined();
+  });
+
   it('does not apply mode-b policy when policy topic is not matched', async () => {
-    process.env.POLICY_MODE_B_ENABLED = 'true';
-    process.env.POLICY_MODE_B_TOPICS = 'zilliz-cli';
     vi.mocked(routeIntent).mockResolvedValue({agent: 'general', topics: ['indexes'], reasoning: 'non-policy'} as any);
 
     vi.mocked(streamText)
@@ -572,7 +658,7 @@ describe('HTTP Endpoints', () => {
 
     const res = await app.request('/chat', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: {'Content-Type': 'application/json', 'x-forwarded-for': '192.168.1.211'},
       body: JSON.stringify({messages: [{role: 'user', content: 'what index type should I use'}]}),
     });
 

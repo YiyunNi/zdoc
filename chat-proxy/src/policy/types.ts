@@ -13,7 +13,7 @@ export interface PolicyPayload {
 }
 
 export interface PolicyValidationViolation {
-  type: 'missing_must_include' | 'contains_must_not_say' | 'outline_order';
+  type: 'quality_empty' | 'quality_too_short' | 'quality_low_actionability';
   value: string;
   message: string;
 }

@@ -8,6 +8,7 @@ RUN npm install
 COPY dist/ ./dist/
 COPY src/admin-dashboard.html ./dist/
 COPY prompts/ ./prompts/
+COPY policies/ ./policies/
 COPY data/ ./data/
 COPY package.json ./
 

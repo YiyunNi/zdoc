@@ -18,24 +18,16 @@ const policy: PolicyPayload = {
 };
 
 describe('validatePolicyResponse', () => {
-  const phrasePolicy: PolicyPayload = {
-    intent_id: 'phrase_boundary_test',
-    fixed_facts: [],
-    must_include: ['install'],
-    must_not_say: [],
-    response_outline: [],
-    style: {language: 'same as user', tone: 'concise, helpful'},
-  };
-
-  it('passes when response satisfies include/exclude/outline rules', () => {
+  it('passes actionable structured responses', () => {
     const text = [
-      'Installation methods',
-      'How to install',
-      'One end-to-end command set',
-      'From login, create cluster, create collection, insert, and query: provide one command set example.',
-      '-h output overview + CLI reference',
-      'Use -h commands for quick capability overview',
-      'You can also continue by reading the documentation',
+      '1. Install the CLI',
+      '```bash',
+      'curl -fsSL https://zilliz.com/cli/install.sh | bash',
+      '```',
+      '2. Login',
+      '```bash',
+      'zilliz login',
+      '```',
     ].join('\n');
 
     const result = validatePolicyResponse(policy, text);
@@ -43,45 +35,40 @@ describe('validatePolicyResponse', () => {
     expect(result.violations).toEqual([]);
   });
 
-  it('fails when must_include is missing', () => {
-    const text = 'Installation methods\nOne end-to-end command set\n-h output overview + CLI reference';
-    const result = validatePolicyResponse(policy, text);
+  it('fails empty responses', () => {
+    const result = validatePolicyResponse(policy, '   ');
     expect(result.ok).toBe(false);
-    expect(result.violations.some(v => v.type === 'missing_must_include')).toBe(true);
+    expect(result.violations.some(v => v.type === 'quality_empty')).toBe(true);
   });
 
-  it('fails when must_not_say appears', () => {
+  it('fails responses that are too short', () => {
+    const result = validatePolicyResponse(policy, 'Use zilliz CLI.');
+    expect(result.ok).toBe(false);
+    expect(result.violations.some(v => v.type === 'quality_too_short')).toBe(true);
+  });
+
+  it('fails responses with low actionability signals', () => {
+    const text = 'This is a long descriptive paragraph about the CLI with no commands and no step-by-step format, repeated to exceed length threshold for validation checks.';
+    const result = validatePolicyResponse(policy, text);
+    expect(result.ok).toBe(false);
+    expect(result.violations.some(v => v.type === 'quality_low_actionability')).toBe(true);
+  });
+
+  it('does not fail only because policy phrases are paraphrased', () => {
     const text = [
-      'Installation methods',
-      'How to install',
-      'One end-to-end command set',
-      'Use SDK code instead of zilliz CLI for this CLI setup flow',
-      '-h output overview + CLI reference',
+      '1. Install and verify',
+      '```bash',
+      'curl -fsSL https://zilliz.com/cli/install.sh | bash',
+      'zilliz --version',
+      '```',
+      '2. Authenticate and set context',
+      '```bash',
+      'zilliz login',
+      'zilliz context set --cluster-id inxx-xxxxx --database default',
+      '```',
     ].join('\n');
+
     const result = validatePolicyResponse(policy, text);
-    expect(result.ok).toBe(false);
-    expect(result.violations.some(v => v.type === 'contains_must_not_say')).toBe(true);
-  });
-
-  it('fails when outline order is broken', () => {
-    const text = [
-      'One end-to-end command set',
-      'Installation methods',
-      '-h output overview + CLI reference',
-    ].join('\n');
-    const result = validatePolicyResponse(policy, text);
-    expect(result.ok).toBe(false);
-    expect(result.violations.some(v => v.type === 'outline_order')).toBe(true);
-  });
-
-  it('does not match required phrase inside a larger word', () => {
-    const result = validatePolicyResponse(phrasePolicy, 'Please reinstall the CLI');
-    expect(result.ok).toBe(false);
-    expect(result.violations.some(v => v.type === 'missing_must_include')).toBe(true);
-  });
-
-  it('matches required phrase with case and whitespace variance', () => {
-    const result = validatePolicyResponse(phrasePolicy, '  Please\n   INSTALL   the CLI  ');
     expect(result.ok).toBe(true);
     expect(result.violations).toEqual([]);
   });

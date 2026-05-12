@@ -1,0 +1,4 @@
+policyMode:
+  enabled: true
+  topics:
+    - zilliz-cli

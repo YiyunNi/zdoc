@@ -43,6 +43,7 @@ import {resolvePolicyIntent} from './policy/intent.js';
 import {getPolicyByIntent} from './policy/catalog.js';
 import {validatePolicyResponse} from './policy/validator.js';
 import {buildPolicyFallback} from './policy/fallback.js';
+import {getPolicyModeRegistration} from './policy/registration.js';
 
 // Load topic prompts from disk at startup
 loadPrompts();
@@ -95,6 +96,10 @@ const CACHE_REPLAY_STREAM_ENABLED = process.env.CACHE_REPLAY_STREAM_ENABLED !== 
 const CACHE_REPLAY_INITIAL_DELAY_MS = Number(process.env.CACHE_REPLAY_INITIAL_DELAY_MS || '') || 120;
 const CACHE_REPLAY_DELTA_DELAY_MS = Number(process.env.CACHE_REPLAY_DELTA_DELAY_MS || '') || 12;
 const CACHE_REPLAY_MAX_TOTAL_DELAY_MS = Number(process.env.CACHE_REPLAY_MAX_TOTAL_DELAY_MS || '') || 2500;
+const POLICY_STREAM_CHUNK_MIN_CHARS = Math.max(1, Number(process.env.POLICY_STREAM_CHUNK_MIN_CHARS || '') || 10);
+const POLICY_STREAM_CHUNK_MAX_CHARS = Math.max(POLICY_STREAM_CHUNK_MIN_CHARS, Number(process.env.POLICY_STREAM_CHUNK_MAX_CHARS || '') || 20);
+const POLICY_STREAM_DELTA_DELAY_MIN_MS = Math.max(0, Number(process.env.POLICY_STREAM_DELTA_DELAY_MIN_MS || '') || 18);
+const POLICY_STREAM_DELTA_DELAY_MAX_MS = Math.max(POLICY_STREAM_DELTA_DELAY_MIN_MS, Number(process.env.POLICY_STREAM_DELTA_DELAY_MAX_MS || '') || 48);
 
 function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
   let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -111,15 +116,59 @@ function truncateText(text: string, maxChars: number): string {
   return text.slice(0, maxChars).trimEnd() + '\n... [truncated]';
 }
 
-function isPolicyModeBEnabled(): boolean {
-  return process.env.POLICY_MODE_B_ENABLED === 'true';
+function isPolicyStreamBoundaryChar(char: string): boolean {
+  return /\s|[.,!?;:)\]}]/.test(char);
 }
 
-function getPolicyModeBTopics(): Set<string> {
-  return new Set((process.env.POLICY_MODE_B_TOPICS || 'zilliz-cli')
-    .split(',')
-    .map(s => s.trim())
-    .filter(Boolean));
+function getPolicyStreamChunkEnd(text: string, start: number, minChars: number, maxChars: number): number {
+  const remaining = text.length - start;
+  if (remaining <= maxChars) return text.length;
+
+  const minEnd = Math.min(text.length, start + minChars);
+  const maxEnd = Math.min(text.length, start + maxChars);
+
+  for (let i = maxEnd; i > minEnd; i--) {
+    if (isPolicyStreamBoundaryChar(text[i - 1])) {
+      return i;
+    }
+  }
+
+  for (let i = maxEnd + 1; i < text.length; i++) {
+    if (isPolicyStreamBoundaryChar(text[i - 1])) {
+      return i;
+    }
+  }
+
+  return maxEnd;
+}
+
+function splitTextForPolicyStreaming(text: string, minChars: number, maxChars: number): string[] {
+  if (!text) return [];
+
+  const chunks: string[] = [];
+  let cursor = 0;
+
+  while (cursor < text.length) {
+    const end = getPolicyStreamChunkEnd(text, cursor, minChars, maxChars);
+    if (end <= cursor) break;
+    chunks.push(text.slice(cursor, end));
+    cursor = end;
+  }
+
+  if (cursor < text.length) {
+    chunks.push(text.slice(cursor));
+  }
+
+  return chunks;
+}
+
+function getPolicyStreamDeltaDelayMs(): number {
+  if (POLICY_STREAM_DELTA_DELAY_MAX_MS <= POLICY_STREAM_DELTA_DELAY_MIN_MS) {
+    return POLICY_STREAM_DELTA_DELAY_MIN_MS;
+  }
+
+  return POLICY_STREAM_DELTA_DELAY_MIN_MS
+    + Math.floor(Math.random() * (POLICY_STREAM_DELTA_DELAY_MAX_MS - POLICY_STREAM_DELTA_DELAY_MIN_MS + 1));
 }
 
 function sleep(ms: number): Promise<void> {
@@ -1108,7 +1157,11 @@ app.post('/chat', async c => {
     new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder();
+        let terminalEventSent = false;
         const send = (event: string, data: string) => {
+          if (event === 'done' || event === 'error') {
+            terminalEventSent = true;
+          }
           debug('chat.sse.event.sent', {sseEvent: event, payloadBytes: Buffer.byteLength(data, 'utf8')});
           controller.enqueue(encoder.encode(`event: ${event}\ndata: ${data}\n\n`));
         };
@@ -1371,9 +1424,10 @@ app.post('/chat', async c => {
 
           // Inject topic-specific prompts (max 2 to stay within context limits)
           const topics = routeResult.topics || [];
-          const modeBEnabled = isPolicyModeBEnabled();
-          const modeBTopics = getPolicyModeBTopics();
-          const matchedPolicyTopic = modeBEnabled ? topics.find(topic => modeBTopics.has(topic)) : undefined;
+          const policyRegistration = getPolicyModeRegistration();
+          const matchedPolicyTopic = policyRegistration.enabled
+            ? topics.find(topic => policyRegistration.topics.has(topic))
+            : undefined;
           const policyIntentId = matchedPolicyTopic
             ? resolvePolicyIntent(ragQuery, topics)
             : null;
@@ -1417,28 +1471,50 @@ app.post('/chat', async c => {
           let fullText = '';
           let groundedSourceCount = 0;
           let deltaCount = 0;
+          const emitPolicyDeltaStream = async (text: string) => {
+            const chunks = splitTextForPolicyStreaming(
+              text,
+              POLICY_STREAM_CHUNK_MIN_CHARS,
+              POLICY_STREAM_CHUNK_MAX_CHARS,
+            );
+            for (let i = 0; i < chunks.length; i++) {
+              deltaCount++;
+              sendAndRecord('delta', JSON.stringify({text: chunks[i]}));
+              if (i < chunks.length - 1) {
+                await sleep(getPolicyStreamDeltaDelayMs());
+              }
+            }
+          };
           type StreamTextCallResult = ReturnType<typeof streamText>;
           let result: StreamTextCallResult | null = null;
           const finalResultRef: {current: StreamTextCallResult | null} = {current: null};
+          const retryResultRef: {current: StreamTextCallResult | null} = {current: null};
           let finalSynthesisFailed = false;
+
+          const buildPolicyPayloadBlock = () => matchedPolicy
+            ? `\n\n## Mode B Policy Payload\n${JSON.stringify({
+                intent_id: matchedPolicy.intent_id,
+                fixed_facts: matchedPolicy.fixed_facts,
+                must_include: matchedPolicy.must_include,
+                must_not_say: matchedPolicy.must_not_say,
+                response_outline: matchedPolicy.response_outline,
+                style: matchedPolicy.style,
+              }, null, 2)}\n\nAnswer naturally, but preserve all fixed facts exactly. Do not add unsupported claims.`
+            : '';
+
+          const buildCollectedContextForSynthesis = () => {
+            const contextParts = toolResultSummaries.length > 0
+              ? toolResultSummaries
+              : toolChunks.map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`);
+            const context = contextParts.join('\n\n---\n\n') || 'No tool results were returned. Use the agent instructions, page context, and general Zilliz Cloud documentation knowledge; be explicit if the collected context is weak.';
+            const draft = draftText ? `\n\nDraft text from tool collection phase (may be incomplete):\n${truncateText(draftText, 3000)}` : '';
+            return {context, draft};
+          };
 
           const runFinalSynthesis = async () => {
             try {
-              const contextParts = toolResultSummaries.length > 0
-                ? toolResultSummaries
-                : toolChunks.map((tc, i) => `Source ${i + 1} — ${tc.doc_title}${tc.section ? ' (' + tc.section + ')' : ''}:\n${tc.content.slice(0, 4000)}`);
-              const context = contextParts.join('\n\n---\n\n') || 'No tool results were returned. Use the agent instructions, page context, and general Zilliz Cloud documentation knowledge; be explicit if the collected context is weak.';
-              const draft = draftText ? `\n\nDraft text from tool collection phase (may be incomplete):\n${truncateText(draftText, 3000)}` : '';
-              const policyBlock = matchedPolicy
-                ? `\n\n## Mode B Policy Payload\n${JSON.stringify({
-                    intent_id: matchedPolicy.intent_id,
-                    fixed_facts: matchedPolicy.fixed_facts,
-                    must_include: matchedPolicy.must_include,
-                    must_not_say: matchedPolicy.must_not_say,
-                    response_outline: matchedPolicy.response_outline,
-                    style: matchedPolicy.style,
-                  }, null, 2)}\n\nAnswer naturally, but preserve all fixed facts exactly. Do not add unsupported claims.`
-                : '';
+              const {context, draft} = buildCollectedContextForSynthesis();
+              const policyBlock = buildPolicyPayloadBlock();
               debug('chat.final_synthesis.started', {
                 toolCount: toolsCalled.length,
                 toolSummaryCount: toolResultSummaries.length,
@@ -1815,48 +1891,48 @@ app.post('/chat', async c => {
             if (!initialValidation.ok) {
               policyValidationPassed = false;
               policyRetryCount = 1;
+              const {context, draft} = buildCollectedContextForSynthesis();
               const retryPrompt = [
-                'Your previous answer violated policy.',
+                'Your previous answer violated policy. Rewrite using the same collected context and draft basis.',
+                'Violation list:',
                 ...initialValidation.violations.map(v => `- ${v.message}`),
-                'Rewrite now and satisfy all policy requirements exactly.',
+                'Satisfy all policy requirements exactly.',
               ].join('\n');
 
               let retriedText = '';
-              const retryResult = streamText({
-                model: modelInstance,
-                maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
-                system: `${systemPrompt}\n\n## Mode B Policy Payload\n${JSON.stringify({
-                  intent_id: matchedPolicy.intent_id,
-                  fixed_facts: matchedPolicy.fixed_facts,
-                  must_include: matchedPolicy.must_include,
-                  must_not_say: matchedPolicy.must_not_say,
-                  response_outline: matchedPolicy.response_outline,
-                  style: matchedPolicy.style,
-                }, null, 2)}\n\nAnswer naturally, but preserve all fixed facts exactly. Do not add unsupported claims.`,
-                messages: [
-                  {role: 'user', content: `User question:\n${ragQuery}\n\n${retryPrompt}`},
-                ],
-                maxOutputTokens: FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS,
-                temperature: 0.1,
-                abortSignal: AbortSignal.timeout(FINAL_SYNTHESIS_TIMEOUT_MS),
-                experimental_telemetry: makeTelemetry('chat-final-synthesis-policy-retry', {
-                  agentType: agentConfig.type,
-                  sessionId: session.id,
-                  requestId,
-                  model: activeModel,
-                }),
-              });
+              try {
+                retryResultRef.current = streamText({
+                  model: modelInstance,
+                  maxRetries: bedrockAiSdkMaxRetries(chatModelResolved.provider),
+                  system: `${systemPrompt}${buildPolicyPayloadBlock()}\n\n## Final synthesis mode\nYou are in the final answer phase. Tool use is disabled. You MUST answer the user directly using the provided collected context, current page context, and agent instructions. If the context is weak, still provide the best safe answer and mention what to verify. Be concise by default.`,
+                  messages: [
+                    {role: 'user', content: `User question:\n${ragQuery}\n\nCollected context from tools:\n${context}${draft}\n\n${retryPrompt}\n\nWrite the corrected final answer now.`},
+                  ],
+                  maxOutputTokens: FINAL_SYNTHESIS_MAX_OUTPUT_TOKENS,
+                  temperature: 0.1,
+                  abortSignal: AbortSignal.timeout(FINAL_SYNTHESIS_TIMEOUT_MS),
+                  experimental_telemetry: makeTelemetry('chat-final-synthesis-policy-retry', {
+                    agentType: agentConfig.type,
+                    sessionId: session.id,
+                    requestId,
+                    model: activeModel,
+                  }),
+                });
 
-              for await (const part of retryResult.fullStream) {
-                if (part.type === 'error') {
-                  throw new Error((part as any).error || 'Policy retry stream error');
+                for await (const part of retryResultRef.current.fullStream) {
+                  if (part.type === 'error') {
+                    throw new Error((part as any).error || 'Policy retry stream error');
+                  }
+                  if (part.type === 'text-delta') {
+                    retriedText += part.text;
+                  }
                 }
-                if (part.type === 'text-delta') {
-                  retriedText += part.text;
-                }
+              } catch (err) {
+                console.warn('[PolicyRetry] stream failed, using deterministic fallback', JSON.stringify({requestId, error: summarizeForDebugLog(err instanceof Error ? err.message : String(err), 'error')}));
+                retriedText = '';
               }
 
-              const retryValidation = validatePolicyResponse(matchedPolicy, retriedText);
+              const retryValidation = retriedText ? validatePolicyResponse(matchedPolicy, retriedText) : {ok: false};
               if (retryValidation.ok) {
                 fullText = retriedText;
                 policyValidationPassed = true;
@@ -1866,8 +1942,7 @@ app.post('/chat', async c => {
               }
             }
 
-            deltaCount++;
-            sendAndRecord('delta', JSON.stringify({text: fullText}));
+            await emitPolicyDeltaStream(fullText);
             logEvent(session.id, userId, 'policy', agentConfig.type, {
               requestId,
               topic: matchedPolicyTopic,
@@ -1893,11 +1968,13 @@ app.post('/chat', async c => {
           try {
             const toolUsage = result ? await Promise.resolve(result.totalUsage).catch(() => null) : null;
             const finalUsage = finalResultRef.current ? await Promise.resolve(finalResultRef.current.totalUsage).catch(() => null) : null;
-            const inputTokens = (toolUsage?.inputTokens ?? 0) + (finalUsage?.inputTokens ?? 0);
-            const outputTokens = (toolUsage?.outputTokens ?? 0) + (finalUsage?.outputTokens ?? 0);
+            const retryUsage = retryResultRef.current ? await Promise.resolve(retryResultRef.current.totalUsage).catch(() => null) : null;
+            const inputTokens = (toolUsage?.inputTokens ?? 0) + (finalUsage?.inputTokens ?? 0) + (retryUsage?.inputTokens ?? 0);
+            const outputTokens = (toolUsage?.outputTokens ?? 0) + (finalUsage?.outputTokens ?? 0) + (retryUsage?.outputTokens ?? 0);
             const totalTokens = (toolUsage?.totalTokens ?? ((toolUsage?.inputTokens ?? 0) + (toolUsage?.outputTokens ?? 0))) +
-              (finalUsage?.totalTokens ?? ((finalUsage?.inputTokens ?? 0) + (finalUsage?.outputTokens ?? 0)));
-            const cachedInputTokens = (toolUsage?.cachedInputTokens ?? 0) + (finalUsage?.cachedInputTokens ?? 0);
+              (finalUsage?.totalTokens ?? ((finalUsage?.inputTokens ?? 0) + (finalUsage?.outputTokens ?? 0))) +
+              (retryUsage?.totalTokens ?? ((retryUsage?.inputTokens ?? 0) + (retryUsage?.outputTokens ?? 0)));
+            const cachedInputTokens = (toolUsage?.cachedInputTokens ?? 0) + (finalUsage?.cachedInputTokens ?? 0) + (retryUsage?.cachedInputTokens ?? 0);
             if (inputTokens > 0 || outputTokens > 0) {
               tokenUsage = {
                 inputTokens,
@@ -2199,6 +2276,12 @@ app.post('/chat', async c => {
             resolveOwnedInflight([]);
             recordLlmDisconnect();
             return; // Let finally block close the controller
+          }
+
+          if (terminalEventSent) {
+            debug('chat.response.error', {errorKind: 'post_terminal_error', error: message, clientDisconnected: false});
+            console.warn('[Chat] Post-terminal stream error', JSON.stringify({requestId, error: summarizeForDebugLog(message, 'error')}));
+            return;
           }
 
           debug('chat.response.error', {errorKind: 'stream_error', error: message, clientDisconnected: false});

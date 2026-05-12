@@ -12,6 +12,7 @@ policies:
     must_not_say:
       - "Use SDK code instead of zilliz CLI for this CLI setup flow"
       - "Dedicated-only commands are available on Free or Serverless"
+      - "Do not include anything about the China site."
     response_outline:
       - "Installation methods"
       - "One end-to-end command set"
