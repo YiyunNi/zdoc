@@ -13,10 +13,10 @@ type: docx
 token: RriNdfGjjofQL4x8XlhcHug6nvd
 sidebar_position: 1
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: MLhsf6VLElWmWudpYZXcamShn0e
 sidebar_position: 7
 sidebar_label: "User"
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud

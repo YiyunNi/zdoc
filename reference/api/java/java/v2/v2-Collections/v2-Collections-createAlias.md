@@ -13,10 +13,10 @@ type: docx
 token: BujpdsEJnozVT4xY3NFczyfrnDe
 sidebar_position: 6
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud

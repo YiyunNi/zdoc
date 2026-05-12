@@ -13,10 +13,10 @@ type: docx
 token: QrOmdt65AooKEkxVmNuc7qunnmf
 sidebar_position: 5
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud

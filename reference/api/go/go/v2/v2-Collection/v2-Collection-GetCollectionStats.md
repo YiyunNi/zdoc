@@ -13,10 +13,10 @@ type: docx
 token: L4CvdyBIVoFsMNx546qcBqrOnJd
 sidebar_position: 18
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud

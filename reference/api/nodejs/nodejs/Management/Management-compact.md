@@ -13,10 +13,10 @@ type: docx
 token: DCK5d56UZop0kGxpQu8cLqlvndg
 sidebar_position: 2
 keywords: 
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud

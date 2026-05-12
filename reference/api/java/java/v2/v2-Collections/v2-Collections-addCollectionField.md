@@ -13,10 +13,10 @@ type: docx
 token: V9rBdJEGzoCybDx9FIfcpqJbnlc
 sidebar_position: 23
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud

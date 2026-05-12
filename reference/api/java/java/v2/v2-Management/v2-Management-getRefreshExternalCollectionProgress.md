@@ -13,10 +13,10 @@ type: docx
 token: FzEydqTwRoajhnxZOftcKxKpndg
 sidebar_position: 25
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
   - zilliz
   - zilliz cloud
   - cloud

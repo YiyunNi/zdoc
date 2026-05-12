@@ -13,10 +13,10 @@ type: docx
 token: PSdEdxU7ZoTxelx7sLzcAAXsnQH
 sidebar_position: 6
 keywords: 
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud

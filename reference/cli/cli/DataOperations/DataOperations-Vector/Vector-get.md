@@ -13,10 +13,10 @@ type: docx
 token: Nez2dlNZloLWEPxBHOWcad2anLf
 sidebar_position: 2
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

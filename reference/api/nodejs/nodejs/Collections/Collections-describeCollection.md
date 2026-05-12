@@ -10,13 +10,13 @@ beta: false
 notebook: false
 description: "This operation lists detailed information about a specific collection. | Node.js"
 type: docx
-token: Z4Kfd0zFkoQCI8xZiRZc1D8anpc
+token: IuTYdjSHHoznXNx5f7jcKqvYnhr
 sidebar_position: 8
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud
@@ -82,6 +82,10 @@ This method returns a promise that resolves to a **DescribeCollectionResponse** 
     num_partitions: string,
     db_name: string,
     functions: FunctionObject[],
+    external_source?: string,
+    external_spec?: string,
+    do_physical_backfill?: boolean,
+    file_resource_ids?: string[],
     update_timestamp_str: string,
     update_timestamp: number,
     anns_fields: Record<string, FieldSchema>,
@@ -152,6 +156,22 @@ The database that owns this collection.
 
 - **functions** (*FunctionObject[]*) -
 A flattened list of doc-in / doc-out functions attached to the collection.
+
+- **external_source** (*string*) -
+
+    The external source path. Optional.
+
+- **external_spec** (*string*) -
+
+    The external spec configuration. Optional.
+
+- **do_physical_backfill** (*boolean*) -
+
+    Whether to physically backfill external data. Optional.
+
+- **file_resource_ids** (*Array&lt;number | string>*) -
+
+    The external file resource IDs. Optional.
 
 - **update_timestamp_str** (*string*) -
 The hybrid timestamp at which the collection was last updated, formatted as a string.

@@ -13,10 +13,10 @@ type: docx
 token: JfRidhpQRo2tZFxrL87cNODunWc
 sidebar_position: 19
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
   - zilliz
   - zilliz cloud
   - cloud

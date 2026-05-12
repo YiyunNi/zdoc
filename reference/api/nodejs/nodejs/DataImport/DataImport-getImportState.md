@@ -13,10 +13,10 @@ type: docx
 token: DJ4NdIIQ4oeA7gx4bDQcxT3gn0c
 sidebar_position: 2
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud

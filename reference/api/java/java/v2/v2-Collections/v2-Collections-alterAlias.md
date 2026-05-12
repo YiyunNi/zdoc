@@ -13,10 +13,10 @@ type: docx
 token: Fv8EdYIt4oThstxgpzqcm7C0nug
 sidebar_position: 1
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud

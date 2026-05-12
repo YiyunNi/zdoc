@@ -13,10 +13,10 @@ type: docx
 token: A0I6dpXMsofjaVxE0RLcOW3nnWe
 sidebar_position: 6
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud

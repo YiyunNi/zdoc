@@ -13,10 +13,10 @@ type: docx
 token: OShTd6lMhoaxK2xDlExcmzXTnLd
 sidebar_position: 3
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - open source vector db
+  - vector database example
+  - rag vector database
+  - what is vector db
   - zilliz
   - zilliz cloud
   - cloud

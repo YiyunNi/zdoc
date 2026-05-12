@@ -13,10 +13,10 @@ type: docx
 token: JgY9doHQjoNBfMxVnpfcZeHongb
 sidebar_position: 5
 keywords: 
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud

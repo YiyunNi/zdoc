@@ -13,10 +13,10 @@ type: docx
 token: PAP5dHUZZowH4PxBTxac1W4Jnlh
 sidebar_position: 7
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud

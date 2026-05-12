@@ -13,10 +13,10 @@ type: docx
 token: YZ3GdmklAolLnux8LRhcw7hxnvd
 sidebar_position: 11
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

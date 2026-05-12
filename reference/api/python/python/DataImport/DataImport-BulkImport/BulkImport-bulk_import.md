@@ -13,10 +13,10 @@ type: docx
 token: SE6wdwuONoUwQ8x7fdgcKvNwnyg
 sidebar_position: 1
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud

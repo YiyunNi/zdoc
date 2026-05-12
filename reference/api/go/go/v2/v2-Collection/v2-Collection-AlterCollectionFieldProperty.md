@@ -13,10 +13,10 @@ type: docx
 token: MIyedieIBo43Yrxee0lcY3cUn8b
 sidebar_position: 4
 keywords: 
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

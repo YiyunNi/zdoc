@@ -13,10 +13,10 @@ type: docx
 token: EFC0drdqGoG559x5Zqzcpj7innc
 sidebar_position: 10
 keywords: 
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud

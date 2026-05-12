@@ -13,10 +13,10 @@ type: docx
 token: XpaudNsR2o3MRoxTbAMcj4tEn1w
 sidebar_position: 7
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

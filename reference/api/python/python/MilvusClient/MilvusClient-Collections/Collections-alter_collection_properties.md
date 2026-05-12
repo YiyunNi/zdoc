@@ -13,10 +13,10 @@ type: docx
 token: SJ1FdUQQnohtObxhNgpcHalMnUc
 sidebar_position: 3
 keywords: 
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud

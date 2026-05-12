@@ -13,10 +13,10 @@ type: docx
 token: KeoHdMDBCo3PByxKbWncifFMn9e
 sidebar_position: 2
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud

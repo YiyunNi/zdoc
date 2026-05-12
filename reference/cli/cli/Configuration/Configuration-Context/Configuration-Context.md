@@ -12,10 +12,10 @@ token: FewAfDseeli62CdqFcBc7Lh2ncD
 sidebar_position: 5
 sidebar_label: "Context"
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: QcWcdXbgxooJO4xuwADc9YqAn8c
 sidebar_position: 6
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

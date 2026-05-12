@@ -13,10 +13,10 @@ type: docx
 token: AglQd68yqoEn8Ixkn9ociyqKnMx
 sidebar_position: 8
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud
@@ -43,7 +43,7 @@ This is an alias method for [`using_database()`](./Database-using_database).
 
 This method applies only to dedicated serving clusters and on-demand compute. 
 
-- For a database in dedicated serving clusters, please create **MilvusClient** with the cluster endpoint.
+- For a database in a dedicated serving clusters, create **MilvusClient** with the cluster endpoint.
 
     - **Free & Serverless**
 

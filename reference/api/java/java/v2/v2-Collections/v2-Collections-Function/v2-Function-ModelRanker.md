@@ -13,10 +13,10 @@ type: docx
 token: IW5SdBOhUop0P8xBslCc6OHLnse
 sidebar_position: 5
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud

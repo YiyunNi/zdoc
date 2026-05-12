@@ -13,10 +13,10 @@ type: docx
 token: DvaZdhYnyoo7lOxNIBwc5eKEn7d
 sidebar_position: 6
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

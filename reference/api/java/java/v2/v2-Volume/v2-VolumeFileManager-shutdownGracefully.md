@@ -13,10 +13,10 @@ type: docx
 token: TuyKdaa1SoOstTx9DglcWfzknTh
 sidebar_position: 3
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

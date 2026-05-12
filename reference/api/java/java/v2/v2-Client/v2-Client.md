@@ -12,10 +12,10 @@ token: YyNNfpZsKlOCstdX7xRcXT4an6e
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: QsGNdp1t3oHaunxgIZGc3PdSnof
 sidebar_position: 22
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,12 @@ import Admonition from '@theme/Admonition';
 # list_persistent_segments()
 
 This operation lists all persistent (flushed) segments for a collection, including information about row count, sort status, and storage level.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+This only applies to managed collections.
+
+</Admonition>
 
 ## Request syntax\{#request-syntax}
 

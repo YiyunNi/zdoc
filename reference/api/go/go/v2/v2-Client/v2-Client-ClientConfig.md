@@ -13,10 +13,10 @@ type: docx
 token: NNQmdw1DloRDi6xeO0acaMfdnib
 sidebar_position: 1
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

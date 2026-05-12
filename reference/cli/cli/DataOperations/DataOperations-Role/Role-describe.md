@@ -13,10 +13,10 @@ type: docx
 token: Fj9Yd4SOPoppxTx7K8WcyMd7ncd
 sidebar_position: 2
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud

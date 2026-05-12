@@ -12,10 +12,10 @@ token: OE6ef37Ztlb6FgdouLvcTcrpnAp
 sidebar_position: 9
 sidebar_label: "Data Import"
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud

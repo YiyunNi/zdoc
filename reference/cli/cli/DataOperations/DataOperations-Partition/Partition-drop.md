@@ -13,10 +13,10 @@ type: docx
 token: DT7Jduvj2osqF0xVhwMcU2t7nmd
 sidebar_position: 2
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud

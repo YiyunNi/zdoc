@@ -13,10 +13,10 @@ type: docx
 token: HTnvdQ8SbodURtxPEv5cURL0n5b
 sidebar_position: 12
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud

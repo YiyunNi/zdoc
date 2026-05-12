@@ -12,10 +12,10 @@ token: Hg5PfTIHll3FK4dbYdxcaURHn2n
 sidebar_position: 6
 sidebar_label: "Partitions"
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud

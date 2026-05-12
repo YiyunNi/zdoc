@@ -13,10 +13,10 @@ type: docx
 token: Zyi9dGUnQodt7MxIq17cyN54nOd
 sidebar_position: 22
 keywords: 
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud

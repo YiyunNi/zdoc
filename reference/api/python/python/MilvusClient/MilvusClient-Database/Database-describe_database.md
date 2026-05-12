@@ -13,10 +13,10 @@ type: docx
 token: LEaYdk179oZn0vxqa0lcn4mnnrg
 sidebar_position: 3
 keywords: 
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation lists detailed information about the specified database.
 
 This method applies only to dedicated serving clusters and on-demand compute. 
 
-- For a database in dedicated serving clusters, please create **MilvusClient** with the cluster endpoint.
+- For a database in a dedicated serving clusters, create **MilvusClient** with the cluster endpoint.
 
     - **Free & Serverless**
 

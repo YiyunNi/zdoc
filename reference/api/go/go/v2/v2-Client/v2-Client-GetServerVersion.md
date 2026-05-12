@@ -13,10 +13,10 @@ type: docx
 token: TUYsd2ko4oAlB4xa9nxc6rhRnpc
 sidebar_position: 3
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: LxwIdeFiGoYaRAxKS72cdjNkneh
 sidebar_position: 12
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

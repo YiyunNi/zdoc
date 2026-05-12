@@ -12,10 +12,10 @@ token: W5gwfoADilawLFd64CWcpuFMn0g
 sidebar_position: 11
 sidebar_label: "File Resources"
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: AR0Bdq0okohr1Cxa1rOcDtvTnoc
 sidebar_position: 4
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

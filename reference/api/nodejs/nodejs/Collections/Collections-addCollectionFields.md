@@ -13,10 +13,10 @@ type: docx
 token: FmG6dw3O1ouzgbxnl4jc5T7cnXf
 sidebar_position: 20
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

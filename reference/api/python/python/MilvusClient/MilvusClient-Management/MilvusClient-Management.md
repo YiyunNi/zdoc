@@ -12,10 +12,10 @@ token: KrK5fBnFDlG6CedvqyHcfZLynre
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
+  - Vector search
+  - knn algorithm
   - HNSW
   - What is unstructured data
-  - Vector embeddings
-  - Vector store
   - zilliz
   - zilliz cloud
   - cloud

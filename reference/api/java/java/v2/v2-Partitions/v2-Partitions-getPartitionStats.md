@@ -13,10 +13,10 @@ type: docx
 token: ZCESd1IrfoFHByx125kcd38Zndg
 sidebar_position: 3
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: Vv4NdWVa5o5BSrx11OZcNVnQnbh
 sidebar_position: 20
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud

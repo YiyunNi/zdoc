@@ -13,10 +13,10 @@ type: docx
 token: GwIxdz90jojeBNx965VcTJHnnFd
 sidebar_position: 2
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud

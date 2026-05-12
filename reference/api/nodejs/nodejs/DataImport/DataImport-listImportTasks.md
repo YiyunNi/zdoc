@@ -13,10 +13,10 @@ type: docx
 token: KX8pd5PnGoo8UAx8QhhcI5YpnHg
 sidebar_position: 3
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud

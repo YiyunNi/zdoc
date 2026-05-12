@@ -13,10 +13,10 @@ type: docx
 token: V05sd0bGjo33Cux0j9DcrNKTndh
 sidebar_position: 4
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud

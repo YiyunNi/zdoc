@@ -13,10 +13,10 @@ type: docx
 token: P9MFdEHMKoAfshxQhamcWrGknWg
 sidebar_position: 26
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: WgfTdXbMmoFhO9xBpencxLRRnbb
 sidebar_position: 25
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud

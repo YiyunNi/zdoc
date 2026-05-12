@@ -13,10 +13,10 @@ type: docx
 token: P84bd17ncosvh4xuahpcFGzoneb
 sidebar_position: 8
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
   - zilliz
   - zilliz cloud
   - cloud

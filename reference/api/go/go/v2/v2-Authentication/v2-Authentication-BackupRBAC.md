@@ -13,10 +13,10 @@ type: docx
 token: Iz1ZdJDWVo0uoUxQjlPcIbS2nMo
 sidebar_position: 2
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

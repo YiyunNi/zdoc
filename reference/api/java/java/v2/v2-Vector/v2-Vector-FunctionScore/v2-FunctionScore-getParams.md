@@ -13,10 +13,10 @@ type: docx
 token: DUJsdflImor0joxV14ecSwpnnDb
 sidebar_position: 4
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud

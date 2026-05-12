@@ -12,10 +12,10 @@ token: CRpLfHplvlPKBDdxyCqcPFqWncd
 sidebar_position: 1
 sidebar_label: "Cloud Management"
 keywords: 
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
   - zilliz
   - zilliz cloud
   - cloud

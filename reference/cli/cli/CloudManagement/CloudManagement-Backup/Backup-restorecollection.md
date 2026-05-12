@@ -13,10 +13,10 @@ type: docx
 token: XvDzdZsb3ojqgXxhEjfcZBxbnNb
 sidebar_position: 8
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud

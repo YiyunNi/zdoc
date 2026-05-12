@@ -13,10 +13,10 @@ type: docx
 token: GbIAdIuWsoumzoxHWpOcVjVbnle
 sidebar_position: 8
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

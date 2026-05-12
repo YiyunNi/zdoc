@@ -13,10 +13,10 @@ type: docx
 token: MSDVdu103obklexX8GvcW5cWnCf
 sidebar_position: 18
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud
@@ -36,6 +36,12 @@ This operation returns the current state of a compaction job. Use this after cal
 <Admonition type="info" icon="📘" title="Notes">
 
 This method was previously named `get_compact_state()`. The behavior is identical.
+
+</Admonition>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+This only applies to managed collections.
 
 </Admonition>
 

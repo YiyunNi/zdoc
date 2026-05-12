@@ -13,10 +13,10 @@ type: docx
 token: BGo4dB2TuoMHeBxD8XrcuKHYnEb
 sidebar_position: 1
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud

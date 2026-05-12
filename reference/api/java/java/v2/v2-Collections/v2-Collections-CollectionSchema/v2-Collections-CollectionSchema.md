@@ -13,10 +13,10 @@ type: docx
 token: IXVHdXVncoEp64xD6vdcvUJwnlH
 sidebar_position: 2
 keywords: 
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
   - zilliz
   - zilliz cloud
   - cloud

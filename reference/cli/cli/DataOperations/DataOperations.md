@@ -12,10 +12,10 @@ token: Ji3xfyZmUlvCShdh8rbc845Znnh
 sidebar_position: 3
 sidebar_label: "Data Operations"
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud

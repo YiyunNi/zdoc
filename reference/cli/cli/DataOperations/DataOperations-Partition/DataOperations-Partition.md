@@ -12,10 +12,10 @@ token: Bzxxffu0ClU5hkdrkmlchrXenrb
 sidebar_position: 5
 sidebar_label: "Partition"
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
   - zilliz
   - zilliz cloud
   - cloud

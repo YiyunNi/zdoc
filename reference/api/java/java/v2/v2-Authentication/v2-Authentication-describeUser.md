@@ -13,10 +13,10 @@ type: docx
 token: YLQJdvVA8odibAx7mQscYwMVn8g
 sidebar_position: 6
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud

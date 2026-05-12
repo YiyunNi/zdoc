@@ -12,10 +12,10 @@ token: QTM7fqREelEFXhdTaMqc18IxnVb
 sidebar_position: 1
 sidebar_label: "Backup"
 keywords: 
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: EflgfwlI7lX3Dgd6xrbcFXhunzh
 sidebar_position: 4
 sidebar_label: "Index"
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud

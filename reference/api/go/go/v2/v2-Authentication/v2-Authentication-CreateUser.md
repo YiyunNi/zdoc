@@ -13,10 +13,10 @@ type: docx
 token: Liv8dqreJo6t26xf3UWcC8ePnpe
 sidebar_position: 5
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

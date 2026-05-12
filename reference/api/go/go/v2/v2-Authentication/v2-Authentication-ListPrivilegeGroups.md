@@ -13,10 +13,10 @@ type: docx
 token: H34hdV2rxodn9Pxy2Jyc8sBun9t
 sidebar_position: 14
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
   - zilliz
   - zilliz cloud
   - cloud

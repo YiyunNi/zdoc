@@ -13,10 +13,10 @@ type: docx
 token: Bjs5dej7ZoBKhXxZzMjclPCynmd
 sidebar_position: 5
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
   - zilliz
   - zilliz cloud
   - cloud

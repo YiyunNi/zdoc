@@ -13,10 +13,10 @@ type: docx
 token: LsMldPd8GodoVqxCAZUcWYjdnwh
 sidebar_position: 18
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: RjlQdGJyzolWm0xZVyUc6yAdnyc
 sidebar_position: 10
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: LEptdqqfcoqdtCx0LO1c3yxvnBo
 sidebar_position: 8
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud

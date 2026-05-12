@@ -13,10 +13,10 @@ type: docx
 token: EXcNdtZrro7Ufkxp3G6cUArOn7b
 sidebar_position: 2
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: T6S4dcpZ7oeKD6xeTofc2mn9nrb
 sidebar_position: 6
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud

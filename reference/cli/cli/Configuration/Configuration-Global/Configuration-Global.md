@@ -12,10 +12,10 @@ token: OFtRfQzb0luqK8d7zV1cskGKnYd
 sidebar_position: 6
 sidebar_label: "Global"
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud

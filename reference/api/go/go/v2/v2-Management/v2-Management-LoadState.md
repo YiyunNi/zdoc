@@ -13,10 +13,10 @@ type: docx
 token: XWSAdFkdDoaDPnxOtkEcuFETngL
 sidebar_position: 20
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud

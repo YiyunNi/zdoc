@@ -13,10 +13,10 @@ type: docx
 token: DLsXdlRA3odugzx4sIccnBVKn0d
 sidebar_position: 3
 keywords: 
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud

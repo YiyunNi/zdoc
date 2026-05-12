@@ -12,10 +12,10 @@ token: Tjnufe7LvlX9wtddOfEctVJ6nKB
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud

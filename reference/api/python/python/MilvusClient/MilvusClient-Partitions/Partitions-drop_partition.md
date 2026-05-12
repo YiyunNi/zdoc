@@ -13,10 +13,10 @@ type: docx
 token: HkOFdhgbOoz1wlxJIgWcU7EonWc
 sidebar_position: 2
 keywords: 
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud
@@ -36,6 +36,12 @@ This operation drops a specified partition from the current collection.
 <Admonition type="info" icon="📘" title="Notes">
 
 Before dropping a partition, you must first release it.
+
+</Admonition>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+This only applies to managed collections.
 
 </Admonition>
 

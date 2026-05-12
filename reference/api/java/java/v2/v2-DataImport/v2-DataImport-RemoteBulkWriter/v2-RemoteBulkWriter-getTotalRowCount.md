@@ -13,10 +13,10 @@ type: docx
 token: QH3hdlzwDoxHjTxPj39c6qMSnbg
 sidebar_position: 7
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud

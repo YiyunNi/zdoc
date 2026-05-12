@@ -13,10 +13,10 @@ type: docx
 token: HSYzdg59FoBzeIxymrLc0EbBnyd
 sidebar_position: 5
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
   - zilliz
   - zilliz cloud
   - cloud

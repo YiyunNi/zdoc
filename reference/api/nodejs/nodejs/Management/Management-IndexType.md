@@ -13,10 +13,10 @@ type: docx
 token: SI3Td00AroRtx8xXQcUce8i2nrb
 sidebar_position: 15
 keywords: 
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

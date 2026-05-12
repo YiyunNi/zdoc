@@ -13,10 +13,10 @@ type: docx
 token: IPv6dB9pdoGXeRxdoL4c70pWnmg
 sidebar_position: 17
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

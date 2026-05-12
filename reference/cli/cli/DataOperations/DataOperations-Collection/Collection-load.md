@@ -13,10 +13,10 @@ type: docx
 token: SOaOdH3o6o7dsyx1VjPc4LPynqc
 sidebar_position: 10
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud

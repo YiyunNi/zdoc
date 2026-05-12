@@ -12,10 +12,10 @@ token: ODiwfm3z9lpSIZdyCjtcTQXgnfb
 sidebar_position: 2
 sidebar_label: "BulkImport"
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud

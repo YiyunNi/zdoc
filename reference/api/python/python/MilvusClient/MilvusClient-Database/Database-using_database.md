@@ -13,10 +13,10 @@ type: docx
 token: OCfid8DdPo1ga1x24JZcV92xnwd
 sidebar_position: 7
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation changes the database currently in use.
 
 This method applies only to dedicated serving clusters and on-demand compute. 
 
-- For a database in dedicated serving clusters, please create **MilvusClient** with the cluster endpoint.
+- For a database in a dedicated serving clusters, create **MilvusClient** with the cluster endpoint.
 
     - **Free & Serverless**
 

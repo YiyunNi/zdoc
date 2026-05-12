@@ -13,10 +13,10 @@ type: docx
 token: VHhWdygYaoyAmQxRpP6cvmIYndc
 sidebar_position: 6
 keywords: 
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
   - zilliz
   - zilliz cloud
   - cloud

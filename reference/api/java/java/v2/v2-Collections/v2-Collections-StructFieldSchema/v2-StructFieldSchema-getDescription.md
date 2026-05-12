@@ -13,10 +13,10 @@ type: docx
 token: QbfPdyw7EoXpGwxSkGgcytBBnAb
 sidebar_position: 3
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud

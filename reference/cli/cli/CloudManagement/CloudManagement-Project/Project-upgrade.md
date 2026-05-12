@@ -13,10 +13,10 @@ type: docx
 token: QIhWdtFpNotKksx7KmxcTdwXnEh
 sidebar_position: 4
 keywords: 
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud

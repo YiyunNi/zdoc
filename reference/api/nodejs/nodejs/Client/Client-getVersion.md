@@ -11,12 +11,12 @@ notebook: false
 description: "This operation returns version information for the Milvus server. | Node.js"
 type: docx
 token: WA81dokeYotwt9xAiKKcaaIpnxc
-sidebar_position: 6
+sidebar_position: 8
 keywords: 
-  - hybrid vector search
-  - Video deduplication
   - Video similarity search
   - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud

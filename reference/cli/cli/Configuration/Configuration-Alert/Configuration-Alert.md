@@ -12,10 +12,10 @@ token: DC00fqL8UlOSaJdNqeJcCEHYnFW
 sidebar_position: 1
 sidebar_label: "Alert"
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

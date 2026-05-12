@@ -13,10 +13,10 @@ type: docx
 token: OtZ1dcB5EozJlVx3uRUce85Gnog
 sidebar_position: 1
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud

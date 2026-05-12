@@ -13,10 +13,10 @@ type: docx
 token: SZNQds74zoKniRxtJwdcfdz1nCh
 sidebar_position: 5
 keywords: 
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
   - zilliz
   - zilliz cloud
   - cloud

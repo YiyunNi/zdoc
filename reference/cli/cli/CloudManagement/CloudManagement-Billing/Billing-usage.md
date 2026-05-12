@@ -13,10 +13,10 @@ type: docx
 token: FpDzdA1nSo6sOHxYxAhcTPCLn5d
 sidebar_position: 4
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: IU8kfKYCwlJHotdqhJ0cTaaknDJ
 sidebar_position: 6
 sidebar_label: "Milvus Standalone"
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - AI Hallucination
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: DBEFdVorMomen0x4xNEcKkM1n8O
 sidebar_position: 22
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud

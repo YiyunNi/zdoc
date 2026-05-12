@@ -13,10 +13,10 @@ type: docx
 token: GoMYdKZRforUT0x23CDcyDKgnFf
 sidebar_position: 6
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

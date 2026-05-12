@@ -13,10 +13,10 @@ type: docx
 token: Lu5EdzR9So5gUCxL71YcX30Enkh
 sidebar_position: 3
 keywords: 
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud

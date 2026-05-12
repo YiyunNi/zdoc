@@ -13,10 +13,10 @@ type: docx
 token: GNQcdBgh2oMyS9xxJk0cvESGnfe
 sidebar_position: 3
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
   - zilliz
   - zilliz cloud
   - cloud

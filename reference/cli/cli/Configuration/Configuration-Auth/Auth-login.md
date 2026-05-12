@@ -13,10 +13,10 @@ type: docx
 token: KZkqdaHxNo82J9xaZJlcn2KGnTe
 sidebar_position: 1
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud

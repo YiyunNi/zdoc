@@ -13,10 +13,10 @@ type: docx
 token: DPcJdZceFoes0sxeRVKcKhaunq9
 sidebar_position: 15
 keywords: 
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

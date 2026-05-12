@@ -13,10 +13,10 @@ type: docx
 token: PtHQdGNfaoI4Mux05rbcRWTVnMp
 sidebar_position: 5
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud

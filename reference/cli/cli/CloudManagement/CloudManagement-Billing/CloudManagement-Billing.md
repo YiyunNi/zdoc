@@ -12,10 +12,10 @@ token: VQMkfU9xUl3ywPdBTJRcoP5Vnkb
 sidebar_position: 2
 sidebar_label: "Billing"
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud

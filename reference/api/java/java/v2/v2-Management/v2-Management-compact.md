@@ -13,10 +13,10 @@ type: docx
 token: FSTVdf6Yuovg9CxQf5acldFWnsb
 sidebar_position: 2
 keywords: 
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud

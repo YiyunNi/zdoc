@@ -9,13 +9,13 @@ deprecate_since: false
 description: "Methods related to snapshot management. | Python | MilvusClient"
 type: folder
 token: RoBzflamplZFzYd1ZSWccuVfnnc
-sidebar_position: 15
+sidebar_position: 14
 sidebar_label: "Snapshot"
 keywords: 
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

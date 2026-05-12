@@ -13,10 +13,10 @@ type: docx
 token: FZuddXocNopEufxRFGdcbvkRnnb
 sidebar_position: 6
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation lists all existing databases.
 
 This method applies only to dedicated serving clusters and on-demand compute. 
 
-- For a database in dedicated serving clusters, please create **MilvusClient** with the cluster endpoint.
+- For a database in a dedicated serving clusters, create **MilvusClient** with the cluster endpoint.
 
     - **Free & Serverless**
 

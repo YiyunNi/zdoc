@@ -13,10 +13,10 @@ type: docx
 token: WjbrdMFuXoR2etxfpMdcmIebnCh
 sidebar_position: 3
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

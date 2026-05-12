@@ -13,10 +13,10 @@ type: docx
 token: XHyydLsEAoPwB2xNhcwc9KBwn7g
 sidebar_position: 5
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

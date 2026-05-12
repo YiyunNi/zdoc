@@ -13,10 +13,10 @@ type: docx
 token: F9CHd2o4po3VC2xX3zHczWVan2c
 sidebar_position: 1
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud

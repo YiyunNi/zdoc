@@ -13,10 +13,10 @@ type: docx
 token: DZcddGCD3oh29txhnB5cuxzzn4d
 sidebar_position: 7
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

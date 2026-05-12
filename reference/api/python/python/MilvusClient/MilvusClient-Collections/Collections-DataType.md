@@ -13,10 +13,10 @@ type: docx
 token: KvNsd3aV4ocRNJxrZN2cg1zenqb
 sidebar_position: 7
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

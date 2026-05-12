@@ -11,12 +11,12 @@ notebook: false
 description: "This operation lists the external collection refresh jobs of all or specified collections. | Python | MilvusClient"
 type: docx
 token: VkBFdLHwao9hVMxzRurcBYIynFh
-sidebar_position: 27
+sidebar_position: 28
 keywords: 
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -32,6 +32,14 @@ import Admonition from '@theme/Admonition';
 # list_refresh_external_collection_jobs()
 
 This operation lists the external collection refresh jobs of all or specified collections.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+This requires a MilvusClient set up using the project endpoint as follows:
+
+`https://{project-id}.{region}.api.zillizcloud.com`
+
+</Admonition>
 
 ## Request Syntax\{#request-syntax}
 
@@ -62,19 +70,6 @@ def list_refresh_external_collection_jobs(
 **RETURNS:**
 
 A list of **RefreshExternalCollectionJobInfo** objects, each recording the details of the an external collection refresh job.
-
-```python
-{
-    'job_id': 4325693842392,
-    'collection_name': 'test_collection',
-    'state': 'RefreshPending',
-    'progress': 67,
-    'reason': ''
-    'external_source': 's3://s3.<region-id>.amazonaws.com/<bucket>/' 
-    'start_time': 1776470400000
-    'end_time': 1776470434567    
-}
-```
 
 **PARAMETERS:**
 
@@ -125,11 +120,30 @@ A list of **RefreshExternalCollectionJobInfo** objects, each recording the detai
 ## Example\{#example}
 
 ```python
-# List refresh jobs of a specified collection
-jobs = list_refresh_external_collection_jobs (
+from pymilvus import MilvusClient
+
+# 1. Set up a milvus client
+client = MilvusClient(
+    uri="YOUR_PROJECT_ENDPOINT",
+    token="YOUR_API_KEY"
+)
+
+job_id = client.refresh_external_collection(
     collection_name="test_collection"
 )
 
-# List refresh jobs of all external collections
-jobs = list_refresh_external_collection_jobs ()
+while True:
+    progress = client.get_refresh_external_collection_progress(job_id=job_id)
+    print(f"  {progress.state}: {progress.progress}%")
+
+    if progress.state == "RefreshCompleted":
+        elapsed = progress.end_time - progress.start_time
+        print(f"  Completed in {elapsed}ms")
+        return job_id
+    elif progress.state == "RefreshFailed":
+        print(f"  Failed: {progress.reason}")
+        return job_id
+
+    time.sleep(2)
 ```
+

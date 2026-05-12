@@ -13,10 +13,10 @@ type: docx
 token: QFxmdtUNVoy071xXO8Acvkdpnse
 sidebar_position: 1
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

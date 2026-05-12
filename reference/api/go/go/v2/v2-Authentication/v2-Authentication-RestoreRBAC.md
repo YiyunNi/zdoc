@@ -13,10 +13,10 @@ type: docx
 token: YYvkdK6o5ovGGsxVyEtcEGXnn6b
 sidebar_position: 20
 keywords: 
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud

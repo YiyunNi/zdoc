@@ -13,10 +13,10 @@ type: docx
 token: DXTJdXSquo8NutxCqfBccO7pnWw
 sidebar_position: 1
 keywords: 
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

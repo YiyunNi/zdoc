@@ -13,10 +13,10 @@ type: docx
 token: TjRGdbrZsol6MHxRLWLcy8Rinbi
 sidebar_position: 1
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud

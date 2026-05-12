@@ -13,10 +13,10 @@ type: docx
 token: FVmwd1ishoRaqUxQQNNch019nOf
 sidebar_position: 3
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

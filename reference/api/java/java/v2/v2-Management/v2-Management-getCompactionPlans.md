@@ -13,10 +13,10 @@ type: docx
 token: BDNBdbEOioqnlKxRd3DcY7wRncg
 sidebar_position: 22
 keywords: 
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: MqCqdE8mqotzaXxk8nfcOvHinX0
 sidebar_position: 5
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: XoUqdHpskoe2mOxPtITcHpPUnHg
 sidebar_position: 9
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: EsbCfRCYllSGzXdrs2zcrQWcnHg
 sidebar_position: 7
 sidebar_label: "Partition"
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud

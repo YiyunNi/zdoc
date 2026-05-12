@@ -13,10 +13,10 @@ type: docx
 token: ShzCdNgEGozKi3xa3lUcHpxQnaf
 sidebar_position: 4
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud
@@ -92,7 +92,9 @@ query(
 
     - Setting this as `output_fields=["\*"]` outputs all fields.
 
-    - Setting this as `output_fields=["count(\*)"]` outputs the loaded entities that match the conditions specified in the **filter** argument. 
+    - Setting this as `output_fields=["count(\*)"]` outputs the loaded entities that match the conditions specified in the **filter** argument.
+
+    - When used with `group_by_fields`, this list also accepts aggregation expressions: `count(*)`, `count(<field>)`, `min(<field>)`, `max(<field>)`, `sum(<field>)`, and `avg(<field>)`. The aggregated values are computed per group and returned alongside the group keys.
 
     </Admonition>
 
@@ -163,6 +165,40 @@ query(
         You can use this parameter in combination with `offset` to enable pagination.
 
         The sum of this value and `offset` should be less than 16,384.
+
+    - **timezone** (*str*)
+
+        Temporarily override the collection or database default time zone for a single query by setting an [IANA identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (for example, **Asia/Shanghai**, **America/Chicago**, or **UTC**). This controls how `TIMESTAMPTZ` values are interpreted, displayed, and compared during that operation only; it does not modify stored data or collection settings.
+
+        For more information, refer to [TIMESTAMPZ Field](/docs/timestamptz-field).
+
+    - **time_fields** (*str*)
+
+        Extract specific time components from a `TIMESTAMPTZ` field during query or search operations. Use a comma-separated list to specify which elements to extract. Supported elements include: `year`, `month`, `day`, `hour`, `minute`, `second`, and `microsecond`.
+
+        For more information, refer to TIMESTAMPZ Field.
+
+    - **order_by** (*list[str]*)
+
+        A list of fields to sort the query results by. Each element follows the format `"field_name:direction"`, where direction is either `asc` (ascending) or `desc` (descending). Note that `asc` and `desc` are case-sensitive.
+
+        Supported field types: INT8, INT16, INT32, INT64, FLOAT, DOUBLE, and VARCHAR. Sorting by vector, JSON, or ARRAY fields is not supported.
+
+        This parameter must be used together with `limit`. When sorting nullable fields, NULL values are placed at the end for ascending sorts (NULLS LAST) and at the beginning for descending sorts (NULLS FIRST).
+
+    - **group_by_fields** (*list[str]*) -
+
+        A list of scalar fields to group the query results by. When set, `query()` returns one row per unique combination of the specified field values, and any aggregation expressions in `output_fields` (`count(*)`, `count(<f>)`, `min(<f>)`, `max(<f>)`, `sum(<f>)`, `avg(<f>)`) are computed per group.
+
+        Supported field types: INT8, INT16, INT32, INT64, FLOAT, DOUBLE, VARCHAR, and TIMESTAMPTZ. Grouping by vector, JSON, or Array fields returns an error.
+
+        Aggregation type rules:
+
+        - `sum` and `avg` are numeric only. Applying them to a `VarChar` field returns an error.
+
+        - `sum(int*)` returns `INT64`; `sum(float|double)` returns `DOUBLE`; `avg(...)` always returns `DOUBLE`; `count(...)` returns `INT64`; `min`/`max` preserve the column type.
+
+        You can combine `group_by_fields` with `limit` to cap the number of groups returned.
 
 **RETURN TYPE:**
 

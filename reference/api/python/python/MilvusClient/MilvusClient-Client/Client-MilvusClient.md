@@ -13,10 +13,10 @@ type: docx
 token: SojTdgw1joOuA8xMzb5cMUFYnce
 sidebar_position: 2
 keywords: 
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud
@@ -75,7 +75,7 @@ MilvusClient(
 
             `https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
 
-    - **Project Endpoint (On-Demand)**
+    - **Project endpoint (On-demand)**
 
         `https://{project-id}.{region}.api.zillizcloud.com`
 

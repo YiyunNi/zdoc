@@ -13,10 +13,10 @@ type: docx
 token: SM7ld0ZsEoYLqaxVMZxcSH82n9f
 sidebar_position: 1
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud

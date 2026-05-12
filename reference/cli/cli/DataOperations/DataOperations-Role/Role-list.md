@@ -13,10 +13,10 @@ type: docx
 token: BNH0dujcioUq4Px0EmncEqlOnVe
 sidebar_position: 5
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

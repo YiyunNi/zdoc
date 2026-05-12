@@ -13,10 +13,10 @@ type: docx
 token: DgiOdVOuLoKWFPxzKyucGV8Tnfb
 sidebar_position: 3
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

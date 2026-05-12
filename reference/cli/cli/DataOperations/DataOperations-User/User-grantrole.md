@@ -13,10 +13,10 @@ type: docx
 token: SvpmdXjkYo3LYTxt2ipcKhLFnZg
 sidebar_position: 4
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
   - zilliz
   - zilliz cloud
   - cloud

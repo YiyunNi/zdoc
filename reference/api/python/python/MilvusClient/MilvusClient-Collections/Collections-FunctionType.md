@@ -13,10 +13,10 @@ type: docx
 token: Y2prdJqs9oEOyax1S9acKecan8e
 sidebar_position: 19
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: SXgodgq99ozZoHxfnakc0fpCnJh
 sidebar_position: 10
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud

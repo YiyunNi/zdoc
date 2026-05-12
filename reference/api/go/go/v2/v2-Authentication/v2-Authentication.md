@@ -12,10 +12,10 @@ token: MINQfdgeRlnbDzd1ofucUJDsnuW
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud

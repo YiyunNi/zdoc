@@ -13,10 +13,10 @@ type: docx
 token: NvlZd3VOpoMrsoxmavQckdAOnQg
 sidebar_position: 4
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

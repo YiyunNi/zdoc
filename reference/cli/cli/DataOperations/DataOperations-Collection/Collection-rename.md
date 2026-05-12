@@ -13,10 +13,10 @@ type: docx
 token: N1uadJS98ojQhixbOQacLOwknke
 sidebar_position: 13
 keywords: 
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud

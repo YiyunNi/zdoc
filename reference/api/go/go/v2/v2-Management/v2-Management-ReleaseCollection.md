@@ -13,10 +13,10 @@ type: docx
 token: YMxDdZUXfoCEPtxBhN8clGxDnUd
 sidebar_position: 24
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
   - zilliz
   - zilliz cloud
   - cloud

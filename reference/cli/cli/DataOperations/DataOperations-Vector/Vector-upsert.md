@@ -13,10 +13,10 @@ type: docx
 token: PdMmdJQS6o1rVbxtD49cO62Onad
 sidebar_position: 7
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud

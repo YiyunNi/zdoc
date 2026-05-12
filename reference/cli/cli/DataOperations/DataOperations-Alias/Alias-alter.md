@@ -13,10 +13,10 @@ type: docx
 token: PLvbdUqI6onWmWxFPYKcgcFpnwb
 sidebar_position: 1
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud

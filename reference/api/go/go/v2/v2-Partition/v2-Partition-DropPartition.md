@@ -13,10 +13,10 @@ type: docx
 token: XnbJdLilXobGn1x1Uq6cvhKTnhf
 sidebar_position: 2
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud

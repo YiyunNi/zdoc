@@ -8,14 +8,14 @@ last_modified: v2.5.x
 deprecate_since: false
 description: "Classes and methods for you to manage the MilvusClient instances. | Node.js"
 type: folder
-token: WlKqf2dXKljRPDdiiUIcdsh5nxd
+token: DNpsf7mK9l2ruTdk4fCcwoudnFe
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - lexical search
   - nearest neighbor search
   - Agentic RAG
   - rag llm architecture
+  - private llms
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: DzchdYLEYomSrzxOys8c1mbanhg
 sidebar_position: 7
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud

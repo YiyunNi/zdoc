@@ -13,10 +13,10 @@ type: docx
 token: VSewdBpmioKEJ2xtGAHczoO5nWh
 sidebar_position: 1
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

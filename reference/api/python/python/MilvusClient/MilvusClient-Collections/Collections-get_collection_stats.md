@@ -13,10 +13,10 @@ type: docx
 token: VfaldXzLUocBrJxffw6cJHPinlh
 sidebar_position: 13
 keywords: 
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation lists the statistics collected on a specific collection.
 
 This method applies to dedicated serving clusters and on-demand compute. 
 
-- For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
+- For a collection in a serving cluster, please create **MilvusClient** with the cluster endpoint.
 
     - **Free & Serverless**
 
@@ -47,7 +47,7 @@ This method applies to dedicated serving clusters and on-demand compute.
 
         `https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
 
-- For an external collection for on-demand compute, create **MilvusClient** with the project endpoints.
+- For a collection in on-demand compute, create **MilvusClient** with the project endpoints.
 
     `https://{project-id}.{region}.api.zillizcloud.com`
 

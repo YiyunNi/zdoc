@@ -13,10 +13,10 @@ type: docx
 token: Mw42dp2VZoN4gFxdiSYcxDB8n0g
 sidebar_position: 27
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

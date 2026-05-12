@@ -13,10 +13,10 @@ type: docx
 token: KaW0dGLZ9os1SExEsbqcHM4yn8c
 sidebar_position: 3
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
   - zilliz
   - zilliz cloud
   - cloud

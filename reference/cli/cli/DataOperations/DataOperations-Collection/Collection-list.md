@@ -13,10 +13,10 @@ type: docx
 token: N10RdNXeNoseZNxkxBtcLGa1nKf
 sidebar_position: 9
 keywords: 
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud

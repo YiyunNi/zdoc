@@ -12,10 +12,10 @@ token: CQeKfK0rYlSpjTd0uFlcAZrYnZb
 sidebar_position: 6
 sidebar_label: "Role"
 keywords: 
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
   - zilliz
   - zilliz cloud
   - cloud

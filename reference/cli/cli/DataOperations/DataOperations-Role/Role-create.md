@@ -13,10 +13,10 @@ type: docx
 token: V9xIdjMEMowIh2xVJUUcvir6nUf
 sidebar_position: 1
 keywords: 
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

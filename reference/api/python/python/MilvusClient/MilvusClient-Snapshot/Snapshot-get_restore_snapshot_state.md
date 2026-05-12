@@ -13,10 +13,10 @@ type: docx
 token: Ky0pdpA6WorUvbxwN3ucwUjgnec
 sidebar_position: 4
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud

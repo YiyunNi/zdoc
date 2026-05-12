@@ -13,10 +13,10 @@ type: docx
 token: WcQadTMuCo9voCxPT86cxFzFnkf
 sidebar_position: 4
 keywords: 
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud

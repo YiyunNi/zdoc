@@ -13,10 +13,10 @@ type: docx
 token: UJuOdGGu3okE0Sx1jARc45lMnGb
 sidebar_position: 1
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - open source vector db
+  - vector database example
+  - rag vector database
+  - what is vector db
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: PP2kdYCHnoZQ96xJqWUcAW8enG9
 sidebar_position: 9
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

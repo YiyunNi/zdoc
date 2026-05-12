@@ -13,10 +13,10 @@ type: docx
 token: NbYidGUPcokra9xJ6IAcUNLEn9f
 sidebar_position: 5
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud
@@ -37,7 +37,7 @@ This operation supports creating a collection in two distinct ways: quick setup 
 
 This method applies to dedicated serving clusters and on-demand compute. 
 
-- For a managed collection in serving clusters, please create **MilvusClient** with the cluster endpoint.
+- For a collection in a serving cluster, please create **MilvusClient** with the cluster endpoint.
 
     - **Free & Serverless**
 
@@ -47,7 +47,7 @@ This method applies to dedicated serving clusters and on-demand compute.
 
         `https://{cluster-id}.{region}.vectordb.zillizcloud.com:19530`
 
-- For an external collection for on-demand compute, create **MilvusClient** with the project endpoints.
+- For a collection in on-demand compute, create **MilvusClient** with the project endpoints.
 
     `https://{project-id}.{region}.api.zillizcloud.com`
 
@@ -378,7 +378,7 @@ You can choose between a quick setup or a customized setup as follows:
     
     # connect the database
     client = MilvusClient(
-        uri="https://{project-id}.{region}.vectordb.zillizcloud.com",
+        uri="https://{project-id}.{region}.api.zillizcloud.com",
         token="YOUR_API_KEY"
     )
     

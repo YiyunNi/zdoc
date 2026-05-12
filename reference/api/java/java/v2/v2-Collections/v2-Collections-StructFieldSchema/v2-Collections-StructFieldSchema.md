@@ -13,10 +13,10 @@ type: docx
 token: DCszdG9rCoZxhfxfAuOcNsXRnOc
 sidebar_position: 8
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud

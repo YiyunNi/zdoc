@@ -13,10 +13,10 @@ type: docx
 token: DsyLdmJr0o7FAfxwPcNct1Bqnth
 sidebar_position: 5
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: UJg8dnXiUoB6FnxanBicIzcLnsb
 sidebar_position: 6
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud

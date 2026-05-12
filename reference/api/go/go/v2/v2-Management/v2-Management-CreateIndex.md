@@ -13,10 +13,10 @@ type: docx
 token: KLrMdFtVko5QGwxyIs9ckmtUn0c
 sidebar_position: 4
 keywords: 
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud

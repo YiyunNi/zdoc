@@ -10,13 +10,13 @@ beta: false
 notebook: false
 description: "This operation creates a collection either with default or customized settings. | Node.js"
 type: docx
-token: Z55qdPU2foS8h0xLs6QcWg6enrC
+token: KPZZd2TiAodSeWxUdlJciHGcnbg
 sidebar_position: 5
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -60,6 +60,10 @@ await milvusClient.createCollection({
     primary_field_name?: string;
     vector_field_name?: string;
     timeout?: number;
+    external_source?: string;
+    external_spec?: string;
+    do_physical_backfill?: boolean;
+    file_source_ids?: Array<number | string>;
  })
 ```
 
@@ -139,19 +143,19 @@ await milvusClient.createCollection({
 
 - **external_source** (*string*) -
 
-    The external source path. Optional.
+    The external source path. This applies to the creation of external collections.
 
 - **external_spec** (*string*) -
 
-    The external spec configuration. Optional.
+    The external spec configuration. This applies to the creation of external collections.
 
 - **do_physical_backfill** (*boolean*) -
 
-    Whether to physically backfill external data. Optional.
+    Whether to physically backfill external data. This applies to the creation of external collections.
 
 - **file_resource_ids** (*Array&lt;number | string>*) -
 
-    The external file resource IDs. Optional.
+    The external file resource IDs. This applies to the creation of external collections.
 
 ### With CreateCollectionReq\{#with-createcollectionreq}
 
@@ -203,7 +207,11 @@ await milvusClient.createCollection({
    shards_num?: number,
    properties?: Properties,
    timeout?: number,
- })
+   external_source?: string;
+   external_spec?: string;
+   do_physical_backfill?: boolean;
+   file_source_ids?: Array<number | string>;
+})
 ```
 
 **PARAMETERS:**
@@ -467,6 +475,22 @@ await milvusClient.createCollection({
 - **timeout** (*float* | *None*) -
 
     The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
+
+- **external_source** (*string*) -
+
+    The external source path. This applies to the creation of external collections.
+
+- **external_spec** (*string*) -
+
+    The external spec configuration. This applies to the creation of external collections.
+
+- **do_physical_backfill** (*boolean*) -
+
+    Whether to physically backfill external data. This applies to the creation of external collections.
+
+- **file_resource_ids** (*Array&lt;number | string>*) -
+
+    The external file resource IDs. This applies to the creation of external collections.
 
 ### With CreateCollectionWithSchemaAndIndexParamsReq\{#with-createcollectionwithschemaandindexparamsreq}
 
@@ -812,6 +836,22 @@ await milvusClient.createCollection({
 - **timeout** (*number*) -
 
     The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
+
+- **external_source** (*string*) -
+
+    The external source path. This applies to the creation of external collections.
+
+- **external_spec** (*string*) -
+
+    The external spec configuration. This applies to the creation of external collections.
+
+- **do_physical_backfill** (*boolean*) -
+
+    Whether to physically backfill external data. This applies to the creation of external collections.
+
+- **file_resource_ids** (*Array&lt;number | string>*) -
+
+    The external file resource IDs. This applies to the creation of external collections.
 
 **RETURNS** *Promise\<ResStatus>*
 

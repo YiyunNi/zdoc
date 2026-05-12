@@ -13,10 +13,10 @@ type: docx
 token: GppedViHro8TJMxQCZ3cJRKRnHg
 sidebar_position: 16
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: KQDEdcccXozuKpxDg78cSmxYnQg
 sidebar_position: 21
 keywords: 
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud

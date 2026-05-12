@@ -13,10 +13,10 @@ type: docx
 token: AIRDdrhZloIQCrxCfc8cvxe4nmh
 sidebar_position: 30
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
   - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud

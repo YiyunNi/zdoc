@@ -13,10 +13,10 @@ type: docx
 token: OQIRdZ8iOoZxd1xNPHtcWPTBnye
 sidebar_position: 3
 keywords: 
+  - Anomaly Detection
+  - sentence transformers
   - Recommender systems
   - information retrieval
-  - dimension reduction
-  - hnsw algorithm
   - zilliz
   - zilliz cloud
   - cloud

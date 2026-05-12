@@ -13,10 +13,10 @@ type: docx
 token: F1mJdDLyzoMTrxxarPMcqPkqnqg
 sidebar_position: 24
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud

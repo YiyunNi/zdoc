@@ -13,10 +13,10 @@ type: docx
 token: AVEcd3SCwoRyiTxcNodcQAepnGf
 sidebar_position: 21
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud

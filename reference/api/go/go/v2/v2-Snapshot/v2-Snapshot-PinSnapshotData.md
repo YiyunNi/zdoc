@@ -13,10 +13,10 @@ type: docx
 token: HmEkdVsmRoc2TbxEjtkcKChfnEf
 sidebar_position: 7
 keywords: 
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud

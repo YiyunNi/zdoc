@@ -13,10 +13,10 @@ type: docx
 token: PUOBd229uoQGUIxnHLWcMSidnQh
 sidebar_position: 1
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud

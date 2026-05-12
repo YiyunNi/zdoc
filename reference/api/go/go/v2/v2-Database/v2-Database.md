@@ -13,10 +13,10 @@ type: docx
 token: KXgNdgTrWoglBsxXTjvcIwnpnqh
 sidebar_position: 3
 keywords: 
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud

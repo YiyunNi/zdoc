@@ -13,10 +13,10 @@ type: docx
 token: FGO8dhjlTovfOdxpOw0c3wyNntc
 sidebar_position: 1
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - open source vector db
+  - vector database example
+  - rag vector database
+  - what is vector db
   - zilliz
   - zilliz cloud
   - cloud

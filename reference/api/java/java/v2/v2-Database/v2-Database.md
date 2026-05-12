@@ -12,10 +12,10 @@ token: GKUCfGIFEluyMgdvioDc9sH7nzh
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

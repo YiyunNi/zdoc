@@ -13,10 +13,10 @@ type: docx
 token: Hl6adortyo5I2nxdGx8cEDJ8noe
 sidebar_position: 22
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud

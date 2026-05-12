@@ -9,13 +9,13 @@ deprecate_since: false
 description: "Methods related to external file resources management. | Python"
 type: folder
 token: PWyVfD7HUl1x3ydji7RcraKin1g
-sidebar_position: 7
+sidebar_position: 2
 sidebar_label: "FileResource"
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

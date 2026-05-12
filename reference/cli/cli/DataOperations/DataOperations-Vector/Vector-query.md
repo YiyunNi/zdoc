@@ -13,10 +13,10 @@ type: docx
 token: VSRhdmsCvodJ7pxwGgqcuvZ3n7g
 sidebar_position: 5
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud

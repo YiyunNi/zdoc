@@ -12,10 +12,10 @@ token: K6akf7IbXl5Jj1dFV8Fca62Inkd
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: JT0gfXjE3lCqEAdn6jPcFbHgnnd
 sidebar_position: 8
 sidebar_label: "Database"
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud

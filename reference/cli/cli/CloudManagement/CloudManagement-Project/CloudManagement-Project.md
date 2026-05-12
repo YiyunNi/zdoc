@@ -12,10 +12,10 @@ token: RMdtf53TElufWpdluDgc5veVnqc
 sidebar_position: 7
 sidebar_label: "Project"
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud

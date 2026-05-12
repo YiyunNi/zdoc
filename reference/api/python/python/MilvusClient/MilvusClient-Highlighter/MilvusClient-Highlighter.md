@@ -12,10 +12,10 @@ token: O7mqfZp5fleHncduy7HcWkdTnPb
 sidebar_position: 13
 sidebar_label: "Highlighter"
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud

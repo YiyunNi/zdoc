@@ -13,10 +13,10 @@ type: docx
 token: RcJhdfB29okLpcx3w8KcvcL7nU9
 sidebar_position: 11
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
   - zilliz
   - zilliz cloud
   - cloud

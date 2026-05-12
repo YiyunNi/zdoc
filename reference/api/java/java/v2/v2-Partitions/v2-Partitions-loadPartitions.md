@@ -13,10 +13,10 @@ type: docx
 token: MH8cdNxkgoliJ5xU0f9cBKqunYe
 sidebar_position: 6
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

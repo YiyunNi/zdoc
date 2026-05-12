@@ -13,10 +13,10 @@ type: docx
 token: ZNvXd7eldozvRHxpHOcc5CPAnug
 sidebar_position: 5
 keywords: 
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
   - zilliz
   - zilliz cloud
   - cloud

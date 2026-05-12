@@ -13,10 +13,10 @@ type: docx
 token: JLCudD7MYoQdxQxLwlpcbBnpn8c
 sidebar_position: 3
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud

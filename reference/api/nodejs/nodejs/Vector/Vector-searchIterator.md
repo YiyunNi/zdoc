@@ -13,10 +13,10 @@ type: docx
 token: K5APdBqphoQG7vxU4P2ccr5Wnig
 sidebar_position: 9
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud

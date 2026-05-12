@@ -13,10 +13,10 @@ type: docx
 token: Tq1Md4GuIoNbfuxK03ncIa7onMc
 sidebar_position: 1
 keywords: 
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
   - zilliz
   - zilliz cloud
   - cloud

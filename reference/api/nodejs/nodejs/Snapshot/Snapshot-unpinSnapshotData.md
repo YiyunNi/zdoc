@@ -13,10 +13,10 @@ type: docx
 token: IjXedJe6poxhmAx6hFpcpNyJnsb
 sidebar_position: 9
 keywords: 
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud

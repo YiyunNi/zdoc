@@ -13,10 +13,10 @@ type: docx
 token: SSiodq10FoH26hx2HlccfcAgnje
 sidebar_position: 2
 keywords: 
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud
@@ -68,19 +68,23 @@ CollectionSchema(
 
     If a description is not provided, it will be set to an empty string.
 
-- **external_source** (*string*) -
+- **external_source** (*str*) -
 
-    The external source URI, which should be the name of an accessible external volume..
+    The external source URI, which should be a `volume://` URI that points to an accessible external volume. For example, `volume://<volume-name>/path/to/folder/`..
 
-- **external_spec** (*string*) -
+- **external_spec** (*str*) -
 
     The external source specifications, which are a set of secondary parameters:
 
-    - **format** (*string*) - 
+    - **format** (*str*) - 
 
         The format of the target source data files.
 
         Possible values are `parquet`, `vortex`, `lance-table`, and `iceberg-table`.
+
+    - **snapshot_id** (*str*) -
+
+        The ID of an Iceberg table. This applies only when `format` is `iceberg-table`.
 
 - **kwargs** -
 

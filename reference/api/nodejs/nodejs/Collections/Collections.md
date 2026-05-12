@@ -12,10 +12,10 @@ token: CsRZfOAHhly4fSd5kxvcAfkFnpf
 sidebar_position: 3
 sidebar_label: "Collections"
 keywords: 
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: MSFrdlGjaoh9zdxHuZqcf6VsnDw
 sidebar_position: 26
 keywords: 
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
   - zilliz
   - zilliz cloud
   - cloud

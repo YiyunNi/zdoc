@@ -13,10 +13,10 @@ type: docx
 token: BNDrdC8lToZe3ExOVGNcBX3Gnxc
 sidebar_position: 3
 keywords: 
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
   - zilliz
   - zilliz cloud
   - cloud

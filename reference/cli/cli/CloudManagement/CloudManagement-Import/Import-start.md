@@ -13,10 +13,10 @@ type: docx
 token: KXgLdSiiZoMou6xEvnQcdVe3n25
 sidebar_position: 2
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud

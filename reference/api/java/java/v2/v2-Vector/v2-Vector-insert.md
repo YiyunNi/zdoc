@@ -13,10 +13,10 @@ type: docx
 token: Y0N1dL4bVoyUnXxfSu7cjrgRnlc
 sidebar_position: 4
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud

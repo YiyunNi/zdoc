@@ -13,10 +13,10 @@ type: docx
 token: GEvkd6lHion0nUxgdIRcxtqqnHb
 sidebar_position: 7
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud

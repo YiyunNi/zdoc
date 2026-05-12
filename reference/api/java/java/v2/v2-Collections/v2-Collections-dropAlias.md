@@ -13,10 +13,10 @@ type: docx
 token: ARw0dIb0hojCNbxKkOacs1K7nQf
 sidebar_position: 13
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: LJKOd7ZDUopRISxNzamcwb1PnMJ
 sidebar_position: 1
 keywords: 
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: HrwTdhnBeoZwoBxokBJcQZWznKh
 sidebar_position: 1
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

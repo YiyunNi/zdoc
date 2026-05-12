@@ -13,10 +13,10 @@ type: docx
 token: Rhked7rPvopHixxQZe6czSUwnvf
 sidebar_position: 7
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - zilliz
   - zilliz cloud
   - cloud

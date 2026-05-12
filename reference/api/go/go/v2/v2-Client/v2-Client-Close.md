@@ -13,10 +13,10 @@ type: docx
 token: UN5Yd5ojPoTYrJxAtYzcgFs9nYe
 sidebar_position: 2
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud

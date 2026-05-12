@@ -13,10 +13,10 @@ type: docx
 token: TIo5dZK0vov2TtxkoW7crdsMngf
 sidebar_position: 5
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
   - zilliz
   - zilliz cloud
   - cloud

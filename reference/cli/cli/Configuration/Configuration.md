@@ -12,10 +12,10 @@ token: EGSzfJvZplcqb5dWwzkcksiQn5d
 sidebar_position: 2
 sidebar_label: "Configuration"
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud

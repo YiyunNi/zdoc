@@ -13,10 +13,10 @@ type: docx
 token: AvOXd92pPoAXPcxvArwcvKnSnph
 sidebar_position: 12
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud

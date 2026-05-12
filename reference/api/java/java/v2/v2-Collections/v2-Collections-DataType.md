@@ -13,10 +13,10 @@ type: docx
 token: RZ8idPxaho5yMoxJzGdc7QAcnNf
 sidebar_position: 10
 keywords: 
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud

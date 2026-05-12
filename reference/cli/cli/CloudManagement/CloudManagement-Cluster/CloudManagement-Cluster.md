@@ -12,10 +12,10 @@ token: PXOyfwEUtlY8xWdzQ62cXQeenOd
 sidebar_position: 3
 sidebar_label: "Cluster"
 keywords: 
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud

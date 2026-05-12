@@ -12,10 +12,10 @@ token: OOcKfRAVdlXgf4dqW0sc9Zl2nyg
 sidebar_position: 10
 sidebar_label: "Volume"
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
   - zilliz
   - zilliz cloud
   - cloud

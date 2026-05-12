@@ -12,10 +12,10 @@ token: R8pjfCQvPlA4IEdzRUPcc8eAnxc
 sidebar_position: 7
 sidebar_label: "History"
 keywords: 
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud

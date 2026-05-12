@@ -13,10 +13,10 @@ type: docx
 token: MLrJdT9TdojvcJxhauic8s9anBf
 sidebar_position: 4
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: SkLsdMpB7oiZLMx8T04cCd9Knqf
 sidebar_position: 4
 keywords: 
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud

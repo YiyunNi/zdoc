@@ -13,10 +13,10 @@ type: docx
 token: NgKmd79aSob0ruxRuUEcZba7nge
 sidebar_position: 9
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud

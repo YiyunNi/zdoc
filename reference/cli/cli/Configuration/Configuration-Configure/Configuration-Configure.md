@@ -12,10 +12,10 @@ token: LPAcfkgMhlSeEqdFJ7CcxeL3nCh
 sidebar_position: 4
 sidebar_label: "Configure"
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud

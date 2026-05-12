@@ -12,10 +12,10 @@ token: E5cpfv4EPlpWJ5dV0iJcPwo4nyf
 sidebar_position: 5
 sidebar_label: "Management"
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

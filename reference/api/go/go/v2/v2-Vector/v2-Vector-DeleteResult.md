@@ -13,10 +13,10 @@ type: docx
 token: Gh4ydrMIBopZekxncUFcrJctnBl
 sidebar_position: 3
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
   - zilliz
   - zilliz cloud
   - cloud

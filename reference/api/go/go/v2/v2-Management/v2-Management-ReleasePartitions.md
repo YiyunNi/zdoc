@@ -13,10 +13,10 @@ type: docx
 token: BcAVdlDIioMUXTxqyZkcXfqznKd
 sidebar_position: 25
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

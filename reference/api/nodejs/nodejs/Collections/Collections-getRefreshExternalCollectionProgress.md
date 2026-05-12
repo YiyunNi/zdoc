@@ -11,12 +11,12 @@ notebook: false
 description: "This operation checks the progress of a refresh job for an external collection. Use the jobid returned by refreshExternalCollection(). | Node.js"
 type: docx
 token: E7pZd2Yfzolgiyxcvz8cSFfKnoc
-sidebar_position: 29
+sidebar_position: 32
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud

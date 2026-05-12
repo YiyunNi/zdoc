@@ -13,10 +13,10 @@ type: docx
 token: V65MdZWnsoMwpfxkt0sc5qQPnbb
 sidebar_position: 1
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud

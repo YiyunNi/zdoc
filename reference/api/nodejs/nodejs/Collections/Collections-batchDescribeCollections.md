@@ -13,10 +13,10 @@ type: docx
 token: ByKKdHVcAojjyZxKK3PciOTVnQg
 sidebar_position: 23
 keywords: 
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud

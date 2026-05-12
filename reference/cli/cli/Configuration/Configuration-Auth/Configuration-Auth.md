@@ -12,10 +12,10 @@ token: CcG3fA4kslvDAzdAfK6cYC3unvb
 sidebar_position: 2
 sidebar_label: "Auth"
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud

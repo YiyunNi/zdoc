@@ -13,10 +13,10 @@ type: docx
 token: K5t2dl0XloN4VHx1lcpc6Uq3nye
 sidebar_position: 16
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
   - zilliz
   - zilliz cloud
   - cloud

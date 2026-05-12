@@ -13,10 +13,10 @@ type: docx
 token: SCP5dY88horVwExBCD2cuSChnZM
 sidebar_position: 11
 keywords: 
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
   - zilliz
   - zilliz cloud
   - cloud

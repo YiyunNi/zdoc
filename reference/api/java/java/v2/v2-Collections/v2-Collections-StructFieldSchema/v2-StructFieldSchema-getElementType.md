@@ -13,10 +13,10 @@ type: docx
 token: PvRGdribPou7PHxcoSWcRK3unUc
 sidebar_position: 4
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
   - zilliz
   - zilliz cloud
   - cloud

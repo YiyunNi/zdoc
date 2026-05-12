@@ -13,10 +13,10 @@ type: docx
 token: A6dgdXJdRoxwKAxGB1hctKXvnZg
 sidebar_position: 33
 keywords: 
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

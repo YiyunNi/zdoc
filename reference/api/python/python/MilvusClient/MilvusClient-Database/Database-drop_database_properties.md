@@ -13,10 +13,10 @@ type: docx
 token: AdSXdtNDsoTMnJx1QoGcSsnZnWd
 sidebar_position: 5
 keywords: 
-  - AI Agent
-  - semantic search
   - Anomaly Detection
   - sentence transformers
+  - Recommender systems
+  - information retrieval
   - zilliz
   - zilliz cloud
   - cloud

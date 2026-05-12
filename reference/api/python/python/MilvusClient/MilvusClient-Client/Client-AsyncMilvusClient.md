@@ -13,10 +13,10 @@ type: docx
 token: MIKkdpGuuoEaGWx1m7Fcw52inKg
 sidebar_position: 3
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

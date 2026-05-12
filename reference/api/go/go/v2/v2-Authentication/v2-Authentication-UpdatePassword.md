@@ -13,10 +13,10 @@ type: docx
 token: GKDQd15KkoiLPSxs8UYcFUamnIg
 sidebar_position: 25
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: VuYydaf7loMiRAxkB3scXzA1nPb
 sidebar_position: 8
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud

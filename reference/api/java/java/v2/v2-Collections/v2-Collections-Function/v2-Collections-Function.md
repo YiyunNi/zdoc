@@ -13,10 +13,10 @@ type: docx
 token: CW06d3MZQo2AzuxIv2ycCFpsn4b
 sidebar_position: 3
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud

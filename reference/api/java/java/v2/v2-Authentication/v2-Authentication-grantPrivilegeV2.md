@@ -13,10 +13,10 @@ type: docx
 token: MFv3drbbXouqVxxE1OicBBl5ndf
 sidebar_position: 11
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
   - zilliz
   - zilliz cloud
   - cloud

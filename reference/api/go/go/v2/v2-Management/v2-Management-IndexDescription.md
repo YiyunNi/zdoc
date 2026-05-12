@@ -13,10 +13,10 @@ type: docx
 token: Wyvhd3725onAmAxegk1caOHonQg
 sidebar_position: 15
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

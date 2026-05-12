@@ -13,10 +13,10 @@ type: docx
 token: NtxedWgOpof2Qtx8BU2ckktunWc
 sidebar_position: 7
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: PJsSdI8JBoUchVx1IkrcmakLnCc
 sidebar_position: 9
 keywords: 
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

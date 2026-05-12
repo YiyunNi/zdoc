@@ -13,10 +13,10 @@ type: docx
 token: DrQidTj6koNKBkxHi4NcAxBfnDd
 sidebar_position: 8
 keywords: 
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

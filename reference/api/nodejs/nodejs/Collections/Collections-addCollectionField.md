@@ -10,13 +10,13 @@ beta: false
 notebook: false
 description: "This operation adds a new scalar field to an existing collection without recreating it. The field becomes available almost immediately with minimal delay due to internal schema synchronization. | Node.js"
 type: docx
-token: JqOJdOA6Dooy2cxAXTkcQpBEnyk
+token: BKqIdIm0cop2s0xYjtQcSZL5nth
 sidebar_position: 19
 keywords: 
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud
@@ -184,6 +184,10 @@ await milvusClient.addCollectionField({
             - `filter` (*list*) -
 
                 Lists filters to refine tokens produced by the tokenizer, with options for built-in filters and custom filters. For more information, refer to [Alphanumonly Filter](https://milvus.io/docs/alphanumonly-filer.md) and others.
+
+    - **external_field** (*string*) -
+
+        The name of the field in the external source file that this field maps to. This parameter applies to external collections.
 
 - **timeout** (*number*) -  
 

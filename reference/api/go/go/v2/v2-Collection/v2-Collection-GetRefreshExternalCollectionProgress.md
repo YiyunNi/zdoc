@@ -13,10 +13,10 @@ type: docx
 token: OTM3db7aroAXAYxrTy4cyVbwnGG
 sidebar_position: 25
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
   - zilliz
   - zilliz cloud
   - cloud

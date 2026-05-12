@@ -13,10 +13,10 @@ type: docx
 token: BDqGdp4uqo3XRexslRNcts9knmd
 sidebar_position: 11
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: MwIofv5z3ljhiBdoZA4cEPdZnGg
 sidebar_position: 1
 sidebar_label: "Alias"
 keywords: 
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud

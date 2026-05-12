@@ -13,10 +13,10 @@ type: docx
 token: PKWMdOpDkoIXhFxDsgrc8oQVnIf
 sidebar_position: 23
 keywords: 
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud

@@ -13,10 +13,10 @@ type: docx
 token: Er8vdVepxoqhPFxVyZUcxSHMnqe
 sidebar_position: 6
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud
@@ -85,27 +85,31 @@ This is a class method. You should call this method like this: `MilvusClient.cre
 
         </Admonition>
 
-- **external_source** (*string*) -
+- **external_source** (*str*) -
 
-    The external source URI, which should be the name of an accessible external volume..
+    The external source URI, which should be a `volume://` URI that points to an accessible external volume. For example, `volume://<volume-name>/path/to/folder/`..
 
-- **external_spec** (*string*) -
+- **external_spec** (*str*) -
 
     The external source specifications, which are a set of secondary parameters:
 
-    - **format** (*string*) - 
+    - **format** (*str*) - 
 
         The format of the target source data files.
 
         Possible values are `parquet`, `vortex`, `lance-table`, and `iceberg-table`.
 
+    - **snapshot_id** (*str*) -
+
+        The ID of an Iceberg table. This applies only when `format` is `iceberg-table`.
+
 **RETURN TYPE:**
 
-*[CollectionSchema](null)*
+*[CollectionSchema](./MilvusClient-CollectionSchema)*
 
 **RETURNS:**
 
-A **[CollectionSchema](null)** object.
+A **[CollectionSchema](./MilvusClient-CollectionSchema)** object.
 
 **EXCEPTIONS:**
 

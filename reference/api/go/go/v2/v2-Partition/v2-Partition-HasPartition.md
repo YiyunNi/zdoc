@@ -13,10 +13,10 @@ type: docx
 token: Cased8tfhoZ25Sx4VALcy4gZnbh
 sidebar_position: 4
 keywords: 
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud

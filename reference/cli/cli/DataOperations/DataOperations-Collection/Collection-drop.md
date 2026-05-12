@@ -13,10 +13,10 @@ type: docx
 token: IM2CdOqn5oKCTUxFVImcbDCRnFc
 sidebar_position: 4
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: BBPZfcRbOlWEnjdbIJgc3wgynsg
 sidebar_position: 3
 sidebar_label: "MilvusClient"
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud

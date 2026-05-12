@@ -13,10 +13,10 @@ type: docx
 token: IyKzdBU2zoXcNUxvmhvcJCISnJe
 sidebar_position: 4
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
   - zilliz
   - zilliz cloud
   - cloud

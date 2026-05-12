@@ -13,10 +13,10 @@ type: docx
 token: I7fKd8mPNoKYEAxmKpxcgaH8nsb
 sidebar_position: 1
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud

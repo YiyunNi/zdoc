@@ -13,10 +13,10 @@ type: docx
 token: S0Iudxn6NoqusZx4xjRcLWLpnGc
 sidebar_position: 8
 keywords: 
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

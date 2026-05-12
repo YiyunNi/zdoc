@@ -13,10 +13,10 @@ type: docx
 token: SxMgdp3ThoMYHaxkKtKc9EWvnZd
 sidebar_position: 4
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud

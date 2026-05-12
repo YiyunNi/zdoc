@@ -13,10 +13,10 @@ type: docx
 token: EgeGdZL4LoCuv2xVUfFc9eDAnkd
 sidebar_position: 11
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud

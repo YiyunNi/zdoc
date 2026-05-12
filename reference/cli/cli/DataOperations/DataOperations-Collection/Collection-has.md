@@ -13,10 +13,10 @@ type: docx
 token: CidCduwW8oIywtxiHMQc8v2XnBe
 sidebar_position: 8
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud

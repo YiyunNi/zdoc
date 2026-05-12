@@ -13,10 +13,10 @@ type: docx
 token: PjAddPiH8oyRNpxqafBc1ZGknSd
 sidebar_position: 6
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud
