@@ -86,10 +86,34 @@ describe('validatePolicyResponse', () => {
     expect(result.violations).toEqual([]);
   });
 
-  it('builds deterministic fallback containing fixed facts and required include lines', () => {
-    const text = buildPolicyFallback(policy, 'same as user');
-    expect(text).toContain(policy.fixed_facts[0]);
-    expect(text).toContain('How to install');
-    expect(text).toContain('Use -h commands for quick capability overview');
+  it('builds deterministic fallback with the exact expected output', () => {
+    const text = buildPolicyFallback(policy);
+    expect(text).toBe([
+      'Here is the safest verified guidance:',
+      '',
+      'Verified facts:',
+      '- Use zilliz login as the default auth entry point.',
+      '',
+      'Required guidance:',
+      '- How to install',
+      '- From login, create cluster, create collection, insert, and query: provide one command set example.',
+      '- Use -h commands for quick capability overview',
+      '- You can also continue by reading the documentation',
+    ].join('\n'));
+  });
+
+  it('builds deterministic fallback when facts and required guidance are empty', () => {
+    const text = buildPolicyFallback({
+      ...policy,
+      fixed_facts: [],
+      must_include: [],
+    });
+    expect(text).toBe([
+      'Here is the safest verified guidance:',
+      '',
+      'Verified facts:',
+      '',
+      'Required guidance:',
+    ].join('\n'));
   });
 });
