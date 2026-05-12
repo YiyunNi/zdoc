@@ -1,6 +1,7 @@
 import {describe, it, expect} from 'vitest';
-import {validatePolicyResponse} from './validator.js';
+import {buildPolicyFallback} from './fallback.js';
 import type {PolicyPayload} from './types.js';
+import {validatePolicyResponse} from './validator.js';
 
 const policy: PolicyPayload = {
   intent_id: 'zcli_get_started_in_minutes',
@@ -83,5 +84,12 @@ describe('validatePolicyResponse', () => {
     const result = validatePolicyResponse(phrasePolicy, '  Please\n   INSTALL   the CLI  ');
     expect(result.ok).toBe(true);
     expect(result.violations).toEqual([]);
+  });
+
+  it('builds deterministic fallback containing fixed facts and required include lines', () => {
+    const text = buildPolicyFallback(policy, 'same as user');
+    expect(text).toContain(policy.fixed_facts[0]);
+    expect(text).toContain('How to install');
+    expect(text).toContain('Use -h commands for quick capability overview');
   });
 });
