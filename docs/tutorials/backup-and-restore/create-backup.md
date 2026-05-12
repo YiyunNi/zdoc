@@ -1,7 +1,7 @@
 ---
 title: "Create Backup | Cloud"
-slug: /create-snapshot
-sidebar_key: create-snapshot
+slug: /create-backup
+sidebar_key: create-backup
 sidebar_label: "Create Backup"
 added_since: FALSE
 last_modified: FALSE
@@ -47,7 +47,7 @@ This feature is available only to **Dedicated** clusters.
 
     - Collection TTL settings
 
-    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-snapshot))
+    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-backup-files))
 
     - Cluster dynamic and scheduled scaling settings
 
@@ -170,5 +170,5 @@ When you back up an encrypted cluster, all data within the encryption scope rema
 
 When you restore an encrypted backup to a new cluster, Zilliz Cloud will use the KMS key associated with the backup file to decrypt the data before restoration. Therefore, you can restore the backup to a new cluster with or without encryption. 
 
-For details, refer to [Restore from an encrypted backup](./restore-from-snapshot#restore-from-an-encrypted-backup-file).
+For details, refer to [Restore from an encrypted backup](./restore-from-backup-files#restore-from-an-encrypted-backup-file).
 

@@ -66,7 +66,7 @@ This guide explains how to resize a serving cluster to suit your changing worklo
 
 - **Performance Impact**: Scaling may cause slight service jitter.
 
-- **Backup Limitations**: Dynamic and scheduled scaling settings are not included in [backups](./create-snapshot). After restoring a cluster, reconfigure these settings manually.
+- **Backup Limitations**: Dynamic and scheduled scaling settings are not included in [backups](./create-backup). After restoring a cluster, reconfigure these settings manually.
 
 ## Manual scaling\{#manual-scaling}
 

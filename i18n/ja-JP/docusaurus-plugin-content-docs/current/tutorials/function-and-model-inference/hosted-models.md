@@ -5,65 +5,65 @@ sidebar_key: hosted-models
 sidebar_label: "ホストモデル"
 beta: PRIVATE
 notebook: FALSE
-description: "Zilliz Cloud では、埋め込みモデルや再ランキングモデルを Zilliz が管理するインフラストラクチャ上でホストできます。専用かつ完全に管理されたモデルインスタンスをデプロイし、Zilliz Cloud から直接利用することで、安定性と高性能な推論を実現できます。 | Cloud"
+description: "Zilliz Cloud は、Zilliz 管理のインフラストラクチャ上で埋め込みモデルとリランキングモデルをホストできます。専用の完全管理型モデルインスタンスをデプロイし、Zilliz Cloud から直接利用することで、安定した高性能な推論を実現できます。"
 type: origin
 token: DMrCwn4LXi1uKBkbHGfcpGnsnyh
 sidebar_position: 6
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
-  - モデル
-  - 推論
-  - ホストモデル
+  - cloud
+  - model
+  - inference
+  - hosted models
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Hosted Models
+# ホストモデル
 
-Zilliz Cloud は、**embedding** モデルおよび **reranking** モデルを Zilliz が管理するインフラストラクチャ上でホストできます。専用のフルマネージドモデルインスタンスをデプロイし、Zilliz Cloud から直接利用して、安定性と高性能な推論を実現できます。
+Zilliz Cloud は、Zilliz 管理のインフラストラクチャ上で **embedding** および **reranking** モデルをホストできます。専用の完全管理モデルインスタンスをデプロイし、Zilliz Cloud から直接安定した高性能な推論を利用できます。
 
-マネージドモデルインスタンスを使用すると、生データをコレクションに挿入できます。Zilliz Cloud は、取り込み時にデプロイ済みのモデルを使って自動的にベクトル埋め込みを生成します。セマンティック検索では、生のクエリテキストを提供するだけで済みます。Zilliz Cloud は同じモデルを使用してクエリベクトルを作成し、保存済みのベクトルと比較して最も関連性の高い結果を返します。
+管理モデルインスタンスを使用すると、生データをコレクションに挿入できます。Zilliz Cloud は、取り込み時にデプロイ済みのモデルを使用してベクトル埋め込みを自動生成します。セマンティック検索では、生のクエリテキストのみを提供します。Zilliz Cloud は同じモデルを使用してクエリベクトルを作成し、保存されているベクトルと比較して、最も関連性の高い結果を返します。
 
 次の図は、ホストモデルを使用する手順を示しています。
 
 ![NkgEwmrJDhyXiubY6HpcssaynHg](https://zdoc-images.s3.us-west-2.amazonaws.com/NkgEwmrJDhyXiubY6HpcssaynHg.png)
 
-## Deploy a model\{#deploy-a-model}
+## モデルのデプロイ\{#deploy-a-model}
 
 現在、Zilliz Cloud は以下のリージョン、インスタンスタイプ、およびモデルをサポートしています。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>ホストモデルについて特定の要件がある場合は、<a href="http://support.zilliz.com">お問い合わせください</a>。</p>
+ホストモデルに関する特定の要件がある場合は、[お問い合わせ](http://support.zilliz.com) ください。
 
 </Admonition>
 
-### Supported regions\{#supported-regions}
+### サポートされているリージョン\{#supported-regions}
 
-モデルのデプロイリージョンは、クラスターリージョンと一致している必要があります。利用可能なオプションは以下のとおりです。
+モデルのデプロイメントリージョンは、クラスタのリージョンと一致している必要があります。利用可能なオプションは以下の通りです。
 
 <table>
    <tr>
-     <th><p><strong>Region</strong></p></th>
-     <th><p><strong>Location</strong></p></th>
+     <th><p><strong>リージョン</strong></p></th>
+     <th><p><strong>ロケーション</strong></p></th>
    </tr>
    <tr>
      <td><p>aws-us-west-2</p></td>
-     <td><p>Oregon, USA</p></td>
+     <td><p>アメリカ合衆国 オレゴン州</p></td>
    </tr>
 </table>
 
-### Supported instance type\{#supported-instance-type}
+### サポートされているインスタンスタイプ\{#supported-instance-type}
 
-インスタンスタイプは、利用可能なコンピュートリソースを決定します。利用可能なオプションは以下のとおりです。
+インスタンスタイプは、利用可能なコンピューティングリソースを決定します。利用可能なオプションは以下の通りです。
 
 <table>
    <tr>
-     <th><p><strong>Instance Type</strong></p></th>
+     <th><p><strong>インスタンスタイプ</strong></p></th>
      <th><p><strong>リソース</strong></p></th>
    </tr>
    <tr>
@@ -72,14 +72,14 @@ Zilliz Cloud は、**embedding** モデルおよび **reranking** モデルを Z
    </tr>
 </table>
 
-### Supported models\{#supported-models}
+### サポートされているモデル\{#supported-models}
 
-利用可能なオプションは以下のとおりです。
+利用可能なオプションは以下の通りです。
 
 <table>
    <tr>
-     <th><p><strong>Type</strong></p></th>
-     <th><p><strong>Model</strong></p></th>
+     <th><p><strong>タイプ</strong></p></th>
+     <th><p><strong>モデル</strong></p></th>
    </tr>
    <tr>
      <td rowspan="9"><p>Embedding</p></td>
@@ -131,9 +131,9 @@ Zilliz Cloud は、**embedding** モデルおよび **reranking** モデルを Z
    </tr>
 </table>
 
-## Obtain a デプロイメントID\{#obtain-a-deployment-id}
+## デプロイメントIDの取得\{#obtain-a-deployment-id}
 
-お客様が提供した情報をもとに、Zilliz がモデルをデプロイします（所要時間は約15分）。デプロイが完了すると、Zilliz Cloud サポートから **デプロイメントID** が返されます。このデプロイメントID は、embedding 関数または reranking 関数を作成する際に使用します。
+提供いただいた情報を使用して、Zilliz がモデルをデプロイします。これには約15分かかります。デプロイメントの準備が整うと、Zilliz Cloud サポートが **デプロイメントID** を返却します。これは、embedding または reranking 関数を作成する際に使用します。
 
 ```bash
 "deploymentId": "68f8889be4b01215a275972a"
@@ -288,9 +288,9 @@ for hits in results:
 
 ## 請求\{#billing}
 
-ホスト型モデルの利用に伴う料金は、機能およびモデルサービスの利用料のみが発生します。推論処理は Zilliz Cloud 内で実行されるため、データがパブリックインターネットを通過することはありません。したがって、データ転送料金は発生しません。
+ホストモデルの使用には、関数およびモデルサービスの料金のみが発生します。推論は Zilliz Cloud 内で実行されるため、データはパブリックインターネットを経由せず、データ転送料金は発生しません。
 
-地域別のモデル単価については、[営業担当までお問い合わせください](http://zilliz.com/contact-sales)。
+リージョン別のモデル単価については、[営業部門にお問い合わせ](http://zilliz.com/contact-sales)ください。
 
 ### コスト計算\{#cost-calculation}
 
@@ -298,7 +298,7 @@ for hits in results:
 Function and Model Services Cost = Model Unit Price x Usage Time
 ```
 
-- **Model 単価**: 詳細については、[営業担当にお問い合わせください](http://zilliz.com/contact-sales)。
+- **Model 単価**: 詳細については、[営業にお問い合わせ](http://zilliz.com/contact-sales) ください。
 
-- **使用時間**: モデルのデプロイが実行されている合計時間（モデルが実際に使用されているかどうかにかかわらず）、時間単位で測定されます。
+- **使用時間**: モデルがアクティブに使用されているかどうかに関わらず、モデルデプロイメントが実行されている総時間を時間単位で測定します。
 

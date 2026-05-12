@@ -32,7 +32,7 @@ Access logs are delivered in [JSON Lines](https://jsonlines.org/) format - one J
 ```json
 {
     "action": "Search",
-    "cluster_id": "in01-2b8d91fc3a3b93b",
+    "cluster_id": "inxx-xxxxxxxxxxxxxxx",
     "database": "default",
     "date": "2026/04/14 06:31:16.827 +00:00",
     "interface": "Restful",
@@ -89,7 +89,7 @@ In practice, each entry occupies a single line in the `.log` file. The sections 
      <td><p>Yes</p></td>
      <td><p>string</p></td>
      <td><p>The unique identifier of the cluster.</p></td>
-     <td><p><code>"in01-2b8d91fc3a3b93b"</code></p></td>
+     <td><p><code>"inxx-xxxxxxxxxxxxxxx"</code></p></td>
    </tr>
    <tr>
      <td><p><code>database</code></p></td>
@@ -312,7 +312,7 @@ Log files are organized in your object storage bucket with the following path st
    <tr>
      <td><p>Cluster ID</p></td>
      <td><p>The cluster's unique identifier</p></td>
-     <td><p><code>in03-c7be749d5f403ad</code></p></td>
+     <td><p><code>inxx-xxxxxxxxxxxxxxx</code></p></td>
    </tr>
    <tr>
      <td><p>Log type</p></td>
@@ -339,6 +339,6 @@ Log files are organized in your object storage bucket with the following path st
 Full path example:
 
 ```plaintext
-/in03-c7be749d5f403ad/access/2024-12-20/09:16:53-jz5l7D8Q.log
+/inxx-xxxxxxxxxxxxxxx/access/2024-12-20/09:16:53-jz5l7D8Q.log
 ```
 

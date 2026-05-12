@@ -2,10 +2,10 @@
 title: "グローバルクラスターへの接続 | Cloud"
 slug: /connect-to-global-cluster
 sidebar_key: connect-to-global-cluster
-sidebar_label: "グローバルクラスターへの接続"
+sidebar_label: "グローバルクラスターに接続"
 beta: FALSE
 notebook: FALSE
-description: "グローバルクラスターが稼働したら、エンドポイントと認証トークンを使用して接続します。このページでは、2 種類のエンドポイント、それぞれの使用タイミング、およびスイッチオーバーやフェイルオーバー時のルーティング動作について説明します。 | Cloud"
+description: "グローバルクラスターの起動後、エンドポイントと認証トークンを使用して接続します。このページでは、2種類のエンドポイント、それぞれの使用タイミング、およびスイッチオーバーとフェイルオーバー時のルーティング動作について説明します。 | Cloud"
 type: origin
 token: DknbwaLS3iAAiUk9ifPc1Vmvnze
 sidebar_position: 3
@@ -29,60 +29,60 @@ import Procedures from '@site/src/components/Procedures';
 
 # グローバルクラスターへの接続
 
-グローバルクラスターが実行された後、エンドポイントと認証トークンを使用して接続します。このページでは、2 種類のエンドポイント、それぞれの使用タイミング、およびスイッチオーバーやフェイルオーバー時のルーティング動作について説明します。
+グローバルクラスターが実行中になったら、エンドポイントと認証トークンを使用して接続します。このページでは、2つのエンドポイントタイプ、それぞれの使用タイミング、およびスイッチオーバーとフェイルオーバー時のルーティング動作について説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>この機能は、<strong>ビジネスクリティカル</strong> プロジェクト内の <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
+この機能は、**ビジネスクリティカル** プロジェクトの **Dedicated** クラスターでのみ利用可能です。
 
 </Admonition>
 
 ## エンドポイントタイプの選択\{#choose-an-endpoint-type}
 
-グローバルクラスターには、以下の 2 つの接続方法があります。
+グローバルクラスターには、2つの接続方法があります。
 
-- **グローバルエンドポイント** を経由する方法
+- **グローバルエンドポイント** を介して接続
 
-- グローバルクラスター内の プライマリークラスター またはセカンダリクラスターの **パブリックエンドポイント** または **プライベート** エンドポイントを経由する方法
+- グローバルクラスター内のプライマリークラスターまたはセカンダリークラスターの **パブリックエンドポイントまたはプライベートエンドポイント** を介して接続
 
-以下の表は、これら 2 つの接続エンドポイントを比較したものです。
+次の表は、2つの接続エンドポイントを比較しています。
 
 <table>
    <tr>
      <th></th>
-     <th><p><strong>Global endpoint</strong></p></th>
-     <th><p><strong>プライマリークラスター またはセカンダリクラスターのエンドポイント</strong></p></th>
+     <th><p><strong>グローバルエンドポイント</strong></p></th>
+     <th><p><strong>プライマリークラスターまたはセカンダリークラスターのエンドポイント</strong></p></th>
    </tr>
    <tr>
      <td><p><strong>書き込みルーティング</strong></p></td>
-     <td><p>自動的に プライマリークラスター へルーティングされます</p></td>
-     <td><p>書き込みを受け付けるのは プライマリークラスター の パブリックエンドポイント のみです</p></td>
+     <td><p>プライマリークラスターに自動的にルーティング</p></td>
+     <td><p>プライマリーのパブリックエンドポイントのみが書き込みを受け付ける</p></td>
    </tr>
    <tr>
-     <td><p><strong>読み取りルーティング</strong></p></td>
-     <td><p>プライマリークラスター へルーティングされます</p><p>(まもなく、レイテンシに基づいて最も近い利用可能なクラスターへインテリジェントにルーティングする機能がサポートされる予定です。)</p></td>
-     <td><p>接続した特定のクラスターに対して読み取りが行われます</p></td>
+     <td><p><strong>読み込みルーティング</strong></p></td>
+     <td><p>プライマリークラスターにルーティング</p><p>（レイテンシーに基づいて最も近い利用可能なクラスターにインテリジェントにルーティングする機能は、近日対応予定です。）</p></td>
+     <td><p>接続した特定のクラスターに読み込みが行われる</p></td>
    </tr>
    <tr>
      <td><p><strong>スイッチオーバー / フェイルオーバー</strong></p></td>
-     <td><p>自動的に再ルーティングされ、コードの変更は不要です</p></td>
-     <td><p>新しい プライマリークラスター を指すように接続先を手動で更新する必要があります</p></td>
+     <td><p>自動的に再ルーティング — コード変更は不要</p></td>
+     <td><p>新しいプライマリーに接続するよう接続先を更新する必要がある</p></td>
    </tr>
    <tr>
      <td><p><strong>プライベート Link</strong></p></td>
      <td><p>非対応（パブリックインターネットが必要）</p></td>
-     <td><p>対応しています。</p></td>
+     <td><p>対応</p></td>
    </tr>
    <tr>
-     <td><p><strong>推奨用途</strong></p></td>
-     <td><p>自動フェイルオーバーとレイテンシベースのルーティングを必要とする本番アプリケーション</p></td>
-     <td><p>特定のクラスターへの直接アクセス（例：環境の複製、テスト、デバッグ）</p></td>
+     <td><p><strong>最適な用途</strong></p></td>
+     <td><p>自動フェイルオーバーとレイテンシーベースのルーティングが必要な本番アプリケーション</p></td>
+     <td><p>特定のクラスターへの直接アクセス（例：環境レプリケーション、テスト、デバッグ）</p></td>
    </tr>
 </table>
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>本番ワークロードには グローバルエンドポイント の使用を推奨します。これにより、スイッチオーバーやフェイルオーバー発生時にアプリケーションコード内でエンドポイントの変更を処理する必要がなくなります。</p>
+本番ワークロードにはグローバルエンドポイントの使用を推奨します。これにより、スイッチオーバーまたはフェイルオーバー時にアプリケーションコードでエンドポイントの変更を処理する必要がなくなります。
 
 </Admonition>
 
@@ -90,28 +90,28 @@ import Procedures from '@site/src/components/Procedures';
 
 <Procedures>
 
-1. グローバルクラスターまたは対象クラスターに移動します。
+1. グローバルクラスターまたは対象のクラスターに移動します。
 
-    - **global** **endpoint** の場合：**Global** **Cluster** ページに移動します。
+    - **グローバルエンドポイント** の場合：**グローバルクラスター** ページに移動します。
 
-    - **public** **endpoint** の場合：特定の プライマリークラスター またはセカンダリクラスターの **Cluster** **Details** ページに移動します。
+    - **パブリックエンドポイント** の場合：特定のプライマリークラスターまたはセカンダリークラスターの **クラスター詳細** ページに移動します。
 
-1. 接続カードで、**Global Endpoint** または **Public Endpoint** をコピーします。
+1. Connect カードで、**グローバルエンドポイント** または **パブリックエンドポイント** をコピーします。
 
     ![OPCTbMaYIoUXHKxDf0ycdMNBnze](https://zdoc-images.s3.us-west-2.amazonaws.com/opctbmayiouxhkxdf0ycdmnbnze.png "OPCTbMaYIoUXHKxDf0ycdMNBnze")
 
-1. 認証トークンを準備します。これは [API key](./manage-api-keys) または [cluster credential](./cluster-credentials) (`username:password`) のいずれかになります。
+1. 認証トークンを準備します。これは [API キー](./manage-api-keys) または [クラスタークレデンシャル](./cluster-credentials)（`username:password`）のいずれかです。
 
 </Procedures>
 
 ## SDK バージョンの確認\{#check-sdk-version}
 
-[インストール](./install-sdks) 済みの SDK があることを確認してください。グローバルクラスターに接続する前に、SDK が最小バージョン要件を満たしていることを確認してください。
+[インストール済み](./install-sdks) の SDK があることを確認します。グローバルクラスターに接続する前に、SDK が最低バージョン要件を満たしていることを確認してください。
 
 <table>
    <tr>
      <th><p>SDK</p></th>
-     <th><p>最小バージョン</p></th>
+     <th><p>最低バージョン</p></th>
    </tr>
    <tr>
      <td><p>Python</p></td>
@@ -131,9 +131,9 @@ import Procedures from '@site/src/components/Procedures';
    </tr>
 </table>
 
-## グローバルエンドポイント を使用した接続\{#connect-using-the-global-endpoint}
+## グローバルエンドポイントを使用した接続\{#connect-using-the-global-endpoint}
 
-グローバルエンドポイント は、グローバルクラスター内の適切なクラスターへリクエストをルーティングする単一の URL です。SDK クライアントの `uri` として使用してください。
+グローバルエンドポイントは、グローバルクラスター内の適切なクラスターにリクエストをルーティングする単一の URL です。SDK クライアントの `uri` として使用します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -287,57 +287,57 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>パブリックエンドポイントを使用する場合、書き込み操作を受け付けるのはプライマリークラスターのパブリックエンドポイントのみです。セカンダリークラスターのパブリックエンドポイントへの書き込みは失敗します。</p>
+パブリックエンドポイントを使用する場合、プライマリークラスターのパブリックエンドポイントのみが書き込み操作を受け付けます。セカンダリークラスターのパブリックエンドポイントへの書き込みは失敗します。
 
 </Admonition>
 
-## Routing behavior\{#routing-behavior}
+## ルーティング動作\{#routing-behavior}
 
-### During normal operation\{#during-normal-operation}
+### 通常運用時\{#during-normal-operation}
 
 <table>
    <tr>
-     <th><p><strong>Request type</strong></p></th>
+     <th><p><strong>リクエストタイプ</strong></p></th>
      <th><p><strong>グローバルエンドポイント</strong></p></th>
      <th><p><strong>パブリックエンドポイント</strong></p></th>
    </tr>
    <tr>
-     <td><p>Write (insert, upsert, delete)</p></td>
-     <td><p>Routed to the プライマリークラスター</p></td>
-     <td><p>Only accepted on the プライマリークラスター's endpoint</p></td>
+     <td><p>書き込み（insert、upsert、delete）</p></td>
+     <td><p>プライマリークラスターにルーティング</p></td>
+     <td><p>プライマリークラスターのエンドポイントでのみ受け付け</p></td>
    </tr>
    <tr>
-     <td><p>Read (search, query)</p></td>
-     <td><p>Routed to the プライマリークラスター</p><p>(Intelligent routing to the nearest available cluster based on latency will be supported soon.)</p></td>
-     <td><p>Served by the specific cluster you connect to</p></td>
+     <td><p>読み込み（search、query）</p></td>
+     <td><p>プライマリークラスターにルーティング</p><p>（レイテンシーに基づく最も近い利用可能クラスターへのインテリジェントルーティングは、近日対応予定です。）</p></td>
+     <td><p>接続した特定のクラスターが処理</p></td>
    </tr>
 </table>
 
-### During and after switchover / failover\{#during-and-after-switchover-failover}
+### スイッチオーバー / フェイルオーバー中および完了後\{#during-and-after-switchover-failover}
 
 <table>
    <tr>
-     <th><p><strong>Scenario</strong></p></th>
+     <th><p><strong>シナリオ</strong></p></th>
      <th><p><strong>グローバルエンドポイント</strong></p></th>
      <th><p><strong>パブリックエンドポイント</strong></p></th>
    </tr>
    <tr>
-     <td><p>スイッチオーバー in progress</p></td>
-     <td><p>Writes briefly paused, then resume on the new primary. Reads continue.</p></td>
-     <td><p>No change to endpoints. Old primary becomes secondary.</p></td>
+     <td><p>スイッチオーバー進行中</p></td>
+     <td><p>書き込みが一時停止し、新しいプライマリーで再開。読み込みは継続。</p></td>
+     <td><p>エンドポイントに変更なし。旧プライマリーがセカンダリーに。</p></td>
    </tr>
    <tr>
-     <td><p>フェイルオーバー in progress</p></td>
-     <td><p>Writes unavailable until new primary is promoted. Reads continue on secondaries.</p></td>
-     <td><p>Old primary's endpoint becomes unreachable.</p></td>
+     <td><p>フェイルオーバー進行中</p></td>
+     <td><p>新しいプライマリーが昇格するまで書き込み不可。セカンダリーで読み込み継続。</p></td>
+     <td><p>旧プライマリーのエンドポイントが到達不能に。</p></td>
    </tr>
    <tr>
-     <td><p>After completion</p></td>
-     <td><p>Automatically routes to the new primary. No code changes.</p></td>
-     <td><p>Update your code to use the new primary's パブリックエンドポイント for writes.</p></td>
+     <td><p>完了後</p></td>
+     <td><p>自動的に新しいプライマリーにルーティング。コード変更不要。</p></td>
+     <td><p>書き込み用に新しいプライマリーのパブリックエンドポイントを使用するようコードを更新。</p></td>
    </tr>
 </table>
 
-### SDK automatic reconnection\{#sdk-automatic-reconnection}
+### SDK の自動再接続\{#sdk-automatic-reconnection}
 
-グローバルエンドポイントを使用する場合、Zilliz Cloud SDK はスイッチオーバーおよびフェイルオーバー中のエンドポイントの再ルーティングを処理します。アプリケーション側でルーティング変更に対するリトライロジックを実装する必要はありません。ただし、切り替え時点で進行中の書き込みは一時的なエラーを受ける可能性があります。これらのケースは、アプリケーション内の標準的なリトライロジックで処理されます。
+グローバルエンドポイントを使用する場合、Zilliz Cloud SDK はスイッチオーバーおよびフェイルオーバー時のエンドポイント再ルーティングを処理します。アプリケーション側でルーティング変更自体のリトライロジックを実装する必要はありません。ただし、スイッチの瞬間に進行中だった書き込みは一時的なエラーを受け取る可能性があります — アプリケーション内の標準的なリトライロジックでこれらのケースを処理できます。

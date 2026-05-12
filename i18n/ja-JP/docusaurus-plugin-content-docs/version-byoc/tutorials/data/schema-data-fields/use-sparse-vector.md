@@ -5,7 +5,7 @@ sidebar_key: use-sparse-vector
 sidebar_label: "疎ベクトル"
 beta: FALSE
 notebook: FALSE
-description: "疎ベクトルは、情報検索や自然言語処理において表面的な用語の一致を捉えるための重要な手法です。密ベクトルが意味理解に優れている一方、疎ベクトルは特に特殊な用語やテキスト識別子を検索する際に、より予測可能な一致結果を提供します。| BYOC"
+description: "疎ベクトルは、情報検索や自然言語処理において表層的な用語の一致を捉える重要な手法です。密ベクトルが意味的理解に優れる一方、疎ベクトルは特別な用語やテキスト識別子を検索する際に、より予測可能な一致結果を提供することが多いです。 | BYOC"
 type: origin
 token: JbPDwHqd0iZZSuk5tYicGqKbn9c
 sidebar_position: 5
@@ -13,8 +13,8 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
+  - コレクション
+  - スキーマ
   - 疎ベクトル
 
 ---
@@ -23,39 +23,39 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Sparse Vector
+# 疎ベクトル
 
-疎ベクトル（Sparse vectors）は、情報検索や自然言語処理において、表面的な用語マッチングを捉えるための重要な手法です。密ベクトル（dense vectors）はセマンティックな理解に優れていますが、疎ベクトルは特に特殊な用語やテキスト識別子を検索する際に、より予測可能なマッチング結果を提供します。
+疎ベクトルは、情報検索および自然言語処理において、表層的な用語の一致を捉える重要な手法です。密ベクトルはセマンティック理解に優れていますが、疎ベクトルは特別な用語やテキスト識別子を検索する際に、より予測可能な一致結果を提供することが多いです。
 
 ## 概要\{#overview}
 
-疎ベクトルは、高次元ベクトルの一種で、その大部分の要素がゼロであり、少数の次元のみが非ゼロ値を持つものです。下図に示すように、密ベクトルは通常、各位置に値を持つ連続した配列（例：`[0.3, 0.8, 0.2, 0.3, 0.1]`）として表現されます。一方、疎ベクトルは非ゼロ要素とその次元インデックスのみを格納し、多くの場合 `{ index: value }` のようなキー・バリュー形式（例：`[{2: 0.2}, ..., {9997: 0.5}, {9999: 0.7}]`）で表現されます。
+疎ベクトルは、ほとんどの要素がゼロで、少数の次元のみが非ゼロの値を持つ特殊な高次元ベクトルです。以下の図に示すように、密ベクトルは通常、各位置に値を持つ連続した配列として表現されます（例：`[0.3, 0.8, 0.2, 0.3, 0.1]`）。対照的に、疎ベクトルは非ゼロ要素とその次元のインデックスのみを格納し、多くの場合 `{ index: value}` のキー・バリューペアとして表現されます（例：`[{2: 0.2}, ..., {9997: 0.5}, {9999: 0.7}]`）。
 
 ![VPhswBhHmhJrh3byaVnc3onYnPc](https://zdoc-images.s3.us-west-2.amazonaws.com/VPhswBhHmhJrh3byaVnc3onYnPc.png)
 
-トークン化とスコアリングにより、文書はボウ（bag-of-words）ベクトルとして表現できます。この場合、各次元は語彙内の特定の単語に対応し、文書内に存在する単語のみが非ゼロ値を持ち、疎ベクトル表現が生成されます。疎ベクトルは以下の2つのアプローチで生成できます：
+トークン化とスコアリングにより、文書は単語の袋ベクトルとして表現できます。ここで各次元は語彙内の特定の単語に対応します。文書に存在する単語のみが非ゼロの値を持ち、疎ベクトル表現が作成されます。疎ベクトルは、2つのアプローチで生成できます。
 
-- **従来の統計手法**（[TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)（Term Frequency-Inverse Document Frequency）や [BM25](https://en.wikipedia.org/wiki/Okapi_BM25)（Best Matching 25）など）は、コーパス全体における単語の出現頻度と重要度に基づいて重みを割り当てます。これらの手法は、各次元（トークンを表す）に対して単純な統計量をスコアとして計算します。Zilliz Cloud は BM25 方式による組み込みの **全文検索** 機能を提供しており、テキストを自動的に疎ベクトルに変換するため、手動での前処理が不要です。このアプローチは、精度と完全一致が重要なキーワード検索に最適です。詳細については、[Full Text Search](./full-text-search) を参照してください。
+- **従来の統計手法**では、[TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)（Term Frequency-Inverse Document Frequency）や [BM25](https://en.wikipedia.org/wiki/Okapi_BM25)（Best Matching 25）などが、コーパス全体での単語の頻度と重要度に基づいて重みを割り当てます。これらの方法は、各次元（トークンを表す）のスコアとして単純な統計量を計算します。Zilliz Cloud は BM25 方式の組み込み **全文検索** を提供しており、テキストを自動的に疎ベクトルに変換し、手動での前処理を不要にします。このアプローチは、精度と完全一致が重要なキーワードベースの検索に最適です。詳細については、[全文検索](./full-text-search) を参照してください。
 
-- **ニューラル疎埋め込みモデル** は、大規模データセット上で学習された手法で、疎な表現を生成します。これらは通常、Transformer アーキテクチャを用いたディープラーニングモデルであり、セマンティックな文脈に基づいて用語を拡張および重み付けできます。Zilliz Cloud は、[SPLADE](https://arxiv.org/abs/2109.10086) のようなモデルによって外部で生成されたスパース埋め込みもサポートしています。詳細については、[Embeddings](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照してください。
+- **ニューラル疎埋め込みモデル**は、大規模データセットでの学習により疎表現を生成する学習済み手法です。これらは通常、Transformer アーキテクチャを持つ深層学習モデルであり、セマンティックな文脈に基づいて単語を拡張・重み付けすることができます。Zilliz Cloud は [SPLADE](https://arxiv.org/abs/2109.10086) などのモデルから外部生成されたスパース埋め込みもサポートしています。詳細については、[埋め込み](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照してください。
 
-疎ベクトルと元のテキストは Zilliz Cloud に保存され、効率的な検索が可能です。以下の図は、全体のプロセスを示しています。
+疎ベクトルと元のテキストは、効率的な検索のために Zilliz Cloud に格納できます。以下の図は、全体的なプロセスの概要を示しています。
 
 ![A7FvwnB5bhpBlKbgrzYcQijbnxg](https://zdoc-images.s3.us-west-2.amazonaws.com/A7FvwnB5bhpBlKbgrzYcQijbnxg.png)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>疎ベクトルに加えて、Zilliz Cloud は密ベクトル（dense vectors）およびバイナリベクトル（binary vectors）もサポートしています。密ベクトルは深層的なセマンティック関係の把握に適しており、バイナリベクトルは類似度の高速比較やコンテンツの重複除去などのシナリオに優れています。詳細については、<a href="./use-dense-vector">Dense Vector</a> および <a href="./use-binary-vector">Binary Vector</a> を参照してください。</p>
+疎ベクトルに加えて、Zilliz Cloud は密ベクトルとバイナリベクトルもサポートしています。密ベクトルは深いセマンティック関係の捉え方に最適であり、バイナリベクトルは高速な類似性比較やコンテンツの重複排除などのシナリオで優れています。詳細については、[密ベクトル](./use-dense-vector) と [バイナリベクトル](./use-binary-vector) を参照してください。
 
 </Admonition>
 
 ## データ形式\{#data-formats}
 
-以下のセクションでは、SPLADE のような学習済みの疎埋め込みモデルから得られるベクトルの保存方法を説明します。密ベクトルに基づくセマンティック検索を補完するものをお探しの場合は、シンプルさの点から SPLADE よりも BM25 を用いた [Full Text Search](./full-text-search) を推奨します。品質評価を実施し、SPLADE の使用を決定した場合は、[Embeddings](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照して、SPLADE による疎ベクトルの生成方法をご確認ください。
+以下のセクションでは、SPLADE などの学習済み疎埋め込みモデルからのベクトルの格納方法を説明します。密ベクトルベースのセマンティック検索を補完するものをお探しの場合、シンプルさのため SPLADE よりも BM25 を使用した [全文検索](./full-text-search) を推奨します。品質評価を実施し、SPLADE の使用を決定した場合は、SPLADE で疎ベクトルを生成する方法について [埋め込み](https://milvus.io/docs/embeddings.md#Embedding-Overview) を参照してください。
 
-Zilliz Cloud は、以下の形式での疎ベクトル入力をサポートしています：
+Zilliz Cloud は、以下の形式での疎ベクトル入力をサポートしています。
 
-- **辞書のリスト（`{dimension_index: value, ...}` 形式）**
+- **辞書のリスト（**`{dimension_index: value, ...}` **形式）**
 
     ```python
     # Represent each sparse vector using a dictionary
@@ -270,23 +270,23 @@ export schema="{
 </TabItem>
 </Tabs>
 
-この例では、次の3つのフィールドが追加されています。
+この例では、3つのフィールドが追加されています。
 
-- `pk`: このフィールドは主キーを格納し、`VARCHAR` データ型を使用します。最大長は100バイトで、自動生成されます。
+- `pk`: このフィールドは、プライマリキーを `VARCHAR` データ型で格納します。これは最大100バイトの長さで自動生成されます。
 
-- `sparse_vector`: このフィールドは疎ベクトルを格納し、`SPARSE_FLOAT_VECTOR` データ型を使用します。
+- `sparse_vector`: このフィールドは、疎ベクトルを `SPARSE_FLOAT_VECTOR` データ型で格納します。
 
-- `text`: このフィールドはテキスト文字列を格納し、`VARCHAR` データ型を使用します。最大長は65535バイトです。
+- `text`: このフィールドは、テキスト文字列を `VARCHAR` データ型で格納します。最大長は65535バイトです。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>データ挿入時に指定されたテキストフィールドから  または Zilliz Cloud が疎ベクトルの埋め込みを生成できるようにするには、関数を用いた追加の手順が必要です。詳細については、<a href="./full-text-search">Full Text Search</a> を参照してください。</p>
+データ挿入時に指定したテキストフィールドから疎ベクトルの埋め込みを生成するために、 または Zilliz Cloud を有効にするには、関数を使用する追加のステップが必要です。詳細については、[フルテキスト検索](./full-text-search) を参照してください。
 
 </Admonition>
 
-## Set Index Parameters\{#set-index-parameters}
+## インデックスパラメータの設定\{#set-index-parameters}
 
-疎ベクトルに対するインデックス作成プロセスは、[dense vectors](./use-dense-vector) の場合と似ていますが、指定するインデックスタイプ（`index_type`）、距離メトリクス（`metric_type`）、およびインデックスパラメータ（`params`）に違いがあります。
+疎ベクトルのインデックス作成プロセスは、[密ベクトル](./use-dense-vector) の場合と似ていますが、指定するインデックス型（`index_type`）、距離メトリック（`metric_type`）、およびインデックスパラメータ（`params`）が異なります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -366,13 +366,13 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-この例では、`SPARSE_INVERTED_INDEX` インデックスタイプをメトリックとして `IP` と共に使用しています。詳細については、以下のリソースをご覧ください：
+この例では、`SPARSE_INVERTED_INDEX` インデックスタイプと `IP` メトリックを使用しています。詳細については、以下のリソースを参照してください。
 
-- [メトリックタイプ](./search-metrics-explained): 異なるフィールドタイプに対応するメトリックタイプ
+- [メトリックタイプ](./search-metrics-explained): 異なるフィールドタイプでサポートされるメトリックタイプ
 
-- [全文検索](./full-text-search): 全文検索に関する詳細チュートリアル
+- [全文検索](./full-text-search): 全文検索の詳細チュートリアル
 
-## コレクションの作成\{#create-collection}
+## Create Collection\{#create-collection}
 
 疎ベクトルとインデックスの設定が完了したら、疎ベクトルを含むコレクションを作成できます。以下の例では、[`create_collection`](./manage-collections-sdks) メソッドを使用して `my_collection` という名前のコレクションを作成しています。
 
@@ -797,5 +797,5 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-類似性検索パラメータの詳細については、[基本的なベクトル検索](./single-vector-search)を参照してください。
+類似性検索パラメータの詳細については、[基本的なベクトル検索](./single-vector-search) を参照してください。
 

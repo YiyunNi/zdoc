@@ -2,19 +2,19 @@
 title: "コレクションフィールドの変更 | Cloud"
 slug: /alter-collection-field
 sidebar_key: alter-collection-field
-sidebar_label: "フィールドの変更"
+sidebar_label: "フィールドを変更"
 beta: FALSE
 notebook: FALSE
-description: "コレクションフィールドのプロパティを変更して、列の制約を変更したり、より厳格なデータ整合性ルールを適用したりできます。| Cloud"
+description: "コレクションフィールドのプロパティを変更して、列の制約を変更したり、より厳格なデータ整合性ルールを適用したりできます。"
 type: origin
 token: PLjFwlcT8ilFBakYXyfcg6S2n7d
 sidebar_position: 17
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
-  - コレクション
-  - スキーマ
+  - cloud
+  - collection
+  - schema
   - フィールドプロパティ
   - コレクションフィールドの変更
 
@@ -26,22 +26,21 @@ import TabItem from '@theme/TabItem';
 
 # コレクションフィールドの変更
 
-コレクションフィールドのプロパティを変更して、カラム制約を変更したり、より厳格なデータ整合性ルールを適用したりできます。
+コレクションフィールドのプロパティを変更して、列の制約を変更したり、より厳格なデータ整合性ルールを適用したりすることができます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>各コレクションにはプライマリフィールドが1つだけ存在します。コレクション作成時に設定されたプライマリフィールドは、その後変更したりそのプロパティを変更したりすることはできません。</p></li>
-<li><p>各コレクションにはパーティションキーを1つだけ設定できます。コレクション作成時に設定されたパーティションキーは、その後変更できません。</p></li>
-</ul>
+- 各コレクションは1つのプライマリフィールドのみで構成されます。コレクション作成時に設定されると、プライマリフィールドを変更したり、そのプロパティを変更したりすることはできません。
+
+- 各コレクションは1つのパーティションキーのみを持つことができます。コレクション作成時に設定されると、パーティションキーを変更することはできません。
 
 </Admonition>
 
-## VarChar フィールドの変更\{#alter-varchar-field}
+## VarCharフィールドの変更\{#alter-varchar-field}
 
-VarChar フィールドには `max_length` というプロパティがあり、フィールド値に含まれる文字数の上限を制限します。この `max_length` プロパティを変更できます。
+VarCharフィールドには `max_length` というプロパティがあり、フィールド値に含めることができる最大文字数を制約します。`max_length` プロパティを変更することができます。
 
-以下の例では、`varchar` という名前の VarChar フィールドを持つコレクションがあり、その `max_length` プロパティを設定するものとします。
+以下の例では、コレクションに `varchar` という名前のVarCharフィールドがあり、その `max_length` プロパティを設定します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

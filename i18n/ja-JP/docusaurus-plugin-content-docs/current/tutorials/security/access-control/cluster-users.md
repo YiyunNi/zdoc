@@ -1,11 +1,11 @@
 ---
-title: "クラスターユーザーの管理 (コンソール) | Cloud"
+title: "クラスターユーザーの管理（コンソール） | Cloud"
 slug: /cluster-users
 sidebar_key: cluster-users
-sidebar_label: "クラスターユーザーの管理 (コンソール)"
+sidebar_label: "クラスターユーザーの管理（コンソール）"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てることで権限を定義し、データセキュリティを実現できます。| Cloud"
+description: "Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てて権限を定義することで、データセキュリティを実現できます。"
 type: origin
 token: CWT2wh5YriZfPZkGlgCcWxVnnAf
 sidebar_position: 2
@@ -13,10 +13,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - クラスター
+  - cluster
   - アクセス制御
   - rbac
-  - ユーザー
+  - users
   - 概要
 
 ---
@@ -24,35 +24,35 @@ keywords:
 import Admonition from '@theme/Admonition';
 
 
-# クラスターユーザーの管理 (コンソール)
+# クラスターユーザーの管理（コンソール）
 
 Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てることで権限を定義し、データセキュリティを実現できます。
 
-クラスター作成時、`db_admin` という名前のデフォルトユーザーが自動的に生成されます。このユーザーは削除できません。このデフォルトユーザーに加えて、きめ細かいアクセス制御のために追加のクラスターユーザーを作成できます。
+クラスターの作成時に、デフォルトのユーザー `db_admin` が自動的に生成されます。このユーザーは削除できません。このデフォルトユーザーに加えて、きめ細かなアクセス制御のためにさらにクラスターユーザーを作成できます。
 
-クラスターユーザーを管理するには、**組織オーナー** または **プロジェクト管理者** であるか、**Cluster_Admin** 権限を持つロールを持っている必要があります。
+クラスターユーザーを管理するには、**組織オーナー**、**プロジェクト管理者**、または **Cluster_Admin** 権限を持つロールが必要です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>この機能は <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
+この機能は **Dedicated** クラスターでのみ利用可能です。
 
 </Admonition>
 
 ## クラスターユーザーの作成\{#create-a-cluster-user}
 
-クラスターユーザーを作成する際は、以下の操作が必要です：
+クラスターユーザーを作成する際には、以下が必要です：
 
-- ユーザー名を入力します。
+- ユーザー名を入力する。
 
-- このユーザーに、組み込みのクラスターロールまたは [カスタムクラスターロール](./cluster-roles) のいずれかを付与します。
+- このユーザーに組み込みのクラスターロールまたは[カスタムクラスターロール](./cluster-roles)を付与する。
 
-- このクラスターユーザーのパスワードを設定します。このパスワードは [認証](./cluster-credentials) に使用されます。
+- このクラスターユーザーのパスワードを設定する。このパスワードは[認証](./cluster-credentials)に使用されます。
 
 ![add-cluster-user](https://zdoc-images.s3.us-west-2.amazonaws.com/add-cluster-user.png "add-cluster-user")
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>各クラスターで設定できるクラスターユーザーは最大 100 人までです。</p>
+各クラスターには最大 100 人のクラスターユーザーを作成できます。
 
 </Admonition>
 
@@ -64,7 +64,7 @@ Zilliz Cloud では、クラスターユーザーを作成し、クラスター�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>デフォルトユーザー <strong>db_admin</strong> は削除できません。</p>
+デフォルトのユーザー **db_admin** は削除できません。
 
 </Admonition>
 

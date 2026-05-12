@@ -5,14 +5,14 @@ sidebar_key: audit-logs
 sidebar_label: "VectorDB 監査ログ"
 beta: FALSE
 notebook: FALSE
-description: "監査ログ機能により、管理者は Zilliz Cloud クラスター上でのユーザー操作や API コールを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作など、ベクトルデータベースのアクティビティの詳細な記録を提供します。| BYOC"
+description: "監査ログ機能により、管理者は Zilliz Cloud クラスター上でのユーザー主導の操作や API 呼び出しを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作など、ベクトルデータベースのアクティビティの詳細な記録を提供します。 | BYOC"
 type: origin
 token: M5dXwsGOOiPdAjkWLZUc2Pxonuh
 sidebar_position: 1
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - 監査
   - ログ
   - 設定
@@ -24,48 +24,48 @@ import Admonition from '@theme/Admonition';
 
 # VectorDB 監査ログ
 
-監査ログにより、管理者は Zilliz Cloud クラスターにおけるユーザー主導の運用および API コールを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作など、VectorDB 活動の詳細な記録を提供します。
+監査ログ機能により、管理者は Zilliz Cloud クラスター上のユーザー主導の運用と API 呼び出しを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ運用を含むベクトル DB アクティビティの詳細な記録を提供します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<ul>
-<li><p>監査ログは、<strong>Enterprise</strong> プロジェクト以上のプランティアにおける<strong>Dedicated</strong> クラスターでのみ利用可能です。</p></li>
-<li><p>監査ログは、Milvus 2.5.x 以降を実行している Zilliz Cloud クラスターでのみサポートされています。</p></li>
-<li><p>BYOC 展開では、VDB 監査ログはデータプレーンのローカルオブジェクトストレージ（S3/Azure Blob Storage/GCS）に設定されたログバケットに直接書き込まれ、データがインフラストラクチャ外に出ることはありません。監査ログを有効化し設定するには、<a href="https://support.zilliz.com/hc/en-us">お問い合わせください</a>。</p></li>
-</ul>
+- 監査ログ機能は、**Enterprise** プロジェクトまたはそれ以上のプラン層の **Dedicated** クラスターでのみ利用可能です。
+
+- 監査ログ機能は、Milvus 2.5.x 以降を実行している Zilliz Cloud クラスターのみでサポートされています。
+
+- BYOC デプロイメントでは、VDB 監査ログはデータプレーンのローカルオブジェクトストレージ（S3/Azure Blob Storage/GCS）に構成されたログバケットに直接書き込まれ、データがお客様のインフラストラクチャから流出しないようにしています。監査ログの有効化と構成については、[お問い合わせ](https://support.zilliz.com/hc/en-us) ください。
 
 </Admonition>
 
-## 概要\{#overview}
+## Overview\{#overview}
 
 監査ログは、データプレーン上の幅広い運用を追跡します。これには以下が含まれます：
 
 - **検索およびクエリ運用**: ベクトル検索、ハイブリッド検索、およびクエリ運用。
 
-- **データ管理**: インデックス作成、コレクション作成、パーティション管理、および挿入、削除、アップサートなどのエンティティ運用。
+- **データ管理**: インデックス作成、コレクション作成、パーティション管理、および insert、delete、upsert などのエンティティ運用。
 
-- **システムイベント**: ユーザーアクセス試行、認証チェック、およびその他の事前定義されたアクション。
+- **システムイベント**: ユーザーアクセス試行、認可チェック、その他の定義済みアクション。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>移行、バックアップ、リストアなどのクラスターレベルのデータジョブは、監査ログを生成しません。これらの活動記録を表示するには、<a href="./view-activities">活動の表示</a> を参照してください。</p>
+クラスターレベルのデータジョブ（移行、バックアップ、リストアなど）は監査ログを生成しません。これらのアクティビティ記録を表示するには、[アクティビティの表示](./view-activities) を参照してください。
 
 </Admonition>
 
-監査ログは、定期的な間隔でユーザーが指定したオブジェクトストレージバケットに直接転送されます。ログは、容易なアクセスと管理のために構造化されたファイルパスおよび命名形式で保存されます：
+監査ログは、定期的にユーザーが指定したオブジェクトストレージバケットに直接転送されます。ログは、アクセスと管理を容易にするため、構造化されたファイルパスおよび命名形式で保存されます：
 
 - **ファイルパス**: `/<クラスターID>/<Log type>/<Date>`
 
-- **ファイル命名規則**: *HH:MM:SS-&#36;UUID* 形式の `<File name><File name suffix>`。ここで、*HH:MM:SS* は UTC 時間の時刻を表し、*&#36;UUID* は固有のランダム文字列です。例：`09:16:53-jz5l7D8Q`。
+- **ファイル命名規則**: `<File name><File name suffix>` の形式は *HH:MM:SS-&#36;UUID* で、*HH:MM:SS* は UTC の時刻、*&#36;UUID* は一意のランダム文字列を表します。例: `09:16:53-jz5l7D8Q`。
 
-以下は、バケットに転送された監査ログエントリーの例です：
+以下は、バケットに転送された監査ログエントリの例です：
 
 - **コレクションの作成**
 
     ```json
     {
       "action": "CreateCollection",
-      "cluster_id": "in01-0045a626277eafb",
+      "cluster_id": "inxx-xxxxxxxxxxxxxxx",
       "connection_uid": 456912553983082500,
       "database": "default",
       "interface": "Grpc",
@@ -86,7 +86,7 @@ import Admonition from '@theme/Admonition';
     ```json
     {
       "action": "CreateIndex",
-      "cluster_id": "in01-0045a626277eafb",
+      "cluster_id": "inxx-xxxxxxxxxxxxxxx",
       "connection_uid": 456912553983082500,
       "database": "default",
       "interface": "Grpc",
@@ -106,7 +106,7 @@ import Admonition from '@theme/Admonition';
     ```json
     {
       "action": "DropIndex",
-      "cluster_id": "in01-0045a626277eafb",
+      "cluster_id": "inxx-xxxxxxxxxxxxxxx",
       "connection_uid": 456912553983082500,
       "database": "default",
       "interface": "Grpc",
@@ -121,12 +121,13 @@ import Admonition from '@theme/Admonition';
     }
     ```
 
-詳細なサポート対象アクションと対応するログフィールドの一覧については、[監査ログリファレンス](./audit-logs-ref) を参照してください。
+詳細なサポート対象アクションおよび対応するログフィールドの一覧については、[監査ログリファレンス](./audit-logs-ref) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>監査ログは、データプレーンのデプロイ時に設定されたオブジェクトストレージバケットに直接転送されます。</p>
-<p>ログをログシステムにエクスポートしてさらに分析を行うには、<a href="https://support.zilliz.com/hc/en-us/requests/new">お問い合わせください</a>。</p>
+監査ログは、データプレーンのデプロイ時に設定されたオブジェクトストレージバケットに直接転送されます。
+
+ログをログシステムにエクスポートしてさらに分析するには、[お問い合わせ](https://support.zilliz.com/hc/en-us/requests/new) ください。
 
 </Admonition>
 

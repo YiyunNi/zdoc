@@ -5,7 +5,7 @@ sidebar_key: use-dense-vector
 sidebar_label: "密ベクトル"
 beta: FALSE
 notebook: FALSE
-description: "密ベクトルは、機械学習やデータ分析で広く利用される数値データ表現です。実数の配列で構成され、ほとんどの要素、あるいはすべての要素が非ゼロとなります。疎ベクトルと比較して、密ベクトルは同じ次元レベルにおいてより多くの情報を含んでおり、各次元が意味のある値を保持しています。この表現により、複雑なパターンや関係性を効果的に捉えることができ、高次元空間におけるデータの分析と処理を容易にします。密ベクトルは通常、特定のアプリケーションや要件に応じて、数十から数百、場合によっては数千に及ぶ固定された次元数を持ちます。 | Cloud"
+description: "密ベクトルは、機械学習やデータ分析で広く使用される数値データ表現です。実数からなる配列で、ほとんどまたはすべての要素が非ゼロです。疎ベクトルと比較して、密ベクトルは同じ次元レベルでより多くの情報を含み、各次元に意味のある値が保持されます。この表現は複雑なパターンや関係性を効果的に捉えることができ、高次元空間でのデータの分析や処理を容易にします。密ベクトルの次元数は通常固定されており、具体的なアプリケーションや要件に応じて数十から数百、場合によっては数千の範囲で変化します。"
 type: origin
 token: ARalwpaVDiCwDZkoSHtcPNgXnRg
 sidebar_position: 3
@@ -13,8 +13,8 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
+  - コレクション
+  - スキーマ
   - 密ベクトル
 
 ---
@@ -25,25 +25,25 @@ import TabItem from '@theme/TabItem';
 
 # Dense Vector
 
-密ベクトル（Dense Vector）は、機械学習やデータ分析で広く使われる数値データの表現形式です。これは実数からなる配列であり、その要素のほとんどまたはすべてが非ゼロ値を持ちます。疎ベクトルと比べて、密ベクトルは同じ次元数においてより多くの情報を含んでおり、各次元が意味のある値を保持しています。この表現形式は複雑なパターンや関係性を効果的に捉えることができ、高次元空間におけるデータの分析や処理を容易にします。密ベクトルの次元数は通常固定されており、具体的な用途や要件に応じて、数十次元から数百、さらには数千次元に及ぶこともあります。
+Dense vectors are numerical data representations widely used in machine learning and data analysis. They consist of arrays with real numbers, where most or all elements are non-zero. Compared to 疎ベクトル, dense vectors contain more information at the same dimensional level, as each dimension holds meaningful values. This representation can effectively capture complex patterns and relationships, making data easier to analyze and process in high-dimensional spaces. Dense vectors typically have a fixed number of dimensions, ranging from a few dozen to several hundred or even thousands, depending on the specific application and requirements.
 
-密ベクトルは主に、データのセマンティクス（意味）を理解する必要があるシナリオで使用されます。たとえば、セマンティック検索やレコメンデーションシステムなどが該当します。セマンティック検索では、密ベクトルがクエリとドキュメント間の潜在的な関連性を捉え、検索結果の関連性を向上させます。レコメンデーションシステムでは、ユーザーとアイテム間の類似性を特定し、よりパーソナライズされた提案を可能にします。
+Dense vectors are mainly used in scenarios that require understanding the semantics of data, such as セマンティック検索 and recommendation systems. In セマンティック検索, dense vectors help capture the underlying connections between queries and documents, improving the relevance of search results. In recommendation systems, they aid in identifying similarities between users and items, offering more personalized suggestions.
 
-## 概要\{#overview}
+## Overview\{#overview}
 
-密ベクトルは通常、固定長の浮動小数点数の配列として表現され、たとえば `[0.2, 0.7, 0.1, 0.8, 0.3, ..., 0.5]` のような形式を取ります。これらのベクトルの次元数は一般的に数百から数千（例：128、256、768、1024）の範囲に及びます。各次元はオブジェクトの特定のセマンティック特徴を捉えており、類似度計算を通じてさまざまなシナリオに応用可能です。
+Dense vectors are typically represented as arrays of 浮動小数点数 with a fixed length, such as `[0.2, 0.7, 0.1, 0.8, 0.3, ..., 0.5]`. The dimensionality of these vectors usually ranges from hundreds to thousands, such as 128, 256, 768, or 1024. Each dimension captures specific semantic features of an object, making it applicable to various scenarios through similarity calculations.
 
 ![QOgMwbrhLhvvtbbk5TxcarhEn8i](https://zdoc-images.s3.us-west-2.amazonaws.com/QOgMwbrhLhvvtbbk5TxcarhEn8i.png)
 
-上記の画像は、2次元空間における密ベクトルの表現を示しています。実際のアプリケーションで使われる密ベクトルは通常、これよりもはるかに高い次元を持ちますが、この2次元の図は以下の重要な概念を効果的に伝えています。
+The image above illustrates the representation of dense vectors in a 2D space. Although dense vectors in real-world applications often have much higher dimensions, this 2D illustration effectively conveys several key concepts:
 
-- **多次元表現:** 各点は概念的なオブジェクト（**Milvus**、**ベクトルデータベース**、**検索システム** など）を表しており、その位置は各次元の値によって決定されます。
+- **Multidimensional Representation:** Each point represents a conceptual object (like **Milvus**, **ベクトルデータベース**, **検索システム**, etc.), with its position determined by the values of its dimensions.
 
-- **セマンティックな関係性:** 点同士の距離は概念間のセマンティックな類似性を反映しています。近接している点ほど、よりセマンティックに関連性が高いことを示します。
+- **Semantic Relationships:** The distances between points reflect the semantic similarity between concepts. Closer points indicate concepts that are more semantically related.
 
-- **クラスタリング効果:** 関連する概念（たとえば **Milvus**、**ベクトルデータベース**、**検索システム**）は空間上で互いに近くに配置され、セマンティッククラスタを形成します。
+- **Clustering Effect:** Related concepts (such as **Milvus**, **ベクトルデータベース**, and **検索システム**) are positioned close to each other in space, forming a semantic cluster.
 
-以下は、テキスト `"Milvus is an efficient ベクトルデータベース"` を表す実際の密ベクトルの例です：
+Below is an example of a real dense vector representing the text `"Milvus is an efficient ベクトルデータベース"`:
 
 ```json
 [
@@ -60,29 +60,29 @@ import TabItem from '@theme/TabItem';
 
 ```
 
-密ベクトルは、さまざまな[埋め込み](https://en.wikipedia.org/wiki/Embedding)モデル（画像向けのCNNモデル（[ResNet](https://pytorch.org/hub/pytorch_vision_resnet/)や[VGG](https://pytorch.org/vision/stable/models/vgg.html)など）やテキスト向けの言語モデル（[BERT](https://en.wikipedia.org/wiki/BERT_(language_model))や[Word2Vec](https://en.wikipedia.org/wiki/Word2vec)など））を用いて生成できます。これらのモデルは生データを高次元空間上の点に変換し、データの意味的特徴を捉えます。さらに、Zilliz Cloudではユーザーが密ベクトルを生成・処理するための便利な方法も提供しており、詳細は「Embeddings」をご参照ください。
+密ベクトルは、さまざまな [埋め込み](https://en.wikipedia.org/wiki/Embedding) モデルを使用して生成できます。例えば、画像用の CNN モデル（[ResNet](https://pytorch.org/hub/pytorch_vision_resnet/)、[VGG](https://pytorch.org/vision/stable/models/vgg.html) など）や、テキスト用の言語モデル（[BERT](https://en.wikipedia.org/wiki/BERT_(language_model)、[Word2Vec](https://en.wikipedia.org/wiki/Word2vec) など）があります。これらのモデルは、生のデータを高次元空間の点に変換し、データの意味的特徴を捉えます。さらに、Zilliz Cloud では、ユーザーが密ベクトルを生成および処理するための便利な方法を提供しており、詳細は Embeddings を参照してください。
 
-データがベクトル化された後は、Zilliz Cloudクラスターに保存して管理およびベクトル検索を行うことができます。以下の図はその基本的なプロセスを示しています。
+データがベクトル化されると、Zilliz Cloud クラスタに保存して管理およびベクトル検索を行うことができます。以下の図は、基本的なプロセスを示しています。
 
 ![No8KwR6wPhTIP6bKEqGcbBDWngc](https://zdoc-images.s3.us-west-2.amazonaws.com/No8KwR6wPhTIP6bKEqGcbBDWngc.png)
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>密ベクトルに加えて、Zilliz Cloudは疎ベクトルおよびバイナリベクトルもサポートしています。疎ベクトルはキーワード検索や用語マッチングなどの特定の用語に基づく正確な一致に適しており、一方でバイナリベクトルは画像パターンマッチングや特定のハッシュ用途など、二値化されたデータを効率的に扱う場合に一般的に使用されます。詳細については、「<a href="./use-binary-vector">Binary Vector</a>」および「<a href="./use-sparse-vector">Sparse Vector</a>」をご参照ください。</p>
+密ベクトルに加えて、Zilliz Cloud は疎ベクトルとバイナリベクトルもサポートしています。疎ベクトルは、キーワード検索や用語マッチングなど、特定の用語に基づく正確な一致に適しており、バイナリベクトルは、画像パターンマッチングや特定のハッシュ処理アプリケーションなど、バイナリ化されたデータを効率的に処理するために一般的に使用されます。詳細については、[Binary Vector](./use-binary-vector) および [Sparse Vector](./use-sparse-vector) を参照してください。
 
 </Admonition>
 
-## 密ベクトルの使用\{#use-dense-vectors}
+## Use dense vectors\{#use-dense-vectors}
 
-### ベクトルフィールドの追加\{#add-vector-field}
+### Add vector field\{#add-vector-field}
 
-Zilliz Cloudクラスターで密ベクトルを使用するには、コレクション作成時に密ベクトルを格納するためのベクトルフィールドを定義します。この手順には以下が含まれます。
+Zilliz Cloud クラスタで密ベクトルを使用するには、まず、コレクションの作成時に密ベクトルを保存するためのベクトルフィールドを定義します。このプロセスには以下が含まれます。
 
-1. `datatype` をサポートされている密ベクトルのデータ型に設定します。サポートされている密ベクトルのデータ型については、「データ Types」をご参照ください。
+1. `datatype` をサポートされている密ベクトルデータ型に設定します。サポートされている密ベクトルデータ型については、データ Types を参照してください。
 
-1. `dim` パラメータを使用して密ベクトルの次元数を指定します。
+1. `dim` パラメータを使用して、密ベクトルの次元を指定します。
 
-以下の例では、`dense_vector` という名前のベクトルフィールドを追加し、密ベクトルを格納します。このフィールドのデータ型は `FLOAT_VECTOR` で、次元数は `4` です。
+以下の例では、密ベクトルを保存するための `dense_vector` という名前のベクトルフィールドを追加します。このフィールドのデータ型は `FLOAT_VECTOR` で、次元は `4` です。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -327,13 +327,13 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-上記の例では、`dense_vector` フィールドに対して `AUTOINDEX` インデックスタイプを使用して `dense_vector_index` という名前のインデックスが作成されています。`metric_type` は `IP` に設定されており、距離メトリックとして内積（内積）が使用されることを示しています。
+上記の例では、`AUTOINDEX` インデックスタイプを使用して `dense_vector` フィールドに `dense_vector_index` という名前のインデックスが作成されています。`metric_type` は `IP` に設定されており、距離メトリックとして内積が使用されることを示しています。
 
-Zilliz Cloud は他のメトリックタイプもサポートしています。詳細については、[メトリックタイプs](./search-metrics-explained) を参照してください。
+Zilliz Cloud は他のメトリックタイプもサポートしています。詳細については、[メトリックタイプ](./search-metrics-explained) を参照してください。
 
 ### Create collection\{#create-collection}
 
-密ベクトルとインデックスパラメータの設定が完了したら、密ベクトルを含むコレクションを作成できます。以下の例では、`create_collection` メソッドを使用して `my_collection` という名前のコレクションを作成しています。
+デンスベクトルとインデックスパラメータの設定が完了したら、デンスベクトルを含むコレクションを作成できます。以下の例では、`create_collection` メソッドを使用して `my_collection` という名前のコレクションを作成しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -636,4 +636,4 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-類似度検索パラメータの詳細については、[基本的なANN検索](./single-vector-search)を参照してください。
+類似性検索パラメータの詳細については、[基本的な ANN 検索](./single-vector-search) を参照してください。

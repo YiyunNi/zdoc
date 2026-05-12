@@ -1,13 +1,13 @@
 ---
-title: "外部コレクションを使用したオンデマンド検索のクイックスタート | Cloud"
+title: "オンデマンド検索のクイックスタート | Cloud"
 slug: /quick-start-to-on-demand-search
 sidebar_key: quick-start-to-on-demand-search
-sidebar_label: "外部コレクションを使用したオンデマンド検索のクイックスタート"
+sidebar_label: "オンデマンド検索のクイックスタート"
 beta: PUBLIC
 notebook: FALSE
-description: "オンデマンド検索を使用すると、外部ストレージ内のデータや Zilliz Cloud にインポートされたデータにゼロコピーでアクセスし、大規模なデータセットを検索できます。コンピューティングリソースを継続的に実行する必要はありません。外部ボリュームまたはインポートされたファイルからコレクションを作成し、プロジェクトデータプレーンエンドポイントを介してインデックスを構築しメタデータを更新し、検索やクエリワークロードを実行する必要があるときだけオンデマンドクラスタを起動できます。 | Cloud"
+description: "Zilliz Cloud はオンデマンドのコンピューティングリソースを提供し、必要に応じて類似性検索やクエリを実行できます。使用したリソースに対してのみ料金が発生し、不要なときはクラスターをシャットダウンしてコストを発生させないようにできます。"
 type: origin
-token: KdwFwQnDNisT4skHH6Hc16uInji
+token: GQN0wDCrni4n36kyeVQcF41Lned
 sidebar_position: 9
 keywords: 
   - zilliz
@@ -15,7 +15,9 @@ keywords:
   - クイックスタート
   - cloud
   - milvus
-  - on-demand search
+  - オンデマンド検索
+  - データレイク
+  - 外部データレイクの検索
 
 ---
 
@@ -23,29 +25,19 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# クイックスタート: 外部コレクションを使用したオンデマンド検索
+# クイックスタート：オンデマンド検索
 
-オンデマンド検索を使用すると、外部ストレージ内のデータや Zilliz Cloud にインポートされたデータにゼロコピーでアクセスし、大規模データセットを検索できます。コンピューティングリソースを継続的に実行しておく必要はありません。外部ボリュームやインポートされたファイルからコレクションを作成し、プロジェクトデータプレーンエンドポイントを介してインデックスの構築とメタデータの更新を行い、検索やクエリワークロードを実行する必要があるときだけオンデマンドクラスタを起動できます。
+Zilliz Cloud はオンデマンドのコンピューティングリソースを提供し、必要に応じて類似性検索やクエリを実行できます。使用したリソースに対してのみ料金が発生し、不要な場合はクラスタを無料でシャットダウンできます。
 
-これを行うには、以下の手順に従います。
+## ステップ 1：プロジェクトエンドポイントに接続する。\{#step-1-connect-to-a-project-endpoint}
 
-## 開始前の準備\{#before-you-start}
-
-- **ストレージ統合の作成**
-
-    ストレージ統合は、データの場所とアクセス認証情報を記録するプロファイルです。ストレージ統合を設定するには、[AWS S3](./integrate-with-aws-s3)、[Google GCS](./integrate-with-gcp)、または [Azure](./integrate-with-azure-blob-storage) のストレージ統合を作成する手順に従い、ストレージ統合IDを取得してください。
-
-- **外部ボリュームの作成**
-
-    外部ボリュームは、ストレージ統合内のパスです。生データがそのパス上にあることを確認してください。同じストレージ統合から複数の外部ボリュームを作成できます。外部ボリュームの作成については、[外部ボリューム](./external-volume#create-an-external-volume) を参照してください。
-
-## ステップ 1: プロジェクトエンドポイントへの接続\{#step-1-connect-to-a-project-endpoint}
-
-データベースを操作する前に、プロジェクトエンドポイントに接続します。プロジェクトエンドポイントは、Zilliz Cloud コンソールでオンデマンドコンピューティングを有効にした後、クイックスタートページで取得できます。
+データベースを操作する前に、プロジェクトエンドポイントに接続します。Zilliz Cloud コンソールでオンデマンドコンピューティングを有効にした後、クイックスタートページでプロジェクトエンドポイントを取得できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>外部コレクション操作には、認証のための<strong>API キー</strong>が必要です。このフローでは <code>username:password</code> 認証はサポートされていません。</p>
+- マネージドコレクションの操作には、認証のための **API キー** が必要です。このフローでは `username:password` 認証はサポートされていません。
+
+- オンデマンドコンピューティング用データベースのマネージドコレクションでは、ロード操作は不要です。
 
 </Admonition>
 
@@ -102,13 +94,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Step 3: 外部コレクションを作成する。\{#step-3-create-an-external-collection}
+## ステップ 3: マネージドコレクションを作成する。\{#step-3-create-a-managed-collection}
 
-データベースの準備ができたら、外部コレクションを作成できます。外部コレクションは、そのカラムを指定したデータファイルにマッピングし、そのコレクション内の検索用にオンデマンドのコンピューティングリソースをアタッチします。
+データベースの準備ができたら、その中にマネージドコレクションを作成できます。外部コレクションがコレクションのカラムを外部データファイルにマッピングするのとは異なり、マネージドコレクションではデータをインポートして大幅なパフォーマンス向上を図ります。
 
-管理コレクションが生データをコレクションにインポートすることを要求するのとは異なり、外部コレクションはサブ秒のリフレッシュ操作を通じて生データからメタデータを生成します。
-
-次の例は、コレクションフィールドとデータファイルの間のマッピング関係を設定する方法を示しています。スキーマを初期化する際に、データのボリュームパスとファイル形式を渡します。
+以下の例では、コレクションスキーマの設定方法とコレクションの作成方法を示します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -116,71 +106,24 @@ curl --request POST \
 ```python
 from pymilvus import MilvusClient, DataType
 
-schema = MilvusClient.create_schema(
-    external_source='volume://my_volume/iceberg/metadata/00001-xxx.metadata.json',
-    external_spec='{
-        "format": "iceberg-table",
-        "snapshot_id": "1234567890123456789"
-    }'
-)
-
-schema.add_field(
-    field_name="vector",
-    datatype=DataType.FLOAT_VECTOR,
-    dim=1536,
-    # highlight-next
-    external_field="embedding" # field name in the external data file
-)
+schema = MilvusClient.create_schema()
 
 schema.add_field(
     field_name="product_id",
-    datatype=DataType.VARCHAR,
-    max_length=32,
-    nullable=True,
-    # highlight-next
-    external_field="product_id"
-)
-
-schema.add_field(
-    field_name="title",
-    datatype=DataType.VARCHAR,
-    max_length=512,
-    nullable=True,
-    # highlight-next
-    external_field="title"
-)
-
-schema.add_field(
-    field_name="main_category",
-    datatype=DataType.VARCHAR,
-    max_length=64,
-    nullable=True,
-    # highlight-next
-    external_field="main_category"
-)
-
-schema.add_field(
-    field_name="price",
-    datatype=DataType.DOUBLE,
-    nullable=True,
-    # highlight-next
-    external_field="price"
-)
-
-schema.add_field(
-    field_name="average_rating",
-    datatype=DataType.DOUBLE,
-    nullable=True,
-    # highlight-next
-    external_field="average_rating"
-)
-
-schema.add_field(
-    field_name="rating_number",
     datatype=DataType.INT64,
-    nullable=True,
-    # highlight-next
-    external_field="rating_number"
+    is_primary=True
+)
+
+schema.add_field(
+    field_name="product_name",
+    datatype=DataType.VARCHAR,
+    max_length=512
+)
+
+schema.add_field(
+    field_name="embedding",
+    datatype=DataType.FLOAT_VECTOR,
+    dim=768
 )
 ```
 
@@ -190,61 +133,25 @@ schema.add_field(
 
 ```bash
 export schema='{
-    "externalSource": "volume://my_volume/iceberg/metadata/00001-xxx.metadata.json",
-    "externalSpec": "{\"format\": \"iceberg-table\", \"snapshot_id\": \"1234567890123456789\"}",
     "fields": [
         {
-            "fieldName": "vector",
+            "fieldName": "product_id",
+            "dataType": "Int64",
+            "isPrimary": true
+        },
+        {
+            "fieldName": "embedding",
             "dataType": "FloatVector",
             "elementTypeParams": {
-                "dim": "1536"
-            },
-            "externalField": "embedding"
+                "dim": "768"
+            }
         },
         {
-            "fieldName": "product_id",
+            "fieldName": "product_name",
             "dataType": "VarChar",
             "elementTypeParams": {
-                "max_length": "32"
-            },
-            "nullable": true,
-            "externalField": "product_id"
-        },
-        {
-            "fieldName": "title",
-            "dataType": "VarChar",
-            "elementTypeParams": {
-                "max_length": "512"
-            },
-            "nullable": true,
-            "externalField": "title"
-        },
-        {
-            "fieldName": "main_category",
-            "dataType": "VarChar",
-            "elementTypeParams": {
-                "max_length": "64"
-            },
-            "nullable": true,
-            "externalField": "main_category"
-        },
-        {
-            "fieldName": "price",
-            "dataType": "Double",
-            "nullable": true,
-            "externalField": "price"
-        },
-        {
-            "fieldName": "average_rating",
-            "dataType": "Double",
-            "nullable": true,
-            "externalField": "average_rating"
-        },
-        {
-            "fieldName": "rating_number",
-            "dataType": "Int64",
-            "nullable": true,
-            "externalField": "rating_number"
+                "max_length": 512
+            }
         }
     ]
 }'
@@ -265,7 +172,7 @@ client.use_database(
 
 # create the collection
 client.create_collection(
-    collection_name="my_collection",
+    collection_name="prod_collection",
     schema=schema
 )
 ```
@@ -281,7 +188,7 @@ curl --request POST \
 --header "Content-Type: application/json" \
 -d "{
     \"dbName\": \"my_database\",
-    \"collectionName\": \"my_collection\",
+    \"collectionName\": \"prod_collection\",
     \"schema\": $schema
 }"
 ```
@@ -289,9 +196,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Step 4: インデックスを作成し、コレクションをリフレッシュする。\{#step-4-create-indexes-and-refresh-the-collection}
+## ステップ 4: インデックスを作成する。\{#step-4-create-indexes}
 
-外部データベースでも、マネージドコレクションと同様にインデックスを作成できます。すべてのベクトルフィールドにインデックスを作成する必要があり、高速なメタデータフィルタリングのために一部のスカラーフィールドにインデックスを作成することも選択できます。ただし、インデックスを構築するために refresh を呼び出す必要があります。
+すべてのベクトルフィールドと、必要に応じて選択したスカラーフィールドのインデックスを作成する必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -301,19 +208,19 @@ index_params = client.prepare_index_params()
 
 # Add indexes
 index_params.add_index(
-    field_name="vector",
+    field_name="embedding",
     index_type="AUTOINDEX",
     metric_type="COSINE"
 )
 
 index_params.add_index(
-    field_name="main_category", 
+    field_name="product_name", 
     index_type="AUTOINDEX"
 )
 
 client.create_index(
     db_name="my_database",
-    collection_name="my_collection",
+    collection_name="prod_collection",
     index_params=index_params
 )
 ```
@@ -325,14 +232,14 @@ client.create_index(
 ```bash
 export indexParams='[
     {
-        "fieldName": "vector",
+        "fieldName": "embedding",
         "metricType": "COSINE",
-        "indexName": "vector",
+        "indexName": "embedding",
         "indexType": "AUTOINDEX"
     },
     {
-        "fieldName": "main_category",
-        "indexName": "main_category",
+        "fieldName": "product_name",
+        "indexName": "product_name",
         "indexType": "AUTOINDEX"
     }
 ]'
@@ -343,7 +250,7 @@ curl --request POST \
 --header "Content-Type: application/json" \
 -d "{
     \"dbName\": \"my_database\",
-    \"collectionName\": \"my_collection\",
+    \"collectionName\": \"prod_collection\",
     \"indexParams\": $indexParams
 }"
 ```
@@ -351,16 +258,39 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-次に、外部コレクションを更新します。`externalSource` と `externalSpec` を省略してコレクションスキーマを再利用することも、両方を指定して新しいソースからコレクションスキーマを更新することもできます。
+## Step 5: データをインポートする。\{#step-5-import-data}
+
+すべての設定が完了したら、処理済みデータをインポートできます。以下の例では、処理済みデータを外部ストレージバケットに保存していることを前提としています。
+
+バケットまたはストレージ統合のデータ形式については、[形式オプション](./data-import-format-options) を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-# refresh the external database
-job_id = client.refresh_external_collection(
-    collection_name="my_collection"
+from pymilvus.bulk_writer import bulk_import
+
+# The path should be relative to the root 
+# of a zilliz cloud volume or an external storage
+OBJECT_URLS = [[                                                                                                             
+    "https://s3.us-west-2.amazonaws.com/your-bucket/path/in/external/storage.json"                                           
+]]                                                                                                                                                                                                                                                     
+ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"                                                                                       
+SECRET_KEY = "YOUR_STORAGE_SECRET_KEY"
+
+res = bulk_import(
+    api_key="YOUR_ZILLIZ_API_KEY",
+    url="https://api.cloud.zilliz.com",
+    project_id="proj-xxxxxxxxxxxxxxxxxxx",
+    region_id="aws-us-west-2",
+    db_name="my_database",
+    collection_name="prod_collection",
+    object_url=OBJECT_URLS,
+    access_key=ACCESS_KEY,
+    secret_key=SECRET_KEY
 )
+
+# job-xxxxxxxxxxxxxxxxxxxxx
 ```
 
 </TabItem>
@@ -368,29 +298,45 @@ job_id = client.refresh_external_collection(
 <TabItem value='java'>
 
 ```bash
-# Refresh the external collection
-curl --request POST \
---url "${PROJECT_ENDPOINT}/v2/vectordb/jobs/external_collection/refresh" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "dbName": "default",
-    "collectionName": "my_collection"
-}'
-
-# job-xxxxxxxxxxxxxxxxxxx
+curl --request POST \                                                                                                        
+  --url "${CLOUD_PLATFORM_ENDPOINT}/v2/vectordb/jobs/import/create" \                                                        
+  --header "Authorization: Bearer ${TOKEN}" \                                                                                
+  --header "Accept: application/json" \                                                                                      
+  --header "Content-Type: application/json" \                                                                                
+  -d '{                                                                                                                      
+    "projectId": "proj-xxxxxxxxxxxxxxxxxx",                                                                                  
+    "regionId": "aws-us-west-2",                                                                                             
+    "dbName": "my_database",                                                                                                 
+    "collectionName": "prod_collection",                                                                                     
+    "objectUrls": [["https://s3.us-west-2.amazonaws.com/your-bucket/path/in/external/storage.json"]],                        
+    "accessKey": "YOUR_STORAGE_ACCESS_KEY",                                                                                  
+    "secretKey": "YOUR_STORAGE_SECRET_KEY"                                                                                   
+  }'
+    
+ # job-xxxxxxxxxxxxxxxxxxxxx
 ```
 
 </TabItem>
 </Tabs>
 
-次に、ループを作成して進捗監視の呼び出しをラップし、リフレッシュ操作の進捗状況を追跡できます。
+返されたジョブ ID を使用して、進行状況を監視できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-progress = client.get_refresh_external_collection_progress(job_id=job_id)
+import json
+from pymilvus.bulk_writer import get_import_progress
+
+# Get bulk-insert job progress
+resp = get_import_progress(
+    api_key="YOUR_ZILLIZ_API_KEY",
+    url="https://api.cloud.zilliz.com",
+    cluster_id="inxx-xxxxxxxxxxxxxxxxxxx",
+    job_id="job-xxxxxxxxxxxxxxxxxxxxx",
+)
+
+print(json.dumps(resp.json(), indent=4))
 ```
 
 </TabItem>
@@ -398,21 +344,24 @@ progress = client.get_refresh_external_collection_progress(job_id=job_id)
 <TabItem value='java'>
 
 ```bash
-curl -s --request POST \
-    --url "${PROJECT_ENDPOINT}/v2/vectordb/jobs/external_collection/describe" \
-    --header "Authorization: Bearer ${TOKEN}" \
-    --header "Content-Type: application/json" \
-    -d '{
-        "jobId": "job-xxxxxxxxxxxxxxxxxxx"
+  # Use jobId returned from create API                                                                                         
+  curl --request POST \                                                                                                        
+    --url "${CLOUD_PLATFORM_ENDPOINT}/v2/vectordb/jobs/import/getProgress" \                                                   
+    --header "Authorization: Bearer ${TOKEN}" \                                                                                
+    --header "Accept: application/json" \                                                                                      
+    --header "Content-Type: application/json" \                                                                                
+    -d '{                                                                                                                      
+      "clusterId": "inxx-xxxxxxxxxxxxxxx",                                                                                     
+      "jobId": "job-xxxxxxxxxxxxxxxxxxxxx"                                                                                     
     }'
 ```
 
 </TabItem>
 </Tabs>
 
-## ステップ 5: オンデマンドクラスターの作成\{#step-5-create-an-on-demand-cluster}
+## Step 6: オンデマンドクラスターの作成\{#step-6-create-an-on-demand-cluster}
 
-外部コレクションの準備ができたら、オンデマンド検索のためにオンデマンドクラスターにアタッチする必要があります。以下のコマンドはクラスターを作成し、その ID を返します。
+外部コレクションの準備ができたら、オンデマンド検索のためにオンデマンドクラスターにアタッチする必要があります。以下のコマンドはクラスターを作成し、そのIDを返します。
 
 ```bash
 export CONTROL_PLANE_ENDPOINT="https://api.cloud.zilliz.com"
@@ -432,31 +381,37 @@ curl --request POST \
 # inxx-xxxxxxxxxxxxx
 ```
 
-## Step 6: Conduct searches.\{#step-6-conduct-searches}
+デフォルトでは、クラスターは最後のリクエストから60秒後に自動的にサスペンドされますが、ユースケースに適した値に設定することもできます。
 
-When you need to conduct searches, queries, or hybrid searches, you can attach to the on-demand cluster created in the previous step through a session.
+## Step 7: Conduct searches.\{#step-7-conduct-searches}
+
+検索、クエリ、またはハイブリッド検索を実行する必要がある場合は、セッションを通じて前のステップで作成したオンデマンドクラスターにアタッチできます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-# highlight-start
-session = client.session(
-    cluster_id="inxx-xxxxxxxxxxxxx"
-)
-# highlight-end
-
-# 1536-dimensional vector
-query_vector = [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, ..., 0.9029438446296592]
-res = session.search(
-    db_name="my_database",
-    collection_name="my_collection",
-    anns_field="vector",
-    data=[query_vector],
-    limit=3,
-    output_fields=["product_id", "title", "main_category", "price", "average_rating", "rating_number"],
-    search_params={"metric_type": "COSINE"}
-)
+from pymilvus import MilvusClient                         
+                                                                                                                               
+client = MilvusClient(                                                                                                       
+    uri="https://{project-id}.{region}.api.zillizcloud.com",                                                                 
+    token="YOUR_API_KEY"                                                                                                     
+)                                                                                                                            
+                                                                                                                               
+session = client.session(cluster_id="inxx-xxxxxxxxxxxxxxx")                                                                  
+                                                                                                                               
+# Must match collection vector dimension (example: 768)                                                                      
+query_vector = [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, ..., 0.9029438446296592]                                
+                                                                                                                               
+res = session.search(                                                                                                        
+    db_name="my_database",                                                                                                   
+    collection_name="prod_collection",                                                                                       
+    anns_field="embedding",                                                                                                  
+    data=[query_vector],                                                                                                     
+    limit=3,                                                                                                                 
+    output_fields=["product_id", "product_name"],                                                                            
+    search_params={"metric_type": "COSINE"}                                                                                  
+) 
 ```
 
 </TabItem>
@@ -464,36 +419,31 @@ res = session.search(
 <TabItem value='java'>
 
 ```bash
-curl --request POST \
---url "${PROJECT_ENDPOINT}/v2/vectordb/entities/search?cluster_id=inxx-xxxxxxxxxxxxxxxxx" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "dbName": "my_database",
-    "collectionName": "my_collection",
+curl --request POST \                                                                                                        
+  --url "${PROJECT_ENDPOINT}/v2/vectordb/entities/search?cluster_id=inxx-xxxxxxxxxxxxxxx" \
+  --header "Authorization: Bearer ${TOKEN}" \                                                                                
+  --header "Content-Type: application/json" \                                                                                
+  -d '{                                                                                                                      
+    "dbName": "my_database",                                                                                                 
+    "collectionName": "prod_collection",                                                                                     
     "data": [
         [
             0.3580376395471989,
             -0.6023495712049978,
             0.18414012509913835,
             -0.26286205330961354,
+            ...
             0.9029438446296592
         ]
-    ],
-    "annsField": "vector",
-    "limit": 3,
-    "outputFields": [
-        "product_id",
-        "title",
-        "main_category",
-        "price",
-        "average_rating",
-        "rating_number"
-    ]
-}'
+    ]                                                         
+    "annsField": "embedding",                                                                                                
+    "limit": 3,                                                                                                              
+    "outputFields": ["product_id", "product_name"]                                                                           
+  }'
 ```
 
 </TabItem>
 </Tabs>
 
 その後、データを探索し、最も価値の高いサブセットを見つけることができます。その後、サービングクラスタに接続し、データをインポートして、本番環境でサービングすることができます。
+

@@ -1,11 +1,11 @@
 ---
-title: "JSON インデックス | BYOC"
+title: "JSONインデックス | BYOC"
 slug: /json-indexing
 sidebar_key: json-indexing
 sidebar_label: "インデックス作成"
 beta: FALSE
 notebook: FALSE
-description: "JSON フィールドは、Zilliz Cloud で構造化メタデータを柔軟に保存する方法を提供します。インデックスを作成しない場合、JSON フィールドに対するクエリにはコレクション全体のスキャンが必要となり、データセットが大きくなるにつれて処理が遅くなります。JSON インデックスは、JSON データ内のパスに対してインデックスを作成することで、高速な検索を可能にします。| BYOC"
+description: "JSON フィールドは、Zilliz Cloud で構造化メタデータを柔軟に保存する方法を提供します。インデックスがない場合、JSON フィールドに対するクエリはコレクション全体のスキャンが必要となり、データセットが大きくなるにつれて遅くなります。JSON インデックスは、JSON データ内にインデックスを作成することで高速なルックアップを可能にします。 | BYOC"
 type: origin
 token: MBVVww2Zii8k6Bk77GJcXbZJnpf
 sidebar_position: 2
@@ -15,10 +15,10 @@ keywords:
   - cloud
   - collection
   - schema
-  - json フィールド
-  - インデックス
-  - パスインデックス
-  - フラットインデックス
+  - json field
+  - index
+  - path index
+  - flat index
 
 ---
 
@@ -27,30 +27,35 @@ import Admonition from '@theme/Admonition';
 
 # JSONインデックス
 
-JSONフィールドは、Zilliz Cloud で構造化されたメタデータを柔軟に格納する方法を提供します。インデックスを作成しない場合、JSONフィールドに対するクエリはコレクション全体のスキャンを必要とし、データセットが大きくなるにつれて遅くなります。JSONインデックスを作成することで、JSONデータ内の特定の値に対して高速な検索が可能になります。
+JSONフィールドは、Zilliz Cloud において構造化メタデータを柔軟に保存する方法を提供します。インデックスがない場合、JSONフィールドに対するクエリはコレクション全体のスキャンが必要となり、データセットが大きくなるにつれて処理が遅くなります。JSONインデックスは、JSONデータ内にインデックスを作成することで高速なルックアップを可能にします。
 
-JSONインデックスは、以下の用途に最適です：
+JSONインデックスは、以下のような場合に最適です：
 
-- 一貫性があり、キーが事前にわかっている構造化スキーマ
-- 特定のJSONパスに対する等価および範囲クエリ
-- インデックス対象のキーを正確に制御したいシナリオ
-- 対象を絞ったクエリをストレージ効率よく高速化したい場合
+- 一貫性があり、既知のキーを持つ構造化スキーマ
+
+- 特定のJSONパスに対する等価比較および範囲クエリ
+
+- どのキーをインデックス化するかを正確に制御する必要があるシナリオ
+
+- 対象を絞ったクエリのストレージ効率の良い高速化
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>多様なクエリパターンを持つ複雑なJSONドキュメントの場合は、代わりに<a href="./json-shredding">JSON Shredding</a>を検討してください。</p>
+多様なクエリパターンを持つ複雑なJSONドキュメントの場合は、代替手段として [JSON Shredding](./json-shredding) を検討してください。
 
 </Admonition>
 
-## JSONインデックス構文\{#json-indexing-syntax}
+## JSONインデックスの構文\{#json-indexing-syntax}
 
-JSONインデックスを作成する際には、以下の情報を指定します：
+JSONインデックスを作成する際は、以下を指定します：
 
-- **JSONパス**：インデックスを作成したいデータの正確な位置
-- **データキャストタイプ**：インデックス対象の値をどのように解釈・格納するか
-- **オプションの型変換**：必要に応じて、インデックス作成時にデータを変換する方法
+- **JSONパス**: インデックス化したいデータの正確な位置
 
-以下は、JSONフィールドにインデックスを作成するための構文です：
+- **データキャストタイプ**: インデックス化された値をどのように解釈して保存するか
+
+- **オプションの型変換**: 必要に応じて、インデックス作成時にデータを変換する
+
+JSONフィールドをインデックス化する構文は以下の通りです：
 
 ```python
 # Prepare index params
@@ -81,89 +86,89 @@ index_params.add_index(
    </tr>
    <tr>
      <td><p><code>index_type</code></p></td>
-     <td><p>JSONインデックスでは必ず<code>"AUTOINDEX"</code>を指定する必要があります。</p></td>
+     <td><p>JSONインデックスの場合、<code>"AUTOINDEX"</code>である必要があります。</p></td>
      <td><p><code>"AUTOINDEX"</code></p></td>
    </tr>
    <tr>
      <td><p><code>index_name</code></p></td>
-     <td><p>このインデックスの一意な識別子。</p></td>
+     <td><p>このインデックスの一意の識別子。</p></td>
      <td><p><code>"category_index"</code></p></td>
    </tr>
    <tr>
      <td><p><code>json_path</code></p></td>
-     <td><p>JSONオブジェクト内でインデックスを作成したいキーへのパス。</p></td>
-     <td><ul><li><p>トップレベルのキー: <code>'metadata["category"]'</code></p></li><li><p>ネストされたキー: <code>'metadata["supplier"]["contact"]["email"]'</code></p></li><li><p>JSONオブジェクト全体: <code>"metadata"</code></p></li><li><p>サブオブジェクト: <code>'metadata["supplier"]'</code></p></li></ul></td>
+     <td><p>JSONオブジェクト内でインデックス作成したいキーへのパス。</p></td>
+     <td><ul><li><p>トップレベルキー: <code>'metadata["category"]'</code></p></li><li><p>ネストされたキー: <code>'metadata["supplier"]["contact"]["email"]'</code></p></li><li><p>JSONオブジェクト全体: <code>"metadata"</code></p></li><li><p>サブオブジェクト: <code>'metadata["supplier"]'</code></p></li></ul></td>
    </tr>
    <tr>
      <td><p><code>json_cast_type</code></p></td>
-     <td><p>値を解釈およびインデックス作成する際に使用するデータ型。キーの実際のデータ型と一致している必要があります。</p><p>利用可能なキャストタイプの一覧については、<a href="./json-indexing#supported-cast-types">サポートされているキャストタイプ</a><a href="./json-indexing#supported-cast-types"> を参照してください</a>。</p></td>
+     <td><p>値の解釈とインデックス作成時に使用するデータ型。キーの実際のデータ型と一致している必要があります。</p><p>利用可能なキャスト型の一覧については、<a href="./json-indexing#supported-cast-types">サポートされているキャスト型</a><a href="./json-indexing#supported-cast-types">を以下で参照</a>してください。</p></td>
      <td><p><code>"VARCHAR"</code></p></td>
    </tr>
    <tr>
      <td><p><code>json_cast_function</code></p></td>
-     <td><p><strong>（任意）</strong> インデックス作成時に元のキー値をターゲット型に変換します。この設定は、キー値が誤った形式で保存されており、インデックス作成中にデータ型を変換したい場合にのみ必要です。</p><p>利用可能なキャスト関数の一覧については、<a href="./json-indexing#supported-cast-functions">サポートされているキャスト関数</a>を参照してください。</p></td>
+     <td><p><strong>（オプション）</strong> インデックス作成時に元のキー値をターゲット型に変換します。この設定は、キー値が誤った形式で保存されており、インデックス作成中にデータ型を変換したい場合にのみ必要です。</p><p>利用可能なキャスト関数の一覧については、<a href="./json-indexing#supported-cast-functions">以下のサポートされているキャスト関数</a>を参照してください。</p></td>
      <td><p><code>"STRING_TO_DOUBLE"</code></p></td>
    </tr>
 </table>
 
-### サポートされているキャストタイプ\{#supported-cast-types}
+### サポートされているキャスト型\{#supported-cast-types}
 
-Zilliz Cloudは、インデックス作成時に以下のデータ型によるキャストをサポートしています。これらの型により、データが効率的なフィルタリングのために正しく解釈されます。
+Zilliz Cloud は、インデックス作成時のキャストに対して以下のデータ型をサポートしています。これらの型により、データが効率的なフィルタリングのために正しく解釈されることが保証されます。
 
 <table>
    <tr>
-     <th><p>キャストタイプ</p></th>
+     <th><p>キャスト型</p></th>
      <th><p>説明</p></th>
      <th><p>JSON値の例</p></th>
    </tr>
    <tr>
      <td><p><code>BOOL</code> / <code>bool</code></p></td>
-     <td><p>真偽値をインデックス作成するために使用され、true/false条件に基づくクエリを可能にします。</p></td>
+     <td><p>ブール値のインデックス作成に使用され、true/false条件でフィルタリングするクエリを有効にします。</p></td>
      <td><p><code>true</code>, <code>false</code></p></td>
    </tr>
    <tr>
      <td><p><code>DOUBLE</code> / <code>double</code></p></td>
-     <td><p>整数および浮動小数点数を含む数値に使用されます。<code>&gt;</code>、<code>&lt;</code>、<code>==</code>などの範囲や等価性に基づくフィルタリングを可能にします。</p></td>
+     <td><p>整数と浮動小数点数の両方を含む数値に使用されます。範囲や等価性に基づくフィルタリング（例: <code>&gt;</code>, <code>&lt;</code>, <code>==</code>）を有効にします。</p></td>
      <td><p><code>42</code>, <code>99.99</code></p></td>
    </tr>
    <tr>
      <td><p><code>VARCHAR</code> / <code>varchar</code></p></td>
-     <td><p>文字列値をインデックス作成するために使用され、名前、カテゴリ、IDなどのテキストベースのデータに一般的です。</p></td>
+     <td><p>文字列値のインデックス作成に使用され、名前、カテゴリ、IDなどのテキストベースのデータに一般的です。</p></td>
      <td><p><code>"electronics"</code>, <code>"BrandA"</code></p></td>
    </tr>
    <tr>
      <td><p><code>ARRAY_BOOL</code> / <code>array_bool</code></p></td>
-     <td><p>真偽値の配列をインデックス作成するために使用されます。</p></td>
+     <td><p>ブール値の配列のインデックス作成に使用されます。</p></td>
      <td><p><code>[true, false, true]</code></p></td>
    </tr>
    <tr>
      <td><p><code>ARRAY_DOUBLE</code> / <code>array_double</code></p></td>
-     <td><p>数値の配列をインデックス作成するために使用されます。</p></td>
+     <td><p>数値の配列のインデックス作成に使用されます。</p></td>
      <td><p><code>[1.2, 3.14, 42]</code></p></td>
    </tr>
    <tr>
      <td><p><code>ARRAY_VARCHAR</code> / <code>array_varchar</code></p></td>
-     <td><p>文字列の配列をインデックス作成するために使用され、タグやキーワードのリストに最適です。</p></td>
+     <td><p>文字列の配列のインデックス作成に使用され、タグやキーワードのリストに最適です。</p></td>
      <td><p><code>["tag1", "tag2", "tag3"]</code></p></td>
    </tr>
    <tr>
      <td><p><code>JSON</code> / <code>json</code></p></td>
-     <td><p>自動型推論とフラット化による、JSONオブジェクト全体またはサブオブジェクト。</p><p>JSONオブジェクト全体をインデックス作成すると、インデックスサイズが増加します。多数のキーがあるシナリオでは、<a href="./json-shredding">JSON Shredding</a>を検討してください。</p></td>
+     <td><p>自動型推論とフラット化によるJSONオブジェクト全体またはサブオブジェクト。</p><p>JSONオブジェクト全体のインデックス作成はインデックスサイズを増加させます。多キーのシナリオでは、<a href="./json-shredding">JSON Shredding</a>を検討してください。</p></td>
      <td><p>任意のJSONオブジェクト</p></td>
    </tr>
 </table>
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>配列は、最適なインデックス作成のために同じ型の要素を含む必要があります。詳細については、<a href="./use-array-fields">配列 Field</a>を参照してください。</p>
+配列は、最適なインデックス作成のために同じ型の要素を含める必要があります。詳細については、[配列フィールド](./use-array-fields)を参照してください。
 
 </Admonition>
 
 ### サポートされているキャスト関数\{#supported-cast-functions}
 
-JSONフィールドキーに誤った形式の値が含まれている場合（例：数値が文字列として保存されているなど）、`json_cast_function`引数にキャスト関数を渡すことで、インデックス作成時にこれらの値を変換できます。
+JSONフィールドのキーに誤った形式の値が含まれている場合（例: 文字列として保存された数値）、キャスト関数を `json_cast_function` 引数に渡して、インデックス作成時にこれらの値を変換できます。
 
-キャスト関数は大文字・小文字を区別しません。以下の関数がサポートされています：
+キャスト関数は大文字と小文字を区別しません。以下の関数がサポートされています:
 
 <table>
    <tr>
@@ -174,19 +179,19 @@ JSONフィールドキーに誤った形式の値が含まれている場合（�
    <tr>
      <td><p><code>STRING_TO_DOUBLE</code> / <code>string_to_double</code></p></td>
      <td><p>文字列 → 数値（double）</p></td>
-     <td><p><code>"99.99"</code>を<code>99.99</code>に変換</p></td>
+     <td><p><code>"99.99"</code> を <code>99.99</code> に変換</p></td>
    </tr>
 </table>
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>変換に失敗した場合（例：非数値文字列）、その値はスキップされ、インデックス作成されません。</p>
+変換に失敗した場合（例: 非数値の文字列）、その値はスキップされインデックス作成されません。
 
 </Admonition>
 
 ## JSONインデックスの作成\{#create-json-indexes}
 
-このセクションでは、実用的な例を用いて、さまざまなタイプのJSONデータに対するインデックスの作成方法を示します。すべての例は以下に示すサンプルJSON構造を使用し、適切に定義されたコレクションスキーマを持つ**MilvusClient**への接続がすでに確立されていることを前提としています。
+このセクションでは、実用的な例を使用して、さまざまなタイプのJSONデータに対するインデックス作成方法を説明します。すべての例は、以下に示すサンプルJSON構造を使用し、適切に定義されたコレクションスキーマで **MilvusClient** への接続が既に確立されていることを前提としています。
 
 ### サンプルJSON構造\{#sample-json-structure}
 
@@ -279,19 +284,19 @@ index_params.add_index(
 )
 ```
 
-**重要**: いずれかのドキュメント（例: `"invalid"` のような数値でない文字列）の変換が失敗した場合、そのドキュメントの値はインデックスから除外され、フィルタリング結果に表示されません。
+**重要**: 変換に失敗したドキュメントがある場合（例: 数値以外の文字列 `"invalid"` など）、そのドキュメントの値はインデックスから除外され、フィルタリング結果にも表示されません。
 
-### 例4: オブジェクト全体をインデックスする\{#example-4-index-entire-objects}
+### 例 4: オブジェクト全体をインデックス化する\{#example-4-index-entire-objects}
 
-完全なJSONオブジェクトをインデックスして、その内部の任意のフィールドに対してクエリを実行できるようにします。`json_cast_type="JSON"` を使用すると、システムは自動的に以下の処理を行います：
+オブジェクト内の任意のフィールドでクエリを実行できるように、完全な JSON オブジェクトをインデックス化します。`json_cast_type="JSON"` を使用すると、システムは自動的に以下を行います:
 
-- **JSON構造をフラット化する**: ネストされたオブジェクトは、効率的なインデックス作成のためにフラットなパスに変換されます
+- **JSON構造をフラット化する**: ネストされたオブジェクトが効率的なインデックス化のためにフラットなパスに変換されます
 
-- **データ型を推論する**: 各値は、その内容に基づいて自動的に数値、文字列、真偽値、日付のいずれかに分類されます
+- **データ型を推論する**: 各値はその内容に基づいて、数値、文字列、ブール値、または日付として自動的に分類されます
 
-- **包括的なカバレッジを作成する**: オブジェクト内のすべてのキーおよびネストされたパスが検索可能になります
+- **包括的なカバレッジを作成する**: オブジェクト内のすべてのキーとネストされたパスが検索可能になります
 
-上記の[サンプルJSON構造](./json-indexing#sample-json-structure)に対して、`metadata` オブジェクト全体をインデックスします：
+上記の [サンプル JSON 構造](./json-indexing#sample-json-structure) に対して、 `metadata` オブジェクト全体をインデックス化します:
 
 ```python
 # Index the entire JSON object

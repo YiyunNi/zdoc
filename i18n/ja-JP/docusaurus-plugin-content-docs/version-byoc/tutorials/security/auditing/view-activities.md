@@ -1,18 +1,18 @@
 ---
-title: "プラットフォーム監査ログの表示 | BYOC"
+title: "プラットフォーム監査ログを表示 | BYOC"
 slug: /view-activities
 sidebar_key: view-activities
-sidebar_label: "プラットフォーム監査ログの表示"
+sidebar_label: "プラットフォーム監査ログを表示"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud のプラットフォーム監査ログ機能は、特定の Zilliz Cloud 組織に関連するアクセスログを含む包括的なログビューを提供します。| BYOC"
+description: "Zilliz Cloud のプラットフォーム監査ログ機能は、特定の Zilliz Cloud 組織に関連するログ（アクセスログを含む）を包括的に表示します。 | BYOC"
 type: origin
 token: NeUWwqRl2iwn4HkZg3ocjLjmnth
 sidebar_position: 3
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - アクティビティ
   - 表示
 
@@ -23,56 +23,56 @@ import Admonition from '@theme/Admonition';
 
 # プラットフォーム監査ログの表示
 
-Zilliz Cloud の**プラットフォーム監査ログ**機能は、特定の Zilliz Cloud 組織に関連するログ（アクセスログを含む）を包括的に表示します。
+Zilliz Cloud の **プラットフォーム監査ログ** 機能は、特定の Zilliz Cloud 組織に関連するログ（アクセスログを含む）を包括的に表示します。
 
 ## プラットフォーム監査ログの表示\{#view-platform-audit-logs}
 
-組織ページで、左側のナビゲーションペインにある**プラットフォーム監査ログ**をクリックします。ここでは、プラットフォームログの概要、各ログが記録された時刻、および関与したオペレーターの ID を確認できます。
+組織ページで、左側のナビゲーションペインから **プラットフォーム監査ログ** をクリックします。ここでは、プラットフォームログの概要、各ログが記録された時刻、および関与したオペレーターの識別情報を確認できます。
 
 ![view-activities-saas](https://zdoc-images.s3.us-west-2.amazonaws.com/view-activities-saas.png "view-activities-saas")
 
 ## プラットフォーム監査ログのフィルタリング\{#filter-platform-audit-logs}
 
-プラットフォーム監査ログの制御とナビゲーションを向上させるために、タイプと期間でフィルタを適用できます。これらのフィルタ条件を組み合わせることで、よりカスタマイズされたビューを得ることができます。
+プラットフォーム監査ログのナビゲーションをより効率的に制御するため、タイプと時間範囲でフィルタを適用できます。これらのフィルタリング条件を組み合わせることで、より目的に合った表示が可能になります。
 
-- **期間によるフィルタリング**
+- **時間範囲でフィルタリング**
 
-    開始日と終了日を選択して、特定の期間内に発生したログを表示します。希望の期間を設定した後、**適用**をクリックして、その期間内のすべてのログを表示します。
+    開始日と終了日を選択して、特定の期間内に発生したログを表示します。希望の時間範囲を設定した後、**適用** をクリックして、この期間内のすべてのログを表示します。
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>選択した開始日と終了日の間隔が 30 日を超えないようにしてください。</p>
+    選択した開始日と終了日の間隔が30日を超えないようにしてください。
 
     </Admonition>
 
     ![filter-by-time-range](https://zdoc-images.s3.us-west-2.amazonaws.com/filter-by-time-range.png "filter-by-time-range")
 
-- **タイプによるフィルタリング**
+- **タイプでフィルタリング**
 
-    リストから希望のログタイプを選択します。Zilliz Cloud では、プラットフォーム監査ログを**Info**、**Warning**、**Error**の 3 つのタイプに分類しています。
+    リストから希望のログタイプを選択します。Zilliz Cloud はプラットフォーム監査ログを3つのタイプに分類しています: **情報**、**警告**、および **エラー**。
 
     <table>
        <tr>
-         <th><p><strong>Activity Type</strong></p></th>
-         <th><p><strong>Description</strong></p></th>
+         <th><p><strong>アクティビティタイプ</strong></p></th>
+         <th><p><strong>説明</strong></p></th>
        </tr>
        <tr>
-         <td><p>Info</p></td>
-         <td><p>クラスター、アクセス、または請求に関する一般情報です。</p><p>例：クラスター in01-xxxxxxxxxxxxxxx が作成されました。</p></td>
+         <td><p>情報</p></td>
+         <td><p>クラスター、アクセス、または請求に関連する一般情報。</p><p>例: クラスター inxx-xxxxxxxxxxxxxxx が作成されました。</p></td>
        </tr>
        <tr>
-         <td><p>Warning</p></td>
-         <td><p>注意が必要なリソース状態に関する更新情報です。</p><p>例：「クラスター in01-xxxxxxxxxxxxxxx が削除されました。」</p></td>
+         <td><p>警告</p></td>
+         <td><p>注意が必要なリソース状態に関する更新。</p><p>例: 「クラスター inxx-xxxxxxxxxxxxxxx が削除されました。」</p></td>
        </tr>
        <tr>
-         <td><p>Error</p></td>
-         <td><p>支払いの失敗や、即時の対応または処置を要するその他のシステム障害に関する通知です。</p><p>例：「請求書 invo-xxxxxxxxxxxxxxxxxxxxxxxx の支払いに失敗しました。」</p></td>
+         <td><p>エラー</p></td>
+         <td><p>即座の注意または対応が必要な支払い失敗またはその他のシステム障害の通知。</p><p>例: 「請求書 invo-xxxxxxxxxxxxxxxxxxxxxxxx の支払いが失敗しました。」</p></td>
        </tr>
     </table>
 
     ![filter-by-activity-type](https://zdoc-images.s3.us-west-2.amazonaws.com/filter-by-activity-type.png "filter-by-activity-type")
 
-- **監査ログによるフィルタリング**
+- **監査ログでフィルタリング**
 
     ![filter-by-activity](https://zdoc-images.s3.us-west-2.amazonaws.com/filter-by-activity.png "filter-by-activity")
 

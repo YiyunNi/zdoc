@@ -157,13 +157,13 @@ The following table compares the 2 types of databases.
 
 <Admonition type="info" icon="📘" title="Note">
 
-Use different connection endpoints for the two types of databases. For details, see Connection Endpoints.
+Use different connection endpoints for the two types of databases. For details, see [Connection Endpoints](./access-connection-endpoints).
 
 </Admonition>
 
 ## Next steps\{#next-steps}
 
-- Create an External Collection
+- [Create an External Collection](./create-external-collection)
 
 - [Create a Collection](./manage-collections-sdks)
 

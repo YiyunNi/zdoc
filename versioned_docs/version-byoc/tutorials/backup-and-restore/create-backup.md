@@ -1,7 +1,7 @@
 ---
 title: "Create Backup | BYOC"
-slug: /create-snapshot
-sidebar_key: create-snapshot
+slug: /create-backup
+sidebar_key: create-backup
 sidebar_label: "Create Backup"
 added_since: FALSE
 last_modified: FALSE
@@ -39,7 +39,7 @@ This guide explains how to **manually create backups**. To automate backup creat
 
     - Collection TTL settings
 
-    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-snapshot))
+    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-backup-files))
 
     - Cluster dynamic and scheduled scaling settings
 

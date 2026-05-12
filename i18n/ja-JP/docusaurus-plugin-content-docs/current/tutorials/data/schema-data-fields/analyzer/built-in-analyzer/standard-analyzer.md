@@ -1,11 +1,11 @@
 ---
-title: "標準アナライザー | Cloud"
+title: "Standard アナライザー | Cloud"
 slug: /standard-analyzer
 sidebar_key: standard-analyzer
-sidebar_label: "標準"
+sidebar_label: "Standard"
 beta: FALSE
 notebook: FALSE
-description: "`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、アナライザーが指定されていない場合にテキストフィールドに自動的に適用されます。文法ベースのトークン化を使用するため、ほとんどの言語で効果的です。| Cloud"
+description: "`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、アナライザーが指定されていない場合にテキストフィールドに自動的に適用されます。文法ベースのトークン化を使用しており、ほとんどの言語で効果的です。"
 type: origin
 token: WMSvwXXz4iR7mZkGmUscF3Y1nxs
 sidebar_position: 1
@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みアナライザー
   - standard-analyzer
 
@@ -25,23 +25,23 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Standard Analyzer
+# 標準アナライザー
 
-`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、アナライザーが指定されていないテキストフィールドに自動的に適用されます。文法に基づくトークン化（tokenization）を使用するため、ほとんどの言語で効果的です。
+`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、アナライザーが指定されていない場合は自動的にテキストフィールドに適用されます。文法ベースのトークン化を使用しており、ほとんどの言語で効果的です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>standard</code> アナライザーは、単語の境界を区切るためのセパレーター（スペースや句読点など）に依存する言語に適しています。ただし、中国語、日本語、韓国語などの言語では辞書ベースのトークン化が必要です。このような場合、<a href="./chinese-analyzer"><code>chinese</code></a> のような言語固有のアナライザーや、専用のトークナイザー（<a href="./lindera-tokenizer"><code>lindera</code></a> や <a href="./icu-tokenizer"><code>icu</code></a> など）およびフィルターを組み込んだカスタムアナライザーの使用を強く推奨します。これにより、正確なトークン化とより良い検索結果が得られます。</p>
+`standard` アナライザーは、単語の境界に区切り文字（スペース、句読点など）を使用する言語に適しています。ただし、中国語、日本語、韓国語などの言語では辞書ベースのトークン化が必要です。このような場合、[`chinese`](./chinese-analyzer) などの言語固有のアナライザーや、[`lindera`](./lindera-tokenizer)、[`icu`](./icu-tokenizer) などの専用トークナイザーとフィルターを使用したカスタムアナライザーを使用することを強く推奨します。これにより、正確なトークン化とより良い検索結果を確保できます。
 
 </Admonition>
 
-## Definition\{#definition}
+## 定義\{#definition}
 
-`standard` アナライザーは以下の要素で構成されています：
+`standard` アナライザーは以下で構成されています：
 
-- **トークナイザー**： `standard` トークナイザーを使用して、文法規則に基づきテキストを個別の単語単位に分割します。詳細については、[Standard トークナイザー](./standard-tokenizer) を参照してください。
+- **トークナイザー**: `standard` トークナイザーを使用して、文法ルールに基づいてテキストを個別の単語単位に分割します。詳細については、[Standard トークナイザー](./standard-tokenizer) を参照してください。
 
-- **Filter**： `lowercase` フィルターを使用して、すべてのトークンを小文字に変換し、大文字・小文字を区別しない検索を可能にします。詳細については、[Lowercase](./lowercase-filter) を参照してください。
+- **フィルター**: `lowercase` フィルターを使用して、すべてのトークンを小文字に変換し、大文字小文字を区別しない検索を可能にします。詳細については、[Lowercase](./lowercase-filter) を参照してください。
 
 `standard` アナライザーの機能は、以下のカスタムアナライザー設定と同等です：
 
@@ -226,13 +226,13 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールド内のテキストを処理し、効率的なトークン化とフィルタリングを実現します。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定したアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークン化とフィルタリングを実現します。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
-## 例\{#examples}
+## Examples\{#examples}
 
-コレクションスキーマにアナライザー設定を適用する前に、`run_analyzer` メソッドを使用してその動作を検証してください。
+アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
 
-### アナライザー設定\{#analyzer-configuration}
+### Analyzer configuration\{#analyzer-configuration}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

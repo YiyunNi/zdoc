@@ -1,20 +1,20 @@
 ---
-title: "クラスターへの接続 | Cloud"
+title: "クラスターに接続 | Cloud"
 slug: /connect-to-cluster
 sidebar_key: connect-to-cluster
-sidebar_label: "クラスターへの接続"
+sidebar_label: "クラスターに接続"
 beta: FALSE
 notebook: FALSE
-description: "この記事では、クラスターに接続するための体系的なガイドを提供します。| Cloud"
+description: "この記事では、クラスターに接続するための体系的なガイドを提供します。"
 type: origin
 token: IVFfws0lJi8gIVkRvrvc9aXvnNe
 sidebar_position: 2
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
-  - クラスター
-  - 接続
+  - cloud
+  - cluster
+  - connect
 
 ---
 
@@ -24,36 +24,35 @@ import TabItem from '@theme/TabItem';
 
 # クラスターへの接続
 
-この記事では、クラスターに接続するための体系的なガイドを提供します。
+この記事では、クラスターへの接続方法について体系的に解説します。
 
-## 開始前に\{#before-you-start}
+## 開始前の準備\{#before-you-start}
 
-続行する前に、以下の前提条件が満たされていることを確認してください：
+作業を進める前に、以下の前提条件が満たされていることを確認してください。
 
-- Zilliz Cloud にアカウントを登録済みであること。詳細は [Zilliz Cloud に登録](./register-with-zilliz-cloud) をご覧ください。
+- Zilliz Cloud でアカウントを登録していること。詳細については、[Zilliz Cloud への登録](./register-with-zilliz-cloud) を参照してください。
 
-- クラスターを作成済みであること。詳細は [クラスターの作成](./create-cluster) をご覧ください。
+- クラスターを作成していること。詳細については、[クラスターの作成](./create-cluster) を参照してください。
 
-- ユースケースに適した Milvus SDK をインストール済みであること。詳細は [SDK のインストール](./install-sdks) をご覧ください。
+- ユースケースに適した Milvus SDK をインストールしていること。詳細については、[SDK のインストール](./install-sdks) を参照してください。
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>SDK よりも RESTful API の利用を検討している場合、継続的な接続を確立できない点を理解することが重要です。これは、HTTP プロトコルが単方向通信モードを採用していることに起因します。</p>
-<p></p>
+SDK ではなく RESTful API を使用する場合、継続的な接続を確立することはできません。これは HTTP プロトコルの一方向通信モードによるものです。
 
 </Admonition>
 
 ## クラスターへの接続\{#connect-to-a-cluster}
 
-クラスターが稼働したら、そのパブリックエンドポイントと認証トークンを使用して接続します。
+クラスターが稼働したら、パブリックエンドポイントと認証トークンを使用して接続します。
 
-- **クラスターの公開エンドポイント:** これは Zilliz Cloud Web コンソールで取得できます。対象のクラスの**クラスターの詳細**ページに移動し、**接続**カードからクラスターの公開エンドポイントをコピーできます。
+- **クラスターのパブリックエンドポイント:** Zilliz Cloud Web コンソールで確認できます。対象クラスターの **クラスターの詳細** ページに移動し、**接続** カードでクラスターのパブリックエンドポイントをコピーできます。
 
     ![connection-info](https://zdoc-images.s3.us-west-2.amazonaws.com/connection-info.png "connection-info")
 
-- **トークン:** このトークンは、[API キー](./manage-api-keys) またはユーザー名とパスワードのペアで構成される [クラスター資格情報](./cluster-credentials) のいずれかです。
+- **トークン:** このトークンは [API キー](./manage-api-keys) または、ユーザー名とパスワードのペアで構成される [クラスター認証情報](./cluster-credentials) にすることができます。
 
-以下の例は、クラスターに接続する方法を示しています。
+以下の例は、クラスターへの接続方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

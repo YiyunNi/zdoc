@@ -5,7 +5,7 @@ sidebar_key: phrase-match
 sidebar_label: "フレーズマッチ"
 beta: FALSE
 notebook: FALSE
-description: "フレーズマッチを使用すると、クエリ用語が正確なフレーズとして含まれるドキュメントを検索できます。デフォルトでは、単語は同じ順序で、かつ互いに直接隣接して出現する必要があります。例えば、「robotics machine learning」というクエリは、「…typical robotics machine learning models…」のようなテキストに一致します。これは、「robotics」、「machine」、「learning」という単語が他の単語を挟まずに連続して出現している場合です。 | BYOC"
+description: "フレーズマッチを使用すると、クエリ用語を完全一致フレーズとして含むドキュメントを検索できます。デフォルトでは、単語は同じ順序で、互いに直接隣接して出現する必要があります。たとえば、「robotics machine learning」のクエリは「…typical robotics machine learning models…」のようなテキストに一致します。ここでは「robotics」「machine」「learning」という単語が順序どおりに、間に他の単語がない状態で出現しています。 | BYOC"
 type: origin
 token: O2YiwLai5iSjT1k1WEsc06E8nEe
 sidebar_position: 14
@@ -13,11 +13,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - data
-  - filter
-  - filtering expressions
-  - filtering
+  - コレクション
+  - データ
+  - フィルター
+  - フィルタリング式
+  - フィルタリング
   - phrase-match
 
 ---
@@ -28,41 +28,41 @@ import TabItem from '@theme/TabItem';
 
 # フレーズ一致
 
-フレーズ一致を使用すると、クエリの語句を完全一致するフレーズとして含むドキュメントを検索できます。デフォルトでは、単語は同じ順序で、かつ直接隣接している必要があります。たとえば、**"robotics machine learning"** というクエリは、*"…typical robotics machine learning models…"* のようなテキストにマッチします。この例では、**"robotics"**、**"machine"**、**"learning"** という単語が連続して現れ、その間に他の単語が挟まれていません。
+フレーズ一致を使用すると、クエリ用語が完全一致フレーズとして含まれるドキュメントを検索できます。デフォルトでは、単語は同じ順序で、互いに直接隣接して出現する必要があります。たとえば、**"robotics machine learning"** のクエリは、*"...typical robotics machine learning models..."* のようなテキストに一致します。ここでは、**"robotics"**、**"machine"**、**"learning"** の各単語が順序どおりに、間に他の単語がない状態で出現しています。
 
-しかし実際のユースケースでは、厳密なフレーズ一致はあまりにも硬直的である場合があります。たとえば、*"…machine learning models widely adopted in robotics…"* のようなテキストにもマッチさせたい場合があるでしょう。ここでは同じキーワードが含まれていますが、隣接しておらず、元の順序でもありません。このようなケースに対応するため、フレーズ一致では `slop` パラメータがサポートされています。この `slop` 値は、フレーズ内の語句間で許容される位置のずれ（positional shifts）の数を定義します。たとえば、`slop` を 1 に設定すると、**"machine learning"** というクエリは *"...machine deep learning..."* のようなテキストにマッチします。この例では、元の語句の間に 1 単語（**"deep"**）が挟まっています。
+しかし、実際のシナリオでは、厳密なフレーズ一致は柔軟性に欠ける場合があります。*"...machine learning models widely adopted in robotics..."* のようなテキストに一致させたい場合もあります。ここでは、同じキーワードが含まれていますが、隣接していないか、元の順序ではありません。これに対処するため、フレーズ一致は `slop` パラメータをサポートしており、柔軟性を導入します。`slop` 値は、フレーズ内の用語間で許可される位置シフトの数を定義します。たとえば、`slop` が 1 の場合、**"machine learning"** のクエリは *"...machine deep learning..."* のようなテキストに一致できます。ここでは、元の用語の間に 1 つの単語（**"deep"**）があります。
 
-## 概要\{#overview}
+## Overview\{#overview}
 
-[Tantivy](https://github.com/quickwit-oss/tantivy) 検索エンジンライブラリを活用し、フレーズ一致はドキュメント内の単語の位置情報を分析することで動作します。以下の図はその処理フローを示しています：
+[Tantivy](https://github.com/quickwit-oss/tantivy) 検索エンジンライブラリを活用して、フレーズ一致はドキュメント内の単語の位置情報を分析することで機能します。以下の図はそのプロセスを示しています：
 
 ![AFrdwVT8ChT11ibs9lpcuN7onZc](https://zdoc-images.s3.us-west-2.amazonaws.com/AFrdwVT8ChT11ibs9lpcuN7onZc.png)
 
-1. **ドキュメントのトークン化**: Zilliz Cloud にドキュメントを挿入すると、アナライザによってテキストがトークン（個々の単語または語句）に分割され、各トークンに対して位置情報が記録されます。たとえば、**doc_1** は **["machine" (pos=0), "learning" (pos=1), "boosts" (pos=2), "efficiency" (pos=3)]** にトークン化されます。アナライザの詳細については、[Analyzer Overview](./analyzer-overview) を参照してください。
+1. **ドキュメントのトークン化**: Zilliz Cloud にドキュメントを挿入すると、テキストはアナライザーを使用してトークン（個々の単語または用語）に分割され、各トークンの位置情報が記録されます。たとえば、**doc_1** は **[ "machine" (pos=0), "learning" (pos=1), "boosts" (pos=2), "efficiency" (pos=3) ]** にトークン化されます。アナライザーの詳細については、[アナライザー概要](./analyzer-overview) を参照してください。
 
-1. **転置インデックスの作成**: Zilliz Cloud は転置インデックスを構築し、各トークンをそれが出現するドキュメントおよびそのドキュメント内での位置にマッピングします。
+1. **転置インデックスの作成**: Zilliz Cloud は転置インデックスを構築し、各トークンをそれが出現するドキュメントおよびそのドキュメント内でのトークンの位置にマッピングします。
 
-1. **フレーズマッチング**: フレーズクエリが実行されると、Zilliz Cloud は転置インデックス内で各トークンを検索し、それらの位置を確認して、正しい順序と近接性で出現しているかどうかを判定します。`slop` パラメータは、マッチするトークン間に許容される最大位置数を制御します：
+1. **フレーズマッチング**: フレーズクエリが実行されると、Zilliz Cloud は転置インデックスで各トークンを検索し、それらの位置を確認して、正しい順序と近接性で出現しているかどうかを判断します。`slop` パラメータは、一致するトークン間で許可される最大位置数を制御します：
 
-    - **slop = 0** の場合、トークンは**完全に同じ順序で、かつ直接隣接**している必要があります（つまり、間に他の単語が一切挟まれない）。
+    - **slop = 0** は、トークンが**正確な順序で直接隣接して**出現する必要があることを意味します（つまり、間に余分な単語がない）。
 
         - この例では、**doc_1**（**"machine"** が **pos=0**、**"learning"** が **pos=1**）のみが完全一致します。
 
-    - **slop = 2** の場合、マッチするトークン間に最大 2 つの位置の柔軟性または並べ替えが許容されます。
+    - **slop = 2** は、一致するトークン間で最大 2 つの位置の柔軟性または並べ替えを許可します。
 
-        - これにより、逆順（**"learning machine"**）やトークン間に小さなギャップがある場合もマッチします。
+        - これにより、逆順（**"learning machine"**）やトークン間の小さなギャップが許可されます。
 
-        - 結果として、**doc_1**、**doc_2**（**"learning"** が **pos=0**、**"machine"** が **pos=1**）、および **doc_3**（**"learning"** が **pos=1**、**"machine"** が **pos=2**）がすべてマッチします。
+        - その結果、**doc_1**、**doc_2**（**"learning"** が **pos=0**、**"machine"** が **pos=1**）、および **doc_3**（**"learning"** が **pos=1**、**"machine"** が **pos=2**）がすべて一致します。
 
-## フレーズ一致の有効化\{#enable-phrase-match}
+## Enable フレーズ一致\{#enable-phrase-match}
 
-フレーズ一致は、Zilliz Cloud の文字列データ型である `VARCHAR` フィールドタイプで動作します。
+フレーズ一致は、Zilliz Cloud の文字列データ型である `VARCHAR` フィールド型で機能します。
 
-フレーズ一致を有効にするには、コレクションスキーマを設定する際に `enable_analyzer` および `enable_match` パラメータを両方とも `True` に設定します。この設定により、テキストがトークン化され、位置情報を含む転置インデックスが構築され、効率的なフレーズ検索が可能になります。
+フレーズ一致を有効にするには、`enable_analyzer` と `enable_match` の両方のパラメータを `True` に設定してコレクションスキーマを構成します。この設定により、テキストがトークン化され、位置情報を含む転置インデックスが構築され、効率的なフレーズ検索が可能になります。
 
-### スキーマフィールドの定義\{#define-schema-fields}
+### Define schema fields\{#define-schema-fields}
 
-特定の `VARCHAR` フィールドに対してフレーズ一致を有効にするには、フィールドスキーマを定義する際に `enable_analyzer` および `enable_match` を両方とも `True` に設定します。
+特定の `VARCHAR` フィールドでフレーズ一致を有効にするには、フィールドスキーマを定義する際に、`enable_analyzer` と `enable_match` の両方を `True` に設定します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -257,15 +257,15 @@ export schema="{
 </TabItem>
 </Tabs>
 
-デフォルトでは、Zilliz Cloud は [standard](./standard-analyzer) [analyzer](./standard-analyzer) を使用します。このアナライザーは、テキストを空白文字や句読点でトークン化し、小文字に変換します。
+デフォルトでは、Zilliz Cloud は [standard](./standard-analyzer) [analyzer](./standard-analyzer) を使用します。これは、空白と句読点でテキストをトークン化し、テキストを小文字に変換します。
 
-テキストデータが特定の言語または形式である場合は、`analyzer_params` パラメータを使用してカスタムアナライザーを設定できます（例: `{ "type": "english" }` や `{ "type": "jieba" }`）。
+テキストデータが特定の言語や形式の場合は、`analyzer_params` パラメータを使用してカスタムアナライザーを構成できます（例: `{ "type": "english" }` または `{ "type": "jieba" }`）。
 
 詳細については、[Analyzer Overview](./analyzer-overview) を参照してください。
 
-### Create the collection\{#create-the-collection}
+### コレクションの作成\{#create-the-collection}
 
-必要なフィールドを定義したら、以下のコードを使用してコレクションを作成します：
+必要なフィールドが定義されたら、以下のコードを使用してコレクションを作成します:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -370,10 +370,12 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-コレクションを作成した後、[フレーズマッチを使用する](./phrase-match#use-phrase-match)前に、以下の必要な手順を必ず実行してください。
+コレクションの作成後、[フレーズマッチを使用する](./phrase-match#use-phrase-match)前に、以下の必要な手順が実行されていることを確認してください:
 
-- エンティティがコレクションに挿入されていること。
-- 各ベクトルフィールドに対してインデックスが作成されていること。
+- エンティティがコレクションに挿入されていること;
+
+- 各ベクトルフィールドにインデックスが作成されていること;
+
 - コレクションがメモリにロードされていること。
 
 <details>
@@ -588,17 +590,17 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/load" \
 
 ## フレーズ一致を使用する\{#use-phrase-match}
 
-コレクションスキーマ内の `VARCHAR` フィールドに対してフレーズ一致を有効化した後、`PHRASE_MATCH` 式を使用してフレーズ一致検索を実行できます。
+コレクションスキーマで `VARCHAR` フィールドの一致を有効にすると、`PHRASE_MATCH` 式を使用してフレーズ一致を実行できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>PHRASE_MATCH</code> 式は大文字・小文字を区別しません。<code>PHRASE_MATCH</code> または <code>phrase_match</code> のどちらを使用しても構いません。</p>
+`PHRASE_MATCH` 式は大文字と小文字を区別しません。`PHRASE_MATCH` または `phrase_match` のいずれかを使用できます。
 
 </Admonition>
 
 ### PHRASE_MATCH 式の構文\{#phrasematch-expression-syntax}
 
-検索時にフィールド、フレーズ、およびオプションの柔軟性（`slop`）を指定するために `PHRASE_MATCH` 式を使用します。構文は次のとおりです：
+`PHRASE_MATCH` 式を使用して、検索時にフィールド、フレーズ、およびオプションの柔軟性（`slop`）を指定します。構文は以下のとおりです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -1052,19 +1054,19 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/entities/search" \
 </TabItem>
 </Tabs>
 
-## 注意事項\{#considerations}
+## 考慮事項\{#considerations}
 
-- フィールドに対してフレーズ一致を有効にすると、転置インデックスが作成され、ストレージリソースを消費します。この機能を有効にするかどうか判断する際は、テキストサイズ、一意のトークン数、および使用するアナライザーに基づいてストレージへの影響を考慮してください。
+- フィールドのフレーズ一致を有効にすると、転置インデックスの作成がトリガーされ、ストレージリソースを消費します。この機能を有効にするかどうかを決定する際は、テキストサイズ、一意のトークン数、使用するアナライザーに応じて異なるため、ストレージへの影響を考慮してください。
 
-- スキーマ内でアナライザーを定義すると、そのコレクションに対してその設定は永続化されます。異なるアナライザーの方が要件に適していると判断した場合は、既存のコレクションを削除し、希望するアナライザー設定で新しいコレクションを作成することを検討してください。
+- スキーマでアナライザーを定義すると、その設定はそのコレクションに対して永久となります。異なるアナライザーの方がニーズに適していると判断した場合は、既存のコレクションを削除し、希望するアナライザー構成で新しいコレクションを作成することを検討してください。
 
-- フレーズ一致のパフォーマンスは、テキストがどのようにトークン化されるかに依存します。アナライザーをコレクション全体に適用する前に、`run_analyzer` メソッドを使用してトークン化の出力を確認してください。詳細については、[Analyzer Overview](./analyzer-overview) を参照してください。
+- フレーズ一致のパフォーマンスは、テキストのトークン化方法に依存します。アナライザーをコレクション全体に適用する前に、`run_analyzer` メソッドを使用してトークン化の出力を確認してください。詳細については、[アナライザー概要](./analyzer-overview) を参照してください。
 
-- `filter` 式におけるエスケープルール：
+- `filter` 式でのエスケープ規則:
 
-    - 式内で二重引用符または一重引用符で囲まれた文字は、文字列定数として解釈されます。文字列定数にエスケープ文字が含まれる場合、エスケープ文字はエスケープシーケンスで表現する必要があります。例えば、`\` を表すには `\\` を、タブ `\t` を表すには `\\t` を、改行を表すには `\\n` を使用します。
+    - 式内で二重引用符または単一引用符で囲まれた文字は、文字列定数として解釈されます。文字列定数にエスケープ文字が含まれる場合、エスケープ文字はエスケープシーケンスで表す必要があります。たとえば、`\` を表すには `\\` を、タブ `\t` を表すには `\\t` を、改行を表すには `\\n` を使用します。
 
-    - 文字列定数が一重引用符で囲まれている場合、定数内の一重引用符は `\\'` で表現し、二重引用符は `"` または `\\"` のいずれかで表現できます。例：`'It\\'s milvus'`。
+    - 文字列定数が単一引用符で囲まれている場合、定数内の単一引用符は `\\'` として表し、二重引用符は `"` または `\\"` のいずれかとして表すことができます。例: `'It\\'s milvus'`。
 
-    - 文字列定数が二重引用符で囲まれている場合、定数内の二重引用符は `\\"` で表現し、一重引用符は `'` または `\\'` のいずれかで表現できます。例：`"He said \\"Hi\\""`。
+    - 文字列定数が二重引用符で囲まれている場合、定数内の二重引用符は `\\"` として表し、単一引用符は `'` または `\\'` のいずれかとして表すことができます。例: `"He said \\"Hi\\""`。
 

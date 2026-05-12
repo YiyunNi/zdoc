@@ -1,11 +1,11 @@
 ---
-title: "前払いを利用する | Cloud"
+title: "前払いの使用 | Cloud"
 slug: /advance-pay
 sidebar_key: advance-pay
 sidebar_label: "前払い"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、クレジットカードの登録や AWS Marketplace でのサブスクリプションに代わる支払い方法として、前払い（銀行振込）も受け付けています。| Cloud"
+description: "Zilliz Cloud では、クレジットカードの登録や AWS Marketplace へのサブスクリプションに代わる支払い方法として、前払い（銀行振込）もご利用いただけます。"
 type: origin
 token: K8hFwmeBQiCSO4ktT9ScD9zMnua
 sidebar_position: 6
@@ -20,42 +20,43 @@ keywords:
 import Admonition from '@theme/Admonition';
 
 
-# 前払いの利用
+# Advance Pay の利用
 
-Zilliz Cloud では、クレジットカードの追加や AWS Marketplace での購読に代わる支払い方法として、前払い（銀行振込）も受け付けています。
+Zilliz Cloud では、クレジットカードの追加や AWS Marketplace での購読に代わる支払い方法として、Advance Pay（銀行振込）もご利用いただけます。
 
-## 前払い残高への入金\{#add-funds-to-advance-pay}
+## Advance Pay に資金を追加する\{#add-funds-to-advance-pay}
 
-現在、前払い残高への入金は、[お問い合わせ](https://zilliz.com/contact-sales) からのみ可能です。
+現在、Advance Pay の残高に資金を追加するには、[お問い合わせ](https://zilliz.com/contact-sales) いただく必要があります。
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>支払い方法の優先順位は以下の通りです：クレジット &gt; 前払い &gt; クレジットカード / AWS Marketplace 購読。</p>
-<p>つまり、クレジットが残っており、かつ前払い入金およびクレジットカードの追加または AWS Marketplace での購読を行っている場合、利用料金の決済にはまずクレジットが差し引かれます。クレジットが不足している場合は、前払い資金が差し引かれます。それでも資金とクレジットが料金をカバーするのに足りない場合、クレジットカードまたは AWS Marketplace アカウントに対して請求が行われます。</p>
+支払い方法の優先順位は以下の通りです: クレジット > Advance Pay > クレジットカード / AWS Marketplace 購読。
+
+つまり、残りのクレジットがあり、かつ資金を追加済みでクレジットカードを登録しているか AWS Marketplace で購読している場合、使用料の支払いにはまずクレジットが差し引かれます。クレジットが不足する場合は、Advance Pay の資金が差し引かれます。資金とクレジットの両方で料金をカバーできない場合は、クレジットカードまたは AWS Marketplace アカウントへの請求となります。
 
 </Admonition>
 
-## 前払い履歴の確認\{#view-advance-pay-history}
+## Advance Pay の履歴を確認する\{#view-advance-pay-history}
 
-銀行振込履歴を確認するには、上部ナビゲーションバーまたは左側ナビゲーションペインで「請求」をクリックし、次に「前払い」セクション内の「履歴」をクリックします。**銀行振込履歴**ページでは、振込を行った日時、追加された資金額など、過去すべての振込の詳細を確認できます。
+銀行振込履歴を確認するには、上部ナビゲーションバーまたは左側ナビゲーションペインで **請求** をクリックします。次に、Advance Pay セクションの **履歴** をクリックします。**銀行振込履歴** ページでは、過去のすべての振込の詳細（振込日時、追加した資金の金額など）を確認できます。
 
 ![add-fund-en](https://zdoc-images.s3.us-west-2.amazonaws.com/add-fund-en.png "add-fund-en")
 
-## 前払い残高の監視設定\{#set-monitor-for-advance-pay-balance}
+## Advance Pay 残高の監視を設定する\{#set-monitor-for-advance-pay-balance}
 
-デフォルトでは、前払い残高の監視は無効になっています。ただし、これを有効にすることで、前払い残高が監視条件で指定した金額を下回った際に通知を受け取ることができます。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
+デフォルトでは、Advance Pay 残高の監視は無効になっています。ただし、有効にすることで、Advance Pay 残高が監視条件で指定した金額を下回った際に通知を受け取ることができます。詳細については、[組織アラートの管理](./manage-organization-alerts) を参照してください。
 
-## 前払い資金の返金\{#refund-advance-pay-funds}
+## Advance Pay 資金の返金\{#refund-advance-pay-funds}
 
-現在、Zilliz Cloud の Web コンソールでは返金をサポートしていません。返金を希望される場合は、Zilliz Cloud の [サポートポータル](https://support.zilliz.com/hc/en-us) にてお問い合わせいただき、リクエストを送信してください。
+現在、Zilliz Cloud では Web コンソールでの返金はサポートしていません。返金をご希望の場合は、お問い合わせいただくか、Zilliz Cloud の [サポートポータル](https://support.zilliz.com/hc/en-us) でリクエストを送信してください。
 
 ## 関連トピック\{#related-topics}
 
-- [クレジットカードを追加して購読する](./subscribe-by-adding-credit-card)
+- [クレジットカードの追加による購読](./subscribe-by-adding-credit-card)
 
-- [AWS Marketplace で購読する](./subscribe-on-aws-marketplace)
+- [AWS Marketplace での購読](./subscribe-on-aws-marketplace)
 
-- [GCP Marketplace で購読する](./subscribe-on-gcp-marketplace)
+- [GCP Marketplace での購読](./subscribe-on-gcp-marketplace)
 
-- [請求書の表示](./view-invoice) 
+- [請求書の確認](./view-invoice) 
 

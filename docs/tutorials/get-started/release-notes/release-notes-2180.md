@@ -89,7 +89,7 @@ You can now selectively restore specific **databases** and **collections** from 
 
 ![Sd5PbeR5poupNlx6nM6cCrdxnTd](https://zdoc-images.s3.us-west-2.amazonaws.com/sd5pber5poupnlx6nm6ccrdxntd.png "Sd5PbeR5poupNlx6nM6cCrdxnTd")
 
-For details, refer to [Restore a Partial Cluster](./restore-from-snapshot#restore-a-partial-cluster).
+For details, refer to [Restore a Partial Cluster](./restore-from-backup-files#restore-a-partial-cluster).
 
 ## Create JSON Path Indexes on Zilliz Cloud Console\{#create-json-path-indexes-on-zilliz-cloud-console}
 

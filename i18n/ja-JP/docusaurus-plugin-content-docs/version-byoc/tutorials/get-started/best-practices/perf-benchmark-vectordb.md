@@ -1,11 +1,11 @@
 ---
-title: "VectorDBBench によるパフォーマンスベンチマーク | BYOC"
+title: "VectorDBBench を使用したパフォーマンスベンチマーク | BYOC"
 slug: /perf-benchmark-vectordb
 sidebar_key: perf-benchmark-vectordb
-sidebar_label: "VectorDBBench の使用"
+sidebar_label: "VectorDBBench を使用"
 beta: FALSE
 notebook: FALSE
-description: "VectorDBBench は、ベクトルデータベース専用に設計されたオープンソースのベンチマークツールです。| BYOC"
+description: "VectorDBBench は、ベクトルデータベース専用に設計されたオープンソースのベンチマークツールです。 | BYOC"
 type: origin
 token: Za3QwAcfjiSSvxk8UzUcTPmfnmb
 sidebar_position: 2
@@ -15,7 +15,7 @@ keywords:
   - cloud
   - milvus
   - パフォーマンス
-  - benchmark
+  - ベンチマーク
 
 ---
 
@@ -24,19 +24,19 @@ import Admonition from '@theme/Admonition';
 
 import Grid from '@site/src/components/Grid';
 
-# VectorDBBench によるパフォーマンスベンチマーク
+# VectorDBBench を使用したパフォーマンスベンチマーク
 
 [VectorDBBench](https://github.com/zilliztech/VectorDBBench) は、ベクトルデータベース専用に設計されたオープンソースのベンチマークツールです。
 
-本トピックでは、VectorDBBench を使用して Zilliz Cloud のパフォーマンステスト結果を再現する方法について説明します。
+このトピックでは、VectorDBBench を使用して Zilliz Cloud のパフォーマンステスト結果を再現する方法を紹介します。
 
 ## 概要\{#overview}
 
-VectorDBBench は、主流のベクトルデータベースおよびクラウドサービスのベンチマーク結果を提供するだけでなく、究極のパフォーマンスとコスト効率の比較を行うためのツールでもあります。
+VectorDBBench は、主流のベクトルデータベースおよびクラウドサービスのベンチマーク結果を提供するだけでなく、究極のパフォーマンスとコスト効率の比較を行うツールでもあります。
 
-VectorDBBench は直感的なビジュアルインターフェースを提供します。これにより、ユーザーは簡単にベンチマークを開始できるだけでなく、比較結果レポートを表示し、ベンチマーク結果を容易に再現することができます。
+VectorDBBench は直感的なビジュアルインターフェースを提供します。これにより、ユーザーは簡単にベンチマークを開始できるだけでなく、比較結果レポートを表示して、ベンチマーク結果を簡単に再現することもできます。
 
-VectorDBBench は実世界の運用環境を綿密に模倣しており、挿入、検索、フィルタリング検索など、多様なテストシナリオを設定しています。信頼性の高いデータを提供するため、VectorDBBench には、[SIFT](http://corpus-texmex.irisa.fr/)、[GIST](http://corpus-texmex.irisa.fr/)、[Cohere](https://huggingface.co/datasets/Cohere/wikipedia-22-12/tree/main/en)、および OpenAI がオープンソースの [raw dataset](https://huggingface.co/datasets/allenai/c4) から生成したデータセットなど、実際の運用シナリオからの公開データセットも含まれています。
+実際の本番環境を忠実に模倣するために、VectorDBBench は挿入、検索、フィルタリング検索など、多様なテストシナリオを設定しています。信頼性の高いデータを提供するために、VectorDBBench には [SIFT](http://corpus-texmex.irisa.fr/)、[GIST](http://corpus-texmex.irisa.fr/)、[Cohere](https://huggingface.co/datasets/Cohere/wikipedia-22-12/tree/main/en)、およびオープンソースの [raw dataset](https://huggingface.co/datasets/allenai/c4) から OpenAI が生成したデータセットなど、実際の本番シナリオからの公開データセットも含まれています。
 
 ## ベンチマーク指標\{#benchmark-metrics}
 
@@ -48,52 +48,52 @@ VectorDBBench は実世界の運用環境を綿密に模倣しており、挿入
    </tr>
    <tr>
      <td><p>Max_load_count</p></td>
-     <td><p>ベクトルデータベースの容量です。VectorDBBench は、データベースが失敗するか、挿入リクエストを 10 回以上拒否するまで、ベクトルデータをベクトルデータベースに挿入し続け、挿入されたエンティティの最大数を記録します。</p><p>Max_load_count の値が高いほど、ベクトルデータベースのパフォーマンスが優れていることを示します。</p></td>
+     <td><p>ベクトルデータベースの容量。VectorDBBench は、ベクトルデータをベクトルデータベースに挿入し続け、データベースが失敗するか、挿入リクエストを10回以上拒否するまで、挿入されたエンティティの最大数を記録します。</p><p>Max_load_count の値が高いほど、ベクトルデータベースのパフォーマンスが優れています。</p></td>
      <td><p>挿入</p></td>
    </tr>
    <tr>
      <td><p>QPS</p></td>
-     <td><p>ベクトルデータベースが 1 秒間に処理できる同時クエリの能力です。VectorDBBench は複数回にわたり top-100 検索を実行し、最も高い QPS 値を最終結果として選択します。</p><p>QPS の値が高いほど、ベクトルデータベースのパフォーマンスが優れていることを示します。</p></td>
+     <td><p>ベクトルデータベースが1秒あたりに同時クエリを処理する能力。VectorDBBench は複数回の top-100 検索を使用し、最も高い QPS 値を最終結果として選択します。</p><p>QPS の値が高いほど、ベクトルデータベースのパフォーマンスが優れています。</p></td>
      <td><p>検索 & フィルタリング検索</p></td>
    </tr>
    <tr>
      <td><p>Recall</p></td>
-     <td><p>検索結果をグラウンドトゥルースと比較することで測定される検索精度です。</p><p>Recall の値が高いほど、ベクトルデータベースのパフォーマンスが優れていることを示します。</p></td>
+     <td><p>検索結果を正解データと比較することで、検索精度を測定します。</p><p>Recall の値が高いほど、ベクトルデータベースのパフォーマンスが優れています。</p></td>
      <td><p>検索 & フィルタリング検索</p></td>
    </tr>
    <tr>
      <td><p>Load_duration</p></td>
-     <td><p>Zilliz Cloud がエンティティの挿入とインデックスの構築プロセスを完了するのに要する時間です。</p><p>Load_duration の値が低いほど、ベクトルデータベースのパフォーマンスが優れていることを示します。</p></td>
+     <td><p>Zilliz Cloud がエンティティの挿入とインデックスの構築を完了するまでにかかる時間。</p><p>Load_duration の値が低いほど、ベクトルデータベースのパフォーマンスが優れています。</p></td>
      <td><p>検索 & フィルタリング検索</p></td>
    </tr>
    <tr>
      <td><p>Serial_latancy_p99</p></td>
-     <td><p>クエリの 99% が完了するのに要する時間です。VectorDBBench は各 top-100 検索の検索レイテンシを記録し、99 パーセンタイル平均を最終結果として使用します。</p><p>Serial_latancy_p99 の値が低いほど、ベクトルデータベースのパフォーマンスが優れていることを示します。</p></td>
+     <td><p>99% のクエリが完了するまでにかかる時間。VectorDBBench は各 top-100 検索の検索レイテンシを記録し、99パーセンタイル平均を最終結果として使用します。</p><p>Serial_latancy_p99 の値が低いほど、ベクトルデータベースのパフォーマンスが優れています。</p></td>
      <td><p>検索 & フィルタリング検索</p></td>
    </tr>
 </table>
 
 ## 前提条件\{#prerequisites}
 
-- [登録済みの Zilliz Cloud アカウント](/docs/register-with-zilliz-cloud) が必要です。
+- [Zilliz Cloud アカウントを登録](/docs/register-with-zilliz-cloud) している必要があります。
 
-- [少なくとも 1 つのクラスターを作成](/docs/create-cluster) してください。
+- [少なくとも1つのクラスタを作成](/docs/create-cluster) している必要があります。
 
 - Python 3.11 以降がインストールされている必要があります。
 
 ## 手順\{#procedures}
 
-### テスト環境の設定\{#set-up-testing-environment}
+### テスト環境のセットアップ\{#set-up-testing-environment}
 
 1. マシンをプロビジョニングします。
 
-    Zilliz Cloud の究極のパフォーマンスをテストするには、マルチスレッドを確保するために、8 vCPU 以上のクライアントマシンをプロビジョニングすることをお勧めします。
+    Zilliz Cloud の究極のパフォーマンスをテストするために、8 vCPU 以上のクライアントマシンをプロビジョニングして、複数のスレッドを確保することをお勧めします。
 
-1. ネットワークを設定します。
+1. ネットワークを構成します。
 
-    ネットワーク通信は、特にクエリテストシナリオにおいて、テスト結果に影響を与えます。ネットワークレイテンシの影響を軽減するため、以下をお勧めします。
+    ネットワーク通信はテスト結果に影響を与えます。特にクエリテストシナリオでは影響が大きくなります。ネットワークレイテンシの影響を軽減するために、以下をお勧めします。
 
-    - クライアントを、Zilliz Cloud クラスターと同じクラウドプロバイダーおよびリージョンにデプロイ中。
+    - クライアントを Zilliz Cloud クラスタと同じクラウドプロバイダーおよびリージョンに デプロイ中 。
 
 ### VectorDBBench のインストールと起動\{#install-and-start-vectordbbench}
 
@@ -135,27 +135,27 @@ $ init_bench
   Network URL: http://172.16.20.46:8501
 ```
 
-ホームページでは、VectorDBBenchが提供するいくつかの事前定義済みテストデータセットを確認し、それらを使って迅速にパフォーマンスベンチマークを実行できます。
+ホームページでは、VectorDBBench が提供する事前定義されたテストデータセットを確認し、クイックパフォーマンスベンチマークに使用できます。
 
-ウェブページを下までスクロールし、**テストを実行 >** をクリックして、独自のベンチマークテストを設定します。
+Web ページの下部までスクロールし、**テストを実行 >** をクリックして独自のベンチマークテストを構成します。
 
 ![AATGbLxqwo32yexKYzPcdYVTnph](https://zdoc-images.s3.us-west-2.amazonaws.com/aatgblxqwo32yexkyzpcdyvtnph.png "AATGbLxqwo32yexKYzPcdYVTnph")
 
-### Configure your benchmarking test\{#configure-your-benchmarking-test}
+### ベンチマークテストの構成\{#configure-your-benchmarking-test}
 
-### View benchmarking results\{#view-benchmarking-results}
+### ベンチマーク結果の表示\{#view-benchmarking-results}
 
-**結果** をクリックして、ベンチマーク結果を表示・分析します。以下は結果の例です。
+**結果** をクリックして、ベンチマーク結果を表示および分析します。以下は結果の例です。
 
 ![LWa7bJGzOo9qKJx0ZNicjLXjnJh](https://zdoc-images.s3.us-west-2.amazonaws.com/lwa7bjgzoo9qkjx0znicjlxjnjh.png "LWa7bJGzOo9qKJx0ZNicjLXjnJh")
 
 ![DJBibk5puoOLxYxxnH3chlxcnAd](https://zdoc-images.s3.us-west-2.amazonaws.com/djbibk5puoolxyxxnh3chlxcnad.png "DJBibk5puoOLxYxxnH3chlxcnAd")
 
-必要に応じて、左側のナビゲーションペインで **DBフィルター** および **ケースフィルター** を設定し、事前定義されたベクトルデータベースおよびケースのベンチマーク結果を比較できます。
+オプションとして、左側のナビゲーションペインで **DBフィルター** と **ケースフィルター** を設定し、事前定義されたベクトルデータベースとケースのベンチマーク結果を比較できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>データベースは [database<em>name]-[db</em>label] の形式で命名されています。</p>
+データベースは [database_name]-[db_label] 形式で命名されています。
 
 </Admonition>
 

@@ -30,7 +30,7 @@ import Supademo from '@site/src/components/Supademo';
 
 Zilliz Cloud allows you to enable **automatic backups** for your clusters, helping ensure data recovery in case of unexpected issues. Automatic backups apply to the **entire cluster**—backing up individual collections automatically is not supported.
 
-This guide walks you through how to schedule automatic backups on Zilliz Cloud. To create on-demand backups, see [Create Backup](./create-snapshot).
+This guide walks you through how to schedule automatic backups on Zilliz Cloud. To create on-demand backups, see [Create Backup](./create-backup).
 
 ## Limits\{#limits}
 
@@ -40,7 +40,7 @@ This guide walks you through how to schedule automatic backups on Zilliz Cloud. 
 
     - Collection TTL settings
 
-    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-snapshot))
+    - Password for the default user `db_admin` (a new password is generated during [restore](./restore-from-backup-files))
 
     - Cluster dynamic and scheduled scaling settings
 
@@ -202,5 +202,5 @@ The default retention period for automatic backups is 7 days, and you can adjust
 
 **Will backup files be deleted if the original cluster is dropped?**
 
-This depends on the creation method of the backup file. All automatic backups are deleted along with the original cluster. But [manual cluster backups](./create-snapshot) are retained permanently and will not be deleted when the cluster is deleted. You must delete them manually if no longer needed.
+This depends on the creation method of the backup file. All automatic backups are deleted along with the original cluster. But [manual cluster backups](./create-backup) are retained permanently and will not be deleted when the cluster is deleted. You must delete them manually if no longer needed.
 

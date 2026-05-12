@@ -82,7 +82,7 @@ The following is an example output.
     {
       "code": 0,
       "data": {
-        "clusterId": "in01-3e5ad8adc38xxxx",
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "clusterName": "Dedicated-01",
         "regionId": "aws-us-west-2",
         "projectId": "proj-20e13e974c7d659a83xxxx",

@@ -1,11 +1,11 @@
 ---
-title: "句読点の削除 | Cloud"
+title: "Remove Punct | Cloud"
 slug: /remove-punct-filter
 sidebar_key: remove-punct-filter
-sidebar_label: "句読点の削除"
+sidebar_label: "Remove Punct"
 beta: FALSE
 notebook: FALSE
-description: "`removepunct` フィルターは、トークンストリームから独立した句読点トークンを削除します。句読点ではなく意味のある内容語に焦点を当てた、よりクリーンなテキスト処理が必要な場合に使用します。 | Cloud"
+description: "`removepunct` フィルターは、トークンストリームから単独の句読点トークンを削除します。句読点記号ではなく意味のある内容語に焦点を当てた、よりクリーンなテキスト処理を行いたい場合に使用してください。 | Cloud"
 type: origin
 token: TVfnwtCEQico7Bk9bngcnV1cnGb
 sidebar_position: 10
@@ -16,8 +16,8 @@ keywords:
   - collection
   - schema
   - analyzer
-  - 組み込みフィルター
-  - 句読点の削除
+  - built-in filters
+  - remove punct
 
 ---
 
@@ -27,17 +27,17 @@ import TabItem from '@theme/TabItem';
 
 # Remove Punct
 
-`removepunct` フィルターは、トークンストリームから独立した句読点トークンを削除します。句読点ではなく意味のあるコンテンツ語に焦点を当てた、よりクリーンなテキスト処理を行いたい場合に使用します。
+`removepunct` フィルターは、トークンストリームから単独の句読点トークンを削除します。句読点記号ではなく、意味のある内容語に焦点を当てた、よりクリーンなテキスト処理を行いたい場合に使用します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>このフィルターは、句読点を個別のトークンとして保持する <code>jieba</code>、<code>lindera</code>、および <code>icu</code> トークナイザーと組み合わせて使用すると最も効果的です（例: <code>"Hello!"</code> → <code>["Hello", "!"]</code>）。一方、<code>standard</code> や <code>whitespace</code> のような他のトークナイザーはトークン化の段階で句読点を破棄するため、それらに対して <code>removepunct</code> を適用しても効果はありません。</p>
+このフィルターは、`jieba`、`lindera`、および `icu` トークナイザーと最も効果的に機能します。これらのトークナイザーは句読点を個別のトークンとして保持します（例：`"Hello!"` → `["Hello", "!"]`）。`standard` や `whitespace` などの他のトークナイザーは、トークン化時に句読点を破棄するため、`removepunct` はこれらに対して効果がありません。
 
 </Admonition>
 
 ## 設定\{#configuration}
 
-`removepunct` フィルターは Zilliz Cloud に組み込まれています。使用するには、`analyzer_params` 内の `filter` セクションでその名前を指定するだけです。
+`removepunct` フィルターは Zilliz Cloud に組み込まれています。使用するには、`analyzer_params` 内の `filter` セクションにその名前を指定するだけです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -86,15 +86,15 @@ analyzerParams = map[string]any{"tokenizer": "jieba", "filter": []any{"removepun
 </TabItem>
 </Tabs>
 
-`removepunct` フィルターはトークナイザーによって生成された語彙項に対して動作するため、トークナイザーと組み合わせて使用する必要があります。
+`removepunct` フィルターは、トークナイザーによって生成された用語に対して動作するため、トークナイザーと組み合わせて使用する必要があります。
 
-`analyzer_params` を定義した後、コレクションスキーマを定義する際にそれを `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud はそのフィールド内のテキストを指定されたアナライザーを使用して処理し、効率的なトークン化とフィルタリングを実現します。詳細については、[使用例](./analyzer-overview#example-use)を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定したアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークナイゼーションとフィルタリングを実現します。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
-## 例\{#examples}
+## Examples\{#examples}
 
-コレクションスキーマにアナライザー設定を適用する前に、`run_analyzer` メソッドを使用してその動作を検証してください。
+アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
 
-### アナライザー設定\{#analyzer-configuration}
+### Analyzer configuration\{#analyzer-configuration}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

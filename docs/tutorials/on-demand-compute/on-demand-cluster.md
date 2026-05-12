@@ -8,7 +8,7 @@ last_modified: FALSE
 deprecate_since: FALSE
 beta: PUBLIC
 notebook: FALSE
-description: "A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types serving clusters, which run continuously for production workloads requiring always-on, low-latency access, and on-demand clusters, which spin up only when requests arrive and scale to zero when idle.  For details, see Compute: Realtime Serving & On-demand Compute. | Cloud"
+description: "A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types serving clusters, which run continuously for production workloads requiring always-on, low-latency access, and on-demand clusters, which spin up only when requests arrive and scale to zero when idle. | Cloud"
 type: origin
 token: XFoiwC15Jiu5LAkUeuVcvbconDR
 sidebar_position: 1
@@ -30,7 +30,7 @@ import Procedures from '@site/src/components/Procedures';
 
 # Cluster
 
-A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types: **serving clusters**, which run continuously for production workloads requiring always-on, low-latency access, and **on-demand clusters**, which spin up only when requests arrive and scale to zero when idle.  For details, see Compute: Realtime Serving & On-demand Compute.
+A cluster is a set of compute resources that runs your vector database workloads. Zilliz Cloud offers two types: **serving clusters**, which run continuously for production workloads requiring always-on, low-latency access, and **on-demand clusters**, which spin up only when requests arrive and scale to zero when idle.  
 
 This topic describes how to create an **on-demand** cluster.
 
@@ -64,7 +64,7 @@ Currently, you can only create an on-demand cluster in AWS us-west-2. For other 
          --header "Accept: application/json" \
          --header "Content-Type: application/json" \
          --data-raw '{
-            "projectId": "proj-09ee1f4b1151d5dd1edbc5",
+            "projectId": "proj-xxxxxxxxxxxxxxx",
             "regionId": "aws-us-west-2",
             "clusterName": "my-on-demand",
             "cuSize": 8,
@@ -74,9 +74,9 @@ Currently, you can only create an on-demand cluster in AWS us-west-2. For other 
     # {
     #   "code": 0,
     #   "data": {
-    #     "clusterId": "in07-7d6ac8697204a6a",
+    #     "clusterId": "inxx-xxxxxxxxxxxxxxx",
     #     "regionId": "aws-us-west-2",
-    #     "projectId": "proj-09ee1f4b1151d5dd1edbc5"
+    #     "projectId": "proj-xxxxxxxxxxxxxxx"
     #   }
     # }
     ```
@@ -137,7 +137,7 @@ Currently, you can only create an on-demand cluster in AWS us-west-2. For other 
            </tr>
            <tr>
              <td><p>Query CU</p></td>
-             <td><p>The number of query CUs to allocate. The cluster automatically scales between zero and this value based on workload — it spins up to the specified CU size when requests arrive and scales back to zero when idle. </p><p>The minimum is 8 CU, the maximum is 256 CU, and sizes increase in increments of 8 (for example, 8, 16, and 24). Clusters with more than 8 CU require a payment method.</p><p>This value is fixed after creation and cannot be changed.</p></td>
+             <td><p>The number of query CUs to allocate. The cluster automatically scales between zero and this value based on workload — it spins up to the specified CU size when requests arrive and scales back to zero when idle. </p><p>The minimum is 8 CU, the maximum is 256 CU, and sizes increase in increments of 8 (for example, 8, 16, and 24). Clusters with more than 8 CU require a payment method.</p><p>Setting this to 8 enables searches across data up to 3 TB. To increase the data volume, increase the CU size.</p><p>This value is fixed after creation and cannot be changed.</p></td>
            </tr>
            <tr>
              <td><p>Auto suspend</p></td>
@@ -181,7 +181,7 @@ Currently, you can only create an on-demand cluster in AWS us-west-2. For other 
             "status": "SUSPENDED",
             "endpoint": "https://proj-09ee1f4b1151d5dd1edbc5.aws-us-west-2.vectordb-uat3.zillizcloud.com",
             "privateLink": "",
-            "createdBy": "jack.tsai@zilliz.com",
+            "createdBy": "admin@zilliz.com",
             "createTime": 1745396115000
           }
         ]
@@ -204,7 +204,7 @@ Currently, you can only create an on-demand cluster in AWS us-west-2. For other 
     export TOKEN="YOUR_API_KEY"
     
     curl --request GET \
-         --url "${BASE_URL}/v2/clusters/onDemandClusters/in07-7d6ac8697204a6a" \
+         --url "${BASE_URL}/v2/clusters/onDemandClusters/inxx-xxxxxxxxxxxxxxx" \
          --header "Authorization: Bearer ${TOKEN}" \
          --header "Accept: application/json"
     ```
@@ -215,14 +215,14 @@ Currently, you can only create an on-demand cluster in AWS us-west-2. For other 
     {
       "code": 0,
       "data": {
-        "clusterId": "in07-7d6ac8697204a6a",
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "clusterName": "xxx",
         "regionId": "aws-us-west-2",
         "cuSize": 8,
         "status": "RUNNING",
-        "endpoint": "https://proj-09ee1f4b1151d5dd1edbc5.aws-us-west-2.vectordb-uat3.zillizcloud.com",
+        "endpoint": "https://proj-xxxxxxxxxxxxxxx.aws-us-west-2.vectordb-uat3.zillizcloud.com",
         "privateLink": "",
-        "createdBy": "jack.tsai@zilliz.com",
+        "createdBy": "admin@zilliz.com",
         "createTime": 1745396115000
       }
     }
@@ -249,7 +249,7 @@ Once you drop a cluster, it is removed immediately and cannot be recovered. This
     export TOKEN="YOUR_API_KEY"
     
     curl --request DELETE \
-         --url "${BASE_URL}/v2/clusters/onDemandClusters/in07-7d6ac8697204a6a" \
+         --url "${BASE_URL}/v2/clusters/onDemandClusters/inxx-xxxxxxxxxxxxxxx" \
          --header "Authorization: Bearer ${TOKEN}" \
          --header "Accept: application/json"
     ```
@@ -260,7 +260,7 @@ Once you drop a cluster, it is removed immediately and cannot be recovered. This
     {
       "code": 0,
       "data": {
-        "clusterId": "in07-7d6ac8697204a6a",
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "status": "DELETING"
       }
     }

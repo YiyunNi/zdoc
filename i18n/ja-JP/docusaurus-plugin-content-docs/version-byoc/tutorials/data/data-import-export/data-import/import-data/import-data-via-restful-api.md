@@ -57,7 +57,7 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>データのインポートを成功させるには、対象のコレクションの実行中または保留中のインポートジョブが 10,000 件未満であることを確認してください。</p>
+データインポートを成功させるには、対象のコレクションに実行中または保留中のインポートジョブが 10,000 件未満であることを確認してください。
 
 </Admonition>
 

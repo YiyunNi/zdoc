@@ -319,13 +319,13 @@ public static void main(String[] args) throws Exception {
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>データのインポートを成功させるには、対象のコレクションに実行中または保留中のインポートジョブが10,000件未満であることを確認してください。</p>
+データのインポートを成功させるには、対象のコレクションの実行中または保留中のインポートジョブが 10,000 件未満であることを確認してください。
 
 </Admonition>
 
-### インポートの進行状況を確認する\{#check-import-progress}
+### インポートの進捗状況を確認する\{#check-import-progress}
 
-指定した一括インポートジョブの進行状況を確認できます。
+指定したバルクインポートジョブの進捗状況を確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>

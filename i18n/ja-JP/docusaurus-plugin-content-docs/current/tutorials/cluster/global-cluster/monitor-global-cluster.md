@@ -2,10 +2,10 @@
 title: "グローバルクラスターの監視 | Cloud"
 slug: /monitor-global-cluster
 sidebar_key: monitor-global-cluster
-sidebar_label: "グローバルクラスターの監視"
+sidebar_label: "グローバルクラスターを監視"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、グローバルクラスターのヘルス、レプリケーションステータス、パフォーマンスを監視する方法について説明します。 | Cloud"
+description: "このページでは、グローバルクラスターの健全性、レプリケーション状態、およびパフォーマンスを監視する方法について説明します。 | Cloud"
 type: origin
 token: ZQqowpu4Oi0xIPkyRSTconB6nnb
 sidebar_position: 6
@@ -25,95 +25,98 @@ import Admonition from '@theme/Admonition';
 
 # グローバルクラスターの監視
 
-このページでは、グローバルクラスターのヘルス、レプリケーションステータス、およびパフォーマンスを監視する方法について説明します。
+このページでは、グローバルクラスターの健全性、レプリケーション状態、およびパフォーマンスを監視する方法について説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>この機能は、<strong>ビジネスクリティカル</strong> プロジェクト内の <strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
+この機能は、**ビジネスクリティカル** プロジェクトの **Dedicated** クラスターでのみ利用可能です。
 
 </Admonition>
 
 ## グローバルトポロジー\{#global-topology}
 
-グローバルクラスターページの **グローバルトポロジー** カードは、グローバルクラスターの構造とヘルスのリアルタイムビューを提供します。
+グローバルクラスターページの **グローバルトポロジー** カードでは、グローバルクラスターの構造と健全性をリアルタイムで確認できます。
 
 ![GbpRw8cuyhmqKLbVHmUcUugenNb](https://zdoc-images.s3.us-west-2.amazonaws.com/GbpRw8cuyhmqKLbVHmUcUugenNb.png)
 
 グローバルトポロジーカードには以下が表示されます：
 
-- リージョンとレプリカ数情報を含むプライマリークラスターおよびすべてのセカンダリークラスター
-- 各クラスターの現在のステータス
-- プライマリークラスターと各セカンダリークラスター間の同期ステータスとラグ
+- プライマリークラスターとすべてのセカンダリークラスター、そのリージョン、レプリカ数情報
 
-このビューを使用して、スイッチオーバーなどの操作を実行する前に、すべてのセカンダリークラスターが同期されており正常であることを確認してください。
+- 各クラスターの現在の状態
 
-## クラスターステータス\{#cluster-status}
+- プライマリと各セカンダリ間の同期状態と遅延
 
-グローバルクラスター内の個々のクラスターは、以下のいずれかのステータスを報告します：
+このビューを使用して、スイッチオーバーなどの操作を実行する前に、すべてのセカンダリークラスターが同期されており健全であることを確認してください。
+
+## クラスター状態\{#cluster-status}
+
+グローバルクラスター内の各個別クラスターは、以下のいずれかの状態を報告します：
 
 <table>
    <tr>
-     <th><p><strong>Status</strong></p></th>
-     <th><p><strong>Description</strong></p></th>
-     <th><p><strong>Action</strong></p></th>
+     <th><p><strong>状態</strong></p></th>
+     <th><p><strong>説明</strong></p></th>
+     <th><p><strong>対応</strong></p></th>
    </tr>
    <tr>
      <td><p>CREATING</p></td>
-     <td><p>クラスターのプロビジョニング中です。フェイルオーバー後に再構築または自動再作成されるセカンダリークラスターにも適用されます。</p></td>
-     <td><p>プロビジョニングが完了するまで待機してください。</p></td>
+     <td><p>クラスターがプロビジョニング中です。フェイルオーバー後にセカンダリークラスターが再構築または自動再作成される場合にも適用されます。</p></td>
+     <td><p>プロビジョニングが完了するまで待ちます。</p></td>
    </tr>
    <tr>
      <td><p>RUNNING</p></td>
-     <td><p>クラスターは正常に動作しています。</p></td>
+     <td><p>クラスターが正常に動作しています。</p></td>
      <td><p>なし。</p></td>
    </tr>
    <tr>
      <td><p>ABNORMAL</p></td>
      <td><p>プライマリークラスターで問題が検出されました。</p></td>
-     <td><p>問題を調査してください。プライマリーに到達できない場合は、<a href="./switchover-and-failover">フェイルオーバー</a> の開始を検討してください。必要に応じて<a href="http://support.zilliz.com/">サポートにお問い合わせ</a>ください。</p></td>
+     <td><p>問題を調査してください。プライマリに到達できない場合は、<a href="./switchover-and-failover">フェイルオーバー</a> の開始を検討してください。必要に応じて <a href="http://support.zilliz.com/">サポートにお問い合わせ</a> ください。</p></td>
    </tr>
    <tr>
      <td><p>SWITCHING</p></td>
-     <td><p>スイッチオーバーまたはフェイルオーバーが進行中です。プライマリーロールが転送されています。</p></td>
-     <td><p>操作が完了するまで待機してください。追加のスイッチオーバーを開始しないでください。</p></td>
+     <td><p>スイッチオーバーまたはフェイルオーバーが進行中です。プライマリの役割が移行されています。</p></td>
+     <td><p>操作が完了するまで待ちます。追加のスイッチオーバーを開始しないでください。</p></td>
    </tr>
 </table>
 
-## 同期ラグ\{#synchronization-lag}
+## 同期遅延\{#synchronization-lag}
 
-同期ラグは、プライマリークラスターでコミットされた書き込みがセカンダリークラスターで利用可能になるまでの遅延時間を測定します。**グローバルトポロジー** タブで各セカンダリークラスターの同期ラグを監視できます。
+同期遅延は、プライマリークラスターでコミットされた書き込みがセカンダリークラスターで利用可能になるまでの遅延を測定します。各セカンダリークラスターの同期遅延は、**グローバルトポロジー** タブで監視できます。
 
-- 通常の条件下では、同期ラグは通常数秒です。
-- 重い書き込みワークロード中や大規模なバルクインポート中には、ラグが一時的に増加する可能性があります。
+- 通常の条件下では、同期遅延は通常数秒です。
 
-以下の表は、同期ラグのレベルと推奨されるアクションを説明しています。
+- 書き込み負荷が高い場合や大規模な一括インポート時には、遅延が一時的に増加する場合があります。
+
+以下の表は、同期遅延のレベルと推奨される対応を説明しています。
 
 <table>
    <tr>
-     <th><p><strong>Synchronization lag</strong></p></th>
-     <th><p><strong>Implication</strong></p></th>
+     <th><p><strong>同期遅延</strong></p></th>
+     <th><p><strong>影響</strong></p></th>
    </tr>
    <tr>
-     <td><p>&lt; 5 秒</p></td>
+     <td><p>&lt; 5 seconds</p></td>
      <td><p>正常。セカンダリークラスターはほぼ最新の状態です。</p></td>
    </tr>
    <tr>
-     <td><p>5〜30 秒</p></td>
-     <td><p>上昇傾向。<a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> は引き続き許可されています。持続的な増加を監視してください。</p></td>
+     <td><p>5–30 seconds</p></td>
+     <td><p>上昇。<a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> はまだ許可されています。持続的な増加を監視してください。</p></td>
    </tr>
    <tr>
-     <td><blockquote>  <p>30 秒</p></blockquote></td>
-     <td><p><a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> がブロックされます。書き込み負荷またはセカンダリークラスターのヘルスを調査してください。スイッチオーバーを試みる前に根本原因を解決してください。</p></td>
+     <td><blockquote>  <p>30 seconds</p></blockquote></td>
+     <td><p><a href="./switchover-and-failover#perform-a-switchover">スイッチオーバー</a> はブロックされています。書き込み負荷またはセカンダリークラスターの健全性を調査してください。スイッチオーバーを試みる前に根本原因を解決してください。</p></td>
    </tr>
    <tr>
-     <td><blockquote>  <p>180 秒</p></blockquote></td>
-     <td><p>重大。<a href="./switchover-and-failover#perform-a-failover">フェイルオーバー</a> における RPO リスクが顕著です。即時の調査が必要です。</p></td>
+     <td><blockquote>  <p>180 seconds</p></blockquote></td>
+     <td><p>重大。<a href="./switchover-and-failover#perform-a-failover">フェイルオーバー</a> のRPOリスクが大きいです。直ちに調査が必要です。</p></td>
    </tr>
 </table>
 
-同期ラグが高い状態で [フェイルオーバー](./switchover-and-failover#perform-a-failover) を実行すると、新しいプライマリークラスターに最近の書き込みが含まれていない可能性があります。潜在的なデータ損失量（RPO）は、フェイルオーバー時点での同期ラグに相当します。
+同期遅延が高い状態で [フェイルオーバー](./switchover-and-failover#perform-a-failover) を実行すると、新しいプライマリークラスターに最近の書き込みが欠落している可能性があります。潜在的なデータ損失の量（RPO）は、フェイルオーバー時の同期遅延に等しくなります。
 
 ## クラスターメトリクスとアラート\{#cluster-metrics-and-alerts}
 
-グローバルクラスター内の各クラスター（プライマリーおよびセカンダリーの両方）は、通常の Dedicated クラスターと同じメトリクスを公開します。これらのメトリクスはクラスター詳細ページで表示したり、アラートを作成したり、外部の監視システムにエクスポートしたりできます。詳細については、[Metrics & Alerts](./metrics-and-alerts) を参照してください。
+グローバルクラスター内の各クラスター（プライマリおよびセカンダリの両方）は、通常の Dedicated クラスターと同じメトリクスを公開します。これらのメトリクスはクラスター詳細ページで確認したり、これらのメトリクスのアラートを作成したり、外部の監視システムにエクスポートしたりすることができます。詳細については、[メトリクスとアラート](./metrics-and-alerts) を参照してください。
 

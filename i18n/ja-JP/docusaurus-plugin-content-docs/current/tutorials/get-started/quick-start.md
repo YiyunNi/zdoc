@@ -5,10 +5,10 @@ sidebar_key: quick-start
 sidebar_label: "クイックスタート to Serving Cluster"
 beta: FALSE
 notebook: FALSE
-description: "serving cluster は、リアルタイムの本番環境向けサービングのためにコンピューティングとストレージを両方組み合わせた自己完結型サーバーです。Extract-Transform-Load（ETL）パイプラインでデータをクリーニングした後、serving cluster にインポートして大幅なパフォーマンス向上を実現できます。 | Cloud"
+description: "serving cluster は、リアルタイムの本番環境向けサービングのためにコンピューティングとストレージを両方組み合わせた自己完結型サーバーです。Extract-Transform-Load（ETL）パイプラインでデータをクリーニングした後、serving cluster にインポートすることで、大幅なパフォーマンス向上を実現できます。 | Cloud"
 type: origin
 token: B1XTwQgNRizAMTkZQvrclGSonyc
-sidebar_position: 10
+sidebar_position: 8
 keywords: 
   - zilliz
   - ベクトルデータベース
@@ -317,18 +317,22 @@ from pymilvus.bulk_writer import bulk_import
 
 # The path should be relative to the root 
 # of a zilliz cloud volume or an external storage
-STORAGE_PATH = "s3://your/data/path/in/external/storage"
-ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"
+OBJECT_URLS = [[                                                                                                             
+    "https://s3.us-west-2.amazonaws.com/your-bucket/path/in/external/storage.json"                                           
+]]                                                                                                                           
+                                                                                                                               
+ACCESS_KEY = "YOUR_STORAGE_ACCESS_KEY"                                                                                       
 SECRET_KEY = "YOUR_STORAGE_SECRET_KEY"
 
 res = bulk_import(
     api_key="YOUR_ZILLIZ_API_KEY",
     url="https://api.cloud.zilliz.com",
-    cluster_id="inxx-xxxxxxxxxxxxxxxxxxx",
+    cluser_id="inxx-xxxxxxxxxxxxxxxxxxx",
+    db_name="my_database",
     collection_name="prod_collection",
-    object_url="s3://your/data/path/in/external/storage.json",
-    access_key="YOUR_STORAGE_ACCESS_KEY",
-    secret_key="YOUR_STORAGE_SECRET_KEY"
+    object_url=OBJECT_URLS,
+    access_key=ACCESS_KEY,
+    secret_key=SECRET_KEY
 )
 
 # job-xxxxxxxxxxxxxxxxxxxxx
@@ -350,7 +354,7 @@ curl --request POST \
      -d '{
         "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "collectionName": "prod_collection",
-        "objectUrl": "s3://your/data/path/in/external/storage.json",
+        "objectUrls": [["https://s3.{region}.amazonaws.com/{bucket}/path/in/external/storage.json"]],
         "accessKey": "YOUR_STORAGE_ACCESS_KEY",
         "secretKey": "YOUR_STORAGE_SECRET_KEY"
     }'

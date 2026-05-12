@@ -5,7 +5,7 @@ sidebar_key: get-and-scalar-query
 sidebar_label: "クエリ"
 beta: FALSE
 notebook: FALSE
-description: "ANN 検索に加えて、Zilliz Cloud はクエリを通じたメタデータフィルタリングもサポートしています。このページでは、Query、Get、および QueryIterators を使用してメタデータフィルタリングを実行する方法について説明します。 | Cloud"
+description: "ANN 検索に加えて、Zilliz Cloud はメタデータフィルタリングによるクエリもサポートしています。このページでは、Query、Get、QueryIterators を使用してエンティティを取得し、メタデータをフィルタリングし、クエリ結果をソートし、スカラー値を集計する方法を紹介します。 | Cloud"
 type: origin
 token: R7F7wY8pCiJ5Q4kbntxcMsE6nLf
 sidebar_position: 8
@@ -13,11 +13,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - コレクション
-  - データ
-  - ID による取得
-  - フィルター付きクエリ
-  - フィルタリング
+  - collection
+  - data
+  - get by id
+  - query with filters
+  - filtering
 
 ---
 
@@ -25,13 +25,13 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Query
+# クエリ
 
-ANN検索に加えて、Zilliz Cloudはメタデータフィルタリングもクエリを通じてサポートしています。このページでは、Query、Get、およびQueryIteratorを使用してメタデータフィルタリングを実行する方法を紹介します。
+ANN検索に加えて、Zilliz Cloud はメタデータフィルタリングによるクエリもサポートしています。このページでは、Query、Get、QueryIterator を使用してエンティティを取得し、メタデータをフィルタリングし、クエリ結果をソートし、スカラーフィールドの値を集計する方法を紹介します。
 
 ## 概要\{#overview}
 
-コレクションにはさまざまなタイプのスカラーフィールドを格納できます。Zilliz Cloudでは、1つまたは複数のスカラーフィールドに基づいてエンティティをフィルタリングできます。Zilliz Cloudは、Query、Get、QueryIteratorの3種類のクエリを提供しています。以下の表は、これら3つのクエリタイプを比較したものです。
+コレクションにはさまざまな種類のスカラーフィールドを保存できます。Zilliz Cloud を使用して、1つまたは複数のスカラーフィールドに基づいてエンティティをフィルタリングできます。Zilliz Cloud は3種類のクエリを提供しています：Query、Get、QueryIterator です。以下の表は、これら3つのクエリタイプを比較しています。
 
 <table>
    <tr>
@@ -42,41 +42,41 @@ ANN検索に加えて、Zilliz Cloudはメタデータフィルタリングも�
    </tr>
    <tr>
      <td><p>適用シナリオ</p></td>
-     <td><p>指定された主キーを持つエンティティを検索する。</p></td>
-     <td><p>カスタムフィルタリング条件を満たすすべてのエンティティ、または指定された数のエンティティを検索する。</p></td>
-     <td><p>カスタムフィルタリング条件を満たすすべてのエンティティをページネーション付きで検索する。</p></td>
+     <td><p>指定された主キーを持つエンティティを検索する場合。</p></td>
+     <td><p>カスタムフィルタリング条件を満たすすべてまたは指定された数のエンティティを検索する場合</p></td>
+     <td><p>ページネーションクエリでカスタムフィルタリング条件を満たすすべてのエンティティを検索する場合。</p></td>
    </tr>
    <tr>
      <td><p>フィルタリング方法</p></td>
-     <td><p>主キーによるフィルタリング</p></td>
-     <td><p>フィルタリング式によるフィルタリング。</p></td>
-     <td><p>フィルタリング式によるフィルタリング。</p></td>
+     <td><p>主キーによる</p></td>
+     <td><p>フィルタリング式による</p></td>
+     <td><p>フィルタリング式による</p></td>
    </tr>
    <tr>
      <td><p>必須パラメータ</p></td>
      <td><ul><li><p>コレクション名</p></li><li><p>主キー</p></li></ul></td>
      <td><ul><li><p>コレクション名</p></li><li><p>フィルタリング式</p></li></ul></td>
-     <td><ul><li><p>コレクション名</p></li><li><p>フィルタリング式</p></li><li><p>1回のクエリで返すエンティティ数</p></li></ul></td>
+     <td><ul><li><p>コレクション名</p></li><li><p>フィルタリング式</p></li><li><p>1クエリあたりの返却エンティティ数</p></li></ul></td>
    </tr>
    <tr>
      <td><p>オプションパラメータ</p></td>
      <td><ul><li><p>パーティション名</p></li><li><p>出力フィールド</p></li></ul></td>
-     <td><ul><li><p>パーティション名</p></li><li><p>返すエンティティ数</p></li><li><p>出力フィールド</p></li></ul></td>
-     <td><ul><li><p>パーティション名</p></li><li><p>合計で返すエンティティ数</p></li><li><p>出力フィールド</p></li></ul></td>
+     <td><ul><li><p>パーティション名</p></li><li><p>返却エンティティ数</p></li><li><p>出力フィールド</p></li></ul></td>
+     <td><ul><li><p>パーティション名</p></li><li><p>合計返却エンティティ数</p></li><li><p>出力フィールド</p></li></ul></td>
    </tr>
    <tr>
-     <td><p>戻り値</p></td>
-     <td><p>指定されたコレクションまたはパーティション内で、指定された主キーを持つエンティティを返す。</p></td>
-     <td><p>指定されたコレクションまたはパーティション内で、カスタムフィルタリング条件を満たすすべてのエンティティ、または指定された数のエンティティを返す。</p></td>
-     <td><p>指定されたコレクションまたはパーティション内で、カスタムフィルタリング条件を満たすすべてのエンティティをページネーション付きで返す。</p></td>
+     <td><p>返却値</p></td>
+     <td><p>指定されたコレクションまたはパーティション内で、指定された主キーを持つエンティティを返却します。</p></td>
+     <td><p>指定されたコレクションまたはパーティション内で、カスタムフィルタリング条件を満たすすべてまたは指定された数のエンティティを返却します。</p></td>
+     <td><p>ページネーションクエリを通じて、指定されたコレクションまたはパーティション内でカスタムフィルタリング条件を満たすすべてのエンティティを返却します。</p></td>
    </tr>
 </table>
 
-メタデータフィルタリングの詳細については、[Filtering](./filtering) および [Filtering Explained](./filtering-overview) を参照してください。
+メタデータフィルタリングの詳細については、[フィルタリング](./filtering)[フィルタリングの解説](./filtering-overview) を参照してください。
 
-## Getの使用\{#use-get}
+## Get の使用\{#use-get}
 
-主キーを使ってエンティティを検索する必要がある場合は、**Get** メソッドを使用できます。以下のコード例では、コレクション内に `id`、`vector`、`color` という3つのフィールドが存在していることを前提としています。
+主キーでエンティティを検索する必要がある場合は、**Get** メソッドを使用できます。以下のコード例では、コレクションに `id`、`vector`、`color` という3つのフィールドがあることを前提としています。
 
 ```python
 [
@@ -349,19 +349,19 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### クエリ結果の並べ替え | プライベートプレビュー\{#sort-query-results}
+### クエリ結果のソート | PRIVATE\{#sort-query-results}
 
-デフォルトでは、クエリは不定の順序で結果を返します。`order_by` パラメータを使用して、1 つ以上のスカラーフィールドで結果を並べ替えます。`order_by` を使用する際は、以下の点に注意してください：
+デフォルトでは、Query は結果を不定順で返します。`order_by` パラメータを使用して、1 つ以上のスカラーフィールドで結果をソートできます。`order_by` を使用する際は、以下に注意してください。
 
-- `order_by` は `limit` と一緒に使用する必要があります。
+- `order_by` は `limit` と併用する必要があります。
 
-- サポートされているフィールド型：`INT8`、`INT16`、`INT32`、`INT64`、`FLOAT`、`DOUBLE`、および `VARCHAR`。ベクトル、`JSON`、または `ARRAY` フィールドによる並べ替えはサポートされていません。
+- サポートされるフィールド型: `INT8`、`INT16`、`INT32`、`INT64`、`FLOAT`、`DOUBLE`、`VARCHAR`。ベクトル、`JSON`、または `ARRAY` フィールドによるソートはサポートされていません。
 
-- NULL 許容フィールドで並べ替える場合、昇順では NULL 値が末尾に配置され（NULLS LAST）、降順では先頭に配置されます（NULLS FIRST）。
+- NULL 許容フィールドでソートする場合、昇順では NULL 値が末尾に配置され（NULLS LAST）、降順では先頭に配置されます（NULLS FIRST）。
 
-#### 基本的な並べ替え\{#basic-sort}
+#### 基本ソート\{#basic-sort}
 
-`order_by` パラメータに `"field_name:direction"` 形式の文字列リストを渡します。ここで、`direction` は `asc`（昇順）または `desc`（降順）のいずれかです。`asc` と `desc` は大文字小文字を区別することに注意してください。
+`order_by` パラメータに `"field_name:direction"` 形式の文字列のリストを渡します。`direction` は `asc`（昇順）または `desc`（降順）のいずれかです。`asc` と `desc` は大文字と小文字を区別することに注意してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -503,6 +503,254 @@ page2 = client.query(
     # highlight-next-line
     order_by=["price:asc"],
 )
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```javascript
+// nodejs
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
+### Aggregate Query 結果 | PRIVATE\{#aggregate-query-results}
+
+クエリ結果を1つ以上のスカラーフィールドでグループ化し、グループごとに集計を計算できます。サポートされている集計演算子は `count`、`min`、`max`、`sum`、`avg` です。
+
+`group_by_fields` を使用する際は、以下に注意してください。
+
+- `group_by_fields` でサポートされているフィールド型: `INT8`、`INT16`、`INT32`、`INT64`、`VARCHAR`、`TIMESTAMPTZ`。`FLOAT`、`DOUBLE`、ベクトル、`JSON`、または `ARRAY` フィールドでのグループ化はエラーを返します。
+
+- `sum` と `avg` は数値のみです — `VARCHAR` フィールドに適用するとエラーを返します。
+
+集計を有効にするには、`query()` に `group_by_fields` を渡し、集計式（`count(*)`、`count(<field>)`、`min(<field>)`、`max(<field>)`、`sum(<field>)`、`avg(<field>)`）を `output_fields` に追加します。
+
+以下の例では、`color` フィールドでエンティティをグループ化し、各カラーグループのエンティティ数を返します。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+from pymilvus import MilvusClient
+
+client = MilvusClient(
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
+)
+
+res = client.query(
+    collection_name="my_collection",
+    filter="",
+    # highlight-start
+    group_by_fields=["color"],
+    output_fields=["color", "count(*)"],
+    # highlight-end
+)
+
+# [{'color': 'red',    'count(*)': 10},
+#  {'color': 'orange', 'count(*)': 10},
+#  {'color': 'yellow', 'count(*)': 10},
+#  {'color': 'green',  'count(*)': 10},
+#  {'color': 'blue',   'count(*)': 10}]
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```javascript
+// nodejs
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
+1回の呼び出しで複数の集計式をリクエストできます。次の例では、`color` でグループ化し、各グループの行数、平均価格、最大レーティングを返します:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+res = client.query(
+    collection_name="my_collection",
+    filter="",
+    # highlight-start
+    group_by_fields=["color"],
+    output_fields=["color", "count(*)", "avg(price)", "max(rating)"],
+    # highlight-end
+)
+
+# [{'color': 'red',    'count(*)': 10, 'avg(price)': 65.22, 'max(rating)': 5},
+#  {'color': 'orange', 'count(*)': 10, 'avg(price)': 48.67, 'max(rating)': 5},
+#  {'color': 'yellow', 'count(*)': 10, 'avg(price)': 64.15, 'max(rating)': 3},
+#  {'color': 'green',  'count(*)': 10, 'avg(price)': 58.28, 'max(rating)': 5},
+#  {'color': 'blue',   'count(*)': 10, 'avg(price)': 50.20, 'max(rating)': 5}]
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```javascript
+// nodejs
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
+複合グループを計算するには、`group_by_fields` に複数のフィールドを渡します。以下の例では `(color, rating)` でグループ化し、各バケットの価格範囲を計算しています:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+res = client.query(
+    collection_name="my_collection",
+    filter="",
+    # highlight-start
+    group_by_fields=["color", "rating"],
+    output_fields=["color", "rating", "min(price)", "max(price)"],
+    # highlight-end
+)
+
+# [{'color': 'red',    'rating': 5, 'min(price)': 34.51, 'max(price)': 70.90},
+#  {'color': 'orange', 'rating': 2, 'min(price)': 12.39, 'max(price)': 81.99},
+#  {'color': 'yellow', 'rating': 2, 'min(price)': 22.62, 'max(price)': 88.24},
+#  {'color': 'green',  'rating': 1, 'min(price)': 18.35, 'max(price)': 59.53},
+#  {'color': 'blue',   'rating': 4, 'min(price)': 21.23, 'max(price)': 82.45},
+#  ...]
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```javascript
+// nodejs
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
+`group_by_fields` と `limit` を組み合わせて、返されるグループ数を制限することもできます。これは、フィールドのカーディナリティが高く、バケットのサンプルだけが必要な場合に便利です。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+res = client.query(
+    collection_name="my_collection",
+    filter="",
+    group_by_fields=["color"],
+    output_fields=["color", "avg(price)", "count(*)"],
+    # highlight-next-line
+    limit=5,
+)
+
+# [{'color': 'red',    'avg(price)': 65.22, 'count(*)': 10},
+#  {'color': 'orange', 'avg(price)': 48.67, 'count(*)': 10},
+#  {'color': 'yellow', 'avg(price)': 64.15, 'count(*)': 10},
+#  {'color': 'green',  'avg(price)': 58.28, 'count(*)': 10},
+#  {'color': 'blue',   'avg(price)': 50.20, 'count(*)': 10}]
 ```
 
 </TabItem>
@@ -836,11 +1084,11 @@ curl --request POST \
 
 ## クエリによるランダムサンプリング\{#random-sampling-with-query}
 
-データ探索や開発テストのためにコレクションから代表的なデータのサブセットを抽出するには、`RANDOM_SAMPLE(sampling_factor)` 式を使用します。ここで `sampling_factor` は 0 から 1 の間の浮動小数点数で、サンプリングするデータの割合を表します。
+データ探索や開発テストのためにコレクションから代表的なデータのサブセットを抽出するには、`RANDOM_SAMPLE(sampling_factor)` 式を使用します。ここで `sampling_factor` は、サンプリングするデータの割合を表す 0 から 1 の間の浮動小数点数です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>詳細な使用方法、高度な例、およびベストプラクティスについては、<a href="./ramdom-sampling">ランダムサンプリング</a>を参照してください。</p>
+詳細な使用方法、高度な例、およびベストプラクティスについては、[ランダムサンプリング](./ramdom-sampling) を参照してください。
 
 </Admonition>
 
@@ -954,13 +1202,13 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-## 一時的にクエリのタイムゾーンを設定する\{#temporarily-set-a-timezone-for-a-query}
+## クエリのタイムゾーンを一時的に設定する\{#temporarily-set-a-timezone-for-a-query}
 
-コレクションに `TIMESTAMPTZ` フィールドがある場合、クエリ呼び出しで `timezone` パラメータを設定することで、単一の操作に対してデータベースまたはコレクションのデフォルトタイムゾーンを一時的に上書きできます。これにより、操作中の `TIMESTAMPTZ` 値の表示方法と比較方法を制御できます。
+コレクションに `TIMESTAMPTZ` フィールドがある場合、クエリ呼び出しで `timezone` パラメータを設定することで、単一の操作に対してデータベースまたはコレクションのデフォルトタイムゾーンを一時的に上書きできます。これにより、操作中の `TIMESTAMPTZ` 値の表示方法と比較方法が制御されます。
 
-`timezone` の値は、有効な [IANA タイムゾーン識別子](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)（例：**Asia/Shanghai**、**America/Chicago**、または **UTC**）である必要があります。`TIMESTAMPTZ` フィールドの使用方法の詳細については、[TIMESTAMPTZ フィールド](./use-timestamptz-field) を参照してください。
+`timezone` の値は、有効な [IANA タイムゾーン識別子](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)（例: **Asia/Shanghai**、**America/Chicago**、**UTC**）である必要があります。`TIMESTAMPTZ` フィールドの使用方法の詳細については、[TIMESTAMPTZ フィールド](./use-timestamptz-field) を参照してください。
 
-以下の例は、クエリ操作に対してタイムゾーンを一時的に設定する方法を示しています：
+以下の例は、クエリ操作のタイムゾーンを一時的に設定する方法を示しています:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

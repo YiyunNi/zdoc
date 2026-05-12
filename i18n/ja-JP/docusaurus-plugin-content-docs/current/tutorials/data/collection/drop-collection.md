@@ -14,7 +14,7 @@ keywords:
   - ベクトルデータベース
   - cloud
   - collection
-  - 削除
+  - drop
   - フィルターによる削除
   - IDによる削除
 
@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>管理対象コレクションの削除ではコレクションとデータの両方が削除されますが、外部コレクションの削除ではコレクションのみが削除され、データはそのまま保持されます。</p>
+マネージドコレクションの削除とは異なり、外部コレクションの削除ではコレクションのみが削除され、データは保持されます。
 
 </Admonition>
 

@@ -1,7 +1,7 @@
 ---
 title: "Restore from Backup Files | BYOC"
-slug: /restore-from-snapshot
-sidebar_key: restore-from-snapshot
+slug: /restore-from-backup-files
+sidebar_key: restore-from-backup-files
 sidebar_label: "Restore from Backup Files"
 added_since: FALSE
 last_modified: FALSE
@@ -104,7 +104,7 @@ The following demo shows how to restore specific databases and collections in a 
 
 ### Via RESTful API\{#via-restful-api}
 
-The following example restores a collection from backup file to an existing cluster `in01-3e5ad8adc38xxxx`. For details about the RESTful API, see [Restore Collection Backup](/reference/restful/restore-collection-backup-v2).
+The following example restores a collection from backup file to an existing cluster `inxx-xxxxxxxxxxxxxxx`. For details about the RESTful API, see [Restore Collection Backup](/reference/restful/restore-collection-backup-v2).
 
 ```bash
 curl --request POST \
@@ -112,7 +112,7 @@ curl --request POST \
 --header "Authorization: Bearer ${API_KEY}" \
 --header "Content-Type: application/json" \
 -d '{
-    "destClusterId": "in01-xxxxxxxxxxxxxx",
+    "destClusterId": "inxx-xxxxxxxxxxxxxxx",
     "dbCollections": [
         {
             "collections": [

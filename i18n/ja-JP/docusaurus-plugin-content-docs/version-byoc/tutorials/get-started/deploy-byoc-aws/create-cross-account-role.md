@@ -1,11 +1,11 @@
 ---
-title: "クロスアカウント IAM ロールの作成 | BYOC"
+title: "クロスアカウント IAM Role の作成 | BYOC"
 slug: /create-cross-account-role
 sidebar_key: create-cross-account-role
-sidebar_label: "クロスアカウント IAM ロールの作成"
+sidebar_label: "クロスアカウント IAM Role の作成"
 beta: CONTACT SALES
 notebook: FALSE
-description: "このページでは、Zilliz Cloud がプロジェクトのデータプレーンをブートストラップできるように、クロスアカウントロールを作成および設定する方法について説明します。このロールにより、Zilliz Cloud はお客様に代わって VPC リソースを管理するための制限付き権限を取得します。| BYOC"
+description: "このページでは、Zilliz Cloud がプロジェクトのデータプレーンをブートストラップするためのクロスアカウントロールを作成・設定する方法を説明します。このロールにより、Zilliz Cloud はお客様に代わって VPC リソースを管理する制限付き権限を取得します。 | BYOC"
 type: origin
 token: TQpDw2mkViTQ98k9RbfcxUarneb
 sidebar_position: 3
@@ -13,8 +13,8 @@ keywords:
   - zilliz
   - byoc
   - aws
-  - クロスアカウント
-  - IAM ロール
+  - cross-account
+  - IAM role
   - milvus
   - ベクトルデータベース
 
@@ -27,69 +27,69 @@ import Supademo from '@site/src/components/Supademo';
 
 import Procedures from '@site/src/components/Procedures';
 
-# クロスアカウント IAM ロールの作成
+# クロスアカウントIAMロールの作成
 
-このページでは、Zilliz Cloud がプロジェクトのデータプレーンをブートストラップできるように、クロスアカウントロールを作成して構成する方法について説明します。このロールにより、Zilliz Cloud はお客様に代わって VPC リソースを管理するための制限付き権限を取得します。
+このページでは、Zilliz Cloudがプロジェクトのデータプレーンをブートストラップするためのクロスアカウントロールの作成と設定方法について説明します。このロールにより、Zilliz Cloudはお客様に代わってVPCリソースを管理する制限付き権限を取得します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz BYOC は現在<strong>一般提供</strong>中です。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud 営業担当者</a>までお問い合わせください。</p>
+Zilliz BYOCは現在**一般提供**されています。アクセスおよび実装の詳細については、[Zilliz Cloud セールス](https://zilliz.com/contact-sales)にお問い合わせください。
 
 </Admonition>
 
 ## 手順\{#procedure}
 
-AWS コンソールを使用してブートストラップロールを作成できます。代替方法として、Zilliz Cloud が提供する Terraform スクリプトを使用して、AWS 上の Zilliz Cloud プロジェクト用のインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider) を参照してください。
+AWSコンソールを使用してブートストラップロールを作成できます。代替として、Zilliz Cloudが提供するTerraformスクリプトを使用して、AWS上のZilliz Cloudプロジェクトのインフラストラクチャをブートストラップすることもできます。詳細については、[Terraform Provider](./terraform-provider)を参照してください。
 
-### ステップ 1: クロスアカウント IAM ロールの作成\{#step-1-create-a-cross-account-iam-role}
+### ステップ1: クロスアカウントIAMロールの作成\{#step-1-create-a-cross-account-iam-role}
 
-このステップでは、Zilliz Cloud とお客様の VPC 間の通信用にクロスアカウント IAM ロールを作成します。
+このステップでは、Zilliz Cloudとお客様のVPC間の通信のためのクロスアカウントIAMロールを作成します。
 
 <Supademo id="cmb913tte0m0usn1rnm0ft6bp" title=""  />
 
 <Procedures>
 
-1. Zilliz Cloud コンソールで、セットアップガイドに表示されている**外部 ID**をコピーします。
+1. Zilliz Cloudコンソールで、セットアップガイドに表示されている**外部ID**をコピーします。
 
-1. 管理者権限を持つユーザーとして**AWS コンソール**にログインし、**IAM**ダッシュボードへ移動します。
+1. 管理者権限を持つユーザーとして**AWSコンソール**にログインし、**IAM**ダッシュボードに移動します。
 
-1. 左側のサイドバーで**ロール**タブをクリックし、次に**ロールの作成**をクリックします。
+1. 左サイドバーの**ロール**タブをクリックし、**ロールの作成**をクリックします。
 
-1. **信頼できるエンティティの選択**で、**AWS アカウント**タイルをクリックします。
+1. **信頼できるエンティティの選択**で、**AWSアカウント**タイルをクリックします。
 
-1. **AWS アカウント**で、**別の AWS アカウント**チェックボックスをオンにします。
+1. **AWSアカウント**で、**別のAWSアカウント**チェックボックスを選択します。
 
-1. **アカウント ID**に、Zilliz Cloud のアカウント ID `965570967084` を入力します。
+1. **アカウントID**に、Zilliz CloudのアカウントID `965570967084` を入力します。
 
-    これは、Zilliz Cloud コンソールからコピーした外部 ID とは異なります。
+    これは、Zilliz Cloudコンソールからコピーした外部IDではありません。
 
-1. **外部 ID を必須にする**チェックボックスをオンにします。
+1. **外部IDを必須にする**チェックボックスを選択します。
 
-1. **外部 ID**に、Zilliz Cloud コンソールからコピーした値を入力します。
+1. **外部ID**に、Zilliz Cloudコンソールからコピーしたものを入力します。
 
 1. **次へ**をクリックし、権限の追加をスキップします。
 
-1. **名前を付けて確認し、作成**ステップで、ロールに名前を付け、信頼されたエンティティを確認して、**ロールの作成**をクリックします。
+1. **名前を付けて確認し、作成**ステップで、ロールに名前を付け、信頼できるエンティティを確認し、**ロールの作成**をクリックします。
 
-1. ロールが作成されたら、緑色のバーにある**ロールの表示**をクリックしてロールの詳細画面へ移動します。
+1. ロールが作成されたら、緑色のバーに表示されている**ロールの表示**をクリックして、ロールの詳細に移動します。
 
-1. ロールの**ARN**の前方にあるコピーアイコンをクリックします。
+1. ロールの**ARN**の前にあるコピーアイコンをクリックします。
 
-1. Zilliz Cloud コンソールに戻り、**EKS 設定**の下の**IAM ロール ARN**にロール ARN を貼り付けます。
+1. Zilliz Cloudコンソールに戻り、**EKS設定**の下にある**IAMロールARN**にロールARNを貼り付けます。
 
 </Procedures>
 
-### ステップ 2: 権限の追加\{#step-2-add-permissions}
+### ステップ2: 権限の追加\{#step-2-add-permissions}
 
-このステップは AWS コンソール上でのみ実行します。このステップでは、上記で作成したロール用のインラインポリシーを作成します。
+このステップはAWSコンソールでのみ行います。このステップでは、上記で作成したロールのインラインポリシーを作成します。
 
 <Supademo id="cmb92f3910mpwsn1rtrjo3szx" title=""  />
 
 <Procedures>
 
-1. 作成したロールの詳細ページへ移動します。**権限ポリシー**セクションで、**権限の追加**をクリックし、**インラインポリシーの作成**を選択します。
+1. 作成したロールの詳細ページに移動します。**権限ポリシー**セクションで、**権限の追加**をクリックし、**インラインポリシーの作成**を選択します。
 
-1. **権限の指定**ページで、**ポリシーエディター**セクション内の**JSON**をクリックしてポリシーエディターを開きます。次に、以下の権限をコピーしてポリシーエディターに貼り付け、`{bucketName}` を [S3 バケットとロールの作成](./create-bucket-and-role) で作成したバケットに置き換えます。
+1. **権限の指定**ページで、**ポリシーエディター**セクションの**JSON**をクリックしてポリシーエディターを開きます。次に、以下の権限をコピーしてポリシーエディターに貼り付け、`{bucketName}`を[Create S3 バケット and ロール](./create-bucket-and-role)で作成したバケットに置き換えます。
 
     ```json
     {

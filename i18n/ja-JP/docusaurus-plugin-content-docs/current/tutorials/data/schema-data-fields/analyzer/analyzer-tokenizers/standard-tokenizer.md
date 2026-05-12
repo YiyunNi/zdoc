@@ -1,11 +1,11 @@
 ---
-title: "標準トークナイザー | Cloud"
+title: "Standard トークナイザー | Cloud"
 slug: /standard-tokenizer
 sidebar_key: standard-tokenizer
-sidebar_label: "標準"
+sidebar_label: "Standard"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud の `standard` トークナイザーは、スペースや句読点に基づいてテキストを分割し、ほとんどの言語に適しています。 | Cloud"
+description: "Zilliz Cloud の `standard` トークナイザーは、スペースと句読点に基づいてテキストを分割するため、ほとんどの言語に適しています。"
 type: origin
 token: GAX8wkC1QiTZhXkLBocc1GoTnke
 sidebar_position: 1
@@ -13,9 +13,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みトークナイザー
   - standard-tokenizer
 
@@ -143,15 +143,15 @@ analyzerParams='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>よりシンプルなセットアップを行うには、<a href="./standard-analyzer"><code>standard</code></a> <a href="./standard-analyzer">アナライザー</a>を使用することもできます。これは<code>standard</code>トークナイザーと<a href="./lowercase-filter"><code>lowercase</code></a><a href="./lowercase-filter">フィルター</a>を組み合わせたものです。</p>
+よりシンプルなセットアップを行う場合、[`standard`](./standard-analyzer) [アナライザー](./standard-analyzer)を使用することを選択できます。これは `standard` トークナイザーと [`lowercase`](./lowercase-filter)[ フィルター](./lowercase-filter)を組み合わせたものです。
 
 </Admonition>
 
-`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud はそのフィールドのテキストを指定されたアナライザーを使って効率的にトークン化およびフィルタリング処理できます。詳細については、[Example use](./analyzer-overview#example-use) を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールド内のテキストを処理し、効率的なトークナイゼーションとフィルタリングを行うことができます。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
 ## Examples\{#examples}
 
-コレクションスキーマにアナライザー設定を適用する前に、`run_analyzer` メソッドを使ってその動作を検証してください。
+アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
 
 ### Analyzer configuration\{#analyzer-configuration}
 

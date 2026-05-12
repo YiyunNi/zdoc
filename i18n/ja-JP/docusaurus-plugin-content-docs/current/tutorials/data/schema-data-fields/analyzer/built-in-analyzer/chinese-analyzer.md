@@ -1,23 +1,23 @@
 ---
-title: "中国語 | Cloud"
+title: "Chinese | Cloud"
 slug: /chinese-analyzer
 sidebar_key: chinese-analyzer
-sidebar_label: "中国語"
+sidebar_label: "Chinese"
 beta: FALSE
 notebook: FALSE
-description: "`chinese` アナライザーは、中国語テキストを効果的にセグメンテーションおよびトークン化するために特別に設計されています。| Cloud"
+description: "`chinese` アナライザーは、中国語テキストを処理するために特別に設計されており、効果的なセグメンテーションとトークン化を提供します。"
 type: origin
 token: Of8PwuunCihBfxksNJJcSCRYnsf
 sidebar_position: 3
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - コレクション
   - スキーマ
   - アナライザー
   - 組み込みアナライザー
-  - 中国語アナライザー
+  - chinese analyzer
 
 ---
 
@@ -27,17 +27,17 @@ import TabItem from '@theme/TabItem';
 
 # Chinese
 
-`chinese` アナライザーは中国語テキストを効果的に処理するために特別に設計されており、効率的なセグメンテーションとトークン化を提供します。
+`chinese` アナライザーは、中国語テキストを処理するために特別に設計されており、効果的なセグメンテーションとトークン化を提供します。
 
-### Definition\{#definition}
+### 定義\{#definition}
 
-`chinese` アナライザーは以下のコンポーネントで構成されています:
+`chinese` アナライザーは以下で構成されています：
 
-- **トークナイザー**: 語彙と文脈に基づいて中国語テキストをトークンに分割するための `jieba` トークナイザーを使用します。詳細については、[Jieba](./jieba-tokenizer) を参照してください。
+- **トークナイザー**: `jieba` トークナイザーを使用して、語彙とコンテキストに基づいて中国語テキストをトークンに分割します。詳細については、[Jieba](./jieba-tokenizer) を参照してください。
 
-- **Filter**: 中国語以外の文字を含むトークンを削除する `cnalphanumonly` フィルターを使用します。詳細については、[Cnalphanumonly](./cnalphanumonly-filter) を参照してください。
+- **フィルター**: `cnalphanumonly` フィルターを使用して、中国語以外の文字を含むトークンを削除します。詳細については、[Cnalphanumonly](./cnalphanumonly-filter) を参照してください。
 
-`chinese` アナライザーの機能は、次のカスタムアナライザー設定と同等です:
+`chinese` アナライザーの機能は、以下のカスタムアナライザー設定と同等です：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -152,13 +152,13 @@ analyzerParams='{
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>chinese</code> アナライザーはオプションのパラメータを受け付けません。</p>
+`chinese` アナライザーはオプションのパラメーターを受け付けません。
 
 </Admonition>
 
 ## 例\{#examples}
 
-コレクションスキーマにアナライザー設定を適用する前に、`run_analyzer` メソッドを使用してその動作を検証してください。
+アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
 
 ### アナライザー設定\{#analyzer-configuration}
 
