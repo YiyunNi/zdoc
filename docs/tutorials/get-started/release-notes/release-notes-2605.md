@@ -147,13 +147,13 @@ import Grid from '@site/src/components/Grid';
 
         - **Controlled, regional access** — Access is managed through Storage Integration and Zilliz Cloud RBAC, ensuring only authorized project users can create or manage External Volumes.
 
-        For details, refer to [External Volumes](https://docs.cloud-uat3.zilliz.com/docs/external-volume).
+        For details, refer to [External Volumes](./external-volume).
 
         ## Large TopK\{#large-topk}
 
         Large TopK is now supported at the collection level, expanding the maximum number of returned entities from 16,384 to 1,000,000 for enabled collections. Available on both Serving Cluster and On-demand Compute, it is ideal for data mining and batch analysis workloads — enabling broader candidate recall for use cases such as candidate generation, model evaluation, and large-scale similarity search.
 
-        For details, refer to [Use Large TopK](https://docs.cloud-uat3.zilliz.com/docs/use-large-topk).
+        For details, refer to [Use Large TopK](./use-large-topk).
 
         ## Enhancements\{#enhancements}
 

@@ -1179,6 +1179,54 @@ The output would be a list of the three most similar entities for each embedding
 
 In the above code example, `embeddingList1` is an embedding list of one vector, while `embeddingList2` contains two vectors. Each triggers a separate search request and expects a list of top-K similar entities.
 
+## Scalar filtering in a StructArray field | PRIVATE\{#scalar-filtering-in-a-structarray-field}
+
+You can use **element filters** and **operators in the match family** to conduct scalar filtering against a scalar sub-field in a StructArray. For more details and examples on the two operator types above, refer to [Array of Structs Operators](./struct-array-filtering).
+
+### Element filters\{#element-filters}
+
+This is an entity-level filter that checks whether at least one element in the StructArray field of an entity satisfies the predicate. For example, the following element filter returns entities that contain at least one chunk that starts with "Red" in the `text` sub-field.
+
+```python
+element_filter(chunks, $[text] LIKE "Red%")
+```
+
+You can use almost all comparison, range, and arithmetic operators in the predicate, which is evaluated per element, and the logical operators can be used to combine multiple conditions on the same element. For details, refer to [Basic Operators](./basic-filtering-operators).
+
+If multiple scalar-filtering expressions are present in a filtered search or a query request, place the element filter expression after all entity-level filter expressions, as shown below.
+
+```python
+# correct
+id > 0 && element_filter(chunks, $[x] > 1)
+
+# incorrect, resulting errors
+element_filter(chunks, $[x] > 1) && id > 0
+```
+
+### Match family operators\{#match-family-operators}
+
+The match family operators work over a StructArray field too. Instead of simply checking whether an element exists, you can determine how many elements (or what proportion) must satisfy an element predicate.
+
+- `MATCH_ANY(chunks, $[text] LIKE "Red%")`
+
+    This returns entities that contain at least one chunk that starts with "Red" in the `text` sub-field; semantically, this is equivalent to `element_filter`.
+
+- `MATCH_ALL(chunks, $[text] LIKE "Red%")`
+
+    This returns entities whose text sub-fields in all chunks start with "Red".
+
+- `MATCH_LEAST(chunks, $[text] LIKE "Red%", k)`
+
+    This returns entities that contain at least `k` chunks that start with "Red" in the `text` sub-field.
+
+- `MATCH_MOST(chunks, $[text] LIKE "Red%", k)`
+
+    This returns entities that contain at most `k` chunks that start with "Red" in the `text` sub-field.
+
+- `MATCH_EXACT(chunks, $[text] LIKE "Red%", k)`
+
+    This returns entities that contain exactly `k` chunks that start with "Red" in the `text` sub-field.
+
 ## Next steps\{#next-steps}
 
 The development of a native StructArray data type represents a major advancement in Zilliz Cloud's capability to handle complex data structures. To better understand its use cases and maximize this new feature, you are encouraged to read [Schema Design Using an Array of Structs](./schema-design-with-structs).
